@@ -1,0 +1,866 @@
+[
+  {
+    "id": 1,
+    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "LOUVEIRA SP X GUARULHOS SP - DOM PEDRO",
+    "viagens": 21,
+    "placas": ["SST0D21","STR7A02","STR7A21","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 2,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "SBDO/SP (SASTER) X LOUVEIRA/SP (MIRASSOL)",
+    "viagens": 10,
+    "placas": ["SST0D21","STR7A02","STR7A21","SVS8J65","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 3,
+    "origem": "CD GTEX - GUARULHOS SP",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "GUARULHOS -SP X BARUERI - SP (GOLDEN)",
+    "viagens": 8,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 4,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
+    "nome": "GOLDEN (BARUERI) X UNIAO QUIMICA (DIADEMA)",
+    "viagens": 7,
+    "placas": ["STR7A21","SVS8J65","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 5,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "BARUERI (GOLDEN) X SBO (SASTER) X LOUVEIRA (MIRASSOL)",
+    "viagens": 7,
+    "placas": ["SST0D21","STR7A02","STR7A21","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 6,
+    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "LOUVEIRA X POSTO 7 X GOLDEN (BARUERI)",
+    "viagens": 7,
+    "placas": ["SST0D21","STR7A02","STR7A21","SVS8J65","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 7,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "DIADEMA/SP ( UQP) X ESTACIONAMENTO SR TRUCKS ITAPEVI X BARUERI (GOLDEN )",
+    "viagens": 7,
+    "placas": ["SST0D21","STR7A21","SVS8J65","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 8,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "RONDOCARGAS (GUARULHOS -SP) X GOLDEN-CARGO (BARUERI-SP)",
+    "viagens": 7,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 9,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "nome": "RONDOCARGAS ( GUARULLHOS) X GARAGEM SASTER",
+    "viagens": 7,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 10,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "FORTNITRO (ITAQUAQUECETUBA)",
+    "nome": "GOLDEN X FORTINITRO",
+    "viagens": 6,
+    "placas": ["SST0D21","STR7A21","SVS8J65"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 11,
+    "origem": "FORTNITRO (ITAQUAQUECETUBA)",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "FORTNITRO (ITAQUAQUECETUBA) X POSTO SAKAMOTO X GOLDEN (BARUERI)",
+    "viagens": 6,
+    "placas": ["SST0D21","STR7A21","SVS8J65"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 12,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "RONDOCARGAS (GUARULHOS-SP) X MIRASSOL (LOUVEIRA-SP)",
+    "viagens": 5,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 13,
+    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "nome": "LOUVEIRA/SP (MIRASSOL) X GARAGEM CINTEC (SASTER )",
+    "viagens": 4,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 14,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "GOLDEN-CARGO(BARUERI-SP) X RONDOCARGAS (GUARULHOS -SP)",
+    "viagens": 4,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 15,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "nome": "VAZIO - BARUERI - SP (GOLDEN) X BASE SANTA BARBARA-SP",
+    "viagens": 4,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 16,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "SBDO (CINTEC) X GUARULHOS (RONDOCARGAS) - DOM PEDRO/FERN. DIAS",
+    "viagens": 4,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 17,
+    "origem": "SUDESTE (OSASCO-SP)",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "SUDESTE OSASCO X GOLDEN BARUERI",
+    "viagens": 3,
+    "placas": ["SST0D21","STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 18,
+    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "destino": "RAI - ARMAZENS GERAIS (SAO BERNARDO DO CAMPO)",
+    "nome": "MIRASSOL (LOUVEIRA-SP) X  RAI ARMAZENS GERAIS ( SAO BERNARDO DO CAMPO",
+    "viagens": 2,
+    "placas": ["STR7A02"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 19,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "SBDO X GOLDEN",
+    "viagens": 2,
+    "placas": ["STR7A21","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 20,
+    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "destino": "RAI ARMAZENS - SAO BERNARDO DO CAMPO",
+    "nome": "LOUVEIRA - MIRASSOL SP X SAO BERNARDO DO CAMPO - RAI ARMAZENS",
+    "viagens": 2,
+    "placas": ["SST0D21","STR7A21"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 21,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "UQP (DIADEMA) x RONDOCARGAS  (GUARULHOS )",
+    "viagens": 2,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 22,
+    "origem": "UNIMOL BRASIL  (GUARATINGUETA-SP)",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "UNIMOL BRASIL (GUARATINGUETA-SP) X MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "viagens": 2,
+    "placas": ["STR7A02","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 23,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "ICONIC - OSASCO SP",
+    "nome": "GOLDEN BARUERI X ICONIC - OSASCO",
+    "viagens": 2,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 24,
+    "origem": "FORTNITRO (ITAQUAQUECETUBA)",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "FORTINITRO (ITAQUAQUECETUBA) X GUARULHOS (RONDOLOG)",
+    "viagens": 2,
+    "placas": ["SST0D21","SVS8J65"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 25,
+    "origem": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
+    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "nome": "JARDINOPOLIS (AGRARIA) x CINTEC GARAGEM SASTER",
+    "viagens": 2,
+    "placas": ["STR7A21","TKX6F25"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA","REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 26,
+    "origem": "BRUCAI LOGISTICA (OSASCO-SP)",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "BRUCAI OSASCO X GOLDEN BARUERI",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 27,
+    "origem": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
+    "destino": "IQA - VILA VELHA-ES",
+    "nome": "JARDINOPOLIS-SP (AGRARIA) X IQA - VILA VELHA-ES",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 28,
+    "origem": "BRASILON (SÃO PAULO)",
+    "destino": "CINTEC SBO",
+    "nome": "BRASILON (SÃO PAULO) X CINTEC (SBO)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 29,
+    "origem": "AROUCALOG",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "AROUCALOG X LOUVEIRA",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 30,
+    "origem": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "JARDINOPOLIS (AGRARIA) x LOUVEURA (MIRASSOL) **",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 31,
+    "origem": "CLOROETIL (MOGI MIRIM)",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "CLOROETIL (MOGI MIRIM) X GOLDEN  (BARUERI)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 32,
+    "origem": "CINTEC SBO",
+    "destino": "REFINARIA NACIONAL DE SAL S/A-GUARULHOS",
+    "nome": "CINTEC X REFINARIA DE SAL",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 33,
+    "origem": "CINTEC SBO",
+    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
+    "nome": "Cintec X IQA ( Lapa )",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 34,
+    "origem": "Chemax  Jandira",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "Chemax Itapevi x Golden (Barueri)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 35,
+    "origem": "FORTNITRO (ITAQUAQUECETUBA)",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "FORTNITRO x LOUVEIRA",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 36,
+    "origem": "DSM PRODUTOS NUTRICIONAIS BRASIL SA",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "DSM JAGUARE X LOUVEIRA",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 37,
+    "origem": "CINTEC SBO",
+    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
+    "nome": "CINTEC X REECAP (AMERICANA) C JARDINOPOLIS",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 38,
+    "origem": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI)",
+    "destino": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
+    "nome": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 39,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "DSM PRODUTOS NUTRICIONAIS BRASIL SA",
+    "nome": "GOLDEM ( BARUERÍ) X DSM ( JAGUYARÉ SP )",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 40,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "DEVINTEX (JANDIRA-SP)",
+    "nome": "GOLDEN CARGO (BARUERI-SP) X DEVINTEX (JANDIRA-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 41,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "CLOROETIL (MOGI MIRIM)",
+    "nome": "GOLDEN  (BARUERI) X CLOROETIL (MOGI MIRIM)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 42,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI)",
+    "nome": "GOLDEN CARGO (BARUERI-SP) X CARBONO QUIMICA (SÃO BERNARDO DO CAMPO-SP)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 43,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "AUTOPEL (SANTANA )",
+    "nome": "GOLDEN (BARUERI) X AUTOPEL (SANTANA)",
+    "viagens": 1,
+    "placas": ["STR7A21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 44,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
+    "nome": "VAZIO - BARUERI - SP (GOLDEN) X JARDINOPOLIS - VIA CAPIVARI",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 45,
+    "origem": "GIVAL SACARIAS (CRAVINHOS-SP)",
+    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
+    "nome": "CRAVINHOS X JARDINOPOLIS",
+    "viagens": 1,
+    "placas": ["STR7A21"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 46,
+    "origem": "GB- TERMINAIS -  DUQUE DE CAXIAS - RJ",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "DUQUE DE CAXIAS RJ X GUARULHOS SP",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 47,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
+    "nome": "CINTEC SBDO X UQP DIADEMA",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 48,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "UNIMOL BRASIL  (GUARATINGUETA-SP)",
+    "nome": "CINTEC (SBDO) X UNIMOL BRASIL (GUARATINGUETÁ-SP)",
+    "viagens": 1,
+    "placas": ["STR7A02"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 49,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "SUMARE OFICINA",
+    "nome": "SASTER X OFICINA(SUMARÉ)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 50,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "Proquitec  VAGEM GRANDE",
+    "nome": "SASTER X POROQUITEC (VARGEM GRANDE)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 51,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "ITAQUAQUECETUBA-SP (COMERC ESPERANCA)",
+    "nome": "GARAGEM SASTER (SBO) X ITAQUAQUECETUBA (FORTINITRO) POSTO 7",
+    "viagens": 1,
+    "placas": ["STR7A21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 52,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "POSTO 7 - AMERICANA",
+    "nome": "CINTEC SBDO X  POSTO 7",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 53,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "FORTNITRO (ITAQUAQUECETUBA)",
+    "nome": "SBDO (SASTER) X FORTNITRO (ITAQUAQUECETUBA) - DOM PEDRO/FERN DIAS",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 54,
+    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "destino": "GIVAL SACARIAS (CRAVINHOS-SP)",
+    "nome": "SASTER (SBDO-SP) X GIVAL SACARIAS (CRAVINHOS-SP)",
+    "viagens": 1,
+    "placas": ["STR7A21"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 55,
+    "origem": "CINTEC SASTER",
+    "destino": "ROSSI LAVADOR - NOVA ODESSA",
+    "nome": "CINTEC (SBO-SP) X ROSSI LAVADOR (NOVA ODESSA-SP)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 56,
+    "origem": "CINTEC SASTER",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "SBO - (CINTEC) X  BARUERI - (GOLDEN)",
+    "viagens": 1,
+    "placas": ["STR7A21"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 57,
+    "origem": "ICONIC - OSASCO SP",
+    "destino": "SUDESTE (OSASCO-SP)",
+    "nome": "ICONIC OSASCO  X SUDESTE OSASCO",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 58,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "THOR BRASIL LTDA (BARUERI)",
+    "nome": "GOLDEN (BARUERI) X THOR BRASIL (BARUERI)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 59,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "ROSSI LAVADOR - NOVA ODESSA",
+    "nome": "GOLDEN (BARUERI) X ROSSI LAVADOR  (NOVA ODESSA)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 60,
+    "origem": "INDUSTRIA AGRO-QUIMICA  (SÃO CAETANO DO SUL - SP)",
+    "destino": "Proquitec  VAGEM GRANDE",
+    "nome": "INDUSTRIA AGRO-QUIMICA (SÃO CAETANO DO SUL - SP) X PROQUITEC VARGEM GRANDE",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 61,
+    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
+    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
+    "nome": "IQA (BARUERI-SP) X AGRARIA (JARDINOPOLIS-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 62,
+    "origem": "INDUSTRIA QUIMICA ANASTACIO S A",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "JARDINOPOLIS (AGRARIA) x LOUVEURA (MIRASSOL) **",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 63,
+    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "destino": "BRASILON (SÃO PAULO)",
+    "nome": "MIRASSOL (LOUVEIRA) X BRASILON (SAO PAULO)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 64,
+    "origem": "ICONIC - OSASCO SP",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "ICONIC = OSASCO X  RONDOLOG (GUARULHOS)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 65,
+    "origem": "GRUPO TBC",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "GRUPO TBC (SÃO PAULO) X RONDOLOG (GUARULHOS)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 66,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "SUDESTE (OSASCO-SP)",
+    "nome": "GOLDEN-CARGO(BARUERI-SP) X SUDESTE (OSASCO-SP)",
+    "viagens": 1,
+    "placas": ["STR7A02"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 67,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "QUIMICA EXACTA (GUARULHOS)",
+    "nome": "GOLDEN BARUERI X QUIMICA EXACTA - GUARULHOS",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 68,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "INTERMODAL (GUARULHOS)",
+    "nome": "GOLDEN (BARUERI) X INTERMODAL (GUARULHOS)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 69,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "GRUPO TBC",
+    "nome": "GOLDEN (BARUERI) X GRUPO TBC (SAO PAULO)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 70,
+    "origem": "GOLDEN CARGO-BARUERI",
+    "destino": "INDUSTRIA AGRO-QUIMICA  (SÃO CAETANO DO SUL - SP)",
+    "nome": "GOLDEN CARGO (BARUERI-SP) X INDUSTRIA AGRO-QUIMICA (São Caetano do Sul-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 71,
+    "origem": "POSTO REDE DUTRA (GUARULHOS)",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "POSTO REDE DUQUE (GUARULHOS-SP) X GOLDEN CARGO (BARUERI-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 72,
+    "origem": "POSTO 7 - AMERICANA",
+    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "nome": "POSTO 7  X GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 73,
+    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "destino": "TRANSMETELLO (GUARULHOS)",
+    "nome": "MIRASSOL (LOUVEIRA) X TRANSMETELLO (GUARULHOS)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 74,
+    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "destino": "SUDESTE (OSASCO-SP)",
+    "nome": "LOUVEIRA - MIRASSOL X SUDESTE OSASCO SP",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 75,
+    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
+    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "nome": "INDUSTRIA QUIMICA (ANASTACIO) X CINTEC ( SASTER)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 76,
+    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "IQA LAPA X LOUVEIRA",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 77,
+    "origem": "MANUTENÇÃO SIDER SUMARÉ",
+    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "nome": "MANUTENÇÃO  SUMARE  SP X  CINTEC BASE SBDO",
+    "viagens": 1,
+    "placas": ["STR7A02"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 78,
+    "origem": "Proquitec  VAGEM GRANDE",
+    "destino": "Chemax  Jandira",
+    "nome": "Várzea grande Paulista Proquitec x Chemax Itapevi",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 79,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "BRUCAI LOGISTICA- OSASCO",
+    "nome": "RONDOCARGAS (GUARULHOS-SP) X BRUCAI LOGISTICA (OSASCO-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 80,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "AROUCALOG",
+    "nome": "RONDOLOG (GUARULHOS) X AROUCALOG (SP)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 81,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
+    "nome": "RONDOCARGAS (GUARULHOS-SP) X AGRARIA INDUSTRIA (JARDINOPOLIS-SP)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 82,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
+    "nome": "RONDOCARGAS (GUARAULHOS - SP) X QUIMICA ANASTACIO - LAPA (SAO PAULO - SP) LAPA",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 83,
+    "origem": "RESTITUI LOGISTICA - GUARULHOS-SP",
+    "destino": "RONDOCARGAS GUARULHOS",
+    "nome": "GUARULHOS (MANOEL BORBA GATO ) X RONDOCARGAS GUARULHOS",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 84,
+    "origem": "Proquitec  VAGEM GRANDE",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "PROQUITEC( VARGEM GRANDE PAULISTA ) X BARUERI (GOLDEN)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 85,
+    "origem": "Proquitec  VAGEM GRANDE",
+    "destino": "SR TRUCK ESTACIONAMENTO",
+    "nome": "PROQUITEC (VARZEA GRANDE PAULISTA -SP) X SR TRUCK (ITAPEVI-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 86,
+    "origem": "QUIMICA EXACTA (GUARULHOS)",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "QUIMICA EXATA GUARULHOS X GOLDEM BARUERI",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 87,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "VIRTUDE BIG BAGS (ITAPECERICA DA SERRA)",
+    "nome": "RONDOCARGAS (GUARULHOS-SP) X VIRTUDE BIG BAG (ITAPECERICA DA SERRA-SP)",
+    "viagens": 1,
+    "placas": ["STR7A02"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 88,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "UNIMOL BRASIL  (GUARATINGUETA-SP)",
+    "nome": "RONDOCARGAS (GUARULHOS-SP) X GUARATINGUETA-SP",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 89,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "TRANSPOLI (CAJAMAR - SP)",
+    "nome": "RONDOCARGAS (GUARULHOS - SP) X TRANSPOLI (CAJAMAR - SP)",
+    "viagens": 1,
+    "placas": ["STR7A21"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 90,
+    "origem": "RONDOCARGAS GUARULHOS",
+    "destino": "MULTICHEMIE IND E COM DE PROD QUIMICOS LTDA",
+    "nome": "RONDOCARGAS (GUARULHOS) X MULTICHEMIE (COTIA)",
+    "viagens": 1,
+    "placas": ["STR7A21"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 91,
+    "origem": "SR TRUCK ESTACIONAMENTO",
+    "destino": "GOLDEN CARGO-BARUERI",
+    "nome": "SR TRUCK (ITAPEVI-SP) X GOLDEN CARGO (BARUERI-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 92,
+    "origem": "RONDOLOG GUARULHOS",
+    "destino": "CINTEC SBO",
+    "nome": "RONDOLOG (GUARULHOS) X CINTEC (SBO VIA FERNAO DIAS)",
+    "viagens": 1,
+    "placas": ["TKX6F25"],
+    "condutores": ["REINALDO COSTA DE ASSIS"]
+  },
+  {
+    "id": 93,
+    "origem": "SAO BERNARDO DO CAMPO-SP [TRIMIX]",
+    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "nome": "sao bernardo x louveira",
+    "viagens": 1,
+    "placas": ["STR7A02"],
+    "condutores": ["PAULO RICARDO DE OLIVEIRA"]
+  },
+  {
+    "id": 94,
+    "origem": "ROSSI LAVADOR - NOVA ODESSA",
+    "destino": "SUMARE OFICINA",
+    "nome": "ROSSI LAVADOR X SUMARE OFICINA",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 95,
+    "origem": "SR TRUCK ESTACIONAMENTO",
+    "destino": "SUDESTE (OSASCO-SP)",
+    "nome": "SR TRUCK (ITAPEVI-SP) X SUDESTE (OSASCO-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  },
+  {
+    "id": 96,
+    "origem": "SR TRUCK ESTACIONAMENTO",
+    "destino": "Proquitec  VAGEM GRANDE",
+    "nome": "SR TRUCK (ITAPEVI-SP) X PROQUITEC (VARZEA GRANDE PAULISTA-SP)",
+    "viagens": 1,
+    "placas": ["SST0D21"],
+    "condutores": ["TIAGO CALIXTO DE SOUZA"]
+  }
+]
