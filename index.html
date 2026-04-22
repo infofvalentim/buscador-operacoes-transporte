@@ -218,90 +218,145 @@
       .results-grid { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
     }
 
+    /* Cards com novo design */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       cursor: pointer;
       transition: var(--transition);
+      overflow: hidden;
     }
     .card:hover {
       border-color: rgba(229,62,62,.6);
+      box-shadow: 0 8px 24px rgba(0,0,0,.3);
       transform: translateY(-2px);
     }
     .card-inner { display: flex; }
     .card-bar {
-      width: 4px;
-      border-radius: 2px 0 0 2px;
+      width: 5px;
       background: var(--red);
+      transition: background 0.2s;
     }
-    .card-body { padding: 14px 16px; flex: 1; }
-    body.compact .card-body { padding: 10px 12px; }
+    .card-body { padding: 16px; flex: 1; }
+    body.compact .card-body { padding: 12px; }
 
-    .pedido {
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 8px;
+    .card-header {
       display: flex;
-      flex-wrap: wrap;
-      gap: 5px 8px;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 10px;
     }
-    .pedido-sep { color: var(--text-muted); }
-    .route-badge {
-      border-radius: 20px;
-      padding: 2px 10px;
-      font-size: 9px;
+    .rota-tipo-badge {
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      margin-left: 8px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      border: 1px solid transparent;
     }
-    .rota-nome-principal {
+
+    .origem-destino {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .seta { color: var(--text-muted); font-weight: 500; }
+
+    .nome-rota {
       font-family: var(--mono);
       font-size: 13px;
       font-weight: 600;
       color: #f1f5f9;
+      margin-bottom: 14px;
       word-break: break-word;
+      line-height: 1.4;
     }
-    .metadata {
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px solid var(--border);
+
+    /* Metadados (condutores, placas, viagens) */
+    .meta-grid {
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
-      font-size: 11px;
+      gap: 16px 24px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      margin-top: 4px;
     }
-    .meta-count-badge {
-      background: var(--surface2);
-      border-radius: 10px;
-      padding: 2px 6px;
+    .meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .meta-label {
       font-size: 9px;
-      margin-left: 2px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
     }
-    .meta-placa {
+    .condutor-tags, .placa-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+    .condutor-tag {
+      background: rgba(255,255,255,0.06);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      border: 1px solid var(--border);
+    }
+    .placa-tag {
       font-family: var(--mono);
       background: var(--surface2);
-      border-radius: 6px;
-      padding: 3px 8px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      border: 1px solid var(--border);
+      letter-spacing: 0.5px;
     }
-    .condutor-name {
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 2px 8px;
+    .more-badge {
+      background: var(--red-bg);
+      color: var(--red-light);
+      border-radius: 20px;
+      padding: 3px 10px;
       font-size: 10px;
+      font-weight: 600;
+      border: 1px solid var(--red);
+      cursor: help;
     }
+    .viagem-badge {
+      background: var(--surface2);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 11px;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
     .card-action {
       display: flex;
       align-items: center;
       padding: 0 16px;
       color: var(--text-muted);
+      transition: color 0.2s;
     }
+    .card:hover .card-action { color: var(--red-light); }
+
     mark {
       background: rgba(253,230,138,.2);
       color: #fde68a;
       border-radius: 3px;
       padding: 0 2px;
     }
+
     .no-result {
       text-align: center;
       padding: 60px 20px;
@@ -390,23 +445,18 @@
 
 <script>
   (function() {
-    // CONFIGURAÇÃO
     const DATA_URLS = {
       rondolog: './data/rondolog.json',
       saster: './data/saster.json'
     };
 
-    // Cache de dados
     const dataCache = { rondolog: null, saster: null };
-
-    // Estado da aplicação
     let currentBase = 'rondolog';
     let currentData = [];
     let currentQuery = '';
     let currentType = 'all';
     let currentOrder = 'padrao';
 
-    // Elementos DOM
     const loadingOverlay = document.getElementById('loadingOverlay');
     const baseSubtitle = document.getElementById('baseSubtitle');
     const baseTitle = document.getElementById('baseTitle');
@@ -418,7 +468,6 @@
     const resultsContainer = document.getElementById('results');
     const toast = document.getElementById('toast');
 
-    // Utilitários
     function norm(s) { return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
     function hl(text, q) {
       if (!q) return text;
@@ -438,169 +487,150 @@
       if (tipo === 'transferencia') return 'var(--green)';
       return 'var(--orange)';
     }
-
     function getTipoLabel(tipo) {
-      if (tipo === 'transferencia') return '🚚 Transferência';
-      if (tipo === 'coleta') return '📦 Coleta';
-      return '🔄 Rota fixa';
+      if (tipo === 'transferencia') return 'Transferência';
+      if (tipo === 'coleta') return 'Coleta';
+      return 'Rota Fixa';
     }
 
-    // Carrega dados via fetch com cache
     async function loadData(base) {
       if (dataCache[base]) return dataCache[base];
       try {
-        const response = await fetch(DATA_URLS[base]);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
-        // Garante estrutura padronizada
-        const processed = data.map(item => ({
-          ...item,
-          pedido: [item.origem, item.destino],
-          condutor: item.condutores || null,
-          placa: item.placas || null
-        }));
-        dataCache[base] = processed;
-        return processed;
+        const res = await fetch(DATA_URLS[base]);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        dataCache[base] = data;
+        return data;
       } catch (err) {
-        console.error('Falha ao carregar', base, err);
-        alert(`Não foi possível carregar os dados de ${base.toUpperCase()}. Verifique se os arquivos JSON estão na pasta "data/".`);
+        alert(`Erro ao carregar dados de ${base}. Verifique os arquivos JSON.`);
         return [];
       }
     }
 
-    // Troca de base
     async function switchBase(base) {
       loadingOverlay.style.display = 'flex';
       currentBase = base;
-
-      // Atualiza títulos
       baseTitle.textContent = base === 'rondolog' ? 'RONDOLOG' : 'SASTER';
-      
-      // Carrega dados
       currentData = await loadData(base);
-      
       baseSubtitle.innerHTML = base === 'rondolog' 
         ? `Rondolog · ${currentData.length} rotas` 
         : `Saster · ${currentData.length} rotas`;
-
-      // Mostra/esconde filtros de tipo (Rondolog tem, Saster não)
       filterChipsDiv.style.display = base === 'rondolog' ? 'flex' : 'none';
-      
-      // Reset dos filtros
-      currentQuery = '';
-      currentType = 'all';
-      currentOrder = 'padrao';
-      searchInput.value = '';
-      orderSelect.value = 'padrao';
-      
-      // Ativa chip "Todas"
+      currentQuery = ''; currentType = 'all'; currentOrder = 'padrao';
+      searchInput.value = ''; orderSelect.value = 'padrao';
       document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
       document.querySelector('.chip[data-type="all"]')?.classList.add('active');
-
       loadingOverlay.style.display = 'none';
       render();
     }
 
-    // Ordenação
     function sortRotas(arr, order) {
       const sorted = [...arr];
-      if (order === 'origem') {
-        sorted.sort((a,b) => a.origem.localeCompare(b.origem));
-      } else if (order === 'destino') {
-        sorted.sort((a,b) => a.destino.localeCompare(b.destino));
-      } else if (order === 'tipo' && currentBase === 'rondolog') {
-        const tipoOrder = { coleta: 1, transferencia: 2, rota: 3 };
+      if (order === 'origem') sorted.sort((a,b) => a.origem.localeCompare(b.origem));
+      else if (order === 'destino') sorted.sort((a,b) => a.destino.localeCompare(b.destino));
+      else if (order === 'tipo' && currentBase === 'rondolog') {
+        const tipoOrder = { coleta:1, transferencia:2, rota:3 };
         sorted.sort((a,b) => (tipoOrder[a.tipo]||99) - (tipoOrder[b.tipo]||99));
       }
       return sorted;
     }
 
-    // Renderização principal
     function render() {
       let filtered = currentData;
       const q = currentQuery;
-      
       if (q) {
         const nq = norm(q);
         filtered = filtered.filter(r => 
           norm(r.nome).includes(nq) ||
           `${r.origem} ${r.destino}`.toLowerCase().includes(nq) ||
-          (r.condutor && r.condutor.some(c => norm(c).includes(nq))) ||
-          (r.placa && r.placa.some(p => norm(p).includes(nq)))
+          (r.condutores && r.condutores.some(c => norm(c).includes(nq))) ||
+          (r.placas && r.placas.some(p => norm(p).includes(nq)))
         );
       }
-      
       if (currentBase === 'rondolog' && currentType !== 'all') {
         filtered = filtered.filter(r => r.tipo === currentType);
       }
-      
       filtered = sortRotas(filtered, currentOrder);
-      
       countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
       sectionLabel.innerHTML = q ? `Resultados para "${q}"` : 'Todas as rotas';
-      
+
       if (!filtered.length) {
         resultsContainer.innerHTML = '<div class="no-result">🔍 Nenhuma rota encontrada.</div>';
         return;
       }
-      
+
       resultsContainer.innerHTML = filtered.map(r => {
-        const tipoColor = (currentBase === 'rondolog') ? getTipoColor(r.tipo) : 'var(--blue)';
-        const condutores = r.condutor || [];
-        const placas = r.placa || [];
+        const tipo = r.tipo || 'rota';
+        const tipoColor = (currentBase === 'rondolog') ? getTipoColor(tipo) : 'var(--blue)';
+        const condutores = r.condutores || [];
+        const placas = r.placas || [];
         const viagens = r.viagens;
-        
-        const condHTML = condutores.length ? `
-          <div class="condutor-list" title="${condutores.join(', ')}">
-            ${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, q)}</span>`).join('')}
-            ${condutores.length > 2 ? `<span class="condutor-more">+${condutores.length-2}</span>` : ''}
+
+        const primeirosCond = condutores.slice(0,2);
+        const restoCond = condutores.length - 2;
+        const primeiraPlaca = placas[0];
+        const restoPlacas = placas.length - 1;
+
+        const condutoresHTML = condutores.length ? `
+          <div class="condutor-tags">
+            ${primeirosCond.map(c => `<span class="condutor-tag">${hl(c, q)}</span>`).join('')}
+            ${restoCond > 0 ? `<span class="more-badge" title="${condutores.slice(2).join(', ')}">+${restoCond}</span>` : ''}
           </div>
-        ` : '';
-        
-        const placaHTML = placas.length ? `
-          <span class="meta-placa" title="${placas.join(', ')}">${hl(placas[0], q)}</span>
-          ${placas.length > 1 ? `<span class="placa-more">+${placas.length-1}</span>` : ''}
-        ` : '';
-        
-        const viagemHTML = viagens ? `<div class="meta-item">📊 ${viagens} viagens</div>` : '';
-        
-        const metaHTML = (condHTML || placaHTML || viagemHTML) ? `
-          <div class="metadata">
-            ${viagemHTML}
-            ${condHTML ? `<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${condutores.length}</span></div>` : ''}
-            ${placaHTML ? `<div class="meta-item">🚛 ${placaHTML} <span class="meta-count-badge">${placas.length}</span></div>` : ''}
+        ` : '<span class="condutor-tag" style="opacity:0.5">—</span>';
+
+        const placasHTML = placas.length ? `
+          <div class="placa-tags">
+            <span class="placa-tag">${hl(primeiraPlaca, q)}</span>
+            ${restoPlacas > 0 ? `<span class="more-badge" title="${placas.slice(1).join(', ')}">+${restoPlacas}</span>` : ''}
           </div>
+        ` : '<span class="placa-tag" style="opacity:0.5">—</span>';
+
+        const tipoBadge = currentBase === 'rondolog' ? `
+          <span class="rota-tipo-badge" style="background:${tipoColor}20; border-color:${tipoColor}; color:${tipoColor}">
+            ${getTipoLabel(tipo)}
+          </span>
         ` : '';
-        
-        const tipoBadge = (currentBase === 'rondolog') 
-          ? `<span class="route-badge" style="background:${tipoColor}20; border-color:${tipoColor}; color:${tipoColor}">${getTipoLabel(r.tipo)}</span>` 
-          : '';
-        
+
         return `
           <div class="card" data-nome="${r.nome}">
             <div class="card-inner">
               <div class="card-bar" style="background: ${tipoColor};"></div>
               <div class="card-body">
-                <div class="pedido">
-                  <span>${hl(r.origem, q)}</span>
-                  <span class="pedido-sep">→</span>
-                  <span>${hl(r.destino, q)}</span>
+                <div class="card-header">
+                  <div class="origem-destino">
+                    <span>${hl(r.origem, q)}</span>
+                    <span class="seta">→</span>
+                    <span>${hl(r.destino, q)}</span>
+                  </div>
                   ${tipoBadge}
                 </div>
-                <div class="rota-nome-principal">${hl(r.nome, q)}</div>
-                ${metaHTML}
+                <div class="nome-rota">${hl(r.nome, q)}</div>
+                <div class="meta-grid">
+                  ${viagens ? `
+                    <div class="meta-col">
+                      <span class="meta-label">Viagens</span>
+                      <span class="viagem-badge">📊 ${viagens}</span>
+                    </div>
+                  ` : ''}
+                  <div class="meta-col">
+                    <span class="meta-label">Condutores (${condutores.length})</span>
+                    ${condutoresHTML}
+                  </div>
+                  <div class="meta-col">
+                    <span class="meta-label">Veículos (${placas.length})</span>
+                    ${placasHTML}
+                  </div>
+                </div>
               </div>
               <div class="card-action" title="Copiar nome da rota">📋</div>
             </div>
           </div>
         `;
       }).join('');
-      
-      // Eventos de cópia
+
       document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', () => {
-          const nomeRota = card.dataset.nome;
-          navigator.clipboard.writeText(nomeRota).then(() => {
+          navigator.clipboard.writeText(card.dataset.nome).then(() => {
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 2000);
           });
@@ -608,7 +638,7 @@
       });
     }
 
-    // Event Listeners
+    // Eventos
     document.querySelectorAll('.base-tab').forEach(tab => {
       tab.addEventListener('click', async () => {
         document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
@@ -616,17 +646,8 @@
         await switchBase(tab.dataset.base);
       });
     });
-
-    searchInput.addEventListener('input', e => {
-      currentQuery = e.target.value;
-      render();
-    });
-
-    orderSelect.addEventListener('change', e => {
-      currentOrder = e.target.value;
-      render();
-    });
-
+    searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
+    orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
     document.querySelectorAll('.chip').forEach(chip => {
       chip.addEventListener('click', () => {
         document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
@@ -636,7 +657,7 @@
       });
     });
 
-    // Modo compacto
+    // Compact mode
     const compactToggle = document.getElementById('compactModeToggle');
     if (localStorage.getItem('rondologCompact') === 'true') {
       document.body.classList.add('compact');
@@ -647,7 +668,6 @@
       localStorage.setItem('rondologCompact', e.target.checked);
     });
 
-    // Inicializa com Rondolog
     switchBase('rondolog');
   })();
 </script>
