@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>RONDOLOG · Rotas e Operações</title>
+  <title>Painel de Rotas · Rondolog & Saster</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -32,6 +32,7 @@
       min-height: 100vh;
       padding-bottom: 80px;
     }
+    /* Loading overlay */
     .loading-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -51,6 +52,8 @@
       animation: spin 0.8s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Tabs */
     .base-tabs {
       display: flex;
       gap: 4px;
@@ -75,6 +78,7 @@
       background: var(--bg);
       border-bottom: 2px solid var(--red);
     }
+
     header {
       background: var(--surface);
       padding: 18px 20px 16px;
@@ -134,6 +138,7 @@
       transition: transform 0.2s;
     }
     .compact-toggle input:checked::before { transform: translateX(16px); }
+
     .search-order-wrap {
       display: flex;
       gap: 10px;
@@ -170,6 +175,7 @@
       cursor: pointer;
       min-width: 140px;
     }
+
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -193,6 +199,7 @@
       border-color: var(--red);
       color: var(--red-light);
     }
+
     .main { padding: 20px 16px 0; max-width: 1280px; margin: 0 auto; }
     .section-label {
       font-size: 10px;
@@ -210,6 +217,7 @@
     @media (min-width: 640px) {
       .results-grid { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
     }
+
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -229,6 +237,7 @@
     }
     .card-body { padding: 14px 16px; flex: 1; }
     body.compact .card-body { padding: 10px 12px; }
+
     .pedido {
       font-size: 15px;
       font-weight: 500;
@@ -316,6 +325,7 @@
       z-index: 999;
     }
     .copied-toast.show { opacity: 1; }
+
     @media (max-width: 600px) {
       .search-order-wrap { flex-direction: column; }
       #orderSelect { width: 100%; }
@@ -379,242 +389,267 @@
 </div>
 
 <script>
-// Configuração
-const DATA_URLS = {
-  rondolog: './data/rondolog.json',
-  saster: './data/saster.json'
-};
+  (function() {
+    // CONFIGURAÇÃO
+    const DATA_URLS = {
+      rondolog: './data/rondolog.json',
+      saster: './data/saster.json'
+    };
 
-// Cache
-const dataCache = { rondolog: null, saster: null };
+    // Cache de dados
+    const dataCache = { rondolog: null, saster: null };
 
-// Estado
-let currentBase = 'rondolog';
-let currentData = [];
-let currentQuery = '';
-let currentType = 'all';
-let currentOrder = 'padrao';
+    // Estado da aplicação
+    let currentBase = 'rondolog';
+    let currentData = [];
+    let currentQuery = '';
+    let currentType = 'all';
+    let currentOrder = 'padrao';
 
-// DOM
-const loadingOverlay = document.getElementById('loadingOverlay');
-const baseSubtitle = document.getElementById('baseSubtitle');
-const baseTitle = document.getElementById('baseTitle');
-const countBadge = document.getElementById('countBadge');
-const filterChips = document.getElementById('filterChips');
-const searchInput = document.getElementById('search');
-const orderSelect = document.getElementById('orderSelect');
-const sectionLabel = document.getElementById('sectionLabel');
-const resultsContainer = document.getElementById('results');
+    // Elementos DOM
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const baseSubtitle = document.getElementById('baseSubtitle');
+    const baseTitle = document.getElementById('baseTitle');
+    const countBadge = document.getElementById('countBadge');
+    const filterChipsDiv = document.getElementById('filterChips');
+    const searchInput = document.getElementById('search');
+    const orderSelect = document.getElementById('orderSelect');
+    const sectionLabel = document.getElementById('sectionLabel');
+    const resultsContainer = document.getElementById('results');
+    const toast = document.getElementById('toast');
 
-// Utilidades
-function norm(s) { return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
-function hl(text, q) {
-  if (!q) return text;
-  const nq = norm(q), nt = norm(text);
-  let out = '', i = 0;
-  while (i < text.length) {
-    const idx = nt.indexOf(nq, i);
-    if (idx === -1) { out += text.slice(i); break; }
-    out += text.slice(i, idx) + '<mark>' + text.slice(idx, idx + nq.length) + '</mark>';
-    i = idx + nq.length;
-  }
-  return out;
-}
+    // Utilitários
+    function norm(s) { return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
+    function hl(text, q) {
+      if (!q) return text;
+      const nq = norm(q), nt = norm(text);
+      let out = '', i = 0;
+      while (i < text.length) {
+        const idx = nt.indexOf(nq, i);
+        if (idx === -1) { out += text.slice(i); break; }
+        out += text.slice(i, idx) + '<mark>' + text.slice(idx, idx + nq.length) + '</mark>';
+        i = idx + nq.length;
+      }
+      return out;
+    }
 
-function getTipoColor(tipo) {
-  if (tipo === 'coleta') return 'var(--blue)';
-  if (tipo === 'transferencia') return 'var(--green)';
-  return 'var(--orange)';
-}
+    function getTipoColor(tipo) {
+      if (tipo === 'coleta') return 'var(--blue)';
+      if (tipo === 'transferencia') return 'var(--green)';
+      return 'var(--orange)';
+    }
 
-function getTipoLabel(tipo) {
-  if (tipo === 'transferencia') return '🚚 Transferência';
-  if (tipo === 'coleta') return '📦 Coleta';
-  return '🔄 Rota fixa';
-}
+    function getTipoLabel(tipo) {
+      if (tipo === 'transferencia') return '🚚 Transferência';
+      if (tipo === 'coleta') return '📦 Coleta';
+      return '🔄 Rota fixa';
+    }
 
-// Carrega dados
-async function loadData(base) {
-  if (dataCache[base]) return dataCache[base];
-  const response = await fetch(DATA_URLS[base]);
-  if (!response.ok) throw new Error(`Erro ao carregar ${base}`);
-  const data = await response.json();
-  dataCache[base] = data;
-  return data;
-}
+    // Carrega dados via fetch com cache
+    async function loadData(base) {
+      if (dataCache[base]) return dataCache[base];
+      try {
+        const response = await fetch(DATA_URLS[base]);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        // Garante estrutura padronizada
+        const processed = data.map(item => ({
+          ...item,
+          pedido: [item.origem, item.destino],
+          condutor: item.condutores || null,
+          placa: item.placas || null
+        }));
+        dataCache[base] = processed;
+        return processed;
+      } catch (err) {
+        console.error('Falha ao carregar', base, err);
+        alert(`Não foi possível carregar os dados de ${base.toUpperCase()}. Verifique se os arquivos JSON estão na pasta "data/".`);
+        return [];
+      }
+    }
 
-// Troca de base
-async function switchBase(base) {
-  loadingOverlay.style.display = 'flex';
-  currentBase = base;
-  
-  try {
-    currentData = await loadData(base);
-  } catch (e) {
-    alert('Erro ao carregar dados. Verifique os arquivos JSON.');
-    loadingOverlay.style.display = 'none';
-    return;
-  }
-  
-  baseTitle.textContent = base === 'rondolog' ? 'RONDOLOG' : 'SASTER';
-  baseSubtitle.innerHTML = base === 'rondolog' 
-    ? `Rondolog · ${currentData.length} rotas` 
-    : `Saster · ${currentData.length} rotas`;
-  
-  filterChips.style.display = base === 'rondolog' ? 'flex' : 'none';
-  if (base === 'saster') currentType = 'all';
-  
-  currentQuery = '';
-  currentType = 'all';
-  currentOrder = 'padrao';
-  searchInput.value = '';
-  orderSelect.value = 'padrao';
-  
-  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-  document.querySelector('.chip[data-type="all"]')?.classList.add('active');
-  
-  loadingOverlay.style.display = 'none';
-  render();
-}
+    // Troca de base
+    async function switchBase(base) {
+      loadingOverlay.style.display = 'flex';
+      currentBase = base;
 
-// Ordenação
-function sortRotas(arr, order) {
-  const sorted = [...arr];
-  if (order === 'origem') sorted.sort((a,b) => a.origem.localeCompare(b.origem));
-  else if (order === 'destino') sorted.sort((a,b) => a.destino.localeCompare(b.destino));
-  else if (order === 'tipo' && currentBase === 'rondolog') {
-    const ordem = { coleta: 1, transferencia: 2, rota: 3 };
-    sorted.sort((a,b) => (ordem[a.tipo] || 99) - (ordem[b.tipo] || 99));
-  }
-  return sorted;
-}
+      // Atualiza títulos
+      baseTitle.textContent = base === 'rondolog' ? 'RONDOLOG' : 'SASTER';
+      
+      // Carrega dados
+      currentData = await loadData(base);
+      
+      baseSubtitle.innerHTML = base === 'rondolog' 
+        ? `Rondolog · ${currentData.length} rotas` 
+        : `Saster · ${currentData.length} rotas`;
 
-// Renderização
-function render() {
-  let filtered = currentData;
-  const q = currentQuery;
-  
-  if (q) {
-    const nq = norm(q);
-    filtered = filtered.filter(r => 
-      norm(r.nome).includes(nq) ||
-      `${r.origem} ${r.destino}`.toLowerCase().includes(nq) ||
-      (r.condutores && r.condutores.some(c => norm(c).includes(nq))) ||
-      (r.placas && r.placas.some(p => norm(p).includes(nq)))
-    );
-  }
-  
-  if (currentBase === 'rondolog' && currentType !== 'all') {
-    filtered = filtered.filter(r => r.tipo === currentType);
-  }
-  
-  filtered = sortRotas(filtered, currentOrder);
-  
-  countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
-  sectionLabel.innerHTML = q ? `Resultados para "${q}"` : 'Todas as rotas';
-  
-  if (!filtered.length) {
-    resultsContainer.innerHTML = '<div class="no-result">🔍 Nenhuma rota encontrada.</div>';
-    return;
-  }
-  
-  resultsContainer.innerHTML = filtered.map(r => {
-    const tipoColor = currentBase === 'rondolog' ? getTipoColor(r.tipo) : 'var(--blue)';
-    const condutores = r.condutores || [];
-    const placas = r.placas || [];
-    const viagens = r.viagens;
-    
-    const condHTML = condutores.length ? `
-      <div class="condutor-list" title="${condutores.join(', ')}">
-        ${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, q)}</span>`).join('')}
-        ${condutores.length > 2 ? `<span class="condutor-more">+${condutores.length-2}</span>` : ''}
-      </div>
-    ` : '';
-    
-    const placaHTML = placas.length ? `
-      <span class="meta-placa" title="${placas.join(', ')}">${hl(placas[0], q)}</span>
-      ${placas.length > 1 ? `<span class="placa-more">+${placas.length-1}</span>` : ''}
-    ` : '';
-    
-    const viagemHTML = viagens ? `<div class="meta-item">📊 ${viagens} viagens</div>` : '';
-    
-    const metaHTML = (condHTML || placaHTML || viagemHTML) ? `
-      <div class="metadata">
-        ${viagemHTML}
-        ${condHTML ? `<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${condutores.length}</span></div>` : ''}
-        ${placaHTML ? `<div class="meta-item">🚛 ${placaHTML} <span class="meta-count-badge">${placas.length}</span></div>` : ''}
-      </div>
-    ` : '';
-    
-    const tipoBadge = currentBase === 'rondolog' 
-      ? `<span class="route-badge" style="background:${tipoColor}20; border-color:${tipoColor}; color:${tipoColor}">${getTipoLabel(r.tipo)}</span>` 
-      : '';
-    
-    return `
-      <div class="card" data-nome="${r.nome}">
-        <div class="card-inner">
-          <div class="card-bar" style="background: ${tipoColor};"></div>
-          <div class="card-body">
-            <div class="pedido">
-              <span>${hl(r.origem, q)}</span>
-              <span class="pedido-sep">→</span>
-              <span>${hl(r.destino, q)}</span>
-              ${tipoBadge}
-            </div>
-            <div class="rota-nome-principal">${hl(r.nome, q)}</div>
-            ${metaHTML}
+      // Mostra/esconde filtros de tipo (Rondolog tem, Saster não)
+      filterChipsDiv.style.display = base === 'rondolog' ? 'flex' : 'none';
+      
+      // Reset dos filtros
+      currentQuery = '';
+      currentType = 'all';
+      currentOrder = 'padrao';
+      searchInput.value = '';
+      orderSelect.value = 'padrao';
+      
+      // Ativa chip "Todas"
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      document.querySelector('.chip[data-type="all"]')?.classList.add('active');
+
+      loadingOverlay.style.display = 'none';
+      render();
+    }
+
+    // Ordenação
+    function sortRotas(arr, order) {
+      const sorted = [...arr];
+      if (order === 'origem') {
+        sorted.sort((a,b) => a.origem.localeCompare(b.origem));
+      } else if (order === 'destino') {
+        sorted.sort((a,b) => a.destino.localeCompare(b.destino));
+      } else if (order === 'tipo' && currentBase === 'rondolog') {
+        const tipoOrder = { coleta: 1, transferencia: 2, rota: 3 };
+        sorted.sort((a,b) => (tipoOrder[a.tipo]||99) - (tipoOrder[b.tipo]||99));
+      }
+      return sorted;
+    }
+
+    // Renderização principal
+    function render() {
+      let filtered = currentData;
+      const q = currentQuery;
+      
+      if (q) {
+        const nq = norm(q);
+        filtered = filtered.filter(r => 
+          norm(r.nome).includes(nq) ||
+          `${r.origem} ${r.destino}`.toLowerCase().includes(nq) ||
+          (r.condutor && r.condutor.some(c => norm(c).includes(nq))) ||
+          (r.placa && r.placa.some(p => norm(p).includes(nq)))
+        );
+      }
+      
+      if (currentBase === 'rondolog' && currentType !== 'all') {
+        filtered = filtered.filter(r => r.tipo === currentType);
+      }
+      
+      filtered = sortRotas(filtered, currentOrder);
+      
+      countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
+      sectionLabel.innerHTML = q ? `Resultados para "${q}"` : 'Todas as rotas';
+      
+      if (!filtered.length) {
+        resultsContainer.innerHTML = '<div class="no-result">🔍 Nenhuma rota encontrada.</div>';
+        return;
+      }
+      
+      resultsContainer.innerHTML = filtered.map(r => {
+        const tipoColor = (currentBase === 'rondolog') ? getTipoColor(r.tipo) : 'var(--blue)';
+        const condutores = r.condutor || [];
+        const placas = r.placa || [];
+        const viagens = r.viagens;
+        
+        const condHTML = condutores.length ? `
+          <div class="condutor-list" title="${condutores.join(', ')}">
+            ${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, q)}</span>`).join('')}
+            ${condutores.length > 2 ? `<span class="condutor-more">+${condutores.length-2}</span>` : ''}
           </div>
-          <div class="card-action" title="Copiar nome da rota">📋</div>
-        </div>
-      </div>
-    `;
-  }).join('');
-  
-  document.querySelectorAll('.card').forEach(c => {
-    c.addEventListener('click', () => {
-      navigator.clipboard.writeText(c.dataset.nome).then(() => {
-        const toast = document.getElementById('toast');
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2000);
+        ` : '';
+        
+        const placaHTML = placas.length ? `
+          <span class="meta-placa" title="${placas.join(', ')}">${hl(placas[0], q)}</span>
+          ${placas.length > 1 ? `<span class="placa-more">+${placas.length-1}</span>` : ''}
+        ` : '';
+        
+        const viagemHTML = viagens ? `<div class="meta-item">📊 ${viagens} viagens</div>` : '';
+        
+        const metaHTML = (condHTML || placaHTML || viagemHTML) ? `
+          <div class="metadata">
+            ${viagemHTML}
+            ${condHTML ? `<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${condutores.length}</span></div>` : ''}
+            ${placaHTML ? `<div class="meta-item">🚛 ${placaHTML} <span class="meta-count-badge">${placas.length}</span></div>` : ''}
+          </div>
+        ` : '';
+        
+        const tipoBadge = (currentBase === 'rondolog') 
+          ? `<span class="route-badge" style="background:${tipoColor}20; border-color:${tipoColor}; color:${tipoColor}">${getTipoLabel(r.tipo)}</span>` 
+          : '';
+        
+        return `
+          <div class="card" data-nome="${r.nome}">
+            <div class="card-inner">
+              <div class="card-bar" style="background: ${tipoColor};"></div>
+              <div class="card-body">
+                <div class="pedido">
+                  <span>${hl(r.origem, q)}</span>
+                  <span class="pedido-sep">→</span>
+                  <span>${hl(r.destino, q)}</span>
+                  ${tipoBadge}
+                </div>
+                <div class="rota-nome-principal">${hl(r.nome, q)}</div>
+                ${metaHTML}
+              </div>
+              <div class="card-action" title="Copiar nome da rota">📋</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      
+      // Eventos de cópia
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+          const nomeRota = card.dataset.nome;
+          navigator.clipboard.writeText(nomeRota).then(() => {
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+          });
+        });
+      });
+    }
+
+    // Event Listeners
+    document.querySelectorAll('.base-tab').forEach(tab => {
+      tab.addEventListener('click', async () => {
+        document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        await switchBase(tab.dataset.base);
       });
     });
-  });
-}
 
-// Eventos
-document.querySelectorAll('.base-tab').forEach(tab => {
-  tab.addEventListener('click', async () => {
-    document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    await switchBase(tab.dataset.base);
-  });
-});
+    searchInput.addEventListener('input', e => {
+      currentQuery = e.target.value;
+      render();
+    });
 
-searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
-orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
+    orderSelect.addEventListener('change', e => {
+      currentOrder = e.target.value;
+      render();
+    });
 
-document.querySelectorAll('.chip').forEach(chip => {
-  chip.addEventListener('click', () => {
-    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active');
-    currentType = chip.dataset.type;
-    render();
-  });
-});
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        currentType = chip.dataset.type;
+        render();
+      });
+    });
 
-// Compacto
-const compactToggle = document.getElementById('compactModeToggle');
-if (localStorage.getItem('compact') === 'true') {
-  document.body.classList.add('compact');
-  compactToggle.checked = true;
-}
-compactToggle.addEventListener('change', e => {
-  document.body.classList.toggle('compact', e.target.checked);
-  localStorage.setItem('compact', e.target.checked);
-});
+    // Modo compacto
+    const compactToggle = document.getElementById('compactModeToggle');
+    if (localStorage.getItem('rondologCompact') === 'true') {
+      document.body.classList.add('compact');
+      compactToggle.checked = true;
+    }
+    compactToggle.addEventListener('change', e => {
+      document.body.classList.toggle('compact', e.target.checked);
+      localStorage.setItem('rondologCompact', e.target.checked);
+    });
 
-// Inicia
-switchBase('rondolog');
+    // Inicializa com Rondolog
+    switchBase('rondolog');
+  })();
 </script>
 </body>
 </html>
