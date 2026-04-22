@@ -249,16 +249,6 @@
       box-shadow: 0 8px 24px rgba(0,0,0,.3);
       transform: translateY(-2px);
     }
-    /* 🔥 Card de Alta Frequência */
-    .card.high-frequency {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 1px rgba(237, 137, 54, 0.2);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .card.high-frequency:hover {
-      border-color: var(--orange);
-      box-shadow: 0 8px 24px rgba(0,0,0,.3), 0 0 0 2px rgba(237, 137, 54, 0.3);
-    }
     .card-inner { display: flex; flex: 1; }
     .card-bar {
       width: 4px;
@@ -283,6 +273,7 @@
     }
     .pedido-sep { color: var(--text-muted); font-weight: 600; }
 
+    /* Badge de tipo (estilo original) */
     .route-badge {
       display: inline-block;
       border-radius: 20px;
@@ -310,15 +301,9 @@
       letter-spacing: 0.2px;
       word-break: break-word;
     }
-    .high-frequency-icon {
-      display: inline-block;
-      margin-left: 6px;
-      font-size: 14px;
-      cursor: help;
-      color: var(--orange);
-    }
     body.compact .rota-nome-principal { font-size: 12px; }
 
+    /* Metadados (condutores, placas, viagens) */
     .metadata {
       margin-top: 12px;
       padding-top: 10px;
@@ -374,6 +359,7 @@
       border: 1px solid var(--border);
     }
 
+    /* Viagem badge (exclusivo Saster, mas integrado ao estilo) */
     .viagem-badge {
       background: var(--surface2);
       border-radius: 20px;
@@ -397,20 +383,10 @@
     .card:hover .card-action { color: var(--red-light); }
 
     mark {
-      background: rgba(253,230,138, 0.35);
+      background: rgba(253,230,138,.2);
       color: #fde68a;
-      border-radius: 4px;
-      padding: 1px 3px;
-      border-bottom: 1px solid rgba(253,230,138, 0.5);
-    }
-    /* Animação de pulsação para highlight */
-    mark.pulse-animation {
-      animation: subtlePulse 0.8s ease;
-    }
-    @keyframes subtlePulse {
-      0% { opacity: 0.7; }
-      50% { opacity: 1; box-shadow: 0 0 0 3px var(--orange); }
-      100% { opacity: 1; }
+      border-radius: 3px;
+      padding: 0 2px;
     }
 
     .no-result {
@@ -421,6 +397,7 @@
       grid-column: 1 / -1;
     }
 
+    /* Toast de cópia */
     .copied-toast {
       position: fixed;
       bottom: 28px; left: 50%;
@@ -513,15 +490,21 @@
 
 <script>
   (function() {
-    const DATA_URLS = { rondolog: './data/rondolog.json', saster: './data/saster.json' };
+    // Configuração dos dados externos
+    const DATA_URLS = {
+      rondolog: './data/rondolog.json',
+      saster: './data/saster.json'
+    };
     const dataCache = { rondolog: null, saster: null };
 
+    // Estado da aplicação
     let currentBase = 'rondolog';
     let currentData = [];
     let currentQuery = '';
     let currentType = 'all';
     let currentOrder = 'padrao';
 
+    // Elementos DOM
     const loadingOverlay = document.getElementById('loadingOverlay');
     const baseSubtitle = document.getElementById('baseSubtitle');
     const baseTitle = document.getElementById('baseTitle');
@@ -533,6 +516,7 @@
     const resultsContainer = document.getElementById('results');
     const toast = document.getElementById('toast');
 
+    // Utilitários (idênticos ao original)
     function norm(s) { return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
     function hl(text, q) {
       if (!q) return text;
@@ -558,23 +542,14 @@
       return '🔄 Rota fixa';
     }
 
-    // Verifica se uma rota é de alta frequência
-    function isHighFrequency(rota) {
-      if (currentBase === 'saster') {
-        return rota.viagens && rota.viagens > 10;
-      } else {
-        const cond = rota.condutor?.length || 0;
-        const plac = rota.placa?.length || 0;
-        return cond > 10 || plac > 10;
-      }
-    }
-
+    // Carrega dados via fetch (com cache)
     async function loadData(base) {
       if (dataCache[base]) return dataCache[base];
       try {
         const res = await fetch(DATA_URLS[base]);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
+        // Garante estrutura padronizada
         const processed = data.map(item => ({
           ...item,
           pedido: [item.origem, item.destino],
@@ -589,28 +564,7 @@
       }
     }
 
-    function updateOrderSelectOptions() {
-      // Remove opção de viagens se existir
-      const existingViagemOption = orderSelect.querySelector('option[value="viagens"]');
-      if (existingViagemOption) existingViagemOption.remove();
-      
-      if (currentBase === 'saster') {
-        const option = document.createElement('option');
-        option.value = 'viagens';
-        option.textContent = 'Viagens (mais → menos)';
-        orderSelect.appendChild(option);
-      }
-      
-      // Se a ordenação atual não for compatível, volta para padrão
-      if (currentOrder === 'viagens' && currentBase !== 'saster') {
-        currentOrder = 'padrao';
-        orderSelect.value = 'padrao';
-      } else if (currentOrder === 'tipo' && currentBase !== 'rondolog') {
-        currentOrder = 'padrao';
-        orderSelect.value = 'padrao';
-      }
-    }
-
+    // Troca de base
     async function switchBase(base) {
       loadingOverlay.style.display = 'flex';
       currentBase = base;
@@ -626,8 +580,6 @@
       
       currentQuery = ''; currentType = 'all'; currentOrder = 'padrao';
       searchInput.value = ''; orderSelect.value = 'padrao';
-      updateOrderSelectOptions();
-      
       document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
       document.querySelector('.chip[data-type="all"]')?.classList.add('active');
       
@@ -635,6 +587,7 @@
       render();
     }
 
+    // Ordenação (respeita o original)
     function sortRotas(arr, order) {
       const sorted = [...arr];
       if (order === 'origem') {
@@ -644,12 +597,11 @@
       } else if (order === 'tipo' && currentBase === 'rondolog') {
         const tipoOrder = { coleta: 1, transferencia: 2, rota: 3 };
         sorted.sort((a,b) => (tipoOrder[a.tipo]||99) - (tipoOrder[b.tipo]||99));
-      } else if (order === 'viagens' && currentBase === 'saster') {
-        sorted.sort((a,b) => (b.viagens || 0) - (a.viagens || 0));
       }
       return sorted;
     }
 
+    // Renderização principal (estilo exatamente igual ao original, com suporte a viagens)
     function render() {
       let filtered = currentData;
       const q = currentQuery;
@@ -670,7 +622,7 @@
       
       filtered = sortRotas(filtered, currentOrder);
       
-      countBadge.textContent = `${filtered.length} de ${currentData.length} rotas`;
+      countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
       sectionLabel.innerHTML = q ? `Resultados para "${q}"` : 'Todas as rotas';
       
       if (!filtered.length) {
@@ -686,7 +638,6 @@
         const viagens = r.viagens;
         const totalCond = condutores.length;
         const totalPlacas = placas.length;
-        const highFreq = isHighFrequency(r);
         
         const condutoresHTML = condutores.length ? `
           <div class="condutor-list">
@@ -716,10 +667,8 @@
           ? `<span class="route-badge" style="background:${tipoColor}20; border-color:${tipoColor}; color:${tipoColor}">${getTipoLabel(tipo)}</span>` 
           : '';
         
-        const freqIcon = highFreq ? '<span class="high-frequency-icon" title="Rota de alta frequência">🔥</span>' : '';
-        
         return `
-          <div class="card ${highFreq ? 'high-frequency' : ''}" data-nome="${r.nome}">
+          <div class="card" data-nome="${r.nome}">
             <div class="card-inner">
               <div class="card-bar" style="background: ${tipoColor};"></div>
               <div class="card-body">
@@ -731,7 +680,6 @@
                 </div>
                 <div class="nome-rota">
                   <span class="rota-nome-principal">${hl(r.nome, q)}</span>
-                  ${freqIcon}
                 </div>
                 ${metaHTML}
               </div>
@@ -740,12 +688,6 @@
           </div>
         `;
       }).join('');
-      
-      // Adiciona animação de pulsação nos marks (apenas na primeira ocorrência)
-      if (q) {
-        const firstMark = document.querySelector('mark');
-        if (firstMark) firstMark.classList.add('pulse-animation');
-      }
       
       document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', () => {
@@ -757,7 +699,7 @@
       });
     }
 
-    // Eventos
+    // Event Listeners
     document.querySelectorAll('.base-tab').forEach(tab => {
       tab.addEventListener('click', async () => {
         document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
@@ -765,11 +707,8 @@
         await switchBase(tab.dataset.base);
       });
     });
-    
     searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
-    
     orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
-    
     document.querySelectorAll('.chip').forEach(chip => {
       chip.addEventListener('click', () => {
         document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
@@ -779,14 +718,7 @@
       });
     });
 
-    // Atalho "/"
-    document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && document.activeElement !== searchInput) {
-        e.preventDefault();
-        searchInput.focus();
-      }
-    });
-
+    // Modo compacto
     const compactToggle = document.getElementById('compactModeToggle');
     if (localStorage.getItem('rondologCompact') === 'true') {
       document.body.classList.add('compact');
@@ -797,6 +729,7 @@
       localStorage.setItem('rondologCompact', e.target.checked);
     });
 
+    // Inicia com Rondolog
     switchBase('rondolog');
   })();
 </script>
