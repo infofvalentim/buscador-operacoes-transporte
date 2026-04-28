@@ -2221,12 +2221,13 @@
     "origem": "CRAVINHOS-SP",
     "destino": "AGUDOS-SP",
     "nome": "TRANSFERENCIA - CRAVINHOS-SP X AGUDOS-SP",
-    "viagens": 0,
+    "viagens": 26,
     "placas": [
-      "FHF6J69",
-      "RNQ1J22"
+      "RNQ1J22",
+      "FHF6J69"
     ],
     "condutores": [
+      "//",
       "FERNANDO CESAR WENZEL",
       "LEONARDO RAFAEL COSTALONGA",
       "RICARDO FRANCISCO DA SILVA"
