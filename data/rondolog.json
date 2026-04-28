@@ -1,1019 +1,5593 @@
 [
   {
     "id": 1,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Rio de Janeiro/RJ",
-    "nome": "RJ Barra da Tijuca",
-    "placas": ["FHC8E61","FJB1H32","FMX5J24","FQM8H72","FTE9J56","FWV5B09","GBV0A78","GDS7F11","GGN1G91","GHG4B72","GIV2F51","GSZ3H11","HEB6I19","HHS3J13","HKR8B10","IYX5I53","KNY1I15","KVE7H89","LLK9F92","LMF5J85","LRQ3J38","LSA3H33","LSW9F74","MSD2923","OLT3C97","PLB9I39","PUL4B43","QQZ2F64","QUR3J76","RMD1E73","RNF6A66","RNF6A72","RVA5J80","RVY4I02","SHT4B52","STB5I62","STR0H45","STU5I80","STU7G01","SUS7F64","SUU5E64","SVH1H37","SVT0F22","SWB8C01","SWF4H15","SWH3H91","SWP6F25","SWP8I34","TJC0B57","TJK9E99","TJS4C59"],
-    "condutores": ["ADAIR DE DEUS JULIAO","ANDERSON CRUZ DA SILVA","ANDRE LUIZ DA SILVA GONÇALVES","ANTONIO CARLOS DOS SANTOS XAVIER","ANTONIO CARLOS MARTINS JUNIOR","CAMILA GUIMARAES MARTINS","CARLOS HENRIQUE DE OLIVEIRA REIS","CASSIO MANOEL DE LIMA","CASSIO SILVA DE JESUS","CLEVERTON DOS SANTOS","COSME TENORIO CAVALCANTI","DANIEL FRANCISCO DOS SANTOS","DANIEL SILVA DE CARVALHO","DAVID CARDOSO DE SOUZA","DIEGO SANTOS TAVARES","EDUARDO DA SILVA VIEIRA","EDUARDO DOS SANTOS BAITA","FELIPE DA COSTA COUTINHO","GABRIEL DE FREITAS MIRANDA SILVA","GILDO PEQUENO PEREIRA JUNIOR","GUILHERME COSTA DA SILVA","HEBER AUGUSTO BARBOSA DE SOUZA","HELON DA SILVA OLIVEIRA MARTINS","IGOR VELLOSO DA SILVA","JORGE CAMPOS MOREIRA","JORGE LUIZ DA SILVA PINTO","JORGE LUIZ SANTOS DA SILVA","JOSE WILLIAM MONTE SOARES","KAIKE BRUNO SALOMAO SOUZA","LENON DE SOUSA NETO SANTANA","LEONARDO HENRIQUE MEDEIROS ARAUJO","LUCAS DOS SANTOS LIMA","MARCELO FERREIRA DA SILVA","MARCIO VAGNER ALVES DE ARAUJO","MATHEUS DA SILVA SOARES","OSVALDO DE ARAUJO","PABLO DIOGO FERREIRA","RENATO BATISTA SCHONS","ROBERT VIEIRA DA SILVA","RODRIGO DE OLIVEIRA BARBOSA","TIAGO FERREIRA DA SILVA","TIAGO JESUS DOS SANTOS","TIAGO NOGUEIRA ALVES","VALMIR FRANCISCO DE ANDRADE","VICTOR HUGO NASCIMENTO DA SILVA","VINICIUS DE OLIVEIRA CEZAR","WANDO VINICIO DA CONCEICAO BARBOSA","WASHINGTON VIEIRA DA SILVA","WESLLEY OLIVEIRA SILVA","WILLER OLIVEIRA DA SILVA","WILLIAM DE OLIVEIRA BATISTA","YAN CARLOS DA SILVA LIMA"],
+    "origem": "RIO DE OURO",
+    "destino": "LOG TELLES TRANSPORTES LTDA GUARULHOS",
+    "nome": " RIO DE OURO X LOG TELLES TRANSPORTES LTDA GUARULHOS ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 2,
-    "origem": "Betim/MG",
-    "destino": "Betim/MG",
-    "nome": "MG - BETIM (AVULSA)",
-    "placas": ["AMU7F30","DMO2I73","ENT6523","EOE4D53","FKI0G01","FRA5I46","HHK7998","HJE6I45","HJZ4289","HLX7G38","HNF6201","MOP3F16","MTD3D81","OPA3C69","OPJ6E73","PJD3E35","PXN9G60","QNQ7F38","QOC6C46","QQT9J61","QWW6H00","QWY0G19","RNF6A66","RNN1C19","RUW8I89","SHK1H00","STR9F35","SVM0I91","SVO6A43","SWB1D01","SWF2C34","SWV5J91","SYA7E91","TDS7D95"],
-    "condutores": ["ADÃO DINIZ COSTA SARAIVA","AIRTON LUCIO DE SOUZA ALVIM","ALVIMAR ELIAS SFALSIN","ANDERSON WILLIAM DA SILVA","ARLINDO TEIXEIRA POLICARPO","BRAYNO AFONSECA DA SILVA","BRUNO LUCCHESI SANTOS","DENISE TORRES DE AMORIM","DIEGO PEREIRA ALEXANDRE","ELIELSON DE PAULA OLIVEIRA JUNIOR","FILIPE AUGUSTO LIMA CABRAL","GUILHERME  RIBEIRO CANDIDO DA SILVA ROSA","GUILHERME FERREIRA RODRIGUES","GUILHERME JUNIO ALVES FAGUNDES","HUDSON RENATO MACIEL PARREIRAS","ITALO DIAS DE SOUZA","JEOVAN ALVES LIBERAL","JOSE LUIZ BERG","LUIZ CARLOS BASILIO DA SILVA","MARCELO COSTA MEIRA","MARCOS HONORIO DA SILVA","Mauro de Souza Carvalho","NERIVALDO JOSE APARECIDO DE OLIVEIRA","ODIRLEI MOREIRA DOS SANTOS","PHILIPPE GERMANO MAGALHAES DE SOUZA","ROGERIO VIEIRA DE OLIVEIRA","ROSANGELA APARECIDA DA SILVEIRA E SOUZA","SAMUEL SANTOS DA SILVA","SHIRLEY JULIANE ALVES","ULISSES JUNIOR DE OLIVEIRA","VICTOR TEIXEIRA DE JESUS","WALTER FERNANDES RODRIGUES","WASHINGTON RANGEL BORGES MEIRELES","WELBERT PEREIRA DE MATOS","WILLIAM ALEX SOUSA DINIZ","WILTON JACKSON SILVA DE OLIVEIRA"],
+    "origem": "AEROPORTO DE CONGONHAS",
+    "destino": "AVENIDA PORTUGAL",
+    "nome": "RJ AREOPORTO DE CONGONHAS X AVENIDA PORTUGAL ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 3,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "S.D.P - (AVULSA)",
-    "placas": ["DON7D17","DSC1F17","EEZ0D04","EPU6851","EYC2F56","EYJ3H96","FBY2C43","FEP3G40","FGT8083","FLC4295","FUL6A21","FXI4A14","GCN9B29","GIW1I66","HIE4711","HIE4F96","NXY4J34","NYP8950","OLY5H27","OUQ9B13","QNA8E38","QRL7C75","QWY0G19","QXB8B89","RFQ9H28","RUZ0J08","SEM9A77","STI2J63","STR9F35","SVV8E65","SVZ9G23","SWB1D01","SWB3J35","SWF4H15","TLE1C61"],
-    "condutores": ["ALEX CAVALCANTE DA SILVA","ALEX SANDRO DE SOUZA MACIEL","ALEX SANDRO DONIZETI DE OLIVEIRA","ALEX SANDRO MACIEL DE SOUSA","DARIO AUGUSTO TORRES FERREIRA","EDUARDO CESAR CARNEIRO","EDUARDO VIANI RESTOLHO","ELENILDO DE SOUZA LIMA","FABIO LUIZ DA SILVA","FERNANDO ADAMI","FERNANDO LIMA DA SILVA","FERNANDO SILVA DO NASCIMENTO","IVALDO CESAR DOS SANTOS","IVONALDO SANTOS VARGAS","JEFFERSON DOS SANTOS SOUZA","JEFFERSON GOMES CABRAL","JEFFERSON MOTA PEREIRA","JULIANO PEREIRA DIAS","LEANDRO BESERRA SOBRAL","NIVALDO JOSE DE SOUZA","NORBERTO DUARTE DE AGUIAR","ROGERIO DOS SANTOS SOUSA","ROSANGELA APARECIDA DA SILVEIRA E SOUZA","SERGIO ROBERTO ALVES","SILMARIO RODRIGUES LIMOEIRO","TIAGO ALVES SILVA","TIAGO HENRIQUE CARDOSO CRUZ","Telma Cristina Backschat","WESLEY BARTUCCIOTO RODRIGUES","WESLEY DOS SANTOS SOUZA"],
+    "origem": "PERSONAL SYSTEM",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "PERSONAL SYSTEM X BASE SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 4,
-    "origem": "São Paulo/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - 4BIO BARUERI X BASE SANTANA DE PARNAIBA",
-    "placas": ["EEZ0D04","FUL6A21","FXI4A14","FYW6C71","NXY4J34","NYP8950","OUQ9B13","QNA8E38","QSX1J75","RUZ0J08","SEM9A77","STR9F35","SVA1A41","SVJ2F72","SVV8E65","SVZ9G23","SWB3J35","SWH3H91","TJA6H23","TLE1C61"],
-    "condutores": ["ALAN FABIANO BOA","DAVID LUCAS DE OLIVEIRA COSTA","DIEGO PEREIRA ALEXANDRE","EDUARDO CESAR CARNEIRO","ENIO JORGE JULIO DE MENEZES","FABIANO CORREIA DA SILVA","FABIO LUIZ DA SILVA","FERNANDO ADAMI","GUILHERME FERREIRA RODRIGUES","IVALDO CESAR DOS SANTOS","JOSE ERNESTO DA SILVA","JULIANO PEREIRA DIAS","LEANDRO BESERRA SOBRAL","SERGIO CARLOS DE OLIVEIRA","SERGIO ROBERTO ALVES","SILMARIO RODRIGUES LIMOEIRO","TIAGO HENRIQUE CARDOSO CRUZ","WESLEY DOS SANTOS SOUZA"],
-    "tipo": "coleta"
-  },
-  {
-    "id": 5,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Volta Redonda/RJ",
-    "nome": "RJ Volta Redonda / Barra Mansa / Resende",
-    "placas": ["FJB1H32","GDS7F11","GGN1G91","IYX5I53","KVE7H89","LLV9D29","LMF5J85","QUN6J82","QUR3J76","RTD0G02","RVA5J80","STG6G23","SWF4H15","SWP6F25"],
-    "condutores": ["AMILTON DOS SANTOS BARBOSA","CARLOS HENRIQUE DE OLIVEIRA REIS","DANIEL SILVA DE CARVALHO","EDSON DA SILVA GUIMARAES","EDUARDO DOS SANTOS BAITA","FELIPE DA COSTA COUTINHO","GILDO PEQUENO PEREIRA JUNIOR","GUILHERME COSTA DA SILVA","MARCIO VAGNER ALVES DE ARAUJO","OSVALDO DE ARAUJO","RODRIGO DE OLIVEIRA BARBOSA","WELINGTON VAZ DA SILVA","WELINTON NATAN NUNES"],
+    "origem": "JARINU",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "TRANFERENCIA  -  JARINU X SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
+    "id": 5,
+    "origem": "SANTANA DE PARNAIBA",
+    "destino": "JUNDIAI CEREJEIRAS",
+    "nome": "COLETA SANTANA X JUNDIAI CEREJEIRAS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
     "id": 6,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Niterói/RJ",
-    "nome": "RJ Niteroi",
-    "placas": ["FJB1H32","FQM8H72","GDS7F11","GGN1G91","GSZ3H11","IYX5I53","LSW9F74","RMD1E73","RNF6A66","RNF6A72","SHT4B52","STG6G23","STU5I80","STU7G01","SUU5E64","SVH1H37","SWP6F25","TJC0B57","TJK9E99","TJS4C59"],
-    "condutores": ["ANDERSON CRUZ DA SILVA","ANTONIO CARLOS DOS SANTOS XAVIER","CARLOS HENRIQUE DE OLIVEIRA REIS","CASSIO SILVA DE JESUS","CLEVERTON DOS SANTOS","COSME TENORIO CAVALCANTI","EDUARDO DOS SANTOS BAITA","FELIPE DA COSTA COUTINHO","JORGE LUIZ DA SILVA PINTO","MATHEUS DA SILVA SOARES","RENATO BATISTA SCHONS","RODRIGO DE OLIVEIRA BARBOSA","TIAGO FERREIRA DA SILVA","TIAGO NOGUEIRA ALVES","VINICIUS DE OLIVEIRA CEZAR"],
+    "origem": "DUQUE DE CAXIAS",
+    "destino": "VOLTA REDONDA",
+    "nome": "RJ DUQUE DE CAXIAS X VOLTA REDONDA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 7,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Duque de Caxias/RJ",
-    "nome": "RJ Coleta Hospinova Duque de Caxias",
-    "placas": ["EZB4E21","FJB1H32","FMX5J24","FWV5B09","GDS7F11","GHG4B72","IYX5I53","KNY1I15","RMD1E73","SHT4B52","STU7G01","SWB8C01","SWH3H91"],
-    "condutores": ["CARLOS HENRIQUE DE OLIVEIRA REIS","COSME TENORIO CAVALCANTI","EDUARDO DOS SANTOS BAITA","FELIPE DA COSTA COUTINHO","JORGE LUIZ SANTOS DA SILVA","LUCAS DOS SANTOS LIMA","MAICON DOS SANTOS ALVES","RODRIGO DE OLIVEIRA BARBOSA","TIAGO FERREIRA DA SILVA","TIAGO FERREIRA SILVA","WANDO VINICIO DA CONCEICAO BARBOSA","WASHINGTON VIEIRA DA SILVA"],
-    "tipo": "coleta"
+    "origem": "DUQUE DE CAXIAS",
+    "destino": "PRAIA DE BOTAFOGO",
+    "nome": "RJ DUQUE DE CAXIAS X PRAIA DE BOTAFOGO ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 8,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Nova Friburgo/RJ",
-    "nome": "RJ Nova Friburgo",
-    "placas": ["FQM8H72","GDS7F11","GGN1G91","QPG1F34","QPV5C44","RMD1E73","RNF6A72","STG6G23","STU5I80","STU7G01","SUU5E64","SVT0F22"],
-    "condutores": ["ANTONIO CARLOS DOS SANTOS XAVIER","CARLOS HENRIQUE DE OLIVEIRA REIS","CASSIO SILVA DE JESUS","EDSON DA SILVA GUIMARAES","EDUARDO DOS SANTOS BAITA","JORGE LUIZ SANTOS DA SILVA","JOSE RIBAMAR DA SILVA","JOSE WILLIAM MONTE SOARES","MARCELO ROBERTO ESPINDOLA DOS SANTOS","RODRIGO DE OLIVEIRA BARBOSA","WILLER OLIVEIRA DA SILVA"],
+    "origem": "SANTANA DE PARNAIBA",
+    "destino": "TRES CORAÇOES",
+    "nome": "SANTANA DE PARNAIBA X TRES CORAÇOES",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 9,
-    "origem": "Betim/MG",
-    "destino": "Juiz de Fora/MG",
-    "nome": "Betim X Juiz de Fora",
-    "placas": ["EOE4D53","EZB4E21","GHG4B72","HHK7998","LRP8F88","MLZ6I99","MOP3F16","NWK5C76","OPA3C69","PJD3E35","PVB1H89","QNQ7F38","QQT9J61","RNX4D11","RUW8I89","STU7G01","SWP6F25","SWV5J91","TJS4C59"],
-    "condutores": ["ADÃO DINIZ COSTA SARAIVA","AILTON DA SILVA FERREIRA","ALESSANDRO MANZATO CIRILO","ANDERSON FIDELES GONÇALVES","BRUNO LUCCHESI SANTOS","FABIANO NERY DA SILVA","FILIPE AUGUSTO LIMA CABRAL","GUILHERME  RIBEIRO CANDIDO DA SILVA ROSA","GUSTAVO HENRIQUE  ALVES MOREIRA","HENRIQUE DANGELES PEREIRA SANTOS","JHONATAN RIBEIRO DE OLIVEIRA","JORGE LUIZ SANTOS DA SILVA","JOSE WILLIAM MONTE SOARES","MAICON DOS SANTOS ALVES","MARLLON BRANDON AZEVEDO DOS SANTOS","Mauro de Souza Carvalho","ODIRLEI MOREIRA DOS SANTOS","SAMUEL SANTOS DA SILVA","ULISSES JUNIOR DE OLIVEIRA","WALTER FERNANDES RODRIGUES","marcelo henrique passos nascimento"],
+    "origem": "FARTEX",
+    "destino": "D SANCHEZ COMERCIAL",
+    "nome": "RJ FARTEX X D SANCHEZ COMERCIAL ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 10,
-    "origem": "Guarulhos/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - RENNOVA GUARULHOS-SP X SANTANA DE PARNAIBA-SP",
-    "placas": ["EYC2F56","FLC4295","GIV2F51","GJS4B24","QSX1J75","RUZ0J08","SEM9A77","SVZ9G23"],
-    "condutores": ["DIEGO PEREIRA ALEXANDRE","ENIO JORGE JULIO DE MENEZES","FABIANO CORREIA DA SILVA","HEBER AUGUSTO BARBOSA DE SOUZA","JEFFERSON DOS SANTOS SOUZA","SERGIO ROBERTO ALVES","TIAGO HENRIQUE CARDOSO CRUZ"],
-    "tipo": "coleta"
+    "origem": "DUQUE DE CAXIAS",
+    "destino": "AEROPORTO GALEÃO",
+    "nome": "DUQUE DE CAXIAS X AEROPORTO GALEAO (RJ)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 11,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Santa Bárbara dOeste/SP",
-    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X SANTA BARBARA-SP",
-    "placas": ["FGT8083","FTE9J56","GCN9B29","GIV2F51","OUQ9B13","QOV7G25","QRL7C75","QXB8B89","STR9F35","SVZ9G23","SWB3J35"],
-    "condutores": ["ALEX CAVALCANTE DA SILVA","ALEX SANDRO MACIEL DE SOUSA","EDUARDO CESAR CARNEIRO","FABIANO CORREIA DA SILVA","HEBER AUGUSTO BARBOSA DE SOUZA","MOACIR AUGUSTINI","NIVALDO JOSE DE SOUZA","RICARDO DE SOUZA OLIVEIRA","ROBSON LUIS DE GODOY","SERGIO ROBERTO ALVES","WESLEY BARTUCCIOTO RODRIGUES","WESLEY DOS SANTOS SOUZA"],
-    "tipo": "transferencia"
+    "origem": "FARTEX",
+    "destino": "PLANETA COMERCIO (LAPA)",
+    "nome": "RJ FARTEX X PLANETA COMERCIO (LAPA)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 12,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Petrópolis/RJ",
-    "nome": "RJ Petropólis",
-    "placas": ["GDS7F11","IYX5I53","LLV9D29","LMF5J85","QUN6J82","QUR3J76","RMD1E73","RNF6A72","RTD0G02","STR0H45","SVT0F22"],
-    "condutores": ["AMILTON DOS SANTOS BARBOSA","CARLOS HENRIQUE DE OLIVEIRA REIS","CASSIO SILVA DE JESUS","DANIEL SILVA DE CARVALHO","EDUARDO DOS SANTOS BAITA","FELIPE DA COSTA COUTINHO","GUILHERME COSTA DA SILVA","JORGE LUIZ SANTOS DA SILVA","OSVALDO DE ARAUJO","WELINGTON VAZ DA SILVA"],
+    "origem": "Connection Scientific Journal",
+    "destino": "Rondolog",
+    "nome": "RJ Avulsa - Dutra",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 13,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Cabo Frio/RJ",
-    "nome": "RJ Região dos Lagos",
-    "placas": ["GDS7F11","PWJ5881","PWJ5I81","RMD1E73","STR0H45","SUU5E64","SVT0F22"],
-    "condutores": ["CARLOS HENRIQUE DE OLIVEIRA REIS","CASSIO SILVA DE JESUS","EDUARDO DOS SANTOS BAITA","FELIPE DA COSTA COUTINHO","GEFERSON XAVIER DA COSTA","RODRIGO DE OLIVEIRA BARBOSA"],
-    "tipo": "rota"
+    "origem": "GAM SJP",
+    "destino": "AGUDOS",
+    "nome": "COLETA GAM SJP X AGUDOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 14,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Nova Iguaçu/RJ",
-    "nome": "RJ Baixada Fluminense",
-    "placas": ["FQM8H72","GBV0A78","GSZ3H11","HHS3J13","HKR8B10","KNY1I15","LRQ3J38","RMD1E73","RNF6A66","STR0H45","SUS7F64","SVH1H37","SVT0F22","TJK9E99"],
-    "condutores": ["ADAIR DE DEUS JULIAO","CARLOS HENRIQUE DE OLIVEIRA REIS","CASSIO SILVA DE JESUS","CLEVERTON DOS SANTOS","GILDO PEQUENO PEREIRA JUNIOR","HELON DA SILVA OLIVEIRA MARTINS","IGOR VELLOSO DA SILVA","JOSE WILLIAM MONTE SOARES","KAIKE BRUNO SALOMAO SOUZA","LEONARDO HENRIQUE MEDEIROS ARAUJO","RENATO BATISTA SCHONS","THIAGO DA SILVA RIBEIRO","WASHINGTON VIEIRA DA SILVA","WILLIAM DE OLIVEIRA BATISTA"],
+    "origem": "MATER DEI",
+    "destino": "MATER DEI",
+    "nome": "MATER DEI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 15,
-    "origem": "Betim/MG",
-    "destino": "Três Corações/MG",
-    "nome": "BETIM X TRES CORAÇOES",
-    "placas": ["BRY3E66","FUL6A21","FXI4A14","GIV2F51","GJS4B24","NWK5C76","QSX1J75","SEM9A77","STR0H45","STR9F35","STU7G01","SVA1A41","SWB1D01","SWB3J35","SWF2C34","TJA6H23"],
-    "condutores": ["ALAN FABIANO BOA","ANDERSON FIDELES GONÇALVES","DAVID LUCAS DE OLIVEIRA COSTA","DIEGO PEREIRA ALEXANDRE","FABIANO CORREIA DA SILVA","IVANDRO RIBEIRO DE SOUZA","PAULO RICARDO DE OLIVEIRA SILVA","VALDIR FERREIRA DA SILVA","VALDIR LEITE PANTA","VALDO SANTOS DA SILVA","VICTOR TEIXEIRA DE JESUS","VITOR DO NASCIMENTO","WALLAS ARAUJO MOTA"],
+    "origem": "SANTANA DE PARNAIBA",
+    "destino": "MERCO LEOPOLDINO",
+    "nome": "SANTANA DE PARNAIBA X MERCO LEOPOLDINO ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 16,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Cravinhos/SP",
-    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X CRAVINHOS-SP",
-    "placas": ["ENY7504","EYC2F56","FLC4295","FUL6A21","GIV2F51","GJS4B24","PWL9H75","QSX1J75","RJJ7D45","RNQ1J22","SEM9A77","STR9F35","SVZ9G23"],
-    "condutores": ["DAVID LUCAS DE OLIVEIRA COSTA","DIEGO PEREIRA ALEXANDRE","ENIO JORGE JULIO DE MENEZES","FABIANO CORREIA DA SILVA","HEBER AUGUSTO BARBOSA DE SOUZA","JEFFERSON DOS SANTOS SOUZA","JOSE ERNESTO DA SILVA","KELMA REGINA SOARES DSA SILVA","LEONARDO RAFAEL COSTALONGA","RICARDO FRANCISCO DA SILVA","SERGIO ROBERTO ALVES","VALDO SANTOS DA SILVA"],
-    "tipo": "transferencia"
+    "origem": "BASE SANTANA",
+    "destino": "HOSPITAL ALBERT EINSTEIN",
+    "nome": "BASE SANTANA X HOSP. ALBERT EINSTEIN",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 17,
-    "origem": "São José dos Pinhais/PR",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - GAM SJP X BASE SANTANA DE PARNAIBA",
-    "placas": ["BRY3E66","FLC4295","FUL6A21","GIV2F51","GJS4B24","OUQ9B13","QSX1J75","RJJ7D45","STR9F35"],
-    "condutores": ["DIEGO PEREIRA ALEXANDRE","EDUARDO CESAR CARNEIRO","ENIO JORGE JULIO DE MENEZES","JOSE ERNESTO DA SILVA","MOACIR AUGUSTINI","VITOR DO NASCIMENTO","WAGNER ANTONIO DA CONCEICAO"],
-    "tipo": "coleta"
+    "origem": "RIO DE OURO",
+    "destino": "ARMARINHOS FERNANDO",
+    "nome": "RIO DE OURO X MOOCA (SP)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 18,
-    "origem": "São José dos Pinhais/PR",
-    "destino": "Cravinhos/SP",
-    "nome": "COLETA - GAM SJP X BASE CRAVINHOS",
-    "placas": ["ENY7504","FLC4295","FTE9J56","GIV2F51","GJS4B24","OQY2H65","OUQ9B13","QRL7C75","QSX1J75","RJJ7D45","RNA5B39","SEM9A77"],
-    "condutores": ["DIEGO PEREIRA ALEXANDRE","EDUARDO CESAR CARNEIRO","ENIO JORGE JULIO DE MENEZES","FABIANO CORREIA DA SILVA","HEBER AUGUSTO BARBOSA DE SOUZA","JOSE ERNESTO DA SILVA","MOACIR AUGUSTINI","ROBSON LUIS DE GODOY","RONI CARLOS SERENINI","VAGNER JOSE DE OLIVEIRA","VALDO SANTOS DA SILVA","WAGNER ANTONIO DA CONCEICAO","WESLEY BARTUCCIOTO RODRIGUES"],
-    "tipo": "coleta"
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "INTO",
+    "nome": "RJ INTO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 19,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Betim/MG",
-    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X BETIM-MG",
-    "placas": ["ENY7504","FUL6A21","FXI4A14","GIV2F51","GJS4B24","OUQ9B13","QSX1J75","SEM9A77","STR9F35","SWB3J35"],
-    "condutores": ["ALAN FABIANO BOA","DIEGO PEREIRA ALEXANDRE","EDUARDO CESAR CARNEIRO","VALDIR LEITE PANTA"],
-    "tipo": "transferencia"
+    "origem": "TEREZA CRISTINA",
+    "destino": "TEREZA CRISTINA",
+    "nome": "TEREZA CRISTINA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 20,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Duque de Caxias/RJ",
-    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X RIO DE JANEIRO-RJ",
-    "placas": ["EZB4E21","FXI4A14","GDS7F11","GGN1G91","GIV2F51","GJS4B24","OUQ9B13","RJA9E97","RJJ7D45","STR9F35","STU7G01","SUU5E64","SVA1A41","SVV8E65","SVZ9G23","SWH3H91","TJA6H23","TJS4C59"],
-    "condutores": ["EDUARDO CESAR CARNEIRO","FABIANO CORREIA DA SILVA","FABIO LUIZ DA SILVA","FELIPE DA COSTA COUTINHO","HEBER AUGUSTO BARBOSA DE SOUZA","JEAN AGUIRRE DA SILVA ATANASIO","LEONARDO HENRIQUE MEDEIROS ARAUJO","MAICON DOS SANTOS ALVES","PAULO RICARDO DE OLIVEIRA SILVA","VITOR DO NASCIMENTO","WESLEY DOS SANTOS SOUZA"],
-    "tipo": "transferencia"
+    "origem": "BELEZA CPMPLETA",
+    "destino": "BELEZA COMPLETA",
+    "nome": "BELEZA COMPLETA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 21,
-    "origem": "Rio de Janeiro/RJ",
-    "destino": "Rio de Janeiro/RJ",
-    "nome": "Aeroporto do Galeão X Cargo Park Washington Luiz",
-    "placas": ["FJB1H32","FMX5J24","FWV5B09","GBV0A78","JIH6A19","KNY1I15","LLK9F92","LRQ3J38","LSA3H33","OLT3C97","PUL4B43","QQZ2F64","SHT4B52","STR0H45","SWF4H15","SWH3H91","SWP8I34","TJK9E99"],
-    "condutores": ["ADAIR DE DEUS JULIAO","ANDERSON CRUZ DA SILVA","ANDRE LUIZ DA SILVA GONÇALVES","ANTONIO CARLOS DOS SANTOS XAVIER","CAMILA GUIMARAES MARTINS","CARLOS HENRIQUE DE OLIVEIRA REIS","COSME TENORIO CAVALCANTI","DIEGO SANTOS TAVARES","FELIPE DA COSTA COUTINHO","GABRIEL DE FREITAS MIRANDA SILVA","IGOR VELLOSO DA SILVA","LENON DE SOUSA NETO SANTANA","LEONARDO HENRIQUE MEDEIROS ARAUJO","LUCAS DOS SANTOS LIMA","TIAGO FERREIRA DA SILVA","VALMIR FRANCISCO DE ANDRADE","WASHINGTON VIEIRA DA SILVA","WELLINGTON COUTO DE OLIVEIRA","WILLIAM DE OLIVEIRA BATISTA"],
+    "origem": "HOSPITAL ALBERT EINSTEIN",
+    "destino": "COMMED",
+    "nome": "HOSPITAL ALBERT EINSTEIN X COMMED",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 22,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Santos/SP",
-    "nome": "TRANSFERÊNCIA SANTANA X SANTOS",
-    "placas": ["CFY4I17","FPB0H16","QNA8E38"],
-    "condutores": ["DIEGO DALL AQUA SANTOS","FERNANDO ADAMI","LUIZ DE SOUZA SANTOS FILHO"],
-    "tipo": "transferencia"
+    "origem": "Galeão",
+    "destino": "Macaé",
+    "nome": "RJ GIG x Macaé",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 23,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "RJ Duque de Caxias X Santana de Parnaiba",
-    "placas": ["BRY3E66","EZB4E21","FMX5J24","FUL6A21","GBV0A78","GIV2F51","OUQ9B13","QSX1J75","RJJ7D45","STR9F35","STU7G01","SUS7F64","SVA1A41","SWB3J35","SWH3H91","SWJ0H01","TJA6H23"],
-    "condutores": ["DANIEL FRANCISCO DOS SANTOS","DAVID LUCAS DE OLIVEIRA COSTA","EDUARDO CESAR CARNEIRO","FABIANO CORREIA DA SILVA","FELIPE DA COSTA COUTINHO","FERNANDO FELIX CYPRESTE","HEBER AUGUSTO BARBOSA DE SOUZA","LEONARDO HENRIQUE MEDEIROS ARAUJO","MAICON DOS SANTOS ALVES","PAULO RICARDO DE OLIVEIRA SILVA","VALDIR LEITE PANTA","VITOR DO NASCIMENTO","WALLAS ARAUJO MOTA"],
+    "origem": "SANTANA PARNAIBA",
+    "destino": "RJ RONDOLOG",
+    "nome": "SANTANA DE PARNAIBA X RJ RONDOLOG ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 24,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Taubaté/SP",
-    "nome": "SANTANA X TAUBATÉ",
-    "placas": ["DON7D17","EYC2F56","FGT8083","OUQ9B13","PWL9H75","QRL7C75","SVV8E65","SVZ9G23","SWB3J35"],
-    "condutores": ["ALEX SANDRO MACIEL DE SOUSA","EDUARDO CESAR CARNEIRO","FABIANO CORREIA DA SILVA","FABIO LUIZ DA SILVA","JEFFERSON DOS SANTOS SOUZA","JOSE ERNESTO DA SILVA","KELMA REGINA SOARES DSA SILVA","WESLEY BARTUCCIOTO RODRIGUES"],
+    "origem": "SANTANA DE PARNAIBA",
+    "destino": "BETIM MG",
+    "nome": "SANTANA DE PARNAIBA  X BETIM MG",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 25,
-    "origem": "Colombo/PR",
-    "destino": "São José dos Pinhais/PR",
-    "nome": "COLETA - MERCO SJP X GAM SJP",
-    "placas": ["FLC4295","GIV2F51","GJS4B24","RJJ7D45","RNA5B39","STR9F35"],
-    "condutores": ["ADEMAR FARIAS GOMES","DIEGO PEREIRA ALEXANDRE","ENIO JORGE JULIO DE MENEZES","MOACIR AUGUSTINI","RONI CARLOS SERENINI","WAGNER ANTONIO DA CONCEICAO"],
-    "tipo": "coleta"
+    "origem": "SJP",
+    "destino": "SANTANA",
+    "nome": "TRANSFERENCIA SAO JOSE DOS PINHAIS X SANTANA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
   },
   {
     "id": 26,
-    "origem": "Brasília/DF",
-    "destino": "Betim/MG",
-    "nome": "Brasilia X Betim",
-    "placas": ["AYE7F44","LRP8F88","MLZ6I99","PVB1H89"],
-    "condutores": ["HENRIQUE DANGELES PEREIRA SANTOS","JHONATAN RIBEIRO DE OLIVEIRA","JIMMY HENDRIX DOS SANTOS","LEANDRO GOMES DA SILVA"],
+    "origem": "SANTANA DE PARNAIBA",
+    "destino": "TAUBATE MR MARCONDES",
+    "nome": "SATANA DE PARNAIBA X TAUBATE MR MARCONDES",
+    "viagens": 0,
+    "placas": [
+      "EYC2F56"
+    ],
+    "condutores": [
+      "JEFFERSON DOS SANTOS SOUZA"
+    ],
     "tipo": "rota"
   },
   {
     "id": 27,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Barra do Piraí/RJ",
-    "nome": "RJ Barra do Pirai Valenca Vassouras Pirai",
-    "placas": ["QUR3J76","RMD1E73","RTD0G02","STG6G23"],
-    "condutores": ["CARLOS HENRIQUE DE OLIVEIRA REIS","EDSON DA SILVA GUIMARAES","OSVALDO DE ARAUJO","WELINGTON VAZ DA SILVA"],
+    "origem": "MOOCA",
+    "destino": "COMMED",
+    "nome": "TRANFERENCIA MOOCA X COMMED ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 28,
-    "origem": "Tatuí/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - FUTURA TATUI-SP X SANTANA DE PARNAIBA-SP",
-    "placas": ["FGT8083","FTE9J56","QRL7C75"],
-    "condutores": ["ALEX SANDRO MACIEL DE SOUSA","ROBSON LUIS DE GODOY","WESLEY BARTUCCIOTO RODRIGUES"],
-    "tipo": "coleta"
-  },
-  {
-    "id": 29,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Itaguaí/RJ",
-    "nome": "RJ COSTA VERDE FLUMINENSE",
-    "placas": ["KVE7H89","LMF5J85","QPV5C44","TJS4C59"],
-    "condutores": ["DANIEL SILVA DE CARVALHO","MARCIO VAGNER ALVES DE ARAUJO","RODRIGO DE OLIVEIRA BARBOSA"],
+    "origem": "AEROPORTO DE GUARULHOS",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "AEROPORTO DE GUARULHOS X SANTANA DE PARNAIBA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
+    "id": 29,
+    "origem": "AS VIO VLEMENTINO",
+    "destino": "COLETA 4 BIO ITAIM",
+    "nome": "AS VIO CLEMENTINO X COLETA 4 BIO ITAIM",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
     "id": 30,
-    "origem": "Cravinhos/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "TRANSFERÊNCIA CRAVINHOS X SANTANA DE PARNAIBA",
-    "placas": ["FTE9J56","FUL6A21","GDD1E84","GIV2F51","QRL7C75","RJJ7D45","RNQ1J22","STR9F35","SVZ9G23"],
-    "condutores": ["DEYVISON ANTUNES DA SILVA","DIEGO PEREIRA ALEXANDRE","ENIO JORGE JULIO DE MENEZES","FABIANO CORREIA DA SILVA","JOSE ERNESTO DA SILVA","LEONARDO RAFAEL COSTALONGA","LUIS APARECIDO DE SOUZA","ROBSON LUIS DE GODOY","SERGIO ROBERTO ALVES","WESLEY BARTUCCIOTO RODRIGUES"],
-    "tipo": "transferencia"
+    "origem": "COLETA 4 BIO",
+    "destino": "AS VILA CLEMENTINO",
+    "nome": "COLETA 4 BIO ITAIM X AS VILA CLEMENTINO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 31,
-    "origem": "Betim/MG",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "TRANSFERENCIA - BETIM-MG X SANTANA DE PARNAIBA-SP",
-    "placas": ["FXI4A14","NWK5C76","RNX4D11","SWB3J35","TJA6H23"],
-    "condutores": ["ALESSANDRO MANZATO CIRILO","ANDERSON FIDELES GONÇALVES","DAVID LUCAS DE OLIVEIRA COSTA","DIEGO PEREIRA ALEXANDRE","FABIANO NERY DA SILVA","VALDIR LEITE PANTA","marcelo henrique passos nascimento"],
-    "tipo": "transferencia"
+    "origem": "VINHEDO",
+    "destino": "BASE SANTA DE PARNAIBA",
+    "nome": "VINHEDO XJUNDIAI X BASE SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 32,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Serra/ES",
-    "nome": "RJ TRANSFERENCIA RIO X ES",
-    "placas": ["BRY3E66","IYX5I53","STU7G01","SVA1A41","SVK6F53","SWB3J35","SWH3H91","SWJ0H01"],
-    "condutores": ["ADEIRAN LIMA SANTOS","ALESSANDRO BORGES FRAGA","FABIO ALVES DE SOUZA","FABIO SALES DE OLIVEIRA","FERNANDO FELIX CYPRESTE","MAICON DOS SANTOS ALVES","MARCELO OLIVEIRA DOS SANTOS","VITOR DO NASCIMENTO","WALLAS ARAUJO MOTA"],
-    "tipo": "transferencia"
+    "origem": "UNIMED VOLTA REDONDA",
+    "destino": "BASE RONDOLG DUQUE DE CAXIAS",
+    "nome": " RJ - COLETA UNIMED VOLTA REDONDA X BASE RONDOLOG",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 33,
-    "origem": "Betim/MG",
-    "destino": "Santana do Paraíso/MG",
-    "nome": "TRANSFERENCIA BETIM X IPATINGA",
-    "placas": ["EOE4D53","LRP8F88","MLZ6I99","MOP3F16","NWK5C76","QNQ7F38","RNX4D11"],
-    "condutores": ["ALESSANDRO MANZATO CIRILO","FABIANO NERY DA SILVA","FILIPE AUGUSTO LIMA CABRAL","HENRIQUE DANGELES PEREIRA SANTOS","JHONATAN RIBEIRO DE OLIVEIRA","ODIRLEI MOREIRA DOS SANTOS","SAMUEL SANTOS DA SILVA","marcelo henrique passos nascimento"],
-    "tipo": "transferencia"
+    "origem": "Coleta barra",
+    "destino": "Prolog",
+    "nome": "RJ - (AVULSA Coleta Barra x Prolog)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 34,
-    "origem": "Itapevi/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - PROFARMA - ITAPEVI-SP X SANTANA DE PARNAIBA-SP",
-    "placas": ["BRY3E66","EEZ0D04","EYC2F56","FUL6A21","QSX1J75","STR9F35","SVA1A41","SVJ2F72","SVV8E65","SWB3J35"],
-    "condutores": ["DAVID LUCAS DE OLIVEIRA COSTA","DIEGO PEREIRA ALEXANDRE","FABIANO CORREIA DA SILVA","FABIO LUIZ DA SILVA","HEBER AUGUSTO BARBOSA DE SOUZA","JEFFERSON DOS SANTOS SOUZA","LEANDRO BESERRA SOBRAL","SERGIO CARLOS DE OLIVEIRA","WESLEY DOS SANTOS SOUZA"],
+    "origem": "Coleta Barra",
+    "destino": "Rondolog",
+    "nome": "RJ - (AVULSA coleta barra)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "coleta"
   },
   {
     "id": 35,
-    "origem": "Brasília/DF",
-    "destino": "Cravinhos/SP",
-    "nome": "COLETA - SEVENLOG - BRASILIA-DF X CRAVINHOS-SP",
-    "placas": ["GIV2F51","JJU2I61","PBT0H73","PVB1H89","QQZ2I10","QSX1J75","SEM9A77","SWB1D01"],
-    "condutores": ["ALEMBERG GOMES CLEMENTINO","ENIO JORGE JULIO DE MENEZES","GUILHERME FERREIRA RODRIGUES","HEBER AUGUSTO BARBOSA DE SOUZA","IAGO JOSE DOS ANJOS BONIFACIO","JIMMY HENDRIX DOS SANTOS","MAIRON DE SOUZA ARAUJO","THIAGO HERCULANO DE CARVALHO MAGALHAES","VALDO SANTOS DA SILVA","VICTOR TEIXEIRA DE JESUS","VITOR LOPES DE ALMEIDA","WILLIAM ALEX SOUSA DINIZ"],
-    "tipo": "coleta"
-  },
-  {
-    "id": 36,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Três Corações/MG",
-    "nome": "ROTA SANTANA DE PARNAIBA X 3 CORAÇÃO",
-    "placas": ["NWK5C76","PWL9H75","RNX4D11"],
-    "condutores": ["ALESSANDRO MANZATO CIRILO","ANDERSON FIDELES GONÇALVES","FABIANO NERY DA SILVA","KELMA REGINA SOARES DSA SILVA","marcelo henrique passos nascimento"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Secreteraria de Saúde Defesa Civil",
+    "nome": "Rj Duque de Caxias x secret est saude Barreto",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
+    "id": 36,
+    "origem": "VILA CLEMENTINO",
+    "destino": "BASE SANTANA DA PARNAIBA",
+    "nome": "COLETA VILA CLEMENTINA X COTIA X SJP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
     "id": 37,
-    "origem": "Betim/MG",
-    "destino": "Araxá/MG",
-    "nome": "BETIM X POSTO MIGUELINHO",
-    "placas": ["QOC6C46"],
-    "condutores": ["JEOVAN ALVES LIBERAL"],
+    "origem": "VINHEDO",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "VINHEDO X BASE SANTANA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 38,
-    "origem": "Sumaré/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - DUPATRI SUMARE X SANTANA DE PARNAIBA-SP",
-    "placas": ["FLC4295","FUL6A21","GIV2F51","GJS4B24","QSX1J75","RJJ7D45","STR9F35"],
-    "condutores": ["DIEGO PEREIRA ALEXANDRE","FABIANO CORREIA DA SILVA","HEBER AUGUSTO BARBOSA DE SOUZA","JOSE ERNESTO DA SILVA","WESLEY DOS SANTOS SOUZA"],
-    "tipo": "coleta"
+    "origem": "RJ MVX COMERCIO ELETRONICO",
+    "destino": "EMPREENDIMENTO GOLGI CAJAMAR",
+    "nome": "RJ MVX COMERCIO ELETRONICO X EMPREENDIMENTO GOLGI CAJAMAR ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 39,
-    "origem": "Santa Bárbara D'Oeste/SP",
-    "destino": "Santa Bárbara D'Oeste/SP",
-    "nome": "Santa Bárbara D'Oeste/SP -> Santa Bárbara D'Oeste/SP",
-    "placas": ["GCN9B29","GDD1E84","QOV7G25","QRL7C75","QUX2H97","QXB8B89","RFQ9H28","RUZ0J08"],
-    "condutores": ["ALEX CAVALCANTE DA SILVA","ERICO FIDELES DO NASCIMENTO","LUIS APARECIDO DE SOUZA","NIVALDO JOSE DE SOUZA","RICARDO DE SOUZA OLIVEIRA","TIAGO HENRIQUE CARDOSO CRUZ","Telma Cristina Backschat","WESLEY BARTUCCIOTO RODRIGUES"],
+    "origem": "ITAPEVI",
+    "destino": "BASE SANTANA DA PARNAIBA",
+    "nome": "ITAPEVI X BASE SANTANA DA PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 40,
-    "origem": "Rio de Janeiro/RJ",
-    "destino": "Duque de Caxias/RJ",
-    "nome": "RJ AEROPORTO GIG X RONDOLOG - RJ",
-    "placas": ["EZB4E21","FMX5J24","FWV5B09","GDS7F11","KNY1I15","RMD1E73","RNF6A66","RNF6A72","RVY4I02","STU5I80","STU7G01","SUS7F64","SUU5E64","SWB8C01","SWH3H91","SWP6F25","SWP8I34"],
-    "condutores": ["ANTONIO CARLOS DOS SANTOS XAVIER","CLEVERTON DOS SANTOS","DAVID CARDOSO DE SOUZA","EDSON DA SILVA GUIMARAES","EDUARDO DOS SANTOS BAITA","FELIPE DA COSTA COUTINHO","JORGE CAMPOS MOREIRA","JORGE LUIZ SANTOS DA SILVA","JOSE WILLIAM MONTE SOARES","LUCAS DOS SANTOS LIMA","ROBERT VIEIRA DA SILVA","RODRIGO DE OLIVEIRA BARBOSA","TIAGO FERREIRA DA SILVA","WANDO VINICIO DA CONCEICAO BARBOSA","WASHINGTON VIEIRA DA SILVA","WILLER OLIVEIRA DA SILVA"],
+    "origem": "DM BRASIL",
+    "destino": "CD GUARULHOS",
+    "nome": "DM BRASIL X  CD GUARULHOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 41,
-    "origem": "Betim/MG",
-    "destino": "Montes Claros/MG",
-    "nome": "BETIM X MONTES CLAROS",
-    "placas": ["GBT9A37","NWK5C76","ORC8C59"],
-    "condutores": ["ALAM GLEISON LOPES SILVA","BRUNO LEONARDO COSTA CALDEIRA","JERONIMO RICARDO CARDOSO SILVA","MAXCOEL DE ASSIS MARTINS GOMES","NATAN FERREIRA NUNES","RARISSON RYAN OLIVEIRA MAIA","marcelo henrique passos nascimento"],
+    "origem": "RIO DE OURO (SP)",
+    "destino": "CMS ATACADISTA (PRAIA GRANDE)",
+    "nome": " RIO DE OURO (SP) X CMS ATACADISTA (PRAIA GRANDE)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 42,
-    "origem": "Betim/MG",
-    "destino": "Contagem/MG",
-    "nome": "BASE BETIM-SP X SECRETARIA DE SAUDE DE MINAS GERAIS",
-    "placas": ["EOE4D53","HLX7G38","OPJ6E73","RNF6A66"],
-    "condutores": ["DENISE TORRES DE AMORIM","ODIRLEI MOREIRA DOS SANTOS","PHILIPPE GERMANO MAGALHAES DE SOUZA","SHIRLEY JULIANE ALVES"],
+    "origem": "RJ FARTEX",
+    "destino": "BILL GUARULHOS",
+    "nome": "RJ FARTEX X BILL GUARULHOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 43,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "São Paulo/SP",
-    "nome": "SANTANA DE PARNAIBA X REDE DOR",
-    "placas": ["EEZ0D04","NXY4J34","RUZ0J08","SVV8E65","SVZ9G23","SWB3J35"],
-    "condutores": ["FABIO LUIZ DA SILVA","JULIANO PEREIRA DIAS","LEANDRO BESERRA SOBRAL","SERGIO ROBERTO ALVES","TIAGO HENRIQUE CARDOSO CRUZ","WESLEY DOS SANTOS SOUZA"],
-    "tipo": "rota"
+    "origem": "TRANSBORDO",
+    "destino": "BASE RONDOLG DUQUE DE CAXIAS",
+    "nome": "RJ - COLETA OFICINA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 44,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Guarulhos/SP",
-    "nome": "Transferencia Rio de Janeiro Duque de Caxias x Guarulhos",
-    "placas": ["CUC6694","DAJ0964","DPE2807","EFO9D55","EGK9A61","EMU7J51","HLY4H73","JPW4G72","KRP5602","LLJ4J74","LNI7B87","LVA7E54","MTK2A07","NGW6J50","PLB9I39","QKI6A37","RYK6E18","SVV8E65","TKX6F25"],
-    "condutores": ["ANDREI RYAN GARCIA","DIEGO VIEIRA DA SILVA","FABIO LUIZ DA SILVA","GERALDO PEREIRA LAMIN JUNIOR","HELIO ANTONIO BARBOSA","JOAO CRISTIANO DOS SANTOS OLIVEIRA","JOSE DANIEL RIBEIRO DE ALMEIDA","LUIZ CARLOS SENHORINE","MARCOS PAULO SANTOS DA SILVA","PAULO ANTONIO SOARES DA GLORIA","PAULO RODRIGO FERNANDES SIQUEIRA","RAFAEL DE SOUZA LIMA","RAFAEL DE SOUZA RAMOS","REGINALDO LOPES","REINALDO COSTA DE ASSIS","RENAN SOARES DE ASSUMPCAO","ROBERTO VIANA DA SILVA","TIAGO JESUS DOS SANTOS","VINICIUS JOSE DO NACIMENTO DA SILVA","WALACE SIMIAO PEREIRA"],
-    "tipo": "transferencia"
+    "origem": "RJ FARTEX",
+    "destino": "CD GUARULHOS",
+    "nome": "RJ FARTEX X CD GUARULHOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 45,
-    "origem": "Cravinhos/SP",
-    "destino": "Mirassol/SP",
-    "nome": "CRAVINHOS X MIRASSOL",
-    "placas": ["FHF6J69","GDD1E84"],
-    "condutores": ["FERNANDO CESAR WENZEL"],
+    "origem": "CASA E NOVIDADE",
+    "destino": "CD GUARULHOS",
+    "nome": "CASA E NOVIDADE - AV BRASIL X CD GUARULHOS ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 46,
-    "origem": "Betim/MG",
-    "destino": "Uberlândia/MG",
-    "nome": "BETIM X UBERLANDIA",
-    "placas": ["AYE7F44","MLZ6I99","PVB1H89","QOC6C46"],
-    "condutores": ["JEOVAN ALVES LIBERAL","JHONATAN RIBEIRO DE OLIVEIRA","JIMMY HENDRIX DOS SANTOS"],
+    "origem": "BR-381",
+    "destino": "BASE 3 CORAÇOES",
+    "nome": "BR-381 X BASE DE 3 CORAÇOES ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 47,
-    "origem": "Betim/MG",
-    "destino": "Serra/ES",
-    "nome": "MG BETIM X SERRA",
-    "placas": ["BRY3E66","QTN8E45","SVK6F53","SWH3H91","SWJ0H01"],
-    "condutores": ["FABIO ALVES DE SOUZA","FABIO SALES DE OLIVEIRA","FERNANDO FELIX CYPRESTE","IZAIAS JOSE MILKA","LUIZ FELIPE ALVES RIOS","RENAN DE JESUS CRUZ","VITOR DO NASCIMENTO","WILSON BRUNO ALVES SOUZA"],
+    "origem": "FARTEX",
+    "destino": "CENTERLAR",
+    "nome": "RJ FARTEX X CENTERLAR JUNDIAI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 48,
-    "origem": "Brasília/DF",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "TRANSFERENCIA - ELFA - BRASILIA-DF X  CRAVINHOS X SANTANA",
-    "placas": ["AYE7F44","JJU2I61","QSX1J75","SEM9A77","SWF2C34","TJA6H23"],
-    "condutores": ["ENIO JORGE JULIO DE MENEZES","GUILHERME FERREIRA RODRIGUES","HEBER AUGUSTO BARBOSA DE SOUZA","PAULO RICARDO DE OLIVEIRA SILVA","VALDO SANTOS DA SILVA","VITOR LOPES DE ALMEIDA"],
-    "tipo": "transferencia"
+    "origem": "RJ FARTEX",
+    "destino": "HOFFLOG TRANSPORTES E LOGISTA",
+    "nome": "RJ FARTEX X HOFFLOG TRANSPORTES E LOGISTA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 49,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Campos dos Goytacazes/RJ",
-    "nome": "RJ Duque de Caxias X Campos dos Goytacazes",
-    "placas": ["GDS7F11","RNF6A66","STU7G01","SUU5E64","SVK6F53","SWH3H91","SWJ0H01","SWP6F25"],
-    "condutores": ["EDUARDO DOS SANTOS BAITA","FABIO ALVES DE SOUZA","FABIO SALES DE OLIVEIRA","FELIPE DA COSTA COUTINHO","FERNANDO FELIX CYPRESTE","JOSE WILLIAM MONTE SOARES","MAICON DOS SANTOS ALVES","MARCELO OLIVEIRA DOS SANTOS","RODRIGO DE OLIVEIRA BARBOSA"],
+    "origem": "PANAMBY MORUMBI",
+    "destino": "BASE SANTANA",
+    "nome": "PANAMBY MORUMBI X BASE SANTANA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 50,
-    "origem": "São Paulo/SP",
-    "destino": "São Paulo/SP",
-    "nome": "SANTANA DE PARNAIBA X GUARULHOS",
-    "placas": ["NXY4J34","RUZ0J08"],
-    "condutores": ["JULIANO PEREIRA DIAS","TIAGO HENRIQUE CARDOSO CRUZ"],
+    "origem": "UNIÃO QUIMICA ITATIAIA",
+    "destino": "BASE SANTANA DO PARNAIBA",
+    "nome": "RJ- ITATIAIA X SANTANA DO PARNAIBA",
+    "viagens": 0,
+    "placas": [
+      "SVA1A41",
+      "TJA6H23"
+    ],
+    "condutores": [
+      "DAVID LUCAS DE OLIVEIRA COSTA",
+      "WALLAS ARAUJO MOTA"
+    ],
     "tipo": "rota"
   },
   {
     "id": 51,
-    "origem": "Cravinhos/SP",
-    "destino": "Uberlândia/MG",
-    "nome": "TRANSFERENCIA - CRAVINHOS-SP x UBERLANDIA-MG",
-    "placas": ["GDD1E84","QSX1J75","SEM9A77"],
-    "condutores": ["ENIO JORGE JULIO DE MENEZES","HEBER AUGUSTO BARBOSA DE SOUZA","LUIS APARECIDO DE SOUZA"],
-    "tipo": "transferencia"
+    "origem": "AEROPORTO DE GUARULHOS",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - 4BIO LATAM - GUARULHOS X SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 52,
-    "origem": "Taboão da Serra/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - U.QUIMICA - TABOAO DA SERRA-SP X SANTANA DA PARNAIBA-SP",
-    "placas": ["BRY3E66","GIV2F51","QRL7C75","RJJ7D45","STR9F35"],
-    "condutores": ["HEBER AUGUSTO BARBOSA DE SOUZA","JOSE ERNESTO DA SILVA","VITOR DO NASCIMENTO","WESLEY BARTUCCIOTO RODRIGUES","WESLEY DOS SANTOS SOUZA"],
+    "origem": "4BIO LATAM - CONGONHAS-SP",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - 4BIO LATAM - CONGONHAS-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "coleta"
   },
   {
     "id": 53,
-    "origem": "Campinas/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - VIA ESTETICA CAMPINAS X SANTANA DA PARNAIBA-SP",
-    "placas": ["PWL9H75","QOV7G25","QUN6J82","QUX2H97","QXB8B89"],
-    "condutores": ["ADMILSON SEVERINO SOARES","ERICO FIDELES DO NASCIMENTO","KELMA REGINA SOARES DA SILVA","KELMA REGINA SOARES DSA SILVA","NIVALDO JOSE DE SOUZA","RICARDO DE SOUZA OLIVEIRA"],
-    "tipo": "coleta"
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "A Nossa drograria - São João de meriti",
+    "nome": "RJ - A nossa drograria SJM",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 54,
-    "origem": "Cravinhos/SP",
-    "destino": "Agudos/SP",
-    "nome": "TRANSFERENCIA - CRAVINHOS-SP X AGUDOS-SP",
-    "placas": ["FHF6J69","RNQ1J22"],
-    "condutores": ["FERNANDO CESAR WENZEL","LEONARDO RAFAEL COSTALONGA","RICARDO FRANCISCO DA SILVA"],
-    "tipo": "transferencia"
+    "origem": "RJ RIO DE OURO",
+    "destino": "PIEDADE",
+    "nome": "RIO DE OURO X PIEDADE",
+    "viagens": 0,
+    "placas": [
+      "DPE2807"
+    ],
+    "condutores": [
+      "RAFAEL DE SOUZA LIMA"
+    ],
+    "tipo": "rota"
   },
   {
     "id": 55,
-    "origem": "Belo Horizonte/MG",
-    "destino": "Belo Horizonte/MG",
-    "nome": "MG Betim X Nova Lima",
-    "placas": ["ENT6523","FRA5I46","HJZ4289","HNF6201","MTD3D81","QWY0G19"],
-    "condutores": ["ARLINDO TEIXEIRA POLICARPO","ELIELSON DE PAULA OLIVEIRA JUNIOR","JOSE LUIZ BERG","MARCELO COSTA MEIRA","NERIVALDO JOSE APARECIDO DE OLIVEIRA","ROSANGELA APARECIDA DA SILVEIRA E SOUZA"],
+    "origem": "TRANSBORDO",
+    "destino": "RECREIO",
+    "nome": "RJ - RECREIO X ENTREGAS ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 56,
-    "origem": "Pouso Alegre/MG",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - U.QUIMICA - POUSO ALEGRE-MG X SANTANA DA PARNAIBA-SP",
-    "placas": ["BRY3E66","FUL6A21","GIV2F51","QRL7C75","QSX1J75","SEM9A77","SVA1A41","SWB3J35"],
-    "condutores": ["DIEGO PEREIRA ALEXANDRE","FABIANO CORREIA DA SILVA","HEBER AUGUSTO BARBOSA DE SOUZA","IVANDRO RIBEIRO DE SOUZA","PAULO RICARDO DE OLIVEIRA SILVA","VITOR DO NASCIMENTO","WALLAS ARAUJO MOTA","WESLEY BARTUCCIOTO RODRIGUES"],
-    "tipo": "coleta"
-  },
-  {
-    "id": 57,
-    "origem": "Vitória/ES",
-    "destino": "Serra/ES",
-    "nome": "GOLLOG - SERRA-ES X GAM - SERRA-ES",
-    "placas": ["FPI3H41","QTN8E45","SVK6F53","SWJ0H01"],
-    "condutores": ["ADEIRAN LIMA SANTOS","LUIZ FELIPE ALVES RIOS","RENAN DE JESUS CRUZ"],
+    "origem": "SKY COMERCIO ATACADISTA",
+    "destino": "INTERLAGOS-SP",
+    "nome": "RJ COMERCIO ATACADISTA  X INTERLAGOS-SP",
+    "viagens": 0,
+    "placas": [
+      "DPE2807",
+      "JPW4G72",
+      "LPR3J43"
+    ],
+    "condutores": [
+      "GERALDO PEREIRA LAMIN JUNIOR",
+      "LUIS PHELLYPE RIBEIRO DE FREITAS",
+      "RAFAEL DE SOUZA LIMA"
+    ],
     "tipo": "rota"
   },
   {
+    "id": 57,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "MASTER FORMULA FARMACIA DE MANIPULAÇÃO",
+    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA X SÃO JOSE DOS CAMPOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
     "id": 58,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "São José dos Pinhais/PR",
-    "nome": "SANTANA DE PARNAIBA X GAM",
-    "placas": ["GIV2F51","GJS4B24"],
-    "condutores": ["DIEGO PEREIRA ALEXANDRE","ENIO JORGE JULIO DE MENEZES","MOACIR AUGUSTINI","VITOR DO NASCIMENTO","WAGNER ANTONIO DA CONCEICAO"],
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "BASE PARACATU",
+    "nome": "BETIM X BASE PARACATU",
+    "viagens": 0,
+    "placas": [
+      "SVM0I91",
+      "SWB1D01",
+      "SWF2C34"
+    ],
+    "condutores": [
+      "BRAYNO AFONSECA DA SILVA",
+      "GUILHERME FERREIRA RODRIGUES",
+      "ROGERIO VIEIRA DE OLIVEIRA",
+      "VICTOR TEIXEIRA DE JESUS",
+      "WILLIAM ALEX SOUSA DINIZ"
+    ],
     "tipo": "rota"
   },
   {
     "id": 59,
-    "origem": "Betim/MG",
-    "destino": "Paracatu/MG",
-    "nome": "BETIM X BASE PARACATU",
-    "placas": ["SVM0I91","SWB1D01","SWF2C34"],
-    "condutores": ["BRAYNO AFONSECA DA SILVA","GUILHERME FERREIRA RODRIGUES","ROGERIO VIEIRA DE OLIVEIRA","VICTOR TEIXEIRA DE JESUS","WILLIAM ALEX SOUSA DINIZ"],
+    "origem": "AEROPORTO SANTOS DRUMONT",
+    "destino": "HOSPITAL FLUMINENSE",
+    "nome": "SDU X HOSPITAL FLUMINENSE ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 60,
-    "origem": "Betim/MG",
-    "destino": "Duque de Caxias/RJ",
-    "nome": "TRANSFERENCIA BETIM X DUQUE DE CAXIAS",
-    "placas": ["STU5I80","SWP6F25","TJS4C59"],
-    "condutores": ["AILTON DA SILVA FERREIRA","FELIPE DA COSTA COUTINHO","JORGE LUIZ SANTOS DA SILVA","JOSE WILLIAM MONTE SOARES","MAICON DOS SANTOS ALVES","MARLLON BRANDON AZEVEDO DOS SANTOS"],
-    "tipo": "transferencia"
+    "origem": "RJ DUQUE DE CAXIAS",
+    "destino": "GUARULHOS RONDOCARGAS",
+    "nome": " RJ DUQUE DE CAXIAS x RONDOCARGAS ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 61,
-    "origem": "Betim/MG",
-    "destino": "Governador Valadares/MG",
-    "nome": "BETIM X GOVERNADOR VALADARES",
-    "placas": ["EOE4D53","MOP3F16","RNX4D11"],
-    "condutores": ["ALESSANDRO MANZATO CIRILO","FILIPE AUGUSTO LIMA CABRAL","ODIRLEI MOREIRA DOS SANTOS"],
+    "origem": "PARQUE PAULISTANO",
+    "destino": "PARQUE NOVO MUNDO",
+    "nome": "PARQUE PAULISTANO X PARQUE NOVO MUNDO ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 62,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "São Paulo/SP",
-    "nome": "TRANSFERENCIA DUQUE DE CAXIAS X MOOCA",
-    "placas": ["DPE2807","EGK9A61","IUZ0I81","LPL7D55","LPR3J43","LRV4264","LVA7E54","PLB9I39"],
-    "condutores": ["ANDERSON SOUZA PEREIRA DA SILVA","IZAEL JOSE DA SILVA","LEO BARBOZA DEBRUIM","LUIS PHELLYPE RIBEIRO DE FREITAS","MOISES MARQUES DE SOUZA JUNIOR","RAFAEL DE SOUZA LIMA","RENAN SOARES DE ASSUMPCAO","TIAGO JESUS DOS SANTOS","WALACE SIMIAO PEREIRA"],
-    "tipo": "transferencia"
+    "origem": "versania",
+    "destino": "versania",
+    "nome": "versania",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 63,
-    "origem": "São José/SC",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X SANTANA-SP",
-    "placas": ["ETC7D01","RXN0F34","RXW3D50","RYC3A38","RYO1D87"],
-    "condutores": ["ANDRE EDUARDO BUCKER DE FARIAS","CRISTIANO WALACE CASSAO","GUILHERME ALAN TEODORO","NELSON SPRUNG JUNIOR","RODRIGO DE SOUSA SCHWABE"],
-    "tipo": "transferencia"
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "PREFEITURA MUNICIPAL DO RJ - TAQUARA",
+    "nome": "RJ PREFEITURA - ESTRADA DOS BANDEIRANTES",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 64,
-    "origem": "Rio de Janeiro/RJ",
-    "destino": "Guarulhos/SP",
-    "nome": "CASA E NOVIDADE - AV BRASIL X CD GUARULHOS",
-    "placas": ["BTB3B18","CVN5754","DPE2807","EVU0A46","LLJ4J74","LVA7E54","MTA3G69"],
-    "condutores": ["ANDERSON AQUINO DE LIMA","ANELTON BARROS RIBEIRO","HEVERTON PEREIRA DE SOUZA BARBOSA","PAULO RODRIGO FERNANDES SIQUEIRA","RAFAEL DE SOUZA LIMA","RENAN SOARES DE ASSUMPCAO","RENATO SABINO SILVA"],
+    "origem": "GOLLOG CONGONHAS",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "GOLLOG CONGONHAS x SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 65,
-    "origem": "Betim/MG",
-    "destino": "Brasília/DF",
-    "nome": "TRASNFERENCIA - GAM - BETIM-MG X BRASILIA-DF",
-    "placas": ["SVM0I91","SWB1D01"],
-    "condutores": ["GUILHERME FERREIRA RODRIGUES","ROGERIO VIEIRA DE OLIVEIRA","VICTOR TEIXEIRA DE JESUS","WILLIAM ALEX SOUSA DINIZ"],
-    "tipo": "transferencia"
+    "origem": "AEROPORTO CGO",
+    "destino": "AS",
+    "nome": "AEROPORTO CONGONHAS X COMMED X AS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 66,
-    "origem": "Cotia/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "TRANSFERENCIA - COTIA-SP X SANTANA",
-    "placas": ["RUZ0J08"],
-    "condutores": ["TIAGO HENRIQUE CARDOSO CRUZ"],
+    "origem": "CRAVINHOS-SP",
+    "destino": "SANTA BARBARA DO OESTE - SP",
+    "nome": "TRANSFERENCIA - CRAVINHOS-SP X  SANTA BARBARA DO OESTE -SP ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "transferencia"
   },
   {
     "id": 67,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Macaé/RJ",
-    "nome": "RJ X Macaé",
-    "placas": ["RNF6A72","SUU5E64","SWH3H91","SWP6F25"],
-    "condutores": ["EDUARDO DOS SANTOS BAITA","FELIPE DA COSTA COUTINHO"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "RJ Fundação do Estado do RJ",
+    "nome": "RJ Fundação do Estado do RJ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 68,
-    "origem": "Rio de Janeiro/RJ",
-    "destino": "Macaé/RJ",
-    "nome": "RJ SDU x Macaé",
-    "placas": ["IYX5I53","STU7G01","SWH3H91"],
-    "condutores": ["FELIPE DA COSTA COUTINHO","MAICON DOS SANTOS ALVES"],
+    "origem": "AREOPORTO X SERRA",
+    "destino": "AEROPORTO X SERRA",
+    "nome": "AREOPORTO X SERRA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 69,
-    "origem": "Jaguariúna/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "COLETA - RIO CLARENSE JAGUARIUNA-SP X SANTANA DE PARNAIBA-SP",
-    "placas": ["SVV8E65"],
-    "condutores": ["FABIO LUIZ DA SILVA"],
-    "tipo": "coleta"
+    "origem": "ONCOCLINICAS",
+    "destino": "ONCOCLINICAS",
+    "nome": "ONCLINICAS RAJA GABAGLIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 70,
-    "origem": "Serra Nova Dourada/DF",
-    "destino": "Betim/MG",
-    "nome": "COLETA - GAM - BRASILIA-DF X BETIM-MG",
-    "placas": ["FUL6A21","MLZ6I99","OUQ9B13","PVB1H89"],
-    "condutores": ["DIEGO PEREIRA ALEXANDRE","EDUARDO CESAR CARNEIRO","JHONATAN RIBEIRO DE OLIVEIRA","JIMMY HENDRIX DOS SANTOS","VALDO SANTOS DA SILVA"],
-    "tipo": "coleta"
+    "origem": "MIIZMED JUNDIA x MILWAUKE X SANTANA",
+    "destino": "SANTA DO PARNAIBA",
+    "nome": "MIIZMED JUNDIA x MILWAUKEE X SANTANA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 71,
-    "origem": "São Paulo/SP",
-    "destino": "Cotia/SP",
-    "nome": "COLETA - COMMED VILA MARIANA-SP X COTIA-SP",
-    "placas": ["RUZ0J08"],
-    "condutores": ["TIAGO HENRIQUE CARDOSO CRUZ"],
-    "tipo": "coleta"
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "NOSSA DROGARIA",
+    "nome": "RJ - NOSSA DROGARIA",
+    "viagens": 0,
+    "placas": [
+      "LLK9F92",
+      "SWP6F25"
+    ],
+    "condutores": [
+      "RODRIGO DE OLIVEIRA BARBOSA",
+      "VALMIR FRANCISCO DE ANDRADE"
+    ],
+    "tipo": "rota"
   },
   {
     "id": 72,
-    "origem": "São José/SC",
-    "destino": "São José dos Pinhais/PR",
-    "nome": "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X GAM SJP",
-    "placas": ["RJJ7D45","RXN0F34"],
-    "condutores": ["HEBER AUGUSTO BARBOSA DE SOUZA","RODRIGO DE SOUSA SCHWABE"],
-    "tipo": "transferencia"
+    "origem": "PROFARMA ITAPEVI",
+    "destino": "4 BIO BARUERI",
+    "nome": "PROFARMA ITAPEVI X 4BIO BARUERI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 73,
-    "origem": "Palhoça/SC",
-    "destino": "Santana de Parnaíba/SP",
+    "origem": "DENTAL SPEED",
+    "destino": "SANTA DO PARNAIBA",
     "nome": "TRANSFERENCIA DENTAL SPEED X SANTANA DE PARNAIBA",
-    "placas": ["QRL7C75","RRQ4I61","RXN0F34","SXV3B07","TPU6G97"],
-    "condutores": ["ALLAN PETERSON BAGGIO","RAFAEL MELLIES","RODRIGO DE SOUSA SCHWABE","WESLEY BARTUCCIOTO RODRIGUES","WILLIAN LEANDRO"],
+    "viagens": 0,
+    "placas": [
+      "QRL7C75",
+      "RRQ4I61",
+      "RXN0F34",
+      "SXV3B07",
+      "TPU6G97"
+    ],
+    "condutores": [
+      "ALLAN PETERSON BAGGIO",
+      "RAFAEL MELLIES",
+      "RODRIGO DE SOUSA SCHWABE",
+      "WESLEY BARTUCCIOTO RODRIGUES",
+      "WILLIAN LEANDRO"
+    ],
     "tipo": "transferencia"
   },
   {
     "id": 74,
-    "origem": "Cravinhos/SP",
-    "destino": "Santa Bárbara dOeste/SP",
-    "nome": "TRANSFERENCIA - CRAVINHOS-SP X  SANTA BARBARA DO OESTE -SP",
-    "placas": ["GDD1E84","QRL7C75"],
-    "condutores": ["LUIS APARECIDO DE SOUZA","WESLEY BARTUCCIOTO RODRIGUES"],
-    "tipo": "transferencia"
+    "origem": "CRAVINHOS-SP",
+    "destino": "FILIAL MIRASSOL",
+    "nome": "CRAVINHOS X MIRASSOL ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 75,
-    "origem": "Contagem/MG",
-    "destino": "Contagem/MG",
-    "nome": "Biohosp Produtos Hospitalares x Secretaria Estado Saude de Minas",
-    "placas": ["HLX7G38"],
-    "condutores": ["DENISE TORRES DE AMORIM"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Secreteraria de Saúde",
+    "nome": "RJ - Secretaria de Saúde Niterói",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 76,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "São José dos Campos/SP",
-    "nome": "SANTANA X FARMA CONDE",
-    "placas": ["GIV2F51","GJS4B24","RJJ7D45","SVZ9G23"],
-    "condutores": ["JOSE ERNESTO DA SILVA","SERGIO ROBERTO ALVES"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Magé",
+    "nome": "RJ - Magé",
+    "viagens": 0,
+    "placas": [
+      "LLK9F92"
+    ],
+    "condutores": [
+      "VALMIR FRANCISCO DE ANDRADE"
+    ],
     "tipo": "rota"
   },
   {
     "id": 77,
-    "origem": "Vinhedo/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "MIIZMED JUNDIA x MILWAUKEE X SANTANA",
-    "placas": ["GCN9B29","PWL9H75","QUX2H97"],
-    "condutores": ["ALEX CAVALCANTE DA SILVA","ERICO FIDELES DO NASCIMENTO","KELMA REGINA SOARES DA SILVA"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "INCA",
+    "nome": "RJ - INCA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 78,
-    "origem": "Itapevi/SP",
-    "destino": "Itapevi/SP",
-    "nome": "Itapevi/SP -> Itapevi/SP",
-    "placas": ["EEZ0D04","SWB3J35"],
-    "condutores": ["FABIO LUIZ DA SILVA","LEANDRO BESERRA SOBRAL"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "COMANDO DA MARINHA RJ",
+    "nome": "RJ - COMANDO DA MARINHA RJ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 79,
-    "origem": "Itatiaia/RJ",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "RJ- ITATIAIA X SANTANA DO PARNAIBA",
-    "placas": ["SVA1A41","TJA6H23"],
-    "condutores": ["DAVID LUCAS DE OLIVEIRA COSTA","WALLAS ARAUJO MOTA"],
-    "tipo": "rota"
+    "origem": "AS - VILA CLEMENTINO",
+    "destino": "SINGULAR MOOCA",
+    "nome": "COLETA - AS x SINGULAR (MOOCA)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 80,
-    "origem": "Jundiaí/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "TRANSFERÊNCIA JUNDIAI X SANTANA",
-    "placas": ["PWL9H75","QUX2H97","QXB8B89"],
-    "condutores": ["ADMILSON SEVERINO SOARES","ERICO FIDELES DO NASCIMENTO","NIVALDO JOSE DE SOUZA"],
-    "tipo": "transferencia"
-  },
-  {
-    "id": 81,
-    "origem": "Rio de Janeiro/RJ",
-    "destino": "São Paulo/SP",
-    "nome": "RJ COMERCIO ATACADISTA  X INTERLAGOS-SP",
-    "placas": ["DPE2807","JPW4G72","LPR3J43"],
-    "condutores": ["GERALDO PEREIRA LAMIN JUNIOR","LUIS PHELLYPE RIBEIRO DE FREITAS","RAFAEL DE SOUZA LIMA"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "DROGARAIA RAIA",
+    "nome": "RJ DROGARIA RAIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
+    "id": 81,
+    "origem": "AS -COTIA",
+    "destino": "G&G Cotia",
+    "nome": "COLETA -AS G&G COTIA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
     "id": 82,
-    "origem": "Vinhedo/SP",
-    "destino": "Jundiaí/SP",
-    "nome": "VINHEDO X BASE SANTANA",
-    "placas": ["GCN9B29"],
-    "condutores": ["ALEX CAVALCANTE DA SILVA"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "LOJAS AREIA BRANCA",
+    "nome": "Duque de Caxias RJ X  Parque Paulistano - SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 83,
-    "origem": "Serra/ES",
-    "destino": "Betim/MG",
-    "nome": "ES Serra x Betim",
-    "placas": ["SUJ5G29","SVK6F53"],
-    "condutores": ["FABIO ALVES DE SOUZA"],
-    "tipo": "rota"
+    "origem": "COMERCIAL FARTEX IMPORTACAO",
+    "destino": "PARQUE NOVO MUNDO-SP",
+    "nome": "TRANSFERENCIA - DUQUE DE CAXIAS-RJ X PARQUE NOVO MUNDO-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
   },
   {
     "id": 84,
-    "origem": "Queimados/RJ",
-    "destino": "Franco da Rocha/SP",
-    "nome": "RJ MVX COMERCIO ELETRONICO X EMPREENDIMENTO GOLGI CAJAMAR",
-    "placas": ["CUC6694","DTC6987"],
-    "condutores": ["REGINALDO LOPES","RENAN FRANKLIN DA SILVA BEZERRA"],
+    "origem": "ONCOMED",
+    "destino": "ONCOMED",
+    "nome": "ONCOMED",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 85,
-    "origem": "Rio de Janeiro/RJ",
-    "destino": "Osasco/SP",
-    "nome": "RJ FARTEX X HOFFLOG TRANSPORTES E LOGISTA",
-    "placas": ["JOO4E99","LPR9591"],
-    "condutores": ["JEFFERSON RIBEIRO DE FARIAS","VINICIUS ALMEIDA BISPO"],
-    "tipo": "rota"
-  },
-  {
-    "id": 86,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Brasília/DF",
-    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA - SP X BRASILIA - DF",
-    "placas": ["QSX1J75","SEM9A77"],
-    "condutores": ["ENIO JORGE JULIO DE MENEZES","HEBER AUGUSTO BARBOSA DE SOUZA"],
+    "origem": "DENTAL SPEED - SAO JOSE-SC",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X SANTANA-SP",
+    "viagens": 0,
+    "placas": [
+      "ETC7D01",
+      "RXN0F34",
+      "RXW3D50",
+      "RYC3A38",
+      "RYO1D87"
+    ],
+    "condutores": [
+      "ANDRE EDUARDO BUCKER DE FARIAS",
+      "CRISTIANO WALACE CASSAO",
+      "GUILHERME ALAN TEODORO",
+      "NELSON SPRUNG JUNIOR",
+      "RODRIGO DE SOUSA SCHWABE"
+    ],
     "tipo": "transferencia"
   },
   {
-    "id": 87,
-    "origem": "Serra/ES",
-    "destino": "Vitória/ES",
-    "nome": "ES - (AVULSA)",
-    "placas": ["QRH0G69"],
-    "condutores": ["EDSON BARBOSA DE QUEIROZ"],
+    "id": 86,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "MEDKA PAVUNA",
+    "nome": "RJ - MEDKA PAVUNA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
+    "id": 87,
+    "origem": "DENTAL SPEED - SAO JOSE-SC",
+    "destino": "BASE RONDOCARGAS - GRU",
+    "nome": "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X GUARULHOS - SP",
+    "viagens": 0,
+    "placas": [
+      "ETC7D01"
+    ],
+    "condutores": [
+      "NELSON SPRUNG JUNIOR"
+    ],
+    "tipo": "transferencia"
+  },
+  {
     "id": 88,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Uberlândia/MG",
-    "nome": "SANTANA X UBERLANDIA (ATUALIZADO)",
-    "placas": ["FYW6C71","QSX1J75"],
-    "condutores": ["ENIO JORGE JULIO DE MENEZES","FABIANO CORREIA DA SILVA"],
+    "origem": "HAPVIDA",
+    "destino": "HAPVIDA",
+    "nome": "hapvida ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 89,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "São João de Meriti/RJ",
-    "nome": "RJ - NOSSA DROGARIA",
-    "placas": ["LLK9F92","SWP6F25"],
-    "condutores": ["RODRIGO DE OLIVEIRA BARBOSA","VALMIR FRANCISCO DE ANDRADE"],
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Hospinova",
+    "nome": "RJ Duque de Caxias x Fundação Saúde do Estado do RJ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 90,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Sumaré/SP",
-    "nome": "TRANSFERENCIA DUQUE DE CAXIAS X SUMARÉ",
-    "placas": ["MHZ8F23"],
-    "condutores": ["FABIANO DEDA"],
+    "origem": "DENTAL SPEED - SAO JOSE-SC",
+    "destino": "GAM SAO JOSE DOS PINHAIS-PR",
+    "nome": "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X GAM SJP",
+    "viagens": 0,
+    "placas": [
+      "RJJ7D45",
+      "RXN0F34"
+    ],
+    "condutores": [
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "RODRIGO DE SOUSA SCHWABE"
+    ],
     "tipo": "transferencia"
   },
   {
     "id": 91,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Praia Grande/SP",
-    "nome": "RIO DE OURO (SP) X CMS ATACADISTA (PRAIA GRANDE)",
-    "placas": ["FDC6H93"],
-    "condutores": ["MIGUELL HENRIQUE TONASSI"],
+    "origem": "Barra da Tijuca",
+    "destino": "Rondolog Duque de Caxias",
+    "nome": "RJ Barra da Tijuca X Duque de Caxias ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 92,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Piedade/SP",
-    "nome": "RIO DE OURO X PIEDADE",
-    "placas": ["DPE2807"],
-    "condutores": ["RAFAEL DE SOUZA LIMA"],
+    "origem": "D.P CIVIL ARUJA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "POLICIA CIVIL - ARUJA-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66"
+    ],
+    "condutores": [
+      "WALLAS ARAUJO MOTA"
+    ],
     "tipo": "rota"
   },
   {
     "id": 93,
-    "origem": "Duque de Caxias/RJ",
-    "destino": "Magé/RJ",
-    "nome": "RJ - Magé",
-    "placas": ["LLK9F92"],
-    "condutores": ["VALMIR FRANCISCO DE ANDRADE"],
+    "origem": "HAPVIDA",
+    "destino": "HAPVIDA",
+    "nome": "HAP VIDA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 94,
-    "origem": "Betim/MG",
-    "destino": "Belo Horizonte/MG",
-    "nome": "MG Betim X Barro Preto",
-    "placas": ["FRA5I46"],
-    "condutores": ["JOSE LUIZ BERG"],
-    "tipo": "rota"
+    "origem": "BASE DUQUE DE CAXIAS",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "TRANSFERENCIA - RIO DE JANEIRO-RJ X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
   },
   {
     "id": 95,
-    "origem": "Arujá/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "POLICIA CIVIL - ARUJA-SP X SANTANA DE PARNAIBA-SP",
-    "placas": ["BRY3E66"],
-    "condutores": ["WALLAS ARAUJO MOTA"],
+    "origem": "AEROPORTO DE CONGONHAS",
+    "destino": "AEROPORTO DE CONGONHAS",
+    "nome": "AEROPORTO DE CONGONHAS (AVULSO)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 96,
-    "origem": "Betim/MG",
-    "destino": "Patos de Minas/MG",
-    "nome": "Betim/MG -> Patos de Minas/MG",
-    "placas": ["SVM0I91"],
-    "condutores": ["THIAGO HERCULANO DE CARVALHO MAGALHAES"],
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "UNIAO QUIMICA",
+    "nome": "SANTANA X UNIAO QUIMICA",
+    "viagens": 0,
+    "placas": [
+      "SVZ9G23"
+    ],
+    "condutores": [
+      "SERGIO ROBERTO ALVES"
+    ],
     "tipo": "rota"
   },
   {
     "id": 97,
-    "origem": "Jundiaí/SP",
-    "destino": "Betim/MG",
-    "nome": "TRANSFERÊNCIA JUNDIAI X BETIM",
-    "placas": ["QSX1J75"],
-    "condutores": ["MOACIR AUGUSTINI"],
-    "tipo": "transferencia"
+    "origem": "BASE SANTA BARBARA",
+    "destino": "BASE SANTA BARBARA 2",
+    "nome": "SANTA BARBARA D'OESTE X AVULSA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 98,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Redenção da Serra/SP",
-    "nome": "SATANA DE PARNAIBA X TAUBATE MR MARCONDES",
-    "placas": ["EYC2F56"],
-    "condutores": ["JEFFERSON DOS SANTOS SOUZA"],
+    "origem": "Aeroporto Santos Dumont",
+    "destino": "Gliged Macaé",
+    "nome": "RJ SDU x Macaé",
+    "viagens": 0,
+    "placas": [
+      "IYX5I53",
+      "STU7G01",
+      "SWH3H91"
+    ],
+    "condutores": [
+      "FELIPE DA COSTA COUTINHO",
+      "MAICON DOS SANTOS ALVES"
+    ],
     "tipo": "rota"
   },
   {
     "id": 99,
-    "origem": "Santana de Parnaíba/SP",
-    "destino": "Itatiaia/RJ",
-    "nome": "SANTANA X UNIAO QUIMICA",
-    "placas": ["SVZ9G23"],
-    "condutores": ["SERGIO ROBERTO ALVES"],
+    "origem": "ONCOCLINICAS",
+    "destino": "HOSPITAL METR DEI",
+    "nome": "ONCLINICAS X MATER DEI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 100,
-    "origem": "Santana da Ponte Pensa/SP",
-    "destino": "Serra/ES",
-    "nome": "BASE DE SANTANA DE PARNAIBA X SERRA-ES",
-    "placas": ["GIV2F51"],
-    "condutores": ["HEBER AUGUSTO BARBOSA DE SOUZA"],
+    "origem": "ONCOCLINICAS",
+    "destino": "HOSPITAL METR DEI",
+    "nome": "ONCLINICAS X MATER DEI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 101,
-    "origem": "Rio de Janeiro/RJ",
-    "destino": "Niterói/RJ",
-    "nome": "SDU X HOSPITAL FLUMINENSE",
-    "placas": ["RNF6A66"],
-    "condutores": ["JOSE WILLIAM MONTE SOARES"],
-    "tipo": "rota"
-  },
-  {
-    "id": 102,
-    "origem": "Rio de Janeiro/RJ",
-    "destino": "Jundiaí/SP",
-    "nome": "TRANSFERÊNCIA - RIO DE JANEIRO X JUNDIAI - MUILTART",
-    "placas": ["CVN5754"],
-    "condutores": ["ANDERSON AQUINO DE LIMA"],
+    "origem": "SANTANA DE PARNAIBA - SP",
+    "destino": "BRASILIA - DF",
+    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA - SP X BRASILIA - DF",
+    "viagens": 0,
+    "placas": [
+      "QSX1J75",
+      "SEM9A77"
+    ],
+    "condutores": [
+      "ENIO JORGE JULIO DE MENEZES",
+      "HEBER AUGUSTO BARBOSA DE SOUZA"
+    ],
     "tipo": "transferencia"
   },
   {
+    "id": 102,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "RONDOLOG BASE SERRA",
+    "nome": "MG BETIM X SERRA",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "QTN8E45",
+      "SVK6F53",
+      "SWH3H91",
+      "SWJ0H01"
+    ],
+    "condutores": [
+      "FABIO ALVES DE SOUZA",
+      "FABIO SALES DE OLIVEIRA",
+      "FERNANDO FELIX CYPRESTE",
+      "IZAIAS JOSE MILKA",
+      "LUIZ FELIPE ALVES RIOS",
+      "RENAN DE JESUS CRUZ",
+      "VITOR DO NASCIMENTO",
+      "WILSON BRUNO ALVES SOUZA"
+    ],
+    "tipo": "rota"
+  },
+  {
     "id": 103,
-    "origem": "Jundiaí/SP",
-    "destino": "Jundiaí/SP",
-    "nome": "Jundiaí/SP -> Jundiaí/SP",
-    "placas": ["PWL9H75"],
-    "condutores": ["ADMILSON SEVERINO SOARES"],
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "RONDOLOG BASE SERRA",
+    "nome": "MG BETIM X SERRA",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "QTN8E45",
+      "SVK6F53",
+      "SWH3H91",
+      "SWJ0H01"
+    ],
+    "condutores": [
+      "FABIO ALVES DE SOUZA",
+      "FABIO SALES DE OLIVEIRA",
+      "FERNANDO FELIX CYPRESTE",
+      "IZAIAS JOSE MILKA",
+      "LUIZ FELIPE ALVES RIOS",
+      "RENAN DE JESUS CRUZ",
+      "VITOR DO NASCIMENTO",
+      "WILSON BRUNO ALVES SOUZA"
+    ],
     "tipo": "rota"
   },
   {
     "id": 104,
-    "origem": "Jundiaí/SP",
-    "destino": "Cravinhos/SP",
-    "nome": "TRANSFERÊNCIA JUNDIAI X CRAVINHOS",
-    "placas": ["FUI8A48"],
-    "condutores": ["RICARDO DE SOUZA OLIVEIRA"],
+    "origem": "SERRA-ES",
+    "destino": "SANTANA DE PARNAIBA",
+    "nome": "TRANSFERENCIA - SERRA-ES X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "GIV2F51"
+    ],
+    "condutores": [
+      "HEBER AUGUSTO BARBOSA DE SOUZA"
+    ],
     "tipo": "transferencia"
   },
   {
     "id": 105,
-    "origem": "Perdões/MG",
-    "destino": "Três Corações/MG",
-    "nome": "BR-381 X BASE DE 3 CORAÇOES",
-    "placas": ["SVA1A41"],
-    "condutores": ["DAVID LUCAS DE OLIVEIRA COSTA"],
+    "origem": "Biohosp Produtos Hospitalares",
+    "destino": "Secretaria Estado Saude de Minas Gerais",
+    "nome": "Biohosp Produtos Hospitalares x Secretaria Estado Saude de Minas",
+    "viagens": 0,
+    "placas": [
+      "HLX7G38"
+    ],
+    "condutores": [
+      "DENISE TORRES DE AMORIM"
+    ],
     "tipo": "rota"
   },
   {
     "id": 106,
-    "origem": "Limeira/SP",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "Limeira/SP -> Santana de Parnaíba/SP",
-    "placas": ["SVZ9G23"],
-    "condutores": ["SERGIO ROBERTO ALVES"],
-    "tipo": "rota"
+    "origem": "BASE SANTANA DE PARNAIB",
+    "destino": "SANTA BARBARA D'OESTE-SP",
+    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X SANTA BARBARA-SP",
+    "viagens": 0,
+    "placas": [
+      "FGT8083",
+      "FTE9J56",
+      "GCN9B29",
+      "GIV2F51",
+      "OUQ9B13",
+      "QOV7G25",
+      "QRL7C75",
+      "QXB8B89",
+      "STR9F35",
+      "SVZ9G23",
+      "SWB3J35"
+    ],
+    "condutores": [
+      "ALEX CAVALCANTE DA SILVA",
+      "ALEX SANDRO MACIEL DE SOUSA",
+      "EDUARDO CESAR CARNEIRO",
+      "FABIANO CORREIA DA SILVA",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "MOACIR AUGUSTINI",
+      "NIVALDO JOSE DE SOUZA",
+      "RICARDO DE SOUZA OLIVEIRA",
+      "ROBSON LUIS DE GODOY",
+      "SERGIO ROBERTO ALVES",
+      "WESLEY BARTUCCIOTO RODRIGUES",
+      "WESLEY DOS SANTOS SOUZA"
+    ],
+    "tipo": "transferencia"
   },
   {
     "id": 107,
-    "origem": "São Caetano do Sul/SP",
-    "destino": "São Caetano do Sul/SP",
-    "nome": "São Caetano do Sul/SP -> São Caetano do Sul/SP",
-    "placas": ["FEP3G40"],
-    "condutores": ["ELENILDO DE SOUZA LIMA"],
+    "origem": "ACHE",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "ACHE X SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 108,
-    "origem": "Santo André/SP",
-    "destino": "Santo André/SP",
-    "nome": "Santo André/SP -> Santo André/SP",
-    "placas": ["RUZ0J08"],
-    "condutores": ["TIAGO HENRIQUE CARDOSO CRUZ"],
+    "origem": "ITAIM",
+    "destino": "GOLOG",
+    "nome": "ITAIM",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "rota"
   },
   {
     "id": 109,
-    "origem": "Serra/ES",
-    "destino": "Santana de Parnaíba/SP",
-    "nome": "TRANSFERENCIA - SERRA-ES X SANTANA DE PARNAIBA-SP",
-    "placas": ["GIV2F51"],
-    "condutores": ["HEBER AUGUSTO BARBOSA DE SOUZA"],
-    "tipo": "transferencia"
+    "origem": "4BIO ITAIM",
+    "destino": "SINGULAR",
+    "nome": "COLETA - 4BIO ITAIM X SINGULAR.",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 110,
-    "origem": "São José dos Pinhais/PR",
-    "destino": "Santa Bárbara D'Oeste/SP",
-    "nome": "São José dos Pinhais/PR -> Santa Bárbara D'Oeste/SP",
-    "placas": ["FLC4295"],
-    "condutores": ["ENIO JORGE JULIO DE MENEZES"],
-    "tipo": "rota"
+    "origem": "COMMED",
+    "destino": "SINGULAR",
+    "nome": "COLETA COMMED X SINGULAR",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
   },
   {
     "id": 111,
-    "origem": "São José/SC",
-    "destino": "Guarulhos/SP",
-    "nome": "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X GUARULHOS - SP",
-    "placas": ["ETC7D01"],
-    "condutores": ["NELSON SPRUNG JUNIOR"],
+    "origem": "BASE TRES CORAÇOES",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "TRANSFERENCIA - TRES CORAÇOES-MG X SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "transferencia"
   },
   {
     "id": 112,
-    "origem": "Três Corações/MG",
-    "destino": "Betim/MG",
-    "nome": "TRANSFERÊNCIA - BASE 3 CORAÇÃO MG x BETIM-MG",
-    "placas": ["NWK5C76"],
-    "condutores": ["ANDERSON FIDELES GONÇALVES"],
-    "tipo": "transferencia"
+    "origem": "COLOMBO",
+    "destino": "SJP-PR",
+    "nome": "COLOMBO X SJP-PR",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
   },
   {
     "id": 113,
-    "origem": "Volta Redonda/RJ",
-    "destino": "Duque de Caxias/RJ",
-    "nome": "RJ - COLETA UNIMED VOLTA REDONDA X BASE RONDOLOG",
-    "placas": ["GGN1G91"],
-    "condutores": ["EDSON DA SILVA GUIMARAES"],
+    "origem": "PANAMBY",
+    "destino": "COMMED",
+    "nome": "COLETA - PANAMBY X COMMED",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
     "tipo": "coleta"
+  },
+  {
+    "id": 114,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "SERRA - ES",
+    "nome": "BASE DE SANTANA DE PARNAIBA X SERRA-ES",
+    "viagens": 0,
+    "placas": [
+      "GIV2F51"
+    ],
+    "condutores": [
+      "HEBER AUGUSTO BARBOSA DE SOUZA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 115,
+    "origem": "AEROPORTO",
+    "destino": "GAM",
+    "nome": "AEROPORTO VITORIA X GAM",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 116,
+    "origem": "BASE 3 CORAÇÃO - MG",
+    "destino": "RONDOLOG BASE BETIM",
+    "nome": "TRANSFERÊNCIA - BASE 3 CORAÇÃO MG x BETIM-MG",
+    "viagens": 0,
+    "placas": [
+      "NWK5C76"
+    ],
+    "condutores": [
+      "ANDERSON FIDELES GONÇALVES"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 117,
+    "origem": "G&G Cotia",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "TRANSFERENCIA - COTIA-SP X SANTANA",
+    "viagens": 0,
+    "placas": [
+      "RUZ0J08"
+    ],
+    "condutores": [
+      "TIAGO HENRIQUE CARDOSO CRUZ"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 118,
+    "origem": "SANTANA PARNAIBA",
+    "destino": "RENOVA",
+    "nome": "COLETA SANTANA X RENOVA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 119,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "COORDENACAO DE ARMAZENAGEM",
+    "nome": "SANTANA X COORDENACAO DE ARMAZENAGEM",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 120,
+    "origem": "GAM",
+    "destino": "AEROPORTO VITORIA",
+    "nome": "GAM X AEROPORTO VITORIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 121,
+    "origem": "HOSPITAL DO CANCER",
+    "destino": "AS",
+    "nome": "COLETA HOSPITAL DO CANCER X AS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 122,
+    "origem": "Profarma - Campo Grande",
+    "destino": "Entrega",
+    "nome": "RJ Profarma X Copacabana",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 123,
+    "origem": "PARA DE MINAS",
+    "destino": "AVULSO",
+    "nome": "PARA DE MINAS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 124,
+    "origem": "Aeroporto do Galeão",
+    "destino": "Rondolog Duque de Caxias",
+    "nome": "RJ Aeroporto do Galeão X Duque de Caxias ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 125,
+    "origem": "CONGONHAS",
+    "destino": "COMEED",
+    "nome": "CONGONHAS X COMEED",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 126,
+    "origem": "PANAMBY",
+    "destino": "CONGONHAS",
+    "nome": "PANAMBY X CONGONHAS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 127,
+    "origem": "AEROPORTO -ES",
+    "destino": "HOSPINOVA - ES",
+    "nome": "AEROPORTO - ES  X HOSPINOVA - ES",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 128,
+    "origem": "SINGULAR",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA SINGULAR X BASE SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 129,
+    "origem": "SINGULAR",
+    "destino": "4BIO",
+    "nome": "COLETA SINGULAR - 4BIO ITAIM",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 130,
+    "origem": "RIO DE JANEIRO",
+    "destino": "MOOCA",
+    "nome": "TRANSFERENCIA DUQUE DE CAXIAS X MOOCA",
+    "viagens": 0,
+    "placas": [
+      "DPE2807",
+      "EGK9A61",
+      "IUZ0I81",
+      "LPL7D55",
+      "LPR3J43",
+      "LRV4264",
+      "LVA7E54",
+      "PLB9I39"
+    ],
+    "condutores": [
+      "ANDERSON SOUZA PEREIRA DA SILVA",
+      "IZAEL JOSE DA SILVA",
+      "LEO BARBOZA DEBRUIM",
+      "LUIS PHELLYPE RIBEIRO DE FREITAS",
+      "MOISES MARQUES DE SOUZA JUNIOR",
+      "RAFAEL DE SOUZA LIMA",
+      "RENAN SOARES DE ASSUMPCAO",
+      "TIAGO JESUS DOS SANTOS",
+      "WALACE SIMIAO PEREIRA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 131,
+    "origem": "ELFA - BRASILIA-DF",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "TRANSFERENCIA - ELFA - BRASILIA-DF X  CRAVINHOS X SANTANA",
+    "viagens": 0,
+    "placas": [
+      "AYE7F44",
+      "JJU2I61",
+      "QSX1J75",
+      "SEM9A77",
+      "SWF2C34",
+      "TJA6H23"
+    ],
+    "condutores": [
+      "ENIO JORGE JULIO DE MENEZES",
+      "GUILHERME FERREIRA RODRIGUES",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "PAULO RICARDO DE OLIVEIRA SILVA",
+      "VALDO SANTOS DA SILVA",
+      "VITOR LOPES DE ALMEIDA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 132,
+    "origem": "AS",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA AS X SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 133,
+    "origem": "Rede Dor Pavuna",
+    "destino": "Rondolog - Duque de Caxias",
+    "nome": "RJ Pavuna x Duque de Caxias ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 134,
+    "origem": "AEROPORTO",
+    "destino": "HOSPITAL MATER DEI",
+    "nome": "CONFINS (AEROPORTO)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 135,
+    "origem": "BASE SANTANA",
+    "destino": "DEPART DE LOGISTICA",
+    "nome": "SANTANA X DEPART DE LOGISTICA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 136,
+    "origem": "AVENIDA JULIA GAIOLI",
+    "destino": "ESTRADA TENEENTE MARQUES",
+    "nome": "GLP GUARULHOS X SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 137,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "BIOHOSP PRODUTOS HOSPITALARES",
+    "nome": "MG- BETIM X BIOHOSP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 138,
+    "origem": "Base Betim",
+    "destino": "Base Ipatinga",
+    "nome": "BETIM X IPATINGA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 139,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "SANTA DO PARNAIBA",
+    "nome": "MG- BETIM X SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 140,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "SANTA DO PARNAIBA",
+    "nome": "MG- BETIM X SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 141,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "SANTA DO PARNAIBA",
+    "nome": "MG- BETIM X SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 142,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "SANTA DO PARNAIBA",
+    "nome": "MG- BETIM X SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 143,
+    "origem": "SANTANA PARNAIBA",
+    "destino": "DUPATRI SUMARÉ",
+    "nome": "COLETA DUPRATRI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 144,
+    "origem": "AEROPORTO SERRA-ES",
+    "destino": "BASE SERRA",
+    "nome": "GOLLOG - AEROPORTO X SERRA-SP BASE",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 145,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "DF-BRASILIA",
+    "nome": "MG-BETIM BRASILIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 146,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "DF-BRASILIA",
+    "nome": "MG-BETIM BRASILIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 147,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "BASE DUQUE DE CAXIAS RJ",
+    "nome": "MG-BETIM X  RJ DUQUE DE CAXIAS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 148,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "BASE DUQUE DE CAXIAS",
+    "nome": "TRANSFERENCIA BETIM X DUQUE DE CAXIAS",
+    "viagens": 0,
+    "placas": [
+      "STU5I80",
+      "SWP6F25",
+      "TJS4C59"
+    ],
+    "condutores": [
+      "AILTON DA SILVA FERREIRA",
+      "FELIPE DA COSTA COUTINHO",
+      "JORGE LUIZ SANTOS DA SILVA",
+      "JOSE WILLIAM MONTE SOARES",
+      "MAICON DOS SANTOS ALVES",
+      "MARLLON BRANDON AZEVEDO DOS SANTOS"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 149,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "BASE DUQUE DE CAXIAS",
+    "nome": "TRANSFERENCIA BETIM X DUQUE DE CAXIAS",
+    "viagens": 0,
+    "placas": [
+      "STU5I80",
+      "SWP6F25",
+      "TJS4C59"
+    ],
+    "condutores": [
+      "AILTON DA SILVA FERREIRA",
+      "FELIPE DA COSTA COUTINHO",
+      "JORGE LUIZ SANTOS DA SILVA",
+      "JOSE WILLIAM MONTE SOARES",
+      "MAICON DOS SANTOS ALVES",
+      "MARLLON BRANDON AZEVEDO DOS SANTOS"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 150,
+    "origem": "PROFARMA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - PROFARMA - ITAPEVI-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "EEZ0D04",
+      "EYC2F56",
+      "FUL6A21",
+      "QSX1J75",
+      "STR9F35",
+      "SVA1A41",
+      "SVJ2F72",
+      "SVV8E65",
+      "SWB3J35"
+    ],
+    "condutores": [
+      "DAVID LUCAS DE OLIVEIRA COSTA",
+      "DIEGO PEREIRA ALEXANDRE",
+      "FABIANO CORREIA DA SILVA",
+      "FABIO LUIZ DA SILVA",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "JEFFERSON DOS SANTOS SOUZA",
+      "LEANDRO BESERRA SOBRAL",
+      "SERGIO CARLOS DE OLIVEIRA",
+      "WESLEY DOS SANTOS SOUZA"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 151,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "SÃO JOSE DOS PINHAIS",
+    "nome": "SANTANA DE PARNAIBA X SÃO JOSE DOS PINHAIS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 152,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "PREVENT SENIOR",
+    "nome": "BASE - SANTANA DE PARNAIBA X VILA MARIANA (PREVENT SENIOR)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 153,
+    "origem": "POSTO CASTELO",
+    "destino": "Governador Valadares",
+    "nome": "POSTO CASTELO BR381 X GV",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 154,
+    "origem": "Profarma - Campo Grande",
+    "destino": "Rondolog - Duque de Caxias",
+    "nome": "RJ Coleta Profarma ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 155,
+    "origem": "DUQUE DE CAXIAS",
+    "destino": "SIMARÉ",
+    "nome": "TRANSFERENCIA DUQUE DE CAXIAS X SUMARÉ",
+    "viagens": 0,
+    "placas": [
+      "MHZ8F23"
+    ],
+    "condutores": [
+      "FABIANO DEDA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 156,
+    "origem": "MILWAUKEE",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "U. ESTETICA X SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 157,
+    "origem": "Transbordo Jd Botânico",
+    "destino": "Entrega",
+    "nome": "RJ Transbordo Jd Botânico",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 158,
+    "origem": "RONDOLOG BASE BETIM",
+    "destino": "POSTO DE COMBUSTIVEL MIGUELINHO",
+    "nome": "BETIM X POSTO MIGUELINHO",
+    "viagens": 0,
+    "placas": [
+      "QOC6C46"
+    ],
+    "condutores": [
+      "JEOVAN ALVES LIBERAL"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 159,
+    "origem": "GOLLOG CONGONHAS",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "AEROPORTO CONGONHAS X PANAMBY X SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 160,
+    "origem": "AEROPORTO",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "AEROPORTO CONGONHAS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 161,
+    "origem": "BASE DE SANTANA DE PARNAIBA",
+    "destino": "NACIONAL BARUERI",
+    "nome": "BASE DE SANTANA DE PARNAIBA X NACIONAL BARUERI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 162,
+    "origem": "BASE DE SANTANA DE PARNAIBA",
+    "destino": "NACIONAL BARUERI",
+    "nome": "BASE DE SANTANA DE PARNAIBA X NACIONAL BARUERI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 163,
+    "origem": "GAPLAN - UBERABA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "VIAGEM - UBERABA-MG X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 164,
+    "origem": "UNIÃO QUIMICA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - U.QUIMICA - POUSO ALEGRE-MG X SANTANA DA PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "FUL6A21",
+      "GIV2F51",
+      "QRL7C75",
+      "QSX1J75",
+      "SEM9A77",
+      "SVA1A41",
+      "SWB3J35"
+    ],
+    "condutores": [
+      "DIEGO PEREIRA ALEXANDRE",
+      "FABIANO CORREIA DA SILVA",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "IVANDRO RIBEIRO DE SOUZA",
+      "PAULO RICARDO DE OLIVEIRA SILVA",
+      "VITOR DO NASCIMENTO",
+      "WALLAS ARAUJO MOTA",
+      "WESLEY BARTUCCIOTO RODRIGUES"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 165,
+    "origem": "SANTANA",
+    "destino": "DUPATRI",
+    "nome": "SANTANA X DUPATRI HOSPITALAR",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 166,
+    "origem": "SANTANA",
+    "destino": "NACIONAL",
+    "nome": "SANTANA X NACIONAL",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 167,
+    "origem": "BASE SANTANA",
+    "destino": "FUND OSWALDO RAMOS",
+    "nome": "SANTANA X FUND OSWALDO RAMOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 168,
+    "origem": "GOLLOG - SERRA-ES",
+    "destino": "GAM - SERRA-ES",
+    "nome": "GOLLOG - SERRA-ES X GAM - SERRA-ES",
+    "viagens": 0,
+    "placas": [
+      "FPI3H41",
+      "QTN8E45",
+      "SVK6F53",
+      "SWJ0H01"
+    ],
+    "condutores": [
+      "ADEIRAN LIMA SANTOS",
+      "LUIZ FELIPE ALVES RIOS",
+      "RENAN DE JESUS CRUZ"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 169,
+    "origem": "ELFA - BRASILIA",
+    "destino": "BETIM-MG",
+    "nome": "TRASNFERENCIA - ELFA - BRASILIA-DF X BETIM-MG ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 170,
+    "origem": "ELFA - BRASILIA",
+    "destino": "BASE CRAVINHOS",
+    "nome": "TRANSFERENCIA - ELFA - BRASILIA-DF X  CRAVINHOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 171,
+    "origem": "GOLLOG",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "GOLLOG x SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 172,
+    "origem": "Elfa Santana de Parnaiba",
+    "destino": "SANTANA",
+    "nome": "Elfa Santana de parnaiba X Santana",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 173,
+    "origem": "CAJAMAR ONCOPROD",
+    "destino": "SÃO PAULO",
+    "nome": "ONCOPROD CAJAMAR X SÃO PAULO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 174,
+    "origem": "MONDOVIFLEX",
+    "destino": "MONDOVIFLEX",
+    "nome": "MG - BETIM (AVULSA)",
+    "viagens": 0,
+    "placas": [
+      "AMU7F30",
+      "DMO2I73",
+      "ENT6523",
+      "EOE4D53",
+      "FKI0G01",
+      "FRA5I46",
+      "HHK7998",
+      "HJE6I45",
+      "HJZ4289",
+      "HLX7G38",
+      "HNF6201",
+      "MOP3F16",
+      "MTD3D81",
+      "OPA3C69",
+      "OPJ6E73",
+      "PJD3E35",
+      "PXN9G60",
+      "QNQ7F38",
+      "QOC6C46",
+      "QQT9J61",
+      "QWW6H00",
+      "QWY0G19",
+      "RNF6A66",
+      "RNN1C19",
+      "RUW8I89",
+      "SHK1H00",
+      "STR9F35",
+      "SVM0I91",
+      "SVO6A43",
+      "SWB1D01",
+      "SWF2C34",
+      "SWV5J91",
+      "SYA7E91",
+      "TDS7D95"
+    ],
+    "condutores": [
+      "ADÃO DINIZ COSTA SARAIVA",
+      "AIRTON LUCIO DE SOUZA ALVIM",
+      "ALVIMAR ELIAS SFALSIN",
+      "ANDERSON WILLIAM DA SILVA",
+      "ARLINDO TEIXEIRA POLICARPO",
+      "BRAYNO AFONSECA DA SILVA",
+      "BRUNO LUCCHESI SANTOS",
+      "DENISE TORRES DE AMORIM",
+      "DIEGO PEREIRA ALEXANDRE",
+      "ELIELSON DE PAULA OLIVEIRA JUNIOR",
+      "FILIPE AUGUSTO LIMA CABRAL",
+      "GUILHERME  RIBEIRO CANDIDO DA SILVA ROSA",
+      "GUILHERME FERREIRA RODRIGUES",
+      "GUILHERME JUNIO ALVES FAGUNDES",
+      "HUDSON RENATO MACIEL PARREIRAS",
+      "ITALO DIAS DE SOUZA",
+      "JEOVAN ALVES LIBERAL",
+      "JOSE LUIZ BERG",
+      "LUIZ CARLOS BASILIO DA SILVA",
+      "MARCELO COSTA MEIRA",
+      "MARCOS HONORIO DA SILVA",
+      "Mauro de Souza Carvalho",
+      "NERIVALDO JOSE APARECIDO DE OLIVEIRA",
+      "ODIRLEI MOREIRA DOS SANTOS",
+      "PHILIPPE GERMANO MAGALHAES DE SOUZA",
+      "ROGERIO VIEIRA DE OLIVEIRA",
+      "ROSANGELA APARECIDA DA SILVEIRA E SOUZA",
+      "SAMUEL SANTOS DA SILVA",
+      "SHIRLEY JULIANE ALVES",
+      "ULISSES JUNIOR DE OLIVEIRA",
+      "VICTOR TEIXEIRA DE JESUS",
+      "WALTER FERNANDES RODRIGUES",
+      "WASHINGTON RANGEL BORGES MEIRELES",
+      "WELBERT PEREIRA DE MATOS",
+      "WILLIAM ALEX SOUSA DINIZ",
+      "WILTON JACKSON SILVA DE OLIVEIRA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 175,
+    "origem": "BETIM-MG",
+    "destino": "GAM - DF",
+    "nome": "TRASNFERENCIA - GAM - BETIM-MG X BRASILIA-DF",
+    "viagens": 0,
+    "placas": [
+      "SVM0I91",
+      "SWB1D01"
+    ],
+    "condutores": [
+      "GUILHERME FERREIRA RODRIGUES",
+      "ROGERIO VIEIRA DE OLIVEIRA",
+      "VICTOR TEIXEIRA DE JESUS",
+      "WILLIAM ALEX SOUSA DINIZ"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 176,
+    "origem": "MERCO SJP",
+    "destino": "GAM SJP",
+    "nome": "COLETA - MERCO SJP X GAM SJP",
+    "viagens": 0,
+    "placas": [
+      "FLC4295",
+      "GIV2F51",
+      "GJS4B24",
+      "RJJ7D45",
+      "RNA5B39",
+      "STR9F35"
+    ],
+    "condutores": [
+      "ADEMAR FARIAS GOMES",
+      "DIEGO PEREIRA ALEXANDRE",
+      "ENIO JORGE JULIO DE MENEZES",
+      "MOACIR AUGUSTINI",
+      "RONI CARLOS SERENINI",
+      "WAGNER ANTONIO DA CONCEICAO"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 177,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "ENTREGA",
+    "nome": "RJ Centro e Região ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 178,
+    "origem": "AEROPORTO-DF",
+    "destino": "GAM - DF",
+    "nome": "GOLLOG - BRASILIA-DF X GAM - BRASILIA-DF",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 179,
+    "origem": "SANTANA",
+    "destino": "TAUBATE",
+    "nome": "SANTANA X TAUBATE ( NOVO)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 180,
+    "origem": "ferramentas",
+    "destino": "loja",
+    "nome": "PLANETA COMERCIO DE FERRAMENTAS  EQUIPAMENTOS LTDA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 181,
+    "origem": "Rio Clarense",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - RIO CLARENSE JAGUARIUNA-SP X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 182,
+    "origem": "GAM - SERRA-ES",
+    "destino": "GOLLOG",
+    "nome": "GAM - SERRA-ES X GOLLOG - SERRA-ES",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 183,
+    "origem": "PANAMBY",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - PANAMBY - DROGA RAIA - 4BIO X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 184,
+    "origem": "G&G Cotia",
+    "destino": "Fundação Antônio Prudente",
+    "nome": "SP Avulsa Cotia",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 185,
+    "origem": "CRAVINHOS-SP",
+    "destino": "AGUDOS-SP",
+    "nome": "TRANSFERENCIA - CRAVINHOS-SP X AGUDOS-SP",
+    "viagens": 0,
+    "placas": [
+      "FHF6J69",
+      "RNQ1J22"
+    ],
+    "condutores": [
+      "FERNANDO CESAR WENZEL",
+      "LEONARDO RAFAEL COSTALONGA",
+      "RICARDO FRANCISCO DA SILVA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 186,
+    "origem": "CRAVINHOS-SP",
+    "destino": "UBERLÂNDIA",
+    "nome": "TRANSFERENCIA - CRAVINHOS-SP x UBERLANDIA-MG",
+    "viagens": 0,
+    "placas": [
+      "GDD1E84",
+      "QSX1J75",
+      "SEM9A77"
+    ],
+    "condutores": [
+      "ENIO JORGE JULIO DE MENEZES",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "LUIS APARECIDO DE SOUZA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 187,
+    "origem": "G&G Cotia",
+    "destino": "BASE TRES CORAÇOES",
+    "nome": "TRANSFERENCIA - COTIA-SP X TRES CORAÇOES-MG",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 188,
+    "origem": "G&G Cotia",
+    "destino": "BASE TAUBATÉ",
+    "nome": "TRANSFERENCIA - COTIA-SP X TAUBATE-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 189,
+    "origem": "G&G Cotia",
+    "destino": "BASE BETIM",
+    "nome": "TRANSFERENCIA - COTIA-SP X BETIM-MG",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 190,
+    "origem": "G&G Cotia",
+    "destino": "BASE RIO",
+    "nome": "TRANSFERENCIA - COTIA-SP X RIO DE JANEIRO-RJ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 191,
+    "origem": "G&G Cotia",
+    "destino": "BASE CRAVINHOS",
+    "nome": "TRANSFERENCIA - COTIA-SP X CRAVINHOS-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 192,
+    "origem": "DUPATRI RIBEIRAO",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - DUPATRI - RIBEIRAO PRETO-SP X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 193,
+    "origem": "FUTURA - TATUI-SP",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - FUTURA TATUI-SP X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 194,
+    "origem": "COMMED",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - COMMED VILA MARIANA-SP X COTIA-SP",
+    "viagens": 0,
+    "placas": [
+      "RUZ0J08"
+    ],
+    "condutores": [
+      "TIAGO HENRIQUE CARDOSO CRUZ"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 195,
+    "origem": "RENNOVA - GUARULHOS",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - RENNOVA GUARULHOS-SP X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 196,
+    "origem": "NACIONAL",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - NACIONAL SANTANA X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 197,
+    "origem": "GAM - SJP",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - GAM SJP X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 198,
+    "origem": "DUPATRI SUMARE",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - DUPATRI SUMARE X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 199,
+    "origem": "4BIO BARUERI",
+    "destino": "G&G Cotia",
+    "nome": "COLETA - 4BIO BARUERI X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 200,
+    "origem": "VIA ESTÉTICA",
+    "destino": "GeG",
+    "nome": "COLETA - VIA ESTETICA CAMPINAS X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 201,
+    "origem": "UNIÃO QUIMICA",
+    "destino": "GeG",
+    "nome": "COLETA - U.QUIMICA - TABOAO DA SERRA-SP X COTIA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 202,
+    "origem": "BASE SANTANA",
+    "destino": "FUNDANTONIO PRUDENTE",
+    "nome": "SANTANA X FUNDANTONIO PRUDENTE",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 203,
+    "origem": "TEMPUS",
+    "destino": "Base Santana",
+    "nome": "TEMPUS X SANTANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 204,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Entrega",
+    "nome": "RJ Zona Sul Compartilhado",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 205,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Entrega",
+    "nome": "RJ Zona Norte Compartilhado",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 206,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Entrega",
+    "nome": "RJ Barra Compartilhado",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 207,
+    "origem": "BASE SANTANA",
+    "destino": "MINISTERIO DA SAUDE",
+    "nome": "SANTANA X MINISTERIO DA SAUDE",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 208,
+    "origem": "SÃO JOSE DOS PINHAIS",
+    "destino": "BASE CRAVINHOS",
+    "nome": "COLETA - GAM SJP X BASE CRAVINHOS",
+    "viagens": 0,
+    "placas": [
+      "ENY7504",
+      "FLC4295",
+      "FTE9J56",
+      "GIV2F51",
+      "GJS4B24",
+      "OQY2H65",
+      "OUQ9B13",
+      "QRL7C75",
+      "QSX1J75",
+      "RJJ7D45",
+      "RNA5B39",
+      "SEM9A77"
+    ],
+    "condutores": [
+      "DIEGO PEREIRA ALEXANDRE",
+      "EDUARDO CESAR CARNEIRO",
+      "ENIO JORGE JULIO DE MENEZES",
+      "FABIANO CORREIA DA SILVA",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "JOSE ERNESTO DA SILVA",
+      "MOACIR AUGUSTINI",
+      "ROBSON LUIS DE GODOY",
+      "RONI CARLOS SERENINI",
+      "VAGNER JOSE DE OLIVEIRA",
+      "VALDO SANTOS DA SILVA",
+      "WAGNER ANTONIO DA CONCEICAO",
+      "WESLEY BARTUCCIOTO RODRIGUES"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 209,
+    "origem": "Rondolog Serra",
+    "destino": "Rondolog Betim",
+    "nome": "ES Serra x Betim",
+    "viagens": 0,
+    "placas": [
+      "SUJ5G29",
+      "SVK6F53"
+    ],
+    "condutores": [
+      "FABIO ALVES DE SOUZA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 210,
+    "origem": "BASE SANTANA",
+    "destino": "HOSPITAL CANCER CENTER",
+    "nome": "BASE SANTANA DE PARNAIBA-SP X SAO PAULO-SP (CANCER CENTER)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 211,
+    "origem": "PREVENT SENIOR",
+    "destino": "FUNDANTONIO PRUDENTE",
+    "nome": "PREVENT SENIOR X  FUNDANTONIO PRUDENTE",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 212,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "PREVENT SENIOR",
+    "nome": "SANTANA X PREVENT SENIOR",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 213,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE 3 CORAÇÃO MG",
+    "nome": "ROTA SANTANA DE PARNAIBA X 3 CORAÇÃO ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 214,
+    "origem": "Serra Park",
+    "destino": "Base Rondolog ES",
+    "nome": "ES Serra Parque X Base Rondolog",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 215,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "ALBERT EISNTEN",
+    "nome": "SANTANA X ALBERT EISNTEN",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 216,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "GAM",
+    "nome": "SANTANA DE PARNAIBA X GAM",
+    "viagens": 0,
+    "placas": [
+      "GIV2F51",
+      "GJS4B24"
+    ],
+    "condutores": [
+      "DIEGO PEREIRA ALEXANDRE",
+      "ENIO JORGE JULIO DE MENEZES",
+      "MOACIR AUGUSTINI",
+      "VITOR DO NASCIMENTO",
+      "WAGNER ANTONIO DA CONCEICAO"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 217,
+    "origem": "BASE BETIM",
+    "destino": "BASE IPATINGA",
+    "nome": "TRANSFERENCIA BETIM X IPATINGA",
+    "viagens": 0,
+    "placas": [
+      "EOE4D53",
+      "LRP8F88",
+      "MLZ6I99",
+      "MOP3F16",
+      "NWK5C76",
+      "QNQ7F38",
+      "RNX4D11"
+    ],
+    "condutores": [
+      "ALESSANDRO MANZATO CIRILO",
+      "FABIANO NERY DA SILVA",
+      "FILIPE AUGUSTO LIMA CABRAL",
+      "HENRIQUE DANGELES PEREIRA SANTOS",
+      "JHONATAN RIBEIRO DE OLIVEIRA",
+      "ODIRLEI MOREIRA DOS SANTOS",
+      "SAMUEL SANTOS DA SILVA",
+      "marcelo henrique passos nascimento"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 218,
+    "origem": "SIRIO LIBANES",
+    "destino": "Base Santana",
+    "nome": "SIRIO LIBANES X SANTANA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 219,
+    "origem": "BASE BETIM",
+    "destino": "BASE MONTES CLAROS",
+    "nome": "BETIM X MONTES CLAROS",
+    "viagens": 0,
+    "placas": [
+      "GBT9A37",
+      "NWK5C76",
+      "ORC8C59"
+    ],
+    "condutores": [
+      "ALAM GLEISON LOPES SILVA",
+      "BRUNO LEONARDO COSTA CALDEIRA",
+      "JERONIMO RICARDO CARDOSO SILVA",
+      "MAXCOEL DE ASSIS MARTINS GOMES",
+      "NATAN FERREIRA NUNES",
+      "RARISSON RYAN OLIVEIRA MAIA",
+      "marcelo henrique passos nascimento"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 220,
+    "origem": "BETIM",
+    "destino": "UBERLANDIA",
+    "nome": "BETIM X UBERLANDIA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 221,
+    "origem": "BETIM",
+    "destino": "GOVERNADOR VALADARES",
+    "nome": "BETIM X GOVERNADOR VALADARES",
+    "viagens": 0,
+    "placas": [
+      "EOE4D53",
+      "MOP3F16",
+      "RNX4D11"
+    ],
+    "condutores": [
+      "ALESSANDRO MANZATO CIRILO",
+      "FILIPE AUGUSTO LIMA CABRAL",
+      "ODIRLEI MOREIRA DOS SANTOS"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 222,
+    "origem": "HOSPITAL ALBERT EINTEN",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "HOSPITAL ALBERT EINSTEN-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 223,
+    "origem": "GOLLOG",
+    "destino": "HOSPITAL ALBERT EINSTEN",
+    "nome": "COLETA - AEROPORTO CONGONHAS-SP X HOSPITAL ALRBET EINSTEN-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 224,
+    "origem": "BASE CRAVINHOS",
+    "destino": "BASE SANTANA DE PARNAÍBA",
+    "nome": "TRANSFERÊNCIA CRAVINHOS X SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [
+      "FTE9J56",
+      "FUL6A21",
+      "GDD1E84",
+      "GIV2F51",
+      "QRL7C75",
+      "RJJ7D45",
+      "RNQ1J22",
+      "STR9F35",
+      "SVZ9G23"
+    ],
+    "condutores": [
+      "DEYVISON ANTUNES DA SILVA",
+      "DIEGO PEREIRA ALEXANDRE",
+      "ENIO JORGE JULIO DE MENEZES",
+      "FABIANO CORREIA DA SILVA",
+      "JOSE ERNESTO DA SILVA",
+      "LEONARDO RAFAEL COSTALONGA",
+      "LUIS APARECIDO DE SOUZA",
+      "ROBSON LUIS DE GODOY",
+      "SERGIO ROBERTO ALVES",
+      "WESLEY BARTUCCIOTO RODRIGUES"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 225,
+    "origem": "Barra da Tijuca",
+    "destino": "ENTREGA",
+    "nome": "RJ ( Barra Transbordo)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 226,
+    "origem": "GAM - DF",
+    "destino": "BASE CRAVINHOS",
+    "nome": "COLETA - GAM - BRASILIA-DF - UBERLANDIA-MG X CRAVINHOS-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 227,
+    "origem": "BASE BETIM",
+    "destino": "Base Santana",
+    "nome": "TRANSFERENCIA - BETIM-MG X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "FXI4A14",
+      "NWK5C76",
+      "RNX4D11",
+      "SWB3J35",
+      "TJA6H23"
+    ],
+    "condutores": [
+      "ALESSANDRO MANZATO CIRILO",
+      "ANDERSON FIDELES GONÇALVES",
+      "DAVID LUCAS DE OLIVEIRA COSTA",
+      "DIEGO PEREIRA ALEXANDRE",
+      "FABIANO NERY DA SILVA",
+      "VALDIR LEITE PANTA",
+      "marcelo henrique passos nascimento"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 228,
+    "origem": "GAM - DF",
+    "destino": "BETIM-MG",
+    "nome": "COLETA - GAM - BRASILIA-DF X BETIM-MG",
+    "viagens": 0,
+    "placas": [
+      "FUL6A21",
+      "MLZ6I99",
+      "OUQ9B13",
+      "PVB1H89"
+    ],
+    "condutores": [
+      "DIEGO PEREIRA ALEXANDRE",
+      "EDUARDO CESAR CARNEIRO",
+      "JHONATAN RIBEIRO DE OLIVEIRA",
+      "JIMMY HENDRIX DOS SANTOS",
+      "VALDO SANTOS DA SILVA"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 229,
+    "origem": "GOLLOG",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - GOLLOG - DROGA RAIA - 4BIO X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 230,
+    "origem": "Endocfarma",
+    "destino": "Rondolog Duque de Caxias",
+    "nome": "RJ Coleta Endocfarma ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 231,
+    "origem": "RENNOVA - GUARULHOS",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - RENNOVA GUARULHOS-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "EYC2F56",
+      "FLC4295",
+      "GIV2F51",
+      "GJS4B24",
+      "QSX1J75",
+      "RUZ0J08",
+      "SEM9A77",
+      "SVZ9G23"
+    ],
+    "condutores": [
+      "DIEGO PEREIRA ALEXANDRE",
+      "ENIO JORGE JULIO DE MENEZES",
+      "FABIANO CORREIA DA SILVA",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "JEFFERSON DOS SANTOS SOUZA",
+      "SERGIO ROBERTO ALVES",
+      "TIAGO HENRIQUE CARDOSO CRUZ"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 232,
+    "origem": "COMMED",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - COMMED VILA MARIANA-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 233,
+    "origem": "FUTURA - TATUI-SP",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - FUTURA TATUI-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "FGT8083",
+      "FTE9J56",
+      "QRL7C75"
+    ],
+    "condutores": [
+      "ALEX SANDRO MACIEL DE SOUSA",
+      "ROBSON LUIS DE GODOY",
+      "WESLEY BARTUCCIOTO RODRIGUES"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 234,
+    "origem": "NACIONAL",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - NACIONAL SANTANA X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 235,
+    "origem": "DUPATRI RIBEIRAO",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - DUPATRI - RIBEIRAO PRETO-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 236,
+    "origem": "PANAMBY",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - PANAMBY - DROGA RAIA - 4BIO X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 237,
+    "origem": "VIA ESTÉTICA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - VIA ESTETICA CAMPINAS X SANTANA DA PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "PWL9H75",
+      "QOV7G25",
+      "QUN6J82",
+      "QUX2H97",
+      "QXB8B89"
+    ],
+    "condutores": [
+      "ADMILSON SEVERINO SOARES",
+      "ERICO FIDELES DO NASCIMENTO",
+      "KELMA REGINA SOARES DA SILVA",
+      "KELMA REGINA SOARES DSA SILVA",
+      "NIVALDO JOSE DE SOUZA",
+      "RICARDO DE SOUZA OLIVEIRA"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 238,
+    "origem": "UNIÃO QUIMICA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - U.QUIMICA - TABOAO DA SERRA-SP X SANTANA DA PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "GIV2F51",
+      "QRL7C75",
+      "RJJ7D45",
+      "STR9F35"
+    ],
+    "condutores": [
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "JOSE ERNESTO DA SILVA",
+      "VITOR DO NASCIMENTO",
+      "WESLEY BARTUCCIOTO RODRIGUES",
+      "WESLEY DOS SANTOS SOUZA"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 239,
+    "origem": "SANTANA",
+    "destino": "FARMA CONDE",
+    "nome": " SANTANA X FARMA CONDE",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 240,
+    "origem": "AEROPORTO BH",
+    "destino": "BASE BETIM",
+    "nome": "BELO HORIZONTE ( AEROPORTO) X BASE BETIM-MG",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 241,
+    "origem": "BASE SANTANA",
+    "destino": "ENTREGA",
+    "nome": "S.D.P - (AVULSA)",
+    "viagens": 0,
+    "placas": [
+      "DON7D17",
+      "DSC1F17",
+      "EEZ0D04",
+      "EPU6851",
+      "EYC2F56",
+      "EYJ3H96",
+      "FBY2C43",
+      "FEP3G40",
+      "FGT8083",
+      "FLC4295",
+      "FUL6A21",
+      "FXI4A14",
+      "GCN9B29",
+      "GIW1I66",
+      "HIE4711",
+      "HIE4F96",
+      "NXY4J34",
+      "NYP8950",
+      "OLY5H27",
+      "OUQ9B13",
+      "QNA8E38",
+      "QRL7C75",
+      "QWY0G19",
+      "QXB8B89",
+      "RFQ9H28",
+      "RUZ0J08",
+      "SEM9A77",
+      "STI2J63",
+      "STR9F35",
+      "SVV8E65",
+      "SVZ9G23",
+      "SWB1D01",
+      "SWB3J35",
+      "SWF4H15",
+      "TLE1C61"
+    ],
+    "condutores": [
+      "ALEX CAVALCANTE DA SILVA",
+      "ALEX SANDRO DE SOUZA MACIEL",
+      "ALEX SANDRO DONIZETI DE OLIVEIRA",
+      "ALEX SANDRO MACIEL DE SOUSA",
+      "DARIO AUGUSTO TORRES FERREIRA",
+      "EDUARDO CESAR CARNEIRO",
+      "EDUARDO VIANI RESTOLHO",
+      "ELENILDO DE SOUZA LIMA",
+      "FABIO LUIZ DA SILVA",
+      "FERNANDO ADAMI",
+      "FERNANDO LIMA DA SILVA",
+      "FERNANDO SILVA DO NASCIMENTO",
+      "IVALDO CESAR DOS SANTOS",
+      "IVONALDO SANTOS VARGAS",
+      "JEFFERSON DOS SANTOS SOUZA",
+      "JEFFERSON GOMES CABRAL",
+      "JEFFERSON MOTA PEREIRA",
+      "JULIANO PEREIRA DIAS",
+      "LEANDRO BESERRA SOBRAL",
+      "NIVALDO JOSE DE SOUZA",
+      "NORBERTO DUARTE DE AGUIAR",
+      "ROGERIO DOS SANTOS SOUSA",
+      "ROSANGELA APARECIDA DA SILVEIRA E SOUZA",
+      "SERGIO ROBERTO ALVES",
+      "SILMARIO RODRIGUES LIMOEIRO",
+      "TIAGO ALVES SILVA",
+      "TIAGO HENRIQUE CARDOSO CRUZ",
+      "Telma Cristina Backschat",
+      "WESLEY BARTUCCIOTO RODRIGUES",
+      "WESLEY DOS SANTOS SOUZA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 242,
+    "origem": "COPA STAR HOSPITAL",
+    "destino": "CASCADURA DOR",
+    "nome": "RJ ZONA SUL - (AVULSA)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 243,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "ENTREGA",
+    "nome": "ENTREGA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 244,
+    "origem": "BASE BETIM-MG",
+    "destino": "SECRETARIA DE SAUDE DE MINAS GERAIS",
+    "nome": "BASE BETIM-SP X SECRETARIA DE SAUDE DE MINAS GERAIS",
+    "viagens": 0,
+    "placas": [
+      "EOE4D53",
+      "HLX7G38",
+      "OPJ6E73",
+      "RNF6A66"
+    ],
+    "condutores": [
+      "DENISE TORRES DE AMORIM",
+      "ODIRLEI MOREIRA DOS SANTOS",
+      "PHILIPPE GERMANO MAGALHAES DE SOUZA",
+      "SHIRLEY JULIANE ALVES"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 245,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE CRAVINHOS",
+    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X CRAVINHOS-SP",
+    "viagens": 0,
+    "placas": [
+      "ENY7504",
+      "EYC2F56",
+      "FLC4295",
+      "FUL6A21",
+      "GIV2F51",
+      "GJS4B24",
+      "PWL9H75",
+      "QSX1J75",
+      "RJJ7D45",
+      "RNQ1J22",
+      "SEM9A77",
+      "STR9F35",
+      "SVZ9G23"
+    ],
+    "condutores": [
+      "DAVID LUCAS DE OLIVEIRA COSTA",
+      "DIEGO PEREIRA ALEXANDRE",
+      "ENIO JORGE JULIO DE MENEZES",
+      "FABIANO CORREIA DA SILVA",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "JEFFERSON DOS SANTOS SOUZA",
+      "JOSE ERNESTO DA SILVA",
+      "KELMA REGINA SOARES DSA SILVA",
+      "LEONARDO RAFAEL COSTALONGA",
+      "RICARDO FRANCISCO DA SILVA",
+      "SERGIO ROBERTO ALVES",
+      "VALDO SANTOS DA SILVA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 246,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE RIO",
+    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X RIO DE JANEIRO-RJ",
+    "viagens": 0,
+    "placas": [
+      "EZB4E21",
+      "FXI4A14",
+      "GDS7F11",
+      "GGN1G91",
+      "GIV2F51",
+      "GJS4B24",
+      "OUQ9B13",
+      "RJA9E97",
+      "RJJ7D45",
+      "STR9F35",
+      "STU7G01",
+      "SUU5E64",
+      "SVA1A41",
+      "SVV8E65",
+      "SVZ9G23",
+      "SWH3H91",
+      "TJA6H23",
+      "TJS4C59"
+    ],
+    "condutores": [
+      "EDUARDO CESAR CARNEIRO",
+      "FABIANO CORREIA DA SILVA",
+      "FABIO LUIZ DA SILVA",
+      "FELIPE DA COSTA COUTINHO",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "JEAN AGUIRRE DA SILVA ATANASIO",
+      "LEONARDO HENRIQUE MEDEIROS ARAUJO",
+      "MAICON DOS SANTOS ALVES",
+      "PAULO RICARDO DE OLIVEIRA SILVA",
+      "VITOR DO NASCIMENTO",
+      "WESLEY DOS SANTOS SOUZA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 247,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE BETIM",
+    "nome": "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X BETIM-MG",
+    "viagens": 0,
+    "placas": [
+      "ENY7504",
+      "FUL6A21",
+      "FXI4A14",
+      "GIV2F51",
+      "GJS4B24",
+      "OUQ9B13",
+      "QSX1J75",
+      "SEM9A77",
+      "STR9F35",
+      "SWB3J35"
+    ],
+    "condutores": [
+      "ALAN FABIANO BOA",
+      "DIEGO PEREIRA ALEXANDRE",
+      "EDUARDO CESAR CARNEIRO",
+      "VALDIR LEITE PANTA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 248,
+    "origem": "CAMPO GRANDE - MS",
+    "destino": "CAMPO GRANDE - MS - (FUNDO ESPECIAL DE SAUDE)",
+    "nome": "CAMPO GRANDE-MS (F. E. DE SAUDE) X CAMPO GRANDE-MS (PAMED)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 249,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Conferencia São Jose do Avai",
+    "nome": "RJ Duque de Caxias x Itaperuna ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 250,
+    "origem": "TRANSBORDO RECREIO",
+    "destino": "ENTREGAS",
+    "nome": "RJ - (AVULSA)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 251,
+    "origem": "Osasco",
+    "destino": "GAM",
+    "nome": "Osasco x Gam SJP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 252,
+    "origem": "Serra Park",
+    "destino": "Unimed",
+    "nome": "ES - (AVULSA)",
+    "viagens": 0,
+    "placas": [
+      "QRH0G69"
+    ],
+    "condutores": [
+      "EDSON BARBOSA DE QUEIROZ"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 253,
+    "origem": "Aeroporto de Congonhas",
+    "destino": "Rondolog Jundiai",
+    "nome": "JUNDIAI - (AVULSA)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 254,
+    "origem": "COMERCIAL FARTEX IMPORTACAO",
+    "destino": "BASE RONDOCARGAS - GRU",
+    "nome": "Transferencia Rio de Janeiro Duque de Caxias x Guarulhos",
+    "viagens": 0,
+    "placas": [
+      "CUC6694",
+      "DAJ0964",
+      "DPE2807",
+      "EFO9D55",
+      "EGK9A61",
+      "EMU7J51",
+      "HLY4H73",
+      "JPW4G72",
+      "KRP5602",
+      "LLJ4J74",
+      "LNI7B87",
+      "LVA7E54",
+      "MTK2A07",
+      "NGW6J50",
+      "PLB9I39",
+      "QKI6A37",
+      "RYK6E18",
+      "SVV8E65",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "ANDREI RYAN GARCIA",
+      "DIEGO VIEIRA DA SILVA",
+      "FABIO LUIZ DA SILVA",
+      "GERALDO PEREIRA LAMIN JUNIOR",
+      "HELIO ANTONIO BARBOSA",
+      "JOAO CRISTIANO DOS SANTOS OLIVEIRA",
+      "JOSE DANIEL RIBEIRO DE ALMEIDA",
+      "LUIZ CARLOS SENHORINE",
+      "MARCOS PAULO SANTOS DA SILVA",
+      "PAULO ANTONIO SOARES DA GLORIA",
+      "PAULO RODRIGO FERNANDES SIQUEIRA",
+      "RAFAEL DE SOUZA LIMA",
+      "RAFAEL DE SOUZA RAMOS",
+      "REGINALDO LOPES",
+      "REINALDO COSTA DE ASSIS",
+      "RENAN SOARES DE ASSUMPCAO",
+      "ROBERTO VIANA DA SILVA",
+      "TIAGO JESUS DOS SANTOS",
+      "VINICIUS JOSE DO NACIMENTO DA SILVA",
+      "WALACE SIMIAO PEREIRA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 255,
+    "origem": "Hospinova",
+    "destino": "Rondolog",
+    "nome": "RJ Hospinova X Duque de Caxias",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 256,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "G&G Teles Transportes",
+    "nome": "RJ Duque de Caxias X Cotia",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 257,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Aeroporto do Galeão",
+    "nome": "RJ Duque de Caxias X Aeroporto do Galeão ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 258,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Rondolog Santana de Parnaíba",
+    "nome": "RJ Duque de Caxias X Santana de Parnaiba",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "EZB4E21",
+      "FMX5J24",
+      "FUL6A21",
+      "GBV0A78",
+      "GIV2F51",
+      "OUQ9B13",
+      "QSX1J75",
+      "RJJ7D45",
+      "STR9F35",
+      "STU7G01",
+      "SUS7F64",
+      "SVA1A41",
+      "SWB3J35",
+      "SWH3H91",
+      "SWJ0H01",
+      "TJA6H23"
+    ],
+    "condutores": [
+      "DANIEL FRANCISCO DOS SANTOS",
+      "DAVID LUCAS DE OLIVEIRA COSTA",
+      "EDUARDO CESAR CARNEIRO",
+      "FABIANO CORREIA DA SILVA",
+      "FELIPE DA COSTA COUTINHO",
+      "FERNANDO FELIX CYPRESTE",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "LEONARDO HENRIQUE MEDEIROS ARAUJO",
+      "MAICON DOS SANTOS ALVES",
+      "PAULO RICARDO DE OLIVEIRA SILVA",
+      "VALDIR LEITE PANTA",
+      "VITOR DO NASCIMENTO",
+      "WALLAS ARAUJO MOTA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 259,
+    "origem": "Modular Jundiaí",
+    "destino": "G&G Teles Transportes",
+    "nome": "Transferência - Jundiai X Base G&G Cotia",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 260,
+    "origem": "Rondolog Serra",
+    "destino": "Rondolog Duque de Caxias",
+    "nome": "Transferência Serra x Duque de Caxias",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 261,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "PE Campos dos Goytacazes",
+    "nome": "RJ Duque de Caxias x Macaé x Campos ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 262,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Prefeitura Municipal do Rio de janeiro",
+    "nome": "RJ PREFEITURA MUNICIPAL - (AVULSA)",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 263,
+    "origem": "COMERCIAL FARTEX IMPORTACAO",
+    "destino": "VLT BAZAR LTDA ME",
+    "nome": "RIO DE JANEIRO-RJ X PASSO FUNDO-RS - RONDOCARGAS ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 264,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "PE Campos dos Goytacazes",
+    "nome": "RJ Duque de Caxias X Campos dos Goytacazes",
+    "viagens": 0,
+    "placas": [
+      "GDS7F11",
+      "RNF6A66",
+      "STU7G01",
+      "SUU5E64",
+      "SVK6F53",
+      "SWH3H91",
+      "SWJ0H01",
+      "SWP6F25"
+    ],
+    "condutores": [
+      "EDUARDO DOS SANTOS BAITA",
+      "FABIO ALVES DE SOUZA",
+      "FABIO SALES DE OLIVEIRA",
+      "FELIPE DA COSTA COUTINHO",
+      "FERNANDO FELIX CYPRESTE",
+      "JOSE WILLIAM MONTE SOARES",
+      "MAICON DOS SANTOS ALVES",
+      "MARCELO OLIVEIRA DOS SANTOS",
+      "RODRIGO DE OLIVEIRA BARBOSA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 265,
+    "origem": "COMERCIAL FARTEX - IMPORTACAO",
+    "destino": "BASE RONDOLOG JUNDIAÍ-SP",
+    "nome": "TRANSFERÊNCIA - RIO DE JANEIRO X JUNDIAI - MUILTART",
+    "viagens": 0,
+    "placas": [
+      "CVN5754"
+    ],
+    "condutores": [
+      "ANDERSON AQUINO DE LIMA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 266,
+    "origem": "POSTO DECIO",
+    "destino": "POSTO DECIO",
+    "nome": "UBERLANDIA X RIBEIRÃO PRETO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 267,
+    "origem": "Origem",
+    "destino": "Rua Miguel Latorre 610 Aeroporto 13212-009 Jundiaí/SP",
+    "nome": "Tatui X Jundiai",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 268,
+    "origem": "BASE SANTANA",
+    "destino": "BASE SANTANA",
+    "nome": "TRANSFERÊNCIA SANTANA X RIBEIRÃO PRETO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 269,
+    "origem": "BASE RONDOLOG SANTANA DE PARNAIBA",
+    "destino": "BASE RONDOLOG SANTANA DE PARNAIBA",
+    "nome": "TRANSFERÊNCIA SANTANA X SANTOS",
+    "viagens": 0,
+    "placas": [
+      "CFY4I17",
+      "FPB0H16",
+      "QNA8E38"
+    ],
+    "condutores": [
+      "DIEGO DALL AQUA SANTOS",
+      "FERNANDO ADAMI",
+      "LUIZ DE SOUZA SANTOS FILHO"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 270,
+    "origem": "SANTANA PARNAIBA",
+    "destino": "SANTANA PARNAIBA",
+    "nome": "TRANSFERÊNCIA SANTANA  X SANTA CRUZ OSASCO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 271,
+    "origem": "BASE JUNDIAI",
+    "destino": "BASE JUNDIAI",
+    "nome": "TRANSFERÊNCIA JUNDIAI X TAUBATE",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 272,
+    "origem": "BASE JUNDIAI",
+    "destino": "BASE JUNDIAI",
+    "nome": "TRANSFERÊNCIA JUNDIAI X SANTANA",
+    "viagens": 0,
+    "placas": [
+      "PWL9H75",
+      "QUX2H97",
+      "QXB8B89"
+    ],
+    "condutores": [
+      "ADMILSON SEVERINO SOARES",
+      "ERICO FIDELES DO NASCIMENTO",
+      "NIVALDO JOSE DE SOUZA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 273,
+    "origem": "BASE JUNDIAI",
+    "destino": "BASE JUNDIAI",
+    "nome": "TRANSFERÊNCIA JUNDIAI X RIO DE JANEIRO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 274,
+    "origem": "BASE JUNDIAI",
+    "destino": "BASE JUNDIAI",
+    "nome": "TRANSFERÊNCIA JUNDIAI X CRAVINHOS",
+    "viagens": 0,
+    "placas": [
+      "FUI8A48"
+    ],
+    "condutores": [
+      "RICARDO DE SOUZA OLIVEIRA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 275,
+    "origem": "BASE RONDOLOG JUNDIAI",
+    "destino": "BASE RONDOLOG JUNDIAI",
+    "nome": "TRANSFERÊNCIA JUNDIAI X BETIM",
+    "viagens": 0,
+    "placas": [
+      "QSX1J75"
+    ],
+    "condutores": [
+      "MOACIR AUGUSTINI"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 276,
+    "origem": "BASE JUNDIAI",
+    "destino": "BASE JUNDIAI",
+    "nome": "TRANSFERÊNCIA JUNDIAI X AGUDOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 277,
+    "origem": "BASE CAJAMAR",
+    "destino": "BASE CAJAMAR",
+    "nome": "TRANSFERÊNCIA CAJAMAR X TAUBATÉ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 278,
+    "origem": "BASE CAJAMAR",
+    "destino": "BASE CAJAMAR",
+    "nome": "TRANSFERÊNCIA CAJAMAR X PRAIA GRANDE",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 279,
+    "origem": "SevenLog OSASCO",
+    "destino": "SevenLog OSASCO",
+    "nome": "Sevenlog Osasco X Entregas Osasco",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 280,
+    "origem": "SevenLog JACAREI",
+    "destino": "SevenLog JACAREI",
+    "nome": "Sevenlog Jacarei X Sevenlog Campinas",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 281,
+    "origem": "SevenLog JACAREI",
+    "destino": "SevenLog JACAREI",
+    "nome": "Sevenlog Jacarei - Sp -  Sevenlog Jundiai - Sp",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 282,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "Sevenlog Cotia X Embu",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 283,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "Sevenlog Cotia X Centro Sp",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 284,
+    "origem": "Serra / ES",
+    "destino": "Serra / ES",
+    "nome": "Serra X Osasco",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 285,
+    "origem": "Santos",
+    "destino": "Santos",
+    "nome": "Santox X Guarujá",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 286,
+    "origem": "Origem",
+    "destino": "Rua do Parque 280 Parque Villa Flores 13175-660 Sumaré/SP",
+    "nome": "Santana X Hortolandia",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 287,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "Santana X Centro",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 288,
+    "origem": "SANTA CRUZ DISTRIBUIDORA",
+    "destino": "SANTA CRUZ DISTRIBUIDORA",
+    "nome": "Santa Cruz X Sevenlog Jundiai",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 289,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "Santa Cruz Osasco X Aeroflex Guarulhos",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 290,
+    "origem": "SINGULAR",
+    "destino": "BASE SANTANA DE PARNAÍBA",
+    "nome": "COLETA - SINGULAR X AS X SANTANA DE PARNAIBA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 291,
+    "origem": "SANTANA",
+    "destino": "SANTANA",
+    "nome": "SANTANA X UBERLANDIA (ATUALIZADO)",
+    "viagens": 0,
+    "placas": [
+      "FYW6C71",
+      "QSX1J75"
+    ],
+    "condutores": [
+      "ENIO JORGE JULIO DE MENEZES",
+      "FABIANO CORREIA DA SILVA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 292,
+    "origem": "SANTANA",
+    "destino": "TAUBATE",
+    "nome": "SANTANA X TAUBATÉ",
+    "viagens": 0,
+    "placas": [
+      "DON7D17",
+      "EYC2F56",
+      "FGT8083",
+      "OUQ9B13",
+      "PWL9H75",
+      "QRL7C75",
+      "SVV8E65",
+      "SVZ9G23",
+      "SWB3J35"
+    ],
+    "condutores": [
+      "ALEX SANDRO MACIEL DE SOUSA",
+      "EDUARDO CESAR CARNEIRO",
+      "FABIANO CORREIA DA SILVA",
+      "FABIO LUIZ DA SILVA",
+      "JEFFERSON DOS SANTOS SOUZA",
+      "JOSE ERNESTO DA SILVA",
+      "KELMA REGINA SOARES DSA SILVA",
+      "WESLEY BARTUCCIOTO RODRIGUES"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 293,
+    "origem": "Santana de Parnaiba",
+    "destino": "Santana de Parnaiba",
+    "nome": "SANTANA X ITAPETININGA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 294,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "SANTANA X INDAIATUBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 295,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "SANTANA X CENTRO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 296,
+    "origem": "BASE SANTANA",
+    "destino": "BASE SANTANA",
+    "nome": "SANTANA X CAJAMAR e REGIÃO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 297,
+    "origem": "BASE SANTANA",
+    "destino": "BASE SANTANA",
+    "nome": "SANTANA X ABCD",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 298,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "SANTANA DE PARNAIBA X ZONA NORTE",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 299,
+    "origem": "FILIAL RONDOLOG SANTANA DE PARNAIBA",
+    "destino": "FILIAL RONDOLOG SANTANA DE PARNAIBA",
+    "nome": "SANTANA DE PARNAIBA X SOROCABA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 300,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "SANTANA DE PARNAIBA X REDE DOR",
+    "viagens": 0,
+    "placas": [
+      "EEZ0D04",
+      "NXY4J34",
+      "RUZ0J08",
+      "SVV8E65",
+      "SVZ9G23",
+      "SWB3J35"
+    ],
+    "condutores": [
+      "FABIO LUIZ DA SILVA",
+      "JULIANO PEREIRA DIAS",
+      "LEANDRO BESERRA SOBRAL",
+      "SERGIO ROBERTO ALVES",
+      "TIAGO HENRIQUE CARDOSO CRUZ",
+      "WESLEY DOS SANTOS SOUZA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 301,
+    "origem": "SANTANA PARAIBA X ALTO DO TIETE",
+    "destino": "SANTANA PARAIBA X ALTO DO TIETE",
+    "nome": "SANTANA DE PARNAIBA X MOGI DAS CRUZES e REGIAO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 302,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "SANTANA DE PARNAIBA X GUARULHOS",
+    "viagens": 0,
+    "placas": [
+      "NXY4J34",
+      "RUZ0J08"
+    ],
+    "condutores": [
+      "JULIANO PEREIRA DIAS",
+      "TIAGO HENRIQUE CARDOSO CRUZ"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 303,
+    "origem": "BASE SANTANA DE PARNAIBA",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "SANTANA DE PARNAIBA X EMBU DAS ARTES",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 304,
+    "origem": "RONDOLOG SANTANA DE PARNAIBA",
+    "destino": "RONDOLOG SANTANA DE PARNAIBA",
+    "nome": "SANTANA DE PARNAIBA X COTIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 305,
+    "origem": "Gam",
+    "destino": "Gam",
+    "nome": "Rota Registro",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 306,
+    "origem": "Aeroporto de Confins",
+    "destino": "Aeroporto de Confins",
+    "nome": "Rota Para Ecolta",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 307,
+    "origem": "ARARAQUARA",
+    "destino": "ARARAQUARA",
+    "nome": "ROTA UBERLANDIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 308,
+    "origem": "SANTANA",
+    "destino": "SANTANA",
+    "nome": "ROTA SANTANA X AGUDOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 309,
+    "origem": "POLO BETIM",
+    "destino": "POLO BETIM",
+    "nome": "ROTA BARRO PRETO BH",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 310,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "RJ Zona Sul 3 Ipanema",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 311,
+    "origem": "Origem",
+    "destino": "Entrega",
+    "nome": "RJ Zona Sul 2 Copacabana",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 312,
+    "origem": "Duque de Caxias",
+    "destino": "Duque de Caxias",
+    "nome": "RJ Zona Sul 1 Botafogo",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 313,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ Zona Oeste",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 314,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "RJ Zona Norte",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 315,
+    "origem": "RONDOLOG-RJ",
+    "destino": "RONDOLOG-RJ",
+    "nome": "RJ Zona Leopoldina / Ilha do Goverrnador",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 316,
+    "origem": "Rondolog Duque de Caxias",
+    "destino": "Rondolog Macaé",
+    "nome": "RJ X Macaé",
+    "viagens": 0,
+    "placas": [
+      "RNF6A72",
+      "SUU5E64",
+      "SWH3H91",
+      "SWP6F25"
+    ],
+    "condutores": [
+      "EDUARDO DOS SANTOS BAITA",
+      "FELIPE DA COSTA COUTINHO"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 317,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ Volta Redonda / Barra Mansa / Resende",
+    "viagens": 0,
+    "placas": [
+      "FJB1H32",
+      "GDS7F11",
+      "GGN1G91",
+      "IYX5I53",
+      "KVE7H89",
+      "LLV9D29",
+      "LMF5J85",
+      "QUN6J82",
+      "QUR3J76",
+      "RTD0G02",
+      "RVA5J80",
+      "STG6G23",
+      "SWF4H15",
+      "SWP6F25"
+    ],
+    "condutores": [
+      "AMILTON DOS SANTOS BARBOSA",
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "DANIEL SILVA DE CARVALHO",
+      "EDSON DA SILVA GUIMARAES",
+      "EDUARDO DOS SANTOS BAITA",
+      "FELIPE DA COSTA COUTINHO",
+      "GILDO PEQUENO PEREIRA JUNIOR",
+      "GUILHERME COSTA DA SILVA",
+      "MARCIO VAGNER ALVES DE ARAUJO",
+      "OSVALDO DE ARAUJO",
+      "RODRIGO DE OLIVEIRA BARBOSA",
+      "WELINGTON VAZ DA SILVA",
+      "WELINTON NATAN NUNES"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 318,
+    "origem": "Duque de Caxias",
+    "destino": "Destino",
+    "nome": "RJ Tijuca",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 319,
+    "origem": "RONDOLOG-RJ",
+    "destino": "RONDOLOG-RJ",
+    "nome": "RJ Teresopolis",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 320,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ TRANSFERENCIA RIO X ES",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "IYX5I53",
+      "STU7G01",
+      "SVA1A41",
+      "SVK6F53",
+      "SWB3J35",
+      "SWH3H91",
+      "SWJ0H01"
+    ],
+    "condutores": [
+      "ADEIRAN LIMA SANTOS",
+      "ALESSANDRO BORGES FRAGA",
+      "FABIO ALVES DE SOUZA",
+      "FABIO SALES DE OLIVEIRA",
+      "FERNANDO FELIX CYPRESTE",
+      "MAICON DOS SANTOS ALVES",
+      "MARCELO OLIVEIRA DOS SANTOS",
+      "VITOR DO NASCIMENTO",
+      "WALLAS ARAUJO MOTA"
+    ],
+    "tipo": "transferencia"
+  },
+  {
+    "id": 321,
+    "origem": "RONDOLOG-RJ",
+    "destino": "RONDOLOG-RJ",
+    "nome": "RJ São Goncalo",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 322,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ Recreio dos Bandeirantes",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 323,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ Região dos Lagos",
+    "viagens": 0,
+    "placas": [
+      "GDS7F11",
+      "PWJ5881",
+      "PWJ5I81",
+      "RMD1E73",
+      "STR0H45",
+      "SUU5E64",
+      "SVT0F22"
+    ],
+    "condutores": [
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "CASSIO SILVA DE JESUS",
+      "EDUARDO DOS SANTOS BAITA",
+      "FELIPE DA COSTA COUTINHO",
+      "GEFERSON XAVIER DA COSTA",
+      "RODRIGO DE OLIVEIRA BARBOSA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 324,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ Rede DOR - Pavuna",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 325,
+    "origem": "Duque de Caxias",
+    "destino": "Duque de Caxias",
+    "nome": "RJ Petropólis",
+    "viagens": 0,
+    "placas": [
+      "GDS7F11",
+      "IYX5I53",
+      "LLV9D29",
+      "LMF5J85",
+      "QUN6J82",
+      "QUR3J76",
+      "RMD1E73",
+      "RNF6A72",
+      "RTD0G02",
+      "STR0H45",
+      "SVT0F22"
+    ],
+    "condutores": [
+      "AMILTON DOS SANTOS BARBOSA",
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "CASSIO SILVA DE JESUS",
+      "DANIEL SILVA DE CARVALHO",
+      "EDUARDO DOS SANTOS BAITA",
+      "FELIPE DA COSTA COUTINHO",
+      "GUILHERME COSTA DA SILVA",
+      "JORGE LUIZ SANTOS DA SILVA",
+      "OSVALDO DE ARAUJO",
+      "WELINGTON VAZ DA SILVA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 326,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ ONCOPROD X BETIM-MG",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 327,
+    "origem": "ONCOPROD - RJ",
+    "destino": "ONCOPROD - RJ",
+    "nome": "RJ ONCOPROD X  DUQUE DE CAXIAS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 328,
+    "origem": "RONDOLOG-RJ",
+    "destino": "RONDOLOG-RJ",
+    "nome": "RJ Nova Friburgo",
+    "viagens": 0,
+    "placas": [
+      "FQM8H72",
+      "GDS7F11",
+      "GGN1G91",
+      "QPG1F34",
+      "QPV5C44",
+      "RMD1E73",
+      "RNF6A72",
+      "STG6G23",
+      "STU5I80",
+      "STU7G01",
+      "SUU5E64",
+      "SVT0F22"
+    ],
+    "condutores": [
+      "ANTONIO CARLOS DOS SANTOS XAVIER",
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "CASSIO SILVA DE JESUS",
+      "EDSON DA SILVA GUIMARAES",
+      "EDUARDO DOS SANTOS BAITA",
+      "JORGE LUIZ SANTOS DA SILVA",
+      "JOSE RIBAMAR DA SILVA",
+      "JOSE WILLIAM MONTE SOARES",
+      "MARCELO ROBERTO ESPINDOLA DOS SANTOS",
+      "RODRIGO DE OLIVEIRA BARBOSA",
+      "WILLER OLIVEIRA DA SILVA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 329,
+    "origem": "RONDOLOG -RJ DUQUE DE CAXIAS",
+    "destino": "RONDOLOG -RJ DUQUE DE CAXIAS",
+    "nome": "RJ Niteroi",
+    "viagens": 0,
+    "placas": [
+      "FJB1H32",
+      "FQM8H72",
+      "GDS7F11",
+      "GGN1G91",
+      "GSZ3H11",
+      "IYX5I53",
+      "LSW9F74",
+      "RMD1E73",
+      "RNF6A66",
+      "RNF6A72",
+      "SHT4B52",
+      "STG6G23",
+      "STU5I80",
+      "STU7G01",
+      "SUU5E64",
+      "SVH1H37",
+      "SWP6F25",
+      "TJC0B57",
+      "TJK9E99",
+      "TJS4C59"
+    ],
+    "condutores": [
+      "ANDERSON CRUZ DA SILVA",
+      "ANTONIO CARLOS DOS SANTOS XAVIER",
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "CASSIO SILVA DE JESUS",
+      "CLEVERTON DOS SANTOS",
+      "COSME TENORIO CAVALCANTI",
+      "EDUARDO DOS SANTOS BAITA",
+      "FELIPE DA COSTA COUTINHO",
+      "JORGE LUIZ DA SILVA PINTO",
+      "MATHEUS DA SILVA SOARES",
+      "RENATO BATISTA SCHONS",
+      "RODRIGO DE OLIVEIRA BARBOSA",
+      "TIAGO FERREIRA DA SILVA",
+      "TIAGO NOGUEIRA ALVES",
+      "VINICIUS DE OLIVEIRA CEZAR"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 330,
+    "origem": "RONDOLOG -RJ DUQUE DE CAXIAS",
+    "destino": "Destino",
+    "nome": "RJ Jacarepagua",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 331,
+    "origem": "RONDOLOG -RJ DUQUE DE CAXIAS",
+    "destino": "Destino",
+    "nome": "RJ Duque de Caxias e Leopoldina",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 332,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ Drogarias Pacheco",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 333,
+    "origem": "RONDOLOG - RJ",
+    "destino": "RONDOLOG - RJ",
+    "nome": "RJ Coleta Hospinova Duque de Caxias",
+    "viagens": 0,
+    "placas": [
+      "EZB4E21",
+      "FJB1H32",
+      "FMX5J24",
+      "FWV5B09",
+      "GDS7F11",
+      "GHG4B72",
+      "IYX5I53",
+      "KNY1I15",
+      "RMD1E73",
+      "SHT4B52",
+      "STU7G01",
+      "SWB8C01",
+      "SWH3H91"
+    ],
+    "condutores": [
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "COSME TENORIO CAVALCANTI",
+      "EDUARDO DOS SANTOS BAITA",
+      "FELIPE DA COSTA COUTINHO",
+      "JORGE LUIZ SANTOS DA SILVA",
+      "LUCAS DOS SANTOS LIMA",
+      "MAICON DOS SANTOS ALVES",
+      "RODRIGO DE OLIVEIRA BARBOSA",
+      "TIAGO FERREIRA DA SILVA",
+      "TIAGO FERREIRA SILVA",
+      "WANDO VINICIO DA CONCEICAO BARBOSA",
+      "WASHINGTON VIEIRA DA SILVA"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 334,
+    "origem": "RONDOLOG-RJ",
+    "destino": "SHOPPING PATIO MIX - COSTA VERDE",
+    "nome": "RJ COSTA VERDE FLUMINENSE",
+    "viagens": 0,
+    "placas": [
+      "KVE7H89",
+      "LMF5J85",
+      "QPV5C44",
+      "TJS4C59"
+    ],
+    "condutores": [
+      "DANIEL SILVA DE CARVALHO",
+      "MARCIO VAGNER ALVES DE ARAUJO",
+      "RODRIGO DE OLIVEIRA BARBOSA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 335,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "RJ COLETA PAMED BOTAFOGO",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 336,
+    "origem": "RONDOLOG - RJ",
+    "destino": "Destino",
+    "nome": "RJ Barra do Pirai Valenca Vassouras Pirai",
+    "viagens": 0,
+    "placas": [
+      "QUR3J76",
+      "RMD1E73",
+      "RTD0G02",
+      "STG6G23"
+    ],
+    "condutores": [
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "EDSON DA SILVA GUIMARAES",
+      "OSVALDO DE ARAUJO",
+      "WELINGTON VAZ DA SILVA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 337,
+    "origem": "Duque de Caxias",
+    "destino": "Destino",
+    "nome": "RJ Barra da Tijuca",
+    "viagens": 0,
+    "placas": [
+      "FHC8E61",
+      "FJB1H32",
+      "FMX5J24",
+      "FQM8H72",
+      "FTE9J56",
+      "FWV5B09",
+      "GBV0A78",
+      "GDS7F11",
+      "GGN1G91",
+      "GHG4B72",
+      "GIV2F51",
+      "GSZ3H11",
+      "HEB6I19",
+      "HHS3J13",
+      "HKR8B10",
+      "IYX5I53",
+      "KNY1I15",
+      "KVE7H89",
+      "LLK9F92",
+      "LMF5J85",
+      "LRQ3J38",
+      "LSA3H33",
+      "LSW9F74",
+      "MSD2923",
+      "OLT3C97",
+      "PLB9I39",
+      "PUL4B43",
+      "QQZ2F64",
+      "QUR3J76",
+      "RMD1E73",
+      "RNF6A66",
+      "RNF6A72",
+      "RVA5J80",
+      "RVY4I02",
+      "SHT4B52",
+      "STB5I62",
+      "STR0H45",
+      "STU5I80",
+      "STU7G01",
+      "SUS7F64",
+      "SUU5E64",
+      "SVH1H37",
+      "SVT0F22",
+      "SWB8C01",
+      "SWF4H15",
+      "SWH3H91",
+      "SWP6F25",
+      "SWP8I34",
+      "TJC0B57",
+      "TJK9E99",
+      "TJS4C59"
+    ],
+    "condutores": [
+      "ADAIR DE DEUS JULIAO",
+      "ANDERSON CRUZ DA SILVA",
+      "ANDRE LUIZ DA SILVA GONÇALVES",
+      "ANTONIO CARLOS DOS SANTOS XAVIER",
+      "ANTONIO CARLOS MARTINS JUNIOR",
+      "CAMILA GUIMARAES MARTINS",
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "CASSIO MANOEL DE LIMA",
+      "CASSIO SILVA DE JESUS",
+      "CLEVERTON DOS SANTOS",
+      "COSME TENORIO CAVALCANTI",
+      "DANIEL FRANCISCO DOS SANTOS",
+      "DANIEL SILVA DE CARVALHO",
+      "DAVID CARDOSO DE SOUZA",
+      "DIEGO SANTOS TAVARES",
+      "EDUARDO DA SILVA VIEIRA",
+      "EDUARDO DOS SANTOS BAITA",
+      "FELIPE DA COSTA COUTINHO",
+      "GABRIEL DE FREITAS MIRANDA SILVA",
+      "GILDO PEQUENO PEREIRA JUNIOR",
+      "GUILHERME COSTA DA SILVA",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "HELON DA SILVA OLIVEIRA MARTINS",
+      "IGOR VELLOSO DA SILVA",
+      "JORGE CAMPOS MOREIRA",
+      "JORGE LUIZ DA SILVA PINTO",
+      "JORGE LUIZ SANTOS DA SILVA",
+      "JOSE WILLIAM MONTE SOARES",
+      "KAIKE BRUNO SALOMAO SOUZA",
+      "LENON DE SOUSA NETO SANTANA",
+      "LEONARDO HENRIQUE MEDEIROS ARAUJO",
+      "LUCAS DOS SANTOS LIMA",
+      "MARCELO FERREIRA DA SILVA",
+      "MARCIO VAGNER ALVES DE ARAUJO",
+      "MATHEUS DA SILVA SOARES",
+      "OSVALDO DE ARAUJO",
+      "PABLO DIOGO FERREIRA",
+      "RENATO BATISTA SCHONS",
+      "ROBERT VIEIRA DA SILVA",
+      "RODRIGO DE OLIVEIRA BARBOSA",
+      "TIAGO FERREIRA DA SILVA",
+      "TIAGO JESUS DOS SANTOS",
+      "TIAGO NOGUEIRA ALVES",
+      "VALMIR FRANCISCO DE ANDRADE",
+      "VICTOR HUGO NASCIMENTO DA SILVA",
+      "VINICIUS DE OLIVEIRA CEZAR",
+      "WANDO VINICIO DA CONCEICAO BARBOSA",
+      "WASHINGTON VIEIRA DA SILVA",
+      "WESLLEY OLIVEIRA SILVA",
+      "WILLER OLIVEIRA DA SILVA",
+      "WILLIAM DE OLIVEIRA BATISTA",
+      "YAN CARLOS DA SILVA LIMA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 338,
+    "origem": "RONDOLOG -RJ DUQUE DE CAXIAS",
+    "destino": "Destino",
+    "nome": "RJ Baixada Fluminense",
+    "viagens": 0,
+    "placas": [
+      "FQM8H72",
+      "GBV0A78",
+      "GSZ3H11",
+      "HHS3J13",
+      "HKR8B10",
+      "KNY1I15",
+      "LRQ3J38",
+      "RMD1E73",
+      "RNF6A66",
+      "STR0H45",
+      "SUS7F64",
+      "SVH1H37",
+      "SVT0F22",
+      "TJK9E99"
+    ],
+    "condutores": [
+      "ADAIR DE DEUS JULIAO",
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "CASSIO SILVA DE JESUS",
+      "CLEVERTON DOS SANTOS",
+      "GILDO PEQUENO PEREIRA JUNIOR",
+      "HELON DA SILVA OLIVEIRA MARTINS",
+      "IGOR VELLOSO DA SILVA",
+      "JOSE WILLIAM MONTE SOARES",
+      "KAIKE BRUNO SALOMAO SOUZA",
+      "LEONARDO HENRIQUE MEDEIROS ARAUJO",
+      "RENATO BATISTA SCHONS",
+      "THIAGO DA SILVA RIBEIRO",
+      "WASHINGTON VIEIRA DA SILVA",
+      "WILLIAM DE OLIVEIRA BATISTA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 339,
+    "origem": "AEROPORTO SANTOS DUMONT SDU",
+    "destino": "AEROPORTO SANTOS DUMONT SDU",
+    "nome": "RJ AEROPORTO SANTOS DUMONT",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 340,
+    "origem": "TECA/GIG (TERMINAL DE CARGAS) RJO",
+    "destino": "TECA/GIG (TERMINAL DE CARGAS) RJO",
+    "nome": "RJ AEROPORTO GIG X RONDOLOG - RJ",
+    "viagens": 0,
+    "placas": [
+      "EZB4E21",
+      "FMX5J24",
+      "FWV5B09",
+      "GDS7F11",
+      "KNY1I15",
+      "RMD1E73",
+      "RNF6A66",
+      "RNF6A72",
+      "RVY4I02",
+      "STU5I80",
+      "STU7G01",
+      "SUS7F64",
+      "SUU5E64",
+      "SWB8C01",
+      "SWH3H91",
+      "SWP6F25",
+      "SWP8I34"
+    ],
+    "condutores": [
+      "ANTONIO CARLOS DOS SANTOS XAVIER",
+      "CLEVERTON DOS SANTOS",
+      "DAVID CARDOSO DE SOUZA",
+      "EDSON DA SILVA GUIMARAES",
+      "EDUARDO DOS SANTOS BAITA",
+      "FELIPE DA COSTA COUTINHO",
+      "JORGE CAMPOS MOREIRA",
+      "JORGE LUIZ SANTOS DA SILVA",
+      "JOSE WILLIAM MONTE SOARES",
+      "LUCAS DOS SANTOS LIMA",
+      "ROBERT VIEIRA DA SILVA",
+      "RODRIGO DE OLIVEIRA BARBOSA",
+      "TIAGO FERREIRA DA SILVA",
+      "WANDO VINICIO DA CONCEICAO BARBOSA",
+      "WASHINGTON VIEIRA DA SILVA",
+      "WILLER OLIVEIRA DA SILVA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 341,
+    "origem": "FILIAL RONDOLOG",
+    "destino": "FILIAL RONDOLOG",
+    "nome": "RIBEIRÃO PRETO X UBERLANDIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 342,
+    "origem": "FILIAL RONDOLOG",
+    "destino": "FILIAL RONDOLOG",
+    "nome": "RIBEIRÃO PRETO X CORDEIROPOLIS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 343,
+    "origem": "FILIAL RONDOLOG",
+    "destino": "FILIAL RONDOLOG",
+    "nome": "RIBEIRÃO PRETO X BRASILIA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 344,
+    "origem": "FILIAL RONDOLOG",
+    "destino": "FILIAL RONDOLOG",
+    "nome": "RIBEIRÃO PRETO X AGUDOS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 345,
+    "origem": "BASE RIBEIRÃO PRETO",
+    "destino": "BASE RIBEIRÃO PRETO",
+    "nome": "RIBEIRÃO PRETO X  GAM DF",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 346,
+    "origem": "PRECISION",
+    "destino": "PRECISION",
+    "nome": "RIBEIRAO PRETO X ARARAQUARA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 347,
+    "origem": "Osasco",
+    "destino": "Osasco",
+    "nome": "Osaco X Brasilia",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 348,
+    "origem": "Oncoprod",
+    "destino": "Oncoprod",
+    "nome": "Oncoprod Serra  X Santa Serra",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 349,
+    "origem": "RIBEIRÃO PRETO",
+    "destino": "RIBEIRÃO PRETO",
+    "nome": "Mafra",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 350,
+    "origem": "RIBEIRÃO PRETO",
+    "destino": "RIBEIRÃO PRETO",
+    "nome": "MAFRA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 351,
+    "origem": "Base jundiai",
+    "destino": "Base jundiai",
+    "nome": "Jundiai X São Jose dos Pinhais",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 352,
+    "origem": "FILIAL RONDOLOG JUNDIAI",
+    "destino": "FILIAL RONDOLOG JUNDIAI",
+    "nome": "JUNDIAI X CAMPINAS",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 353,
+    "origem": "Itumbiara",
+    "destino": "Itumbiara",
+    "nome": "Itumbiara X Jundiaí",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 354,
+    "origem": "Origem",
+    "destino": "0 Cotia/SP",
+    "nome": "Guarulhos X Sevenlog Cotia",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 355,
+    "origem": "Base Goiânia",
+    "destino": "Base Goiânia",
+    "nome": "Goiânia X Jundiai",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 356,
+    "origem": "Goiania",
+    "destino": "Goiania",
+    "nome": "Goiania X Ribeirão Preto",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 357,
+    "origem": "Goiania",
+    "destino": "Goiania",
+    "nome": "Goiania X Mato Grosso",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 358,
+    "origem": "BASE GOIANIA",
+    "destino": "BASE GOIANIA",
+    "nome": "GOIANIA X SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 359,
+    "origem": "POLO BETIM",
+    "destino": "POLO BETIM",
+    "nome": "Entrega Belo Horizonte",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 360,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "Cubatão X Santos",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 361,
+    "origem": "Cotia",
+    "destino": "Cotia",
+    "nome": "Cotia X Praia Grande",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 362,
+    "origem": "AEROPORTO DE CGH",
+    "destino": "AEROPORTO DE CGH",
+    "nome": "Congonhas X Rio Claro",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 363,
+    "origem": "AEROPORTO DE CGH",
+    "destino": "AEROPORTO DE CGH",
+    "nome": "Congonhas X Araraquara",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 364,
+    "origem": "AEROPORTO DE CGH",
+    "destino": "AEROPORTO DE CGH",
+    "nome": "Congonhas X  Sevenlog Jundiai",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 365,
+    "origem": "AEROPORTO DE CGH",
+    "destino": "AEROPORTO DE CGH",
+    "nome": "Congonhas X  Jacarei",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 366,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Valinhos e Região",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 367,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Sumare e Região",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 368,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Sorocaba",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 369,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Mogi das Cruzes e Região",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 370,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Jundiai e Região",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 371,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Itu e Região",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 372,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Itatiba",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 373,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Indaiatuba e Região",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 374,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Campinas 1933",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 375,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Campinas",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 376,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X Atibaia e Região",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 377,
+    "origem": "SC Cajamar",
+    "destino": "SC Cajamar",
+    "nome": "Cajamar X ABC",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 378,
+    "origem": "FILIAL CORDEIRÓPOLIS",
+    "destino": "FILIAL CORDEIRÓPOLIS",
+    "nome": "CORDEIRÓPOLIS X PIRASSUNUNGA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 379,
+    "origem": "FILIAL CORDEIRÓPOLIS",
+    "destino": "FILIAL CORDEIRÓPOLIS",
+    "nome": "CORDEIRÓPOLIS X AMERICANA",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 380,
+    "origem": "Singular Medicamentos",
+    "destino": "BASE SANTANA DE PARNAIBA",
+    "nome": "COLETA - SINGULAR X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 381,
+    "origem": "Rio Clarense",
+    "destino": "SANTANA DE PARNAIBA",
+    "nome": "COLETA - RIO CLARENSE JAGUARIUNA-SP X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "SVV8E65"
+    ],
+    "condutores": [
+      "FABIO LUIZ DA SILVA"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 382,
+    "origem": "SÃO JOSE DOS PINHAIS",
+    "destino": "BASE SANTANA DE PARNAÍBA",
+    "nome": "COLETA - GAM SJP X BASE SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "FLC4295",
+      "FUL6A21",
+      "GIV2F51",
+      "GJS4B24",
+      "OUQ9B13",
+      "QSX1J75",
+      "RJJ7D45",
+      "STR9F35"
+    ],
+    "condutores": [
+      "DIEGO PEREIRA ALEXANDRE",
+      "EDUARDO CESAR CARNEIRO",
+      "ENIO JORGE JULIO DE MENEZES",
+      "JOSE ERNESTO DA SILVA",
+      "MOACIR AUGUSTINI",
+      "VITOR DO NASCIMENTO",
+      "WAGNER ANTONIO DA CONCEICAO"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 383,
+    "origem": "Dupatri Hospitalar",
+    "destino": "SANTANA DE PARNAIBA",
+    "nome": "COLETA - DUPATRI SUMARE X SANTANA DE PARNAIBA-SP",
+    "viagens": 0,
+    "placas": [
+      "FLC4295",
+      "FUL6A21",
+      "GIV2F51",
+      "GJS4B24",
+      "QSX1J75",
+      "RJJ7D45",
+      "STR9F35"
+    ],
+    "condutores": [
+      "DIEGO PEREIRA ALEXANDRE",
+      "FABIANO CORREIA DA SILVA",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "JOSE ERNESTO DA SILVA",
+      "WESLEY DOS SANTOS SOUZA"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 384,
+    "origem": "Aeroporto Congonhas",
+    "destino": "Aeroporto Congonhas",
+    "nome": "COLETA AEROPORTO CONGONHAS X BASE JUNDIAI",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 385,
+    "origem": "4Bio Medicamentos",
+    "destino": "Base Santana de Parnaíba",
+    "nome": "COLETA - 4BIO ITAIM X BASE SANTANA DE PARNAÍBA ",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "coleta"
+  },
+  {
+    "id": 386,
+    "origem": "4Bio Medicamentos",
+    "destino": "BASE SANTANA DE PARNAÍBA",
+    "nome": "COLETA - 4BIO BARUERI X BASE SANTANA DE PARNAIBA",
+    "viagens": 0,
+    "placas": [
+      "EEZ0D04",
+      "FUL6A21",
+      "FXI4A14",
+      "FYW6C71",
+      "NXY4J34",
+      "NYP8950",
+      "OUQ9B13",
+      "QNA8E38",
+      "QSX1J75",
+      "RUZ0J08",
+      "SEM9A77",
+      "STR9F35",
+      "SVA1A41",
+      "SVJ2F72",
+      "SVV8E65",
+      "SVZ9G23",
+      "SWB3J35",
+      "SWH3H91",
+      "TJA6H23",
+      "TLE1C61"
+    ],
+    "condutores": [
+      "ALAN FABIANO BOA",
+      "DAVID LUCAS DE OLIVEIRA COSTA",
+      "DIEGO PEREIRA ALEXANDRE",
+      "EDUARDO CESAR CARNEIRO",
+      "ENIO JORGE JULIO DE MENEZES",
+      "FABIANO CORREIA DA SILVA",
+      "FABIO LUIZ DA SILVA",
+      "FERNANDO ADAMI",
+      "GUILHERME FERREIRA RODRIGUES",
+      "IVALDO CESAR DOS SANTOS",
+      "JOSE ERNESTO DA SILVA",
+      "JULIANO PEREIRA DIAS",
+      "LEANDRO BESERRA SOBRAL",
+      "SERGIO CARLOS DE OLIVEIRA",
+      "SERGIO ROBERTO ALVES",
+      "SILMARIO RODRIGUES LIMOEIRO",
+      "TIAGO HENRIQUE CARDOSO CRUZ",
+      "WESLEY DOS SANTOS SOUZA"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 387,
+    "origem": "Oncoprod DF",
+    "destino": "Oncoprod DF",
+    "nome": "Brasilia X Uberlandia",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 388,
+    "origem": "Brasilia",
+    "destino": "Brasilia",
+    "nome": "Brasilia X Jundiai",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 389,
+    "origem": "Brasilia",
+    "destino": "Brasilia",
+    "nome": "Brasilia X Goiania",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 390,
+    "origem": "BRASILIA",
+    "destino": "BRASILIA",
+    "nome": "Brasilia X Betim",
+    "viagens": 0,
+    "placas": [
+      "AYE7F44",
+      "LRP8F88",
+      "MLZ6I99",
+      "PVB1H89"
+    ],
+    "condutores": [
+      "HENRIQUE DANGELES PEREIRA SANTOS",
+      "JHONATAN RIBEIRO DE OLIVEIRA",
+      "JIMMY HENDRIX DOS SANTOS",
+      "LEANDRO GOMES DA SILVA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 391,
+    "origem": "Brasilia",
+    "destino": "Brasilia",
+    "nome": "Brasilia X Araraquara",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 392,
+    "origem": "SevenLog DF",
+    "destino": "SevenLog DF",
+    "nome": "COLETA - SEVENLOG - BRASILIA-DF X CRAVINHOS-SP",
+    "viagens": 0,
+    "placas": [
+      "GIV2F51",
+      "JJU2I61",
+      "PBT0H73",
+      "PVB1H89",
+      "QQZ2I10",
+      "QSX1J75",
+      "SEM9A77",
+      "SWB1D01"
+    ],
+    "condutores": [
+      "ALEMBERG GOMES CLEMENTINO",
+      "ENIO JORGE JULIO DE MENEZES",
+      "GUILHERME FERREIRA RODRIGUES",
+      "HEBER AUGUSTO BARBOSA DE SOUZA",
+      "IAGO JOSE DOS ANJOS BONIFACIO",
+      "JIMMY HENDRIX DOS SANTOS",
+      "MAIRON DE SOUZA ARAUJO",
+      "THIAGO HERCULANO DE CARVALHO MAGALHAES",
+      "VALDO SANTOS DA SILVA",
+      "VICTOR TEIXEIRA DE JESUS",
+      "VITOR LOPES DE ALMEIDA",
+      "WILLIAM ALEX SOUSA DINIZ"
+    ],
+    "tipo": "coleta"
+  },
+  {
+    "id": 393,
+    "origem": "Base Betim",
+    "destino": "Entrega",
+    "nome": "MG Betim X Santa Efigênia",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 394,
+    "origem": "Base Betim",
+    "destino": "Entrega",
+    "nome": "MG Betim X Nova Lima",
+    "viagens": 0,
+    "placas": [
+      "ENT6523",
+      "FRA5I46",
+      "HJZ4289",
+      "HNF6201",
+      "MTD3D81",
+      "QWY0G19"
+    ],
+    "condutores": [
+      "ARLINDO TEIXEIRA POLICARPO",
+      "ELIELSON DE PAULA OLIVEIRA JUNIOR",
+      "JOSE LUIZ BERG",
+      "MARCELO COSTA MEIRA",
+      "NERIVALDO JOSE APARECIDO DE OLIVEIRA",
+      "ROSANGELA APARECIDA DA SILVEIRA E SOUZA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 395,
+    "origem": "Base Betim",
+    "destino": "Entrega",
+    "nome": "MG Betim X Itabira",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 396,
+    "origem": "Base Betim",
+    "destino": "Entrega",
+    "nome": "MG Betim X Centro Oeste",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 397,
+    "origem": "Base Betim",
+    "destino": "Base Betim",
+    "nome": "MG Betim X Central de Minas",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 398,
+    "origem": "BASE BETIM",
+    "destino": "Entrega",
+    "nome": "MG Betim X Barro Preto",
+    "viagens": 0,
+    "placas": [
+      "FRA5I46"
+    ],
+    "condutores": [
+      "JOSE LUIZ BERG"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 399,
+    "origem": "Seven cravinhos",
+    "destino": "Seven cravinhos",
+    "nome": "Bauru",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 400,
+    "origem": "Base Betim",
+    "destino": "Base Betim",
+    "nome": "BETIM X TRÊS CORAÇÕES",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "FUL6A21",
+      "FXI4A14",
+      "GIV2F51",
+      "GJS4B24",
+      "NWK5C76",
+      "QSX1J75",
+      "SEM9A77",
+      "STR0H45",
+      "STR9F35",
+      "STU7G01",
+      "SVA1A41",
+      "SWB1D01",
+      "SWB3J35",
+      "SWF2C34",
+      "TJA6H23"
+    ],
+    "condutores": [
+      "ALAN FABIANO BOA",
+      "ANDERSON FIDELES GONÇALVES",
+      "DAVID LUCAS DE OLIVEIRA COSTA",
+      "DIEGO PEREIRA ALEXANDRE",
+      "FABIANO CORREIA DA SILVA",
+      "IVANDRO RIBEIRO DE SOUZA",
+      "PAULO RICARDO DE OLIVEIRA SILVA",
+      "VALDIR FERREIRA DA SILVA",
+      "VALDIR LEITE PANTA",
+      "VALDO SANTOS DA SILVA",
+      "VICTOR TEIXEIRA DE JESUS",
+      "VITOR DO NASCIMENTO",
+      "WALLAS ARAUJO MOTA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 401,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "Aeroporto do Galeão X Cargo Park Washington Luiz",
+    "viagens": 0,
+    "placas": [
+      "FJB1H32",
+      "FMX5J24",
+      "FWV5B09",
+      "GBV0A78",
+      "JIH6A19",
+      "KNY1I15",
+      "LLK9F92",
+      "LRQ3J38",
+      "LSA3H33",
+      "OLT3C97",
+      "PUL4B43",
+      "QQZ2F64",
+      "SHT4B52",
+      "STR0H45",
+      "SWF4H15",
+      "SWH3H91",
+      "SWP8I34",
+      "TJK9E99"
+    ],
+    "condutores": [
+      "ADAIR DE DEUS JULIAO",
+      "ANDERSON CRUZ DA SILVA",
+      "ANDRE LUIZ DA SILVA GONÇALVES",
+      "ANTONIO CARLOS DOS SANTOS XAVIER",
+      "CAMILA GUIMARAES MARTINS",
+      "CARLOS HENRIQUE DE OLIVEIRA REIS",
+      "COSME TENORIO CAVALCANTI",
+      "DIEGO SANTOS TAVARES",
+      "FELIPE DA COSTA COUTINHO",
+      "GABRIEL DE FREITAS MIRANDA SILVA",
+      "IGOR VELLOSO DA SILVA",
+      "LENON DE SOUSA NETO SANTANA",
+      "LEONARDO HENRIQUE MEDEIROS ARAUJO",
+      "LUCAS DOS SANTOS LIMA",
+      "TIAGO FERREIRA DA SILVA",
+      "VALMIR FRANCISCO DE ANDRADE",
+      "WASHINGTON VIEIRA DA SILVA",
+      "WELLINGTON COUTO DE OLIVEIRA",
+      "WILLIAM DE OLIVEIRA BATISTA"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 402,
+    "origem": "Aeroporto de Guarulhos",
+    "destino": "Aeroporto de Guarulhos",
+    "nome": "Aeroporto de Guarulhos X Sevenlog Jundiai",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 403,
+    "origem": "AEROPORTO DE GRU",
+    "destino": "AEROPORTO DE GRU",
+    "nome": "Aeroporto Guarulhos X Sevenlog Jundiai",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 404,
+    "origem": "Origem",
+    "destino": "Destino",
+    "nome": "Aeroporto Congonhas X Aeroflex Guarulhos",
+    "viagens": 0,
+    "placas": [],
+    "condutores": [],
+    "tipo": "rota"
+  },
+  {
+    "id": 405,
+    "origem": "BASE RONDOLOG",
+    "destino": "BASE RONDOLOG",
+    "nome": "Betim X Juiz de Fora",
+    "viagens": 0,
+    "placas": [
+      "EOE4D53",
+      "EZB4E21",
+      "GHG4B72",
+      "HHK7998",
+      "LRP8F88",
+      "MLZ6I99",
+      "MOP3F16",
+      "NWK5C76",
+      "OPA3C69",
+      "PJD3E35",
+      "PVB1H89",
+      "QNQ7F38",
+      "QQT9J61",
+      "RNX4D11",
+      "RUW8I89",
+      "STU7G01",
+      "SWP6F25",
+      "SWV5J91",
+      "TJS4C59"
+    ],
+    "condutores": [
+      "ADÃO DINIZ COSTA SARAIVA",
+      "AILTON DA SILVA FERREIRA",
+      "ALESSANDRO MANZATO CIRILO",
+      "ANDERSON FIDELES GONÇALVES",
+      "BRUNO LUCCHESI SANTOS",
+      "FABIANO NERY DA SILVA",
+      "FILIPE AUGUSTO LIMA CABRAL",
+      "GUILHERME  RIBEIRO CANDIDO DA SILVA ROSA",
+      "GUSTAVO HENRIQUE  ALVES MOREIRA",
+      "HENRIQUE DANGELES PEREIRA SANTOS",
+      "JHONATAN RIBEIRO DE OLIVEIRA",
+      "JORGE LUIZ SANTOS DA SILVA",
+      "JOSE WILLIAM MONTE SOARES",
+      "MAICON DOS SANTOS ALVES",
+      "MARLLON BRANDON AZEVEDO DOS SANTOS",
+      "Mauro de Souza Carvalho",
+      "ODIRLEI MOREIRA DOS SANTOS",
+      "SAMUEL SANTOS DA SILVA",
+      "ULISSES JUNIOR DE OLIVEIRA",
+      "WALTER FERNANDES RODRIGUES",
+      "marcelo henrique passos nascimento"
+    ],
+    "tipo": "rota"
+  },
+  {
+    "id": 406,
+    "origem": "FILIAL RONDOLOG",
+    "destino": "FILIAL RONDOLOG",
+    "nome": "BETIM X TRES CORAÇOES",
+    "viagens": 0,
+    "placas": [
+      "BRY3E66",
+      "FUL6A21",
+      "FXI4A14",
+      "GIV2F51",
+      "GJS4B24",
+      "NWK5C76",
+      "QSX1J75",
+      "SEM9A77",
+      "STR0H45",
+      "STR9F35",
+      "STU7G01",
+      "SVA1A41",
+      "SWB1D01",
+      "SWB3J35",
+      "SWF2C34",
+      "TJA6H23"
+    ],
+    "condutores": [
+      "ALAN FABIANO BOA",
+      "ANDERSON FIDELES GONÇALVES",
+      "DAVID LUCAS DE OLIVEIRA COSTA",
+      "DIEGO PEREIRA ALEXANDRE",
+      "FABIANO CORREIA DA SILVA",
+      "IVANDRO RIBEIRO DE SOUZA",
+      "PAULO RICARDO DE OLIVEIRA SILVA",
+      "VALDIR FERREIRA DA SILVA",
+      "VALDIR LEITE PANTA",
+      "VALDO SANTOS DA SILVA",
+      "VICTOR TEIXEIRA DE JESUS",
+      "VITOR DO NASCIMENTO",
+      "WALLAS ARAUJO MOTA"
+    ],
+    "tipo": "rota"
   }
 ]
