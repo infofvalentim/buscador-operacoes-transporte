@@ -552,9 +552,9 @@
         // Garante estrutura padronizada
         const processed = data.map(item => ({
           ...item,
-          pedido: [item.origem, item.destino],
-          condutor: item.condutores || null,
-          placa: item.placas || null
+          nome: item.nome_da_rota || item.nome || '',
+          condutor: item.condutores || item.condutor || [],
+          placa: item.placas || item.placa || []
         }));
         dataCache[base] = processed;
         return processed;
