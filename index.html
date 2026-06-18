@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Painel de Rotas · Rondolog & Saster</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <style>
     :root {
       --bg:         #0e1117;
@@ -375,7 +377,7 @@
     .bci-btn-waze { border-color: rgba(72,187,120,.4); color: var(--green); }
     .bci-btn-waze:hover { border-color: var(--green); background: rgba(72,187,120,.1); color: #9ae6b4; }
 
-    /* Mapa */
+    /* Mapa Leaflet */
     .bases-map-wrap {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -396,7 +398,33 @@
     .map-legend { display: flex; gap: 14px; flex-wrap: wrap; }
     .leg-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text-muted); }
     .leg-dot { width: 8px; height: 8px; border-radius: 50%; }
-    #brasilSvg { width: 100%; display: block; background: var(--bg); }
+    #leafletMap {
+      width: 100%;
+      height: 520px;
+      background: var(--bg);
+    }
+    /* Override Leaflet popup for dark theme */
+    .leaflet-popup-content-wrapper {
+      background: #1c2333;
+      color: #e2e8f0;
+      border: 1px solid #2a3347;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      font-family: 'Inter', sans-serif;
+    }
+    .leaflet-popup-tip { background: #1c2333; }
+    .leaflet-popup-content { margin: 10px 14px; font-size: 12px; line-height: 1.6; }
+    .leaflet-popup-content strong { font-size: 13px; color: #f1f5f9; }
+    .leaflet-popup-content .pop-tipo {
+      font-size: 9px; font-weight: 700; padding: 2px 8px;
+      border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+      display: inline-block; margin: 4px 0 6px;
+    }
+    .leaflet-popup-content .pop-end { color: #a0aec0; margin-bottom: 4px; }
+    .leaflet-popup-close-button { color: #a0aec0 !important; }
+    .leaflet-popup-close-button:hover { color: #fc8181 !important; }
+    /* Ocultar atribuição padrão (tiles anônimos não precisam) */
+    .leaflet-control-attribution { display: none; }
 
     .base-dot-g { cursor: pointer; }
     .base-dot-g circle { transition: r 0.15s, stroke-width 0.15s; }
@@ -519,15 +547,7 @@
           <div class="leg-item"><div class="leg-dot" style="background:var(--purple)"></div>Terminal</div>
         </div>
       </div>
-      <svg id="brasilSvg" viewBox="0 0 597 600" xmlns="http://www.w3.org/2000/svg">
-        <!-- Silhueta real SP/RJ/MG/ES/GO/DF, derivada de limites estaduais do IBGE (simplificada) -->
-        <rect x="0" y="0" width="597" height="600" fill="#0e1117"/>
-        <!-- Contorno geográfico real da região coberta pelas bases -->
-        <polygon
-          points="362.0,476.1 336.7,486.2 336.2,494.2 317.7,491.8 284.4,508.9 237.3,552.0 231.7,539.0 219.4,541.9 219.4,527.0 192.7,527.1 196.5,514.2 167.5,457.7 139.8,460.3 89.0,442.8 52.8,448.4 90.2,411.5 108.1,369.6 127.8,353.7 132.9,327.9 126.8,317.5 59.1,291.3 65.0,280.0 52.4,278.5 48.0,239.0 69.6,209.7 68.2,199.7 97.5,181.3 110.2,151.8 126.9,145.8 134.8,99.6 159.7,48.0 156.2,64.7 190.3,81.7 199.5,62.7 204.9,69.3 209.6,63.5 219.3,83.3 235.5,76.9 252.8,89.2 254.4,75.0 262.2,82.2 299.4,64.0 310.7,67.7 302.6,80.7 313.3,81.8 304.4,102.1 305.0,113.8 318.3,123.8 312.0,159.4 380.8,119.1 396.8,123.3 394.0,136.4 406.1,141.9 419.2,135.4 459.3,156.4 470.1,153.0 487.4,178.2 510.8,175.2 541.9,192.6 526.5,210.6 526.2,223.4 518.5,222.7 513.6,243.1 549.0,279.3 547.9,319.8 501.4,392.9 500.2,422.6 463.9,443.9 462.2,461.6 423.8,461.1 422.6,449.1 415.1,453.9 419.1,461.2 405.3,464.7 373.6,459.4 362.0,476.1"
-          fill="#212c42" stroke="#46577a" stroke-width="1.5"/>
-        <g id="svgDotsLayer"></g>
-      </svg>
+      <div id="leafletMap"></div>
     </div>
   </div>
 </div>
@@ -566,59 +586,111 @@ const BASES = [
   {id:23, nome:"Macaé",                  sigla:"MCE", cidade:"Macaé",                uf:"RJ", tipo:"filial",   endereco:"Rua de Santana, 169 – Centro",                               cep:"27910-090", lat:-22.3710, lng:-41.7869}
 ];
 
-/* Projeção lat/lng → SVG coords (viewBox 597x600, derivado dos limites reais de SP/RJ/MG/ES/GO/DF) */
-function proj(lat, lng){
-  const latN=-12.413345010872895, latS=-25.31011130000609, lngW=-53.21912071129004, lngE=-39.66603413587281;
-  const W=597, H=600, pad=48;
-  const x = pad + (lng - lngW)/(lngE - lngW) * (W - pad*2);
-  const y = pad + (lat - latN)/(latS - latN) * (H - pad*2);
-  return {x: +x.toFixed(1), y: +y.toFixed(1)};
-}
-
 function dotColor(tipo){ return tipo==='hub'?'#e53e3e': tipo==='terminal'?'#9f7aea':'#4299e1'; }
 function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
 
-/* ---- MAPA ---- */
+/* ---- MAPA LEAFLET ---- */
+let leafletMap = null;
+let leafletMarkers = [];   // {id, marker, circle}
 let selectedId = null;
 
-function renderMap(filtered){
-  const g = document.getElementById('svgDotsLayer');
-  if(!g) return;
-  g.innerHTML = '';
-  const filteredIds = new Set(filtered.map(b=>b.id));
+function initLeafletMap(){
+  if(leafletMap) return;
+  leafletMap = L.map('leafletMap', {
+    center: [-20.5, -45.5],
+    zoom: 6,
+    zoomControl: true,
+    attributionControl: false
+  });
 
-  BASES.forEach(b=>{
-    const {x,y} = proj(b.lat, b.lng);
+  // Tiles escuros CartoDB (sem chave, gratuito)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    subdomains: 'abcd'
+  }).addTo(leafletMap);
+
+  // Cria marcadores para todas as bases
+  BASES.forEach(b => {
     const c = dotColor(b.tipo);
-    const r = b.tipo==='hub' ? 9 : 6;
-    const faded = !filteredIds.has(b.id);
+    const r = b.tipo === 'hub' ? 10 : 7;
 
-    const gEl = document.createElementNS('http://www.w3.org/2000/svg','g');
-    gEl.setAttribute('class','base-dot-g' + (faded?' faded':''));
-    gEl.setAttribute('data-id', b.id);
-    gEl.style.cursor = 'pointer';
-
-    if(b.tipo==='hub'){
-      const pulse = document.createElementNS('http://www.w3.org/2000/svg','circle');
-      pulse.setAttribute('cx',x); pulse.setAttribute('cy',y); pulse.setAttribute('r', r+5);
-      pulse.setAttribute('fill','none'); pulse.setAttribute('stroke',c);
-      pulse.setAttribute('stroke-width','1'); pulse.setAttribute('opacity','0.35');
-      gEl.appendChild(pulse);
+    // Círculo de pulso para hubs
+    let pulseCircle = null;
+    if(b.tipo === 'hub'){
+      pulseCircle = L.circleMarker([b.lat, b.lng], {
+        radius: r + 7,
+        color: c, weight: 1, opacity: 0.35, fill: false
+      }).addTo(leafletMap);
     }
-    const ci = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    ci.setAttribute('cx',x); ci.setAttribute('cy',y); ci.setAttribute('r',r);
-    ci.setAttribute('fill',c); ci.setAttribute('stroke','#0e1117'); ci.setAttribute('stroke-width','1.5');
-    gEl.appendChild(ci);
 
-    const tx = document.createElementNS('http://www.w3.org/2000/svg','text');
-    tx.setAttribute('x', x + r + 3); tx.setAttribute('y', y + 3);
-    tx.setAttribute('fill','#a0aec0'); tx.textContent = b.sigla;
-    gEl.appendChild(tx);
+    const marker = L.circleMarker([b.lat, b.lng], {
+      radius: r,
+      fillColor: c, fillOpacity: 1,
+      color: '#0e1117', weight: 2
+    }).addTo(leafletMap);
 
-    gEl.addEventListener('click', ()=> selectBase(b.id));
-    gEl.addEventListener('mouseenter',()=>{ ci.setAttribute('r', r+2); ci.setAttribute('stroke-width','2.5'); ci.setAttribute('stroke',c); });
-    gEl.addEventListener('mouseleave',()=>{ ci.setAttribute('r', r); ci.setAttribute('stroke-width','1.5'); ci.setAttribute('stroke','#0e1117'); });
-    g.appendChild(gEl);
+    // Popup
+    const tipoClass = b.tipo === 'hub' ? 'bci-tipo-hub' : b.tipo === 'terminal' ? 'bci-tipo-terminal' : 'bci-tipo-filial';
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
+    marker.bindPopup(`
+      <strong>${b.nome}</strong><br>
+      <span class="pop-tipo bci-tipo ${tipoClass}">${tipoLabel(b.tipo)}</span>
+      <div class="pop-end">📍 ${b.endereco}<br>${b.cidade} / ${b.uf} — CEP ${b.cep}</div>
+      <a href="${mapsUrl}" target="_blank" rel="noopener"
+         style="color:#4299e1;font-size:11px;text-decoration:none;">🗺 Ver no Google Maps →</a>
+    `, { maxWidth: 260 });
+
+    marker.on('click', () => selectBase(b.id));
+    marker.on('mouseover', () => {
+      marker.setStyle({ radius: r + 3, weight: 3, color: c });
+    });
+    marker.on('mouseout', () => {
+      if(selectedId !== b.id)
+        marker.setStyle({ radius: r, weight: 2, color: '#0e1117' });
+    });
+
+    // Tooltip com sigla (sempre visível como label)
+    marker.bindTooltip(b.sigla, {
+      permanent: true, direction: 'right',
+      className: 'leaflet-sigla-tooltip',
+      offset: [r + 3, 0]
+    }).openTooltip();
+
+    leafletMarkers.push({ id: b.id, marker, pulseCircle, baseR: r, color: c });
+  });
+
+  // CSS do tooltip de sigla
+  const style = document.createElement('style');
+  style.textContent = `
+    .leaflet-sigla-tooltip {
+      background: transparent; border: none; box-shadow: none;
+      color: #a0aec0; font-size: 9px; font-weight: 700;
+      font-family: 'Inter', sans-serif; letter-spacing: 0.5px;
+      white-space: nowrap; padding: 0;
+    }
+    .leaflet-sigla-tooltip::before { display: none; }
+  `;
+  document.head.appendChild(style);
+}
+
+function renderMap(filtered){
+  if(!leafletMap) return;
+  const filteredIds = new Set(filtered.map(b => b.id));
+
+  leafletMarkers.forEach(({id, marker, pulseCircle, baseR, color}) => {
+    const faded = !filteredIds.has(id);
+    const isSelected = id === selectedId;
+
+    marker.setStyle({
+      fillOpacity: faded ? 0.15 : 1,
+      opacity: faded ? 0.15 : 1,
+      radius: isSelected ? baseR + 3 : baseR,
+      color: isSelected ? color : '#0e1117',
+      weight: isSelected ? 3 : 2
+    });
+    if(pulseCircle){
+      pulseCircle.setStyle({ opacity: faded ? 0.05 : 0.35 });
+    }
   });
 }
 
@@ -687,15 +759,20 @@ function renderBases(){
   }).join('');
 
   renderMap(filtered);
-  // Re-aplica selected no mapa
-  document.querySelectorAll('.base-dot-g').forEach(g=>{
-    if(parseInt(g.dataset.id)===selectedId) g.classList.add('selected-dot');
-  });
 }
 
 function selectBase(id){
   selectedId = (selectedId===id) ? null : id;
   renderBases();
+  // Pan mapa para a base selecionada e abre popup
+  if(selectedId && leafletMap){
+    const b = BASES.find(x=>x.id===selectedId);
+    const entry = leafletMarkers.find(x=>x.id===selectedId);
+    if(b && entry){
+      leafletMap.setView([b.lat, b.lng], Math.max(leafletMap.getZoom(), 9), {animate:true});
+      entry.marker.openPopup();
+    }
+  }
   // Scroll para card selecionado
   if(selectedId){
     const el = document.querySelector(`.base-card[data-id="${selectedId}"]`);
@@ -758,7 +835,8 @@ async function switchBase(base){
     document.getElementById('routesPanel').classList.add('hidden');
     document.getElementById('basesPanel').classList.add('active');
     loadingOverlay.style.display='none';
-    renderBases();
+    // Inicializa o mapa Leaflet (apenas uma vez) e renderiza bases
+    setTimeout(()=>{ initLeafletMap(); renderBases(); }, 50);
     return;
   }
   document.getElementById('routesPanel').classList.remove('hidden');
