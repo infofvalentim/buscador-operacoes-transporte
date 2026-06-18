@@ -6,7 +6,6 @@
   <title>Painel de Rotas · Rondolog & Saster</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    /* === VARIÁVEIS (idênticas ao original aprovado) === */
     :root {
       --bg:         #0e1117;
       --surface:    #161b27;
@@ -22,12 +21,11 @@
       --blue:       #4299e1;
       --orange:     #ed8936;
       --yellow:     #ecc94b;
+      --purple:     #9f7aea;
       --mono:       'Share Tech Mono', monospace;
       --transition: all 0.2s ease;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -36,399 +34,380 @@
       padding-bottom: 80px;
     }
 
-    /* === LOADING === */
+    /* LOADING */
     .loading-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      position: fixed; top:0; left:0; right:0; bottom:0;
       background: var(--bg);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      z-index: 1000;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 16px; z-index: 1000;
     }
     .loading-spinner {
       width: 40px; height: 40px;
-      border: 3px solid var(--border);
-      border-top-color: var(--red);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+      border: 3px solid var(--border); border-top-color: var(--red);
+      border-radius: 50%; animation: spin 0.8s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* === ABAS === */
+    /* ABAS */
     .base-tabs {
-      display: flex;
-      gap: 4px;
+      display: flex; gap: 4px;
       background: var(--surface);
       padding: 8px 20px 0;
       border-bottom: 1px solid var(--border);
     }
     .base-tab {
-      padding: 10px 24px;
-      font-size: 14px;
-      font-weight: 600;
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      border-radius: 12px 12px 0 0;
-      transition: all 0.2s;
+      padding: 10px 24px; font-size: 14px; font-weight: 600;
+      background: transparent; border: none; color: var(--text-muted);
+      cursor: pointer; border-radius: 12px 12px 0 0; transition: all 0.2s;
     }
     .base-tab:hover { color: var(--text); background: var(--surface2); }
-    .base-tab.active {
-      color: var(--red-light);
-      background: var(--bg);
-      border-bottom: 2px solid var(--red);
-    }
+    .base-tab.active { color: var(--red-light); background: var(--bg); border-bottom: 2px solid var(--red); }
 
-    /* === HEADER === */
+    /* HEADER ROTAS */
     header {
-      background: var(--surface);
-      padding: 18px 20px 16px;
-      position: sticky;
-      top: 0;
-      z-index: 99;
-      backdrop-filter: blur(2px);
+      background: var(--surface); padding: 18px 20px 16px;
+      position: sticky; top: 0; z-index: 99; backdrop-filter: blur(2px);
     }
     .header-top {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 14px;
+      display: flex; align-items: baseline; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px; margin-bottom: 14px;
     }
     .brand-eyebrow {
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: var(--red);
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 4px;
+      font-size: 10px; letter-spacing: 3px; color: var(--red);
+      text-transform: uppercase; font-weight: 600; margin-bottom: 4px;
     }
     .brand-title { font-size: 20px; font-weight: 700; letter-spacing: .4px; }
     .brand-title span { color: var(--red-light); }
     .header-controls { display: flex; align-items: center; gap: 12px; }
-    .count-badge, .compact-toggle {
-      font-family: var(--mono);
-      font-size: 11px;
-      background: var(--surface2);
-      padding: 5px 13px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      white-space: nowrap;
+    .count-badge {
+      font-family: var(--mono); font-size: 11px;
+      background: var(--surface2); padding: 5px 13px;
+      border-radius: 20px; border: 1px solid var(--border); white-space: nowrap;
     }
     .compact-toggle {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
+      display: flex; align-items: center; gap: 8px; cursor: pointer;
+      font-family: var(--mono); font-size: 11px;
+      background: var(--surface2); padding: 5px 13px;
+      border-radius: 20px; border: 1px solid var(--border);
     }
     .compact-toggle input {
-      width: 32px; height: 16px;
-      appearance: none;
-      background: var(--border);
-      border-radius: 20px;
-      position: relative;
-      cursor: pointer;
+      width: 32px; height: 16px; appearance: none;
+      background: var(--border); border-radius: 20px; position: relative; cursor: pointer;
     }
     .compact-toggle input:checked { background: var(--red); }
     .compact-toggle input::before {
-      content: "";
-      width: 12px; height: 12px;
-      background: white;
-      border-radius: 50%;
-      position: absolute;
-      top: 2px; left: 2px;
-      transition: transform 0.2s;
+      content: ""; width: 12px; height: 12px; background: white;
+      border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: transform 0.2s;
     }
     .compact-toggle input:checked::before { transform: translateX(16px); }
 
-    /* === BUSCA E ORDENAÇÃO === */
-    .search-order-wrap {
-      display: flex;
-      gap: 10px;
-      margin-top: 6px;
-    }
+    .search-order-wrap { display: flex; gap: 10px; margin-top: 6px; }
     .search-wrap { position: relative; flex: 1; }
     .search-icon {
-      position: absolute;
-      left: 14px; top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
+      position: absolute; left: 14px; top: 50%;
+      transform: translateY(-50%); color: var(--text-muted);
     }
     #search {
-      width: 100%;
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 13px 16px 13px 44px;
-      font-size: 15px;
-      color: var(--text);
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
+      width: 100%; background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 13px 16px 13px 44px;
+      font-size: 15px; color: var(--text); outline: none;
+      transition: border-color .2s, box-shadow .2s; font-family: 'Inter', sans-serif;
     }
-    #search:focus {
-      border-color: var(--red);
-      box-shadow: 0 0 0 3px rgba(229,62,62,.2);
-    }
+    #search:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(229,62,62,.2); }
     #orderSelect {
-      background: var(--surface2);
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 11px 14px;
-      font-size: 13px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      min-width: 140px;
+      background: var(--surface2); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 11px 14px; font-size: 13px;
+      color: var(--text); font-family: 'Inter', sans-serif; cursor: pointer; min-width: 140px;
     }
 
-    /* === FILTROS === */
+    /* FILTROS */
     .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 16px auto 0;
-      max-width: 880px;
-      padding: 0 16px;
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin: 16px auto 0; max-width: 880px; padding: 0 16px;
     }
     .chip {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 40px;
-      padding: 6px 14px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      color: var(--text-dim);
-      transition: var(--transition);
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 40px; padding: 6px 14px; font-size: 12px;
+      font-weight: 500; cursor: pointer; color: var(--text-dim); transition: var(--transition);
     }
-    .chip.active {
-      background: var(--red-bg);
-      border-color: var(--red);
-      color: var(--red-light);
-    }
+    .chip.active { background: var(--red-bg); border-color: var(--red); color: var(--red-light); }
 
-    /* === CONTEÚDO PRINCIPAL === */
+    /* CONTEÚDO ROTAS */
     .main { padding: 20px 16px 0; max-width: 1280px; margin: 0 auto; }
     .section-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 14px;
+      font-size: 10px; font-weight: 600; letter-spacing: 2px;
+      color: var(--text-muted); text-transform: uppercase; margin-bottom: 14px;
     }
-
-    /* === GRID DE CARDS === */
-    .results-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
+    .results-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
     @media (min-width: 640px) {
       .results-grid { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
     }
 
-    /* === CARD (ESTILO ORIGINAL RESTAURADO) === */
+    /* CARDS ROTAS */
     .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; cursor: pointer; transition: var(--transition);
+      height: 100%; display: flex; flex-direction: column;
+    }
+    .card:hover {
+      border-color: rgba(229,62,62,.6); box-shadow: 0 8px 24px rgba(0,0,0,.3);
+      transform: translateY(-2px);
+    }
+    .card-inner { display: flex; flex: 1; }
+    .card-bar { width: 4px; border-radius: 2px 0 0 2px; flex-shrink: 0; }
+    .card-body { padding: 14px 16px; flex: 1; }
+    body.compact .card-body { padding: 10px 12px; }
+    body.compact .pedido { font-size: 13px; margin-bottom: 6px; }
+    body.compact .metadata { margin-top: 6px; padding-top: 6px; }
+    .pedido {
+      font-size: 15px; font-weight: 500; margin-bottom: 8px;
+      display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 8px;
+    }
+    .pedido-sep { color: var(--text-muted); font-weight: 600; }
+    .route-badge {
+      display: inline-block; border-radius: 20px; padding: 2px 10px;
+      font-size: 9px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-left: 8px; vertical-align: middle; border: 1px solid transparent;
+    }
+    .nome-rota { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+    .rota-nome-principal {
+      font-family: var(--mono); font-size: 13px; font-weight: 600;
+      color: #f1f5f9; letter-spacing: 0.2px; word-break: break-word;
+    }
+    body.compact .rota-nome-principal { font-size: 12px; }
+    .metadata {
+      margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      font-size: 11px; color: var(--text-dim);
+    }
+    .meta-item { display: inline-flex; align-items: center; gap: 6px; }
+    .meta-count-badge {
+      background: var(--surface2); border-radius: 10px; padding: 2px 6px;
+      font-size: 9px; font-weight: 600; margin-left: 2px; border: 1px solid var(--border);
+    }
+    .meta-placa {
+      font-family: var(--mono); background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 3px 8px; font-size: 11px; letter-spacing: 1px;
+    }
+    .condutor-list { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+    .condutor-name { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 2px 8px; font-size: 10px; }
+    .condutor-more, .placa-more {
+      background: var(--surface2); color: var(--text-dim); border-radius: 12px;
+      padding: 2px 8px; font-size: 10px; cursor: help; border: 1px solid var(--border);
+    }
+    .viagem-badge {
+      background: var(--surface2); border-radius: 20px; padding: 2px 10px;
+      font-size: 11px; border: 1px solid var(--border); display: inline-flex; align-items: center; gap: 4px;
+    }
+    .card-action {
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 16px; color: var(--text-muted); transition: color .2s; flex-shrink: 0;
+    }
+    .card:hover .card-action { color: var(--red-light); }
+    mark { background: rgba(253,230,138,.2); color: #fde68a; border-radius: 3px; padding: 0 2px; }
+    .no-result {
+      text-align: center; padding: 60px 20px; background: var(--surface);
+      border-radius: 24px; grid-column: 1 / -1;
+    }
+
+    /* TOAST */
+    .copied-toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+      background: #1a2035e6; backdrop-filter: blur(8px); color: var(--green);
+      font-family: var(--mono); font-size: 11px; padding: 12px 24px;
+      border-radius: 40px; border: 1px solid rgba(72,187,120,.4);
+      opacity: 0; transition: opacity .2s; pointer-events: none;
+      z-index: 9999; display: flex; gap: 8px; white-space: nowrap;
+    }
+    .copied-toast.show { opacity: 1; }
+    .toast-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; }
+
+    /* =============================================
+       ABA BASES
+       ============================================= */
+    #basesPanel { display: none; }
+    #basesPanel.active { display: block; }
+    #routesPanel.hidden { display: none; }
+
+    /* Header bases */
+    .bases-header {
+      background: var(--surface);
+      padding: 18px 20px 16px;
+      position: sticky; top: 0; z-index: 99;
+      border-bottom: 1px solid var(--border);
+    }
+    .bases-header-top {
+      display: flex; align-items: baseline; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px; margin-bottom: 14px;
+    }
+    .bases-search-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .bases-search-wrap { position: relative; flex: 1; min-width: 200px; }
+    .bases-search-icon {
+      position: absolute; left: 14px; top: 50%;
+      transform: translateY(-50%); color: var(--text-muted); pointer-events: none;
+    }
+    #basesSearch {
+      width: 100%; background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 13px 16px 13px 44px;
+      font-size: 15px; color: var(--text); outline: none;
+      transition: border-color .2s, box-shadow .2s; font-family: 'Inter', sans-serif;
+    }
+    #basesSearch:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(229,62,62,.2); }
+    #basesUFFilter, #basesTipoFilter {
+      background: var(--surface2); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 11px 14px; font-size: 13px;
+      color: var(--text); font-family: 'Inter', sans-serif; cursor: pointer;
+    }
+
+    /* Stats */
+    .bases-stats {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      padding: 16px 20px 0; max-width: 1280px; margin: 0 auto;
+    }
+    .stat-chip {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 10px 18px;
+      display: flex; flex-direction: column; gap: 2px; min-width: 90px;
+    }
+    .stat-num { font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--text); }
+    .stat-num.red { color: var(--red-light); }
+    .stat-num.blue { color: var(--blue); }
+    .stat-num.purple { color: var(--purple); }
+    .stat-num.green { color: var(--green); }
+    .stat-label { color: var(--text-muted); font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    /* Layout principal */
+    .bases-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    @media (min-width: 1100px) {
+      .bases-layout { grid-template-columns: 440px 1fr; align-items: start; }
+    }
+
+    /* Lista */
+    .bases-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    @media (min-width: 1100px) {
+      .bases-list {
+        max-height: calc(100vh - 240px);
+        overflow-y: auto;
+        padding-right: 6px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) transparent;
+      }
+      .bases-list::-webkit-scrollbar { width: 4px; }
+      .bases-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    }
+
+    /* === BASE CARD (isolado do .card de rotas) === */
+    .base-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
       cursor: pointer;
       transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+      overflow: hidden;
+      flex-shrink: 0;
+      /* sem height:100%, sem display:flex no container externo */
     }
-    .card:hover {
-      border-color: rgba(229,62,62,.6);
-      box-shadow: 0 8px 24px rgba(0,0,0,.3);
+    .base-card:hover {
+      border-color: rgba(229,62,62,.5);
+      box-shadow: 0 6px 20px rgba(0,0,0,.35);
       transform: translateY(-2px);
     }
-    .card-inner { display: flex; flex: 1; }
-    .card-bar {
-      width: 4px;
-      border-radius: 2px 0 0 2px;
-      flex-shrink: 0;
-      transition: background 0.2s;
+    .base-card.selected {
+      border-color: var(--red);
+      box-shadow: 0 0 0 2px rgba(229,62,62,.25);
     }
-    .card-body { padding: 14px 16px; flex: 1; }
+    /* Inner: acento colorido + conteúdo */
+    .bci { display: flex; align-items: stretch; min-height: 0; }
+    .bci-accent { width: 4px; flex-shrink: 0; border-radius: 0; }
+    .bci-body { padding: 14px 16px; flex: 1; min-width: 0; }
 
-    body.compact .card-body { padding: 10px 12px; }
-    body.compact .pedido { font-size: 13px; margin-bottom: 6px; }
-    body.compact .metadata { margin-top: 6px; padding-top: 6px; }
+    .bci-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 10px; margin-bottom: 6px;
+    }
+    .bci-nome { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.3; }
+    .bci-tipo {
+      font-size: 9px; font-weight: 700; padding: 3px 10px;
+      border-radius: 20px; text-transform: uppercase;
+      letter-spacing: 0.5px; white-space: nowrap; flex-shrink: 0; border: 1px solid;
+    }
+    .bci-tipo-hub    { background: rgba(229,62,62,.15); border-color: var(--red); color: var(--red-light); }
+    .bci-tipo-filial { background: rgba(66,153,225,.12); border-color: var(--blue); color: var(--blue); }
+    .bci-tipo-terminal { background: rgba(159,122,234,.12); border-color: var(--purple); color: var(--purple); }
 
-    .pedido {
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 5px 8px;
+    .bci-endereco {
+      font-size: 12px; color: var(--text-dim);
+      margin-bottom: 10px; line-height: 1.55;
     }
-    .pedido-sep { color: var(--text-muted); font-weight: 600; }
+    .bci-foot {
+      display: flex; align-items: center;
+      gap: 8px; flex-wrap: wrap;
+    }
+    .bci-uf {
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 3px 8px; letter-spacing: 1px;
+    }
+    .bci-cep { font-family: var(--mono); font-size: 10px; color: var(--text-muted); }
+    .bci-btns { display: flex; gap: 6px; margin-left: auto; }
+    .bci-btn {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 10px; font-weight: 600; padding: 5px 11px;
+      border-radius: 20px; border: 1px solid var(--border);
+      background: var(--surface2); color: var(--text-dim);
+      cursor: pointer; transition: var(--transition);
+      text-decoration: none; white-space: nowrap; line-height: 1;
+    }
+    .bci-btn:hover { border-color: var(--red); color: var(--red-light); background: var(--red-bg); }
+    .bci-btn-maps { border-color: rgba(66,153,225,.5); color: var(--blue); }
+    .bci-btn-maps:hover { border-color: var(--blue); background: rgba(66,153,225,.1); color: #90cdf4; }
+    .bci-btn-waze { border-color: rgba(72,187,120,.4); color: var(--green); }
+    .bci-btn-waze:hover { border-color: var(--green); background: rgba(72,187,120,.1); color: #9ae6b4; }
 
-    /* Badge de tipo (estilo original) */
-    .route-badge {
-      display: inline-block;
-      border-radius: 20px;
-      padding: 2px 10px;
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-left: 8px;
-      vertical-align: middle;
-      border: 1px solid transparent;
-    }
-
-    .nome-rota {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px 12px;
-    }
-    .rota-nome-principal {
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 600;
-      color: #f1f5f9;
-      letter-spacing: 0.2px;
-      word-break: break-word;
-    }
-    body.compact .rota-nome-principal { font-size: 12px; }
-
-    /* Metadados (condutores, placas, viagens) */
-    .metadata {
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: 11px;
-      color: var(--text-dim);
-    }
-    .meta-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .meta-count-badge {
-      background: var(--surface2);
-      border-radius: 10px;
-      padding: 2px 6px;
-      font-size: 9px;
-      font-weight: 600;
-      margin-left: 2px;
-      border: 1px solid var(--border);
-    }
-    .meta-placa {
-      font-family: var(--mono);
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 3px 8px;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-    .condutor-list {
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-    .condutor-name {
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 2px 8px;
-      font-size: 10px;
-    }
-    .condutor-more, .placa-more {
-      background: var(--surface2);
-      color: var(--text-dim);
-      border-radius: 12px;
-      padding: 2px 8px;
-      font-size: 10px;
-      cursor: help;
-      border: 1px solid var(--border);
-    }
-
-    /* Viagem badge (exclusivo Saster, mas integrado ao estilo) */
-    .viagem-badge {
-      background: var(--surface2);
-      border-radius: 20px;
-      padding: 2px 10px;
-      font-size: 11px;
-      border: 1px solid var(--border);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .card-action {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 16px;
-      color: var(--text-muted);
-      transition: color .2s;
-      flex-shrink: 0;
-    }
-    .card:hover .card-action { color: var(--red-light); }
-
-    mark {
-      background: rgba(253,230,138,.2);
-      color: #fde68a;
-      border-radius: 3px;
-      padding: 0 2px;
-    }
-
-    .no-result {
-      text-align: center;
-      padding: 60px 20px;
+    /* Mapa */
+    .bases-map-wrap {
       background: var(--surface);
-      border-radius: 24px;
-      grid-column: 1 / -1;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      position: sticky;
+      top: 20px;
     }
+    .bases-map-hdr {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .bases-map-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+    .map-legend { display: flex; gap: 14px; flex-wrap: wrap; }
+    .leg-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text-muted); }
+    .leg-dot { width: 8px; height: 8px; border-radius: 50%; }
+    #brasilSvg { width: 100%; display: block; background: var(--bg); }
 
-    /* Toast de cópia */
-    .copied-toast {
-      position: fixed;
-      bottom: 28px; left: 50%;
-      transform: translateX(-50%);
-      background: #1a2035e6;
-      backdrop-filter: blur(8px);
-      color: var(--green);
-      font-family: var(--mono);
-      font-size: 11px;
-      padding: 12px 24px;
-      border-radius: 40px;
-      border: 1px solid rgba(72,187,120,.4);
-      opacity: 0;
-      transition: opacity .2s, transform .2s;
-      pointer-events: none;
-      z-index: 999;
-      display: flex;
-      gap: 8px;
-      white-space: nowrap;
-    }
-    .copied-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-    .toast-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; }
+    .base-dot-g { cursor: pointer; }
+    .base-dot-g circle { transition: r 0.15s, stroke-width 0.15s; }
+    .base-dot-g text { pointer-events: none; font-size: 7.5px; font-weight: 700; font-family: 'Inter', sans-serif; }
+    .base-dot-g.faded { opacity: 0.18; }
 
     @media (max-width: 600px) {
       .search-order-wrap { flex-direction: column; }
       #orderSelect { width: 100%; }
-    }
-    @media (max-width: 480px) {
-      .card-action { padding: 0 10px; }
-      .copied-toast { font-size: 9px; padding: 8px 18px; }
-      .chip { font-size: 10px; padding: 4px 10px; }
+      .bases-search-row { flex-direction: column; }
+      #basesUFFilter, #basesTipoFilter { width: 100%; }
     }
   </style>
 </head>
@@ -436,302 +415,436 @@
 
 <div class="loading-overlay" id="loadingOverlay">
   <div class="loading-spinner"></div>
-  <div>Carregando dados...</div>
+  <div style="color:var(--text-muted);font-size:13px;">Carregando dados...</div>
 </div>
 
 <div class="base-tabs">
   <button class="base-tab active" data-base="rondolog">🚛 RONDOLOG</button>
   <button class="base-tab" data-base="saster">📦 SASTER</button>
+  <button class="base-tab" data-base="bases">🏭 BASES</button>
 </div>
 
-<header>
-  <div class="header-top">
-    <div>
-      <div class="brand-eyebrow" id="baseSubtitle">Rondolog · 113 rotas</div>
-      <div class="brand-title">BUSCADOR <span id="baseTitle">RONDOLOG</span></div>
+<!-- ===== PAINEL ROTAS (original) ===== -->
+<div id="routesPanel">
+  <header>
+    <div class="header-top">
+      <div>
+        <div class="brand-eyebrow" id="baseSubtitle">Rondolog · rotas</div>
+        <div class="brand-title">BUSCADOR <span id="baseTitle">RONDOLOG</span></div>
+      </div>
+      <div class="header-controls">
+        <div class="count-badge" id="countBadge">— rotas</div>
+        <label class="compact-toggle">
+          <span>📦 Compacto</span>
+          <input type="checkbox" id="compactModeToggle">
+        </label>
+      </div>
     </div>
-    <div class="header-controls">
-      <div class="count-badge" id="countBadge">113 rotas</div>
-      <label class="compact-toggle">
-        <span>📦 Compacto</span>
-        <input type="checkbox" id="compactModeToggle">
-      </label>
+    <div class="search-order-wrap">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" placeholder="Buscar origem, destino, placa ou condutor..." autocomplete="off">
+      </div>
+      <select id="orderSelect">
+        <option value="padrao" selected>Padrão</option>
+        <option value="origem">Origem (A-Z)</option>
+        <option value="destino">Destino (A-Z)</option>
+        <option value="tipo">Tipo</option>
+      </select>
     </div>
+  </header>
+  <div class="filters" id="filterChips">
+    <div class="chip active" data-type="all">Todas</div>
+    <div class="chip" data-type="transferencia">🚚 Transferência</div>
+    <div class="chip" data-type="coleta">📦 Coleta</div>
+    <div class="chip" data-type="rota">🔄 Rota fixa</div>
   </div>
-  <div class="search-order-wrap">
-    <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search" placeholder="Buscar origem, destino, placa ou condutor..." autocomplete="off">
-    </div>
-    <select id="orderSelect">
-      <option value="padrao" selected>Padrão</option>
-      <option value="origem">Origem (A-Z)</option>
-      <option value="destino">Destino (A-Z)</option>
-      <option value="tipo">Tipo</option>
-    </select>
+  <div class="main">
+    <div class="section-label" id="sectionLabel">Todas as rotas</div>
+    <div id="results" class="results-grid"></div>
   </div>
-</header>
-
-<div class="filters" id="filterChips">
-  <div class="chip active" data-type="all">Todas</div>
-  <div class="chip" data-type="transferencia">🚚 Transferência</div>
-  <div class="chip" data-type="coleta">📦 Coleta</div>
-  <div class="chip" data-type="rota">🔄 Rota fixa</div>
 </div>
 
-<div class="main">
-  <div class="section-label" id="sectionLabel">Todas as rotas</div>
-  <div id="results" class="results-grid"></div>
+<!-- ===== PAINEL BASES (novo) ===== -->
+<div id="basesPanel">
+
+  <div class="bases-header">
+    <div class="bases-header-top">
+      <div>
+        <div class="brand-eyebrow">Rondolog · 23 bases operacionais</div>
+        <div class="brand-title">BASES <span style="color:var(--red-light)">RONDOLOG</span></div>
+      </div>
+      <div class="count-badge" id="basesCountBadge">23 bases</div>
+    </div>
+    <div class="bases-search-row">
+      <div class="bases-search-wrap">
+        <span class="bases-search-icon">🔍</span>
+        <input type="text" id="basesSearch" placeholder="Buscar base, cidade, endereço ou CEP..." autocomplete="off">
+      </div>
+      <select id="basesUFFilter">
+        <option value="">Todos os estados</option>
+        <option value="SP">SP</option>
+        <option value="RJ">RJ</option>
+        <option value="MG">MG</option>
+        <option value="ES">ES</option>
+        <option value="GO">GO</option>
+        <option value="DF">DF</option>
+      </select>
+      <select id="basesTipoFilter">
+        <option value="">Todos os tipos</option>
+        <option value="hub">🔴 Hub</option>
+        <option value="filial">🔵 Filial</option>
+        <option value="terminal">🟣 Terminal</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="bases-stats">
+    <div class="stat-chip"><span class="stat-num red">23</span><span class="stat-label">Bases totais</span></div>
+    <div class="stat-chip"><span class="stat-num red">2</span><span class="stat-label">Hubs principais</span></div>
+    <div class="stat-chip"><span class="stat-num blue">20</span><span class="stat-label">Filiais</span></div>
+    <div class="stat-chip"><span class="stat-num purple">1</span><span class="stat-label">Terminal</span></div>
+    <div class="stat-chip"><span class="stat-num green">6</span><span class="stat-label">Estados + DF</span></div>
+  </div>
+
+  <div class="bases-layout">
+    <div class="bases-list" id="basesList"></div>
+
+    <div class="bases-map-wrap">
+      <div class="bases-map-hdr">
+        <span class="bases-map-title">📍 Distribuição Geográfica</span>
+        <div class="map-legend">
+          <div class="leg-item"><div class="leg-dot" style="background:var(--red)"></div>Hub</div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--blue)"></div>Filial</div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--purple)"></div>Terminal</div>
+        </div>
+      </div>
+      <svg id="brasilSvg" viewBox="0 0 597 600" xmlns="http://www.w3.org/2000/svg">
+        <!-- Silhueta real SP/RJ/MG/ES/GO/DF, derivada de limites estaduais do IBGE (simplificada) -->
+        <rect x="0" y="0" width="597" height="600" fill="#0e1117"/>
+        <!-- Contorno geográfico real da região coberta pelas bases -->
+        <polygon
+          points="362.0,476.1 336.7,486.2 336.2,494.2 317.7,491.8 284.4,508.9 237.3,552.0 231.7,539.0 219.4,541.9 219.4,527.0 192.7,527.1 196.5,514.2 167.5,457.7 139.8,460.3 89.0,442.8 52.8,448.4 90.2,411.5 108.1,369.6 127.8,353.7 132.9,327.9 126.8,317.5 59.1,291.3 65.0,280.0 52.4,278.5 48.0,239.0 69.6,209.7 68.2,199.7 97.5,181.3 110.2,151.8 126.9,145.8 134.8,99.6 159.7,48.0 156.2,64.7 190.3,81.7 199.5,62.7 204.9,69.3 209.6,63.5 219.3,83.3 235.5,76.9 252.8,89.2 254.4,75.0 262.2,82.2 299.4,64.0 310.7,67.7 302.6,80.7 313.3,81.8 304.4,102.1 305.0,113.8 318.3,123.8 312.0,159.4 380.8,119.1 396.8,123.3 394.0,136.4 406.1,141.9 419.2,135.4 459.3,156.4 470.1,153.0 487.4,178.2 510.8,175.2 541.9,192.6 526.5,210.6 526.2,223.4 518.5,222.7 513.6,243.1 549.0,279.3 547.9,319.8 501.4,392.9 500.2,422.6 463.9,443.9 462.2,461.6 423.8,461.1 422.6,449.1 415.1,453.9 419.1,461.2 405.3,464.7 373.6,459.4 362.0,476.1"
+          fill="#212c42" stroke="#46577a" stroke-width="1.5"/>
+        <g id="svgDotsLayer"></g>
+      </svg>
+    </div>
+  </div>
 </div>
 
 <div class="copied-toast" id="toast">
-  <span class="toast-dot"></span>NOME DA ROTA COPIADO
+  <span class="toast-dot"></span><span id="toastMsg">COPIADO</span>
 </div>
 
 <script>
-  (function() {
-    // Configuração dos dados externos
-    const DATA_URLS = {
-      rondolog: './data/rondolog.json',
-      saster: './data/saster.json'
-    };
-    const dataCache = { rondolog: null, saster: null };
+(function(){
 
-    // Estado da aplicação
-    let currentBase = 'rondolog';
-    let currentData = [];
-    let currentQuery = '';
-    let currentType = 'all';
-    let currentOrder = 'padrao';
+/* ===================== DADOS BASES ===================== */
+const BASES = [
+  {id:1,  nome:"Duque de Caxias",        sigla:"RJ",  cidade:"Duque de Caxias",      uf:"RJ", tipo:"hub",      endereco:"Rodovia Washington Luiz, 2070 – Parque Duque",               cep:"25085-009", lat:-22.7854, lng:-43.3115},
+  {id:2,  nome:"Santana de Parnaíba",    sigla:"SP",  cidade:"Santana de Parnaíba",  uf:"SP", tipo:"hub",      endereco:"Estrada Tenente Marques, 6765 – Vila Poupança",              cep:"06525-001", lat:-23.4527, lng:-46.9177},
+  {id:3,  nome:"Jundiaí",                sigla:"JND", cidade:"Jundiaí",              uf:"SP", tipo:"filial",   endereco:"Rua Miguel Latorre, 610 – Aeroporto",                        cep:"13212-009", lat:-23.1897, lng:-46.9142},
+  {id:4,  nome:"Betim",                  sigla:"BTM", cidade:"Betim",                uf:"MG", tipo:"filial",   endereco:"Rua Bispo Pedro Valdemar Dias, 777 – Amazonas",              cep:"32685-044", lat:-19.9678, lng:-44.1983},
+  {id:5,  nome:"Três Corações",          sigla:"3C",  cidade:"Três Corações",        uf:"MG", tipo:"filial",   endereco:"Avenida Édson Penha, 627 – Santana",                         cep:"37410-650", lat:-21.6914, lng:-45.2562},
+  {id:6,  nome:"Serra (ES)",             sigla:"SRR", cidade:"Serra",                uf:"ES", tipo:"filial",   endereco:"Rua Tancredo Neves, 85 – São Diogo I",                       cep:"29163-267", lat:-20.1283, lng:-40.3077},
+  {id:7,  nome:"Cravinhos",              sigla:"CRV", cidade:"Cravinhos",            uf:"SP", tipo:"filial",   endereco:"Rua Manoel Gomes dos Santos, 2921 – Jd. Independência",      cep:"14140-000", lat:-21.3407, lng:-47.7297},
+  {id:8,  nome:"Ribeirão Preto",         sigla:"RP",  cidade:"Ribeirão Preto",       uf:"SP", tipo:"filial",   endereco:"Rua Altiva de Faria Chaves, 383 – Parque Anhanguera",        cep:"14095-490", lat:-21.1704, lng:-47.8103},
+  {id:9,  nome:"Mirassol",               sigla:"MRS", cidade:"Mirassol",             uf:"SP", tipo:"filial",   endereco:"Rua Bruno Rodrigues Gomes, 562 – Parque Mirassol",           cep:"15134-144", lat:-20.8196, lng:-49.5101},
+  {id:10, nome:"Juiz de Fora",           sigla:"JF",  cidade:"Juiz de Fora",         uf:"MG", tipo:"filial",   endereco:"Rua Martins Barbosa, 695 – Benfica",                         cep:"36090-300", lat:-21.7667, lng:-43.3503},
+  {id:11, nome:"Ipatinga",               sigla:"IPT", cidade:"Santana do Paraíso",   uf:"MG", tipo:"filial",   endereco:"Rua São Caetano do Sul, 115 – Parque Caravelas",             cep:"35179-000", lat:-19.3640, lng:-42.5344},
+  {id:12, nome:"Goiânia",                sigla:"GYN", cidade:"Goiânia",              uf:"GO", tipo:"filial",   endereco:"Rua Anaca, 213 – Parque Amazônia",                           cep:"74840-690", lat:-16.6869, lng:-49.2648},
+  {id:13, nome:"Cajamar",                sigla:"CAJ", cidade:"Cajamar",              uf:"SP", tipo:"filial",   endereco:"Rodovia Anhanguera, KM 29.5 – Fazenda Velha",                cep:"07750-000", lat:-23.3581, lng:-46.8765},
+  {id:14, nome:"Brasília",               sigla:"BSB", cidade:"Brasília",             uf:"DF", tipo:"filial",   endereco:"SIA Trecho 3, 32 – Zona Industrial Guará",                  cep:"71200-030", lat:-15.7942, lng:-47.8825},
+  {id:15, nome:"Paracatu",               sigla:"PCT", cidade:"Paracatu",             uf:"MG", tipo:"filial",   endereco:"Rua Donizete Victor Rodrigues, 720 – Bela Vista",            cep:"38600-490", lat:-17.2233, lng:-46.8754},
+  {id:16, nome:"Montes Claros",          sigla:"MOC", cidade:"Montes Claros",        uf:"MG", tipo:"filial",   endereco:"Avenida Penápolis, 315 – São Geraldo",                       cep:"39403-165", lat:-16.7286, lng:-43.8617},
+  {id:17, nome:"Cordeirópolis",          sigla:"COR", cidade:"Cordeirópolis",        uf:"SP", tipo:"filial",   endereco:"Rua Antenor Genizelli Filho, 273 – Distrito Industrial",     cep:"13490-000", lat:-22.4745, lng:-47.4572},
+  {id:18, nome:"Agudos",                 sigla:"AGD", cidade:"Agudos",               uf:"SP", tipo:"filial",   endereco:"Avenida Rui Barbosa, 361 – Centro",                          cep:"17120-000", lat:-22.4756, lng:-48.9844},
+  {id:19, nome:"Uberlândia",             sigla:"UDI", cidade:"Uberlândia",           uf:"MG", tipo:"filial",   endereco:"Rua Ângelo Cunha, 365 – São Jorge",                          cep:"38410-206", lat:-18.9188, lng:-48.2766},
+  {id:20, nome:"Guarulhos – Rondocargas",sigla:"GRU", cidade:"Guarulhos",            uf:"SP", tipo:"terminal", endereco:"Av. Papa João Paulo I, 2258 – Jd. Presidente Dutra",         cep:"07174-000", lat:-23.4356, lng:-46.5338},
+  {id:21, nome:"Santa Bárbara d'Oeste",  sigla:"SBO", cidade:"Santa Bárbara d'Oeste",uf:"SP", tipo:"filial",   endereco:"Av. Paulo Augusto Bortolucci, 346 – Distrito Industrial",    cep:"13459-617", lat:-22.7548, lng:-47.4136},
+  {id:22, nome:"Taubaté",                sigla:"TAU", cidade:"Taubaté",              uf:"SP", tipo:"filial",   endereco:"Rua João Vanoni, 185 – Residencial Estoril",                 cep:"12092-703", lat:-23.0260, lng:-45.5557},
+  {id:23, nome:"Macaé",                  sigla:"MCE", cidade:"Macaé",                uf:"RJ", tipo:"filial",   endereco:"Rua de Santana, 169 – Centro",                               cep:"27910-090", lat:-22.3710, lng:-41.7869}
+];
 
-    // Elementos DOM
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const baseSubtitle = document.getElementById('baseSubtitle');
-    const baseTitle = document.getElementById('baseTitle');
-    const countBadge = document.getElementById('countBadge');
-    const filterChipsDiv = document.getElementById('filterChips');
-    const searchInput = document.getElementById('search');
-    const orderSelect = document.getElementById('orderSelect');
-    const sectionLabel = document.getElementById('sectionLabel');
-    const resultsContainer = document.getElementById('results');
-    const toast = document.getElementById('toast');
+/* Projeção lat/lng → SVG coords (viewBox 597x600, derivado dos limites reais de SP/RJ/MG/ES/GO/DF) */
+function proj(lat, lng){
+  const latN=-12.413345010872895, latS=-25.31011130000609, lngW=-53.21912071129004, lngE=-39.66603413587281;
+  const W=597, H=600, pad=48;
+  const x = pad + (lng - lngW)/(lngE - lngW) * (W - pad*2);
+  const y = pad + (lat - latN)/(latS - latN) * (H - pad*2);
+  return {x: +x.toFixed(1), y: +y.toFixed(1)};
+}
 
-    // Utilitários (idênticos ao original)
-    function norm(s) { return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
-    function hl(text, q) {
-      if (!q) return text;
-      const nq = norm(q), nt = norm(text);
-      let out = '', i = 0;
-      while (i < text.length) {
-        const idx = nt.indexOf(nq, i);
-        if (idx === -1) { out += text.slice(i); break; }
-        out += text.slice(i, idx) + '<mark>' + text.slice(idx, idx + nq.length) + '</mark>';
-        i = idx + nq.length;
-      }
-      return out;
+function dotColor(tipo){ return tipo==='hub'?'#e53e3e': tipo==='terminal'?'#9f7aea':'#4299e1'; }
+function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
+
+/* ---- MAPA ---- */
+let selectedId = null;
+
+function renderMap(filtered){
+  const g = document.getElementById('svgDotsLayer');
+  if(!g) return;
+  g.innerHTML = '';
+  const filteredIds = new Set(filtered.map(b=>b.id));
+
+  BASES.forEach(b=>{
+    const {x,y} = proj(b.lat, b.lng);
+    const c = dotColor(b.tipo);
+    const r = b.tipo==='hub' ? 9 : 6;
+    const faded = !filteredIds.has(b.id);
+
+    const gEl = document.createElementNS('http://www.w3.org/2000/svg','g');
+    gEl.setAttribute('class','base-dot-g' + (faded?' faded':''));
+    gEl.setAttribute('data-id', b.id);
+    gEl.style.cursor = 'pointer';
+
+    if(b.tipo==='hub'){
+      const pulse = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      pulse.setAttribute('cx',x); pulse.setAttribute('cy',y); pulse.setAttribute('r', r+5);
+      pulse.setAttribute('fill','none'); pulse.setAttribute('stroke',c);
+      pulse.setAttribute('stroke-width','1'); pulse.setAttribute('opacity','0.35');
+      gEl.appendChild(pulse);
     }
+    const ci = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    ci.setAttribute('cx',x); ci.setAttribute('cy',y); ci.setAttribute('r',r);
+    ci.setAttribute('fill',c); ci.setAttribute('stroke','#0e1117'); ci.setAttribute('stroke-width','1.5');
+    gEl.appendChild(ci);
 
-    function getTipoColor(tipo) {
-      if (tipo === 'coleta') return 'var(--blue)';
-      if (tipo === 'transferencia') return 'var(--green)';
-      return 'var(--orange)';
-    }
-    function getTipoLabel(tipo) {
-      if (tipo === 'transferencia') return '🚚 Transferência';
-      if (tipo === 'coleta') return '📦 Coleta';
-      return '🔄 Rota fixa';
-    }
+    const tx = document.createElementNS('http://www.w3.org/2000/svg','text');
+    tx.setAttribute('x', x + r + 3); tx.setAttribute('y', y + 3);
+    tx.setAttribute('fill','#a0aec0'); tx.textContent = b.sigla;
+    gEl.appendChild(tx);
 
-    // Carrega dados via fetch (com cache)
-    async function loadData(base) {
-      if (dataCache[base]) return dataCache[base];
-      try {
-        const res = await fetch(DATA_URLS[base]);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
-        // Garante estrutura padronizada
-        const processed = data.map(item => ({
-          ...item,
-          nome: item.nome_da_rota || item.nome || '',
-          condutor: item.condutores || item.condutor || [],
-          placa: item.placas || item.placa || []
-        }));
-        dataCache[base] = processed;
-        return processed;
-      } catch (err) {
-        alert(`Erro ao carregar dados de ${base.toUpperCase()}. Verifique os arquivos JSON.`);
-        return [];
-      }
-    }
+    gEl.addEventListener('click', ()=> selectBase(b.id));
+    gEl.addEventListener('mouseenter',()=>{ ci.setAttribute('r', r+2); ci.setAttribute('stroke-width','2.5'); ci.setAttribute('stroke',c); });
+    gEl.addEventListener('mouseleave',()=>{ ci.setAttribute('r', r); ci.setAttribute('stroke-width','1.5'); ci.setAttribute('stroke','#0e1117'); });
+    g.appendChild(gEl);
+  });
+}
 
-    // Troca de base
-    async function switchBase(base) {
-      loadingOverlay.style.display = 'flex';
-      currentBase = base;
-      baseTitle.textContent = base === 'rondolog' ? 'RONDOLOG' : 'SASTER';
-      
-      currentData = await loadData(base);
-      
-      baseSubtitle.innerHTML = base === 'rondolog' 
-        ? `Rondolog · ${currentData.length} rotas` 
-        : `Saster · ${currentData.length} rotas`;
-      
-      filterChipsDiv.style.display = base === 'rondolog' ? 'flex' : 'none';
-      
-      currentQuery = ''; currentType = 'all'; currentOrder = 'padrao';
-      searchInput.value = ''; orderSelect.value = 'padrao';
-      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      document.querySelector('.chip[data-type="all"]')?.classList.add('active');
-      
-      loadingOverlay.style.display = 'none';
-      render();
-    }
+/* ---- LISTA ---- */
+function normStr(s){ return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
 
-    // Ordenação (respeita o original)
-    function sortRotas(arr, order) {
-      const sorted = [...arr];
-      if (order === 'origem') {
-        sorted.sort((a,b) => a.origem.localeCompare(b.origem));
-      } else if (order === 'destino') {
-        sorted.sort((a,b) => a.destino.localeCompare(b.destino));
-      } else if (order === 'tipo' && currentBase === 'rondolog') {
-        const tipoOrder = { coleta: 1, transferencia: 2, rota: 3 };
-        sorted.sort((a,b) => (tipoOrder[a.tipo]||99) - (tipoOrder[b.tipo]||99));
-      }
-      return sorted;
-    }
+function renderBases(){
+  const q = normStr(document.getElementById('basesSearch').value);
+  const uf = document.getElementById('basesUFFilter').value;
+  const tipo = document.getElementById('basesTipoFilter').value;
 
-    // Renderização principal (estilo exatamente igual ao original, com suporte a viagens)
-    function render() {
-      let filtered = currentData;
-      const q = currentQuery;
-      
-      if (q) {
-        const nq = norm(q);
-        filtered = filtered.filter(r => 
-          norm(r.nome).includes(nq) ||
-          `${r.origem} ${r.destino}`.toLowerCase().includes(nq) ||
-          (r.condutor && r.condutor.some(c => norm(c).includes(nq))) ||
-          (r.placa && r.placa.some(p => norm(p).includes(nq)))
-        );
-      }
-      
-      if (currentBase === 'rondolog' && currentType !== 'all') {
-        filtered = filtered.filter(r => r.tipo === currentType);
-      }
-      
-      filtered = sortRotas(filtered, currentOrder);
-      
-      countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
-      sectionLabel.innerHTML = q ? `Resultados para "${q}"` : 'Todas as rotas';
-      
-      if (!filtered.length) {
-        resultsContainer.innerHTML = '<div class="no-result">🔍 Nenhuma rota encontrada.</div>';
-        return;
-      }
-      
-      resultsContainer.innerHTML = filtered.map(r => {
-        const tipo = r.tipo || 'rota';
-        const tipoColor = (currentBase === 'rondolog') ? getTipoColor(tipo) : 'var(--blue)';
-        const condutores = r.condutor || [];
-        const placas = r.placa || [];
-        const viagens = r.viagens;
-        const totalCond = condutores.length;
-        const totalPlacas = placas.length;
-        
-        const condutoresHTML = condutores.length ? `
-          <div class="condutor-list">
-            ${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, q)}</span>`).join('')}
-            ${totalCond > 2 ? `<span class="condutor-more" title="${condutores.slice(2).join(', ')}">+${totalCond-2}</span>` : ''}
-          </div>
-        ` : '';
-        
-        const placasHTML = placas.length ? `
-          <span class="meta-placa">${hl(placas[0], q)}</span>
-          ${totalPlacas > 1 ? `<span class="placa-more" title="${placas.slice(1).join(', ')}">+${totalPlacas-1}</span>` : ''}
-        ` : '';
-        
-        const viagemHTML = viagens ? `
-          <div class="meta-item">📊 <span class="viagem-badge">${viagens} viagens</span></div>
-        ` : '';
-        
-        const metaHTML = (condutoresHTML || placasHTML || viagemHTML) ? `
-          <div class="metadata">
-            ${viagemHTML}
-            ${condutoresHTML ? `<div class="meta-item">👤 ${condutoresHTML} <span class="meta-count-badge">${totalCond}</span></div>` : ''}
-            ${placasHTML ? `<div class="meta-item">🚛 ${placasHTML} <span class="meta-count-badge">${totalPlacas}</span></div>` : ''}
-          </div>
-        ` : '';
-        
-        const tipoBadge = (currentBase === 'rondolog') 
-          ? `<span class="route-badge" style="background:${tipoColor}20; border-color:${tipoColor}; color:${tipoColor}">${getTipoLabel(tipo)}</span>` 
-          : '';
-        
-        return `
-          <div class="card" data-nome="${r.nome}">
-            <div class="card-inner">
-              <div class="card-bar" style="background: ${tipoColor};"></div>
-              <div class="card-body">
-                <div class="pedido">
-                  <span>${hl(r.origem, q)}</span>
-                  <span class="pedido-sep">→</span>
-                  <span>${hl(r.destino, q)}</span>
-                  ${tipoBadge}
-                </div>
-                <div class="nome-rota">
-                  <span class="rota-nome-principal">${hl(r.nome, q)}</span>
-                </div>
-                ${metaHTML}
-              </div>
-              <div class="card-action" title="Copiar nome da rota">📋</div>
-            </div>
-          </div>
-        `;
-      }).join('');
-      
-      document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', () => {
-          navigator.clipboard.writeText(card.dataset.nome).then(() => {
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2000);
-          });
-        });
-      });
-    }
+  const filtered = BASES.filter(b=>{
+    const mq = !q || [b.nome,b.cidade,b.endereco,b.cep,b.uf].some(v=>normStr(v).includes(q));
+    const mu = !uf || b.uf === uf;
+    const mt = !tipo || b.tipo === tipo;
+    return mq && mu && mt;
+  });
 
-    // Event Listeners
-    document.querySelectorAll('.base-tab').forEach(tab => {
-      tab.addEventListener('click', async () => {
-        document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        await switchBase(tab.dataset.base);
-      });
-    });
-    searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
-    orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
-    document.querySelectorAll('.chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        currentType = chip.dataset.type;
-        render();
-      });
-    });
+  document.getElementById('basesCountBadge').textContent =
+    filtered.length + ' base' + (filtered.length!==1?'s':'');
 
-    // Modo compacto
-    const compactToggle = document.getElementById('compactModeToggle');
-    if (localStorage.getItem('rondologCompact') === 'true') {
-      document.body.classList.add('compact');
-      compactToggle.checked = true;
-    }
-    compactToggle.addEventListener('change', e => {
-      document.body.classList.toggle('compact', e.target.checked);
-      localStorage.setItem('rondologCompact', e.target.checked);
-    });
+  const list = document.getElementById('basesList');
 
-    // Inicia com Rondolog
-    switchBase('rondolog');
-  })();
+  if(!filtered.length){
+    list.innerHTML = '<div style="text-align:center;padding:50px 20px;background:var(--surface);border-radius:14px;color:var(--text-muted)">🔍 Nenhuma base encontrada.</div>';
+    renderMap([]);
+    return;
+  }
+
+  // Hubs primeiro
+  const sorted = [...filtered].sort((a,b)=>{
+    const o={hub:0,terminal:1,filial:2};
+    return (o[a.tipo] ?? 9)-(o[b.tipo] ?? 9);
+  });
+
+  list.innerHTML = sorted.map(b=>{
+    const c = dotColor(b.tipo);
+    const sel = b.id === selectedId ? ' selected' : '';
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
+    const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(b.nome+' '+b.cidade+' '+b.uf)}&navigate=yes`;
+    return `
+<div class="base-card${sel}" data-id="${b.id}" onclick="__selBase(${b.id})">
+  <div class="bci">
+    <div class="bci-accent" style="background:${c}"></div>
+    <div class="bci-body">
+      <div class="bci-top">
+        <span class="bci-nome">${b.nome}</span>
+        <span class="bci-tipo bci-tipo-${b.tipo}">${tipoLabel(b.tipo)}</span>
+      </div>
+      <div class="bci-endereco">
+        📍 ${b.endereco}<br>
+        ${b.cidade} / ${b.uf} — CEP ${b.cep}
+      </div>
+      <div class="bci-foot">
+        <span class="bci-uf">${b.uf}</span>
+        <span class="bci-cep">${b.cep}</span>
+        <div class="bci-btns">
+          <a class="bci-btn bci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🗺 Maps</a>
+          <a class="bci-btn bci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🔵 Waze</a>
+          <button class="bci-btn" onclick="event.stopPropagation();__copyEnd(${b.id})">📋 Copiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+  }).join('');
+
+  renderMap(filtered);
+  // Re-aplica selected no mapa
+  document.querySelectorAll('.base-dot-g').forEach(g=>{
+    if(parseInt(g.dataset.id)===selectedId) g.classList.add('selected-dot');
+  });
+}
+
+function selectBase(id){
+  selectedId = (selectedId===id) ? null : id;
+  renderBases();
+  // Scroll para card selecionado
+  if(selectedId){
+    const el = document.querySelector(`.base-card[data-id="${selectedId}"]`);
+    if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+}
+window.__selBase = selectBase;
+
+window.__copyEnd = function(id){
+  const b = BASES.find(x=>x.id===id);
+  if(!b) return;
+  const txt = `${b.nome} — ${b.endereco}, ${b.cidade}/${b.uf}, CEP ${b.cep}`;
+  navigator.clipboard.writeText(txt).then(()=> showToast('ENDEREÇO COPIADO'));
+};
+
+/* ===================== LÓGICA ROTAS (original intacta) ===================== */
+const DATA_URLS = { rondolog:'./data/rondolog.json', saster:'./data/saster.json' };
+const dataCache = { rondolog:null, saster:null };
+let currentBase='rondolog', currentData=[], currentQuery='', currentType='all', currentOrder='padrao';
+
+const loadingOverlay = document.getElementById('loadingOverlay');
+const baseSubtitle   = document.getElementById('baseSubtitle');
+const baseTitle      = document.getElementById('baseTitle');
+const countBadge     = document.getElementById('countBadge');
+const filterChipsDiv = document.getElementById('filterChips');
+const searchInput    = document.getElementById('search');
+const orderSelect    = document.getElementById('orderSelect');
+const sectionLabel   = document.getElementById('sectionLabel');
+const resultsContainer= document.getElementById('results');
+
+function norm(s){ return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
+function hl(text,q){
+  if(!q) return text;
+  const nq=norm(q), nt=norm(text);
+  let out='',i=0;
+  while(i<text.length){
+    const idx=nt.indexOf(nq,i);
+    if(idx===-1){out+=text.slice(i);break;}
+    out+=text.slice(i,idx)+'<mark>'+text.slice(idx,idx+nq.length)+'</mark>';
+    i=idx+nq.length;
+  }
+  return out;
+}
+function getTipoColor(t){ return t==='coleta'?'var(--blue)':t==='transferencia'?'var(--green)':'var(--orange)'; }
+function getTipoLabel(t){ return t==='transferencia'?'🚚 Transferência':t==='coleta'?'📦 Coleta':'🔄 Rota fixa'; }
+
+async function loadData(base){
+  if(dataCache[base]) return dataCache[base];
+  try{
+    const res=await fetch(DATA_URLS[base]);
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data=await res.json();
+    const processed=data.map(item=>({...item, nome:item.nome_da_rota||item.nome||'', condutor:item.condutores||item.condutor||[], placa:item.placas||item.placa||[]}));
+    dataCache[base]=processed; return processed;
+  }catch(err){ alert(`Erro ao carregar dados de ${base.toUpperCase()}. Verifique os arquivos JSON.`); return []; }
+}
+
+async function switchBase(base){
+  if(base==='bases'){
+    document.getElementById('routesPanel').classList.add('hidden');
+    document.getElementById('basesPanel').classList.add('active');
+    loadingOverlay.style.display='none';
+    renderBases();
+    return;
+  }
+  document.getElementById('routesPanel').classList.remove('hidden');
+  document.getElementById('basesPanel').classList.remove('active');
+  loadingOverlay.style.display='flex';
+  currentBase=base;
+  baseTitle.textContent=base==='rondolog'?'RONDOLOG':'SASTER';
+  currentData=await loadData(base);
+  baseSubtitle.innerHTML=base==='rondolog'?`Rondolog · ${currentData.length} rotas`:`Saster · ${currentData.length} rotas`;
+  filterChipsDiv.style.display=base==='rondolog'?'flex':'none';
+  currentQuery=''; currentType='all'; currentOrder='padrao';
+  searchInput.value=''; orderSelect.value='padrao';
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  document.querySelector('.chip[data-type="all"]')?.classList.add('active');
+  loadingOverlay.style.display='none';
+  render();
+}
+
+function sortRotas(arr,order){
+  const s=[...arr];
+  if(order==='origem') s.sort((a,b)=>a.origem.localeCompare(b.origem));
+  else if(order==='destino') s.sort((a,b)=>a.destino.localeCompare(b.destino));
+  else if(order==='tipo'&&currentBase==='rondolog'){ const to={coleta:1,transferencia:2,rota:3}; s.sort((a,b)=>(to[a.tipo]||99)-(to[b.tipo]||99)); }
+  return s;
+}
+
+function render(){
+  let filtered=currentData;
+  const q=currentQuery;
+  if(q){ const nq=norm(q); filtered=filtered.filter(r=>norm(r.nome).includes(nq)||`${r.origem} ${r.destino}`.toLowerCase().includes(nq)||(r.condutor&&r.condutor.some(c=>norm(c).includes(nq)))||(r.placa&&r.placa.some(p=>norm(p).includes(nq)))); }
+  if(currentBase==='rondolog'&&currentType!=='all') filtered=filtered.filter(r=>r.tipo===currentType);
+  filtered=sortRotas(filtered,currentOrder);
+  countBadge.textContent=filtered.length+' rota'+(filtered.length!==1?'s':'');
+  sectionLabel.innerHTML=q?`Resultados para "${q}"`:'Todas as rotas';
+  if(!filtered.length){ resultsContainer.innerHTML='<div class="no-result">🔍 Nenhuma rota encontrada.</div>'; return; }
+  resultsContainer.innerHTML=filtered.map(r=>{
+    const tipo=r.tipo||'rota';
+    const tipoColor=(currentBase==='rondolog')?getTipoColor(tipo):'var(--blue)';
+    const condutores=r.condutor||[], placas=r.placa||[], viagens=r.viagens;
+    const totalCond=condutores.length, totalPlacas=placas.length;
+    const condHTML=condutores.length?`<div class="condutor-list">${condutores.slice(0,2).map(c=>`<span class="condutor-name">${hl(c,q)}</span>`).join('')}${totalCond>2?`<span class="condutor-more" title="${condutores.slice(2).join(', ')}">+${totalCond-2}</span>`:''}</div>`:'';
+    const placHTML=placas.length?`<span class="meta-placa">${hl(placas[0],q)}</span>${totalPlacas>1?`<span class="placa-more" title="${placas.slice(1).join(', ')}">+${totalPlacas-1}</span>`:''}`:'';
+    const vHTML=viagens?`<div class="meta-item">📊 <span class="viagem-badge">${viagens} viagens</span></div>`:'';
+    const metaHTML=(condHTML||placHTML||vHTML)?`<div class="metadata">${vHTML}${condHTML?`<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${totalCond}</span></div>`:''}${placHTML?`<div class="meta-item">🚛 ${placHTML} <span class="meta-count-badge">${totalPlacas}</span></div>`:''}</div>`:'';
+    const tipoBadge=(currentBase==='rondolog')?`<span class="route-badge" style="background:${tipoColor}20;border-color:${tipoColor};color:${tipoColor}">${getTipoLabel(tipo)}</span>`:'';
+    return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido"><span>${hl(r.origem,q)}</span><span class="pedido-sep">→</span><span>${hl(r.destino,q)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome,q)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
+  }).join('');
+  document.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('click',()=>{ navigator.clipboard.writeText(card.dataset.nome).then(()=>showToast('NOME DA ROTA COPIADO')); });
+  });
+}
+
+function showToast(msg){
+  document.getElementById('toastMsg').textContent=msg;
+  const t=document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+/* Event listeners */
+document.querySelectorAll('.base-tab').forEach(tab=>{
+  tab.addEventListener('click', async()=>{
+    document.querySelectorAll('.base-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    await switchBase(tab.dataset.base);
+  });
+});
+searchInput.addEventListener('input', e=>{ currentQuery=e.target.value; render(); });
+orderSelect.addEventListener('change', e=>{ currentOrder=e.target.value; render(); });
+document.querySelectorAll('.chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active'); currentType=chip.dataset.type; render();
+  });
+});
+const compactToggle=document.getElementById('compactModeToggle');
+if(localStorage.getItem('rondologCompact')==='true'){ document.body.classList.add('compact'); compactToggle.checked=true; }
+compactToggle.addEventListener('change', e=>{ document.body.classList.toggle('compact',e.target.checked); localStorage.setItem('rondologCompact',e.target.checked); });
+
+document.getElementById('basesSearch').addEventListener('input', renderBases);
+document.getElementById('basesUFFilter').addEventListener('change', renderBases);
+document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
+
+/* Init */
+switchBase('rondolog');
+})();
 </script>
 </body>
 </html>
