@@ -1,2652 +1,5205 @@
 [
   {
-    "id": 34,
-    "origem": "AGP TECNOLOGIA - ITAJAI-SC",
-    "destino": "ALL NATIONS - CARIACICA-ES",
-    "nome": "ITAJAI-SC (AGP) X CARIACICA-ES (ALL NATIONS) (TORRE)",
+    "id": 4292172,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "STOLTHAVEN SANTOS LTDA - /",
+    "nome_da_rota": "SANTA BARBARA D'OESTE-SP X SANTOS-SP (TORRE)",
+    "distancia_km": 226.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 39,
-    "origem": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "destino": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "nome": "JARDINOPOLIS-SP (AGRARIA) X SUMARE-SP (QUIMICA ANASTACIO) (TORRE)",
+    "id": 4292866,
+    "origem": "STOLTHAVEN SANTOS LTDA - /",
+    "destino": "TAURUS TCT X CAMPO GRANDE - MS - /",
+    "nome_da_rota": "SANTOS-SP (STOLT) X CAMPO GRANDE-MS (TORRE)",
+    "distancia_km": 1070.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 136,
-    "origem": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "JARDINOPOLIS (AGRARIA) x CINTEC GARAGEM SASTER",
+    "id": 4293623,
+    "origem": "Dourados/MS",
+    "destino": "Ribeirao Preto/SP",
+    "nome_da_rota": "DOURADOS-MS (INPASA) X RIBEIRAO PRETO-SP (DELTA) (TORRE V1)",
+    "distancia_km": 944.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 164,
-    "origem": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "destino": "IQA - VILA VELHA-ES",
-    "nome": "JARDINOPOLIS-SP (AGRARIA) X IQA - VILA VELHA-ES",
+    "id": 4294295,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Sidrolandia/MS",
+    "nome_da_rota": "SANTA BARBARA D'OESTE-SP X SIDROLANDIA-MS (INPASA) (TORRE)",
+    "distancia_km": 955.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 181,
-    "origem": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "JARDINOPOLIS (AGRARIA) x LOUVEURA (MIRASSOL) **",
+    "id": 4294591,
+    "origem": "Sidrolandia/MS",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "SIDROLANDIA-MS (INPASA) X GUARULHOS-SP (STOCK) (TORRE)",
+    "distancia_km": 1175.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 269,
-    "origem": "AGRO-QUIMICA BRAIDO (SAO CAETANO - SP)",
-    "destino": "Proquitec  VAGEM GRANDE",
-    "nome": "AGRO-QUIMICA BRAIDO (SAO CAETANO - SP) X PROQUITEC (VARGEM GRANDE PAULISTA - SP)",
+    "id": 4295069,
+    "origem": "Sidrolandia/MS",
+    "destino": "/SP",
+    "nome_da_rota": "SIDROLANDIA-MS (INPASA) X SAO PAULO-SP BIP RAIZEN (TORRE)",
+    "distancia_km": 1175.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 29,
-    "origem": "AGROPECUARIA NOVO MILENIO - LAMBARI D'OESTE-MT",
-    "destino": "ATS - ARUJA TERMINAIS LTDA - ARUJA-SP",
-    "nome": "LAMBARI D'OESTE-MT X ARUJA-SP (TORRE)",
+    "id": 4295623,
+    "origem": "Sidrolandia/MS",
+    "destino": "Ribeirao Preto/SP",
+    "nome_da_rota": "SIDROLANDIA-MS (INPASA) X RIBEIRAO PRETO-SP (LOGUM) (TORRE)",
+    "distancia_km": 885.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 140,
-    "origem": "AKZO NOBEL - MAUA",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "nome": "AKZO (MAUA) X QUIMICA ANASTACIO (BARUERI)",
+    "id": 4295961,
+    "origem": "Mococa/SP",
+    "destino": "Santos/SP",
+    "nome_da_rota": "MOCOCA-SP (IPIRANGA) X SANTOS-SP (AGEO) (TORRE)",
+    "distancia_km": 527.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 35,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "MULTCABOS COMERCIO E MANUTENCAO DE REDES LTDA",
-    "nome": "CARIACICA - ES (ALL NATIONS) X LONDRINA - PR (MULTCABOS COMERCIO) TORRE",
+    "id": 4296274,
+    "origem": "ARUACARIA - PR - CIAPETRO - /",
+    "destino": "CAMPO GRANDE - MS - CIAPETRO - /",
+    "nome_da_rota": "ARAUCARIA-SP (CIAPETRO) X CAMPO GRANDE-MS (CIAPETRO) (TORRE)",
+    "distancia_km": 1001.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 41,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "ESHOP IMPORTACAO E COMERCIO DE ELETRONICOS LTDA",
-    "nome": "CARIACICA-ES (ALL NATIONS) X EXTREMA-MG (ESHOP) (TORRE)",
+    "id": 4296499,
+    "origem": "Sidrolandia/MS",
+    "destino": "Paulínia/SP",
+    "nome_da_rota": "SIDROLANDIA-MS (INPASA) X PAULINIA-SP (LOGUM) (TORRE)",
+    "distancia_km": 997.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 42,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "RONDOLOG - JUNDIAÍ-SP",
-    "nome": "CARIACICA - ES (ALL NATIONS) X JUNDIAÍ (RONDOLOG) TORRE",
+    "id": 4297021,
+    "origem": "Araras/SP",
+    "destino": "Santos/SP",
+    "nome_da_rota": "ARARAS-SP (US. SANTA LUCIA) X SANTOS-SP (AGEO NORTE) (TORRE)",
+    "distancia_km": 297.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 43,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "MAZER DISTRIBUIDORA LTDA (CURITIBA)",
-    "nome": "CARIACICA - ES (ALL NATIONS) X CURITIBA - PR (MAZER DISTRIBUIDORA)",
+    "id": 4297022,
+    "origem": "Dourados/MS",
+    "destino": "Ribeirao Preto/SP",
+    "nome_da_rota": "DOURADOS-MS (INPASA) X RIBEIRAO PRETO-SP (MIDAS) (TORRE)",
+    "distancia_km": 948.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 44,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "EASYTECH INFORMATICA (BRASILIA)",
-    "nome": "CARIACICA - ES (ALL NATIONS) X BRASILIA - DF (EASYTECH INFORMATICA)",
+    "id": 4297427,
+    "origem": "Sidrolandia/MS",
+    "destino": "Araucaria/PR",
+    "nome_da_rota": "SIDROLANDIA-MS (INPASA) X ARAUCARIA- PR (IPIRANGA) (TORRE)",
+    "distancia_km": 996.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 45,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "MAZER DISTRIBUIDORA LTDA (CURITIBA)",
-    "nome": "CARIACICA - ES (ALL NATIONS) X CURITIBA - PR (MAZER DISTRIBUIDORA)",
+    "id": 4297692,
+    "origem": "Lins/SP",
+    "destino": "TERCOM - PAULINIA - SP - /",
+    "nome_da_rota": "LINS-SP (USINA LINS) X  PAULINIA-SP (TERCOM) (TORRE)",
+    "distancia_km": 398.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 46,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "ESHOP IMPORTACAO E COMERCIO DE ELETRONICOS LTDA",
-    "nome": "CARIACICA-ES (ALL NATIONS) X EXTREMA-MG (ESHOP) (TORRE)",
+    "id": 4298492,
+    "origem": "Paulinia/SP",
+    "destino": "Dourados/MS",
+    "nome_da_rota": "PAULINIA-SP (TAURUS) X DOURADOS-MS (TAURUS) (TORRE)",
+    "distancia_km": 1009.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 47,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "GAZIN ATACADO CENTRO-OESTE LTDA",
-    "nome": "CARIACICA - ES (ALL NATIONS) X GOIAS - IPAMERI (GAZIN ATACADO CENTRO-OESTE LTDA)",
+    "id": 4298799,
+    "origem": "Isis Cubatao/SP",
+    "destino": "Itumbiara/GO",
+    "nome_da_rota": "CUBATAO-SP (JBS) X ITUMBIARA-GO (JBS) (TORRE)",
+    "distancia_km": 768.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 56,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "ESHOP IMPORTACAO E COMERCIO DE ELETRONICOS LTDA",
-    "nome": "CARIACICA - ES (ALL NATIONS) X EXTREMA - MG (ESHOP) TORRE",
+    "id": 4299139,
+    "origem": "Paulinia/SP",
+    "destino": "Chapadao Do Sul/MS",
+    "nome_da_rota": "PAULINIA-SP (TAURUS) X CHAPADAO DO SUL-MS (TAURUS) (TORRE)",
+    "distancia_km": 795.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 58,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "GAZIN INDUSTRIA E COMERCIO",
-    "nome": "CARIACICA - ES (ALL NATIONS) X FEIRA DE SANTANA - BA  (GAZIN INDUSTRIA)",
+    "id": 4299459,
+    "origem": "Paulinia/SP",
+    "destino": "Dourados/MS",
+    "nome_da_rota": "PAULINIA-SP (FELIX) X DOURADOS-MS (UNIPETRO) (TORRE)",
+    "distancia_km": 1073.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 59,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "GAZIN INDUSTRIA E COMERCIO",
-    "nome": "CARIACICA - ES (ALL NATIONS) X FEIRA DE SANTANA - BA  (GAZIN INDUSTRIA) TORRE",
+    "id": 4299659,
+    "origem": "Anápolis/GO",
+    "destino": "/SP",
+    "nome_da_rota": "ANAPOLIS-GO X SANTOS-SP (TORRE)",
+    "distancia_km": 995.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 62,
-    "origem": "ALL NATIONS - CARIACICA-ES",
-    "destino": "KABUM COMERCIO ELETRONICO S.A.",
-    "nome": "CARIACICA - ES (ALL NATIONS) X VIANA - ES (KABUM COMERCIO ELETRONICO)",
+    "id": 4299698,
+    "origem": "Rondonopolis/MT",
+    "destino": "Cabo De Santo Agostinho/PE",
+    "nome_da_rota": "RONDONOPOLIS-MT (COFCO) X CABO DE SANTO AGOSTINHO-PE (NIMO) (TORRE)",
+    "distancia_km": 3101.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 60,
-    "origem": "ALL NATIONS - SC S.JOSE (PALHOÇA)",
-    "destino": "BRASIL INTER COMEX (EXTREMA)",
-    "nome": "PALHOÇA - SC (ALL NATIONS - SC S.JOSE) X EXTREMA - MG (BRASIL INTER COMEX)",
+    "id": 4299700,
+    "origem": "Sumare/SP",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "SUMARE-SP (QUIMICA ANASTACIO) X JARDINOPOLIS-SP (AGRARIA)",
+    "distancia_km": 221.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 61,
-    "origem": "ALL NATIONS - SC S.JOSE (PALHOÇA)",
-    "destino": "BRASIL INTER COMEX (ITAPECERICA DA SERRA)",
-    "nome": "PALHOÇA - SC (ALL NATIONS - SC S.JOSE) X ITAPECIRICA DA SERRA - SP (BRASIL INTER COMEX)",
+    "id": 4300280,
+    "origem": "Sidrolandia/MS",
+    "destino": "Ribeirao Preto/SP",
+    "nome_da_rota": "SIDROLANDIA-MS (INPASA) X RIBEIRAO PRETO-SP (DELTA) (TORRE)",
+    "distancia_km": 855.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 11,
-    "origem": "ARARAS-SP - USINA SANTA LUCIA",
-    "destino": "AGEO NORTE - SANTOS-SP",
-    "nome": "ARARAS-SP (US. SANTA LUCIA) X SANTOS-SP (AGEO NORTE) (TORRE)",
+    "id": 4300741,
+    "origem": "Guaira/SP",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "GUAIRA-SP (US. COLORADO) X GUARULHOS-SP (STOCK) (TORRE)",
+    "distancia_km": 526.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 241,
-    "origem": "AROUCALOG",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "AROUCALOG X LOUVEIRA",
+    "id": 4301004,
+    "origem": "Igarassu/PE",
+    "destino": "Lencois Paulista/SP",
+    "nome_da_rota": "IGARASSU-PE (LWART) X LENCOIS PAULISTA-SP (LWART) (TORRE)",
+    "distancia_km": 2747.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 9,
-    "origem": "ARUACARIA - PR - CIAPETRO",
-    "destino": "CAMPO GRANDE - MS - CIAPETRO",
-    "nome": "ARAUCARIA-SP (CIAPETRO) X CAMPO GRANDE-MS (CIAPETRO) (TORRE)",
+    "id": 4302252,
+    "origem": "Paulinia/SP",
+    "destino": "Rondonopolis/MT",
+    "nome_da_rota": "PAULINIA-SP (CIAPETRO) X RONDONOPOLIS-MT (CIAPETRO) (TORRE)",
+    "distancia_km": 1240.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 237,
-    "origem": "Av. Ten. Marques, 5639 - Vila Poupanca, Santana de Parnaíba - SP",
-    "destino": "CINTEC SBO",
-    "nome": "SANTANA DE PARNAIBA X CINTEC",
+    "id": 4302861,
+    "origem": "Nova Odessa/SP",
+    "destino": "Marialva/PR",
+    "nome_da_rota": "NOVA ODESSA-SP ( VEG STRONG) X MARIALVA-PR (ELLOFLEX EMBALAGENS LTDA) (TORRE)",
+    "distancia_km": 585.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 138,
-    "origem": "BIOCLEAN COMERCIAL LTDA - BARUERI",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "BIOCLEAN -BARUERI X GOLDEN BARUERI",
+    "id": 4303314,
+    "origem": "Cuiaba/MT",
+    "destino": "Paulinia/SP",
+    "nome_da_rota": "CUIABA-MT (DELTA) X PAULINIA-SP (CIAPETRO) (TORRE)",
+    "distancia_km": 1421.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 130,
-    "origem": "BRASALPLA BRASIL INDUSTRIA - ITAPEVI",
-    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "nome": "ITAPEVI -SP X UNIAO DIADEMA",
+    "id": 4303462,
+    "origem": "Duque De Caxias/RJ",
+    "destino": "Jundiaí/SP",
+    "nome_da_rota": "DUQUE DE CAXIAS-RJ (MULTIART) X JUNDIAI-SP (RONDOLOG)",
+    "distancia_km": 605.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 229,
-    "origem": "BRASILON (SÃO PAULO)",
-    "destino": "CINTEC SBO",
-    "nome": "BRASILON (SÃO PAULO) X CINTEC (SBO)",
+    "id": 4303858,
+    "origem": "Lambari D'Oeste/MT",
+    "destino": "Aruja/SP",
+    "nome_da_rota": "LAMBARI D'OESTE-MT X ARUJA-SP (TORRE)",
+    "distancia_km": 1939.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 57,
-    "origem": "BROTHER INTERNATIONAL",
-    "destino": "ALL NATIONS - CARIACICA-ES",
-    "nome": "SAO PAULO - SP (BROTHER INTERNATIONAL) X CARIACICA - ES (ALL NATIONS)",
+    "id": 4303863,
+    "origem": "Santos/SP",
+    "destino": "Paulinia/SP",
+    "nome_da_rota": "SANTOS-SP (VOPAK) X PAULINIA-SP (RYAL FIC) (TORRE)",
+    "distancia_km": 220.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 193,
-    "origem": "BRUCAI LOGISTICA (OSASCO-SP)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "BRUCAI OSASCO X GOLDEN BARUERI",
+    "id": 4303869,
+    "origem": "Paulinia/SP",
+    "destino": "Guararapes/SP",
+    "nome_da_rota": "PAULINIA-SP (TRANZO) X GUARARAPES-SP (CIAPETRO) (TORRE)",
+    "distancia_km": 466.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 82,
-    "origem": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI)",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "nome": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI)",
+    "id": 4304200,
+    "origem": "Duque De Caxias/RJ",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "CAXIAS-RJ (MULTART) X SANTA BARBARA D'OESTE-SP (GALPAO1) (TORRE)",
+    "distancia_km": 531.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 116,
-    "origem": "CD GTEX - GUARULHOS SP",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "GUARULHOS -SP X BARUERI - SP (GOLDEN)",
+    "id": 4305798,
+    "origem": "Extrema/MG",
+    "destino": "Queimados/RJ",
+    "nome_da_rota": "EXTREMA-MG (MVX) X QUEIMADOS-RJ (MVX) (TORRE)",
+    "distancia_km": 418.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 259,
-    "origem": "CINTEC SASTER - Santa Bárbara D'oeste/SP",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "SBO - (CINTEC) X  BARUERI - (GOLDEN)",
+    "id": 4308896,
+    "origem": "Itajai/SC",
+    "destino": "Cariacica/ES",
+    "nome_da_rota": "ITAJAI-SC (AGP) X CARIACICA-ES (ALL NATIONS) (TORRE)",
+    "distancia_km": 1546.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 260,
-    "origem": "CINTEC SASTER - Santa Bárbara D'oeste/SP",
-    "destino": "ROSSI LAVADOR - NOVA ODESSA",
-    "nome": "CINTEC (SBO-SP) X ROSSI LAVADOR (NOVA ODESSA-SP)",
+    "id": 4309188,
+    "origem": "Cariacica/ES",
+    "destino": "Londrina/PR",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X LONDRINA - PR (MULTCABOS COMERCIO) TORRE",
+    "distancia_km": 1467.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 262,
-    "origem": "CINTEC SASTER - Santa Bárbara D'oeste/SP",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "nome": "CINTEC X POSTO 7 X IQA ( Lapa ) -ROD. ANHANGUERA",
+    "id": 4309878,
+    "origem": "Santa Gertrudes/SP",
+    "destino": "Sumare/SP",
+    "nome_da_rota": "SANTA GERTRUDES - SP ( NEWPOD INDUSTRIA) X SUMARE - SP ( QUIMICA ANASTACIO)",
+    "distancia_km": 58.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 214,
-    "origem": "CINTEC SBO",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "nome": "Cintec X IQA ( Lapa )",
+    "id": 4310213,
+    "origem": "STOLTHAVEN SANTOS LTDA - /",
+    "destino": "Paulinia/SP",
+    "nome_da_rota": "SANTOS-SP X PAULINIA-SP (TORRE)",
+    "distancia_km": 247.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 248,
-    "origem": "CINTEC SBO",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "CINTEC X REECAP (AMERICANA) C JARDINOPOLIS",
+    "id": 4310725,
+    "origem": "STOLTHAVEN SANTOS LTDA - /",
+    "destino": "Paulinia/SP",
+    "nome_da_rota": "SANTOS (STOLT) X PAULINIA ( CIAPETRO)",
+    "distancia_km": 195.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 255,
-    "origem": "CINTEC SBO",
-    "destino": "REFINARIA NACIONAL DE SAL S/A-GUARULHOS",
-    "nome": "CINTEC X REFINARIA DE SAL",
+    "id": 4311820,
+    "origem": "Jardinopolis/SP",
+    "destino": "Sumare/SP",
+    "nome_da_rota": "JARDINOPOLIS-SP (AGRARIA) X SUMARE-SP (QUIMICA ANASTACIO) (TORRE)",
+    "distancia_km": 246.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 258,
-    "origem": "CLOROETIL (MOGI MIRIM)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "CLOROETIL (MOGI MIRIM) X GOLDEN  (BARUERI)",
+    "id": 4313895,
+    "origem": "Cajamar/SP",
+    "destino": "Cariacica/ES",
+    "nome_da_rota": "CAJAMAR - SP X CARIACICA - ES ( ALL NATIONS) TORRE",
+    "distancia_km": 973.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 20,
-    "origem": "COFCO - RONDONOPOLIS-MT",
-    "destino": "NIMO ENERGIA - CABO DE SANTO AGOSTINHO-PE",
-    "nome": "RONDONOPOLIS-MT (COFCO) X CABO DE SANTO AGOSTINHO-PE (NIMO) (TORRE)",
+    "id": 4313934,
+    "origem": "Cariacica/ES",
+    "destino": "ESHOP IMPORTACAO E COMERCIO DE ELETRONICOS LTDA - /",
+    "nome_da_rota": "CARIACICA-ES (ALL NATIONS) X EXTREMA-MG (ESHOP) (TORRE)",
+    "distancia_km": 985.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 204,
-    "origem": "Chemax  Jandira",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "Chemax Itapevi x Golden (Barueri)",
+    "id": 4314000,
+    "origem": "Cariacica/ES",
+    "destino": "Jundiaí/SP",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X JUNDIAÍ (RONDOLOG) TORRE",
+    "distancia_km": 995.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 27,
-    "origem": "DELTA - CUIABA-MT",
-    "destino": "TAURUS TCT CIAPETRO - PAULINIA-SP",
-    "nome": "CUIABA-MT (DELTA) X PAULINIA-SP (CIAPETRO) (TORRE)",
+    "id": 4314365,
+    "origem": "Cariacica/ES",
+    "destino": "Curitiba/PR",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X CURITIBA - PR (MAZER DISTRIBUIDORA)",
+    "distancia_km": 1372.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 221,
-    "origem": "DSM PRODUTOS NUTRICIONAIS BRASIL SA",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "DSM JAGUARE X LOUVEIRA",
+    "id": 4314366,
+    "origem": "Cariacica/ES",
+    "destino": "Brasília/DF",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X BRASILIA - DF (EASYTECH INFORMATICA)",
+    "distancia_km": 1235.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 32,
-    "origem": "DUQUE DE CAXIAS-RJ (MULTIMARKET)",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "CAXIAS-RJ (MULTART) X SANTA BARBARA D'OESTE-SP (GALPAO1) (TORRE)",
+    "id": 4314441,
+    "origem": "Cariacica/ES",
+    "destino": "Curitiba/PR",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X CURITIBA - PR (MAZER DISTRIBUIDORA)",
+    "distancia_km": 1387.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 33,
-    "origem": "EXTREMA-MG (MVX)",
-    "destino": "QUEIMADOS-RJ (MVX)",
-    "nome": "EXTREMA-MG (MVX) X QUEIMADOS-RJ (MVX) (TORRE)",
+    "id": 4314776,
+    "origem": "Cariacica/ES",
+    "destino": "ESHOP IMPORTACAO E COMERCIO DE ELETRONICOS LTDA - /",
+    "nome_da_rota": "CARIACICA-ES (ALL NATIONS) X EXTREMA-MG (ESHOP) (TORRE)",
+    "distancia_km": 984.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 18,
-    "origem": "FELIX DISTRIBUIDORA - PAULINIA-SP",
-    "destino": "UNIPETRO - DOURADOS-MS",
-    "nome": "PAULINIA-SP (FELIX) X DOURADOS-MS (UNIPETRO) (TORRE)",
+    "id": 4315513,
+    "origem": "Cariacica/ES",
+    "destino": "Ipameri/GO",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X GOIAS - IPAMERI (GAZIN ATACADO CENTRO-OESTE LTDA)",
+    "distancia_km": 1227.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 155,
-    "origem": "FORTNITRO (ITAQUAQUECETUBA)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "FORTNITRO x ITAQUAQUECETUBA",
+    "id": 4315648,
+    "origem": "Orlândia/SP",
+    "destino": "Paulinia/SP",
+    "nome_da_rota": "ORLANDIA - SP (PRODUTOS ALIMENTICIOS) X PAULINIA - SP ( TAURUS)",
+    "distancia_km": 261.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 161,
-    "origem": "FORTNITRO (ITAQUAQUECETUBA)",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "FORTNITRO x LOUVEIRA",
+    "id": 4315733,
+    "origem": "Jundiaí/SP",
+    "destino": "Franco Da Rocha/SP",
+    "nome_da_rota": "JUNDIAI - SP (RONDOLOG) X FRANCO DA ROCHA - SP (EBAZAR)",
+    "distancia_km": 33.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 191,
-    "origem": "FORTNITRO (ITAQUAQUECETUBA)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "Itaquaquecetuba ( Fortinitro ) X Posto rede duque X Barueri",
+    "id": 4315993,
+    "origem": "Sumare/SP",
+    "destino": "Ribeirão Preto/SP",
+    "nome_da_rota": "SUMARE-SP (QUIMICA ANASTACIO) X RIBEIRAO PRETO - SP (EUROQUIMICA)",
+    "distancia_km": 214.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 195,
-    "origem": "FORTNITRO (ITAQUAQUECETUBA)",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "FORTINITRO (ITAQUAQUECETUBA) X GUARULHOS (RONDOLOG)",
+    "id": 4316453,
+    "origem": "/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "IQA (BARUERI) X IQA (SAO PAULO)",
+    "distancia_km": 25.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 256,
-    "origem": "FORTNITRO (ITAQUAQUECETUBA)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "FORTINITRO (ITAQUAQUECETUBA) X BARUERI (GOLDEN)",
+    "id": 4316785,
+    "origem": "Sumare/SP",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "IQA SUMARÉ X DE SANTA OSASCO",
+    "distancia_km": 100.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 1,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "STOLTHAVEN SANTOS LTDA",
-    "nome": "SANTA BARBARA D'OESTE-SP X SANTOS-SP (TORRE)",
+    "id": 4317623,
+    "origem": "Barueri/SP",
+    "destino": "/SP",
+    "nome_da_rota": "BARUERI - SP (TLM)  X BARUERI - SP (IQA)",
+    "distancia_km": 10.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 4,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "INPASA - SIDROLANDIA-MS",
-    "nome": "SANTA BARBARA D'OESTE-SP X SIDROLANDIA-MS (INPASA) (TORRE)",
+    "id": 4317884,
+    "origem": "Santa Gertrudes/SP",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "SANTA GERTRUDES - SP ( NEWPOD INDUSTRIA) X OSASCO - SP ( DE SANTA)",
+    "distancia_km": 81.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 99,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "SBDO X GOLDEN",
+    "id": 4317886,
+    "origem": "Santa Gertrudes/SP",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "SANTA GERTRUDES - SP ( NEWPOD INDUSTRIA) X OSASCO - SP ( DE SANTA)",
+    "distancia_km": 81.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 100,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "SDBO X LOUVEIRA",
+    "id": 4318571,
+    "origem": "Cariacica/ES",
+    "destino": "ESHOP IMPORTACAO E COMERCIO DE ELETRONICOS LTDA - /",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X EXTREMA - MG (ESHOP) TORRE",
+    "distancia_km": 926.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 113,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "MANUTENÇÃO SIDER SUMARÉ",
-    "nome": "CINTEC SBDO X SUMARE MANUTENÇAO",
+    "id": 4318601,
+    "origem": "São Paulo/SP",
+    "destino": "Cariacica/ES",
+    "nome_da_rota": "SAO PAULO - SP (BROTHER INTERNATIONAL) X CARIACICA - ES (ALL NATIONS)",
+    "distancia_km": 942.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 120,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "nome": "CINTEC SBDO X UQP DIADEMA",
+    "id": 4318851,
+    "origem": "Cariacica/ES",
+    "destino": "GAZIN INDUSTRIA E COMERCIO - /",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X FEIRA DE SANTANA - BA  (GAZIN INDUSTRIA)",
+    "distancia_km": 1277.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 126,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "INGLEZA INDÚSTRIA DE PRODUTOS DE LIMPEZA",
-    "nome": "CINTEC SBDO X INGLEZA SANTA LUZIA",
+    "id": 4318853,
+    "origem": "Cariacica/ES",
+    "destino": "GAZIN INDUSTRIA E COMERCIO - /",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X FEIRA DE SANTANA - BA  (GAZIN INDUSTRIA) TORRE",
+    "distancia_km": 1277.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 127,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "PROCASA - SP",
-    "nome": "GARAGEM SASTER X PROCOSA -SP",
+    "id": 4319273,
+    "origem": "Palhoça/SC",
+    "destino": "Extrema/MG",
+    "nome_da_rota": "PALHOÇA - SC (ALL NATIONS - SC S.JOSE) X EXTREMA - MG (BRASIL INTER COMEX)",
+    "distancia_km": 808.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 135,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "SASTER (SBDO) X QUIMICA ANASTACIO (AGRARIA)",
+    "id": 4319279,
+    "origem": "Palhoça/SC",
+    "destino": "Itapecerica Da Serra/SP",
+    "nome_da_rota": "PALHOÇA - SC (ALL NATIONS - SC S.JOSE) X ITAPECIRICA DA SERRA - SP (BRASIL INTER COMEX)",
+    "distancia_km": 660.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 144,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "FORTNITRO (ITAQUAQUECETUBA)",
-    "nome": "SBDO (SASTER) X FORTNITRO (ITAQUAQUECETUBA)",
+    "id": 4320652,
+    "origem": "Cariacica/ES",
+    "destino": "Viana/ES",
+    "nome_da_rota": "CARIACICA - ES (ALL NATIONS) X VIANA - ES (KABUM COMERCIO ELETRONICO)",
+    "distancia_km": 23.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 145,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "SBDO (CINTEC) X GUARULHOS (RONDOCARGAS)",
+    "id": 4321595,
+    "origem": "Barueri/SP",
+    "destino": "Sumare/SP",
+    "nome_da_rota": "BARUERI - SP (TLM)  X SUMARE - SP (IQA)",
+    "distancia_km": 143.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 146,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "SBDO (CINTEC) X GUARULHOS (RONDOCARGAS) - DOM PEDRO/FERN. DIAS",
+    "id": 4321780,
+    "origem": "Barueri/SP",
+    "destino": "Sumare/SP",
+    "nome_da_rota": "BARUERI - SP (TLM)  X SUMARE - SP (IQA)",
+    "distancia_km": 176.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 147,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "FORTNITRO (ITAQUAQUECETUBA)",
-    "nome": "SBDO (SASTER) X FORTNITRO (ITAQUAQUECETUBA) - DOM PEDRO/FERN DIAS",
+    "id": 4321782,
+    "origem": "GREEN TEC INDUSTRIA E COMERCIO - /",
+    "destino": "DISTRIBUIDORA DE ALIMENTOS DE ESTIVAS E CEREAIS CELINHO LTDA - /",
+    "nome_da_rota": "SANTANA DE PARNAÍBA - SP (GREEN TEC) X RECIFE - PE (DISTRIBUIDORA DE ALIMENTOS)",
+    "distancia_km": 2606.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 165,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "POSTO 7 - AMERICANA, Rodovia Anhangüera, Km 319, s/n - Sala 24 - Parque Avelino, Ribeirão Preto - SP, 13478-740",
-    "nome": "CINTEC SBDO X  POSTO 7",
+    "id": 4321967,
+    "origem": "Barueri/SP",
+    "destino": "Rio Claro/SP",
+    "nome_da_rota": "IQA (BARUERI) X DE HEUS (RIO CLARO)",
+    "distancia_km": 172.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 168,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "UNIMOL BRASIL  (GUARATINGUETA-SP)",
-    "nome": "CINTEC (SBDO) X UNIMOL BRASIL (GUARATINGUETÁ-SP)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4326513,
+    "origem": "São Paulo/SP",
+    "destino": "/SP",
+    "nome_da_rota": "IQA ( SAO PAULO ) X IQA GOLDEN ( BARUERI )",
+    "distancia_km": 25.6,
+    "viagens": 3,
+    "placas": [
+      "STR7A21",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 196,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "SBDO/SP (SASTER) X LOUVEIRA/SP (MIRASSOL)",
+    "id": 4327292,
+    "origem": "/SP",
+    "destino": "TRANSMETA GUARULHOS TRANSP - /",
+    "nome_da_rota": "GOLDEN (BARUERI) X TRANSMETA (GUARULHOS)",
+    "distancia_km": 57.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 212,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "CINTEC (SBDO SP) X POSTO 7 (AMERICANA -SP)  X RONDOCARGAS (SÃO PAULO-SP)",
+    "id": 4327567,
+    "origem": "/SP",
+    "destino": "EMPRESA DE TRANSPORTES MARTINS LTDA - /",
+    "nome_da_rota": "BARUERI - SP (IQA) X SÃO PAULO - SP (EMPRESA DE TRANSPORTES MARTINS)",
+    "distancia_km": 41.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 219,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "Proquitec  VAGEM GRANDE",
-    "nome": "SASTER X POROQUITEC (VARGEM GRANDE)",
+    "id": 4329113,
+    "origem": "Sumare/SP",
+    "destino": "Cosmópolis/SP",
+    "nome_da_rota": "SUMARÉ - SP (IQA) X CÓSMOPOLIS - SP (STOLLER)",
+    "distancia_km": 93.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 230,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "nome": "SASTER (SBDO) X QUIMICA ANASTACIO (SÃO PAULO - SP)",
+    "id": 4329396,
+    "origem": "São Paulo/SP",
+    "destino": "UNILEVER BRASIL INDUSTRIAL LTDA - /",
+    "nome_da_rota": "IQA (SAO PAULO) X UNILEVER 9 VALINHOS)",
+    "distancia_km": 77.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 231,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "SUMARE OFICINA",
-    "nome": "SASTER X OFICINA(SUMARÉ)",
+    "id": 4329947,
+    "origem": "/SP",
+    "destino": "COOPERATIVA DOS PRODUTORES RURAIS DO OESTE DE MINAS LTDA. - /",
+    "nome_da_rota": "IQA (BARUERI) X COOPERATIVA DOS PRODUTORES (PARA DE MINAS)",
+    "distancia_km": 616.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 238,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "GIVAL SACARIAS (CRAVINHOS-SP)",
-    "nome": "SASTER (SBDO-SP) X GIVAL SACARIAS (CRAVINHOS-SP)",
+    "id": 4329998,
+    "origem": "São Paulo/SP",
+    "destino": "UNILEVER BRASIL INDUSTRIAL LTDA - /",
+    "nome_da_rota": "SAO PAULO-SP (QUIMICA ANASTACIO) X VALINHOS-SP (UNILEVER)",
+    "distancia_km": 77.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 253,
-    "origem": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "destino": "ITAQUAQUECETUBA-SP (COMERC ESPERANCA)",
-    "nome": "GARAGEM SASTER (SBO) X ITAQUAQUECETUBA (FORTINITRO) POSTO 7",
+    "id": 4330387,
+    "origem": "Sumare/SP",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "IQA - SUMARE (SP) X AGRARIA - JARDINOPOLIS (SP)",
+    "distancia_km": 221.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 174,
-    "origem": "GB- TERMINAIS -  DUQUE DE CAXIAS - RJ",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "DUQUE DE CAXIAS RJ X GUARULHOS SP",
+    "id": 4331327,
+    "origem": "Ilhota/SC",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "IQA (ILHOTA) X AGRARIA ( JARDINOPOLIS)",
+    "distancia_km": 918.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 239,
-    "origem": "GIVAL SACARIAS (CRAVINHOS-SP)",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "CRAVINHOS X JARDINOPOLIS",
+    "id": 4332519,
+    "origem": "Ilhota/SC",
+    "destino": "Sumare/SP",
+    "nome_da_rota": "IQA (ILHOTA) X IQA (SUMARE)",
+    "distancia_km": 703.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 91,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "RAI - ARMAZENS GERAIS (SAO BERNARDO DO CAMPO)",
-    "nome": "BARUERI ( GOLDEN) X SAO BERNARDO DO CAMPO ( RAI - ARMAZENS GERAIS)",
+    "id": 4333692,
+    "origem": "Santa Gertrudes/SP",
+    "destino": "/SP",
+    "nome_da_rota": "SANTA GERTRUDES - SP ( NEWPOD INDUSTRIA) X BARUERI - SP ( QUIMICA ANASTACIO)",
+    "distancia_km": 188.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 95,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "BARUERI (GOLDEN) X SBO (SASTER) X LOUVEIRA (MIRASSOL)",
+    "id": 4336497,
+    "origem": "/SP",
+    "destino": "ADORO SA - (SÃO CARLOS- SP) - /",
+    "nome_da_rota": "IQA BARUERI-SP X ADORO (SÃO CARLOS-SP)",
+    "distancia_km": 237.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 101,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "nome": "GOLDEN X QUIMICA ANASTACIO - SP (LAPA)",
+    "id": 4336979,
+    "origem": "/SP",
+    "destino": "QUAKER CHEMICAL INDUSTRIA E COMERCIO LTDA - /",
+    "nome_da_rota": "IQA BARUERI-SP X QUAKE CHEMICAL RIO DE JANEIRO-RJ",
+    "distancia_km": 432.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 102,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "nome": "GOLDEN (BARUERI) X UNIAO QUIMICA (DIADEMA)",
+    "id": 4355281,
+    "origem": "/SP",
+    "destino": "BURN INDUSTRIA E COMERCIO LTDA - /",
+    "nome_da_rota": "IQA BARUERI-SP X BURN INDUSTRIA - RIO DE JANEIRO-RJ",
+    "distancia_km": 418.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 114,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "THOR BRASIL LTDA (BARUERI)",
-    "nome": "GOLDEN (BARUERI) X THOR BRASIL (BARUERI)",
+    "id": 4356902,
+    "origem": "/SP",
+    "destino": "PRIME SOLUCOES (ITAPEVI) - /",
+    "nome_da_rota": "IQA ( BARUERI) X PRIME SOLUCOES (ITAPEVI)",
+    "distancia_km": 4.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 118,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "QUIMICA EXACTA (GUARULHOS)",
-    "nome": "GOLDEN BARUERI X QUIMICA EXACTA - GUARULHOS",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4357791,
+    "origem": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI) - /",
+    "destino": "/SP",
+    "nome_da_rota": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI)",
+    "distancia_km": 54.7,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 121,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "PROCASA - SP",
-    "nome": "GOLDEN- BARUERI X PROCASA - SÃO PAULO",
+    "id": 4363612,
+    "origem": "São José/SC",
+    "destino": "Cotia/SP",
+    "nome_da_rota": "SAO JOSE (UNIVEN) X COTIA (CROMO)",
+    "distancia_km": 945.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 129,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "SR TRUCK ESTACIONAMENTO",
-    "nome": "BARUERI (GOLDEN) X ITAPEVI (ESTACIONAMENTO)",
+    "id": 4369055,
+    "origem": "Louveira/SP",
+    "destino": "BRUCAI LOGISTICA- OSASCO - /",
+    "nome_da_rota": "LOUVEIRA - MIRASSOL SP X OSASCO -BRUCAI",
+    "distancia_km": 55.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 131,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "REFINARIA NACIONAL DE SAL S/A-GUARULHOS",
-    "nome": "GOLDEN BARUERI X REFINARIA NACIONAL DE SAL S/A -  GUARULHOS",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4369087,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "DIADEMA  UNIÃO X GUARULHOS RONDOCARGAS X BARUERI GOLDEN",
+    "distancia_km": 132.7,
+    "viagens": 14,
+    "placas": [
+      "TKX6F25",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 134,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "VAZIO - BARUERI - SP (GOLDEN) X BASE SANTA BARBARA-SP",
+    "id": 4369089,
+    "origem": "Louveira/SP",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "LOUVEIRA - MIRASSOL SP X DIADEMA UNIAO QUIMICA",
+    "distancia_km": 122.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 137,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "BIOCLEAN COMERCIAL LTDA - BARUERI",
-    "nome": "GOLDEN BARUERI X BIOCLEAN -BARUERI",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4369097,
+    "origem": "Louveira/SP",
+    "destino": "RAI ARMAZENS - SAO BERNARDO DO CAMPO - /",
+    "nome_da_rota": "LOUVEIRA - MIRASSOL SP X SAO BERNARDO DO CAMPO - RAI ARMAZENS",
+    "distancia_km": 125.9,
+    "viagens": 2,
+    "placas": [
+      "STR7A21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 139,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "AKZO NOBEL - MAUA",
-    "nome": "GOLDEN BARUERI X AKZO MAUA",
+    "id": 4369100,
+    "origem": "RAI ARMAZENS - SAO BERNARDO DO CAMPO - /",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "SAO BERNARDO DO CAMPO - RAI X SANTA BARBARA DO OESTE - CINTEC",
+    "distancia_km": 191.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 149,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "SUDESTE (OSASCO-SP)",
-    "nome": "GOLDEN-CARGO(BARUERI-SP) X SUDESTE (OSASCO-SP)",
+    "id": 4369103,
+    "origem": "Golden Cargo/BA",
+    "destino": "São Bernardo Do Campo/SP",
+    "nome_da_rota": "BARUERI ( GOLDEN) X SAO BERNARDO DO CAMPO ( RAI - ARMAZENS GERAIS)",
+    "distancia_km": 82.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 150,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "ICONIC - OSASCO SP",
-    "nome": "GOLDEN BARUERI X ICONIC - OSASCO",
+    "id": 4369194,
+    "origem": "RAI ARMAZENS - SAO BERNARDO DO CAMPO - /",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "SAO BERNARDO DO CAMPO - RAI X GUARULHOS - RONDOCARGAS X DIADEMA",
+    "distancia_km": 176.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 153,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "FORTNITRO (ITAQUAQUECETUBA)",
-    "nome": "GOLDEN X FORTINITRO",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4369231,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "Guarulhos (Rondocargas) x Diadema (União Quimica)",
+    "distancia_km": 45.7,
+    "viagens": 2,
+    "placas": [
+      "STR7A21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 162,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "VAZIO - BARUERI - SP (GOLDEN) X JARDINOPOLIS - VIA CAPIVARI",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4369462,
+    "origem": "Golden Cargo/BA",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "BARUERI (GOLDEN) X SBO (SASTER) X LOUVEIRA (MIRASSOL)",
+    "distancia_km": 210.3,
+    "viagens": 7,
+    "placas": [
+      "TKX6F25",
+      "STR7A21",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 167,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "GOLDEN-CARGO(BARUERI-SP) X RONDOCARGAS (GUARULHOS -SP)",
+    "id": 4369630,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "RONDOCARGAS X POWER LOGISTICA",
+    "distancia_km": 25.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 178,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "GOLDEN CARGO (BARUERI-SP) X MIRASSOL (LOUVEIRA-SP)",
+    "id": 4369820,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "GUARULHOS SP X JARDINOPOLIS SP",
+    "distancia_km": 350.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 184,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "BARUERI (GOLDEN) X GUARULHOS (RONDOLOG)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4369867,
+    "origem": "Louveira/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "LOUVEIRA (MIRASSOL) X SBO(SASTER)X BARUERI (GOLDEN)",
+    "distancia_km": 210.6,
+    "viagens": 2,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 187,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "DEVINTEX (JANDIRA-SP)",
-    "nome": "GOLDEN CARGO (BARUERI-SP) X DEVINTEX (JANDIRA-SP)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4370779,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "SBDO X GOLDEN",
+    "distancia_km": 136.8,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 197,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "INDUSTRIA AGRO-QUIMICA  (SÃO CAETANO DO SUL - SP)",
-    "nome": "GOLDEN CARGO (BARUERI-SP) X INDUSTRIA AGRO-QUIMICA (São Caetano do Sul-SP)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4370786,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "SDBO X LOUVEIRA",
+    "distancia_km": 75.6,
+    "viagens": 8,
+    "placas": [
+      "STR7A21",
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 205,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "GOLDEN CARGO (BARUERI-SP) X SASTER (SANTA BARBARA D'OESTE-SP)  - CASTELO BRANCO > BANDEIRANTES",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4371277,
+    "origem": "Golden Cargo/BA",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "GOLDEN X QUIMICA ANASTACIO - SP (LAPA)",
+    "distancia_km": 24.6,
+    "viagens": 3,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 206,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI)",
-    "nome": "GOLDEN CARGO (BARUERI-SP) X CARBONO QUIMICA (SÃO BERNARDO DO CAMPO-SP)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4371444,
+    "origem": "Golden Cargo/BA",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "GOLDEN (BARUERI) X UNIAO QUIMICA (DIADEMA)",
+    "distancia_km": 101.3,
+    "viagens": 8,
+    "placas": [
+      "TKX6F25",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 210,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "FORTNITRO (ITAQUAQUECETUBA)",
-    "nome": "Barueri x Itaquaquecetuba",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4371628,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "GUARULHOS SP X LOUVEIRA SP",
+    "distancia_km": 91.1,
+    "viagens": 6,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 213,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "VAZIO - BARUERI - SP (GOLDEN) X BASE SANTA BARBARA-SP - CASTELO > RODOANEL > BANDEIRANTES",
+    "id": 4371674,
+    "origem": "/SP",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "ANASTACIO BARUERI X JARDINÓLIS AGRARIA INDUSTRIA",
+    "distancia_km": 340.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 215,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "ROSSI LAVADOR - NOVA ODESSA",
-    "nome": "GOLDEN (BARUERI) X ROSSI LAVADOR  (NOVA ODESSA)",
+    "id": 4371879,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "MANUTENÇÃO SIDER SUMARÉ - /",
+    "nome_da_rota": "GUARULHOS SP X SUMARÉ SP - MANUTENÇÃO",
+    "distancia_km": 149.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 220,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "DSM PRODUTOS NUTRICIONAIS BRASIL SA",
-    "nome": "GOLDEM ( BARUERÍ) X DSM ( JAGUYARÉ SP )",
+    "id": 4371887,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "GUARULHOS SP  X DIADEMA SP - RODOANEL",
+    "distancia_km": 106.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 225,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "BRASILON (SÃO PAULO)",
-    "nome": "GOLDEN (BARUERI) X BRASILON (SAO PAULO)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4371965,
+    "origem": "MANUTENÇÃO SIDER SUMARÉ - /",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "SUMARE OFICINA X CINTEC- SASTER",
+    "distancia_km": 29.2,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 233,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "GRUPO TBC",
-    "nome": "GOLDEN (BARUERI) X GRUPO TBC (SAO PAULO)",
+    "id": 4371966,
+    "origem": "MANUTENÇÃO SIDER SUMARÉ - /",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "MANUTENÇÃO  SUMARE  SP X  CINTEC BASE SBDO",
+    "distancia_km": 29.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 234,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "GRUPO TBC",
-    "nome": "GOLDEN (BARUERI) X GRUPO TBC (SAO PAULO)",
+    "id": 4371995,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "DIADEMA/SP ( UNIÃO QUIMICA PAULISTA) X BARUERI/SP (GOLDEN CARGO)- RODOANEL",
+    "distancia_km": 77.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 236,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "CINTEC SBO",
-    "nome": "GOLDEN BARUERI X CINTEC SBO",
+    "id": 4372111,
+    "origem": "Louveira/SP",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "LOUVEIRA - MIRASSOL SP X GARAGEM - SASTER X JARDINOPOLIS",
+    "distancia_km": 295.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 245,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "ICONIC - OSASCO SP",
-    "nome": "GOLDEN (BARUERI) X ICONIC (OSASCO)",
+    "id": 4372268,
+    "origem": "Louveira/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "LOUVEIRA (MIRASSOL) X BARUERI (GOLDEN)",
+    "distancia_km": 69.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 250,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "INTERMODAL (GUARULHOS)",
-    "nome": "GOLDEN (BARUERI) X INTERMODAL (GUARULHOS)",
+    "id": 4373263,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "MANUTENÇÃO SIDER SUMARÉ - /",
+    "nome_da_rota": "CINTEC SBDO X SUMARE MANUTENÇAO",
+    "distancia_km": 31.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 254,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "AUTOPEL (SANTANA )",
-    "nome": "GOLDEN (BARUERI) X AUTOPEL (SANTANA)",
+    "id": 4373646,
+    "origem": "Golden Cargo/BA",
+    "destino": "Barueri/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X THOR BRASIL (BARUERI)",
+    "distancia_km": 14.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 257,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "CLOROETIL (MOGI MIRIM)",
-    "nome": "GOLDEN  (BARUERI) X CLOROETIL (MOGI MIRIM)",
+    "id": 4373687,
+    "origem": "Barueri/SP",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "THOR BRASIL (BARUERI) X FORTNITRO (ITAQUAQUECETUBA)",
+    "distancia_km": 64.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 263,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "POLYCHEMICAL (SÃO JOSE DOS CAMPOS-SP)",
-    "nome": "BARUERI-SP (GOLDEN) X SÃO JOSE DOS CAMPOS-SP (POLYCHEMICAL)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4373847,
+    "origem": "CD GTEX - GUARULHOS SP - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "GUARULHOS -SP X BARUERI - SP (GOLDEN)",
+    "distancia_km": 59.9,
+    "viagens": 5,
+    "placas": [
+      "SST0D21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 268,
-    "origem": "GOLDEN CARGO-BARUERI",
-    "destino": "AGRO-QUIMICA BRAIDO (SAO CAETANO - SP)",
-    "nome": "GOLDEN CARGO (BARUERI - SP) X AGRO-QUIMICA BRAIDO (SAO CAETANO - SP)",
+    "id": 4374281,
+    "origem": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "GUARULHOS (REDE DUQUE - DUTRA) X BARUERI",
+    "distancia_km": 58.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 65,
-    "origem": "GREEN TEC INDUSTRIA E COMERCIO",
-    "destino": "DISTRIBUIDORA DE ALIMENTOS DE ESTIVAS E CEREAIS CELINHO LTDA",
-    "nome": "SANTANA DE PARNAÍBA - SP (GREEN TEC) X RECIFE - PE (DISTRIBUIDORA DE ALIMENTOS)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4374299,
+    "origem": "Golden Cargo/BA",
+    "destino": "QUIMICA EXACTA (GUARULHOS) - /",
+    "nome_da_rota": "GOLDEN BARUERI X QUIMICA EXACTA - GUARULHOS",
+    "distancia_km": 54.3,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 235,
-    "origem": "GRUPO TBC",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "GRUPO TBC (SÃO PAULO) X RONDOLOG (GUARULHOS)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4374347,
+    "origem": "QUIMICA EXACTA (GUARULHOS) - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "QUIMICA EXATA GUARULHOS X GOLDEM BARUERI",
+    "distancia_km": 55.2,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 117,
-    "origem": "GUARULHOS (REDE DUQUE - DUTRA)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "GUARULHOS (REDE DUQUE - DUTRA) X BARUERI",
+    "id": 4374372,
+    "origem": "Golden Cargo/BA",
+    "destino": "PROCASA - SP - /",
+    "nome_da_rota": "GOLDEN- BARUERI X PROCASA - SÃO PAULO",
+    "distancia_km": 27.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 151,
-    "origem": "ICONIC - OSASCO SP",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "ICONIC - OSASCO X GOLDEN BARUERI",
+    "id": 4374448,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "DIADEMA (UNIÃO QUIMICA) X SASTER (GARAGEM) X BARUERI (GOLDEN)",
+    "distancia_km": 297.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 154,
-    "origem": "ICONIC - OSASCO SP",
-    "destino": "SUDESTE (OSASCO-SP)",
-    "nome": "ICONIC OSASCO  X SUDESTE OSASCO",
+    "id": 4374466,
+    "origem": "Louveira/SP",
+    "destino": "INGLEZA INDÚSTRIA DE PRODUTOS DE LIMPEZA - /",
+    "nome_da_rota": "IQA LOUVEIRA X INGLEZA INDÚSTRIA (SANTA LUZIA-MG)",
+    "distancia_km": 590.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 246,
-    "origem": "ICONIC - OSASCO SP",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "ICONIC = OSASCO X  RONDOLOG (GUARULHOS)",
+    "id": 4374477,
+    "origem": "PROCASA - SP - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "PROCASA - SÃO PAULO X SINTEC - SASTER X GOLDEN BARUERI",
+    "distancia_km": 264.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 198,
-    "origem": "INDUSTRIA AGRO-QUIMICA  (SÃO CAETANO DO SUL - SP)",
-    "destino": "Proquitec  VAGEM GRANDE",
-    "nome": "INDUSTRIA AGRO-QUIMICA (SÃO CAETANO DO SUL - SP) X PROQUITEC VARGEM GRANDE",
+    "id": 4374482,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "INGLEZA INDÚSTRIA DE PRODUTOS DE LIMPEZA - /",
+    "nome_da_rota": "CINTEC SBDO X INGLEZA SANTA LUZIA",
+    "distancia_km": 647.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 75,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S A",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "IQA (ILHOTA) X AGRARIA ( JARDINOPOLIS)",
+    "id": 4374596,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "PROCASA - SP - /",
+    "nome_da_rota": "GARAGEM SASTER X PROCOSA -SP",
+    "distancia_km": 126.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 76,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S A",
-    "destino": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "nome": "IQA (ILHOTA) X IQA (SUMARE)",
+    "id": 4374620,
+    "origem": "INGLEZA INDÚSTRIA DE PRODUTOS DE LIMPEZA - /",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "INGLEZA SANTA LUZIA  MG X  GARAGEM  SASTER SP",
+    "distancia_km": 645.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 51,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "nome": "IQA (BARUERI) X IQA (SAO PAULO)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4374772,
+    "origem": "Golden Cargo/BA",
+    "destino": "Itapevi/SP",
+    "nome_da_rota": "BARUERI (GOLDEN) X ITAPEVI (ESTACIONAMENTO)",
+    "distancia_km": 3.5,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 68,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "TRANSMETA GUARULHOS TRANSP",
-    "nome": "GOLDEN (BARUERI) X TRANSMETA (GUARULHOS)",
+    "id": 4374893,
+    "origem": "BRASALPLA BRASIL INDUSTRIA - ITAPEVI - /",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "ITAPEVI -SP X UNIAO DIADEMA",
+    "distancia_km": 80.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 69,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "EMPRESA DE TRANSPORTES MARTINS LTDA",
-    "nome": "BARUERI - SP (IQA) X SÃO PAULO - SP (EMPRESA DE TRANSPORTES MARTINS)",
+    "id": 4375056,
+    "origem": "Golden Cargo/BA",
+    "destino": "A/GU",
+    "nome_da_rota": "GOLDEN BARUERI X REFINARIA NACIONAL DE SAL S/A -  GUARULHOS",
+    "distancia_km": 59.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 72,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "COOPERATIVA DOS PRODUTORES RURAIS DO OESTE DE MINAS LTDA.",
-    "nome": "IQA (BARUERI) X COOPERATIVA DOS PRODUTORES (PARA DE MINAS)",
+    "id": 4375144,
+    "origem": "A/GU",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "REFINARIA  NACIONAL DE SAL - GUARULHOS -SP  X GOLDEN  BARUERI -SP",
+    "distancia_km": 57.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 78,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "ADORO SA - (SÃO CARLOS- SP)",
-    "nome": "IQA BARUERI-SP X ADORO (SÃO CARLOS-SP)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4375509,
+    "origem": "Louveira/SP",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "JARDINOPOLIS  X  CINTEC - GARAGEM - SASTER SANTA BARBARA - ABASTECER CHEROKEE NOVA ODESSA",
+    "distancia_km": 233.1,
+    "viagens": 5,
+    "placas": [
+      "TKX6F25",
+      "SST0D21",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 79,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "QUAKER CHEMICAL INDUSTRIA E COMERCIO LTDA",
-    "nome": "IQA BARUERI-SP X QUAKE CHEMICAL RIO DE JANEIRO-RJ",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4375931,
+    "origem": "Golden Cargo/BA",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "VAZIO - BARUERI - SP (GOLDEN) X BASE SANTA BARBARA-SP",
+    "distancia_km": 134.5,
+    "viagens": 7,
+    "placas": [
+      "TKX6F25",
+      "STR7A21",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 80,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "BURN INDUSTRIA E COMERCIO LTDA",
-    "nome": "IQA BARUERI-SP X BURN INDUSTRIA - RIO DE JANEIRO-RJ",
+    "id": 4376499,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "SASTER (SBDO) X QUIMICA ANASTACIO (AGRARIA)",
+    "distancia_km": 253.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 81,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "PRIME SOLUCOES (ITAPEVI)",
-    "nome": "IQA ( BARUERI) X PRIME SOLUCOES (ITAPEVI)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4376653,
+    "origem": "Jardinopolis/SP",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "JARDINOPOLIS (AGRARIA) x CINTEC GARAGEM SASTER",
+    "distancia_km": 220.1,
+    "viagens": 2,
+    "placas": [
+      "STR7A21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 104,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "ANASTACIO BARUERI X JARDINÓLIS AGRARIA INDUSTRIA",
+    "id": 4376733,
+    "origem": "Golden Cargo/BA",
+    "destino": "BIOCLEAN COMERCIAL LTDA - BARUERI - /",
+    "nome_da_rota": "GOLDEN BARUERI X BIOCLEAN -BARUERI",
+    "distancia_km": 1.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 179,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "IQA (BARUERI-SP) X AGRARIA (JARDINOPOLIS-SP)",
+    "id": 4376786,
+    "origem": "BIOCLEAN COMERCIAL LTDA - BARUERI - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "BIOCLEAN -BARUERI X GOLDEN BARUERI",
+    "distancia_km": 1.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 67,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "nome": "IQA ( SAO PAULO ) X IQA GOLDEN ( BARUERI )",
+    "id": 4376828,
+    "origem": "Golden Cargo/BA",
+    "destino": "AKZO NOBEL - MAUA - /",
+    "nome_da_rota": "GOLDEN BARUERI X AKZO MAUA",
+    "distancia_km": 93.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 71,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "destino": "UNILEVER BRASIL INDUSTRIAL LTDA",
-    "nome": "IQA (SAO PAULO) X UNILEVER 9 VALINHOS)",
+    "id": 4377015,
+    "origem": "AKZO NOBEL - MAUA - /",
+    "destino": "/SP",
+    "nome_da_rota": "AKZO (MAUA) X QUIMICA ANASTACIO (BARUERI)",
+    "distancia_km": 91.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 73,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "destino": "UNILEVER BRASIL INDUSTRIAL LTDA",
-    "nome": "SAO PAULO-SP (QUIMICA ANASTACIO) X VALINHOS-SP (UNILEVER)",
+    "id": 4377022,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "VOLVO (CAMPINAS) - /",
+    "nome_da_rota": "RONDOCARGAS ( GUARULLHOS) X VOLVO (CAMPINAS)",
+    "distancia_km": 116.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 143,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "nome": "QUIMICA ANASTACIO - LAPA X UNIAO QUIMICA - DIADEMA",
+    "id": 4377088,
+    "origem": "VOLVO (CAMPINAS) - /",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "VOLVO ( CAMPINAS ) X  JARDINOPOLIS",
+    "distancia_km": 243.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 182,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "INDUSTRIA QUIMICA (ANASTACIO) X CINTEC ( SASTER)",
+    "id": 4377137,
+    "origem": "São Paulo/SP",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "QUIMICA ANASTACIO - LAPA X UNIAO QUIMICA - DIADEMA",
+    "distancia_km": 36.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 216,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "IQA LAPA X LOUVEIRA",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377418,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "SBDO (SASTER) X FORTNITRO (ITAQUAQUECETUBA)",
+    "distancia_km": 172.3,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 264,
-    "origem": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "destino": "SR TRUCK ESTACIONAMENTO",
-    "nome": "IQA( LAPA)  X ITAPEVI (ESTACIONAMENTO )",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377420,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "SBDO (CINTEC) X GUARULHOS (RONDOCARGAS) - DOM PEDRO/FERN. DIAS",
+    "distancia_km": 186.5,
+    "viagens": 6,
+    "placas": [
+      "SST0D21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 128,
-    "origem": "INGLEZA INDÚSTRIA DE PRODUTOS DE LIMPEZA",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "INGLEZA SANTA LUZIA  MG X  GARAGEM  SASTER SP",
+    "id": 4377421,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "SBDO (SASTER) X FORTNITRO (ITAQUAQUECETUBA) - DOM PEDRO/FERN DIAS",
+    "distancia_km": 195.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 3,
-    "origem": "INPASA - DOURADOS-MS",
-    "destino": "DELTA - RIBEIRAO PRETO-SP",
-    "nome": "DOURADOS-MS (INPASA) X RIBEIRAO PRETO-SP (DELTA) (TORRE V1)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377642,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS -SP) X GOLDEN-CARGO (BARUERI-SP)",
+    "distancia_km": 56.8,
+    "viagens": 5,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 12,
-    "origem": "INPASA - DOURADOS-MS",
-    "destino": "MIDAS COMBUSTIVEIS - RIBEIRAO PRETO-SP",
-    "nome": "DOURADOS-MS (INPASA) X RIBEIRAO PRETO-SP (MIDAS) (TORRE)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377650,
+    "origem": "Golden Cargo/BA",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "GOLDEN-CARGO(BARUERI-SP) X SUDESTE (OSASCO-SP)",
+    "distancia_km": 29.9,
+    "viagens": 4,
+    "placas": [
+      "TKX6F25",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 5,
-    "origem": "INPASA - SIDROLANDIA-MS",
-    "destino": "STOCK (GUARULHOS-SP)",
-    "nome": "SIDROLANDIA-MS (INPASA) X GUARULHOS-SP (STOCK) (TORRE)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377686,
+    "origem": "Golden Cargo/BA",
+    "destino": "ICONIC - OSASCO SP - /",
+    "nome_da_rota": "GOLDEN BARUERI X ICONIC - OSASCO",
+    "distancia_km": 17.1,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 6,
-    "origem": "INPASA - SIDROLANDIA-MS",
-    "destino": "BIP - SAO PAULO SP",
-    "nome": "SIDROLANDIA-MS (INPASA) X SAO PAULO-SP BIP RAIZEN (TORRE)",
+    "id": 4377700,
+    "origem": "ICONIC - OSASCO SP - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "ICONIC - OSASCO X GOLDEN BARUERI",
+    "distancia_km": 17.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 7,
-    "origem": "INPASA - SIDROLANDIA-MS",
-    "destino": "LOGUM - RIBEIRAO PRETO-SP",
-    "nome": "SIDROLANDIA-MS (INPASA) X RIBEIRAO PRETO-SP (LOGUM) (TORRE)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377702,
+    "origem": "Osasco/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "SUDESTE OSASCO X GOLDEN BARUERI",
+    "distancia_km": 26.1,
+    "viagens": 4,
+    "placas": [
+      "SST0D21",
+      "STR7A21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 10,
-    "origem": "INPASA - SIDROLANDIA-MS",
-    "destino": "LOGUM - PAULÍNIA-SP",
-    "nome": "SIDROLANDIA-MS (INPASA) X PAULINIA-SP (LOGUM) (TORRE)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377746,
+    "origem": "Golden Cargo/BA",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "GOLDEN X FORTINITRO",
+    "distancia_km": 73.4,
+    "viagens": 5,
+    "placas": [
+      "SST0D21",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 13,
-    "origem": "INPASA - SIDROLANDIA-MS",
-    "destino": "ARAUCARIA-PR - IPIRANGA",
-    "nome": "SIDROLANDIA-MS (INPASA) X ARAUCARIA- PR (IPIRANGA) (TORRE)",
+    "id": 4377770,
+    "origem": "ICONIC - OSASCO SP - /",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "ICONIC OSASCO  X SUDESTE OSASCO",
+    "distancia_km": 5.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 22,
-    "origem": "INPASA - SIDROLANDIA-MS",
-    "destino": "DELTA - RIBEIRAO PRETO-SP",
-    "nome": "SIDROLANDIA-MS (INPASA) X RIBEIRAO PRETO-SP (DELTA) (TORRE)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377831,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "FORTNITRO x ITAQUAQUECETUBA",
+    "distancia_km": 75.1,
+    "viagens": 9,
+    "placas": [
+      "SST0D21",
+      "STR7A21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 171,
-    "origem": "IQA - VILA VELHA-ES",
-    "destino": "GB- TERMINAIS -  DUQUE DE CAXIAS - RJ",
-    "nome": "GUARAPARI - VLIA VELHA - ES X GB TERMINAIS DUQUE DE CAXIAS - RJ",
+    "id": 4377834,
+    "origem": "Osasco/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "OSASCO xITAPEVI",
+    "distancia_km": 25.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 172,
-    "origem": "IQA - VILA VELHA-ES",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "GARAPARI -VILA VELHA -ES X  GARAGEN CINTEC ( SASTER)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4377976,
+    "origem": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "POSTO REDE DUQUE (GUARULHOS-SP) X GOLDEN CARGO (BARUERI-SP)",
+    "distancia_km": 58.8,
+    "viagens": 2,
+    "placas": [
+      "SST0D21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 16,
-    "origem": "JBS - ISIS CUBATAO-SP",
-    "destino": "JBS -  ITUMBIARA-GO",
-    "nome": "CUBATAO-SP (JBS) X ITUMBIARA-GO (JBS) (TORRE)",
+    "id": 4378001,
+    "origem": "Itapevi/SP",
+    "destino": "/SP",
+    "nome_da_rota": "SR TRUCK (ITAPEVI) X QUIMICA ANASTACIO (BARUERI)",
+    "distancia_km": 3.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 24,
-    "origem": "LWART - IGARASSU-PE",
-    "destino": "LWART - LENCOIS PAULISTA-SP",
-    "nome": "IGARASSU-PE (LWART) X LENCOIS PAULISTA-SP (LWART) (TORRE)",
+    "id": 4378368,
+    "origem": "Louveira/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "LOUVEIRA X POSTO 7 X GOLDEN (BARUERI)",
+    "distancia_km": 181.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 19,
-    "origem": "Louis Dreyfus Company Brasil S.A",
-    "destino": "S.Magalhaes S A Logistica em Comercio",
-    "nome": "ANAPOLIS-GO X SANTOS-SP (TORRE)",
+    "id": 4378910,
+    "origem": "VIRTUDE BIG BAGS (ITAPECERICA DA SERRA) - /",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "VIRTUDE BIG BAG (ITAPECERICA DA SERRA-SP) x IQA (LAPA)",
+    "distancia_km": 40.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 107,
-    "origem": "MANUTENÇÃO SIDER SUMARÉ",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "SUMARE OFICINA X CINTEC- SASTER",
+    "id": 4379046,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "FORTNITRO x LOUVEIRA",
+    "distancia_km": 193.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 108,
-    "origem": "MANUTENÇÃO SIDER SUMARÉ",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "MANUTENÇÃO  SUMARE  SP X  CINTEC BASE SBDO",
+    "id": 4379561,
+    "origem": "Golden Cargo/BA",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "VAZIO - BARUERI - SP (GOLDEN) X JARDINOPOLIS - VIA CAPIVARI",
+    "distancia_km": 349.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 84,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "LOUVEIRA SP X GUARULHOS SP",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4379608,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "RONDOCARGAS ( GUARULLHOS) X GARAGEM SASTER",
+    "distancia_km": 156.2,
+    "viagens": 4,
+    "placas": [
+      "TKX6F25",
+      "STR7A21",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 85,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "LOUVEIRA SP X GUARULHOS SP - DOM PEDRO",
+    "id": 4379784,
+    "origem": "Jardinopolis/SP",
+    "destino": "Vila Velha/ES",
+    "nome_da_rota": "JARDINOPOLIS-SP (AGRARIA) X IQA - VILA VELHA-ES",
+    "distancia_km": 1257.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 86,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "BRUCAI LOGISTICA- OSASCO",
-    "nome": "LOUVEIRA - MIRASSOL SP X OSASCO -BRUCAI",
+    "id": 4379937,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Ribeirão Preto/SP",
+    "nome_da_rota": "CINTEC SBDO X  POSTO 7",
+    "distancia_km": 26.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 88,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "nome": "LOUVEIRA - MIRASSOL SP X DIADEMA UNIAO QUIMICA",
+    "id": 4379945,
+    "origem": "Ribeirão Preto/SP",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "POSTO 7  X GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "distancia_km": 27.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 89,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "RAI ARMAZENS - SAO BERNARDO DO CAMPO",
-    "nome": "LOUVEIRA - MIRASSOL SP X SAO BERNARDO DO CAMPO - RAI ARMAZENS",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4379961,
+    "origem": "Golden Cargo/BA",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "GOLDEN-CARGO(BARUERI-SP) X RONDOCARGAS (GUARULHOS -SP)",
+    "distancia_km": 58.4,
+    "viagens": 3,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 94,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "LOUVEIRA/SP (MIRASSOL) X GUARULHOS/SP (RONDOCARGAS)",
+    "id": 4380097,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Guaratingueta/SP",
+    "nome_da_rota": "CINTEC (SBDO) X UNIMOL BRASIL (GUARATINGUETÁ-SP)",
+    "distancia_km": 305.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 98,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "LOUVEIRA (MIRASSOL) X SBO(SASTER)X BARUERI (GOLDEN)",
+    "id": 4380098,
+    "origem": "Guaratingueta/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "UNIMOL BRASIL (GUARATINGUETA-SP) X MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "distancia_km": 246.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 111,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "LOUVEIRA - MIRASSOL SP X GARAGEM - SASTER X JARDINOPOLIS",
+    "id": 4380369,
+    "origem": "Vila Velha/ES",
+    "destino": "GB- TERMINAIS -  DUQUE DE CAXIAS - RJ - /",
+    "nome_da_rota": "GUARAPARI - VLIA VELHA - ES X GB TERMINAIS DUQUE DE CAXIAS - RJ",
+    "distancia_km": 531.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 112,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "LOUVEIRA (MIRASSOL) X BARUERI (GOLDEN)",
+    "id": 4380375,
+    "origem": "Vila Velha/ES",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "GARAPARI -VILA VELHA -ES X  GARAGEN CINTEC ( SASTER)",
+    "distancia_km": 1040.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 124,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "INGLEZA INDÚSTRIA DE PRODUTOS DE LIMPEZA",
-    "nome": "IQA LOUVEIRA X INGLEZA INDÚSTRIA (SANTA LUZIA-MG)",
+    "id": 4380517,
+    "origem": "GB- TERMINAIS -  DUQUE DE CAXIAS - RJ - /",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "DUQUE DE CAXIAS RJ X GUARULHOS SP",
+    "distancia_km": 404.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 133,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "JARDINOPOLIS  X  CINTEC - GARAGEM - SASTER SANTA BARBARA - ABASTECER CHEROKEE NOVA ODESSA",
+    "id": 4380809,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Guaratingueta/SP",
+    "nome_da_rota": "RONDOCARGAS ( GUARULLHOS) X UNIMOL BRASIL (INDUSTRIA DE PRODUTO QUIM)",
+    "distancia_km": 157.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 159,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "LOUVEIRA X POSTO 7 X GOLDEN (BARUERI)",
+    "id": 4380818,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Guaratingueta/SP",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS-SP) X GUARATINGUETA-SP",
+    "distancia_km": 157.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 173,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "LOUVEIRA/SP (MIRASSOL) X GARAGEM CINTEC (SASTER )",
+    "id": 4380820,
+    "origem": "Itapevi/SP",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "SR TRUCK (ITAPEVI-SP) X SUDESTE (OSASCO-SP)",
+    "distancia_km": 29.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 180,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "SUDESTE (OSASCO-SP)",
-    "nome": "LOUVEIRA - MIRASSOL X SUDESTE OSASCO SP",
+    "id": 4380821,
+    "origem": "Golden Cargo/BA",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "GOLDEN CARGO (BARUERI-SP) X MIRASSOL (LOUVEIRA-SP)",
+    "distancia_km": 76.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 201,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "LOUVEIRA X LAPA X BARUERI (GOLDEN)",
+    "id": 4381065,
+    "origem": "/SP",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "IQA (BARUERI-SP) X AGRARIA (JARDINOPOLIS-SP)",
+    "distancia_km": 335.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 207,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "RAI - ARMAZENS GERAIS (SAO BERNARDO DO CAMPO)",
-    "nome": "MIRASSOL (LOUVEIRA-SP) X  RAI ARMAZENS GERAIS ( SAO BERNARDO DO CAMPO)  RODOANEL",
+    "id": 4381177,
+    "origem": "Louveira/SP",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "LOUVEIRA - MIRASSOL X SUDESTE OSASCO SP",
+    "distancia_km": 56.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 208,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "RAI - ARMAZENS GERAIS (SAO BERNARDO DO CAMPO)",
-    "nome": "MIRASSOL (LOUVEIRA-SP) X  RAI ARMAZENS GERAIS ( SAO BERNARDO DO CAMPO",
+    "id": 4381182,
+    "origem": "Jardinopolis/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "JARDINOPOLIS (AGRARIA) x LOUVEURA (MIRASSOL) **",
+    "distancia_km": 266.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 209,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "RAI - ARMAZENS GERAIS (SAO BERNARDO DO CAMPO)",
-    "nome": "MIRASSOL (LOUVEIRA-SP) X  RAI ARMAZENS GERAIS ( SAO BERNARDO DO CAMPO",
+    "id": 4381302,
+    "origem": "São Paulo/SP",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "INDUSTRIA QUIMICA (ANASTACIO) X CINTEC ( SASTER)",
+    "distancia_km": 333.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 228,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "BRASILON (SÃO PAULO)",
-    "nome": "MIRASSOL (LOUVEIRA) X BRASILON (SAO PAULO)",
+    "id": 4381662,
+    "origem": "Golden Cargo/BA",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "BARUERI (GOLDEN) X GUARULHOS (RONDOLOG)",
+    "distancia_km": 58.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 242,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "TRANSMETELLO (GUARULHOS)",
-    "nome": "MIRASSOL (LOUVEIRA) X TRANSMETELLO (GUARULHOS)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4381681,
+    "origem": "Itapevi/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "SR TRUCK (ITAPEVI-SP) X GOLDEN CARGO (BARUERI-SP)",
+    "distancia_km": 2.8,
+    "viagens": 2,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 267,
-    "origem": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "destino": "FORTNITRO (ITAQUAQUECETUBA)",
-    "nome": "MIRASSOL LOGISTICA (LOUVEIRA - SP) X RONDOCARGAS (GUARULHOS - SP) - FORTINITRO (ITAQUAQUECETUBA - SP)",
+    "id": 4381864,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS-SP) X AGRARIA INDUSTRIA (JARDINOPOLIS-SP)",
+    "distancia_km": 598.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 28,
-    "origem": "MULTIART COMERCIO IMPORTACAO LTDA",
-    "destino": "RONDOLOG - JUNDIAÍ-SP",
-    "nome": "DUQUE DE CAXIAS-RJ (MULTIART) X JUNDIAI-SP (RONDOLOG)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4382205,
+    "origem": "Golden Cargo/BA",
+    "destino": "Jandira/SP",
+    "nome_da_rota": "GOLDEN CARGO (BARUERI-SP) X DEVINTEX (JANDIRA-SP)",
+    "distancia_km": 5.2,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 36,
-    "origem": "NEWPOP INDUSTRIA QUÍMICA LTDA",
-    "destino": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "nome": "SANTA GERTRUDES - SP ( NEWPOD INDUSTRIA) X SUMARE - SP ( QUIMICA ANASTACIO)",
+    "id": 4382341,
+    "origem": "",
+    "destino": "",
+    "nome_da_rota": "JANDIRA (DEVINTEX) X GUARULHOS (RONDOCARGAS)",
+    "distancia_km": 57.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 54,
-    "origem": "NEWPOP INDUSTRIA QUÍMICA LTDA",
-    "destino": "DE SANTA OSASCO",
-    "nome": "SANTA GERTRUDES - SP ( NEWPOD INDUSTRIA) X OSASCO - SP ( DE SANTA)",
+    "id": 4382345,
+    "origem": "",
+    "destino": "",
+    "nome_da_rota": "JANDIRA (DEVINTEX) X GUARULHOS (RONDOLOG)",
+    "distancia_km": 57.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 55,
-    "origem": "NEWPOP INDUSTRIA QUÍMICA LTDA",
-    "destino": "DE SANTA OSASCO",
-    "nome": "SANTA GERTRUDES - SP ( NEWPOD INDUSTRIA) X OSASCO - SP ( DE SANTA)",
+    "id": 4382382,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "GUARULHOS SP X SANTA BARBARA  - SASTER",
+    "distancia_km": 184.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 77,
-    "origem": "NEWPOP INDUSTRIA QUÍMICA LTDA",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "nome": "SANTA GERTRUDES - SP ( NEWPOD INDUSTRIA) X BARUERI - SP ( QUIMICA ANASTACIO)",
+    "id": 4382425,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "BRUCAI LOGISTICA- OSASCO - /",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS-SP) X BRUCAI LOGISTICA (OSASCO-SP)",
+    "distancia_km": 42.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 40,
-    "origem": "PENSKE LOGISTICS DO BRASIL LTDA",
-    "destino": "ALL NATIONS - CARIACICA-ES",
-    "nome": "CAJAMAR - SP X CARIACICA - ES ( ALL NATIONS) TORRE",
+    "id": 4382548,
+    "origem": "Osasco/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "BRUCAI OSASCO X GOLDEN BARUERI",
+    "distancia_km": 26.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 265,
-    "origem": "POLYCHEMICAL (SÃO JOSE DOS CAMPOS-SP)",
-    "destino": "POSTO REDE DUTRA (GUARULHOS)",
-    "nome": "POLYCHEMICAL (SÃO JOSE DOS CAMPOS-SP) X  POSTO REDE DUTRA (GUARULHOS)",
+    "id": 4382585,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "UQP (DIADEMA) x RONDOCARGAS  (GUARULHOS )",
+    "distancia_km": 75.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 166,
-    "origem": "POSTO 7 - AMERICANA, Rodovia Anhangüera, Km 319, s/n - Sala 24 - Parque Avelino, Ribeirão Preto - SP, 13478-740",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "POSTO 7  X GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
+    "id": 4382631,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "FORTINITRO (ITAQUAQUECETUBA) X GUARULHOS (RONDOLOG)",
+    "distancia_km": 329.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 157,
-    "origem": "POSTO REDE DUTRA (GUARULHOS)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "POSTO REDE DUQUE (GUARULHOS-SP) X GOLDEN CARGO (BARUERI-SP)",
+    "id": 4382777,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "SBDO/SP (SASTER) X LOUVEIRA/SP (MIRASSOL)",
+    "distancia_km": 201.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 125,
-    "origem": "PROCASA - SP",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "PROCASA - SÃO PAULO X SINTEC - SASTER X GOLDEN BARUERI",
+    "id": 4382947,
+    "origem": "Golden Cargo/BA",
+    "destino": "Industria Agro/QU",
+    "nome_da_rota": "GOLDEN CARGO (BARUERI-SP) X INDUSTRIA AGRO-QUIMICA (São Caetano do Sul-SP)",
+    "distancia_km": 94.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 48,
-    "origem": "PRODUTOS ALIMENTICIOS ORLANDIA S/A COM. IND.",
-    "destino": "TAURUS TCT CIAPETRO - PAULINIA-SP",
-    "nome": "ORLANDIA - SP (PRODUTOS ALIMENTICIOS) X PAULINIA - SP ( TAURUS)",
+    "id": 4382980,
+    "origem": "Industria Agro/QU",
+    "destino": "Proquitec  VAGEM GRANDE - /",
+    "nome_da_rota": "INDUSTRIA AGRO-QUIMICA (SÃO CAETANO DO SUL - SP) X PROQUITEC VARGEM GRANDE",
+    "distancia_km": 95.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 199,
-    "origem": "Proquitec  VAGEM GRANDE",
-    "destino": "SR TRUCK ESTACIONAMENTO",
-    "nome": "PROQUITEC (VARZEA GRANDE PAULISTA -SP) X SR TRUCK (ITAPEVI-SP)",
+    "id": 4383121,
+    "origem": "Proquitec  VAGEM GRANDE - /",
+    "destino": "Itapevi/SP",
+    "nome_da_rota": "PROQUITEC (VARZEA GRANDE PAULISTA -SP) X SR TRUCK (ITAPEVI-SP)",
+    "distancia_km": 17.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 202,
-    "origem": "Proquitec  VAGEM GRANDE",
-    "destino": "Chemax  Jandira",
-    "nome": "Várzea grande Paulista Proquitec x Chemax Itapevi",
+    "id": 4383242,
+    "origem": "Itapevi/SP",
+    "destino": "Proquitec  VAGEM GRANDE - /",
+    "nome_da_rota": "SR TRUCK (ITAPEVI-SP) X PROQUITEC (VARZEA GRANDE PAULISTA-SP)",
+    "distancia_km": 23.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 203,
-    "origem": "Proquitec  VAGEM GRANDE",
-    "destino": "Chemax  Jandira",
-    "nome": "Várzea grande Paulista Proquitec x TRUCK itapevi x Chemax Itapevi",
+    "id": 4383382,
+    "origem": "Louveira/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "LOUVEIRA X LAPA X BARUERI (GOLDEN)",
+    "distancia_km": 86.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 222,
-    "origem": "Proquitec  VAGEM GRANDE",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "PROQUITEC( VARGEM GRANDE PAULISTA ) X BARUERI (GOLDEN)",
+    "id": 4383412,
+    "origem": "Proquitec  VAGEM GRANDE - /",
+    "destino": "Jandira/SP",
+    "nome_da_rota": "Várzea grande Paulista Proquitec x Chemax Itapevi",
+    "distancia_km": 52.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 224,
-    "origem": "Proquitec  VAGEM GRANDE",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "VARGEM GRANDE (PROQUITEC)x TRUCK ITAPEVI x BARUERI (GOLDEN)",
+    "id": 4383462,
+    "origem": "Proquitec  VAGEM GRANDE - /",
+    "destino": "Jandira/SP",
+    "nome_da_rota": "Várzea grande Paulista Proquitec x TRUCK itapevi x Chemax Itapevi",
+    "distancia_km": 60.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 119,
-    "origem": "QUIMICA EXACTA (GUARULHOS)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "QUIMICA EXATA GUARULHOS X GOLDEM BARUERI",
+    "id": 4383465,
+    "origem": "Jandira/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "Chemax Itapevi x Golden (Barueri)",
+    "distancia_km": 3.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 21,
-    "origem": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "SUMARE-SP (QUIMICA ANASTACIO) X JARDINOPOLIS-SP (AGRARIA)",
+    "id": 4383504,
+    "origem": "Golden Cargo/BA",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "GOLDEN CARGO (BARUERI-SP) X SASTER (SANTA BARBARA D'OESTE-SP)  - CASTELO BRANCO > BANDEIRANTES",
+    "distancia_km": 141.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 50,
-    "origem": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "destino": "EUROQUIMICA IND E COM DE INSUMOS AGRICOLAS LTDA",
-    "nome": "SUMARE-SP (QUIMICA ANASTACIO) X RIBEIRAO PRETO - SP (EUROQUIMICA)",
+    "id": 4383505,
+    "origem": "Golden Cargo/BA",
+    "destino": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI) - /",
+    "nome_da_rota": "GOLDEN CARGO (BARUERI-SP) X CARBONO QUIMICA (SÃO BERNARDO DO CAMPO-SP)",
+    "distancia_km": 80.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 52,
-    "origem": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "destino": "DE SANTA OSASCO",
-    "nome": "IQA SUMARÉ X DE SANTA OSASCO",
+    "id": 4383746,
+    "origem": "Louveira/SP",
+    "destino": "São Bernardo Do Campo/SP",
+    "nome_da_rota": "MIRASSOL (LOUVEIRA-SP) X  RAI ARMAZENS GERAIS ( SAO BERNARDO DO CAMPO)  RODOANEL",
+    "distancia_km": 125.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 70,
-    "origem": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "destino": "STOLLER DO BRASILLTDA",
-    "nome": "SUMARÉ - SP (IQA) X CÓSMOPOLIS - SP (STOLLER)",
+    "id": 4383782,
+    "origem": "Louveira/SP",
+    "destino": "São Bernardo Do Campo/SP",
+    "nome_da_rota": "MIRASSOL (LOUVEIRA-SP) X  RAI ARMAZENS GERAIS ( SAO BERNARDO DO CAMPO",
+    "distancia_km": 125.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 74,
-    "origem": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "IQA - SUMARE (SP) X AGRARIA - JARDINOPOLIS (SP)",
+    "id": 4383783,
+    "origem": "Louveira/SP",
+    "destino": "São Bernardo Do Campo/SP",
+    "nome_da_rota": "MIRASSOL (LOUVEIRA-SP) X  RAI ARMAZENS GERAIS ( SAO BERNARDO DO CAMPO",
+    "distancia_km": 125.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 90,
-    "origem": "RAI ARMAZENS - SAO BERNARDO DO CAMPO",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "SAO BERNARDO DO CAMPO - RAI X SANTA BARBARA DO OESTE - CINTEC",
+    "id": 4383841,
+    "origem": "Golden Cargo/BA",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "Barueri x Itaquaquecetuba",
+    "distancia_km": 73.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 92,
-    "origem": "RAI ARMAZENS - SAO BERNARDO DO CAMPO",
-    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "nome": "SAO BERNARDO DO CAMPO - RAI X GUARULHOS - RONDOCARGAS X DIADEMA",
+    "id": 4383853,
+    "origem": "Sao Bernardo Do Campo/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "sao bernardo x louveira",
+    "distancia_km": 87.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 132,
-    "origem": "REFINARIA NACIONAL DE SAL S/A-GUARULHOS",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "REFINARIA  NACIONAL DE SAL - GUARULHOS -SP  X GOLDEN  BARUERI -SP",
+    "id": 4384481,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "CINTEC (SBDO SP) X POSTO 7 (AMERICANA -SP)  X RONDOCARGAS (SÃO PAULO-SP)",
+    "distancia_km": 173.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 251,
-    "origem": "RESTITUI LOGISTICA - GUARULHOS-SP",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "GUARULHOS (MANOEL BORBA GATO ) X RONDOCARGAS GUARULHOS",
+    "id": 4384803,
+    "origem": "Golden Cargo/BA",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "VAZIO - BARUERI - SP (GOLDEN) X BASE SANTA BARBARA-SP - CASTELO > RODOANEL > BANDEIRANTES",
+    "distancia_km": 141.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 93,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "nome": "Guarulhos (Rondocargas) x Diadema (União Quimica)",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4384824,
+    "origem": "CINTEC SBO - GARAGEM SASTER - /",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "Cintec X IQA ( Lapa )",
+    "distancia_km": 128.6,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 96,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "POWER EXPRESS (GURULHOS)",
-    "nome": "RONDOCARGAS X POWER LOGISTICA",
-    "viagens": 0,
-    "placas": [],
-    "condutores": [],
+    "id": 4384918,
+    "origem": "Golden Cargo/BA",
+    "destino": "ROSSI LAVADOR - NOVA ODESSA - /",
+    "nome_da_rota": "GOLDEN (BARUERI) X ROSSI LAVADOR  (NOVA ODESSA)",
+    "distancia_km": 125.1,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385015,
+    "origem": "São Paulo/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "IQA LAPA X LOUVEIRA",
+    "distancia_km": 60.5,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385022,
+    "origem": "ROSSI LAVADOR - NOVA ODESSA - /",
+    "destino": "SUMARE OFICINA - /",
+    "nome_da_rota": "ROSSI LAVADOR X SUMARE OFICINA",
+    "distancia_km": 8.8,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385054,
+    "origem": "SUMARE OFICINA - /",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "SUMARE OFICINA X CINTEC (SBO)",
+    "distancia_km": 28.9,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385240,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Proquitec  VAGEM GRANDE - /",
+    "nome_da_rota": "SASTER X POROQUITEC (VARGEM GRANDE)",
+    "distancia_km": 158.2,
+    "viagens": 2,
+    "placas": [
+      "SST0D21",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385249,
+    "origem": "Golden Cargo/BA",
+    "destino": "DSM PRODUTOS NUTRICIONAIS BRASIL SA - /",
+    "nome_da_rota": "GOLDEM ( BARUERÍ) X DSM ( JAGUYARÉ SP )",
+    "distancia_km": 21.6,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385350,
+    "origem": "DSM PRODUTOS NUTRICIONAIS BRASIL SA - /",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "DSM JAGUARE X LOUVEIRA",
+    "distancia_km": 65.9,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385551,
+    "origem": "Proquitec  VAGEM GRANDE - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "PROQUITEC( VARGEM GRANDE PAULISTA ) X BARUERI (GOLDEN)",
+    "distancia_km": 20.5,
+    "viagens": 2,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 97,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "GUARULHOS SP X JARDINOPOLIS SP",
+    "id": 4385556,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "Guarulhos SP x Louveira",
+    "distancia_km": 136.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 103,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "GUARULHOS SP X LOUVEIRA SP",
+    "id": 4385577,
+    "origem": "Proquitec  VAGEM GRANDE - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "VARGEM GRANDE (PROQUITEC)x TRUCK ITAPEVI x BARUERI (GOLDEN)",
+    "distancia_km": 56.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 105,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "MANUTENÇÃO SIDER SUMARÉ",
-    "nome": "GUARULHOS SP X SUMARÉ SP - MANUTENÇÃO",
+    "id": 4385616,
+    "origem": "Golden Cargo/BA",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X BRASILON (SAO PAULO)",
+    "distancia_km": 23.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 106,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "nome": "GUARULHOS SP  X DIADEMA SP - RODOANEL",
+    "id": 4385648,
+    "origem": "",
+    "destino": "",
+    "nome_da_rota": "MIRASSOL (LOUVEIRA) X BRASILON (SAO PAULO)",
+    "distancia_km": 62.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 141,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "VOLVO (CAMPINAS)",
-    "nome": "RONDOCARGAS ( GUARULLHOS) X VOLVO (CAMPINAS)",
+    "id": 4385649,
+    "origem": "",
+    "destino": "",
+    "nome_da_rota": "MIRASSOL (LOUVEIRA) X BRASILON (SAO PAULO)",
+    "distancia_km": 62.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385651,
+    "origem": "Louveira/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "MIRASSOL (LOUVEIRA) X BRASILON (SAO PAULO)",
+    "distancia_km": 62.7,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 148,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "RONDOCARGAS (GUARULHOS -SP) X GOLDEN-CARGO (BARUERI-SP)",
+    "id": 4385685,
+    "origem": "São Paulo/SP",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "BRASILON (SÃO PAULO) X CINTEC (SBO)",
+    "distancia_km": 393.3,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385767,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "SASTER (SBDO) X QUIMICA ANASTACIO (SÃO PAULO - SP)",
+    "distancia_km": 188.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385772,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "SUMARE OFICINA - /",
+    "nome_da_rota": "SASTER X OFICINA(SUMARÉ)",
+    "distancia_km": 31.6,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385801,
+    "origem": "SUMARE OFICINA - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "SUMARÉ (OFICINA) X GOLDEN BARUERI",
+    "distancia_km": 113.7,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 163,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "RONDOCARGAS ( GUARULLHOS) X GARAGEM SASTER",
+    "id": 4385853,
+    "origem": "Golden Cargo/BA",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X GRUPO TBC (SAO PAULO)",
+    "distancia_km": 53.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 170,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "RONDOCARGAS (GUARULHOS-SP) X MIRASSOL (LOUVEIRA-SP)",
+    "id": 4385854,
+    "origem": "Golden Cargo/BA",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X GRUPO TBC (SAO PAULO)",
+    "distancia_km": 0.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4385949,
+    "origem": "São Paulo/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "GRUPO TBC (SÃO PAULO) X RONDOLOG (GUARULHOS)",
+    "distancia_km": 27.2,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4386088,
+    "origem": "Santana De Parnaíba/SP",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "SANTANA DE PARNAIBA X CINTEC",
+    "distancia_km": 111.2,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4386140,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Cravinhos/SP",
+    "nome_da_rota": "SASTER (SBDO-SP) X GIVAL SACARIAS (CRAVINHOS-SP)",
+    "distancia_km": 180.3,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4386145,
+    "origem": "Cravinhos/SP",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "CRAVINHOS X JARDINOPOLIS",
+    "distancia_km": 39.5,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 175,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "UNIMOL BRASIL  (GUARATINGUETA-SP)",
-    "nome": "RONDOCARGAS ( GUARULLHOS) X UNIMOL BRASIL (INDUSTRIA DE PRODUTO QUIM)",
+    "id": 4386148,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "RONDOLOG (GUARULHOS) X AROUCALOG (SP)",
+    "distancia_km": 24.7,
+    "viagens": 3,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4386215,
+    "origem": "São Paulo/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "AROUCALOG X LOUVEIRA",
+    "distancia_km": 102.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 176,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "UNIMOL BRASIL  (GUARATINGUETA-SP)",
-    "nome": "RONDOCARGAS (GUARULHOS-SP) X GUARATINGUETA-SP",
+    "id": 4386270,
+    "origem": "Louveira/SP",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "MIRASSOL (LOUVEIRA) X TRANSMETELLO (GUARULHOS)",
+    "distancia_km": 135.8,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4386587,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS-SP) X MIRASSOL (LOUVEIRA-SP)  FERN DIAS/DOM PEDRO",
+    "distancia_km": 123.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4386787,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "TRANSPOLI (CAJAMAR - SP) - /",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS - SP) X TRANSPOLI (CAJAMAR - SP)",
+    "distancia_km": 62.4,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 186,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "RONDOCARGAS (GUARULHOS-SP) X AGRARIA INDUSTRIA (JARDINOPOLIS-SP)",
+    "id": 4386827,
+    "origem": "Golden Cargo/BA",
+    "destino": "ICONIC - OSASCO SP - /",
+    "nome_da_rota": "GOLDEN (BARUERI) X ICONIC (OSASCO)",
+    "distancia_km": 17.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4386872,
+    "origem": "ICONIC - OSASCO SP - /",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "ICONIC = OSASCO X  RONDOLOG (GUARULHOS)",
+    "distancia_km": 43.2,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4387049,
+    "origem": "Guarulhos/SP",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "RONDOLOG (GUARULHOS) X CINTEC (SBO VIA FERNAO DIAS)",
+    "distancia_km": 186.9,
+    "viagens": 3,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4387178,
+    "origem": "CINTEC SBO - GARAGEM SASTER - /",
+    "destino": "Jardinopolis/SP",
+    "nome_da_rota": "CINTEC X REECAP (AMERICANA) C JARDINOPOLIS",
+    "distancia_km": 229.7,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4387618,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Cotia/SP",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS) X MULTICHEMIE (COTIA)",
+    "distancia_km": 59.2,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4387647,
+    "origem": "Golden Cargo/BA",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X INTERMODAL (GUARULHOS)",
+    "distancia_km": 45.4,
+    "viagens": 7,
+    "placas": [
+      "TKX6F25",
+      "STR7A21",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4387678,
+    "origem": "Guarulhos/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "GUARULHOS (MANOEL BORBA GATO ) X RONDOCARGAS GUARULHOS",
+    "distancia_km": 13.0,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 190,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "GUARULHOS SP X SANTA BARBARA  - SASTER",
+    "id": 4387760,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "RONDOCARGAS (GUARAULHOS - SP) X QUIMICA ANASTACIO - LAPA (SAO PAULO - SP) LAPA",
+    "distancia_km": 36.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 192,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "BRUCAI LOGISTICA- OSASCO",
-    "nome": "RONDOCARGAS (GUARULHOS-SP) X BRUCAI LOGISTICA (OSASCO-SP)",
+    "id": 4387896,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "GARAGEM SASTER (SBO) X ITAQUAQUECETUBA (FORTINITRO) POSTO 7",
+    "distancia_km": 193.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4387991,
+    "origem": "Golden Cargo/BA",
+    "destino": "Santana De Parnaíba/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X AUTOPEL (SANTANA)",
+    "distancia_km": 45.1,
+    "viagens": 2,
+    "placas": [
+      "STR7A21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4388597,
+    "origem": "CINTEC SBO - GARAGEM SASTER - /",
+    "destino": "A/GU",
+    "nome_da_rota": "CINTEC X REFINARIA DE SAL",
+    "distancia_km": 183.0,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4389579,
+    "origem": "Golden Cargo/BA",
+    "destino": "Mogi Mirim/SP",
+    "nome_da_rota": "GOLDEN  (BARUERI) X CLOROETIL (MOGI MIRIM)",
+    "distancia_km": 162.7,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4389659,
+    "origem": "Mogi Mirim/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "CLOROETIL (MOGI MIRIM) X GOLDEN  (BARUERI)",
+    "distancia_km": 159.2,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390150,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "SBO - (CINTEC) X  BARUERI - (GOLDEN)",
+    "distancia_km": 136.9,
+    "viagens": 8,
+    "placas": [
+      "STR7A21",
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390182,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "ROSSI LAVADOR - NOVA ODESSA - /",
+    "nome_da_rota": "CINTEC (SBO-SP) X ROSSI LAVADOR (NOVA ODESSA-SP)",
+    "distancia_km": 25.3,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390253,
+    "origem": "ROSSI LAVADOR - NOVA ODESSA - /",
+    "destino": "Santa Bárbara D'Oeste/SP",
+    "nome_da_rota": "ROSSI LAVADOR (NOVA ODESSA-SP) X CINTEC SBO (SASTER)",
+    "distancia_km": 33.8,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390385,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "CINTEC X POSTO 7 X IQA ( Lapa ) -ROD. ANHANGUERA",
+    "distancia_km": 143.5,
+    "viagens": 2,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390545,
+    "origem": "São Paulo/SP",
+    "destino": "Itapevi/SP",
+    "nome_da_rota": "IQA( LAPA)  X ITAPEVI (ESTACIONAMENTO )",
+    "distancia_km": 26.0,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390552,
+    "origem": "São Jose Dos Campos/SP",
+    "destino": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "nome_da_rota": "POLYCHEMICAL (SÃO JOSE DOS CAMPOS-SP) X  POSTO REDE DUTRA (GUARULHOS)",
+    "distancia_km": 58.6,
+    "viagens": 2,
+    "placas": [
+      "STR7A21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390578,
+    "origem": "Itapevi/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "SR TRUCK (ITAPEVI) X MIRASSOL LOGISTICA",
+    "distancia_km": 75.9,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390620,
+    "origem": "Louveira/SP",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "MIRASSOL LOGISTICA (LOUVEIRA - SP) X RONDOCARGAS (GUARULHOS - SP) - FORTINITRO (ITAQUAQUECETUBA - SP)",
+    "distancia_km": 109.1,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390770,
+    "origem": "Golden Cargo/BA",
+    "destino": "Agro/QU",
+    "nome_da_rota": "GOLDEN CARGO (BARUERI - SP) X AGRO-QUIMICA BRAIDO (SAO CAETANO - SP)",
+    "distancia_km": 47.7,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4390771,
+    "origem": "Agro/QU",
+    "destino": "Proquitec  VAGEM GRANDE - /",
+    "nome_da_rota": "AGRO-QUIMICA BRAIDO (SAO CAETANO - SP) X PROQUITEC (VARGEM GRANDE PAULISTA - SP)",
+    "distancia_km": 55.8,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 223,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "Guarulhos SP x Louveira",
+    "id": 4390801,
+    "origem": "Golden Cargo/BA",
+    "destino": "Agro/QU",
+    "nome_da_rota": "GOLDEN CARGO (BARUERI - SP) X AGRO-QUIMICA BRAIDO (SAO CAETANO - SP) - RODOANEL",
+    "distancia_km": 94.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 240,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "AROUCALOG",
-    "nome": "RONDOLOG (GUARULHOS) X AROUCALOG (SP)",
+    "id": 4391053,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "CINTEC SBDO X UQP DIADEMA",
+    "distancia_km": 189.8,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391205,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Franco Da Rocha/SP",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS - SP) X FRANCO DA ROCHA -SP (TAMCO)",
+    "distancia_km": 69.6,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391226,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Franco Da Rocha/SP",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS) X TAMCO (FRANCO DA ROCHA)",
+    "distancia_km": 63.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 243,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "RONDOCARGAS (GUARULHOS-SP) X MIRASSOL (LOUVEIRA-SP)  FERN DIAS/DOM PEDRO",
+    "id": 4391250,
+    "origem": "Franco Da Rocha/SP",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "TAMCO (FRANCO DA ROCHA - SP) X SUDOESTE (OSASCO - SP)",
+    "distancia_km": 31.5,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391346,
+    "origem": "Franco Da Rocha/SP",
+    "destino": "Itapevi/SP",
+    "nome_da_rota": "TAMCO (FRANCO DA ROCHA - SP) x SR TRUCK ESTACIONAMENTO (ITAPEVI-SP)",
+    "distancia_km": 46.1,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391386,
+    "origem": "Guarulhos/SP",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "RONDOLOG (GUARULHOS) X FORTINITRO (ITAQUAQUECETUBA)",
+    "distancia_km": 21.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391444,
+    "origem": "Golden Cargo/BA",
+    "destino": "VIVACOR (DIADEMA) - /",
+    "nome_da_rota": "GOLDEN (BARUERI) X VIVACOR (DIADEMA)",
+    "distancia_km": 83.0,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391507,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "destino": "Itapevi/SP",
+    "nome_da_rota": "DIADEMA/SP ( UQP) X ESTACIONAMENTO SR TRUCKS ITAPEVI",
+    "distancia_km": 78.7,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391643,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "RONDOCARGAS (GURAULHOS - SP) X POSTO 7 (AMERICANA - SP) X CINTEC (SBDO - SP)",
+    "distancia_km": 170.5,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 244,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "TRANSPOLI (CAJAMAR - SP)",
-    "nome": "RONDOCARGAS (GUARULHOS - SP) X TRANSPOLI (CAJAMAR - SP)",
+    "id": 4391705,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "Itaquaquecetuba ( Fortinitro ) X Posto rede duque X Barueri",
+    "distancia_km": 134.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391750,
+    "origem": "Golden Cargo/BA",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "GOLDEN BARUERI X CINTEC SBO",
+    "distancia_km": 142.7,
+    "viagens": 4,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391801,
+    "origem": "CINTEC SBO - GARAGEM SASTER - /",
+    "destino": "Santana De Parnaíba/SP",
+    "nome_da_rota": "CINTEC (SBO-SP) X SANTANA DE PARNAIBA (AUTOPEL)",
+    "distancia_km": 119.1,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 249,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "MULTICHEMIE IND E COM DE PROD QUIMICOS LTDA",
-    "nome": "RONDOCARGAS (GUARULHOS) X MULTICHEMIE (COTIA)",
+    "id": 4391878,
+    "origem": "CINTEC SBO - GARAGEM SASTER - /",
+    "destino": "Cravinhos/SP",
+    "nome_da_rota": "CINTEC SASTER X POSTO 7 X CRAVINHOS",
+    "distancia_km": 197.4,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391882,
+    "origem": "Cravinhos/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "CRAVINHOS X GUARULHOS X BARUERI",
+    "distancia_km": 366.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 252,
-    "origem": "RONDOCARGAS GUARULHOS",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "nome": "RONDOCARGAS (GUARAULHOS - SP) X QUIMICA ANASTACIO - LAPA (SAO PAULO - SP) LAPA",
+    "id": 4391883,
+    "origem": "Cravinhos/SP",
+    "destino": "QUIMICA EXACTA (GUARULHOS) - /",
+    "nome_da_rota": "CRAVINHOS X GUARULHOS (QUIMICA EXACTA)",
+    "distancia_km": 310.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391897,
+    "origem": "Cravinhos/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "CRAVINHOS - SP X LOUVEIRA -SP",
+    "distancia_km": 224.4,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4391970,
+    "origem": "Guarulhos/SP",
+    "destino": "Itapevi/SP",
+    "nome_da_rota": "GUARULHOS (MANOEL BORBA GATO ) X SR TRUCK IATPEVI",
+    "distancia_km": 45.4,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392047,
+    "origem": "Guarulhos/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "RONDOLOG (GUARULHOS) X AV DRCENA JAGUARE",
+    "distancia_km": 40.4,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392048,
+    "origem": "Itapevi/SP",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "SR TRUCK (ITAPEVI) RUA DO ALUMINIO",
+    "distancia_km": 73.1,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392104,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "NEOQUIM (ITAQUAQUECETUBA) X IQA (LAPA-SP)",
+    "distancia_km": 51.0,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392108,
+    "origem": "Seara - Jaguaré-São Paulo - SP - /",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "JAGUARE X FORTNITRO",
+    "distancia_km": 58.3,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 49,
-    "origem": "RONDOLOG - JUNDIAÍ-SP",
-    "destino": "EBAZAR.COM.BR.LTDA - FRANCO DA ROCHA (SP)",
-    "nome": "JUNDIAI - SP (RONDOLOG) X FRANCO DA ROCHA - SP (EBAZAR)",
+    "id": 4392145,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "FORTINITRO (ITAQUAQUECETUBA) X BARUERI (GOLDEN)",
+    "distancia_km": 83.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 247,
-    "origem": "RONDOLOG GUARULHOS",
-    "destino": "CINTEC SBO",
-    "nome": "RONDOLOG (GUARULHOS) X CINTEC (SBO VIA FERNAO DIAS)",
+    "id": 4392243,
+    "origem": "Golden Cargo/BA",
+    "destino": "Santana De Parnaíba/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X AUTOPEL (SANTA DE PARNAIBA)",
+    "distancia_km": 19.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392246,
+    "origem": "Golden Cargo/BA",
+    "destino": "DIVERSEY (SOCORRO - SP) - /",
+    "nome_da_rota": "GOLDEN (BARUERI) X DIVERSEY (SÃO PAULO)",
+    "distancia_km": 42.0,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392291,
+    "origem": "DIVERSEY (SOCORRO - SP) - /",
+    "destino": "SR TRUCK - /",
+    "nome_da_rota": "DIVERSEY X SR TRUCK",
+    "distancia_km": 26.8,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 217,
-    "origem": "ROSSI LAVADOR - NOVA ODESSA",
-    "destino": "SUMARE OFICINA",
-    "nome": "ROSSI LAVADOR X SUMARE OFICINA",
+    "id": 4392292,
+    "origem": "DIVERSEY (SOCORRO - SP) - /",
+    "destino": "SR TRUCK - /",
+    "nome_da_rota": "DIVERSEY X SR TRUCK",
+    "distancia_km": 26.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 261,
-    "origem": "ROSSI LAVADOR - NOVA ODESSA",
-    "destino": "CINTEC SASTER - Santa Bárbara D'oeste/SP",
-    "nome": "ROSSI LAVADOR (NOVA ODESSA-SP) X CINTEC SBO (SASTER)",
+    "id": 4392387,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "CINTEC X SUMARE OFICINA X LOUVEIRA",
+    "distancia_km": 75.7,
+    "viagens": 4,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392391,
+    "origem": "SR TRUCK - /",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "SR TRUCK (ITAPEVI) X DIADEMA ( UNIAO QUIMICA PAULISTA)",
+    "distancia_km": 69.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392392,
+    "origem": "Itapevi/SP",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "SR TRUCK ESTACIONAMENTO (ITAPEVI) X DIADEMA ( UNIAO QUIMICA PAULISTA)",
+    "distancia_km": 78.9,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 211,
-    "origem": "SAO BERNARDO DO CAMPO-SP [TRIMIX]",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "sao bernardo x louveira",
+    "id": 4392451,
+    "origem": "Osasco/SP",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "OSASCO - SP X SUDOESTE",
+    "distancia_km": 121.3,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4392452,
+    "origem": "Golden Cargo/BA",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "OSASCO-SP X SUDOESTE -SP - Mario Covas",
+    "distancia_km": 29.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 158,
-    "origem": "SR TRUCK ESTACIONAMENTO",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "nome": "SR TRUCK (ITAPEVI) X QUIMICA ANASTACIO (BARUERI)",
+    "id": 4392864,
+    "origem": "São Paulo/SP",
+    "destino": "São Jose Dos Campos/SP",
+    "nome_da_rota": "IQA (LAPA-SP) X POLYCHEMICAL (SAO JOSE DOS CAMPOS - SP)",
+    "distancia_km": 92.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393130,
+    "origem": "Guarulhos/SP",
+    "destino": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "nome_da_rota": "NOVA  CUMBICA -GUARULHOS  X  REDE DUQUE -DUTRA",
+    "distancia_km": 9.1,
+    "viagens": 2,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393153,
+    "origem": "Guarulhos/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS - SP) X GOLDEN CARGO",
+    "distancia_km": 57.4,
+    "viagens": 4,
+    "placas": [
+      "STR7A21",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 177,
-    "origem": "SR TRUCK ESTACIONAMENTO",
-    "destino": "SUDESTE (OSASCO-SP)",
-    "nome": "SR TRUCK (ITAPEVI-SP) X SUDESTE (OSASCO-SP)",
+    "id": 4393154,
+    "origem": "Guarulhos/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "RONDOLOG (GUARULHOS) X GOLDEN CARGO BARUERI",
+    "distancia_km": 57.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393243,
+    "origem": "Santana De Parnaíba/SP",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "AUTOPEL (SANTANA DE PARNAIBA ) X RONDOLOG (GUARULHOS )",
+    "distancia_km": 71.2,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393244,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "Santa Bárbara D'Oeste/SP",
+    "nome_da_rota": "FORTNITRO (ITAQUAQUECETUBA-SP) X RECAP (AMERICANA-SP) X CINTEC SASTER (SANTA BARBARA D'OESTE-SP)",
+    "distancia_km": 181.8,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 185,
-    "origem": "SR TRUCK ESTACIONAMENTO",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "SR TRUCK (ITAPEVI-SP) X GOLDEN CARGO (BARUERI-SP)",
+    "id": 4393377,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "DIADEMA/SP ( UNIÃO QUIMICA PAULISTA) X BARUERI/SP (GOLDEN CARGO)- MARGINAL",
+    "distancia_km": 97.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393496,
+    "origem": "Golden Cargo/BA",
+    "destino": "Campinas/SP",
+    "nome_da_rota": "GOLDEN BARUERI X NORS CAMINHOES",
+    "distancia_km": 109.0,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393503,
+    "origem": "Guarulhos/SP",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "RONDOLOG (GUARULHOS) X UQP ( VIA RODOANEL)",
+    "distancia_km": 100.3,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 200,
-    "origem": "SR TRUCK ESTACIONAMENTO",
-    "destino": "Proquitec  VAGEM GRANDE",
-    "nome": "SR TRUCK (ITAPEVI-SP) X PROQUITEC (VARZEA GRANDE PAULISTA-SP)",
+    "id": 4393513,
+    "origem": "Golden Cargo/BA",
+    "destino": "Proquitec  VAGEM GRANDE - /",
+    "nome_da_rota": "BARUERI (GOLDEN) X PROQUITEC( VARGEM GRANDE PAULISTA )",
+    "distancia_km": 47.6,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393558,
+    "origem": "Campinas/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "NORS (CAMPINAS ) X LOUVEIRA",
+    "distancia_km": 40.4,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393560,
+    "origem": "Proquitec  VAGEM GRANDE - /",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "PROQUITEC (VARZEA GRANDE PAULISTA -SP) X SASTER (SBO-SP)",
+    "distancia_km": 446.5,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393602,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "UNIAO QUIMICA DIADEMA X SINTEC - SASTER",
+    "distancia_km": 196.6,
+    "viagens": 2,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393781,
+    "origem": "Golden Cargo/BA",
+    "destino": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "nome_da_rota": "GOLDEN (BARUERI-SP) X UQP (DIADEMA - SP)",
+    "distancia_km": 51.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 266,
-    "origem": "SR TRUCK ESTACIONAMENTO",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "SR TRUCK (ITAPEVI) X MIRASSOL LOGISTICA",
+    "id": 4393791,
+    "origem": "Golden Cargo/BA",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "GOLDEN (BARUERI-SP) X FORTNITRO (IQUAQUECETUBA -SP)",
+    "distancia_km": 73.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 2,
-    "origem": "STOLTHAVEN SANTOS LTDA",
-    "destino": "TAURUS TCT X CAMPO GRANDE - MS",
-    "nome": "SANTOS-SP (STOLT) X CAMPO GRANDE-MS (TORRE)",
+    "id": 4393872,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "FORTINITRO (ITAQUAQUECETUBA) X BARUERI (GOLDEN)",
+    "distancia_km": 75.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4393987,
+    "origem": "Louveira/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "LOUVEIRA SP X GUARULHOS SP - DOM PEDRO",
+    "distancia_km": 89.9,
+    "viagens": 31,
+    "placas": [
+      "TKX6F25",
+      "STR7A21",
+      "SST0D21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 37,
-    "origem": "STOLTHAVEN SANTOS LTDA",
-    "destino": "TAURUS TCT CIAPETRO - PAULINIA-SP",
-    "nome": "SANTOS-SP X PAULINIA-SP (TORRE)",
+    "id": 4393995,
+    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA - /",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "DIADEMA/SP ( UQP) X ESTACIONAMENTO SR TRUCKS ITAPEVI X BARUERI (GOLDEN )",
+    "distancia_km": 102.6,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4394028,
+    "origem": "Guarulhos/SP",
+    "destino": "POSTO DUQUE - DUTRA - Truck Terminal Netpark - /",
+    "nome_da_rota": "RONDOLOG (GUARULHOS) X POSTO DUQUE",
+    "distancia_km": 23.1,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4394062,
+    "origem": "Guarulhos/SP",
+    "destino": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "nome_da_rota": "RUA VITAL BRASIL (GUARULHOS) X POSTO DUQUE",
+    "distancia_km": 9.1,
+    "viagens": 4,
+    "placas": [
+      "STR7A21",
+      "SST0D21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4394112,
+    "origem": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "REDE DUQUE (GUARULHOS) X LOUVEIRA (B. MIRASSOL)",
+    "distancia_km": 93.3,
+    "viagens": 2,
+    "placas": [
+      "SST0D21",
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4394116,
+    "origem": "CINTEC SBO - GARAGEM SASTER - /",
+    "destino": "Americana/SP",
+    "nome_da_rota": "CINTEC (SBO) X RECAP (AMERICANA)",
+    "distancia_km": 22.8,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4394128,
+    "origem": "Americana/SP",
+    "destino": "Santa Bárbara D'Oeste/SP",
+    "nome_da_rota": "RECAP X CINTEC",
+    "distancia_km": 21.1,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4394175,
+    "origem": "Americana/SP",
+    "destino": "FERNANDES TRUCK - /",
+    "nome_da_rota": "RECAP X FERNANDES TRUCK",
+    "distancia_km": 14.0,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 38,
-    "origem": "STOLTHAVEN SANTOS LTDA",
-    "destino": "TAURUS TCT CIAPETRO - PAULINIA-SP",
-    "nome": "SANTOS (STOLT) X PAULINIA ( CIAPETRO)",
+    "id": 4394536,
+    "origem": "Guarulhos/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "GUARULHOS (RONDOLOG) X IQA LAPA",
+    "distancia_km": 36.7,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 152,
-    "origem": "SUDESTE (OSASCO-SP)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "SUDESTE OSASCO X GOLDEN BARUERI",
+    "id": 4394539,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "CINTEC (SBO) X IQA LAPA",
+    "distancia_km": 129.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 156,
-    "origem": "SUDESTE (OSASCO-SP)",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "OSASCO xITAPEVI",
+    "id": 4394603,
+    "origem": "Golden Cargo/BA",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "GOLDEN (BARUERI-SP) X SUDESTE (OSASCO - SP)",
+    "distancia_km": 29.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4394635,
+    "origem": "Osasco/SP",
+    "destino": "São Jose Dos Campos/SP",
+    "nome_da_rota": "SUDOESTE (OSASCO - SP) X POLYCHEMICAL (SAO JOSÉ DOS CAMPOS - SP)",
+    "distancia_km": 97.8,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4394700,
+    "origem": "São Jose Dos Campos/SP",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "POLYCHEMICAL (SÃO JOSE DOS CAMPOS-SP) X CINTEC (SANTA BARBARA D OESTE )",
+    "distancia_km": 196.6,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 218,
-    "origem": "SUMARE OFICINA",
-    "destino": "CINTEC SBO",
-    "nome": "SUMARE OFICINA X CINTEC (SBO)",
+    "id": 4394743,
+    "origem": "Itaquaquecetuba/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "FORTNITRO X CINTEC X GOLDEN BARUERI",
+    "distancia_km": 171.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 232,
-    "origem": "SUMARE OFICINA",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "SUMARÉ (OFICINA) X GOLDEN BARUERI",
+    "id": 4395209,
+    "origem": "Santa Barbara D'Oeste/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "SBDO (CINTEC) X GUARULHOS (RONDOCARGAS)",
+    "distancia_km": 180.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4395290,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "CARBONO QUIMICA (SAO BERNARDO DO CAMPO) X IQA (BARUERI) - /",
+    "nome_da_rota": "CINTEC X CARBONO QUIMICA",
+    "distancia_km": 292.8,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 83,
-    "origem": "SÃO JOSE (UNIVEN)",
-    "destino": "COTIA (CROMO)",
-    "nome": "SAO JOSE (UNIVEN) X COTIA (CROMO)",
+    "id": 4395415,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "RONDOCARGAS (GUARULHOS-SP) X MIRASSOL (LOUVEIRA-SP)",
+    "distancia_km": 133.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 15,
-    "origem": "TAURUS TCT CIAPETRO - PAULINIA-SP",
-    "destino": "TAURUS TCT - DOURADOS-MS",
-    "nome": "PAULINIA-SP (TAURUS) X DOURADOS-MS (TAURUS) (TORRE)",
+    "id": 4396050,
+    "origem": "Guarulhos/SP",
+    "destino": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "nome_da_rota": "GUARULHOS (MANOEL BORBA GATO) X POSTO REDE DUQUE (GUARULHOS)",
+    "distancia_km": 20.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 17,
-    "origem": "TAURUS TCT CIAPETRO - PAULINIA-SP",
-    "destino": "TAURUS TCT - CHAPADAO DO SUL-MS",
-    "nome": "PAULINIA-SP (TAURUS) X CHAPADAO DO SUL-MS (TAURUS) (TORRE)",
+    "id": 4396389,
+    "origem": "Golden Cargo/BA",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X RADQUIM PRODUTOS QUIMICOS (SP)",
+    "distancia_km": 51.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 25,
-    "origem": "TAURUS TCT CIAPETRO - PAULINIA-SP",
-    "destino": "CIAPETRO - RONDONOPOLIS-MT",
-    "nome": "PAULINIA-SP (CIAPETRO) X RONDONOPOLIS-MT (CIAPETRO) (TORRE)",
+    "id": 4396400,
+    "origem": "Golden Cargo/BA",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X BRUNDELL (OSASCO)",
+    "distancia_km": 26.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4396465,
+    "origem": "Osasco/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "BRUNDELL - OSASCO - SP X LOUVEIRA - SP",
+    "distancia_km": 69.1,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4396497,
+    "origem": "RADQUIN PRODUTOS QUIMICOS  - - /",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "RADQUIN PRODUTOS QUIMICOS (SÃO PAULO - SP ) X CINTEC (SBDO)",
+    "distancia_km": 150.8,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 31,
-    "origem": "TAURUS TCT CIAPETRO - PAULINIA-SP",
-    "destino": "CIAPETRO - GUARARAPES-SP",
-    "nome": "PAULINIA-SP (TRANZO) X GUARARAPES-SP (CIAPETRO) (TORRE)",
+    "id": 4396561,
+    "origem": "Louveira/SP",
+    "destino": "Santa Barbara D'Oeste/SP",
+    "nome_da_rota": "LOUVEIRA/SP (MIRASSOL) X GARAGEM CINTEC (SASTER )",
+    "distancia_km": 74.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 115,
-    "origem": "THOR BRASIL LTDA (BARUERI)",
-    "destino": "FORTNITRO (ITAQUAQUECETUBA)",
-    "nome": "THOR BRASIL (BARUERI) X FORTNITRO (ITAQUAQUECETUBA)",
+    "id": 4397240,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "RAI ARMAZENS - SAO BERNARDO DO CAMPO - /",
+    "nome_da_rota": "SBO X SAO BERNARDO",
+    "distancia_km": 158.3,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4397278,
+    "origem": "Golden Cargo/BA",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "GOLDEN X PURATOS",
+    "distancia_km": 56.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4397295,
+    "origem": "São Bernardo Do Campo/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "RAI ARMAZÉM (SÃO BERNARDO) X  GOLDEN (BARUERI)",
+    "distancia_km": 57.2,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25",
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA",
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4397347,
+    "origem": "RAI ARMAZENS - SAO BERNARDO DO CAMPO - /",
+    "destino": "São Bernardo Do Campo/SP",
+    "nome_da_rota": "RAI ARMAZÉM (SÃO BERNARDO) X  CARBONO INDUSTRIA QUIMICA (SÃO BERNARDO)",
+    "distancia_km": 6.3,
+    "viagens": 1,
+    "placas": [
+      "STR7A21"
+    ],
+    "condutores": [
+      "PAULO RICARDO DE OLIVEIRA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 53,
-    "origem": "TLM - BARUERI",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO S/A (BARUERI)",
-    "nome": "BARUERI - SP (TLM)  X BARUERI - SP (IQA)",
+    "id": 4397392,
+    "origem": "Guarulhos/SP",
+    "destino": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "nome_da_rota": "PURATOS (GUARULHOS - SP) X POSTO REDE DUQUE (GUARULHOS )",
+    "distancia_km": 16.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 63,
-    "origem": "TLM - BARUERI",
-    "destino": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "nome": "BARUERI - SP (TLM)  X SUMARE - SP (IQA)",
+    "id": 4397404,
+    "origem": "Guarulhos/SP",
+    "destino": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "nome_da_rota": "IBL (GUARULHOS) X POSTO REDE DUQUE (GUARULHOS)",
+    "distancia_km": 40.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 64,
-    "origem": "TLM - BARUERI",
-    "destino": "QUIMICO ANASTACIO (DE SANTA) - SUMARE-SP",
-    "nome": "BARUERI - SP (TLM)  X SUMARE - SP (IQA)",
+    "id": 4397406,
+    "origem": "São Bernardo Do Campo/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "CARBONO (SÃO BERNARDO DO CAMPO) X POSTO SR TRUCK X GOLDEN (BARUERI)",
+    "distancia_km": 58.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 66,
-    "origem": "TLM - BARUERI",
-    "destino": "DE HEUS INDUSTRIA E COMERCIO DE NUTRIÇÃO ANIMAL LTDA",
-    "nome": "IQA (BARUERI) X DE HEUS (RIO CLARO)",
+    "id": 4397468,
+    "origem": "Louveira/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "MIRASSOL (LOUVEIRA) X TRANSRAY (SAO PAULO)",
+    "distancia_km": 56.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4397488,
+    "origem": "Golden Cargo/BA",
+    "destino": "São Jose Dos Campos/SP",
+    "nome_da_rota": "BARUERI-SP (GOLDEN) X SÃO JOSE DOS CAMPOS-SP (POLYCHEMICAL)",
+    "distancia_km": 115.8,
+    "viagens": 2,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 169,
-    "origem": "UNIMOL BRASIL  (GUARATINGUETA-SP)",
-    "destino": "MIRASSOL LOGISTICA (LOUVEIRA-SP)",
-    "nome": "UNIMOL BRASIL (GUARATINGUETA-SP) X MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "id": 4397515,
+    "origem": "Osasco/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "SUDESTE (OSASCO - SP ) X SR TRUCK X BARUERI (GOLDEN)",
+    "distancia_km": 23.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4397522,
+    "origem": "Sao Jose Dos Campos/SP",
+    "destino": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "nome_da_rota": "SAO JOSE DOS CAMPOS (SP) X REDE DUQUE (GUARULHOS)",
+    "distancia_km": 67.4,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4397622,
+    "origem": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "destino": "Osasco/SP",
+    "nome_da_rota": "SR TRUCK (GUARULHOS-SP X SUDESTE (OSASCO - SP)",
+    "distancia_km": 41.5,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 87,
-    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "DIADEMA  UNIÃO X GUARULHOS RONDOCARGAS X BARUERI GOLDEN",
+    "id": 4397625,
+    "origem": "Golden Cargo/BA",
+    "destino": "Jandira/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X AKUA (JANDIRA)",
+    "distancia_km": 6.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 109,
-    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "DIADEMA/SP ( UNIÃO QUIMICA PAULISTA) X BARUERI/SP (GOLDEN CARGO)- RODOANEL",
+    "id": 4397629,
+    "origem": "São Paulo/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "FELICISSIMO DE SOUZA (SP) X GOLDEN (BARUERI)",
+    "distancia_km": 26.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4397651,
+    "origem": "Caieiras/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "POSTO CAMPEAO 28 (CAIEIRAS) X MIRASSOL LOG (LOUVEIRA)",
+    "distancia_km": 44.1,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 110,
-    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "DIADEMA/SP ( UNIÃO QUIMICA PAULISTA) X BARUERI/SP (GOLDEN CARGO)- MARGINAL",
+    "id": 4397714,
+    "origem": "ATACADAO -  JANDIRA - /",
+    "destino": "Santa Bárbara D'Oeste/SP",
+    "nome_da_rota": "JANDIRA - SP X CINTEC (SBDO)",
+    "distancia_km": 138.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 122,
-    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "DIADEMA (UNIÃO QUIMICA) X SASTER (GARAGEM) X BARUERI (GOLDEN)",
+    "id": 4397833,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "CINTEC (SBO) X LOUVEIRA (MIRASSOL LOGISTICA)",
+    "distancia_km": 74.2,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 123,
-    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "destino": "GARAGEM SASTER - SANTA BARBARA D'OESTE-SP",
-    "nome": "UNIAO QUIMICA DIADEMA X SINTEC - SASTER",
+    "id": 4397839,
+    "origem": "Golden Cargo/BA",
+    "destino": "Mogi Das Cruzes/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X SAINT GOBAIN DO BRASIL (MOGI DAS CRUZES)",
+    "distancia_km": 90.8,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 183,
-    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "destino": "GOLDEN CARGO-BARUERI",
-    "nome": "DIADEMA/SP ( UQP) X ESTACIONAMENTO SR TRUCKS ITAPEVI X BARUERI (GOLDEN )",
+    "id": 4397908,
+    "origem": "Mogi Das Cruzes/SP",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "MOGI DAS CRUZES - SP X CINTEC (SBDO)",
+    "distancia_km": 185.6,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4397976,
+    "origem": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "destino": "Santana De Parnaíba/SP",
+    "nome_da_rota": "REDE DUTRA (GUARULHOS-SP) X AUTOPEL (SANTANA DE PARNAIBA-SP)",
+    "distancia_km": 63.9,
+    "viagens": 3,
+    "placas": [
+      "TKX6F25",
+      "SST0D21"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS",
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398002,
+    "origem": "CINTEC SBO - GARAGEM SASTER - /",
+    "destino": "CINTEC SBO - GARAGEM SASTER - /",
+    "nome_da_rota": "CINTEC (SBDO) X POSTO 7 X CINTEC (SBDO)",
+    "distancia_km": 53.9,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398015,
+    "origem": "Santana De Parnaíba/SP",
+    "destino": "Santa Bárbara D'Oeste/SP",
+    "nome_da_rota": "AUTOPEL (SANTANA DE PARNAIBA - SP) X RONDOLOG X CINTEC (SBDO)",
+    "distancia_km": 118.1,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398100,
+    "origem": "A/IQ",
+    "destino": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "nome_da_rota": "INDUSTRIAS QUIMICAS TAUBATE S/A-IQT  x REDE DUQUE (GUARULHOS - SP)",
+    "distancia_km": 101.7,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 194,
-    "origem": "UNIÃO QUIMICA PAULISTA- DIADEMA",
-    "destino": "RONDOCARGAS GUARULHOS",
-    "nome": "UQP (DIADEMA) x RONDOCARGAS  (GUARULHOS )",
+    "id": 4398202,
+    "origem": "Louveira/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "LOUVEIRA SP X GUARULHOS SP",
+    "distancia_km": 160.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398227,
+    "origem": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "destino": "A/IQ",
+    "nome_da_rota": "REDE DUQUE GUARULHOS X TAUBATÉ",
+    "distancia_km": 103.2,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398235,
+    "origem": "Golden Cargo/BA",
+    "destino": "Embu/SP",
+    "nome_da_rota": "GOLDEN (BARUERI) X TOTAL QUÍMICA (EMBU) - PELA CASTELO BRANCO/RODOANEL",
+    "distancia_km": 32.7,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398271,
+    "origem": "A/IQ",
+    "destino": "Pindamonhangaba/SP",
+    "nome_da_rota": "INDUSTRIA QUÍMICA TAUBATÉ X PONTO DESCANSO PINDAMONHANGABA",
+    "distancia_km": 20.8,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398274,
+    "origem": "Embu/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "TOTAL QUÍMICA (EMBU) X MIRASSOL (LOUVEIRA)",
+    "distancia_km": 78.6,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398379,
+    "origem": "Pindamonhangaba/SP",
+    "destino": "A/IQ",
+    "nome_da_rota": "PONTO DE DESCANSO ( PINDAMONHANGABA ) X IQT (TAUBATE)",
+    "distancia_km": 24.3,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 23,
-    "origem": "USINA COLORADO - GUAIRA-SP",
-    "destino": "STOCK (GUARULHOS-SP)",
-    "nome": "GUAIRA-SP (US. COLORADO) X GUARULHOS-SP (STOCK) (TORRE)",
+    "id": 4398384,
+    "origem": "Golden Cargo/BA",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "GOLDEN (BARUERI - SP) X IBL LOGISTICA ( GUARULHOS -SP)",
+    "distancia_km": 45.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398451,
+    "origem": "IBL LOGISTICA - /",
+    "destino": "Itaquaquecetuba/SP",
+    "nome_da_rota": "IBL (GUARULHOS - SP) X FORTNITRO (GUARULHOS-SP)",
+    "distancia_km": 30.6,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398461,
+    "origem": "A/IQ",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "INDUSTRIAS QUIMICAS TAUBATE S/A-IQT (TAUBATE - SP) x REDE DUQUE X GOLDEN CARGO ( GUARULHOS - SP)",
+    "distancia_km": 160.4,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398738,
+    "origem": "Golden Cargo/BA",
+    "destino": "SR TRUCK - /",
+    "nome_da_rota": "GOLDEN CARGO (BARUERI - SP) X SR TRUCK",
+    "distancia_km": 17.2,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398873,
+    "origem": "Itapevi/SP",
+    "destino": "Araçariguama/SP",
+    "nome_da_rota": "SR TRUCK ESTACIONAMENTO X EZLAN GALPÕES (ARAÇARIGUAMA-SP)",
+    "distancia_km": 0.0,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398930,
+    "origem": "Itapevi/SP",
+    "destino": "Cabreúva/SP",
+    "nome_da_rota": "SR TRUCK X GEE (CABREUVA-SP)",
+    "distancia_km": 111.5,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4398971,
+    "origem": "Cabreúva/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "GEE EMPRESA (CABREUVA) X GOLDEN ( BARUERI)",
+    "distancia_km": 82.2,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4400345,
+    "origem": "Santa Bárbara D'Oeste/SP",
+    "destino": "SUDESTE TERMINAIS - /",
+    "nome_da_rota": "CINTEC (SBDO) X SUDESTE TERMINAIS ( OSASCO - SP)",
+    "distancia_km": 123.6,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 8,
-    "origem": "USINA IPIRANGA - MOCOCA-SP",
-    "destino": "AGEO NORTE - SANTOS-SP",
-    "nome": "MOCOCA-SP (IPIRANGA) X SANTOS-SP (AGEO) (TORRE)",
+    "id": 4400428,
+    "origem": "SUDESTE TERMINAIS - /",
+    "destino": "Itapevi/SP",
+    "nome_da_rota": "SUDESTE TERMINAIS X SR TRUCKS",
+    "distancia_km": 27.5,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4400591,
+    "origem": "Guarulhos/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "RONDOCARGAS (NOVO ENDEREÇO) X MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "distancia_km": 95.7,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4400705,
+    "origem": "RAI ARMAZENS - SAO BERNARDO DO CAMPO - /",
+    "destino": "São Jose Dos Campos/SP",
+    "nome_da_rota": "RAI ARMAZENS X POLYCHEMICAL",
+    "distancia_km": 108.3,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4400734,
+    "origem": "São Jose Dos Campos/SP",
+    "destino": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "nome_da_rota": "POLYCHEMICAL ( SÃO JOSE DOS CAMPOS - SP) X REDE DUQUE (GUARULHOS - SP)",
+    "distancia_km": 58.6,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 14,
-    "origem": "USINA LINS - LINS-SP",
-    "destino": "TERCOM - PAULINIA - SP",
-    "nome": "LINS-SP (USINA LINS) X  PAULINIA-SP (TERCOM) (TORRE)",
+    "id": 4400776,
+    "origem": "Louveira/SP",
+    "destino": "RONDOCARGAS GUARULHOS - /",
+    "nome_da_rota": "LOUVEIRA/SP (MIRASSOL) X GUARULHOS/SP (RONDOCARGAS)",
+    "distancia_km": 136.0,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4400816,
+    "origem": "Guarulhos/SP",
+    "destino": "Guarulhos/SP",
+    "nome_da_rota": "GUARULHOS (RONDOLOG) X GUARULHOS (SUN CHEMICAL)",
+    "distancia_km": 7.8,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 26,
-    "origem": "VEG STRONG SOLUCOES EM LOGISTICA",
-    "destino": "ELLOFLEX EMBALAGENS LTDA",
-    "nome": "NOVA ODESSA-SP ( VEG STRONG) X MARIALVA-PR (ELLOFLEX EMBALAGENS LTDA) (TORRE)",
+    "id": 4400835,
+    "origem": "Guarulhos/SP",
+    "destino": "Golden Cargo/BA",
+    "nome_da_rota": "SUN CHEMICAL (GUARULHOS - SP) X GOLDEN - CARGO (BARUERI - SP)",
+    "distancia_km": 62.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 160,
-    "origem": "VIRTUDE BIG BAGS (ITAPECERICA DA SERRA)",
-    "destino": "INDUSTRIA QUIMICA ANASTACIO SA (SAO PAULO)",
-    "nome": "VIRTUDE BIG BAG (ITAPECERICA DA SERRA-SP) x IQA (LAPA)",
+    "id": 4400946,
+    "origem": "Guarulhos/SP",
+    "destino": "GUARULHOS (REDE DUQUE - DUTRA) - /",
+    "nome_da_rota": "GUARULHOS-MANOEL BORBA GATO X POSTO REDE DUQUE GUARULHOS",
+    "distancia_km": 20.1,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4400954,
+    "origem": "RONDOCARGAS GUARULHOS - /",
+    "destino": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "nome_da_rota": "RONDOCARGAS GUARULHOS X POSTO REDE DUQUE",
+    "distancia_km": 7.1,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4400976,
+    "origem": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "destino": "Americana/SP",
+    "nome_da_rota": "POSTO REDE DUQUE GUARULHOS X POSTO 7 AMERICANA",
+    "distancia_km": 145.0,
+    "viagens": 1,
+    "placas": [
+      "TKX6F25"
+    ],
+    "condutores": [
+      "REINALDO COSTA DE ASSIS"
+    ],
+    "tipo": "rota",
+    "status": "Ativo"
+  },
+  {
+    "id": 4400977,
+    "origem": "POSTO REDE DUTRA (GUARULHOS) - /",
+    "destino": "Cotia/SP",
+    "nome_da_rota": "POSTO REDE DUQUE GUARULHOS X PETROFER DO BRASIL (COTIA-SP)",
+    "distancia_km": 0.0,
+    "viagens": 1,
+    "placas": [
+      "SST0D21"
+    ],
+    "condutores": [
+      "TIAGO CALIXTO DE SOUZA"
+    ],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 142,
-    "origem": "VOLVO (CAMPINAS)",
-    "destino": "AGRARIA INDUSTRIA - JARDINOPOLIS-SP",
-    "nome": "VOLVO ( CAMPINAS ) X  JARDINOPOLIS",
+    "id": 4400978,
+    "origem": "Americana/SP",
+    "destino": "Louveira/SP",
+    "nome_da_rota": "POSTO 7 (AMERICANA-SP) X MIRASSOL LOGISTICA (LOUVEIRA-SP)",
+    "distancia_km": 56.4,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   },
   {
-    "id": 30,
-    "origem": "VOPAK BRASIL - SANTOS-SP",
-    "destino": "ROYAL FIC DISTRIB - PAULINIA-SP",
-    "nome": "SANTOS-SP (VOPAK) X PAULINIA-SP (RYAL FIC) (TORRE)",
+    "id": 4400992,
+    "origem": "Cotia/SP",
+    "destino": "São Paulo/SP",
+    "nome_da_rota": "PETROFER DO BRASIL (COTIA-SP) X IQA (LAPA)",
+    "distancia_km": 46.3,
     "viagens": 0,
     "placas": [],
     "condutores": [],
+    "tipo": "rota",
     "status": "Ativo"
   }
 ]
