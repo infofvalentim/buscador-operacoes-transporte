@@ -690,10 +690,10 @@
   <div class="bases-header">
     <div class="bases-header-top">
       <div>
-        <div class="brand-eyebrow">Rondolog · 23 bases operacionais</div>
+        <div class="brand-eyebrow">Rondolog · 14 bases operacionais</div>
         <div class="brand-title">BASES <span style="color:var(--red)">RONDOLOG</span></div>
       </div>
-      <div class="count-badge" id="basesCountBadge">23 bases</div>
+      <div class="count-badge" id="basesCountBadge">14 bases</div>
     </div>
     <div class="bases-search-row">
       <div class="bases-search-wrap">
@@ -705,7 +705,6 @@
         <option value="SP">SP</option>
         <option value="RJ">RJ</option>
         <option value="MG">MG</option>
-        <option value="ES">ES</option>
         <option value="GO">GO</option>
         <option value="DF">DF</option>
       </select>
@@ -719,11 +718,11 @@
   </div>
 
   <div class="bases-stats">
-    <div class="stat-chip"><span class="stat-num red">23</span><span class="stat-label">Bases totais</span></div>
+    <div class="stat-chip"><span class="stat-num red">14</span><span class="stat-label">Bases totais</span></div>
     <div class="stat-chip"><span class="stat-num red">2</span><span class="stat-label">Hubs principais</span></div>
-    <div class="stat-chip"><span class="stat-num blue">20</span><span class="stat-label">Filiais</span></div>
+    <div class="stat-chip"><span class="stat-num blue">11</span><span class="stat-label">Filiais</span></div>
     <div class="stat-chip"><span class="stat-num purple">1</span><span class="stat-label">Terminal</span></div>
-    <div class="stat-chip"><span class="stat-num green">6</span><span class="stat-label">Estados + DF</span></div>
+    <div class="stat-chip"><span class="stat-num green">5</span><span class="stat-label">Estados + DF</span></div>
   </div>
 
   <div class="bases-layout">
@@ -751,25 +750,17 @@
 <script>
 (function(){
 
-/* ===================== DADOS BASES ===================== */
+/* ===================== DADOS BASES (ATUALIZADO) ===================== */
 const BASES = [
   {id:1,  nome:"Duque de Caxias",        sigla:"RJ",  cidade:"Duque de Caxias",      uf:"RJ", tipo:"hub",      endereco:"Rodovia Washington Luiz, 2070 – Parque Duque",               cep:"25085-009", lat:-22.7854, lng:-43.3115},
   {id:2,  nome:"Santana de Parnaíba",    sigla:"SP",  cidade:"Santana de Parnaíba",  uf:"SP", tipo:"hub",      endereco:"Estrada Tenente Marques, 6765 – Vila Poupança",              cep:"06525-001", lat:-23.4527, lng:-46.9177},
-  {id:3,  nome:"Jundiaí",                sigla:"JND", cidade:"Jundiaí",              uf:"SP", tipo:"filial",   endereco:"Rua Miguel Latorre, 610 – Aeroporto",                        cep:"13212-009", lat:-23.1897, lng:-46.9142},
+  // Removidos: Jundiaí (id3), Ribeirão Preto (id8), Serra (id6), Paracatu (id15), Montes Claros (id16), Cordeirópolis (id17), Ipatinga (id11), Juiz de Fora (id10), Cajamar (id13)
   {id:4,  nome:"Betim",                  sigla:"BTM", cidade:"Betim",                uf:"MG", tipo:"filial",   endereco:"Rua Bispo Pedro Valdemar Dias, 777 – Amazonas",              cep:"32685-044", lat:-19.9678, lng:-44.1983},
   {id:5,  nome:"Três Corações",          sigla:"3C",  cidade:"Três Corações",        uf:"MG", tipo:"filial",   endereco:"Avenida Édson Penha, 627 – Santana",                         cep:"37410-650", lat:-21.6914, lng:-45.2562},
-  {id:6,  nome:"Serra (ES)",             sigla:"SRR", cidade:"Serra",                uf:"ES", tipo:"filial",   endereco:"Rua Tancredo Neves, 85 – São Diogo I",                       cep:"29163-267", lat:-20.1283, lng:-40.3077},
   {id:7,  nome:"Cravinhos",              sigla:"CRV", cidade:"Cravinhos",            uf:"SP", tipo:"filial",   endereco:"Rua Manoel Gomes dos Santos, 2921 – Jd. Independência",      cep:"14140-000", lat:-21.3407, lng:-47.7297},
-  {id:8,  nome:"Ribeirão Preto",         sigla:"RP",  cidade:"Ribeirão Preto",       uf:"SP", tipo:"filial",   endereco:"Rua Altiva de Faria Chaves, 383 – Parque Anhanguera",        cep:"14095-490", lat:-21.1704, lng:-47.8103},
   {id:9,  nome:"Mirassol",               sigla:"MRS", cidade:"Mirassol",             uf:"SP", tipo:"filial",   endereco:"Rua Bruno Rodrigues Gomes, 562 – Parque Mirassol",           cep:"15134-144", lat:-20.8196, lng:-49.5101},
-  {id:10, nome:"Juiz de Fora",           sigla:"JF",  cidade:"Juiz de Fora",         uf:"MG", tipo:"filial",   endereco:"Rua Martins Barbosa, 695 – Benfica",                         cep:"36090-300", lat:-21.7667, lng:-43.3503},
-  {id:11, nome:"Ipatinga",               sigla:"IPT", cidade:"Santana do Paraíso",   uf:"MG", tipo:"filial",   endereco:"Rua São Caetano do Sul, 115 – Parque Caravelas",             cep:"35179-000", lat:-19.3640, lng:-42.5344},
   {id:12, nome:"Goiânia",                sigla:"GYN", cidade:"Goiânia",              uf:"GO", tipo:"filial",   endereco:"Rua Anaca, 213 – Parque Amazônia",                           cep:"74840-690", lat:-16.6869, lng:-49.2648},
-  {id:13, nome:"Cajamar",                sigla:"CAJ", cidade:"Cajamar",              uf:"SP", tipo:"filial",   endereco:"Rodovia Anhanguera, KM 29.5 – Fazenda Velha",                cep:"07750-000", lat:-23.3581, lng:-46.8765},
   {id:14, nome:"Brasília",               sigla:"BSB", cidade:"Brasília",             uf:"DF", tipo:"filial",   endereco:"SIA Trecho 3, 32 – Zona Industrial Guará",                  cep:"71200-030", lat:-15.7942, lng:-47.8825},
-  {id:15, nome:"Paracatu",               sigla:"PCT", cidade:"Paracatu",             uf:"MG", tipo:"filial",   endereco:"Rua Donizete Victor Rodrigues, 720 – Bela Vista",            cep:"38600-490", lat:-17.2233, lng:-46.8754},
-  {id:16, nome:"Montes Claros",          sigla:"MOC", cidade:"Montes Claros",        uf:"MG", tipo:"filial",   endereco:"Avenida Penápolis, 315 – São Geraldo",                       cep:"39403-165", lat:-16.7286, lng:-43.8617},
-  {id:17, nome:"Cordeirópolis",          sigla:"COR", cidade:"Cordeirópolis",        uf:"SP", tipo:"filial",   endereco:"Rua Antenor Genizelli Filho, 273 – Distrito Industrial",     cep:"13490-000", lat:-22.4745, lng:-47.4572},
   {id:18, nome:"Agudos",                 sigla:"AGD", cidade:"Agudos",               uf:"SP", tipo:"filial",   endereco:"Avenida Rui Barbosa, 361 – Centro",                          cep:"17120-000", lat:-22.4756, lng:-48.9844},
   {id:19, nome:"Uberlândia",             sigla:"UDI", cidade:"Uberlândia",           uf:"MG", tipo:"filial",   endereco:"Rua Ângelo Cunha, 365 – São Jorge",                          cep:"38410-206", lat:-18.9188, lng:-48.2766},
   {id:20, nome:"Guarulhos – Rondocargas",sigla:"GRU", cidade:"Guarulhos",            uf:"SP", tipo:"terminal", endereco:"Av. Papa João Paulo I, 2258 – Jd. Presidente Dutra",         cep:"07174-000", lat:-23.4356, lng:-46.5338},
