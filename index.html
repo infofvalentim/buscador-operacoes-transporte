@@ -395,8 +395,6 @@
        ============================================= */
     #basesPanel { display: none; }
     #basesPanel.active { display: block; }
-    #destinosPanel { display: none; }
-    #destinosPanel.active { display: block; }
     #routesPanel.hidden { display: none; }
 
     .bases-header {
@@ -654,63 +652,6 @@
     .fav-star:hover { color: #eab308; transform: scale(1.15); }
     .fav-star.active { color: #eab308; }
 
-    /* ===== DESTINOS (NOVO) ===== */
-    .dest-city-card {
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
-      transition: var(--transition); flex-shrink: 0;
-    }
-    .dest-city-card:hover { border-color: var(--red); }
-    .dest-city-hdr {
-      display: flex; align-items: center; justify-content: space-between; gap: 10px;
-      padding: 14px 18px; cursor: pointer;
-    }
-    .dest-city-name { font-size: 15px; font-weight: 700; color: var(--text); }
-    .dest-city-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
-    .dest-city-count {
-      font-family: var(--mono); font-size: 10px; font-weight: 700;
-      background: var(--surface2); border: 1px solid var(--border); border-radius: 20px;
-      padding: 3px 10px; color: var(--text-dim);
-    }
-    .dest-city-chevron { transition: transform 0.2s ease; color: var(--text-muted); display: inline-block; }
-    .dest-city-card.expanded .dest-city-chevron { transform: rotate(90deg); }
-    .dest-items { display: none; border-top: 1px solid var(--border); }
-    .dest-city-card.expanded .dest-items { display: block; }
-    .dest-item { padding: 12px 18px; border-bottom: 1px solid var(--border); }
-    .dest-item:last-child { border-bottom: none; }
-    .dest-item-top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
-    .dest-item-nome { font-size: 13px; font-weight: 600; color: var(--text); }
-    .dest-item-qtd {
-      font-family: var(--mono); font-size: 9px; color: var(--text-dim);
-      background: var(--surface2); border-radius: 12px; padding: 2px 8px;
-      border: 1px solid var(--border); white-space: nowrap; flex-shrink: 0;
-    }
-    .dest-item-end { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
-    .dest-item-rotas-toggle {
-      font-size: 10px; color: var(--blue); cursor: pointer; margin-top: 8px;
-      display: inline-block; font-weight: 600;
-    }
-    .dest-item-rotas-toggle:hover { text-decoration: underline; }
-    .dest-item-rotas-list {
-      display: none; margin-top: 8px; padding: 8px 10px; background: var(--surface2);
-      border-radius: 8px; font-size: 10px; color: var(--text-dim); max-height: 140px; overflow-y: auto;
-    }
-    .dest-item-rotas-list.show { display: block; }
-    .dest-item-rotas-list span { display: block; padding: 3px 2px; cursor: pointer; border-radius: 4px; }
-    .dest-item-rotas-list span:hover { color: var(--red); background: var(--surface); }
-    .geocode-banner {
-      display: none; align-items: center; gap: 10px;
-      background: rgba(59,130,246,0.08); border: 1px solid var(--blue);
-      color: var(--text); border-radius: 12px; padding: 10px 16px;
-      margin: 0 24px 16px; max-width: 1232px; font-size: 12px;
-    }
-    .geocode-banner.show { display: flex; }
-    .geocode-spinner {
-      width: 12px; height: 12px; border: 2px solid rgba(0,0,0,0.15);
-      border-top-color: var(--blue); border-radius: 50%;
-      animation: spin 0.7s linear infinite; flex-shrink: 0;
-    }
-
     /* ===== LOCALIZAÇÃO (NOVO) ===== */
     .locate-btn {
       display: inline-flex; align-items: center; gap: 6px;
@@ -752,13 +693,13 @@
     }
 
     /* Modos de visualização */
-
+    .modo-compacto table td { padding: 6px 4px !important; font-size: 11px !important; }
 
     @media (max-width: 600px) {
       .search-order-wrap { flex-direction: column; }
       #orderSelect { width: 100%; }
       .bases-search-row { flex-direction: column; }
-      #basesUFFilter, #basesTipoFilter, #destinosUFFilter, #destinosOrder { width: 100%; }
+      #basesUFFilter, #basesTipoFilter { width: 100%; }
       .header-top { flex-direction: column; align-items: stretch; }
       .header-controls { justify-content: space-between; }
       .theme-toggle-wrap { top: 8px; right: 8px; padding: 6px 12px 6px 14px; }
@@ -785,7 +726,6 @@
   <button class="base-tab active" data-base="rondolog">🚛 RONDOLOG</button>
   <button class="base-tab" data-base="saster">📦 SASTER</button>
   <button class="base-tab" data-base="bases">🏭 BASES</button>
-  <button class="base-tab" data-base="destinos">🎯 DESTINOS</button>
 </div>
 
 <!-- ===== PAINEL ROTAS ===== -->
@@ -895,64 +835,6 @@
         </div>
       </div>
       <div id="leafletMap"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== PAINEL DESTINOS ===== -->
-<div id="destinosPanel">
-
-  <div class="bases-header">
-    <div class="bases-header-top">
-      <div>
-        <div class="brand-eyebrow"><span id="destinosTotalEyebrow">0</span> destinos · <span id="destinosCidadesEyebrow">0</span> cidades</div>
-        <div class="brand-title">DESTINOS <span style="color:var(--red)">CADASTRADOS</span></div>
-      </div>
-      <div class="count-badge" id="destinosCountBadge">0 cidades</div>
-    </div>
-    <div class="bases-search-row">
-      <div class="bases-search-wrap">
-        <span class="bases-search-icon">🔍</span>
-        <input type="text" id="destinosSearch" placeholder="Buscar cidade, destino ou endereço..." autocomplete="off">
-      </div>
-      <select id="destinosUFFilter">
-        <option value="">Todos os estados</option>
-      </select>
-      <select id="destinosOrder">
-        <option value="rotas">Mais rotas primeiro</option>
-        <option value="az">Cidade (A-Z)</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="geocode-banner" id="geocodeBanner">
-    <span class="geocode-spinner"></span>
-    <span id="geocodeBannerText">Geocodificando cidades...</span>
-  </div>
-
-  <div class="bases-stats">
-    <div class="stat-chip"><span class="stat-num red" id="destStatDestinos">0</span><span class="stat-label">Destinos únicos</span></div>
-    <div class="stat-chip"><span class="stat-num blue" id="destStatCidades">0</span><span class="stat-label">Cidades</span></div>
-    <div class="stat-chip"><span class="stat-num purple" id="destStatUF">0</span><span class="stat-label">Estados</span></div>
-    <div class="stat-chip"><span class="stat-num green" id="destStatRotas">0</span><span class="stat-label">Rotas cobertas</span></div>
-  </div>
-
-  <div class="bases-layout">
-    <div class="bases-list" id="destinosList"></div>
-
-    <div class="bases-map-wrap">
-      <div class="bases-map-hdr">
-        <span class="bases-map-title">📍 Distribuição dos Destinos</span>
-        <div class="map-legend">
-          <div class="leg-item"><div class="leg-dot" style="background:#dc2626"></div>15+ rotas</div>
-          <div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>6-14 rotas</div>
-          <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div>1-5 rotas</div>
-        </div>
-      </div>
-      <div id="destinosLeafletMap"></div>
-      <div style="padding:8px 20px;font-size:9px;color:var(--text-muted);border-top:1px solid var(--border);">
-        Geocodificação por cidade: © OpenStreetMap contributors (Nominatim) — cache local após a primeira consulta
-      </div>
     </div>
   </div>
 </div>
@@ -1334,249 +1216,6 @@ window.__copyEnd = function(id){
   navigator.clipboard.writeText(txt).then(()=> showToast('ENDEREÇO COPIADO'));
 };
 
-/* ===================== DESTINOS (NOVO) ===================== */
-const DESTINOS_URL = './data/destinos.json';
-let destinosRaw = null;
-let destinosMap = null;
-let destinosMarkers = [];
-let expandedCities = new Set();
-let currentDestinosCities = [];
-
-function loadGeocodeCache(){
-  try{ return JSON.parse(localStorage.getItem('destinosGeocodeCache')) || {}; }
-  catch(e){ return {}; }
-}
-function saveGeocodeCache(){ localStorage.setItem('destinosGeocodeCache', JSON.stringify(destGeocodeCache)); }
-let destGeocodeCache = loadGeocodeCache();
-
-async function loadDestinosData(){
-  if(destinosRaw) return destinosRaw;
-  try{
-    const res = await fetch(DESTINOS_URL);
-    if(!res.ok) throw new Error(`HTTP ${res.status}`);
-    destinosRaw = await res.json();
-  }catch(err){
-    console.error(err);
-    destinosRaw = [];
-    showToast('ERRO AO CARREGAR DESTINOS');
-  }
-  return destinosRaw;
-}
-
-function groupDestinosByCity(data){
-  const cities = {};
-  data.forEach(d=>{
-    const key = d.cidade + '|' + d.uf;
-    if(!cities[key]) cities[key] = { cidade: d.cidade, uf: d.uf, destinos: [], qtdRotas: 0 };
-    cities[key].destinos.push(d);
-    cities[key].qtdRotas += d.qtd_rotas;
-  });
-  return Object.values(cities);
-}
-
-function populateDestinosUFFilter(cities){
-  const sel = document.getElementById('destinosUFFilter');
-  const atual = sel.value;
-  const ufs = [...new Set(cities.map(c=>c.uf))].sort();
-  sel.innerHTML = '<option value="">Todos os estados</option>' + ufs.map(uf=>`<option value="${uf}">${uf}</option>`).join('');
-  sel.value = atual;
-}
-
-function renderDestinosStats(cities, data){
-  document.getElementById('destStatDestinos').textContent = data.length;
-  document.getElementById('destStatCidades').textContent = cities.length;
-  document.getElementById('destStatUF').textContent = new Set(cities.map(c=>c.uf)).size;
-  document.getElementById('destStatRotas').textContent = data.reduce((s,d)=>s+d.qtd_rotas,0);
-  document.getElementById('destinosTotalEyebrow').textContent = data.length;
-  document.getElementById('destinosCidadesEyebrow').textContent = cities.length;
-}
-
-function initDestinosMap(){
-  if(destinosMap) return;
-  destinosMap = L.map('destinosLeafletMap', {
-    center: [-16, -48], zoom: 4.3, zoomControl: true, attributionControl: false
-  });
-  updateDestinosMapTiles();
-}
-function updateDestinosMapTiles(){
-  if(!destinosMap) return;
-  destinosMap.eachLayer(l => { if(l instanceof L.TileLayer) destinosMap.removeLayer(l); });
-  const isDark = document.body.classList.contains('dark-mode');
-  const tileUrl = isDark
-    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-  L.tileLayer(tileUrl, { maxZoom: 19, subdomains: 'abcd', attribution: '' }).addTo(destinosMap);
-}
-
-function destColor(qtd){
-  if(qtd >= 15) return '#dc2626';
-  if(qtd >= 6) return '#f97316';
-  return '#3b82f6';
-}
-
-async function geocodeCidade(cidade, uf){
-  const key = normStr(cidade) + '|' + uf;
-  if(destGeocodeCache[key]) return destGeocodeCache[key];
-  const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&country=Brazil&state=${encodeURIComponent(uf)}&city=${encodeURIComponent(cidade)}`;
-  try{
-    const res = await fetch(url);
-    const arr = await res.json();
-    if(arr && arr[0]){
-      const coord = { lat: parseFloat(arr[0].lat), lng: parseFloat(arr[0].lon) };
-      destGeocodeCache[key] = coord;
-      saveGeocodeCache();
-      return coord;
-    }
-  }catch(e){ console.error('geocode fail', cidade, uf, e); }
-  return null;
-}
-
-let geocodingLock = false;
-async function ensureGeocoded(cities){
-  const pending = cities.filter(c => !destGeocodeCache[normStr(c.cidade)+'|'+c.uf]);
-  if(!pending.length || geocodingLock) return;
-  geocodingLock = true;
-  const banner = document.getElementById('geocodeBanner');
-  const bannerText = document.getElementById('geocodeBannerText');
-  banner.classList.add('show');
-  for(let i=0;i<pending.length;i++){
-    const c = pending[i];
-    bannerText.textContent = `Geocodificando cidades (${i+1}/${pending.length})... ${c.cidade}/${c.uf}`;
-    await geocodeCidade(c.cidade, c.uf);
-    plotDestinosMarkers(currentDestinosCities);
-    if(i < pending.length-1) await new Promise(r=>setTimeout(r,1100));
-  }
-  bannerText.textContent = `Geocodificação concluída (${pending.length} cidade${pending.length!==1?'s':''} novas)`;
-  setTimeout(()=>banner.classList.remove('show'), 3000);
-  geocodingLock = false;
-}
-
-function plotDestinosMarkers(cities){
-  if(!destinosMap) return;
-  destinosMarkers.forEach(m=>destinosMap.removeLayer(m));
-  destinosMarkers = [];
-  cities.forEach(c=>{
-    const key = normStr(c.cidade)+'|'+c.uf;
-    const coord = destGeocodeCache[key];
-    if(!coord) return;
-    const color = destColor(c.qtdRotas);
-    const r = Math.min(20, 6 + Math.sqrt(c.qtdRotas)*2.2);
-    const marker = L.circleMarker([coord.lat, coord.lng], {
-      radius: r, fillColor: color, fillOpacity: 0.75, color:'white', weight:2
-    }).addTo(destinosMap);
-    marker.bindPopup(`
-      <strong>${c.cidade}/${c.uf}</strong>
-      <div class="pop-end">${c.destinos.length} destino(s) · ${c.qtdRotas} rota(s)</div>
-    `, {maxWidth:220});
-    marker.on('click', ()=>{ expandedCities.add(c.cidade+'|'+c.uf); renderDestinosList(currentDestinosCities); scrollToCity(c.cidade+'|'+c.uf); });
-    destinosMarkers.push(marker);
-  });
-}
-
-function scrollToCity(key){
-  const el = document.querySelector(`.dest-city-card[data-key="${CSS.escape(key)}"]`);
-  if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
-}
-
-function renderDestinosList(cities){
-  currentDestinosCities = cities;
-  const list = document.getElementById('destinosList');
-  if(!cities.length){
-    list.innerHTML = '<div style="text-align:center;padding:50px 20px;background:var(--surface);border-radius:var(--radius);color:var(--text-muted);border:1px solid var(--border);box-shadow:var(--shadow);">🔍 Nenhum destino encontrado.</div>';
-    return;
-  }
-  list.innerHTML = cities.map(c=>{
-    const key = c.cidade+'|'+c.uf;
-    const expanded = expandedCities.has(key);
-    const itemsHTML = [...c.destinos].sort((a,b)=>b.qtd_rotas-a.qtd_rotas).map(d=>{
-      const rotasHTML = d.rotas.map(r=>`<span data-rota="${r.replace(/"/g,'&quot;')}">🔗 ${r}</span>`).join('');
-      return `
-      <div class="dest-item">
-        <div class="dest-item-top">
-          <span class="dest-item-nome">${d.nome}</span>
-          <span class="dest-item-qtd">${d.qtd_rotas} rota${d.qtd_rotas!==1?'s':''}</span>
-        </div>
-        <div class="dest-item-end">📍 ${d.rua}${d.cep?' · CEP '+d.cep:''}</div>
-        <span class="dest-item-rotas-toggle" data-toggle-rotas>Ver rotas que usam este destino ▾</span>
-        <div class="dest-item-rotas-list">${rotasHTML}</div>
-      </div>`;
-    }).join('');
-    return `
-<div class="dest-city-card${expanded?' expanded':''}" data-key="${key}">
-  <div class="dest-city-hdr" data-toggle-city="${key}">
-    <div>
-      <div class="dest-city-name">${c.cidade} <span style="color:var(--text-muted);font-weight:500;">/${c.uf}</span></div>
-      <div class="dest-city-meta">${c.destinos.length} destino${c.destinos.length!==1?'s':''} · ${c.qtdRotas} rota${c.qtdRotas!==1?'s':''}</div>
-    </div>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <span class="dest-city-count">${c.qtdRotas}</span>
-      <span class="dest-city-chevron">▸</span>
-    </div>
-  </div>
-  <div class="dest-items">${itemsHTML}</div>
-</div>`;
-  }).join('');
-
-  list.querySelectorAll('[data-toggle-city]').forEach(el=>{
-    el.addEventListener('click', ()=>{
-      const key = el.dataset.toggleCity;
-      if(expandedCities.has(key)) expandedCities.delete(key); else expandedCities.add(key);
-      renderDestinosList(currentDestinosCities);
-    });
-  });
-  list.querySelectorAll('[data-toggle-rotas]').forEach(el=>{
-    el.addEventListener('click', (e)=>{
-      e.stopPropagation();
-      el.nextElementSibling.classList.toggle('show');
-    });
-  });
-  list.querySelectorAll('[data-rota]').forEach(el=>{
-    el.addEventListener('click', (e)=>{
-      e.stopPropagation();
-      const rota = el.dataset.rota;
-      document.querySelector('.base-tab[data-base="rondolog"]').click();
-      setTimeout(()=>{
-        searchInput.value = rota;
-        currentQuery = rota;
-        render();
-        addToHistory('rondolog', rota);
-      }, 150);
-    });
-  });
-}
-
-function renderDestinos(){
-  loadDestinosData().then(data=>{
-    const cities = groupDestinosByCity(data);
-    populateDestinosUFFilter(cities);
-    renderDestinosStats(cities, data);
-
-    const q = normStr(document.getElementById('destinosSearch').value);
-    const uf = document.getElementById('destinosUFFilter').value;
-    const order = document.getElementById('destinosOrder').value;
-
-    let filtered = cities.filter(c=>{
-      if(uf && c.uf !== uf) return false;
-      if(!q) return true;
-      if(normStr(c.cidade).includes(q)) return true;
-      return c.destinos.some(d => normStr(d.nome).includes(q) || normStr(d.rua).includes(q));
-    }).map(c => {
-      if(!q) return c;
-      const filteredDestinos = c.destinos.filter(d => normStr(d.nome).includes(q) || normStr(d.rua).includes(q) || normStr(c.cidade).includes(q));
-      return filteredDestinos.length ? { ...c, destinos: filteredDestinos } : c;
-    });
-
-    if(order === 'az') filtered.sort((a,b)=>a.cidade.localeCompare(b.cidade));
-    else filtered.sort((a,b)=>b.qtdRotas-a.qtdRotas);
-
-    document.getElementById('destinosCountBadge').textContent = filtered.length + ' cidade' + (filtered.length!==1?'s':'');
-
-    renderDestinosList(filtered);
-    plotDestinosMarkers(filtered);
-    ensureGeocoded(filtered);
-  });
-}
-
 /* ===================== LÓGICA ROTAS ===================== */
 const DATA_URLS = { rondolog:'./data/rondolog.json', saster:'./data/saster.json' };
 const dataCache = { rondolog:null, saster:null };
@@ -1713,22 +1352,12 @@ async function switchBase(base){
   if(base==='bases'){
     document.getElementById('routesPanel').classList.add('hidden');
     document.getElementById('basesPanel').classList.add('active');
-    document.getElementById('destinosPanel').classList.remove('active');
     loadingOverlay.style.display='none';
     setTimeout(()=>{ initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
     return;
   }
-  if(base==='destinos'){
-    document.getElementById('routesPanel').classList.add('hidden');
-    document.getElementById('basesPanel').classList.remove('active');
-    document.getElementById('destinosPanel').classList.add('active');
-    loadingOverlay.style.display='none';
-    setTimeout(()=>{ initDestinosMap(); renderDestinos(); }, 50);
-    return;
-  }
   document.getElementById('routesPanel').classList.remove('hidden');
   document.getElementById('basesPanel').classList.remove('active');
-  document.getElementById('destinosPanel').classList.remove('active');
   loadingOverlay.style.display='flex';
   currentBase=base;
   baseTitle.textContent=base==='rondolog'?'RONDOLOG':'SASTER';
@@ -1819,7 +1448,6 @@ themeToggle.addEventListener('change', function() {
   localStorage.setItem('rondologTheme', isDark ? 'dark' : 'light');
   themeLabel.textContent = isDark ? '🌙 Escuro' : '☀️ Claro';
   updateMapTiles();
-  updateDestinosMapTiles();
 });
 
 /* ===== EVENT LISTENERS ===== */
@@ -1856,14 +1484,6 @@ compactToggle.addEventListener('change', e=>{ document.body.classList.toggle('co
 document.getElementById('basesSearch').addEventListener('input', renderBases);
 document.getElementById('basesUFFilter').addEventListener('change', renderBases);
 document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
-
-let destinosSearchTimer = null;
-document.getElementById('destinosSearch').addEventListener('input', ()=>{
-  clearTimeout(destinosSearchTimer);
-  destinosSearchTimer = setTimeout(renderDestinos, 300);
-});
-document.getElementById('destinosUFFilter').addEventListener('change', renderDestinos);
-document.getElementById('destinosOrder').addEventListener('change', renderDestinos);
 
 /* Init */
 switchBase('rondolog');
