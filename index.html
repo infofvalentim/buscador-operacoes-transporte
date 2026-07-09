@@ -395,6 +395,8 @@
        ============================================= */
     #basesPanel { display: none; }
     #basesPanel.active { display: block; }
+    #destinosPanel { display: none; }
+    #destinosPanel.active { display: block; }
     #routesPanel.hidden { display: none; }
 
     .bases-header {
@@ -612,15 +614,157 @@
     }
     .leaflet-sigla-tooltip::before { display: none; }
 
+    /* ===== HISTÓRICO E FAVORITOS (NOVO) ===== */
+    .history-chips {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .history-label {
+      font-size: 10px; color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 1px; font-weight: 700; margin-right: 2px;
+    }
+    .history-chip {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 40px; padding: 5px 10px 5px 14px; font-size: 11px;
+      color: var(--text-dim); cursor: pointer; display: inline-flex;
+      align-items: center; gap: 8px; transition: var(--transition);
+      font-weight: 500;
+    }
+    .history-chip:hover { border-color: var(--red); color: var(--red); }
+    .history-chip .hx-remove {
+      opacity: 0.5; font-size: 10px; padding: 2px; border-radius: 50%;
+    }
+    .history-chip .hx-remove:hover { opacity: 1; color: var(--red); }
+    .fav-chip {
+      background: var(--surface2); border: 1.5px solid var(--border);
+      border-radius: 40px; padding: 7px 18px; font-size: 12px;
+      font-weight: 600; cursor: pointer; color: var(--text-dim);
+      transition: var(--transition); letter-spacing: 0.2px;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .fav-chip:hover { background: var(--border); color: var(--text); }
+    .fav-chip.active {
+      background: rgba(234,179,8,0.1); border-color: var(--yellow);
+      color: #b45309; box-shadow: 0 0 0 3px rgba(234,179,8,0.08);
+    }
+    .fav-star {
+      cursor: pointer; font-size: 17px; line-height: 1; color: var(--text-muted);
+      transition: var(--transition); user-select: none; flex-shrink: 0;
+    }
+    .fav-star:hover { color: #eab308; transform: scale(1.15); }
+    .fav-star.active { color: #eab308; }
+
+    /* ===== DESTINOS (NOVO) ===== */
+    .dest-city-card {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+      transition: var(--transition); flex-shrink: 0;
+    }
+    .dest-city-card:hover { border-color: var(--red); }
+    .dest-city-hdr {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 14px 18px; cursor: pointer;
+    }
+    .dest-city-name { font-size: 15px; font-weight: 700; color: var(--text); }
+    .dest-city-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+    .dest-city-count {
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      background: var(--surface2); border: 1px solid var(--border); border-radius: 20px;
+      padding: 3px 10px; color: var(--text-dim);
+    }
+    .dest-city-chevron { transition: transform 0.2s ease; color: var(--text-muted); display: inline-block; }
+    .dest-city-card.expanded .dest-city-chevron { transform: rotate(90deg); }
+    .dest-items { display: none; border-top: 1px solid var(--border); }
+    .dest-city-card.expanded .dest-items { display: block; }
+    .dest-item { padding: 12px 18px; border-bottom: 1px solid var(--border); }
+    .dest-item:last-child { border-bottom: none; }
+    .dest-item-top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+    .dest-item-nome { font-size: 13px; font-weight: 600; color: var(--text); }
+    .dest-item-qtd {
+      font-family: var(--mono); font-size: 9px; color: var(--text-dim);
+      background: var(--surface2); border-radius: 12px; padding: 2px 8px;
+      border: 1px solid var(--border); white-space: nowrap; flex-shrink: 0;
+    }
+    .dest-item-end { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+    .dest-item-rotas-toggle {
+      font-size: 10px; color: var(--blue); cursor: pointer; margin-top: 8px;
+      display: inline-block; font-weight: 600;
+    }
+    .dest-item-rotas-toggle:hover { text-decoration: underline; }
+    .dest-item-rotas-list {
+      display: none; margin-top: 8px; padding: 8px 10px; background: var(--surface2);
+      border-radius: 8px; font-size: 10px; color: var(--text-dim); max-height: 140px; overflow-y: auto;
+    }
+    .dest-item-rotas-list.show { display: block; }
+    .dest-item-rotas-list span { display: block; padding: 3px 2px; cursor: pointer; border-radius: 4px; }
+    .dest-item-rotas-list span:hover { color: var(--red); background: var(--surface); }
+    .geocode-banner {
+      display: none; align-items: center; gap: 10px;
+      background: rgba(59,130,246,0.08); border: 1px solid var(--blue);
+      color: var(--text); border-radius: 12px; padding: 10px 16px;
+      margin: 0 24px 16px; max-width: 1232px; font-size: 12px;
+    }
+    .geocode-banner.show { display: flex; }
+    .geocode-spinner {
+      width: 12px; height: 12px; border: 2px solid rgba(0,0,0,0.15);
+      border-top-color: var(--blue); border-radius: 50%;
+      animation: spin 0.7s linear infinite; flex-shrink: 0;
+    }
+
+    /* ===== LOCALIZAÇÃO (NOVO) ===== */
+    .locate-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 600; padding: 12px 18px;
+      border-radius: 12px; border: 1.5px solid var(--border);
+      background: var(--surface2); color: var(--text-dim);
+      cursor: pointer; transition: var(--transition);
+      white-space: nowrap;
+    }
+    .locate-btn:hover {
+      border-color: var(--red); color: var(--red); background: var(--red-bg);
+    }
+    .locate-btn.active {
+      border-color: var(--green); color: var(--green); background: rgba(34,197,94,0.08);
+    }
+    .locate-btn:disabled { opacity: 0.6; cursor: wait; }
+    .locate-spinner {
+      width: 12px; height: 12px; border: 2px solid rgba(0,0,0,0.15);
+      border-top-color: var(--red); border-radius: 50%;
+      animation: spin 0.7s linear infinite; display: inline-block;
+    }
+    .bci-dist {
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      background: rgba(34,197,94,0.1); border: 1px solid var(--green);
+      color: var(--green); border-radius: 6px; padding: 3px 10px;
+    }
+    .locate-banner {
+      display: none;
+      align-items: center; justify-content: space-between; gap: 10px;
+      background: rgba(34,197,94,0.08); border: 1px solid var(--green);
+      color: var(--text); border-radius: 12px; padding: 10px 16px;
+      margin: 0 24px 16px; max-width: 1232px; font-size: 12px;
+    }
+    .locate-banner.show { display: flex; }
+    .locate-banner button {
+      background: none; border: none; color: var(--text-dim);
+      cursor: pointer; font-size: 12px; text-decoration: underline;
+      flex-shrink: 0;
+    }
+
+    /* Modos de visualização */
+
+
     @media (max-width: 600px) {
       .search-order-wrap { flex-direction: column; }
       #orderSelect { width: 100%; }
       .bases-search-row { flex-direction: column; }
-      #basesUFFilter, #basesTipoFilter { width: 100%; }
+      #basesUFFilter, #basesTipoFilter, #destinosUFFilter, #destinosOrder { width: 100%; }
       .header-top { flex-direction: column; align-items: stretch; }
       .header-controls { justify-content: space-between; }
       .theme-toggle-wrap { top: 8px; right: 8px; padding: 6px 12px 6px 14px; }
       .theme-toggle-wrap span { font-size: 9px; }
+      #leafletMap { height: 300px; }
+      .locate-btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -641,6 +785,7 @@
   <button class="base-tab active" data-base="rondolog">🚛 RONDOLOG</button>
   <button class="base-tab" data-base="saster">📦 SASTER</button>
   <button class="base-tab" data-base="bases">🏭 BASES</button>
+  <button class="base-tab" data-base="destinos">🎯 DESTINOS</button>
 </div>
 
 <!-- ===== PAINEL ROTAS ===== -->
@@ -671,12 +816,14 @@
         <option value="tipo">Tipo</option>
       </select>
     </div>
+    <div class="history-chips" id="historyChips"></div>
   </header>
   <div class="filters" id="filterChips">
     <div class="chip active" data-type="all">Todas</div>
     <div class="chip" data-type="transferencia">🚚 Transferência</div>
     <div class="chip" data-type="coleta">📦 Coleta</div>
     <div class="chip" data-type="rota">🔄 Rota fixa</div>
+    <div class="fav-chip" id="favChip"><span>⭐</span> Favoritas <span id="favCount" style="opacity:.6"></span></div>
   </div>
   <div class="main">
     <div class="section-label" id="sectionLabel">Todas as rotas</div>
@@ -690,7 +837,7 @@
   <div class="bases-header">
     <div class="bases-header-top">
       <div>
-        <div class="brand-eyebrow">Rondolog · 14 bases operacionais</div>
+        <div class="brand-eyebrow">Rondolog · <span id="basesTotalEyebrow">14</span> bases operacionais</div>
         <div class="brand-title">BASES <span style="color:var(--red)">RONDOLOG</span></div>
       </div>
       <div class="count-badge" id="basesCountBadge">14 bases</div>
@@ -714,15 +861,24 @@
         <option value="filial">🔵 Filial</option>
         <option value="terminal">🟣 Terminal</option>
       </select>
+      <button class="locate-btn" id="locateBtn" title="Ordenar bases pela distância até você">
+        <span id="locateBtnIcon">📍</span>
+        <span id="locateBtnText">Base mais próxima</span>
+      </button>
     </div>
   </div>
 
+  <div class="locate-banner" id="locateBanner">
+    <span id="locateBannerText">📍 Ordenado pela sua localização atual</span>
+    <button id="locateClearBtn">limpar</button>
+  </div>
+
   <div class="bases-stats">
-    <div class="stat-chip"><span class="stat-num red">14</span><span class="stat-label">Bases totais</span></div>
-    <div class="stat-chip"><span class="stat-num red">2</span><span class="stat-label">Hubs principais</span></div>
-    <div class="stat-chip"><span class="stat-num blue">11</span><span class="stat-label">Filiais</span></div>
-    <div class="stat-chip"><span class="stat-num purple">1</span><span class="stat-label">Terminal</span></div>
-    <div class="stat-chip"><span class="stat-num green">5</span><span class="stat-label">Estados + DF</span></div>
+    <div class="stat-chip"><span class="stat-num red" id="statTotal">14</span><span class="stat-label">Bases totais</span></div>
+    <div class="stat-chip"><span class="stat-num red" id="statHub">2</span><span class="stat-label">Hubs principais</span></div>
+    <div class="stat-chip"><span class="stat-num blue" id="statFilial">11</span><span class="stat-label">Filiais</span></div>
+    <div class="stat-chip"><span class="stat-num purple" id="statTerminal">1</span><span class="stat-label">Terminal</span></div>
+    <div class="stat-chip"><span class="stat-num green" id="statUF">5</span><span class="stat-label">Estados + DF</span></div>
   </div>
 
   <div class="bases-layout">
@@ -739,6 +895,64 @@
         </div>
       </div>
       <div id="leafletMap"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAINEL DESTINOS ===== -->
+<div id="destinosPanel">
+
+  <div class="bases-header">
+    <div class="bases-header-top">
+      <div>
+        <div class="brand-eyebrow"><span id="destinosTotalEyebrow">0</span> destinos · <span id="destinosCidadesEyebrow">0</span> cidades</div>
+        <div class="brand-title">DESTINOS <span style="color:var(--red)">CADASTRADOS</span></div>
+      </div>
+      <div class="count-badge" id="destinosCountBadge">0 cidades</div>
+    </div>
+    <div class="bases-search-row">
+      <div class="bases-search-wrap">
+        <span class="bases-search-icon">🔍</span>
+        <input type="text" id="destinosSearch" placeholder="Buscar cidade, destino ou endereço..." autocomplete="off">
+      </div>
+      <select id="destinosUFFilter">
+        <option value="">Todos os estados</option>
+      </select>
+      <select id="destinosOrder">
+        <option value="rotas">Mais rotas primeiro</option>
+        <option value="az">Cidade (A-Z)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="geocode-banner" id="geocodeBanner">
+    <span class="geocode-spinner"></span>
+    <span id="geocodeBannerText">Geocodificando cidades...</span>
+  </div>
+
+  <div class="bases-stats">
+    <div class="stat-chip"><span class="stat-num red" id="destStatDestinos">0</span><span class="stat-label">Destinos únicos</span></div>
+    <div class="stat-chip"><span class="stat-num blue" id="destStatCidades">0</span><span class="stat-label">Cidades</span></div>
+    <div class="stat-chip"><span class="stat-num purple" id="destStatUF">0</span><span class="stat-label">Estados</span></div>
+    <div class="stat-chip"><span class="stat-num green" id="destStatRotas">0</span><span class="stat-label">Rotas cobertas</span></div>
+  </div>
+
+  <div class="bases-layout">
+    <div class="bases-list" id="destinosList"></div>
+
+    <div class="bases-map-wrap">
+      <div class="bases-map-hdr">
+        <span class="bases-map-title">📍 Distribuição dos Destinos</span>
+        <div class="map-legend">
+          <div class="leg-item"><div class="leg-dot" style="background:#dc2626"></div>15+ rotas</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>6-14 rotas</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div>1-5 rotas</div>
+        </div>
+      </div>
+      <div id="destinosLeafletMap"></div>
+      <div style="padding:8px 20px;font-size:9px;color:var(--text-muted);border-top:1px solid var(--border);">
+        Geocodificação por cidade: © OpenStreetMap contributors (Nominatim) — cache local após a primeira consulta
+      </div>
     </div>
   </div>
 </div>
@@ -772,11 +986,108 @@ const BASES = [
 function dotColor(tipo){ return tipo==='hub'?'#dc2626': tipo==='terminal'?'#8b5cf6':'#3b82f6'; }
 function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
 
+/* ---- ESTATÍSTICAS DINÂMICAS (antes eram fixas no HTML) ---- */
+function renderBasesStats(){
+  const total = BASES.length;
+  const hubs = BASES.filter(b=>b.tipo==='hub').length;
+  const filiais = BASES.filter(b=>b.tipo==='filial').length;
+  const terminais = BASES.filter(b=>b.tipo==='terminal').length;
+  const estados = new Set(BASES.map(b=>b.uf)).size;
+
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statHub').textContent = hubs;
+  document.getElementById('statFilial').textContent = filiais;
+  document.getElementById('statTerminal').textContent = terminais;
+  document.getElementById('statUF').textContent = estados;
+  document.getElementById('basesTotalEyebrow').textContent = total;
+}
+
+/* ---- LOCALIZAÇÃO DO USUÁRIO (NOVO) ---- */
+let userPos = null; // {lat, lng}
+let locateWatching = false;
+
+function toRad(v){ return v * Math.PI / 180; }
+
+// Distância Haversine em km
+function haversineKm(lat1, lng1, lat2, lng2){
+  const R = 6371;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a = Math.sin(dLat/2)**2 +
+            Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+            Math.sin(dLng/2)**2;
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+}
+
+function formatDist(km){
+  if(km < 1) return Math.round(km*1000) + ' m';
+  return km.toFixed(km < 10 ? 1 : 0) + ' km';
+}
+
+const locateBtn = document.getElementById('locateBtn');
+const locateBtnIcon = document.getElementById('locateBtnIcon');
+const locateBtnText = document.getElementById('locateBtnText');
+const locateBanner = document.getElementById('locateBanner');
+const locateBannerText = document.getElementById('locateBannerText');
+const locateClearBtn = document.getElementById('locateClearBtn');
+
+function handleLocateClick(){
+  if(!navigator.geolocation){
+    showToast('GEOLOCALIZAÇÃO NÃO SUPORTADA');
+    return;
+  }
+  locateBtn.disabled = true;
+  locateBtnIcon.innerHTML = '<span class="locate-spinner"></span>';
+  locateBtnText.textContent = 'Localizando...';
+
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      locateWatching = true;
+      locateBtn.disabled = false;
+      locateBtn.classList.add('active');
+      locateBtnIcon.textContent = '✅';
+      locateBtnText.textContent = 'Localização ativa';
+      locateBanner.classList.add('show');
+      const nearest = [...BASES].sort((a,b)=>
+        haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
+      )[0];
+      const distNearest = haversineKm(userPos.lat, userPos.lng, nearest.lat, nearest.lng);
+      locateBannerText.textContent = `📍 Base mais próxima: ${nearest.nome} (${formatDist(distNearest)})`;
+      renderBases();
+    },
+    err => {
+      locateBtn.disabled = false;
+      locateBtnIcon.textContent = '📍';
+      locateBtnText.textContent = 'Base mais próxima';
+      let msg = 'NÃO FOI POSSÍVEL OBTER SUA LOCALIZAÇÃO';
+      if(err.code === err.PERMISSION_DENIED) msg = 'PERMISSÃO DE LOCALIZAÇÃO NEGADA';
+      showToast(msg);
+    },
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+  );
+}
+
+function clearLocate(){
+  userPos = null;
+  locateWatching = false;
+  locateBtn.classList.remove('active');
+  locateBtnIcon.textContent = '📍';
+  locateBtnText.textContent = 'Base mais próxima';
+  locateBanner.classList.remove('show');
+  renderBases();
+}
+
+locateBtn.addEventListener('click', handleLocateClick);
+locateClearBtn.addEventListener('click', clearLocate);
+
 /* ---- MAPA LEAFLET ---- */
 let leafletMap = null;
 let leafletMarkers = [];
 let routeLine = null;
 let selectedId = null;
+let userMarker = null;
 
 function initLeafletMap(){
   if(leafletMap) return;
@@ -848,6 +1159,19 @@ function initLeafletMap(){
   });
 }
 
+function renderUserMarker(){
+  if(!leafletMap) return;
+  if(userMarker){ leafletMap.removeLayer(userMarker); userMarker = null; }
+  if(!userPos) return;
+  userMarker = L.circleMarker([userPos.lat, userPos.lng], {
+    radius: 8, fillColor: '#22c55e', fillOpacity: 1,
+    color: 'white', weight: 3
+  }).addTo(leafletMap);
+  userMarker.bindTooltip('Você está aqui', {
+    permanent: false, direction: 'top', className: 'leaflet-sigla-tooltip'
+  });
+}
+
 function updateMapTiles() {
   if (!leafletMap) return;
   // Remove layers antigos (exceto os marcadores e linha)
@@ -898,6 +1222,8 @@ function renderMap(filtered){
     const coords = filtered.map(b => [b.lat, b.lng]);
     routeLine.setLatLngs(coords);
   }
+
+  renderUserMarker();
 }
 
 /* ---- LISTA ---- */
@@ -908,7 +1234,7 @@ function renderBases(){
   const uf = document.getElementById('basesUFFilter').value;
   const tipo = document.getElementById('basesTipoFilter').value;
 
-  const filtered = BASES.filter(b=>{
+  let filtered = BASES.filter(b=>{
     const mq = !q || [b.nome,b.cidade,b.endereco,b.cep,b.uf].some(v=>normStr(v).includes(q));
     const mu = !uf || b.uf === uf;
     const mt = !tipo || b.tipo === tipo;
@@ -926,16 +1252,32 @@ function renderBases(){
     return;
   }
 
-  const sorted = [...filtered].sort((a,b)=>{
-    const o={hub:0,terminal:1,filial:2};
-    return (o[a.tipo] ?? 9)-(o[b.tipo] ?? 9);
-  });
+  let sorted;
+  if(userPos){
+    // Ordena por distância até o usuário quando a localização está ativa
+    sorted = [...filtered].sort((a,b)=>
+      haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
+    );
+  } else {
+    sorted = [...filtered].sort((a,b)=>{
+      const o={hub:0,terminal:1,filial:2};
+      return (o[a.tipo] ?? 9)-(o[b.tipo] ?? 9);
+    });
+  }
 
-  list.innerHTML = sorted.map(b=>{
+  list.innerHTML = sorted.map((b, idx)=>{
     const c = dotColor(b.tipo);
     const sel = b.id === selectedId ? ' selected' : '';
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
     const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(b.nome+' '+b.cidade+' '+b.uf)}&navigate=yes`;
+
+    let distBadge = '';
+    if(userPos){
+      const km = haversineKm(userPos.lat, userPos.lng, b.lat, b.lng);
+      const proximaLabel = idx === 0 ? '⭐ Mais próxima · ' : '';
+      distBadge = `<span class="bci-dist">${proximaLabel}${formatDist(km)}</span>`;
+    }
+
     return `
 <div class="base-card${sel}" data-id="${b.id}" onclick="__selBase(${b.id})">
   <div class="bci">
@@ -952,6 +1294,7 @@ function renderBases(){
       <div class="bci-foot">
         <span class="bci-uf">${b.uf}</span>
         <span class="bci-cep">${b.cep}</span>
+        ${distBadge}
         <div class="bci-btns">
           <a class="bci-btn bci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🗺 Maps</a>
           <a class="bci-btn bci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🔵 Waze</a>
@@ -991,6 +1334,249 @@ window.__copyEnd = function(id){
   navigator.clipboard.writeText(txt).then(()=> showToast('ENDEREÇO COPIADO'));
 };
 
+/* ===================== DESTINOS (NOVO) ===================== */
+const DESTINOS_URL = './data/destinos.json';
+let destinosRaw = null;
+let destinosMap = null;
+let destinosMarkers = [];
+let expandedCities = new Set();
+let currentDestinosCities = [];
+
+function loadGeocodeCache(){
+  try{ return JSON.parse(localStorage.getItem('destinosGeocodeCache')) || {}; }
+  catch(e){ return {}; }
+}
+function saveGeocodeCache(){ localStorage.setItem('destinosGeocodeCache', JSON.stringify(destGeocodeCache)); }
+let destGeocodeCache = loadGeocodeCache();
+
+async function loadDestinosData(){
+  if(destinosRaw) return destinosRaw;
+  try{
+    const res = await fetch(DESTINOS_URL);
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    destinosRaw = await res.json();
+  }catch(err){
+    console.error(err);
+    destinosRaw = [];
+    showToast('ERRO AO CARREGAR DESTINOS');
+  }
+  return destinosRaw;
+}
+
+function groupDestinosByCity(data){
+  const cities = {};
+  data.forEach(d=>{
+    const key = d.cidade + '|' + d.uf;
+    if(!cities[key]) cities[key] = { cidade: d.cidade, uf: d.uf, destinos: [], qtdRotas: 0 };
+    cities[key].destinos.push(d);
+    cities[key].qtdRotas += d.qtd_rotas;
+  });
+  return Object.values(cities);
+}
+
+function populateDestinosUFFilter(cities){
+  const sel = document.getElementById('destinosUFFilter');
+  const atual = sel.value;
+  const ufs = [...new Set(cities.map(c=>c.uf))].sort();
+  sel.innerHTML = '<option value="">Todos os estados</option>' + ufs.map(uf=>`<option value="${uf}">${uf}</option>`).join('');
+  sel.value = atual;
+}
+
+function renderDestinosStats(cities, data){
+  document.getElementById('destStatDestinos').textContent = data.length;
+  document.getElementById('destStatCidades').textContent = cities.length;
+  document.getElementById('destStatUF').textContent = new Set(cities.map(c=>c.uf)).size;
+  document.getElementById('destStatRotas').textContent = data.reduce((s,d)=>s+d.qtd_rotas,0);
+  document.getElementById('destinosTotalEyebrow').textContent = data.length;
+  document.getElementById('destinosCidadesEyebrow').textContent = cities.length;
+}
+
+function initDestinosMap(){
+  if(destinosMap) return;
+  destinosMap = L.map('destinosLeafletMap', {
+    center: [-16, -48], zoom: 4.3, zoomControl: true, attributionControl: false
+  });
+  updateDestinosMapTiles();
+}
+function updateDestinosMapTiles(){
+  if(!destinosMap) return;
+  destinosMap.eachLayer(l => { if(l instanceof L.TileLayer) destinosMap.removeLayer(l); });
+  const isDark = document.body.classList.contains('dark-mode');
+  const tileUrl = isDark
+    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+  L.tileLayer(tileUrl, { maxZoom: 19, subdomains: 'abcd', attribution: '' }).addTo(destinosMap);
+}
+
+function destColor(qtd){
+  if(qtd >= 15) return '#dc2626';
+  if(qtd >= 6) return '#f97316';
+  return '#3b82f6';
+}
+
+async function geocodeCidade(cidade, uf){
+  const key = normStr(cidade) + '|' + uf;
+  if(destGeocodeCache[key]) return destGeocodeCache[key];
+  const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&country=Brazil&state=${encodeURIComponent(uf)}&city=${encodeURIComponent(cidade)}`;
+  try{
+    const res = await fetch(url);
+    const arr = await res.json();
+    if(arr && arr[0]){
+      const coord = { lat: parseFloat(arr[0].lat), lng: parseFloat(arr[0].lon) };
+      destGeocodeCache[key] = coord;
+      saveGeocodeCache();
+      return coord;
+    }
+  }catch(e){ console.error('geocode fail', cidade, uf, e); }
+  return null;
+}
+
+let geocodingLock = false;
+async function ensureGeocoded(cities){
+  const pending = cities.filter(c => !destGeocodeCache[normStr(c.cidade)+'|'+c.uf]);
+  if(!pending.length || geocodingLock) return;
+  geocodingLock = true;
+  const banner = document.getElementById('geocodeBanner');
+  const bannerText = document.getElementById('geocodeBannerText');
+  banner.classList.add('show');
+  for(let i=0;i<pending.length;i++){
+    const c = pending[i];
+    bannerText.textContent = `Geocodificando cidades (${i+1}/${pending.length})... ${c.cidade}/${c.uf}`;
+    await geocodeCidade(c.cidade, c.uf);
+    plotDestinosMarkers(currentDestinosCities);
+    if(i < pending.length-1) await new Promise(r=>setTimeout(r,1100));
+  }
+  bannerText.textContent = `Geocodificação concluída (${pending.length} cidade${pending.length!==1?'s':''} novas)`;
+  setTimeout(()=>banner.classList.remove('show'), 3000);
+  geocodingLock = false;
+}
+
+function plotDestinosMarkers(cities){
+  if(!destinosMap) return;
+  destinosMarkers.forEach(m=>destinosMap.removeLayer(m));
+  destinosMarkers = [];
+  cities.forEach(c=>{
+    const key = normStr(c.cidade)+'|'+c.uf;
+    const coord = destGeocodeCache[key];
+    if(!coord) return;
+    const color = destColor(c.qtdRotas);
+    const r = Math.min(20, 6 + Math.sqrt(c.qtdRotas)*2.2);
+    const marker = L.circleMarker([coord.lat, coord.lng], {
+      radius: r, fillColor: color, fillOpacity: 0.75, color:'white', weight:2
+    }).addTo(destinosMap);
+    marker.bindPopup(`
+      <strong>${c.cidade}/${c.uf}</strong>
+      <div class="pop-end">${c.destinos.length} destino(s) · ${c.qtdRotas} rota(s)</div>
+    `, {maxWidth:220});
+    marker.on('click', ()=>{ expandedCities.add(c.cidade+'|'+c.uf); renderDestinosList(currentDestinosCities); scrollToCity(c.cidade+'|'+c.uf); });
+    destinosMarkers.push(marker);
+  });
+}
+
+function scrollToCity(key){
+  const el = document.querySelector(`.dest-city-card[data-key="${CSS.escape(key)}"]`);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function renderDestinosList(cities){
+  currentDestinosCities = cities;
+  const list = document.getElementById('destinosList');
+  if(!cities.length){
+    list.innerHTML = '<div style="text-align:center;padding:50px 20px;background:var(--surface);border-radius:var(--radius);color:var(--text-muted);border:1px solid var(--border);box-shadow:var(--shadow);">🔍 Nenhum destino encontrado.</div>';
+    return;
+  }
+  list.innerHTML = cities.map(c=>{
+    const key = c.cidade+'|'+c.uf;
+    const expanded = expandedCities.has(key);
+    const itemsHTML = [...c.destinos].sort((a,b)=>b.qtd_rotas-a.qtd_rotas).map(d=>{
+      const rotasHTML = d.rotas.map(r=>`<span data-rota="${r.replace(/"/g,'&quot;')}">🔗 ${r}</span>`).join('');
+      return `
+      <div class="dest-item">
+        <div class="dest-item-top">
+          <span class="dest-item-nome">${d.nome}</span>
+          <span class="dest-item-qtd">${d.qtd_rotas} rota${d.qtd_rotas!==1?'s':''}</span>
+        </div>
+        <div class="dest-item-end">📍 ${d.rua}${d.cep?' · CEP '+d.cep:''}</div>
+        <span class="dest-item-rotas-toggle" data-toggle-rotas>Ver rotas que usam este destino ▾</span>
+        <div class="dest-item-rotas-list">${rotasHTML}</div>
+      </div>`;
+    }).join('');
+    return `
+<div class="dest-city-card${expanded?' expanded':''}" data-key="${key}">
+  <div class="dest-city-hdr" data-toggle-city="${key}">
+    <div>
+      <div class="dest-city-name">${c.cidade} <span style="color:var(--text-muted);font-weight:500;">/${c.uf}</span></div>
+      <div class="dest-city-meta">${c.destinos.length} destino${c.destinos.length!==1?'s':''} · ${c.qtdRotas} rota${c.qtdRotas!==1?'s':''}</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span class="dest-city-count">${c.qtdRotas}</span>
+      <span class="dest-city-chevron">▸</span>
+    </div>
+  </div>
+  <div class="dest-items">${itemsHTML}</div>
+</div>`;
+  }).join('');
+
+  list.querySelectorAll('[data-toggle-city]').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const key = el.dataset.toggleCity;
+      if(expandedCities.has(key)) expandedCities.delete(key); else expandedCities.add(key);
+      renderDestinosList(currentDestinosCities);
+    });
+  });
+  list.querySelectorAll('[data-toggle-rotas]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      el.nextElementSibling.classList.toggle('show');
+    });
+  });
+  list.querySelectorAll('[data-rota]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const rota = el.dataset.rota;
+      document.querySelector('.base-tab[data-base="rondolog"]').click();
+      setTimeout(()=>{
+        searchInput.value = rota;
+        currentQuery = rota;
+        render();
+        addToHistory('rondolog', rota);
+      }, 150);
+    });
+  });
+}
+
+function renderDestinos(){
+  loadDestinosData().then(data=>{
+    const cities = groupDestinosByCity(data);
+    populateDestinosUFFilter(cities);
+    renderDestinosStats(cities, data);
+
+    const q = normStr(document.getElementById('destinosSearch').value);
+    const uf = document.getElementById('destinosUFFilter').value;
+    const order = document.getElementById('destinosOrder').value;
+
+    let filtered = cities.filter(c=>{
+      if(uf && c.uf !== uf) return false;
+      if(!q) return true;
+      if(normStr(c.cidade).includes(q)) return true;
+      return c.destinos.some(d => normStr(d.nome).includes(q) || normStr(d.rua).includes(q));
+    }).map(c => {
+      if(!q) return c;
+      const filteredDestinos = c.destinos.filter(d => normStr(d.nome).includes(q) || normStr(d.rua).includes(q) || normStr(c.cidade).includes(q));
+      return filteredDestinos.length ? { ...c, destinos: filteredDestinos } : c;
+    });
+
+    if(order === 'az') filtered.sort((a,b)=>a.cidade.localeCompare(b.cidade));
+    else filtered.sort((a,b)=>b.qtdRotas-a.qtdRotas);
+
+    document.getElementById('destinosCountBadge').textContent = filtered.length + ' cidade' + (filtered.length!==1?'s':'');
+
+    renderDestinosList(filtered);
+    plotDestinosMarkers(filtered);
+    ensureGeocoded(filtered);
+  });
+}
+
 /* ===================== LÓGICA ROTAS ===================== */
 const DATA_URLS = { rondolog:'./data/rondolog.json', saster:'./data/saster.json' };
 const dataCache = { rondolog:null, saster:null };
@@ -1022,6 +1608,96 @@ function hl(text,q){
 function getTipoColor(t){ return t==='coleta'?'var(--blue)':t==='transferencia'?'var(--green)':'var(--orange)'; }
 function getTipoLabel(t){ return t==='transferencia'?'🚚 Transferência':t==='coleta'?'📦 Coleta':'🔄 Rota fixa'; }
 
+/* ===================== FAVORITOS (NOVO) ===================== */
+function loadFavorites(){
+  try{ return JSON.parse(localStorage.getItem('rondologFavorites')) || {rondolog:[], saster:[]}; }
+  catch(e){ return {rondolog:[], saster:[]}; }
+}
+function saveFavorites(data){
+  localStorage.setItem('rondologFavorites', JSON.stringify(data));
+}
+let favoritesData = loadFavorites();
+let showOnlyFavorites = false;
+
+function isFavorite(base, nome){
+  return (favoritesData[base] || []).includes(nome);
+}
+function toggleFavorite(base, nome){
+  if(!favoritesData[base]) favoritesData[base] = [];
+  const idx = favoritesData[base].indexOf(nome);
+  if(idx === -1){
+    favoritesData[base].push(nome);
+    showToast('⭐ ROTA FAVORITADA');
+  } else {
+    favoritesData[base].splice(idx, 1);
+    showToast('ROTA REMOVIDA DOS FAVORITOS');
+  }
+  saveFavorites(favoritesData);
+  updateFavChip();
+  render();
+}
+function updateFavChip(){
+  const count = (favoritesData[currentBase] || []).length;
+  const favCountEl = document.getElementById('favCount');
+  favCountEl.textContent = count ? `(${count})` : '';
+  document.getElementById('favChip').classList.toggle('active', showOnlyFavorites);
+}
+window.__toggleFav = toggleFavorite;
+
+/* ===================== HISTÓRICO DE BUSCAS (NOVO) ===================== */
+const HISTORY_MAX = 8;
+function loadHistory(){
+  try{ return JSON.parse(localStorage.getItem('rondologHistory')) || {rondolog:[], saster:[]}; }
+  catch(e){ return {rondolog:[], saster:[]}; }
+}
+function saveHistory(data){
+  localStorage.setItem('rondologHistory', JSON.stringify(data));
+}
+let historyData = loadHistory();
+
+function addToHistory(base, term){
+  term = term.trim();
+  if(!term) return;
+  if(!historyData[base]) historyData[base] = [];
+  historyData[base] = historyData[base].filter(t => t.toLowerCase() !== term.toLowerCase());
+  historyData[base].unshift(term);
+  historyData[base] = historyData[base].slice(0, HISTORY_MAX);
+  saveHistory(historyData);
+  renderHistoryChips();
+}
+function removeFromHistory(base, term){
+  if(!historyData[base]) return;
+  historyData[base] = historyData[base].filter(t => t !== term);
+  saveHistory(historyData);
+  renderHistoryChips();
+}
+function renderHistoryChips(){
+  const container = document.getElementById('historyChips');
+  const items = historyData[currentBase] || [];
+  if(!items.length){ container.innerHTML = ''; return; }
+  container.innerHTML = '<span class="history-label">Recentes:</span>' + items.map(term => `
+    <span class="history-chip" data-term="${term.replace(/"/g,'&quot;')}">
+      🕓 ${term}
+      <span class="hx-remove" data-remove="${term.replace(/"/g,'&quot;')}">✕</span>
+    </span>
+  `).join('');
+  container.querySelectorAll('.history-chip').forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      if(e.target.classList.contains('hx-remove')) return;
+      const term = chip.dataset.term;
+      searchInput.value = term;
+      currentQuery = term;
+      render();
+    });
+  });
+  container.querySelectorAll('.hx-remove').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      removeFromHistory(currentBase, btn.dataset.remove);
+    });
+  });
+}
+
 async function loadData(base){
   if(dataCache[base]) return dataCache[base];
   try{
@@ -1037,23 +1713,35 @@ async function switchBase(base){
   if(base==='bases'){
     document.getElementById('routesPanel').classList.add('hidden');
     document.getElementById('basesPanel').classList.add('active');
+    document.getElementById('destinosPanel').classList.remove('active');
     loadingOverlay.style.display='none';
-    setTimeout(()=>{ initLeafletMap(); renderBases(); }, 50);
+    setTimeout(()=>{ initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
+    return;
+  }
+  if(base==='destinos'){
+    document.getElementById('routesPanel').classList.add('hidden');
+    document.getElementById('basesPanel').classList.remove('active');
+    document.getElementById('destinosPanel').classList.add('active');
+    loadingOverlay.style.display='none';
+    setTimeout(()=>{ initDestinosMap(); renderDestinos(); }, 50);
     return;
   }
   document.getElementById('routesPanel').classList.remove('hidden');
   document.getElementById('basesPanel').classList.remove('active');
+  document.getElementById('destinosPanel').classList.remove('active');
   loadingOverlay.style.display='flex';
   currentBase=base;
   baseTitle.textContent=base==='rondolog'?'RONDOLOG':'SASTER';
   currentData=await loadData(base);
   baseSubtitle.innerHTML=base==='rondolog'?`Rondolog · ${currentData.length} rotas`:`Saster · ${currentData.length} rotas`;
   filterChipsDiv.style.display=base==='rondolog'?'flex':'none';
-  currentQuery=''; currentType='all'; currentOrder='padrao';
+  currentQuery=''; currentType='all'; currentOrder='padrao'; showOnlyFavorites=false;
   searchInput.value=''; orderSelect.value='padrao';
   document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
   document.querySelector('.chip[data-type="all"]')?.classList.add('active');
   loadingOverlay.style.display='none';
+  renderHistoryChips();
+  updateFavChip();
   render();
 }
 
@@ -1070,10 +1758,14 @@ function render(){
   const q=currentQuery;
   if(q){ const nq=norm(q); filtered=filtered.filter(r=>norm(r.nome).includes(nq)||`${r.origem} ${r.destino}`.toLowerCase().includes(nq)||(r.condutor&&r.condutor.some(c=>norm(c).includes(nq)))||(r.placa&&r.placa.some(p=>norm(p).includes(nq)))); }
   if(currentBase==='rondolog'&&currentType!=='all') filtered=filtered.filter(r=>r.tipo===currentType);
+  if(showOnlyFavorites) filtered=filtered.filter(r=>isFavorite(currentBase, r.nome));
   filtered=sortRotas(filtered,currentOrder);
   countBadge.textContent=filtered.length+' rota'+(filtered.length!==1?'s':'');
-  sectionLabel.innerHTML=q?`Resultados para "${q}"`:'Todas as rotas';
-  if(!filtered.length){ resultsContainer.innerHTML='<div class="no-result">🔍 Nenhuma rota encontrada.</div>'; return; }
+  sectionLabel.innerHTML=showOnlyFavorites?'⭐ Rotas favoritas':(q?`Resultados para "${q}"`:'Todas as rotas');
+  if(!filtered.length){
+    resultsContainer.innerHTML=`<div class="no-result">🔍 ${showOnlyFavorites?'Nenhuma rota favoritada ainda.':'Nenhuma rota encontrada.'}</div>`;
+    return;
+  }
   resultsContainer.innerHTML=filtered.map(r=>{
     const tipo=r.tipo||'rota';
     const tipoColor=(currentBase==='rondolog')?getTipoColor(tipo):'var(--blue)';
@@ -1084,11 +1776,23 @@ function render(){
     const vHTML=viagens?`<div class="meta-item">📊 <span class="viagem-badge">${viagens} viagens</span></div>`:'';
     const metaHTML=(condHTML||placHTML||vHTML)?`<div class="metadata">${vHTML}${condHTML?`<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${totalCond}</span></div>`:''}${placHTML?`<div class="meta-item">🚛 ${placHTML} <span class="meta-count-badge">${totalPlacas}</span></div>`:''}</div>`:'';
     const tipoBadge=(currentBase==='rondolog')?`<span class="route-badge" style="background:${tipoColor}15;border-color:${tipoColor};color:${tipoColor}">${getTipoLabel(tipo)}</span>`:'';
-    return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido"><span>${hl(r.origem,q)}</span><span class="pedido-sep">→</span><span>${hl(r.destino,q)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome,q)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
+    const fav=isFavorite(currentBase, r.nome);
+    const starHTML=`<span class="fav-star${fav?' active':''}" data-fav-nome="${r.nome.replace(/"/g,'&quot;')}" title="${fav?'Remover dos favoritos':'Favoritar rota'}">${fav?'★':'☆'}</span>`;
+    return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido">${starHTML}<span>${hl(r.origem,q)}</span><span class="pedido-sep">→</span><span>${hl(r.destino,q)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome,q)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
   }).join('');
   document.querySelectorAll('.card').forEach(card=>{
-    card.addEventListener('click',()=>{ navigator.clipboard.writeText(card.dataset.nome).then(()=>showToast('NOME DA ROTA COPIADO')); });
+    card.addEventListener('click',(e)=>{
+      if(e.target.closest('.fav-star')) return;
+      navigator.clipboard.writeText(card.dataset.nome).then(()=>showToast('NOME DA ROTA COPIADO'));
+    });
   });
+  document.querySelectorAll('.fav-star').forEach(star=>{
+    star.addEventListener('click',(e)=>{
+      e.stopPropagation();
+      toggleFavorite(currentBase, star.dataset.favNome);
+    });
+  });
+  updateFavChip();
 }
 
 function showToast(msg){
@@ -1114,27 +1818,8 @@ themeToggle.addEventListener('change', function() {
   document.body.classList.toggle('dark-mode', isDark);
   localStorage.setItem('rondologTheme', isDark ? 'dark' : 'light');
   themeLabel.textContent = isDark ? '🌙 Escuro' : '☀️ Claro';
-  // Atualiza tiles do mapa
-  if (leafletMap) {
-    // Força recriação dos tiles
-    leafletMap.eachLayer(layer => {
-      if (layer instanceof L.TileLayer) {
-        leafletMap.removeLayer(layer);
-      }
-    });
-    const tileUrl = isDark
-      ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-      : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-    L.tileLayer(tileUrl, {
-      maxZoom: 19,
-      subdomains: 'abcd',
-      attribution: ''
-    }).addTo(leafletMap);
-    // Atualiza cor da linha
-    if (routeLine) {
-      routeLine.setStyle({ color: isDark ? '#ef4444' : '#dc2626' });
-    }
-  }
+  updateMapTiles();
+  updateDestinosMapTiles();
 });
 
 /* ===== EVENT LISTENERS ===== */
@@ -1146,12 +1831,23 @@ document.querySelectorAll('.base-tab').forEach(tab=>{
   });
 });
 searchInput.addEventListener('input', e=>{ currentQuery=e.target.value; render(); });
+searchInput.addEventListener('keydown', e=>{
+  if(e.key==='Enter' && searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
+});
+searchInput.addEventListener('blur', ()=>{
+  if(searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
+});
 orderSelect.addEventListener('change', e=>{ currentOrder=e.target.value; render(); });
-document.querySelectorAll('.chip').forEach(chip=>{
+document.querySelectorAll('.chip[data-type]').forEach(chip=>{
   chip.addEventListener('click',()=>{
-    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    document.querySelectorAll('.chip[data-type]').forEach(c=>c.classList.remove('active'));
     chip.classList.add('active'); currentType=chip.dataset.type; render();
   });
+});
+document.getElementById('favChip').addEventListener('click', ()=>{
+  showOnlyFavorites = !showOnlyFavorites;
+  updateFavChip();
+  render();
 });
 const compactToggle=document.getElementById('compactModeToggle');
 if(localStorage.getItem('rondologCompact')==='true'){ document.body.classList.add('compact'); compactToggle.checked=true; }
@@ -1160,6 +1856,14 @@ compactToggle.addEventListener('change', e=>{ document.body.classList.toggle('co
 document.getElementById('basesSearch').addEventListener('input', renderBases);
 document.getElementById('basesUFFilter').addEventListener('change', renderBases);
 document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
+
+let destinosSearchTimer = null;
+document.getElementById('destinosSearch').addEventListener('input', ()=>{
+  clearTimeout(destinosSearchTimer);
+  destinosSearchTimer = setTimeout(renderDestinos, 300);
+});
+document.getElementById('destinosUFFilter').addEventListener('change', renderDestinos);
+document.getElementById('destinosOrder').addEventListener('change', renderDestinos);
 
 /* Init */
 switchBase('rondolog');
