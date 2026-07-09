@@ -1645,7 +1645,7 @@ async function switchBase(base) {
   render();
 }
 
-/* ===================== CHECKLIST ===================== */
+/* ===================== CHECKLIST (CORRIGIDO) ===================== */
 
 async function loadChecklists() {
   const loadingEl = document.getElementById('checklistLoading');
@@ -1654,13 +1654,18 @@ async function loadChecklists() {
   table.style.display = 'none';
 
   try {
-    const resp = await fetch('checklists.json');
+    // Caminho corrigido para a pasta data/
+    const resp = await fetch('data/checklists.json');
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     window.checklistData = data;
   } catch (err) {
     console.error('Erro ao carregar checklists.json:', err);
     window.checklistData = [];
+    loadingEl.textContent = '❌ Erro ao carregar checklists.json. Verifique o console.';
+    loadingEl.style.display = 'block';
+    table.style.display = 'none';
+    return;
   }
 
   renderChecklists();
