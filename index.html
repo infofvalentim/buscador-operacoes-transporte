@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Painel de Rotas · Rondolog & Saster</title>
+  <title>Painel · Rondolog & Saster</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -143,6 +143,7 @@
       border-bottom: 1px solid var(--border);
       box-shadow: var(--shadow);
       transition: background 0.3s, border-color 0.3s;
+      flex-wrap: wrap;
     }
     .base-tab {
       padding: 12px 28px; font-size: 14px; font-weight: 600;
@@ -157,6 +158,10 @@
       background: var(--bg);
       border-bottom: 2.5px solid var(--red);
     }
+
+    /* ===== PAINÉIS ===== */
+    .panel { display: none; }
+    .panel.active { display: block; }
 
     /* ===== HEADER ROTAS ===== */
     header {
@@ -181,7 +186,7 @@
       color: var(--text);
     }
     .brand-title span { color: var(--red); }
-    .header-controls { display: flex; align-items: center; gap: 12px; }
+    .header-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .count-badge {
       font-family: var(--mono); font-size: 12px;
       background: var(--surface2); padding: 6px 16px;
@@ -212,20 +217,11 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     .compact-toggle input:checked::before { transform: translateX(16px); }
-    /* Botão de alternância Matriz/Lista */
-    #viewToggle {
-      background: var(--surface2); padding: 6px 16px;
-      border-radius: 40px; border: 1px solid var(--border);
-      color: var(--text-dim); font-family: var(--mono); font-size: 11px;
-      font-weight: 600; cursor: pointer; transition: var(--transition);
-      display: flex; align-items: center; gap: 6px;
-    }
-    #viewToggle:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
 
     .search-order-wrap {
-      display: flex; gap: 12px;
+      display: flex; gap: 12px; flex-wrap: wrap;
     }
-    .search-wrap { position: relative; flex: 1; }
+    .search-wrap { position: relative; flex: 1; min-width: 200px; }
     .search-icon {
       position: absolute; left: 16px; top: 50%;
       transform: translateY(-50%); color: var(--text-muted);
@@ -465,12 +461,8 @@
     }
 
     /* =============================================
-       ABA BASES
+       ABA BASES (já existente)
        ============================================= */
-    #basesPanel { display: none; }
-    #basesPanel.active { display: block; }
-    #routesPanel.hidden { display: none; }
-
     .bases-header {
       background: var(--surface);
       padding: 20px 24px 18px;
@@ -506,7 +498,6 @@
     #basesUFFilter:focus, #basesTipoFilter:focus {
       border-color: var(--red); outline: none;
     }
-
     .bases-stats {
       display: flex; gap: 12px; flex-wrap: wrap;
       padding: 20px 24px 0; max-width: 1280px; margin: 0 auto;
@@ -524,7 +515,6 @@
     .stat-num.purple { color: var(--purple); }
     .stat-num.green { color: var(--green); }
     .stat-label { color: var(--text-muted); font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase; font-weight: 600; }
-
     .bases-layout {
       display: grid;
       grid-template-columns: 1fr;
@@ -536,7 +526,6 @@
     @media (min-width: 1100px) {
       .bases-layout { grid-template-columns: 440px 1fr; align-items: start; }
     }
-
     .bases-list {
       display: flex;
       flex-direction: column;
@@ -554,8 +543,6 @@
       .bases-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 20px; }
       .bases-list::-webkit-scrollbar-track { background: transparent; }
     }
-
-    /* ===== BASE CARD ===== */
     .base-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
@@ -578,7 +565,6 @@
     .bci { display: flex; align-items: stretch; min-height: 0; }
     .bci-accent { width: 5px; flex-shrink: 0; border-radius: 3px 0 0 3px; }
     .bci-body { padding: 16px 20px; flex: 1; min-width: 0; }
-
     .bci-top {
       display: flex; align-items: flex-start;
       justify-content: space-between; gap: 10px; margin-bottom: 6px;
@@ -593,7 +579,6 @@
     .bci-tipo-hub    { background: rgba(220,38,38,0.08); border-color: var(--red); color: var(--red); }
     .bci-tipo-filial { background: rgba(59,130,246,0.08); border-color: var(--blue); color: var(--blue); }
     .bci-tipo-terminal { background: rgba(139,92,246,0.08); border-color: var(--purple); color: var(--purple); }
-
     .bci-endereco {
       font-size: 12px; color: var(--text-dim);
       margin-bottom: 10px; line-height: 1.6;
@@ -623,7 +608,6 @@
     .bci-btn-maps:hover { border-color: var(--blue); background: rgba(59,130,246,0.08); color: var(--blue); }
     .bci-btn-waze { border-color: rgba(34,197,94,0.3); color: var(--green); }
     .bci-btn-waze:hover { border-color: var(--green); background: rgba(34,197,94,0.08); color: var(--green); }
-
     .bases-map-wrap {
       background: var(--surface);
       border: 1.5px solid var(--border);
@@ -654,8 +638,6 @@
       background: var(--bg);
       transition: background 0.3s;
     }
-
-    /* Leaflet popup */
     .leaflet-popup-content-wrapper {
       background: var(--surface);
       color: var(--text);
@@ -677,7 +659,6 @@
     .leaflet-popup-close-button { color: var(--text-muted) !important; }
     .leaflet-popup-close-button:hover { color: var(--red) !important; }
     .leaflet-control-attribution { display: none; }
-
     .leaflet-sigla-tooltip {
       background: transparent; border: none; box-shadow: none;
       color: var(--text-dim); font-size: 9px; font-weight: 700;
@@ -685,6 +666,160 @@
       white-space: nowrap; padding: 0;
     }
     .leaflet-sigla-tooltip::before { display: none; }
+
+    /* =============================================
+       ABA CHECKLIST (NOVO - CONSUME JSON)
+       ============================================= */
+    .checklist-header {
+      background: var(--surface);
+      padding: 20px 24px 18px;
+      position: sticky; top: 0; z-index: 99;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .checklist-stats {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      margin: 16px 24px 0;
+      max-width: 1280px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      min-width: 100px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-card .num {
+      font-family: var(--mono);
+      font-size: 24px;
+      font-weight: 800;
+    }
+    .stat-card .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .stat-card.vencido .num { color: var(--red); }
+    .stat-card.valido .num { color: var(--green); }
+    .stat-card.urgente .num { color: var(--orange); }
+    .stat-card.nao-ok .num { color: var(--purple); }
+    .stat-card.total .num { color: var(--text); }
+
+    .checklist-filters {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin: 16px 24px 0;
+      max-width: 1280px;
+      align-items: center;
+    }
+    .checklist-filters select, .checklist-filters input {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      transition: var(--transition);
+      min-width: 140px;
+    }
+    .checklist-filters select:focus, .checklist-filters input:focus {
+      border-color: var(--red);
+      outline: none;
+    }
+    .checklist-table-wrap {
+      overflow-x: auto;
+      padding: 16px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .checklist-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .checklist-table th {
+      background: var(--surface2);
+      padding: 12px 10px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .checklist-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .checklist-table tr:hover td {
+      background: var(--surface2);
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 40px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+    .status-vencido { background: var(--red-bg); color: var(--red); border: 1px solid var(--red); }
+    .status-valido  { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid var(--green); }
+    .status-urgente { background: rgba(249,115,22,0.15); color: var(--orange); border: 1px solid var(--orange); }
+    .status-nao-ok  { background: rgba(139,92,246,0.15); color: var(--purple); border: 1px solid var(--purple); }
+
+    .veiculo-tag {
+      font-family: var(--mono);
+      background: var(--surface2);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      border: 1px solid var(--border);
+    }
+    .cidade-tag {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+    .filtro-clear {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 12px;
+      text-decoration: underline;
+      padding: 8px 12px;
+    }
+    .filtro-clear:hover { color: var(--red); }
+    .loading-checklist {
+      text-align: center; padding: 40px; color: var(--text-muted);
+    }
+    @media (max-width: 640px) {
+      .checklist-stats { gap: 8px; }
+      .stat-card { min-width: 70px; padding: 10px 14px; }
+      .stat-card .num { font-size: 18px; }
+      .checklist-filters { flex-direction: column; align-items: stretch; }
+      .checklist-filters select, .checklist-filters input { width: 100%; }
+      .checklist-table { font-size: 11px; }
+      .checklist-table th, .checklist-table td { padding: 6px 4px; }
+    }
 
     /* ===== HISTÓRICO E FAVORITOS ===== */
     .history-chips {
@@ -765,19 +900,6 @@
       cursor: pointer; font-size: 12px; text-decoration: underline;
       flex-shrink: 0;
     }
-
-    @media (max-width: 600px) {
-      .search-order-wrap { flex-direction: column; }
-      #orderSelect { width: 100%; }
-      .bases-search-row { flex-direction: column; }
-      #basesUFFilter, #basesTipoFilter { width: 100%; }
-      .header-top { flex-direction: column; align-items: stretch; }
-      .header-controls { justify-content: space-between; }
-      .theme-toggle-wrap { top: 8px; right: 8px; padding: 6px 12px 6px 14px; }
-      .theme-toggle-wrap span { font-size: 9px; }
-      #leafletMap { height: 300px; }
-      .locate-btn { width: 100%; justify-content: center; }
-    }
   </style>
 </head>
 <body>
@@ -797,10 +919,11 @@
   <button class="base-tab active" data-base="rondolog">🚛 RONDOLOG</button>
   <button class="base-tab" data-base="saster">📦 SASTER</button>
   <button class="base-tab" data-base="bases">🏭 BASES</button>
+  <button class="base-tab" data-base="checklist">📋 CHECKLIST</button>
 </div>
 
 <!-- ===== PAINEL ROTAS ===== -->
-<div id="routesPanel">
+<div id="routesPanel" class="panel active">
   <header>
     <div class="header-top">
       <div>
@@ -842,7 +965,6 @@
   <div class="main">
     <div class="section-label" id="sectionLabel">Todas as rotas</div>
     <div id="results" class="results-grid"></div>
-    <!-- Container da Matriz -->
     <div id="matrixContainer" style="display:none;">
       <div id="matrixTableWrap"></div>
     </div>
@@ -850,8 +972,7 @@
 </div>
 
 <!-- ===== PAINEL BASES ===== -->
-<div id="basesPanel">
-
+<div id="basesPanel" class="panel">
   <div class="bases-header">
     <div class="bases-header-top">
       <div>
@@ -885,12 +1006,10 @@
       </button>
     </div>
   </div>
-
   <div class="locate-banner" id="locateBanner">
     <span id="locateBannerText">📍 Ordenado pela sua localização atual</span>
     <button id="locateClearBtn">limpar</button>
   </div>
-
   <div class="bases-stats">
     <div class="stat-chip"><span class="stat-num red" id="statTotal">14</span><span class="stat-label">Bases totais</span></div>
     <div class="stat-chip"><span class="stat-num red" id="statHub">2</span><span class="stat-label">Hubs principais</span></div>
@@ -898,10 +1017,8 @@
     <div class="stat-chip"><span class="stat-num purple" id="statTerminal">1</span><span class="stat-label">Terminal</span></div>
     <div class="stat-chip"><span class="stat-num green" id="statUF">5</span><span class="stat-label">Estados + DF</span></div>
   </div>
-
   <div class="bases-layout">
     <div class="bases-list" id="basesList"></div>
-
     <div class="bases-map-wrap">
       <div class="bases-map-hdr">
         <span class="bases-map-title">📍 Distribuição Geográfica</span>
@@ -917,6 +1034,78 @@
   </div>
 </div>
 
+<!-- ===== PAINEL CHECKLIST (NOVO - JSON) ===== -->
+<div id="checklistPanel" class="panel">
+  <div class="checklist-header">
+    <div class="header-top">
+      <div>
+        <div class="brand-eyebrow">Checklists · frota</div>
+        <div class="brand-title">📋 <span style="color:var(--red)">CHECKLIST</span></div>
+      </div>
+      <div class="header-controls">
+        <div class="count-badge" id="checklistCount">— itens</div>
+        <button class="compact-toggle" id="checklistRefresh" style="border:none; background:var(--surface2); padding:6px 16px; border-radius:40px; font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-dim); cursor:pointer; border:1px solid var(--border); display:flex; align-items:center; gap:6px;">
+          🔄 Recarregar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards de resumo -->
+  <div class="checklist-stats" id="checklistStats">
+    <div class="stat-card total"><span class="num" id="statTotalItens">0</span><span class="label">Total</span></div>
+    <div class="stat-card vencido"><span class="num" id="statVencidos">0</span><span class="label">Vencidos</span></div>
+    <div class="stat-card valido"><span class="num" id="statValidos">0</span><span class="label">Válidos</span></div>
+    <div class="stat-card urgente"><span class="num" id="statUrgentes">0</span><span class="label">Urgentes</span></div>
+    <div class="stat-card nao-ok"><span class="num" id="statNaoOk">0</span><span class="label">Não OK</span></div>
+  </div>
+
+  <!-- Filtros -->
+  <div class="checklist-filters">
+    <input type="text" id="checklistSearch" placeholder="🔍 Buscar veículo, condutor, cidade..." autocomplete="off">
+    <select id="checklistStatusFilter">
+      <option value="">Todos os status</option>
+      <option value="vencido">Vencido</option>
+      <option value="valido">Válido</option>
+      <option value="urgente">Urgente</option>
+      <option value="nao-ok">Não OK</option>
+    </select>
+    <select id="checklistTipoFilter">
+      <option value="">Todos os tipos</option>
+      <option value="Próprio">Próprio</option>
+      <option value="Agregado">Agregado</option>
+      <option value="Terceiro">Terceiro</option>
+    </select>
+    <select id="checklistCategoriaFilter">
+      <option value="">Todas as categorias</option>
+      <option value="CAVALO">Cavalo</option>
+      <option value="CARRETA">Carreta</option>
+    </select>
+    <button class="filtro-clear" id="checklistClearFilters">Limpar filtros</button>
+  </div>
+
+  <!-- Tabela -->
+  <div class="checklist-table-wrap">
+    <div id="checklistLoading" class="loading-checklist">📂 Carregando checklists...</div>
+    <table class="checklist-table" id="checklistTable" style="display:none;">
+      <thead>
+        <tr>
+          <th>Veículo</th>
+          <th>Status</th>
+          <th>Validade</th>
+          <th>Cidade/UF</th>
+          <th>Tipo Frota</th>
+          <th>Categoria</th>
+          <th>Condutor</th>
+          <th>Responsável</th>
+          <th>Região</th>
+        </tr>
+      </thead>
+      <tbody id="checklistBody"></tbody>
+    </table>
+  </div>
+</div>
+
 <div class="copied-toast" id="toast">
   <span class="toast-dot"></span><span id="toastMsg">COPIADO</span>
 </div>
@@ -924,7 +1113,7 @@
 <script>
 (function(){
 
-/* ===================== DADOS BASES (ATUALIZADO) ===================== */
+/* ===================== DADOS BASES ===================== */
 const BASES = [
   {id:1,  nome:"Duque de Caxias",        sigla:"RJ",  cidade:"Duque de Caxias",      uf:"RJ", tipo:"hub",      endereco:"Rodovia Washington Luiz, 2070 – Parque Duque",               cep:"25085-009", lat:-22.7854, lng:-43.3115},
   {id:2,  nome:"Santana de Parnaíba",    sigla:"SP",  cidade:"Santana de Parnaíba",  uf:"SP", tipo:"hub",      endereco:"Estrada Tenente Marques, 6765 – Vila Poupança",              cep:"06525-001", lat:-23.4527, lng:-46.9177},
@@ -951,7 +1140,6 @@ function renderBasesStats(){
   const filiais = BASES.filter(b=>b.tipo==='filial').length;
   const terminais = BASES.filter(b=>b.tipo==='terminal').length;
   const estados = new Set(BASES.map(b=>b.uf)).size;
-
   document.getElementById('statTotal').textContent = total;
   document.getElementById('statHub').textContent = hubs;
   document.getElementById('statFilial').textContent = filiais;
@@ -961,20 +1149,15 @@ function renderBasesStats(){
 }
 
 let userPos = null;
-let locateWatching = false;
-
 function toRad(v){ return v * Math.PI / 180; }
 function haversineKm(lat1, lng1, lat2, lng2){
   const R = 6371;
   const dLat = toRad(lat2 - lat1);
   const dLng = toRad(lng2 - lng1);
-  const a = Math.sin(dLat/2)**2 +
-            Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-            Math.sin(dLng/2)**2;
+  const a = Math.sin(dLat/2)**2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng/2)**2;
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
   return R * c;
 }
-
 function formatDist(km){
   if(km < 1) return Math.round(km*1000) + ' m';
   return km.toFixed(km < 10 ? 1 : 0) + ' km';
@@ -995,19 +1178,15 @@ function handleLocateClick(){
   locateBtn.disabled = true;
   locateBtnIcon.innerHTML = '<span class="locate-spinner"></span>';
   locateBtnText.textContent = 'Localizando...';
-
   navigator.geolocation.getCurrentPosition(
     pos => {
       userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-      locateWatching = true;
       locateBtn.disabled = false;
       locateBtn.classList.add('active');
       locateBtnIcon.textContent = '✅';
       locateBtnText.textContent = 'Localização ativa';
       locateBanner.classList.add('show');
-      const nearest = [...BASES].sort((a,b)=>
-        haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
-      )[0];
+      const nearest = [...BASES].sort((a,b)=> haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng))[0];
       const distNearest = haversineKm(userPos.lat, userPos.lng, nearest.lat, nearest.lng);
       locateBannerText.textContent = `📍 Base mais próxima: ${nearest.nome} (${formatDist(distNearest)})`;
       renderBases();
@@ -1023,261 +1202,137 @@ function handleLocateClick(){
     { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
   );
 }
-
 function clearLocate(){
   userPos = null;
-  locateWatching = false;
   locateBtn.classList.remove('active');
   locateBtnIcon.textContent = '📍';
   locateBtnText.textContent = 'Base mais próxima';
   locateBanner.classList.remove('show');
   renderBases();
 }
-
 locateBtn.addEventListener('click', handleLocateClick);
 locateClearBtn.addEventListener('click', clearLocate);
 
-/* ---- MAPA LEAFLET ---- */
-let leafletMap = null;
-let leafletMarkers = [];
-let routeLine = null;
-let selectedId = null;
-let userMarker = null;
+/* ===== MAPA LEAFLET (Bases) ===== */
+let leafletMap = null, leafletMarkers = [], routeLine = null, selectedId = null, userMarker = null;
 
 function initLeafletMap(){
   if(leafletMap) return;
-  leafletMap = L.map('leafletMap', {
-    center: [-20.5, -45.5],
-    zoom: 6,
-    zoomControl: true,
-    attributionControl: false
-  });
-
+  leafletMap = L.map('leafletMap', { center: [-20.5, -45.5], zoom: 6, zoomControl: true, attributionControl: false });
   updateMapTiles();
-
   const coords = BASES.map(b => [b.lat, b.lng]);
-  routeLine = L.polyline(coords, {
-    color: 'var(--red)',
-    weight: 2.5,
-    opacity: 0.4,
-    dashArray: '8, 6',
-    smoothFactor: 1
-  }).addTo(leafletMap);
-
+  routeLine = L.polyline(coords, { color: 'var(--red)', weight: 2.5, opacity: 0.4, dashArray: '8, 6', smoothFactor: 1 }).addTo(leafletMap);
   BASES.forEach(b => {
     const c = dotColor(b.tipo);
     const r = b.tipo === 'hub' ? 10 : 7;
-
     let pulseCircle = null;
     if(b.tipo === 'hub'){
-      pulseCircle = L.circleMarker([b.lat, b.lng], {
-        radius: r + 7,
-        color: c, weight: 1.5, opacity: 0.25, fill: false
-      }).addTo(leafletMap);
+      pulseCircle = L.circleMarker([b.lat, b.lng], { radius: r + 7, color: c, weight: 1.5, opacity: 0.25, fill: false }).addTo(leafletMap);
     }
-
-    const marker = L.circleMarker([b.lat, b.lng], {
-      radius: r,
-      fillColor: c, fillOpacity: 1,
-      color: 'white', weight: 2.5
-    }).addTo(leafletMap);
-
+    const marker = L.circleMarker([b.lat, b.lng], { radius: r, fillColor: c, fillOpacity: 1, color: 'white', weight: 2.5 }).addTo(leafletMap);
     const tipoClass = b.tipo === 'hub' ? 'bci-tipo-hub' : b.tipo === 'terminal' ? 'bci-tipo-terminal' : 'bci-tipo-filial';
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
     marker.bindPopup(`
       <strong>${b.nome}</strong>
       <span class="pop-tipo ${tipoClass}">${tipoLabel(b.tipo)}</span>
       <div class="pop-end">📍 ${b.endereco}<br>${b.cidade} / ${b.uf} — CEP ${b.cep}</div>
-      <a href="${mapsUrl}" target="_blank" rel="noopener"
-         style="color:#3b82f6;font-size:11px;text-decoration:none;font-weight:600;">🗺 Ver no Google Maps →</a>
+      <a href="${mapsUrl}" target="_blank" rel="noopener" style="color:#3b82f6;font-size:11px;text-decoration:none;font-weight:600;">🗺 Ver no Google Maps →</a>
     `, { maxWidth: 260, className: 'base-popup' });
-
     marker.on('click', () => selectBase(b.id));
-    marker.on('mouseover', () => {
-      marker.setStyle({ radius: r + 3, weight: 3.5, color: c });
-    });
-    marker.on('mouseout', () => {
-      if(selectedId !== b.id)
-        marker.setStyle({ radius: r, weight: 2.5, color: 'white' });
-    });
-
-    marker.bindTooltip(b.sigla, {
-      permanent: true, direction: 'right',
-      className: 'leaflet-sigla-tooltip',
-      offset: [r + 4, 0]
-    }).openTooltip();
-
+    marker.on('mouseover', () => { marker.setStyle({ radius: r + 3, weight: 3.5, color: c }); });
+    marker.on('mouseout', () => { if(selectedId !== b.id) marker.setStyle({ radius: r, weight: 2.5, color: 'white' }); });
+    marker.bindTooltip(b.sigla, { permanent: true, direction: 'right', className: 'leaflet-sigla-tooltip', offset: [r + 4, 0] }).openTooltip();
     leafletMarkers.push({ id: b.id, marker, pulseCircle, baseR: r, color: c });
   });
 }
-
 function renderUserMarker(){
   if(!leafletMap) return;
   if(userMarker){ leafletMap.removeLayer(userMarker); userMarker = null; }
   if(!userPos) return;
-  userMarker = L.circleMarker([userPos.lat, userPos.lng], {
-    radius: 8, fillColor: '#22c55e', fillOpacity: 1,
-    color: 'white', weight: 3
-  }).addTo(leafletMap);
-  userMarker.bindTooltip('Você está aqui', {
-    permanent: false, direction: 'top', className: 'leaflet-sigla-tooltip'
-  });
+  userMarker = L.circleMarker([userPos.lat, userPos.lng], { radius: 8, fillColor: '#22c55e', fillOpacity: 1, color: 'white', weight: 3 }).addTo(leafletMap);
+  userMarker.bindTooltip('Você está aqui', { permanent: false, direction: 'top', className: 'leaflet-sigla-tooltip' });
 }
-
 function updateMapTiles() {
-  if (!leafletMap) return;
-  leafletMap.eachLayer(layer => {
-    if (layer instanceof L.TileLayer) {
-      leafletMap.removeLayer(layer);
-    }
-  });
+  if(!leafletMap) return;
+  leafletMap.eachLayer(layer => { if(layer instanceof L.TileLayer) leafletMap.removeLayer(layer); });
   const isDark = document.body.classList.contains('dark-mode');
-  const tileUrl = isDark
-    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-  L.tileLayer(tileUrl, {
-    maxZoom: 19,
-    subdomains: 'abcd',
-    attribution: ''
-  }).addTo(leafletMap);
-  if (routeLine) {
-    const color = isDark ? '#ef4444' : '#dc2626';
-    routeLine.setStyle({ color: color });
-  }
+  const tileUrl = isDark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+  L.tileLayer(tileUrl, { maxZoom: 19, subdomains: 'abcd', attribution: '' }).addTo(leafletMap);
+  if(routeLine){ routeLine.setStyle({ color: isDark ? '#ef4444' : '#dc2626' }); }
 }
-
 function renderMap(filtered){
   if(!leafletMap) return;
   const filteredIds = new Set(filtered.map(b => b.id));
-
   leafletMarkers.forEach(({id, marker, pulseCircle, baseR, color}) => {
     const faded = !filteredIds.has(id);
     const isSelected = id === selectedId;
-
-    marker.setStyle({
-      fillOpacity: faded ? 0.15 : 1,
-      opacity: faded ? 0.15 : 1,
-      radius: isSelected ? baseR + 3 : baseR,
-      color: isSelected ? color : 'white',
-      weight: isSelected ? 3.5 : 2.5
-    });
-    if(pulseCircle){
-      pulseCircle.setStyle({ opacity: faded ? 0.05 : 0.25 });
-    }
+    marker.setStyle({ fillOpacity: faded ? 0.15 : 1, opacity: faded ? 0.15 : 1, radius: isSelected ? baseR + 3 : baseR, color: isSelected ? color : 'white', weight: isSelected ? 3.5 : 2.5 });
+    if(pulseCircle) pulseCircle.setStyle({ opacity: faded ? 0.05 : 0.25 });
   });
-
-  if (routeLine) {
-    const coords = filtered.map(b => [b.lat, b.lng]);
-    routeLine.setLatLngs(coords);
-  }
-
+  if(routeLine) { const coords = filtered.map(b => [b.lat, b.lng]); routeLine.setLatLngs(coords); }
   renderUserMarker();
 }
-
 function renderBases(){
   const q = normStr(document.getElementById('basesSearch').value);
   const uf = document.getElementById('basesUFFilter').value;
   const tipo = document.getElementById('basesTipoFilter').value;
-
   let filtered = BASES.filter(b=>{
     const mq = !q || [b.nome,b.cidade,b.endereco,b.cep,b.uf].some(v=>normStr(v).includes(q));
     const mu = !uf || b.uf === uf;
     const mt = !tipo || b.tipo === tipo;
     return mq && mu && mt;
   });
-
-  document.getElementById('basesCountBadge').textContent =
-    filtered.length + ' base' + (filtered.length!==1?'s':'');
-
+  document.getElementById('basesCountBadge').textContent = filtered.length + ' base' + (filtered.length!==1?'s':'');
   const list = document.getElementById('basesList');
-
   if(!filtered.length){
     list.innerHTML = '<div style="text-align:center;padding:50px 20px;background:var(--surface);border-radius:var(--radius);color:var(--text-muted);border:1px solid var(--border);box-shadow:var(--shadow);">🔍 Nenhuma base encontrada.</div>';
-    renderMap([]);
-    return;
+    renderMap([]); return;
   }
-
-  let sorted;
-  if(userPos){
-    sorted = [...filtered].sort((a,b)=>
-      haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
-    );
-  } else {
-    sorted = [...filtered].sort((a,b)=>{
-      const o={hub:0,terminal:1,filial:2};
-      return (o[a.tipo] ?? 9)-(o[b.tipo] ?? 9);
-    });
-  }
-
+  let sorted = userPos ? [...filtered].sort((a,b)=> haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)) : [...filtered].sort((a,b)=>{ const o={hub:0,terminal:1,filial:2}; return (o[a.tipo]??9)-(o[b.tipo]??9); });
   list.innerHTML = sorted.map((b, idx)=>{
     const c = dotColor(b.tipo);
     const sel = b.id === selectedId ? ' selected' : '';
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
     const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(b.nome+' '+b.cidade+' '+b.uf)}&navigate=yes`;
-
     let distBadge = '';
     if(userPos){
       const km = haversineKm(userPos.lat, userPos.lng, b.lat, b.lng);
       const proximaLabel = idx === 0 ? '⭐ Mais próxima · ' : '';
       distBadge = `<span class="bci-dist">${proximaLabel}${formatDist(km)}</span>`;
     }
-
-    return `
-<div class="base-card${sel}" data-id="${b.id}" onclick="__selBase(${b.id})">
-  <div class="bci">
-    <div class="bci-accent" style="background:${c}"></div>
-    <div class="bci-body">
-      <div class="bci-top">
-        <span class="bci-nome">${b.nome}</span>
-        <span class="bci-tipo bci-tipo-${b.tipo}">${tipoLabel(b.tipo)}</span>
-      </div>
-      <div class="bci-endereco">
-        📍 ${b.endereco}<br>
-        ${b.cidade} / ${b.uf} — CEP ${b.cep}
-      </div>
-      <div class="bci-foot">
-        <span class="bci-uf">${b.uf}</span>
-        <span class="bci-cep">${b.cep}</span>
-        ${distBadge}
-        <div class="bci-btns">
-          <a class="bci-btn bci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🗺 Maps</a>
-          <a class="bci-btn bci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🔵 Waze</a>
-          <button class="bci-btn" onclick="event.stopPropagation();__copyEnd(${b.id})">📋 Copiar</button>
+    return `<div class="base-card${sel}" data-id="${b.id}" onclick="__selBase(${b.id})">
+      <div class="bci"><div class="bci-accent" style="background:${c}"></div>
+      <div class="bci-body">
+        <div class="bci-top"><span class="bci-nome">${b.nome}</span><span class="bci-tipo bci-tipo-${b.tipo}">${tipoLabel(b.tipo)}</span></div>
+        <div class="bci-endereco">📍 ${b.endereco}<br>${b.cidade} / ${b.uf} — CEP ${b.cep}</div>
+        <div class="bci-foot"><span class="bci-uf">${b.uf}</span><span class="bci-cep">${b.cep}</span>${distBadge}
+          <div class="bci-btns">
+            <a class="bci-btn bci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🗺 Maps</a>
+            <a class="bci-btn bci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🔵 Waze</a>
+            <button class="bci-btn" onclick="event.stopPropagation();__copyEnd(${b.id})">📋 Copiar</button>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>`;
+      </div></div>
+    </div>`;
   }).join('');
-
   renderMap(filtered);
 }
-
 function selectBase(id){
   selectedId = (selectedId===id) ? null : id;
   renderBases();
   if(selectedId && leafletMap){
     const b = BASES.find(x=>x.id===selectedId);
     const entry = leafletMarkers.find(x=>x.id===selectedId);
-    if(b && entry){
-      leafletMap.setView([b.lat, b.lng], Math.max(leafletMap.getZoom(), 9), {animate:true});
-      entry.marker.openPopup();
-    }
+    if(b && entry){ leafletMap.setView([b.lat, b.lng], Math.max(leafletMap.getZoom(), 9), {animate:true}); entry.marker.openPopup(); }
   }
-  if(selectedId){
-    const el = document.querySelector(`.base-card[data-id="${selectedId}"]`);
-    if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
-  }
+  if(selectedId){ const el = document.querySelector(`.base-card[data-id="${selectedId}"]`); if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'}); }
 }
 window.__selBase = selectBase;
-
 window.__copyEnd = function(id){
   const b = BASES.find(x=>x.id===id);
   if(!b) return;
-  const txt = `${b.nome} — ${b.endereco}, ${b.cidade}/${b.uf}, CEP ${b.cep}`;
-  navigator.clipboard.writeText(txt).then(()=> showToast('ENDEREÇO COPIADO'));
+  navigator.clipboard.writeText(`${b.nome} — ${b.endereco}, ${b.cidade}/${b.uf}, CEP ${b.cep}`).then(()=> showToast('ENDEREÇO COPIADO'));
 };
-
 function normStr(s){ return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
 
 /* ===================== LÓGICA ROTAS ===================== */
@@ -1314,53 +1369,37 @@ function hl(text,q){
 function getTipoColor(t){ return t==='coleta'?'var(--blue)':t==='transferencia'?'var(--green)':'var(--orange)'; }
 function getTipoLabel(t){ return t==='transferencia'?'🚚 Transferência':t==='coleta'?'📦 Coleta':'🔄 Rota fixa'; }
 
-/* ===================== FAVORITOS ===================== */
+/* ===== FAVORITOS ===== */
 function loadFavorites(){
   try{ return JSON.parse(localStorage.getItem('rondologFavorites')) || {rondolog:[], saster:[]}; }
   catch(e){ return {rondolog:[], saster:[]}; }
 }
-function saveFavorites(data){
-  localStorage.setItem('rondologFavorites', JSON.stringify(data));
-}
+function saveFavorites(data){ localStorage.setItem('rondologFavorites', JSON.stringify(data)); }
 let favoritesData = loadFavorites();
 
-function isFavorite(base, nome){
-  return (favoritesData[base] || []).includes(nome);
-}
+function isFavorite(base, nome){ return (favoritesData[base] || []).includes(nome); }
 function toggleFavorite(base, nome){
   if(!favoritesData[base]) favoritesData[base] = [];
   const idx = favoritesData[base].indexOf(nome);
-  if(idx === -1){
-    favoritesData[base].push(nome);
-    showToast('⭐ ROTA FAVORITADA');
-  } else {
-    favoritesData[base].splice(idx, 1);
-    showToast('ROTA REMOVIDA DOS FAVORITOS');
-  }
-  saveFavorites(favoritesData);
-  updateFavChip();
-  render();
+  if(idx === -1){ favoritesData[base].push(nome); showToast('⭐ ROTA FAVORITADA'); }
+  else { favoritesData[base].splice(idx, 1); showToast('ROTA REMOVIDA DOS FAVORITOS'); }
+  saveFavorites(favoritesData); updateFavChip(); render();
 }
 window.__toggleFav = toggleFavorite;
-
 function updateFavChip(){
   const count = (favoritesData[currentBase] || []).length;
-  const favCountEl = document.getElementById('favCount');
-  favCountEl.textContent = count ? `(${count})` : '';
+  document.getElementById('favCount').textContent = count ? `(${count})` : '';
   document.getElementById('favChip').classList.toggle('active', showOnlyFavorites);
 }
 
-/* ===================== HISTÓRICO ===================== */
+/* ===== HISTÓRICO ===== */
 const HISTORY_MAX = 8;
 function loadHistory(){
   try{ return JSON.parse(localStorage.getItem('rondologHistory')) || {rondolog:[], saster:[]}; }
   catch(e){ return {rondolog:[], saster:[]}; }
 }
-function saveHistory(data){
-  localStorage.setItem('rondologHistory', JSON.stringify(data));
-}
+function saveHistory(data){ localStorage.setItem('rondologHistory', JSON.stringify(data)); }
 let historyData = loadHistory();
-
 function addToHistory(base, term){
   term = term.trim();
   if(!term) return;
@@ -1391,20 +1430,15 @@ function renderHistoryChips(){
     chip.addEventListener('click', (e) => {
       if(e.target.classList.contains('hx-remove')) return;
       const term = chip.dataset.term;
-      searchInput.value = term;
-      currentQuery = term;
-      render();
+      searchInput.value = term; currentQuery = term; render();
     });
   });
   container.querySelectorAll('.hx-remove').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      removeFromHistory(currentBase, btn.dataset.remove);
-    });
+    btn.addEventListener('click', (e) => { e.stopPropagation(); removeFromHistory(currentBase, btn.dataset.remove); });
   });
 }
 
-/* ===================== CARREGAR DADOS ===================== */
+/* ===== CARREGAR DADOS ===== */
 async function loadData(base){
   if(dataCache[base]) return dataCache[base];
   try{
@@ -1419,7 +1453,6 @@ async function loadData(base){
   }
 }
 
-/* ===================== GET FILTERED DATA ===================== */
 function getFilteredData() {
   let filtered = currentData;
   const q = currentQuery;
@@ -1429,47 +1462,28 @@ function getFilteredData() {
   return filtered;
 }
 
-/* ===================== MATRIZ ORIGEM x DESTINO ===================== */
+/* ===== MATRIZ ORIGEM x DESTINO ===== */
 function renderMatrix(data) {
   const wrap = document.getElementById('matrixTableWrap');
-  if (!data || data.length === 0) {
-    wrap.innerHTML = '<div class="matrix-empty">📊 Nenhuma rota para exibir na matriz.</div>';
-    return;
-  }
-
+  if (!data || data.length === 0) { wrap.innerHTML = '<div class="matrix-empty">📊 Nenhuma rota para exibir na matriz.</div>'; return; }
   const origens = [...new Set(data.map(r => r.origem))];
   const destinos = [...new Set(data.map(r => r.destino))];
-
-  // Ordena por volume total (os mais movimentados primeiro)
-  const getTotalViagens = (cidade, type) => {
-    return data.filter(r => r[type] === cidade).reduce((acc, r) => acc + (r.viagens || 0), 0);
-  };
+  const getTotalViagens = (cidade, type) => data.filter(r => r[type] === cidade).reduce((acc, r) => acc + (r.viagens || 0), 0);
   origens.sort((a,b) => getTotalViagens(b, 'origem') - getTotalViagens(a, 'origem'));
   destinos.sort((a,b) => getTotalViagens(b, 'destino') - getTotalViagens(a, 'destino'));
-
   if (origens.length > 30 || destinos.length > 30) {
     wrap.innerHTML = `<div class="matrix-empty">⚠️ Muitas combinações (${origens.length} origens x ${destinos.length} destinos).<br>Refine a busca para visualizar a matriz.</div>`;
     return;
   }
-
   const matrix = {};
   data.forEach(r => {
     if (!matrix[r.origem]) matrix[r.origem] = {};
-    matrix[r.origem][r.destino] = {
-      viagens: r.viagens || 0,
-      distancia: r.distancia_km || 0
-    };
+    matrix[r.origem][r.destino] = { viagens: r.viagens || 0, distancia: r.distancia_km || 0 };
   });
-
   const maxViagens = Math.max(1, ...data.map(r => r.viagens || 0));
-
   let html = `<table><thead><tr><th>Origem \\ Destino</th>`;
-  destinos.forEach(d => {
-    const label = d.split('/')[0];
-    html += `<th title="${d}">${label}</th>`;
-  });
+  destinos.forEach(d => { const label = d.split('/')[0]; html += `<th title="${d}">${label}</th>`; });
   html += `<th class="total-cell">Total</th></tr></thead><tbody>`;
-
   origens.forEach(orig => {
     html += `<tr><td title="${orig}">${orig.split('/')[0]}</td>`;
     let totalLinha = 0;
@@ -1477,9 +1491,8 @@ function renderMatrix(data) {
       const cell = matrix[orig]?.[dest] || { viagens: 0, distancia: 0 };
       const v = cell.viagens;
       totalLinha += v;
-      if (v === 0) {
-        html += `<td class="cell-zero">—</td>`;
-      } else {
+      if (v === 0) { html += `<td class="cell-zero">—</td>`; }
+      else {
         const intensity = Math.min(1, v / maxViagens);
         const r = Math.round(220 - 160 * intensity);
         const g = Math.round(220 - 180 * intensity);
@@ -1487,39 +1500,24 @@ function renderMatrix(data) {
         const bg = `rgb(${r}, ${g}, ${b})`;
         const textColor = intensity > 0.6 ? 'white' : 'var(--text)';
         const distLabel = cell.distancia ? `${cell.distancia} km` : '—';
-        html += `<td class="cell-clickable" 
-                      style="background:${bg}; color:${textColor};"
-                      data-orig="${orig.replace(/"/g,'&quot;')}" data-dest="${dest.replace(/"/g,'&quot;')}"
-                      title="${v} viagens · ${distLabel}">
-                  <strong>${v}</strong><br>
-                  <span style="font-size:9px;opacity:0.8;">${distLabel}</span>
-                 </td>`;
+        html += `<td class="cell-clickable" style="background:${bg}; color:${textColor};" data-orig="${orig.replace(/"/g,'&quot;')}" data-dest="${dest.replace(/"/g,'&quot;')}" title="${v} viagens · ${distLabel}"><strong>${v}</strong><br><span style="font-size:9px;opacity:0.8;">${distLabel}</span></td>`;
       }
     });
-    html += `<td class="total-cell">${totalLinha}</td>`;
-    html += `</tr>`;
+    html += `<td class="total-cell">${totalLinha}</td></tr>`;
   });
-
   html += `<tr><td style="font-weight:700;background:var(--surface2);">Total</td>`;
   let grandTotal = 0;
   destinos.forEach(dest => {
     let totalCol = 0;
-    origens.forEach(orig => {
-      totalCol += matrix[orig]?.[dest]?.viagens || 0;
-    });
+    origens.forEach(orig => { totalCol += matrix[orig]?.[dest]?.viagens || 0; });
     grandTotal += totalCol;
     html += `<td class="total-cell">${totalCol}</td>`;
   });
-  html += `<td class="total-cell total-cell-grand">${grandTotal}</td>`;
-  html += `</tr></tbody></table>`;
-
+  html += `<td class="total-cell total-cell-grand">${grandTotal}</td></tr></tbody></table>`;
   wrap.innerHTML = html;
-
-  // Evento de clique nas células
   wrap.querySelectorAll('.cell-clickable').forEach(td => {
     td.addEventListener('click', function() {
-      const orig = this.dataset.orig;
-      const dest = this.dataset.dest;
+      const orig = this.dataset.orig, dest = this.dataset.dest;
       searchInput.value = `${orig} → ${dest}`;
       currentQuery = `${orig} → ${dest}`;
       switchView('list');
@@ -1528,14 +1526,13 @@ function renderMatrix(data) {
   });
 }
 
-/* ===================== SWITCH VIEW ===================== */
+/* ===== SWITCH VIEW ===== */
 function switchView(view) {
   currentView = view;
   const listContainer = document.getElementById('results');
   const matrixContainerEl = document.getElementById('matrixContainer');
   const toggleIcon = document.getElementById('viewToggleIcon');
   const toggleText = document.getElementById('viewToggleText');
-
   if (view === 'matrix') {
     listContainer.style.display = 'none';
     matrixContainerEl.style.display = 'block';
@@ -1552,7 +1549,7 @@ function switchView(view) {
   }
 }
 
-/* ===================== RENDER PRINCIPAL ===================== */
+/* ===== RENDER ROTAS ===== */
 function sortRotas(arr,order){
   const s=[...arr];
   if(order==='origem') s.sort((a,b)=>a.origem.localeCompare(b.origem));
@@ -1560,24 +1557,20 @@ function sortRotas(arr,order){
   else if(order==='tipo'&&currentBase==='rondolog'){ const to={coleta:1,transferencia:2,rota:3}; s.sort((a,b)=>(to[a.tipo]||99)-(to[b.tipo]||99)); }
   return s;
 }
-
 function render() {
   if (currentView === 'matrix') {
     const filtered = getFilteredData();
     renderMatrix(filtered);
     return;
   }
-
   let filtered = getFilteredData();
   filtered = sortRotas(filtered, currentOrder);
   countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
   sectionLabel.innerHTML = showOnlyFavorites ? '⭐ Rotas favoritas' : (currentQuery ? `Resultados para "${currentQuery}"` : 'Todas as rotas');
-
   if (!filtered.length) {
     resultsContainer.innerHTML = `<div class="no-result">🔍 ${showOnlyFavorites ? 'Nenhuma rota favoritada ainda.' : 'Nenhuma rota encontrada.'}</div>`;
     return;
   }
-
   resultsContainer.innerHTML = filtered.map(r => {
     const tipo = r.tipo || 'rota';
     const tipoColor = (currentBase === 'rondolog') ? getTipoColor(tipo) : 'var(--blue)';
@@ -1592,7 +1585,6 @@ function render() {
     const starHTML = `<span class="fav-star${fav ? ' active' : ''}" data-fav-nome="${r.nome.replace(/"/g, '&quot;')}" title="${fav ? 'Remover dos favoritos' : 'Favoritar rota'}">${fav ? '★' : '☆'}</span>`;
     return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido">${starHTML}<span>${hl(r.origem, currentQuery)}</span><span class="pedido-sep">→</span><span>${hl(r.destino, currentQuery)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome, currentQuery)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
   }).join('');
-
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', (e) => {
       if (e.target.closest('.fav-star')) return;
@@ -1600,10 +1592,7 @@ function render() {
     });
   });
   document.querySelectorAll('.fav-star').forEach(star => {
-    star.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleFavorite(currentBase, star.dataset.favNome);
-    });
+    star.addEventListener('click', (e) => { e.stopPropagation(); toggleFavorite(currentBase, star.dataset.favNome); });
   });
   updateFavChip();
 }
@@ -1615,59 +1604,142 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-/* ===================== SWITCH BASE ===================== */
+/* ===== SWITCH BASE ===== */
 async function switchBase(base) {
   if (base === 'bases') {
-    document.getElementById('routesPanel').classList.add('hidden');
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     document.getElementById('basesPanel').classList.add('active');
     loadingOverlay.style.display = 'none';
     setTimeout(() => { initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
     return;
   }
-  document.getElementById('routesPanel').classList.remove('hidden');
-  document.getElementById('basesPanel').classList.remove('active');
+  if (base === 'checklist') {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('checklistPanel').classList.add('active');
+    loadingOverlay.style.display = 'none';
+    // Carregar checklists (se ainda não carregados)
+    if (!window.checklistData) {
+      await loadChecklists();
+    } else {
+      renderChecklists();
+    }
+    return;
+  }
+  // Rotas
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('routesPanel').classList.add('active');
   loadingOverlay.style.display = 'flex';
   currentBase = base;
   baseTitle.textContent = base === 'rondolog' ? 'RONDOLOG' : 'SASTER';
   currentData = await loadData(base);
   baseSubtitle.innerHTML = base === 'rondolog' ? `Rondolog · ${currentData.length} rotas` : `Saster · ${currentData.length} rotas`;
   filterChipsDiv.style.display = base === 'rondolog' ? 'flex' : 'none';
-  currentQuery = '';
-  currentType = 'all';
-  currentOrder = 'padrao';
-  showOnlyFavorites = false;
-  searchInput.value = '';
-  orderSelect.value = 'padrao';
+  currentQuery = ''; currentType = 'all'; currentOrder = 'padrao'; showOnlyFavorites = false;
+  searchInput.value = ''; orderSelect.value = 'padrao';
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   document.querySelector('.chip[data-type="all"]')?.classList.add('active');
-  if (currentView === 'matrix') {
-    switchView('list'); // Volta para lista ao trocar de base
-  }
+  if (currentView === 'matrix') { switchView('list'); }
   loadingOverlay.style.display = 'none';
   renderHistoryChips();
   updateFavChip();
   render();
 }
 
-/* ===================== THEME TOGGLE ===================== */
-const themeToggle = document.getElementById('themeToggle');
-const themeLabel = document.getElementById('themeLabel');
+/* ===================== CHECKLIST ===================== */
 
-if (localStorage.getItem('rondologTheme') === 'dark') {
-  document.body.classList.add('dark-mode');
-  themeToggle.checked = true;
-  themeLabel.textContent = '🌙 Escuro';
+async function loadChecklists() {
+  const loadingEl = document.getElementById('checklistLoading');
+  const table = document.getElementById('checklistTable');
+  loadingEl.style.display = 'block';
+  table.style.display = 'none';
+
+  try {
+    const resp = await fetch('checklists.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    window.checklistData = data;
+  } catch (err) {
+    console.error('Erro ao carregar checklists.json:', err);
+    window.checklistData = [];
+  }
+
+  renderChecklists();
 }
 
-themeToggle.addEventListener('change', function() {
-  const isDark = this.checked;
-  document.body.classList.toggle('dark-mode', isDark);
-  localStorage.setItem('rondologTheme', isDark ? 'dark' : 'light');
-  themeLabel.textContent = isDark ? '🌙 Escuro' : '☀️ Claro';
-  updateMapTiles();
-});
+function renderChecklists() {
+  const table = document.getElementById('checklistTable');
+  const body = document.getElementById('checklistBody');
+  const loadingEl = document.getElementById('checklistLoading');
+  const totalEl = document.getElementById('checklistCount');
 
-/* ===================== EVENT LISTENERS ===================== */
+  if (!window.checklistData || window.checklistData.length === 0) {
+    loadingEl.textContent = '📭 Nenhum checklist encontrado.';
+    loadingEl.style.display = 'block';
+    table.style.display = 'none';
+    return;
+  }
+
+  loadingEl.style.display = 'none';
+  table.style.display = 'table';
+
+  // Aplicar filtros
+  const searchTerm = document.getElementById('checklistSearch').value.toLowerCase();
+  const statusFilter = document.getElementById('checklistStatusFilter').value;
+  const tipoFilter = document.getElementById('checklistTipoFilter').value;
+  const categoriaFilter = document.getElementById('checklistCategoriaFilter').value;
+
+  let filtered = window.checklistData.filter(item => {
+    const matchSearch = !searchTerm ||
+      (item.veiculo || '').toLowerCase().includes(searchTerm) ||
+      (item.condutor || '').toLowerCase().includes(searchTerm) ||
+      (item.cidadeUF || '').toLowerCase().includes(searchTerm) ||
+      (item.region || '').toLowerCase().includes(searchTerm);
+    const matchStatus = !statusFilter || item.status === statusFilter;
+    const matchTipo = !tipoFilter || item.tipoFrota === tipoFilter;
+    const matchCategoria = !categoriaFilter || item.categoria === categoriaFilter;
+    return matchSearch && matchStatus && matchTipo && matchCategoria;
+  });
+
+  // Atualizar contadores
+  const total = window.checklistData.length;
+  const vencidos = window.checklistData.filter(i => i.status === 'vencido').length;
+  const validos = window.checklistData.filter(i => i.status === 'valido').length;
+  const urgentes = window.checklistData.filter(i => i.status === 'urgente').length;
+  const naoOk = window.checklistData.filter(i => i.status === 'nao-ok').length;
+
+  document.getElementById('statTotalItens').textContent = total;
+  document.getElementById('statVencidos').textContent = vencidos;
+  document.getElementById('statValidos').textContent = validos;
+  document.getElementById('statUrgentes').textContent = urgentes;
+  document.getElementById('statNaoOk').textContent = naoOk;
+  document.getElementById('checklistCount').textContent = filtered.length + ' itens';
+
+  if (filtered.length === 0) {
+    body.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:30px;color:var(--text-muted);">🔍 Nenhum checklist encontrado com esses filtros.</td></tr>`;
+    return;
+  }
+
+  body.innerHTML = filtered.map(item => {
+    const statusClass = `status-${item.status}`;
+    const statusLabel = item.status === 'vencido' ? 'Vencido' :
+                        item.status === 'valido' ? 'Válido' :
+                        item.status === 'urgente' ? 'Urgente' :
+                        item.status === 'nao-ok' ? 'Não OK' : 'Desconhecido';
+    return `<tr>
+      <td><span class="veiculo-tag">${item.veiculo || '—'}</span></td>
+      <td><span class="status-badge ${statusClass}">${statusLabel}</span></td>
+      <td>${item.validadeData || item.validadeRaw || '—'}</td>
+      <td><span class="cidade-tag">${item.cidadeUF || '—'}</span></td>
+      <td>${item.tipoFrota || '—'}</td>
+      <td>${item.categoria || '—'}</td>
+      <td>${item.condutor || '—'}</td>
+      <td>${item.responsavel || '—'}</td>
+      <td>${item.region || '—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+/* ===== EVENTOS ===== */
 document.querySelectorAll('.base-tab').forEach(tab => {
   tab.addEventListener('click', async () => {
     document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
@@ -1676,15 +1748,28 @@ document.querySelectorAll('.base-tab').forEach(tab => {
   });
 });
 
-searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
-searchInput.addEventListener('keydown', e => {
-  if (e.key === 'Enter' && searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
+// Filtros da checklist
+document.getElementById('checklistSearch').addEventListener('input', renderChecklists);
+document.getElementById('checklistStatusFilter').addEventListener('change', renderChecklists);
+document.getElementById('checklistTipoFilter').addEventListener('change', renderChecklists);
+document.getElementById('checklistCategoriaFilter').addEventListener('change', renderChecklists);
+document.getElementById('checklistClearFilters').addEventListener('click', function() {
+  document.getElementById('checklistSearch').value = '';
+  document.getElementById('checklistStatusFilter').value = '';
+  document.getElementById('checklistTipoFilter').value = '';
+  document.getElementById('checklistCategoriaFilter').value = '';
+  renderChecklists();
 });
-searchInput.addEventListener('blur', () => {
-  if (searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
+document.getElementById('checklistRefresh').addEventListener('click', function() {
+  window.checklistData = null;
+  loadChecklists();
 });
-orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
 
+// Rotas
+searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
+searchInput.addEventListener('keydown', e => { if (e.key === 'Enter' && searchInput.value.trim()) addToHistory(currentBase, searchInput.value); });
+searchInput.addEventListener('blur', () => { if (searchInput.value.trim()) addToHistory(currentBase, searchInput.value); });
+orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
 document.querySelectorAll('.chip[data-type]').forEach(chip => {
   chip.addEventListener('click', () => {
     document.querySelectorAll('.chip[data-type]').forEach(c => c.classList.remove('active'));
@@ -1693,21 +1778,15 @@ document.querySelectorAll('.chip[data-type]').forEach(chip => {
     render();
   });
 });
-
 document.getElementById('favChip').addEventListener('click', () => {
   showOnlyFavorites = !showOnlyFavorites;
   updateFavChip();
   render();
 });
-
 document.getElementById('viewToggle').addEventListener('click', function() {
-  if (currentView === 'list') {
-    switchView('matrix');
-  } else {
-    switchView('list');
-  }
+  if (currentView === 'list') switchView('matrix');
+  else switchView('list');
 });
-
 const compactToggle = document.getElementById('compactModeToggle');
 if (localStorage.getItem('rondologCompact') === 'true') { document.body.classList.add('compact'); compactToggle.checked = true; }
 compactToggle.addEventListener('change', e => { document.body.classList.toggle('compact', e.target.checked); localStorage.setItem('rondologCompact', e.target.checked); });
@@ -1716,7 +1795,23 @@ document.getElementById('basesSearch').addEventListener('input', renderBases);
 document.getElementById('basesUFFilter').addEventListener('change', renderBases);
 document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
 
-/* ===================== INIT ===================== */
+/* ===== THEME TOGGLE ===== */
+const themeToggle = document.getElementById('themeToggle');
+const themeLabel = document.getElementById('themeLabel');
+if (localStorage.getItem('rondologTheme') === 'dark') {
+  document.body.classList.add('dark-mode');
+  themeToggle.checked = true;
+  themeLabel.textContent = '🌙 Escuro';
+}
+themeToggle.addEventListener('change', function() {
+  const isDark = this.checked;
+  document.body.classList.toggle('dark-mode', isDark);
+  localStorage.setItem('rondologTheme', isDark ? 'dark' : 'light');
+  themeLabel.textContent = isDark ? '🌙 Escuro' : '☀️ Claro';
+  updateMapTiles();
+});
+
+/* ===== INIT ===== */
 switchBase('rondolog');
 
 })();
