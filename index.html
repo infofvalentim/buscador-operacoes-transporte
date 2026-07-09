@@ -212,6 +212,15 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     .compact-toggle input:checked::before { transform: translateX(16px); }
+    /* Botão de alternância Matriz/Lista */
+    #viewToggle {
+      background: var(--surface2); padding: 6px 16px;
+      border-radius: 40px; border: 1px solid var(--border);
+      color: var(--text-dim); font-family: var(--mono); font-size: 11px;
+      font-weight: 600; cursor: pointer; transition: var(--transition);
+      display: flex; align-items: center; gap: 6px;
+    }
+    #viewToggle:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
 
     .search-order-wrap {
       display: flex; gap: 12px;
@@ -370,6 +379,71 @@
       color: var(--text-muted);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
+    }
+
+    /* ==========================================
+       MATRIZ ORIGEM x DESTINO (ESTILOS)
+       ========================================== */
+    #matrixContainer {
+      overflow-x: auto; background: var(--surface);
+      border-radius: var(--radius); border: 1px solid var(--border);
+      box-shadow: var(--shadow); padding: 4px; margin-bottom: 20px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    #matrixContainer table {
+      width: 100%; border-collapse: separate; border-spacing: 2px;
+      font-size: 12px; font-family: 'Inter', sans-serif;
+      min-width: 600px;
+    }
+    #matrixContainer th, #matrixContainer td {
+      padding: 8px 6px; text-align: center; border-radius: 6px;
+      min-width: 70px; white-space: nowrap;
+      transition: background 0.2s;
+    }
+    #matrixContainer th {
+      background: var(--surface2); color: var(--text-dim);
+      font-weight: 600; font-size: 10px; text-transform: uppercase;
+      letter-spacing: 0.5px; position: sticky; z-index: 2;
+      border-bottom: 1px solid var(--border);
+    }
+    #matrixContainer th:first-child {
+      z-index: 3; left: 0;
+      background: var(--surface); border-right: 1px solid var(--border);
+      min-width: 100px; text-align: right; padding-right: 12px;
+    }
+    #matrixContainer td:first-child {
+      position: sticky; left: 0; z-index: 1;
+      background: var(--surface); font-weight: 600; font-size: 11px;
+      text-align: right; padding-right: 16px;
+      border-right: 1px solid var(--border); min-width: 100px;
+    }
+    #matrixContainer .cell-clickable {
+      cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+    }
+    #matrixContainer .cell-clickable:hover {
+      transform: scale(1.05); box-shadow: 0 0 0 2px var(--red);
+      z-index: 5; position: relative;
+    }
+    #matrixContainer .cell-zero {
+      opacity: 0.15; cursor: default; font-size: 10px; color: var(--text-muted);
+    }
+    #matrixContainer .total-cell {
+      background: var(--surface2); font-weight: 700;
+      border: 1px solid var(--border); color: var(--text);
+    }
+    #matrixContainer .total-cell-grand {
+      background: var(--red); color: white; border: none;
+    }
+    body.dark-mode #matrixContainer .total-cell-grand {
+      background: #b91c1c;
+    }
+    .matrix-empty {
+      padding: 40px; text-align: center; color: var(--text-muted);
+    }
+    @media (max-width: 640px) {
+      #matrixContainer table { font-size: 10px; }
+      #matrixContainer th, #matrixContainer td { padding: 4px 3px; min-width: 40px; }
+      #matrixContainer th:first-child, #matrixContainer td:first-child { min-width: 60px; font-size: 9px; }
     }
 
     /* ===== TOAST ===== */
@@ -612,7 +686,7 @@
     }
     .leaflet-sigla-tooltip::before { display: none; }
 
-    /* ===== HISTÓRICO E FAVORITOS (NOVO) ===== */
+    /* ===== HISTÓRICO E FAVORITOS ===== */
     .history-chips {
       display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
       margin-top: 12px;
@@ -652,7 +726,7 @@
     .fav-star:hover { color: #eab308; transform: scale(1.15); }
     .fav-star.active { color: #eab308; }
 
-    /* ===== LOCALIZAÇÃO (NOVO) ===== */
+    /* ===== LOCALIZAÇÃO ===== */
     .locate-btn {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 12px; font-weight: 600; padding: 12px 18px;
@@ -691,9 +765,6 @@
       cursor: pointer; font-size: 12px; text-decoration: underline;
       flex-shrink: 0;
     }
-
-    /* Modos de visualização */
-    .modo-compacto table td { padding: 6px 4px !important; font-size: 11px !important; }
 
     @media (max-width: 600px) {
       .search-order-wrap { flex-direction: column; }
@@ -738,6 +809,9 @@
       </div>
       <div class="header-controls">
         <div class="count-badge" id="countBadge">— rotas</div>
+        <button class="compact-toggle" id="viewToggle" style="border:none; background:var(--surface2); padding:6px 16px; border-radius:40px; font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-dim); cursor:pointer; border:1px solid var(--border); display:flex; align-items:center; gap:6px;">
+          <span id="viewToggleIcon">📊</span> <span id="viewToggleText">Matriz</span>
+        </button>
         <label class="compact-toggle">
           <span>📦 Compacto</span>
           <input type="checkbox" id="compactModeToggle">
@@ -768,6 +842,10 @@
   <div class="main">
     <div class="section-label" id="sectionLabel">Todas as rotas</div>
     <div id="results" class="results-grid"></div>
+    <!-- Container da Matriz -->
+    <div id="matrixContainer" style="display:none;">
+      <div id="matrixTableWrap"></div>
+    </div>
   </div>
 </div>
 
@@ -850,7 +928,6 @@
 const BASES = [
   {id:1,  nome:"Duque de Caxias",        sigla:"RJ",  cidade:"Duque de Caxias",      uf:"RJ", tipo:"hub",      endereco:"Rodovia Washington Luiz, 2070 – Parque Duque",               cep:"25085-009", lat:-22.7854, lng:-43.3115},
   {id:2,  nome:"Santana de Parnaíba",    sigla:"SP",  cidade:"Santana de Parnaíba",  uf:"SP", tipo:"hub",      endereco:"Estrada Tenente Marques, 6765 – Vila Poupança",              cep:"06525-001", lat:-23.4527, lng:-46.9177},
-  // Removidos: Jundiaí (id3), Ribeirão Preto (id8), Serra (id6), Paracatu (id15), Montes Claros (id16), Cordeirópolis (id17), Ipatinga (id11), Juiz de Fora (id10), Cajamar (id13)
   {id:4,  nome:"Betim",                  sigla:"BTM", cidade:"Betim",                uf:"MG", tipo:"filial",   endereco:"Rua Bispo Pedro Valdemar Dias, 777 – Amazonas",              cep:"32685-044", lat:-19.9678, lng:-44.1983},
   {id:5,  nome:"Três Corações",          sigla:"3C",  cidade:"Três Corações",        uf:"MG", tipo:"filial",   endereco:"Avenida Édson Penha, 627 – Santana",                         cep:"37410-650", lat:-21.6914, lng:-45.2562},
   {id:7,  nome:"Cravinhos",              sigla:"CRV", cidade:"Cravinhos",            uf:"SP", tipo:"filial",   endereco:"Rua Manoel Gomes dos Santos, 2921 – Jd. Independência",      cep:"14140-000", lat:-21.3407, lng:-47.7297},
@@ -868,7 +945,6 @@ const BASES = [
 function dotColor(tipo){ return tipo==='hub'?'#dc2626': tipo==='terminal'?'#8b5cf6':'#3b82f6'; }
 function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
 
-/* ---- ESTATÍSTICAS DINÂMICAS (antes eram fixas no HTML) ---- */
 function renderBasesStats(){
   const total = BASES.length;
   const hubs = BASES.filter(b=>b.tipo==='hub').length;
@@ -884,13 +960,10 @@ function renderBasesStats(){
   document.getElementById('basesTotalEyebrow').textContent = total;
 }
 
-/* ---- LOCALIZAÇÃO DO USUÁRIO (NOVO) ---- */
-let userPos = null; // {lat, lng}
+let userPos = null;
 let locateWatching = false;
 
 function toRad(v){ return v * Math.PI / 180; }
-
-// Distância Haversine em km
 function haversineKm(lat1, lng1, lat2, lng2){
   const R = 6371;
   const dLat = toRad(lat2 - lat1);
@@ -980,10 +1053,8 @@ function initLeafletMap(){
     attributionControl: false
   });
 
-  // Usa o tile definido pelas variáveis CSS (muda com o tema)
   updateMapTiles();
 
-  // ===== LINHA CONECTANDO OS PONTOS (em ordem) =====
   const coords = BASES.map(b => [b.lat, b.lng]);
   routeLine = L.polyline(coords, {
     color: 'var(--red)',
@@ -993,7 +1064,6 @@ function initLeafletMap(){
     smoothFactor: 1
   }).addTo(leafletMap);
 
-  // ===== MARCADORES =====
   BASES.forEach(b => {
     const c = dotColor(b.tipo);
     const r = b.tipo === 'hub' ? 10 : 7;
@@ -1056,13 +1126,11 @@ function renderUserMarker(){
 
 function updateMapTiles() {
   if (!leafletMap) return;
-  // Remove layers antigos (exceto os marcadores e linha)
   leafletMap.eachLayer(layer => {
     if (layer instanceof L.TileLayer) {
       leafletMap.removeLayer(layer);
     }
   });
-  // Adiciona novo tile
   const isDark = document.body.classList.contains('dark-mode');
   const tileUrl = isDark
     ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
@@ -1072,7 +1140,6 @@ function updateMapTiles() {
     subdomains: 'abcd',
     attribution: ''
   }).addTo(leafletMap);
-  // Atualiza cor da linha
   if (routeLine) {
     const color = isDark ? '#ef4444' : '#dc2626';
     routeLine.setStyle({ color: color });
@@ -1099,7 +1166,6 @@ function renderMap(filtered){
     }
   });
 
-  // Atualiza a linha para mostrar apenas os pontos filtrados
   if (routeLine) {
     const coords = filtered.map(b => [b.lat, b.lng]);
     routeLine.setLatLngs(coords);
@@ -1107,9 +1173,6 @@ function renderMap(filtered){
 
   renderUserMarker();
 }
-
-/* ---- LISTA ---- */
-function normStr(s){ return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
 
 function renderBases(){
   const q = normStr(document.getElementById('basesSearch').value);
@@ -1136,7 +1199,6 @@ function renderBases(){
 
   let sorted;
   if(userPos){
-    // Ordena por distância até o usuário quando a localização está ativa
     sorted = [...filtered].sort((a,b)=>
       haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
     );
@@ -1216,10 +1278,14 @@ window.__copyEnd = function(id){
   navigator.clipboard.writeText(txt).then(()=> showToast('ENDEREÇO COPIADO'));
 };
 
+function normStr(s){ return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
+
 /* ===================== LÓGICA ROTAS ===================== */
 const DATA_URLS = { rondolog:'./data/rondolog.json', saster:'./data/saster.json' };
 const dataCache = { rondolog:null, saster:null };
 let currentBase='rondolog', currentData=[], currentQuery='', currentType='all', currentOrder='padrao';
+let currentView = 'list';
+let showOnlyFavorites = false;
 
 const loadingOverlay = document.getElementById('loadingOverlay');
 const baseSubtitle   = document.getElementById('baseSubtitle');
@@ -1230,6 +1296,7 @@ const searchInput    = document.getElementById('search');
 const orderSelect    = document.getElementById('orderSelect');
 const sectionLabel   = document.getElementById('sectionLabel');
 const resultsContainer= document.getElementById('results');
+const matrixContainer= document.getElementById('matrixContainer');
 
 function norm(s){ return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
 function hl(text,q){
@@ -1247,7 +1314,7 @@ function hl(text,q){
 function getTipoColor(t){ return t==='coleta'?'var(--blue)':t==='transferencia'?'var(--green)':'var(--orange)'; }
 function getTipoLabel(t){ return t==='transferencia'?'🚚 Transferência':t==='coleta'?'📦 Coleta':'🔄 Rota fixa'; }
 
-/* ===================== FAVORITOS (NOVO) ===================== */
+/* ===================== FAVORITOS ===================== */
 function loadFavorites(){
   try{ return JSON.parse(localStorage.getItem('rondologFavorites')) || {rondolog:[], saster:[]}; }
   catch(e){ return {rondolog:[], saster:[]}; }
@@ -1256,7 +1323,6 @@ function saveFavorites(data){
   localStorage.setItem('rondologFavorites', JSON.stringify(data));
 }
 let favoritesData = loadFavorites();
-let showOnlyFavorites = false;
 
 function isFavorite(base, nome){
   return (favoritesData[base] || []).includes(nome);
@@ -1275,15 +1341,16 @@ function toggleFavorite(base, nome){
   updateFavChip();
   render();
 }
+window.__toggleFav = toggleFavorite;
+
 function updateFavChip(){
   const count = (favoritesData[currentBase] || []).length;
   const favCountEl = document.getElementById('favCount');
   favCountEl.textContent = count ? `(${count})` : '';
   document.getElementById('favChip').classList.toggle('active', showOnlyFavorites);
 }
-window.__toggleFav = toggleFavorite;
 
-/* ===================== HISTÓRICO DE BUSCAS (NOVO) ===================== */
+/* ===================== HISTÓRICO ===================== */
 const HISTORY_MAX = 8;
 function loadHistory(){
   try{ return JSON.parse(localStorage.getItem('rondologHistory')) || {rondolog:[], saster:[]}; }
@@ -1337,6 +1404,7 @@ function renderHistoryChips(){
   });
 }
 
+/* ===================== CARREGAR DADOS ===================== */
 async function loadData(base){
   if(dataCache[base]) return dataCache[base];
   try{
@@ -1345,35 +1413,146 @@ async function loadData(base){
     const data=await res.json();
     const processed=data.map(item=>({...item, nome:item.nome_da_rota||item.nome||'', condutor:item.condutores||item.condutor||[], placa:item.placas||item.placa||[]}));
     dataCache[base]=processed; return processed;
-  }catch(err){ alert(`Erro ao carregar dados de ${base.toUpperCase()}. Verifique os arquivos JSON.`); return []; }
+  }catch(err){
+    resultsContainer.innerHTML = `<div class="no-result">❌ Erro ao carregar dados: ${err.message}. Verifique o arquivo ${DATA_URLS[base]}.</div>`;
+    return [];
+  }
 }
 
-async function switchBase(base){
-  if(base==='bases'){
-    document.getElementById('routesPanel').classList.add('hidden');
-    document.getElementById('basesPanel').classList.add('active');
-    loadingOverlay.style.display='none';
-    setTimeout(()=>{ initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
+/* ===================== GET FILTERED DATA ===================== */
+function getFilteredData() {
+  let filtered = currentData;
+  const q = currentQuery;
+  if(q){ const nq=norm(q); filtered=filtered.filter(r=>norm(r.nome).includes(nq)||`${r.origem} ${r.destino}`.toLowerCase().includes(nq)||(r.condutor&&r.condutor.some(c=>norm(c).includes(nq)))||(r.placa&&r.placa.some(p=>norm(p).includes(nq)))); }
+  if(currentBase==='rondolog'&&currentType!=='all') filtered=filtered.filter(r=>r.tipo===currentType);
+  if(showOnlyFavorites) filtered=filtered.filter(r=>isFavorite(currentBase, r.nome));
+  return filtered;
+}
+
+/* ===================== MATRIZ ORIGEM x DESTINO ===================== */
+function renderMatrix(data) {
+  const wrap = document.getElementById('matrixTableWrap');
+  if (!data || data.length === 0) {
+    wrap.innerHTML = '<div class="matrix-empty">📊 Nenhuma rota para exibir na matriz.</div>';
     return;
   }
-  document.getElementById('routesPanel').classList.remove('hidden');
-  document.getElementById('basesPanel').classList.remove('active');
-  loadingOverlay.style.display='flex';
-  currentBase=base;
-  baseTitle.textContent=base==='rondolog'?'RONDOLOG':'SASTER';
-  currentData=await loadData(base);
-  baseSubtitle.innerHTML=base==='rondolog'?`Rondolog · ${currentData.length} rotas`:`Saster · ${currentData.length} rotas`;
-  filterChipsDiv.style.display=base==='rondolog'?'flex':'none';
-  currentQuery=''; currentType='all'; currentOrder='padrao'; showOnlyFavorites=false;
-  searchInput.value=''; orderSelect.value='padrao';
-  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-  document.querySelector('.chip[data-type="all"]')?.classList.add('active');
-  loadingOverlay.style.display='none';
-  renderHistoryChips();
-  updateFavChip();
-  render();
+
+  const origens = [...new Set(data.map(r => r.origem))];
+  const destinos = [...new Set(data.map(r => r.destino))];
+
+  // Ordena por volume total (os mais movimentados primeiro)
+  const getTotalViagens = (cidade, type) => {
+    return data.filter(r => r[type] === cidade).reduce((acc, r) => acc + (r.viagens || 0), 0);
+  };
+  origens.sort((a,b) => getTotalViagens(b, 'origem') - getTotalViagens(a, 'origem'));
+  destinos.sort((a,b) => getTotalViagens(b, 'destino') - getTotalViagens(a, 'destino'));
+
+  if (origens.length > 30 || destinos.length > 30) {
+    wrap.innerHTML = `<div class="matrix-empty">⚠️ Muitas combinações (${origens.length} origens x ${destinos.length} destinos).<br>Refine a busca para visualizar a matriz.</div>`;
+    return;
+  }
+
+  const matrix = {};
+  data.forEach(r => {
+    if (!matrix[r.origem]) matrix[r.origem] = {};
+    matrix[r.origem][r.destino] = {
+      viagens: r.viagens || 0,
+      distancia: r.distancia_km || 0
+    };
+  });
+
+  const maxViagens = Math.max(1, ...data.map(r => r.viagens || 0));
+
+  let html = `<table><thead><tr><th>Origem \\ Destino</th>`;
+  destinos.forEach(d => {
+    const label = d.split('/')[0];
+    html += `<th title="${d}">${label}</th>`;
+  });
+  html += `<th class="total-cell">Total</th></tr></thead><tbody>`;
+
+  origens.forEach(orig => {
+    html += `<tr><td title="${orig}">${orig.split('/')[0]}</td>`;
+    let totalLinha = 0;
+    destinos.forEach(dest => {
+      const cell = matrix[orig]?.[dest] || { viagens: 0, distancia: 0 };
+      const v = cell.viagens;
+      totalLinha += v;
+      if (v === 0) {
+        html += `<td class="cell-zero">—</td>`;
+      } else {
+        const intensity = Math.min(1, v / maxViagens);
+        const r = Math.round(220 - 160 * intensity);
+        const g = Math.round(220 - 180 * intensity);
+        const b = Math.round(220 - 160 * intensity);
+        const bg = `rgb(${r}, ${g}, ${b})`;
+        const textColor = intensity > 0.6 ? 'white' : 'var(--text)';
+        const distLabel = cell.distancia ? `${cell.distancia} km` : '—';
+        html += `<td class="cell-clickable" 
+                      style="background:${bg}; color:${textColor};"
+                      data-orig="${orig.replace(/"/g,'&quot;')}" data-dest="${dest.replace(/"/g,'&quot;')}"
+                      title="${v} viagens · ${distLabel}">
+                  <strong>${v}</strong><br>
+                  <span style="font-size:9px;opacity:0.8;">${distLabel}</span>
+                 </td>`;
+      }
+    });
+    html += `<td class="total-cell">${totalLinha}</td>`;
+    html += `</tr>`;
+  });
+
+  html += `<tr><td style="font-weight:700;background:var(--surface2);">Total</td>`;
+  let grandTotal = 0;
+  destinos.forEach(dest => {
+    let totalCol = 0;
+    origens.forEach(orig => {
+      totalCol += matrix[orig]?.[dest]?.viagens || 0;
+    });
+    grandTotal += totalCol;
+    html += `<td class="total-cell">${totalCol}</td>`;
+  });
+  html += `<td class="total-cell total-cell-grand">${grandTotal}</td>`;
+  html += `</tr></tbody></table>`;
+
+  wrap.innerHTML = html;
+
+  // Evento de clique nas células
+  wrap.querySelectorAll('.cell-clickable').forEach(td => {
+    td.addEventListener('click', function() {
+      const orig = this.dataset.orig;
+      const dest = this.dataset.dest;
+      searchInput.value = `${orig} → ${dest}`;
+      currentQuery = `${orig} → ${dest}`;
+      switchView('list');
+      render();
+    });
+  });
 }
 
+/* ===================== SWITCH VIEW ===================== */
+function switchView(view) {
+  currentView = view;
+  const listContainer = document.getElementById('results');
+  const matrixContainerEl = document.getElementById('matrixContainer');
+  const toggleIcon = document.getElementById('viewToggleIcon');
+  const toggleText = document.getElementById('viewToggleText');
+
+  if (view === 'matrix') {
+    listContainer.style.display = 'none';
+    matrixContainerEl.style.display = 'block';
+    toggleIcon.textContent = '📋';
+    toggleText.textContent = 'Lista';
+    const filtered = getFilteredData();
+    renderMatrix(filtered);
+  } else {
+    listContainer.style.display = 'grid';
+    matrixContainerEl.style.display = 'none';
+    toggleIcon.textContent = '📊';
+    toggleText.textContent = 'Matriz';
+    render();
+  }
+}
+
+/* ===================== RENDER PRINCIPAL ===================== */
 function sortRotas(arr,order){
   const s=[...arr];
   if(order==='origem') s.sort((a,b)=>a.origem.localeCompare(b.origem));
@@ -1382,41 +1561,46 @@ function sortRotas(arr,order){
   return s;
 }
 
-function render(){
-  let filtered=currentData;
-  const q=currentQuery;
-  if(q){ const nq=norm(q); filtered=filtered.filter(r=>norm(r.nome).includes(nq)||`${r.origem} ${r.destino}`.toLowerCase().includes(nq)||(r.condutor&&r.condutor.some(c=>norm(c).includes(nq)))||(r.placa&&r.placa.some(p=>norm(p).includes(nq)))); }
-  if(currentBase==='rondolog'&&currentType!=='all') filtered=filtered.filter(r=>r.tipo===currentType);
-  if(showOnlyFavorites) filtered=filtered.filter(r=>isFavorite(currentBase, r.nome));
-  filtered=sortRotas(filtered,currentOrder);
-  countBadge.textContent=filtered.length+' rota'+(filtered.length!==1?'s':'');
-  sectionLabel.innerHTML=showOnlyFavorites?'⭐ Rotas favoritas':(q?`Resultados para "${q}"`:'Todas as rotas');
-  if(!filtered.length){
-    resultsContainer.innerHTML=`<div class="no-result">🔍 ${showOnlyFavorites?'Nenhuma rota favoritada ainda.':'Nenhuma rota encontrada.'}</div>`;
+function render() {
+  if (currentView === 'matrix') {
+    const filtered = getFilteredData();
+    renderMatrix(filtered);
     return;
   }
-  resultsContainer.innerHTML=filtered.map(r=>{
-    const tipo=r.tipo||'rota';
-    const tipoColor=(currentBase==='rondolog')?getTipoColor(tipo):'var(--blue)';
-    const condutores=r.condutor||[], placas=r.placa||[], viagens=r.viagens;
-    const totalCond=condutores.length, totalPlacas=placas.length;
-    const condHTML=condutores.length?`<div class="condutor-list">${condutores.slice(0,2).map(c=>`<span class="condutor-name">${hl(c,q)}</span>`).join('')}${totalCond>2?`<span class="condutor-more" title="${condutores.slice(2).join(', ')}">+${totalCond-2}</span>`:''}</div>`:'';
-    const placHTML=placas.length?`<span class="meta-placa">${hl(placas[0],q)}</span>${totalPlacas>1?`<span class="placa-more" title="${placas.slice(1).join(', ')}">+${totalPlacas-1}</span>`:''}`:'';
-    const vHTML=viagens?`<div class="meta-item">📊 <span class="viagem-badge">${viagens} viagens</span></div>`:'';
-    const metaHTML=(condHTML||placHTML||vHTML)?`<div class="metadata">${vHTML}${condHTML?`<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${totalCond}</span></div>`:''}${placHTML?`<div class="meta-item">🚛 ${placHTML} <span class="meta-count-badge">${totalPlacas}</span></div>`:''}</div>`:'';
-    const tipoBadge=(currentBase==='rondolog')?`<span class="route-badge" style="background:${tipoColor}15;border-color:${tipoColor};color:${tipoColor}">${getTipoLabel(tipo)}</span>`:'';
-    const fav=isFavorite(currentBase, r.nome);
-    const starHTML=`<span class="fav-star${fav?' active':''}" data-fav-nome="${r.nome.replace(/"/g,'&quot;')}" title="${fav?'Remover dos favoritos':'Favoritar rota'}">${fav?'★':'☆'}</span>`;
-    return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido">${starHTML}<span>${hl(r.origem,q)}</span><span class="pedido-sep">→</span><span>${hl(r.destino,q)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome,q)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
+
+  let filtered = getFilteredData();
+  filtered = sortRotas(filtered, currentOrder);
+  countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
+  sectionLabel.innerHTML = showOnlyFavorites ? '⭐ Rotas favoritas' : (currentQuery ? `Resultados para "${currentQuery}"` : 'Todas as rotas');
+
+  if (!filtered.length) {
+    resultsContainer.innerHTML = `<div class="no-result">🔍 ${showOnlyFavorites ? 'Nenhuma rota favoritada ainda.' : 'Nenhuma rota encontrada.'}</div>`;
+    return;
+  }
+
+  resultsContainer.innerHTML = filtered.map(r => {
+    const tipo = r.tipo || 'rota';
+    const tipoColor = (currentBase === 'rondolog') ? getTipoColor(tipo) : 'var(--blue)';
+    const condutores = r.condutor || [], placas = r.placa || [], viagens = r.viagens;
+    const totalCond = condutores.length, totalPlacas = placas.length;
+    const condHTML = condutores.length ? `<div class="condutor-list">${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, currentQuery)}</span>`).join('')}${totalCond > 2 ? `<span class="condutor-more" title="${condutores.slice(2).join(', ')}">+${totalCond - 2}</span>` : ''}</div>` : '';
+    const placHTML = placas.length ? `<span class="meta-placa">${hl(placas[0], currentQuery)}</span>${totalPlacas > 1 ? `<span class="placa-more" title="${placas.slice(1).join(', ')}">+${totalPlacas - 1}</span>` : ''}` : '';
+    const vHTML = viagens ? `<div class="meta-item">📊 <span class="viagem-badge">${viagens} viagens</span></div>` : '';
+    const metaHTML = (condHTML || placHTML || vHTML) ? `<div class="metadata">${vHTML}${condHTML ? `<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${totalCond}</span></div>` : ''}${placHTML ? `<div class="meta-item">🚛 ${placHTML} <span class="meta-count-badge">${totalPlacas}</span></div>` : ''}</div>` : '';
+    const tipoBadge = (currentBase === 'rondolog') ? `<span class="route-badge" style="background:${tipoColor}15;border-color:${tipoColor};color:${tipoColor}">${getTipoLabel(tipo)}</span>` : '';
+    const fav = isFavorite(currentBase, r.nome);
+    const starHTML = `<span class="fav-star${fav ? ' active' : ''}" data-fav-nome="${r.nome.replace(/"/g, '&quot;')}" title="${fav ? 'Remover dos favoritos' : 'Favoritar rota'}">${fav ? '★' : '☆'}</span>`;
+    return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido">${starHTML}<span>${hl(r.origem, currentQuery)}</span><span class="pedido-sep">→</span><span>${hl(r.destino, currentQuery)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome, currentQuery)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
   }).join('');
-  document.querySelectorAll('.card').forEach(card=>{
-    card.addEventListener('click',(e)=>{
-      if(e.target.closest('.fav-star')) return;
-      navigator.clipboard.writeText(card.dataset.nome).then(()=>showToast('NOME DA ROTA COPIADO'));
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.fav-star')) return;
+      navigator.clipboard.writeText(card.dataset.nome).then(() => showToast('NOME DA ROTA COPIADO'));
     });
   });
-  document.querySelectorAll('.fav-star').forEach(star=>{
-    star.addEventListener('click',(e)=>{
+  document.querySelectorAll('.fav-star').forEach(star => {
+    star.addEventListener('click', (e) => {
       e.stopPropagation();
       toggleFavorite(currentBase, star.dataset.favNome);
     });
@@ -1424,18 +1608,51 @@ function render(){
   updateFavChip();
 }
 
-function showToast(msg){
-  document.getElementById('toastMsg').textContent=msg;
-  const t=document.getElementById('toast');
+function showToast(msg) {
+  document.getElementById('toastMsg').textContent = msg;
+  const t = document.getElementById('toast');
   t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2200);
+  setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-/* ===== THEME TOGGLE ===== */
+/* ===================== SWITCH BASE ===================== */
+async function switchBase(base) {
+  if (base === 'bases') {
+    document.getElementById('routesPanel').classList.add('hidden');
+    document.getElementById('basesPanel').classList.add('active');
+    loadingOverlay.style.display = 'none';
+    setTimeout(() => { initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
+    return;
+  }
+  document.getElementById('routesPanel').classList.remove('hidden');
+  document.getElementById('basesPanel').classList.remove('active');
+  loadingOverlay.style.display = 'flex';
+  currentBase = base;
+  baseTitle.textContent = base === 'rondolog' ? 'RONDOLOG' : 'SASTER';
+  currentData = await loadData(base);
+  baseSubtitle.innerHTML = base === 'rondolog' ? `Rondolog · ${currentData.length} rotas` : `Saster · ${currentData.length} rotas`;
+  filterChipsDiv.style.display = base === 'rondolog' ? 'flex' : 'none';
+  currentQuery = '';
+  currentType = 'all';
+  currentOrder = 'padrao';
+  showOnlyFavorites = false;
+  searchInput.value = '';
+  orderSelect.value = 'padrao';
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('.chip[data-type="all"]')?.classList.add('active');
+  if (currentView === 'matrix') {
+    switchView('list'); // Volta para lista ao trocar de base
+  }
+  loadingOverlay.style.display = 'none';
+  renderHistoryChips();
+  updateFavChip();
+  render();
+}
+
+/* ===================== THEME TOGGLE ===================== */
 const themeToggle = document.getElementById('themeToggle');
 const themeLabel = document.getElementById('themeLabel');
 
-// Verifica preferência salva
 if (localStorage.getItem('rondologTheme') === 'dark') {
   document.body.classList.add('dark-mode');
   themeToggle.checked = true;
@@ -1450,43 +1667,58 @@ themeToggle.addEventListener('change', function() {
   updateMapTiles();
 });
 
-/* ===== EVENT LISTENERS ===== */
-document.querySelectorAll('.base-tab').forEach(tab=>{
-  tab.addEventListener('click', async()=>{
-    document.querySelectorAll('.base-tab').forEach(t=>t.classList.remove('active'));
+/* ===================== EVENT LISTENERS ===================== */
+document.querySelectorAll('.base-tab').forEach(tab => {
+  tab.addEventListener('click', async () => {
+    document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     await switchBase(tab.dataset.base);
   });
 });
-searchInput.addEventListener('input', e=>{ currentQuery=e.target.value; render(); });
-searchInput.addEventListener('keydown', e=>{
-  if(e.key==='Enter' && searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
+
+searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
 });
-searchInput.addEventListener('blur', ()=>{
-  if(searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
+searchInput.addEventListener('blur', () => {
+  if (searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
 });
-orderSelect.addEventListener('change', e=>{ currentOrder=e.target.value; render(); });
-document.querySelectorAll('.chip[data-type]').forEach(chip=>{
-  chip.addEventListener('click',()=>{
-    document.querySelectorAll('.chip[data-type]').forEach(c=>c.classList.remove('active'));
-    chip.classList.add('active'); currentType=chip.dataset.type; render();
+orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
+
+document.querySelectorAll('.chip[data-type]').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.chip[data-type]').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    currentType = chip.dataset.type;
+    render();
   });
 });
-document.getElementById('favChip').addEventListener('click', ()=>{
+
+document.getElementById('favChip').addEventListener('click', () => {
   showOnlyFavorites = !showOnlyFavorites;
   updateFavChip();
   render();
 });
-const compactToggle=document.getElementById('compactModeToggle');
-if(localStorage.getItem('rondologCompact')==='true'){ document.body.classList.add('compact'); compactToggle.checked=true; }
-compactToggle.addEventListener('change', e=>{ document.body.classList.toggle('compact',e.target.checked); localStorage.setItem('rondologCompact',e.target.checked); });
+
+document.getElementById('viewToggle').addEventListener('click', function() {
+  if (currentView === 'list') {
+    switchView('matrix');
+  } else {
+    switchView('list');
+  }
+});
+
+const compactToggle = document.getElementById('compactModeToggle');
+if (localStorage.getItem('rondologCompact') === 'true') { document.body.classList.add('compact'); compactToggle.checked = true; }
+compactToggle.addEventListener('change', e => { document.body.classList.toggle('compact', e.target.checked); localStorage.setItem('rondologCompact', e.target.checked); });
 
 document.getElementById('basesSearch').addEventListener('input', renderBases);
 document.getElementById('basesUFFilter').addEventListener('change', renderBases);
 document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
 
-/* Init */
+/* ===================== INIT ===================== */
 switchBase('rondolog');
+
 })();
 </script>
 </body>
