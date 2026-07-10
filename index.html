@@ -265,6 +265,60 @@
     .dot-urgente { color:var(--orange); }
     .dot-nao-ok  { color:var(--purple); }
 
+    .checklist-global-stats {
+      display:flex; flex-wrap:wrap; gap:12px;
+      margin:16px 24px 0; max-width:1280px;
+    }
+    .global-stat-card {
+      background:var(--surface); border:1px solid var(--border);
+      border-top:3px solid var(--border);
+      border-radius:var(--radius); padding:14px 20px;
+      min-width:120px; flex:1 0 auto; box-shadow:var(--shadow);
+      display:flex; flex-direction:column; gap:2px;
+    }
+    .global-stat-card .gs-num { font-family:var(--mono); font-size:24px; font-weight:800; }
+    .global-stat-card .gs-label { font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px; font-weight:600; }
+    .global-stat-card.gs-critical { border-top-color:var(--red); }
+    .global-stat-card.gs-critical .gs-num { color:var(--red); }
+    .global-stat-card.gs-critical-deep { border-top-color:#991b1b; }
+    .global-stat-card.gs-critical-deep .gs-num { color:#991b1b; }
+    .global-stat-card.gs-warn { border-top-color:var(--orange); }
+    .global-stat-card.gs-warn .gs-num { color:var(--orange); }
+    .global-stat-card.gs-nao-ok { border-top-color:var(--purple); }
+    .global-stat-card.gs-nao-ok .gs-num { color:var(--purple); }
+    .global-stat-card.gs-ok { border-top-color:var(--green); }
+    .global-stat-card.gs-ok .gs-num { color:var(--green); }
+
+    .dias-vencido-badge {
+      display:inline-block; background:var(--red-bg); color:var(--red);
+      font-family:var(--mono); font-size:10px; font-weight:700;
+      padding:1px 7px; border-radius:20px; margin-left:4px; white-space:nowrap;
+    }
+
+    .region-accordion {
+      background:var(--surface); border:1px solid var(--border); border-left-width:4px;
+      border-radius:var(--radius); margin-bottom:14px; box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .region-summary {
+      list-style:none; cursor:pointer; padding:14px 20px;
+      display:flex; align-items:center; justify-content:space-between;
+      flex-wrap:wrap; gap:10px; font-weight:700; font-size:14px; color:var(--text);
+      user-select:none;
+    }
+    .region-summary::-webkit-details-marker { display:none; }
+    .region-summary::before {
+      content:"▸"; display:inline-block; margin-right:8px; color:var(--text-muted);
+      transition:transform 0.2s; font-size:11px;
+    }
+    .region-accordion[open] .region-summary::before { transform:rotate(90deg); }
+    .region-summary-name { display:flex; align-items:center; }
+    .region-dot { width:9px; height:9px; border-radius:50%; display:inline-block; margin-right:10px; flex-shrink:0; }
+    .region-summary-counts { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-weight:500; }
+    .region-total { font-size:11px; color:var(--text-muted); font-family:var(--mono); }
+    .region-table-wrap { overflow-x:auto; border-top:1px solid var(--border); }
+    .region-table-wrap .checklist-table { box-shadow:none; border:none; border-radius:0; }
+
     .checklist-filters {
       display:flex; flex-wrap:wrap; gap:12px;
       margin:16px 24px 0; max-width:1280px; align-items:center;
@@ -671,7 +725,7 @@
       </div>
     </div>
   </div>
-  <div class="checklist-region-stats" id="regionStats"></div>
+  <div class="checklist-global-stats" id="globalStats"></div>
   <div class="checklist-filters">
     <input type="text" id="checklistSearch" placeholder="🔍 Buscar veículo, condutor, cidade..." autocomplete="off">
     <select id="checklistStatusFilter">
@@ -692,26 +746,15 @@
       <option value="CAVALO">Cavalo</option>
       <option value="CARRETA">Carreta</option>
     </select>
+    <label class="compact-toggle" title="Esconde válidos e não-OK por padrão">
+      <span>🔴 Só vencido/urgente</span>
+      <input type="checkbox" id="checklistPriorityToggle">
+    </label>
     <button class="filtro-clear" id="checklistClearFilters">Limpar filtros</button>
   </div>
   <div class="checklist-table-wrap">
     <div id="checklistLoading" class="loading-checklist">📂 Carregando checklists...</div>
-    <table class="checklist-table" id="checklistTable" style="display:none;">
-      <thead>
-        <tr>
-          <th>Veículo</th>
-          <th>Status</th>
-          <th>Validade</th>
-          <th>Cidade/UF</th>
-          <th>Tipo Frota</th>
-          <th>Categoria</th>
-          <th>Condutor</th>
-          <th>Responsável</th>
-          <th style="width:60px;">Ações</th>
-        </tr>
-      </thead>
-      <tbody id="checklistBody"></tbody>
-    </table>
+    <div id="checklistAccordion" style="display:none;"></div>
   </div>
 </div>
 
@@ -1146,12 +1189,38 @@
     'Frota Pesada':'#dc2626', 'Embarque':'#f97316', 'Rio de Janeiro':'#3b82f6',
     'São Paulo':'#22c55e', 'Betim':'#8b5cf6', 'Brasília':'#eab308', 'Outras':'#6b7280'
   };
+  const RESPONSAVEL_LIXO = ['00','-','=','condutor','','n/a','na','.','--','x'];
+  let checklistPriorityMode = localStorage.getItem('checklistPriority') !== 'false';
+  let regionOpenState = {};
+
+  function respLimpo(r){
+    if(!r) return '—';
+    return RESPONSAVEL_LIXO.includes(String(r).trim().toLowerCase()) ? '—' : r;
+  }
+
+  function parseDateBR(str){
+    if(!str) return null;
+    const parts = String(str).split('/');
+    if(parts.length!==3) return null;
+    const [d,m,y] = parts.map(Number);
+    if(!d||!m||!y) return null;
+    return new Date(y, m-1, d);
+  }
+
+  function diasVencido(item){
+    if(item.status!=='vencido') return null;
+    const date = parseDateBR(item.validadeData);
+    if(!date) return null;
+    const today = new Date(); today.setHours(0,0,0,0);
+    const diff = Math.floor((today - date) / 86400000);
+    return diff>0 ? diff : 0;
+  }
 
   async function loadChecklists() {
     const loadingEl = document.getElementById('checklistLoading');
-    const table = document.getElementById('checklistTable');
+    const accordionEl = document.getElementById('checklistAccordion');
     loadingEl.style.display = 'block';
-    table.style.display = 'none';
+    accordionEl.style.display = 'none';
     try {
       const resp = await fetch('data/checklists.json');
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
@@ -1170,55 +1239,41 @@
       window.checklistData = [];
       loadingEl.textContent = '❌ Erro ao carregar checklists.json. Verifique o console.';
       loadingEl.style.display = 'block';
-      table.style.display = 'none';
+      accordionEl.style.display = 'none';
       return;
     }
     renderChecklists();
-    renderRegionStats();
+    renderGlobalStats();
   }
 
-  function renderRegionStats() {
-    const container = document.getElementById('regionStats');
-    if (!window.checklistData || window.checklistData.length===0) { container.innerHTML=''; return; }
-    const regions = {};
-    window.checklistData.forEach(item=>{
-      const reg = item.region || 'Outras';
-      if(!regions[reg]) regions[reg]={total:0, vencido:0, valido:0, urgente:0, naoOk:0};
-      regions[reg].total++;
-      if(item.status==='vencido') regions[reg].vencido++;
-      else if(item.status==='valido') regions[reg].valido++;
-      else if(item.status==='urgente') regions[reg].urgente++;
-      else if(item.status==='nao-ok') regions[reg].naoOk++;
-    });
-    let html='';
-    for(const reg of REGION_ORDER){
-      if(!regions[reg]) continue;
-      const stats = regions[reg];
-      const color = REGION_COLORS[reg] || '#6b7280';
-      html += `<div class="region-stat-card" style="border-left:4px solid ${color};">
-        <div class="reg-nome">${reg}</div>
-        <div class="reg-num">${stats.total}</div>
-        <div class="reg-detail">
-          <span><span class="dot-vencido">●</span> ${stats.vencido}</span>
-          <span><span class="dot-valido">●</span> ${stats.valido}</span>
-          ${stats.urgente>0?`<span><span class="dot-urgente">●</span> ${stats.urgente}</span>`:''}
-          ${stats.naoOk>0?`<span><span class="dot-nao-ok">●</span> ${stats.naoOk}</span>`:''}
-        </div>
-      </div>`;
-    }
-    container.innerHTML = html;
+  function renderGlobalStats() {
+    const el = document.getElementById('globalStats');
+    if (!window.checklistData || window.checklistData.length===0) { el.innerHTML=''; return; }
+    const data = window.checklistData;
+    const vencidos = data.filter(i=>i.status==='vencido');
+    const urgentes = data.filter(i=>i.status==='urgente').length;
+    const validos = data.filter(i=>i.status==='valido').length;
+    const naoOk = data.filter(i=>i.status==='nao-ok').length;
+    const vencidos30 = vencidos.filter(i=>{ const d=diasVencido(i); return d!==null && d>30; }).length;
+    el.innerHTML = `
+      <div class="global-stat-card gs-critical"><div class="gs-num">${vencidos.length}</div><div class="gs-label">Vencidos</div></div>
+      <div class="global-stat-card gs-critical-deep"><div class="gs-num">${vencidos30}</div><div class="gs-label">Vencidos +30 dias</div></div>
+      <div class="global-stat-card gs-warn"><div class="gs-num">${urgentes}</div><div class="gs-label">Urgentes</div></div>
+      <div class="global-stat-card gs-nao-ok"><div class="gs-num">${naoOk}</div><div class="gs-label">Não OK</div></div>
+      <div class="global-stat-card gs-ok"><div class="gs-num">${validos}</div><div class="gs-label">Válidos</div></div>
+      <div class="global-stat-card"><div class="gs-num">${data.length}</div><div class="gs-label">Total</div></div>
+    `;
   }
 
   function renderChecklists() {
-    const table = document.getElementById('checklistTable');
-    const body = document.getElementById('checklistBody');
+    const accordionEl = document.getElementById('checklistAccordion');
     const loadingEl = document.getElementById('checklistLoading');
     if (!window.checklistData || window.checklistData.length===0) {
       loadingEl.textContent = '📭 Nenhum checklist encontrado.';
-      loadingEl.style.display='block'; table.style.display='none';
+      loadingEl.style.display='block'; accordionEl.style.display='none';
       return;
     }
-    loadingEl.style.display='none'; table.style.display='table';
+    loadingEl.style.display='none'; accordionEl.style.display='block';
 
     const searchTerm = document.getElementById('checklistSearch').value.toLowerCase();
     const statusFilter = document.getElementById('checklistStatusFilter').value;
@@ -1234,15 +1289,25 @@
       const matchStatus = !statusFilter || item.status===statusFilter;
       const matchTipo = !tipoFilter || item.tipoFrota===tipoFilter;
       const matchCategoria = !categoriaFilter || item.categoria===categoriaFilter;
-      return matchSearch && matchStatus && matchTipo && matchCategoria;
+      // Modo prioridade: só se aplica quando não há um status explícito selecionado
+      const matchPriority = !checklistPriorityMode || statusFilter || item.status==='vencido' || item.status==='urgente';
+      return matchSearch && matchStatus && matchTipo && matchCategoria && matchPriority;
     });
 
     filtered.sort((a,b)=>{
       const ordem = {vencido:0, urgente:1, 'nao-ok':2, valido:3};
       const diff = (ordem[a.status]??99) - (ordem[b.status]??99);
       if(diff!==0) return diff;
-      const dateA = a.validadeData ? new Date(a.validadeData.split('/').reverse().join('-')) : new Date(0);
-      const dateB = b.validadeData ? new Date(b.validadeData.split('/').reverse().join('-')) : new Date(0);
+      if(a.status==='vencido'){
+        // Mais dias vencido primeiro; sem data conhecida vai por último dentro do grupo
+        const da = diasVencido(a), db = diasVencido(b);
+        if(da===null && db===null) return 0;
+        if(da===null) return 1;
+        if(db===null) return -1;
+        return db - da;
+      }
+      const dateA = parseDateBR(a.validadeData) || new Date(0);
+      const dateB = parseDateBR(b.validadeData) || new Date(0);
       return dateA - dateB;
     });
 
@@ -1261,39 +1326,86 @@
 
     document.getElementById('checklistCount').textContent = filtered.length + ' itens';
     if(filtered.length===0){
-      body.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:30px;color:var(--text-muted);">🔍 Nenhum checklist encontrado com esses filtros.</td></tr>`;
+      accordionEl.innerHTML = `<div class="no-result" style="border-radius:var(--radius);">🔍 Nenhum checklist encontrado com esses filtros.</div>`;
       return;
     }
 
-    let rows='';
+    let html = '';
     for(const reg of sortedRegions){
       const items = grouped[reg];
       const color = REGION_COLORS[reg] || '#6b7280';
-      rows += `<tr class="region-separator"><td colspan="9" style="background:var(--surface2);"><span style="display:flex;align-items:center;gap:8px;">
-        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};"></span>
-        ${reg} <span>${items.length}</span>
-      </span></td></tr>`;
+      const vencidoCount = items.filter(i=>i.status==='vencido').length;
+      const urgenteCount = items.filter(i=>i.status==='urgente').length;
+      const naoOkCount = items.filter(i=>i.status==='nao-ok').length;
+      const validoCount = items.filter(i=>i.status==='valido').length;
+      const hasCritical = vencidoCount>0 || urgenteCount>0;
+      const isOpen = regionOpenState.hasOwnProperty(reg) ? regionOpenState[reg] : hasCritical;
+
+      let rows = '';
       for(const item of items){
         const statusClass = `status-${item.status}`;
         const statusLabel = item.status==='vencido'?'Vencido':
                             item.status==='valido'?'Válido':
                             item.status==='urgente'?'Urgente':
                             item.status==='nao-ok'?'Não OK':'Desconhecido';
+        let validadeCell;
+        if(item.status==='vencido'){
+          if(item.validadeData){
+            const dv = diasVencido(item);
+            validadeCell = `${item.validadeData}${dv!==null?` <span class="dias-vencido-badge">${dv}d</span>`:''}`;
+          } else {
+            const tip = (item.validadeRaw||'').replace(/"/g,'&quot;');
+            validadeCell = `<span title="${tip}">Sem data ⚠️</span>`;
+          }
+        } else {
+          validadeCell = item.validadeData || item.validadeRaw || '—';
+        }
         rows += `<tr>
           <td><span class="veiculo-tag">${item.veiculo||'—'}</span></td>
           <td><span class="status-badge ${statusClass}">${statusLabel}</span></td>
-          <td>${item.validadeData||item.validadeRaw||'—'}</td>
+          <td>${validadeCell}</td>
           <td><span class="cidade-tag">${item.cidadeUF||'—'}</span></td>
           <td>${item.tipoFrota||'—'}</td>
           <td>${item.categoria||'—'}</td>
           <td>${item.condutor||'—'}</td>
-          <td>${item.responsavel||'—'}</td>
+          <td>${respLimpo(item.responsavel)}</td>
           <td><button class="edit-btn" data-veiculo="${item.veiculo}" title="Editar">✏️</button></td>
         </tr>`;
       }
+
+      html += `<details class="region-accordion" data-region="${reg}" style="border-left-color:${color};" ${isOpen?'open':''}>
+        <summary class="region-summary">
+          <span class="region-summary-name"><span class="region-dot" style="background:${color};"></span>${reg}</span>
+          <span class="region-summary-counts">
+            ${vencidoCount?`<span class="status-badge status-vencido">${vencidoCount} vencido${vencidoCount!==1?'s':''}</span>`:''}
+            ${urgenteCount?`<span class="status-badge status-urgente">${urgenteCount} urgente${urgenteCount!==1?'s':''}</span>`:''}
+            ${naoOkCount?`<span class="status-badge status-nao-ok">${naoOkCount} não OK</span>`:''}
+            ${validoCount?`<span class="status-badge status-valido">${validoCount} válido${validoCount!==1?'s':''}</span>`:''}
+            <span class="region-total">${items.length} total</span>
+          </span>
+        </summary>
+        <div class="region-table-wrap">
+          <table class="checklist-table">
+            <thead>
+              <tr>
+                <th>Veículo</th><th>Status</th><th>Validade</th><th>Cidade/UF</th>
+                <th>Tipo Frota</th><th>Categoria</th><th>Condutor</th><th>Responsável</th>
+                <th style="width:60px;">Ações</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+      </details>`;
     }
-    body.innerHTML = rows;
-    document.querySelectorAll('.edit-btn').forEach(btn=>{
+    accordionEl.innerHTML = html;
+
+    accordionEl.querySelectorAll('.region-accordion').forEach(det=>{
+      det.addEventListener('toggle', function(){
+        regionOpenState[this.dataset.region] = this.open;
+      });
+    });
+    accordionEl.querySelectorAll('.edit-btn').forEach(btn=>{
       btn.addEventListener('click', function(e){
         e.stopPropagation();
         openEditModal(this.dataset.veiculo);
@@ -1335,7 +1447,7 @@
     localStorage.setItem('checklistEdits', JSON.stringify(window.checklistData));
     closeEditModal();
     renderChecklists();
-    renderRegionStats();
+    renderGlobalStats();
     showToast('✅ Checklist atualizado!');
   });
 
@@ -1382,7 +1494,7 @@
           await loadChecklists();
         } else {
           renderChecklists();
-          renderRegionStats();
+          renderGlobalStats();
         }
         return;
       }
@@ -1447,6 +1559,14 @@
     document.getElementById('checklistStatusFilter').value='';
     document.getElementById('checklistTipoFilter').value='';
     document.getElementById('checklistCategoriaFilter').value='';
+    renderChecklists();
+  });
+
+  const checklistPriorityToggle = document.getElementById('checklistPriorityToggle');
+  checklistPriorityToggle.checked = checklistPriorityMode;
+  checklistPriorityToggle.addEventListener('change', function(){
+    checklistPriorityMode = this.checked;
+    localStorage.setItem('checklistPriority', checklistPriorityMode);
     renderChecklists();
   });
 
