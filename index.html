@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <style>
-    /* ===== VARIÁVEIS (tema claro) ===== */
+    /* ===== VARIÁVEIS ===== */
     :root {
       --bg: #f4f6f9;
       --surface: #ffffff;
@@ -16,6 +16,7 @@
       --border: #e2e6ee;
       --red: #dc2626;
       --red-bg: #fee2e2;
+      --red-hover: #b91c1c;
       --text: #1e293b;
       --text-dim: #475569;
       --text-muted: #94a3b8;
@@ -75,7 +76,8 @@
     .panel { display:none; }
     .panel.active { display:block; }
 
-    header {
+    /* ===== HEADER COMUM ===== */
+    header, .checklist-header {
       background:var(--surface); padding:20px 24px 18px;
       position:sticky; top:0; z-index:99;
       border-bottom:1px solid var(--border); box-shadow:var(--shadow);
@@ -233,12 +235,30 @@
       color:var(--text-muted); border:1px solid var(--border);
     }
 
-    /* ===== CHECKLIST ===== */
-    .checklist-header {
-      background:var(--surface); padding:20px 24px 18px;
-      position:sticky; top:0; z-index:99;
-      border-bottom:1px solid var(--border); box-shadow:var(--shadow);
+    /* ============================================
+       CHECKLIST – ORGANIZAÇÃO POR REGIÃO + ACORDEON
+       ============================================ */
+    .checklist-global-kpis {
+      display:flex; flex-wrap:wrap; gap:16px;
+      margin:16px 24px 0; max-width:1280px;
     }
+    .kpi-card {
+      background:var(--surface); border:1px solid var(--border);
+      border-radius:var(--radius); padding:12px 18px;
+      min-width:100px; flex:1 0 auto; box-shadow:var(--shadow);
+      display:flex; flex-direction:column;
+    }
+    .kpi-card .kpi-num {
+      font-family:var(--mono); font-size:24px; font-weight:800;
+    }
+    .kpi-card .kpi-label {
+      font-size:10px; text-transform:uppercase; letter-spacing:0.8px;
+      color:var(--text-muted); font-weight:600;
+    }
+    .kpi-card .kpi-sub {
+      font-size:10px; color:var(--text-dim); margin-top:2px;
+    }
+
     .checklist-region-stats {
       display:flex; flex-wrap:wrap; gap:12px;
       margin:16px 24px 0; max-width:1280px;
@@ -247,7 +267,14 @@
       background:var(--surface); border:1px solid var(--border);
       border-radius:var(--radius); padding:10px 16px;
       min-width:110px; flex:1 0 auto; box-shadow:var(--shadow);
-      display:flex; flex-direction:column;
+      display:flex; flex-direction:column; cursor:pointer;
+      transition:var(--transition);
+    }
+    .region-stat-card:hover {
+      border-color:var(--red); box-shadow:var(--shadow-hover);
+    }
+    .region-stat-card.active {
+      border-color:var(--red); background:var(--red-bg);
     }
     .region-stat-card .reg-nome {
       font-size:11px; font-weight:600; color:var(--text-dim);
@@ -264,60 +291,6 @@
     .dot-valido  { color:var(--green); }
     .dot-urgente { color:var(--orange); }
     .dot-nao-ok  { color:var(--purple); }
-
-    .checklist-global-stats {
-      display:flex; flex-wrap:wrap; gap:12px;
-      margin:16px 24px 0; max-width:1280px;
-    }
-    .global-stat-card {
-      background:var(--surface); border:1px solid var(--border);
-      border-top:3px solid var(--border);
-      border-radius:var(--radius); padding:14px 20px;
-      min-width:120px; flex:1 0 auto; box-shadow:var(--shadow);
-      display:flex; flex-direction:column; gap:2px;
-    }
-    .global-stat-card .gs-num { font-family:var(--mono); font-size:24px; font-weight:800; }
-    .global-stat-card .gs-label { font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px; font-weight:600; }
-    .global-stat-card.gs-critical { border-top-color:var(--red); }
-    .global-stat-card.gs-critical .gs-num { color:var(--red); }
-    .global-stat-card.gs-critical-deep { border-top-color:#991b1b; }
-    .global-stat-card.gs-critical-deep .gs-num { color:#991b1b; }
-    .global-stat-card.gs-warn { border-top-color:var(--orange); }
-    .global-stat-card.gs-warn .gs-num { color:var(--orange); }
-    .global-stat-card.gs-nao-ok { border-top-color:var(--purple); }
-    .global-stat-card.gs-nao-ok .gs-num { color:var(--purple); }
-    .global-stat-card.gs-ok { border-top-color:var(--green); }
-    .global-stat-card.gs-ok .gs-num { color:var(--green); }
-
-    .dias-vencido-badge {
-      display:inline-block; background:var(--red-bg); color:var(--red);
-      font-family:var(--mono); font-size:10px; font-weight:700;
-      padding:1px 7px; border-radius:20px; margin-left:4px; white-space:nowrap;
-    }
-
-    .region-accordion {
-      background:var(--surface); border:1px solid var(--border); border-left-width:4px;
-      border-radius:var(--radius); margin-bottom:14px; box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .region-summary {
-      list-style:none; cursor:pointer; padding:14px 20px;
-      display:flex; align-items:center; justify-content:space-between;
-      flex-wrap:wrap; gap:10px; font-weight:700; font-size:14px; color:var(--text);
-      user-select:none;
-    }
-    .region-summary::-webkit-details-marker { display:none; }
-    .region-summary::before {
-      content:"▸"; display:inline-block; margin-right:8px; color:var(--text-muted);
-      transition:transform 0.2s; font-size:11px;
-    }
-    .region-accordion[open] .region-summary::before { transform:rotate(90deg); }
-    .region-summary-name { display:flex; align-items:center; }
-    .region-dot { width:9px; height:9px; border-radius:50%; display:inline-block; margin-right:10px; flex-shrink:0; }
-    .region-summary-counts { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-weight:500; }
-    .region-total { font-size:11px; color:var(--text-muted); font-family:var(--mono); }
-    .region-table-wrap { overflow-x:auto; border-top:1px solid var(--border); }
-    .region-table-wrap .checklist-table { box-shadow:none; border:none; border-radius:0; }
 
     .checklist-filters {
       display:flex; flex-wrap:wrap; gap:12px;
@@ -339,33 +312,71 @@
     }
     .filtro-clear:hover { color:var(--red); }
 
+    .checklist-accordion {
+      padding:16px 24px; max-width:1280px; margin:0 auto;
+    }
+    .accordion-item {
+      background:var(--surface); border:1px solid var(--border);
+      border-radius:var(--radius); margin-bottom:12px;
+      box-shadow:var(--shadow); overflow:hidden;
+      transition:var(--transition);
+    }
+    .accordion-item:hover { border-color:var(--red); }
+    .accordion-header {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 20px; cursor:pointer;
+      background:var(--surface2); transition:var(--transition);
+      gap:12px; flex-wrap:wrap;
+    }
+    .accordion-header:hover { background:var(--border); }
+    .accordion-header .region-title {
+      font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;
+    }
+    .accordion-header .region-title .color-dot {
+      width:10px; height:10px; border-radius:50%; display:inline-block;
+    }
+    .accordion-header .region-badge {
+      font-size:10px; font-weight:600; color:var(--text-dim);
+      background:var(--surface); padding:2px 12px; border-radius:40px;
+      border:1px solid var(--border);
+    }
+    .accordion-header .region-badge.vencido { color:var(--red); border-color:var(--red); background:var(--red-bg); }
+    .accordion-header .region-badge.valido { color:var(--green); border-color:var(--green); background:rgba(34,197,94,0.1); }
+    .accordion-header .region-badge.urgente { color:var(--orange); border-color:var(--orange); background:rgba(249,115,22,0.1); }
+    .accordion-header .region-badge.nao-ok { color:var(--purple); border-color:var(--purple); background:rgba(139,92,246,0.1); }
+    .accordion-header .region-count {
+      font-family:var(--mono); font-size:13px; color:var(--text-dim);
+    }
+    .accordion-header .chevron {
+      transition:transform 0.3s; font-size:14px;
+    }
+    .accordion-item.open .chevron { transform:rotate(180deg); }
+    .accordion-body {
+      padding:0 20px 20px;
+      display:none;
+    }
+    .accordion-item.open .accordion-body { display:block; }
+
     .checklist-table-wrap {
-      overflow-x:auto; padding:16px 24px; max-width:1280px; margin:0 auto;
+      overflow-x:auto; margin-top:8px;
     }
     .checklist-table {
       width:100%; border-collapse:collapse; font-size:13px;
-      background:var(--surface); border:1px solid var(--border);
-      border-radius:var(--radius); box-shadow:var(--shadow);
     }
     .checklist-table th {
-      background:var(--surface2); padding:12px 10px; text-align:left;
-      font-weight:600; font-size:11px; text-transform:uppercase;
-      letter-spacing:0.5px; color:var(--text-dim);
-      border-bottom:1px solid var(--border);
+      background:var(--surface2); padding:10px 8px;
+      text-align:left; font-weight:600; font-size:11px;
+      text-transform:uppercase; letter-spacing:0.5px;
+      color:var(--text-dim); border-bottom:1px solid var(--border);
       position:sticky; top:0; z-index:2;
     }
     .checklist-table td {
-      padding:10px; border-bottom:1px solid var(--border);
+      padding:10px 8px; border-bottom:1px solid var(--border);
       vertical-align:middle;
     }
     .checklist-table tr:hover td { background:var(--surface2); }
-    .region-separator td {
-      background:var(--surface2); font-weight:700; color:var(--text);
-      padding:10px 16px; border-bottom:2px solid var(--border);
-      font-size:13px;
-    }
     .status-badge {
-      display:inline-block; padding:3px 12px; border-radius:40px;
+      display:inline-block; padding:2px 12px; border-radius:40px;
       font-size:11px; font-weight:600; text-transform:uppercase;
       letter-spacing:0.3px; white-space:nowrap;
     }
@@ -376,7 +387,7 @@
 
     .veiculo-tag {
       font-family:var(--mono); background:var(--surface2);
-      padding:3px 10px; border-radius:6px; font-size:12px;
+      padding:2px 10px; border-radius:6px; font-size:12px;
       border:1px solid var(--border);
     }
     .cidade-tag { font-size:12px; color:var(--text-dim); }
@@ -386,6 +397,19 @@
       padding:2px 6px; border-radius:6px;
     }
     .edit-btn:hover { color:var(--red); background:var(--red-bg); }
+    .dias-vencido {
+      font-size:11px; font-weight:600; color:var(--red);
+      background:var(--red-bg); padding:2px 10px; border-radius:40px;
+      border:1px solid var(--red); display:inline-block;
+    }
+    .load-more-btn {
+      display:block; margin:12px auto 0;
+      padding:8px 20px; border-radius:40px;
+      border:1px solid var(--border); background:var(--surface2);
+      color:var(--text-dim); font-weight:600; cursor:pointer;
+      transition:var(--transition); font-size:12px;
+    }
+    .load-more-btn:hover { border-color:var(--red); color:var(--red); background:var(--red-bg); }
 
     .edit-modal {
       display:none; position:fixed; top:0; left:0; right:0; bottom:0;
@@ -415,7 +439,7 @@
       cursor:pointer; transition:var(--transition); font-size:13px;
     }
     .edit-actions .save-btn { background:var(--red); color:white; border:none; }
-    .edit-actions .save-btn:hover { background:#b91c1c; }
+    .edit-actions .save-btn:hover { background:var(--red-hover); }
     .edit-actions .cancel-btn:hover { background:var(--border); color:var(--text); }
 
     .loading-checklist {
@@ -433,7 +457,7 @@
     .copied-toast.show { opacity:1; }
     .toast-dot { width:8px; height:8px; background:var(--green); border-radius:50%; align-self:center; }
 
-    /* ===== BASES (resumido) ===== */
+    /* ===== BASES ===== */
     .bases-header {
       background:var(--surface); padding:20px 24px 18px;
       position:sticky; top:0; z-index:99;
@@ -586,6 +610,8 @@
       .header-controls { justify-content:space-between; }
       .theme-toggle-wrap { top:8px; right:8px; padding:6px 12px; }
       #leafletMap { height:300px; }
+      .checklist-table { font-size:11px; }
+      .checklist-table th, .checklist-table td { padding:6px 4px; }
     }
   </style>
 </head>
@@ -657,7 +683,7 @@
   </div>
 </div>
 
-<!-- ===== PAINEL BASES (resumido) ===== -->
+<!-- ===== PAINEL BASES ===== -->
 <div id="basesPanel" class="panel">
   <div class="bases-header">
     <div class="header-top">
@@ -722,10 +748,21 @@
         <button id="exportJsonBtn" style="background:var(--surface2);padding:6px 16px;border-radius:40px;border:1px solid var(--border);color:var(--text-dim);font-family:var(--mono);font-size:11px;font-weight:600;cursor:pointer;transition:var(--transition);">⬇️ Exportar JSON</button>
         <button id="resetEditsBtn" style="background:var(--surface2);padding:6px 16px;border-radius:40px;border:1px solid var(--border);color:var(--text-dim);font-family:var(--mono);font-size:11px;font-weight:600;cursor:pointer;transition:var(--transition);">🔄 Restaurar</button>
         <button id="checklistRefresh" style="background:var(--surface2);padding:6px 16px;border-radius:40px;border:1px solid var(--border);color:var(--text-dim);font-family:var(--mono);font-size:11px;font-weight:600;cursor:pointer;transition:var(--transition);">🔄 Recarregar</button>
+        <label class="compact-toggle" id="showAllToggle" style="background:var(--surface2);padding:6px 14px;border-radius:40px;border:1px solid var(--border);color:var(--text-dim);font-family:var(--mono);font-size:11px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:8px;">
+          <span>🔍 Prioridade</span>
+          <input type="checkbox" id="showAllCheckbox">
+        </label>
       </div>
     </div>
   </div>
-  <div class="checklist-global-stats" id="globalStats"></div>
+
+  <!-- KPIs globais -->
+  <div class="checklist-global-kpis" id="globalKpis"></div>
+
+  <!-- Cards de resumo por região (clique abre/fecha accordion) -->
+  <div class="checklist-region-stats" id="regionStats"></div>
+
+  <!-- Filtros -->
   <div class="checklist-filters">
     <input type="text" id="checklistSearch" placeholder="🔍 Buscar veículo, condutor, cidade..." autocomplete="off">
     <select id="checklistStatusFilter">
@@ -746,18 +783,14 @@
       <option value="CAVALO">Cavalo</option>
       <option value="CARRETA">Carreta</option>
     </select>
-    <label class="compact-toggle" title="Esconde válidos e não-OK por padrão">
-      <span>🔴 Só vencido/urgente</span>
-      <input type="checkbox" id="checklistPriorityToggle">
-    </label>
     <button class="filtro-clear" id="checklistClearFilters">Limpar filtros</button>
   </div>
-  <div class="checklist-table-wrap">
-    <div id="checklistLoading" class="loading-checklist">📂 Carregando checklists...</div>
-    <div id="checklistAccordion" style="display:none;"></div>
-  </div>
+
+  <!-- Accordion por região -->
+  <div class="checklist-accordion" id="checklistAccordion"></div>
 </div>
 
+<!-- Modal de edição -->
 <div class="edit-modal" id="editModal">
   <div class="edit-modal-content">
     <h3>✏️ Editar Checklist</h3>
@@ -793,7 +826,7 @@
   'use strict';
 
   // ============================================================
-  // 1. BASES DE DADOS (fixas)
+  // BASES
   // ============================================================
   const BASES = [
     {id:1, nome:"Duque de Caxias", sigla:"RJ", cidade:"Duque de Caxias", uf:"RJ", tipo:"hub", endereco:"Rodovia Washington Luiz, 2070 – Parque Duque", cep:"25085-009", lat:-22.7854, lng:-43.3115},
@@ -813,7 +846,7 @@
   ];
 
   // ============================================================
-  // 2. FUNÇÕES AUXILIARES
+  // FUNÇÕES AUXILIARES
   // ============================================================
   function dotColor(tipo){ return tipo==='hub'?'#dc2626': tipo==='terminal'?'#8b5cf6':'#3b82f6'; }
   function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
@@ -832,10 +865,9 @@
   }
 
   // ============================================================
-  // 3. MAPA LEAFLET (Bases)
+  // MAPA
   // ============================================================
-  let leafletMap=null, leafletMarkers=[], routeLine=null, selectedId=null, userMarker=null;
-
+  let leafletMap=null, leafletMarkers=[], routeLine=null, selectedId=null;
   function initLeafletMap(){
     if(leafletMap) return;
     leafletMap = L.map('leafletMap', { center:[-20.5,-45.5], zoom:6, zoomControl:true, attributionControl:false });
@@ -845,15 +877,12 @@
     BASES.forEach(b=>{
       const c = dotColor(b.tipo);
       const r = b.tipo==='hub'?10:7;
-      if(b.tipo==='hub'){
-        L.circleMarker([b.lat,b.lng], { radius:r+7, color:c, weight:1.5, opacity:0.25, fill:false }).addTo(leafletMap);
-      }
+      if(b.tipo==='hub') L.circleMarker([b.lat,b.lng], { radius:r+7, color:c, weight:1.5, opacity:0.25, fill:false }).addTo(leafletMap);
       const marker = L.circleMarker([b.lat,b.lng], { radius:r, fillColor:c, fillOpacity:1, color:'white', weight:2.5 }).addTo(leafletMap);
-      const tipoClass = b.tipo==='hub'?'bci-tipo-hub': b.tipo==='terminal'?'bci-tipo-terminal':'bci-tipo-filial';
       const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
       marker.bindPopup(`
         <strong>${b.nome}</strong>
-        <span class="pop-tipo ${tipoClass}">${tipoLabel(b.tipo)}</span>
+        <span class="pop-tipo">${tipoLabel(b.tipo)}</span>
         <div class="pop-end">📍 ${b.endereco}<br>${b.cidade} / ${b.uf} — CEP ${b.cep}</div>
         <a href="${mapsUrl}" target="_blank" rel="noopener" style="color:#3b82f6;font-size:11px;text-decoration:none;font-weight:600;">🗺 Ver no Google Maps →</a>
       `, { maxWidth:260, className:'base-popup' });
@@ -864,16 +893,14 @@
       leafletMarkers.push({ id:b.id, marker, baseR:r, color:c });
     });
   }
-
   function updateMapTiles() {
     if(!leafletMap) return;
     leafletMap.eachLayer(layer=>{ if(layer instanceof L.TileLayer) leafletMap.removeLayer(layer); });
     const isDark = document.body.classList.contains('dark-mode');
     const tileUrl = isDark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
     L.tileLayer(tileUrl, { maxZoom:19, subdomains:'abcd', attribution:'' }).addTo(leafletMap);
-    if(routeLine){ routeLine.setStyle({ color: isDark ? '#ef4444' : '#dc2626' }); }
+    if(routeLine) routeLine.setStyle({ color: isDark ? '#ef4444' : '#dc2626' });
   }
-
   function renderMap(filtered){
     if(!leafletMap) return;
     const filteredIds = new Set(filtered.map(b=>b.id));
@@ -884,7 +911,6 @@
     });
     if(routeLine){ const coords = filtered.map(b=>[b.lat,b.lng]); routeLine.setLatLngs(coords); }
   }
-
   function renderBasesStats(){
     document.getElementById('statTotal').textContent = BASES.length;
     document.getElementById('statHub').textContent = BASES.filter(b=>b.tipo==='hub').length;
@@ -893,7 +919,6 @@
     document.getElementById('statUF').textContent = new Set(BASES.map(b=>b.uf)).size;
     document.getElementById('basesTotalEyebrow').textContent = BASES.length;
   }
-
   function renderBases(){
     const q = normStr(document.getElementById('basesSearch').value);
     const uf = document.getElementById('basesUFFilter').value;
@@ -904,10 +929,7 @@
     });
     document.getElementById('basesCountBadge').textContent = filtered.length + ' base' + (filtered.length!==1?'s':'');
     const list = document.getElementById('basesList');
-    if(!filtered.length){
-      list.innerHTML = '<div style="text-align:center;padding:50px;color:var(--text-muted);">🔍 Nenhuma base encontrada.</div>';
-      renderMap([]); return;
-    }
+    if(!filtered.length){ list.innerHTML = '<div style="text-align:center;padding:50px;color:var(--text-muted);">🔍 Nenhuma base encontrada.</div>'; renderMap([]); return; }
     const sorted = [...filtered].sort((a,b)=>{ const o={hub:0,terminal:1,filial:2}; return (o[a.tipo]??9)-(o[b.tipo]??9); });
     list.innerHTML = sorted.map(b=>{
       const c = dotColor(b.tipo);
@@ -941,20 +963,18 @@
   };
 
   // ============================================================
-  // 4. ROTAS (RONDOLOG / SASTER)
+  // ROTAS
   // ============================================================
   const DATA_URLS = { rondolog:'./data/rondolog.json', saster:'./data/saster.json' };
   const dataCache = { rondolog:null, saster:null };
   let currentBase='rondolog', currentData=[], currentQuery='', currentType='all', currentOrder='padrao';
-  let currentView = 'list', showOnlyFavorites = false;
-
+  let currentView='list', showOnlyFavorites=false;
   const resultsContainer = document.getElementById('results');
   const matrixContainer = document.getElementById('matrixContainer');
 
   function getTipoColor(t){ return t==='coleta'?'var(--blue)':t==='transferencia'?'var(--green)':'var(--orange)'; }
   function getTipoLabel(t){ return t==='transferencia'?'🚚 Transferência':t==='coleta'?'📦 Coleta':'🔄 Rota fixa'; }
 
-  // Favoritos
   function loadFavorites(){
     try{ return JSON.parse(localStorage.getItem('rondologFavorites')) || {rondolog:[], saster:[]}; }
     catch(e){ return {rondolog:[], saster:[]}; }
@@ -976,7 +996,6 @@
     document.getElementById('favChip').classList.toggle('active', showOnlyFavorites);
   }
 
-  // Histórico
   const HISTORY_MAX=8;
   function loadHistory(){
     try{ return JSON.parse(localStorage.getItem('rondologHistory')) || {rondolog:[], saster:[]}; }
@@ -1020,7 +1039,6 @@
     });
   }
 
-  // Carregar dados de rotas
   async function loadData(base){
     if(dataCache[base]) return dataCache[base];
     try{
@@ -1030,13 +1048,12 @@
       const processed=data.map(item=>({...item, nome:item.nome_da_rota||item.nome||'', condutor:item.condutores||item.condutor||[], placa:item.placas||item.placa||[]}));
       dataCache[base]=processed; return processed;
     }catch(err){
-      console.error('Erro ao carregar rotas:', err);
       resultsContainer.innerHTML = `<div class="no-result">❌ Erro ao carregar dados: ${err.message}</div>`;
       return [];
     }
   }
 
-  function getFilteredData() {
+  function getFilteredData(){
     let filtered = currentData;
     const q = currentQuery;
     if(q){ const nq=norm(q); filtered=filtered.filter(r=>norm(r.nome).includes(nq)||`${r.origem} ${r.destino}`.toLowerCase().includes(nq)||(r.condutor&&r.condutor.some(c=>norm(c).includes(nq)))||(r.placa&&r.placa.some(p=>norm(p).includes(nq)))); }
@@ -1053,7 +1070,7 @@
     return s;
   }
 
-  function renderMatrix(data) {
+  function renderMatrix(data){
     const wrap = document.getElementById('matrixTableWrap');
     if (!data || data.length===0) { wrap.innerHTML = '<div class="matrix-empty">📊 Nenhuma rota para exibir na matriz.</div>'; return; }
     const origens = [...new Set(data.map(r=>r.origem))];
@@ -1111,34 +1128,30 @@
     });
   }
 
-  function switchView(view) {
+  function switchView(view){
     currentView = view;
     const listContainer = document.getElementById('results');
     const matrixContainerEl = document.getElementById('matrixContainer');
     const toggleIcon = document.getElementById('viewToggleIcon');
     const toggleText = document.getElementById('viewToggleText');
-    if (view === 'matrix') {
-      listContainer.style.display = 'none';
-      matrixContainerEl.style.display = 'block';
-      toggleIcon.textContent = '📋';
-      toggleText.textContent = 'Lista';
+    if(view==='matrix'){
+      listContainer.style.display='none'; matrixContainerEl.style.display='block';
+      toggleIcon.textContent='📋'; toggleText.textContent='Lista';
       renderMatrix(getFilteredData());
     } else {
-      listContainer.style.display = 'grid';
-      matrixContainerEl.style.display = 'none';
-      toggleIcon.textContent = '📊';
-      toggleText.textContent = 'Matriz';
+      listContainer.style.display='grid'; matrixContainerEl.style.display='none';
+      toggleIcon.textContent='📊'; toggleText.textContent='Matriz';
       render();
     }
   }
 
-  function render() {
-    if (currentView === 'matrix') { renderMatrix(getFilteredData()); return; }
+  function render(){
+    if(currentView==='matrix'){ renderMatrix(getFilteredData()); return; }
     let filtered = getFilteredData();
     filtered = sortRotas(filtered, currentOrder);
     document.getElementById('countBadge').textContent = filtered.length + ' rota' + (filtered.length!==1?'s':'');
     document.getElementById('sectionLabel').innerHTML = showOnlyFavorites ? '⭐ Rotas favoritas' : (currentQuery ? `Resultados para "${currentQuery}"` : 'Todas as rotas');
-    if (!filtered.length) {
+    if(!filtered.length){
       resultsContainer.innerHTML = `<div class="no-result">🔍 ${showOnlyFavorites ? 'Nenhuma rota favoritada ainda.' : 'Nenhuma rota encontrada.'}</div>`;
       return;
     }
@@ -1182,45 +1195,45 @@
   }
 
   // ============================================================
-  // 5. CHECKLIST
+  // CHECKLIST - CORREÇÕES COMPLETAS
   // ============================================================
   const REGION_ORDER = ['Frota Pesada', 'Embarque', 'Rio de Janeiro', 'São Paulo', 'Betim', 'Brasília', 'Outras'];
   const REGION_COLORS = {
     'Frota Pesada':'#dc2626', 'Embarque':'#f97316', 'Rio de Janeiro':'#3b82f6',
     'São Paulo':'#22c55e', 'Betim':'#8b5cf6', 'Brasília':'#eab308', 'Outras':'#6b7280'
   };
-  const RESPONSAVEL_LIXO = ['00','-','=','condutor','','n/a','na','.','--','x'];
-  let checklistPriorityMode = localStorage.getItem('checklistPriority') !== 'false';
-  let regionOpenState = {};
 
-  function respLimpo(r){
-    if(!r) return '—';
-    return RESPONSAVEL_LIXO.includes(String(r).trim().toLowerCase()) ? '—' : r;
+  let showAllItems = false; // toggle para "Prioridade" (só vencido+urgente)
+
+  // Limpeza do campo "responsável" – mantém apenas nomes com ao menos 3 letras e não padrões vazios
+  function cleanResponsavel(value) {
+    if (!value) return null;
+    const v = String(value).trim();
+    // remove padrões vazios/sujos
+    if (v === '' || v === '-' || v === '--' || v === '=' || v === '00' || v === '0') return null;
+    if (/^[0-9]+$/.test(v)) return null; // só números
+    if (/^[^a-zA-Z]+$/.test(v)) return null; // sem letras
+    // Normaliza maiúscula/minúscula: capitaliza cada palavra
+    return v.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
   }
 
-  function parseDateBR(str){
-    if(!str) return null;
-    const parts = String(str).split('/');
-    if(parts.length!==3) return null;
-    const [d,m,y] = parts.map(Number);
-    if(!d||!m||!y) return null;
-    return new Date(y, m-1, d);
-  }
-
-  function diasVencido(item){
-    if(item.status!=='vencido') return null;
-    const date = parseDateBR(item.validadeData);
-    if(!date) return null;
-    const today = new Date(); today.setHours(0,0,0,0);
-    const diff = Math.floor((today - date) / 86400000);
-    return diff>0 ? diff : 0;
+  // Calcula dias vencido (baseado na data de validade)
+  function calcularDiasVencido(item) {
+    if (item.status !== 'vencido') return null;
+    if (!item.validadeData) return null;
+    try {
+      const partes = item.validadeData.split('/');
+      const dataVal = new Date(partes[2], partes[1]-1, partes[0]);
+      const hoje = new Date();
+      hoje.setHours(0,0,0,0);
+      const diff = Math.floor((hoje - dataVal) / (1000*60*60*24));
+      return diff > 0 ? diff : 0;
+    } catch(e) { return null; }
   }
 
   async function loadChecklists() {
     const loadingEl = document.getElementById('checklistLoading');
-    const accordionEl = document.getElementById('checklistAccordion');
-    loadingEl.style.display = 'block';
-    accordionEl.style.display = 'none';
+    loadingEl.textContent = '📂 Carregando checklists...';
     try {
       const resp = await fetch('data/checklists.json');
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
@@ -1234,186 +1247,289 @@
         });
       }
       window.checklistData = data;
+      // Pré-calcula dias vencido e responsável limpo
+      window.checklistData.forEach(item => {
+        item.diasVencido = calcularDiasVencido(item);
+        item.responsavelClean = cleanResponsavel(item.responsavel);
+      });
     } catch (err) {
       console.error('Erro ao carregar checklists.json:', err);
       window.checklistData = [];
-      loadingEl.textContent = '❌ Erro ao carregar checklists.json. Verifique o console.';
-      loadingEl.style.display = 'block';
-      accordionEl.style.display = 'none';
+      document.getElementById('checklistLoading').textContent = '❌ Erro ao carregar checklists.json. Verifique o console.';
       return;
     }
-    renderChecklists();
-    renderGlobalStats();
+    renderChecklist();
   }
 
-  function renderGlobalStats() {
-    const el = document.getElementById('globalStats');
-    if (!window.checklistData || window.checklistData.length===0) { el.innerHTML=''; return; }
-    const data = window.checklistData;
-    const vencidos = data.filter(i=>i.status==='vencido');
-    const urgentes = data.filter(i=>i.status==='urgente').length;
-    const validos = data.filter(i=>i.status==='valido').length;
-    const naoOk = data.filter(i=>i.status==='nao-ok').length;
-    const vencidos30 = vencidos.filter(i=>{ const d=diasVencido(i); return d!==null && d>30; }).length;
-    el.innerHTML = `
-      <div class="global-stat-card gs-critical"><div class="gs-num">${vencidos.length}</div><div class="gs-label">Vencidos</div></div>
-      <div class="global-stat-card gs-critical-deep"><div class="gs-num">${vencidos30}</div><div class="gs-label">Vencidos +30 dias</div></div>
-      <div class="global-stat-card gs-warn"><div class="gs-num">${urgentes}</div><div class="gs-label">Urgentes</div></div>
-      <div class="global-stat-card gs-nao-ok"><div class="gs-num">${naoOk}</div><div class="gs-label">Não OK</div></div>
-      <div class="global-stat-card gs-ok"><div class="gs-num">${validos}</div><div class="gs-label">Válidos</div></div>
-      <div class="global-stat-card"><div class="gs-num">${data.length}</div><div class="gs-label">Total</div></div>
-    `;
-  }
-
-  function renderChecklists() {
-    const accordionEl = document.getElementById('checklistAccordion');
-    const loadingEl = document.getElementById('checklistLoading');
+  function renderChecklist() {
+    const accordion = document.getElementById('checklistAccordion');
     if (!window.checklistData || window.checklistData.length===0) {
-      loadingEl.textContent = '📭 Nenhum checklist encontrado.';
-      loadingEl.style.display='block'; accordionEl.style.display='none';
+      accordion.innerHTML = '<div class="loading-checklist">📭 Nenhum checklist encontrado.</div>';
       return;
     }
-    loadingEl.style.display='none'; accordionEl.style.display='block';
 
+    // 1. Filtros
     const searchTerm = document.getElementById('checklistSearch').value.toLowerCase();
     const statusFilter = document.getElementById('checklistStatusFilter').value;
     const tipoFilter = document.getElementById('checklistTipoFilter').value;
     const categoriaFilter = document.getElementById('checklistCategoriaFilter').value;
 
-    let filtered = window.checklistData.filter(item=>{
+    let filtered = window.checklistData.filter(item => {
       const matchSearch = !searchTerm ||
         (item.veiculo||'').toLowerCase().includes(searchTerm) ||
         (item.condutor||'').toLowerCase().includes(searchTerm) ||
         (item.cidadeUF||'').toLowerCase().includes(searchTerm) ||
         (item.region||'').toLowerCase().includes(searchTerm);
       const matchStatus = !statusFilter || item.status===statusFilter;
-      const matchTipo = !tipoFilter || item.tipoFrota===tipoFilter;
-      const matchCategoria = !categoriaFilter || item.categoria===categoriaFilter;
-      // Modo prioridade: só se aplica quando não há um status explícito selecionado
-      const matchPriority = !checklistPriorityMode || statusFilter || item.status==='vencido' || item.status==='urgente';
-      return matchSearch && matchStatus && matchTipo && matchCategoria && matchPriority;
+      const matchTipo = !tipoFilter || (item.tipoFrota||'').toLowerCase()===tipoFilter.toLowerCase();
+      const matchCategoria = !categoriaFilter || (item.categoria||'').toUpperCase()===categoriaFilter.toUpperCase();
+      return matchSearch && matchStatus && matchTipo && matchCategoria;
     });
 
-    filtered.sort((a,b)=>{
+    // 2. Se NÃO estiver no modo "Prioridade", aplica filtro implícito: só vencido + urgente
+    if (!showAllItems) {
+      filtered = filtered.filter(item => item.status === 'vencido' || item.status === 'urgente');
+    }
+
+    // 3. Ordenação: vencidos por diasVencido decrescente (os mais antigos primeiro)
+    filtered.sort((a,b) => {
+      // status primeiro: vencido > urgente > não-ok > válido
       const ordem = {vencido:0, urgente:1, 'nao-ok':2, valido:3};
       const diff = (ordem[a.status]??99) - (ordem[b.status]??99);
-      if(diff!==0) return diff;
-      if(a.status==='vencido'){
-        // Mais dias vencido primeiro; sem data conhecida vai por último dentro do grupo
-        const da = diasVencido(a), db = diasVencido(b);
-        if(da===null && db===null) return 0;
-        if(da===null) return 1;
-        if(db===null) return -1;
+      if (diff !== 0) return diff;
+      // dentro de vencido, ordena por dias vencido decrescente
+      if (a.status === 'vencido' && b.status === 'vencido') {
+        const da = a.diasVencido ?? 0;
+        const db = b.diasVencido ?? 0;
         return db - da;
       }
-      const dateA = parseDateBR(a.validadeData) || new Date(0);
-      const dateB = parseDateBR(b.validadeData) || new Date(0);
+      // demais status, ordena por data de validade (mais próxima primeiro)
+      const dateA = a.validadeData ? new Date(a.validadeData.split('/').reverse().join('-')) : new Date(0);
+      const dateB = b.validadeData ? new Date(b.validadeData.split('/').reverse().join('-')) : new Date(0);
       return dateA - dateB;
     });
 
+    // 4. Atualizar contadores e KPIs globais
+    atualizarKPIs(filtered);
+
+    // 5. Agrupar por região
     const grouped = {};
-    filtered.forEach(item=>{
+    filtered.forEach(item => {
       const reg = item.region || 'Outras';
-      if(!grouped[reg]) grouped[reg]=[];
+      if (!grouped[reg]) grouped[reg] = [];
       grouped[reg].push(item);
     });
-    const sortedRegions = Object.keys(grouped).sort((a,b)=>{
+
+    const sortedRegions = Object.keys(grouped).sort((a,b) => {
       const ia = REGION_ORDER.indexOf(a), ib = REGION_ORDER.indexOf(b);
       if(ia===-1 && ib===-1) return a.localeCompare(b);
       if(ia===-1) return 1; if(ib===-1) return -1;
       return ia-ib;
     });
 
-    document.getElementById('checklistCount').textContent = filtered.length + ' itens';
-    if(filtered.length===0){
-      accordionEl.innerHTML = `<div class="no-result" style="border-radius:var(--radius);">🔍 Nenhum checklist encontrado com esses filtros.</div>`;
-      return;
-    }
-
-    let html = '';
-    for(const reg of sortedRegions){
+    // 6. Renderizar cards de região (accordion)
+    const regionStatsContainer = document.getElementById('regionStats');
+    let statsHtml = '';
+    sortedRegions.forEach(reg => {
       const items = grouped[reg];
+      const vencidos = items.filter(i=>i.status==='vencido').length;
+      const urgentes = items.filter(i=>i.status==='urgente').length;
+      const naoOk = items.filter(i=>i.status==='nao-ok').length;
+      const validos = items.filter(i=>i.status==='valido').length;
       const color = REGION_COLORS[reg] || '#6b7280';
-      const vencidoCount = items.filter(i=>i.status==='vencido').length;
-      const urgenteCount = items.filter(i=>i.status==='urgente').length;
-      const naoOkCount = items.filter(i=>i.status==='nao-ok').length;
-      const validoCount = items.filter(i=>i.status==='valido').length;
-      const hasCritical = vencidoCount>0 || urgenteCount>0;
-      const isOpen = regionOpenState.hasOwnProperty(reg) ? regionOpenState[reg] : hasCritical;
+      statsHtml += `<div class="region-stat-card" data-region="${reg}" style="border-left:4px solid ${color};">
+        <div class="reg-nome">${reg}</div>
+        <div class="reg-num">${items.length}</div>
+        <div class="reg-detail">
+          <span><span class="dot-vencido">●</span> ${vencidos}</span>
+          <span><span class="dot-urgente">●</span> ${urgentes}</span>
+          ${naoOk>0?`<span><span class="dot-nao-ok">●</span> ${naoOk}</span>`:''}
+          ${validos>0?`<span><span class="dot-valido">●</span> ${validos}</span>`:''}
+        </div>
+      </div>`;
+    });
+    regionStatsContainer.innerHTML = statsHtml;
 
-      let rows = '';
-      for(const item of items){
+    // Clique nos cards abre/fecha o accordion correspondente
+    document.querySelectorAll('.region-stat-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const reg = this.dataset.region;
+        const accordionItem = document.querySelector(`.accordion-item[data-region="${reg}"]`);
+        if (accordionItem) accordionItem.classList.toggle('open');
+      });
+    });
+
+    // 7. Renderizar accordion com tabelas
+    let accordionHtml = '';
+    const PAGE_SIZE = 50;
+    sortedRegions.forEach(reg => {
+      const items = grouped[reg];
+      const total = items.length;
+      const vencidos = items.filter(i=>i.status==='vencido').length;
+      const urgentes = items.filter(i=>i.status==='urgente').length;
+      const naoOk = items.filter(i=>i.status==='nao-ok').length;
+      const validos = items.filter(i=>i.status==='valido').length;
+      const color = REGION_COLORS[reg] || '#6b7280';
+
+      // Construir tabela com paginação (exibir apenas primeiros PAGE_SIZE)
+      let tableRows = '';
+      const displayItems = items.slice(0, PAGE_SIZE);
+      displayItems.forEach(item => {
         const statusClass = `status-${item.status}`;
         const statusLabel = item.status==='vencido'?'Vencido':
                             item.status==='valido'?'Válido':
                             item.status==='urgente'?'Urgente':
                             item.status==='nao-ok'?'Não OK':'Desconhecido';
-        let validadeCell;
-        if(item.status==='vencido'){
-          if(item.validadeData){
-            const dv = diasVencido(item);
-            validadeCell = `${item.validadeData}${dv!==null?` <span class="dias-vencido-badge">${dv}d</span>`:''}`;
-          } else {
-            const tip = (item.validadeRaw||'').replace(/"/g,'&quot;');
-            validadeCell = `<span title="${tip}">Sem data ⚠️</span>`;
-          }
-        } else {
-          validadeCell = item.validadeData || item.validadeRaw || '—';
+        let diasLabel = '';
+        if (item.status === 'vencido' && item.diasVencido !== null) {
+          const d = item.diasVencido;
+          if (d > 0) diasLabel = `<span class="dias-vencido" title="Vencido há ${d} dias">${d} dias</span>`;
+          else if (d === 0) diasLabel = `<span class="dias-vencido" title="Vence hoje">Hoje</span>`;
         }
-        rows += `<tr>
+        const respClean = item.responsavelClean || '—';
+        tableRows += `<tr>
           <td><span class="veiculo-tag">${item.veiculo||'—'}</span></td>
-          <td><span class="status-badge ${statusClass}">${statusLabel}</span></td>
-          <td>${validadeCell}</td>
+          <td><span class="status-badge ${statusClass}">${statusLabel}</span> ${diasLabel}</td>
+          <td>${item.validadeData||item.validadeRaw||'—'}</td>
           <td><span class="cidade-tag">${item.cidadeUF||'—'}</span></td>
           <td>${item.tipoFrota||'—'}</td>
           <td>${item.categoria||'—'}</td>
           <td>${item.condutor||'—'}</td>
-          <td>${respLimpo(item.responsavel)}</td>
+          <td>${respClean}</td>
           <td><button class="edit-btn" data-veiculo="${item.veiculo}" title="Editar">✏️</button></td>
         </tr>`;
-      }
+      });
 
-      html += `<details class="region-accordion" data-region="${reg}" style="border-left-color:${color};" ${isOpen?'open':''}>
-        <summary class="region-summary">
-          <span class="region-summary-name"><span class="region-dot" style="background:${color};"></span>${reg}</span>
-          <span class="region-summary-counts">
-            ${vencidoCount?`<span class="status-badge status-vencido">${vencidoCount} vencido${vencidoCount!==1?'s':''}</span>`:''}
-            ${urgenteCount?`<span class="status-badge status-urgente">${urgenteCount} urgente${urgenteCount!==1?'s':''}</span>`:''}
-            ${naoOkCount?`<span class="status-badge status-nao-ok">${naoOkCount} não OK</span>`:''}
-            ${validoCount?`<span class="status-badge status-valido">${validoCount} válido${validoCount!==1?'s':''}</span>`:''}
-            <span class="region-total">${items.length} total</span>
-          </span>
-        </summary>
-        <div class="region-table-wrap">
-          <table class="checklist-table">
-            <thead>
-              <tr>
-                <th>Veículo</th><th>Status</th><th>Validade</th><th>Cidade/UF</th>
-                <th>Tipo Frota</th><th>Categoria</th><th>Condutor</th><th>Responsável</th>
-                <th style="width:60px;">Ações</th>
-              </tr>
-            </thead>
-            <tbody>${rows}</tbody>
-          </table>
+      const hasMore = items.length > PAGE_SIZE;
+      accordionHtml += `
+        <div class="accordion-item open" data-region="${reg}">
+          <div class="accordion-header">
+            <div class="region-title">
+              <span class="color-dot" style="background:${color};"></span>
+              ${reg}
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+              <span class="region-badge vencido">Vencidos ${vencidos}</span>
+              <span class="region-badge urgente">Urgentes ${urgentes}</span>
+              ${naoOk>0?`<span class="region-badge nao-ok">Não OK ${naoOk}</span>`:''}
+              ${validos>0?`<span class="region-badge valido">Válidos ${validos}</span>`:''}
+              <span class="region-count">${total} itens</span>
+              <span class="chevron">▼</span>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="checklist-table-wrap">
+              <table class="checklist-table">
+                <thead>
+                  <tr>
+                    <th>Veículo</th>
+                    <th>Status</th>
+                    <th>Validade</th>
+                    <th>Cidade/UF</th>
+                    <th>Tipo Frota</th>
+                    <th>Categoria</th>
+                    <th>Condutor</th>
+                    <th>Responsável</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${tableRows}
+                </tbody>
+              </table>
+            </div>
+            ${hasMore ? `<button class="load-more-btn" data-region="${reg}" data-offset="${PAGE_SIZE}">Carregar mais (+${items.length - PAGE_SIZE})</button>` : ''}
+          </div>
         </div>
-      </details>`;
-    }
-    accordionEl.innerHTML = html;
+      `;
+    });
+    accordion.innerHTML = accordionHtml;
 
-    accordionEl.querySelectorAll('.region-accordion').forEach(det=>{
-      det.addEventListener('toggle', function(){
-        regionOpenState[this.dataset.region] = this.open;
+    // Eventos de "carregar mais"
+    document.querySelectorAll('.load-more-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const reg = this.dataset.region;
+        const offset = parseInt(this.dataset.offset) || 50;
+        const items = grouped[reg] || [];
+        const nextItems = items.slice(offset, offset + 50);
+        const tbody = this.closest('.accordion-body').querySelector('tbody');
+        if (!tbody) return;
+        nextItems.forEach(item => {
+          const statusClass = `status-${item.status}`;
+          const statusLabel = item.status==='vencido'?'Vencido':
+                              item.status==='valido'?'Válido':
+                              item.status==='urgente'?'Urgente':
+                              item.status==='nao-ok'?'Não OK':'Desconhecido';
+          let diasLabel = '';
+          if (item.status === 'vencido' && item.diasVencido !== null) {
+            const d = item.diasVencido;
+            if (d > 0) diasLabel = `<span class="dias-vencido" title="Vencido há ${d} dias">${d} dias</span>`;
+            else if (d === 0) diasLabel = `<span class="dias-vencido" title="Vence hoje">Hoje</span>`;
+          }
+          const respClean = item.responsavelClean || '—';
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><span class="veiculo-tag">${item.veiculo||'—'}</span></td>
+            <td><span class="status-badge ${statusClass}">${statusLabel}</span> ${diasLabel}</td>
+            <td>${item.validadeData||item.validadeRaw||'—'}</td>
+            <td><span class="cidade-tag">${item.cidadeUF||'—'}</span></td>
+            <td>${item.tipoFrota||'—'}</td>
+            <td>${item.categoria||'—'}</td>
+            <td>${item.condutor||'—'}</td>
+            <td>${respClean}</td>
+            <td><button class="edit-btn" data-veiculo="${item.veiculo}" title="Editar">✏️</button></td>
+          `;
+          tbody.appendChild(tr);
+        });
+        this.dataset.offset = offset + 50;
+        const remaining = items.length - parseInt(this.dataset.offset);
+        if (remaining <= 0) this.style.display = 'none';
+        else this.textContent = `Carregar mais (+${remaining})`;
+        // Reaplicar eventos de edição nos novos botões
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+          btn.removeEventListener('click', editClickHandler);
+          btn.addEventListener('click', editClickHandler);
+        });
       });
     });
-    accordionEl.querySelectorAll('.edit-btn').forEach(btn=>{
-      btn.addEventListener('click', function(e){
-        e.stopPropagation();
-        openEditModal(this.dataset.veiculo);
-      });
+
+    // Eventos de edição (delegação)
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+      btn.removeEventListener('click', editClickHandler);
+      btn.addEventListener('click', editClickHandler);
     });
   }
 
-  // ===== EDIÇÃO =====
+  function editClickHandler(e) {
+    e.stopPropagation();
+    const veiculo = this.dataset.veiculo;
+    openEditModal(veiculo);
+  }
+
+  function atualizarKPIs(filtered) {
+    const total = filtered.length;
+    const vencidos = filtered.filter(i=>i.status==='vencido').length;
+    const urgentes = filtered.filter(i=>i.status==='urgente').length;
+    const naoOk = filtered.filter(i=>i.status==='nao-ok').length;
+    const validos = filtered.filter(i=>i.status==='valido').length;
+    // Vencidos há mais de 30 dias
+    const vencidos30 = filtered.filter(i => i.status==='vencido' && i.diasVencido !== null && i.diasVencido > 30).length;
+
+    const container = document.getElementById('globalKpis');
+    container.innerHTML = `
+      <div class="kpi-card"><span class="kpi-num">${total}</span><span class="kpi-label">Filtrados</span></div>
+      <div class="kpi-card"><span class="kpi-num" style="color:var(--red);">${vencidos}</span><span class="kpi-label">Vencidos</span><span class="kpi-sub">${vencidos30} > 30 dias</span></div>
+      <div class="kpi-card"><span class="kpi-num" style="color:var(--orange);">${urgentes}</span><span class="kpi-label">Urgentes</span></div>
+      <div class="kpi-card"><span class="kpi-num" style="color:var(--purple);">${naoOk}</span><span class="kpi-label">Não OK</span></div>
+      <div class="kpi-card"><span class="kpi-num" style="color:var(--green);">${validos}</span><span class="kpi-label">Válidos</span></div>
+    `;
+    document.getElementById('checklistCount').textContent = total + ' itens';
+  }
+
+  // ============================================================
+  // MODAL DE EDIÇÃO
+  // ============================================================
   function openEditModal(veiculo) {
     const item = window.checklistData.find(d=>d.veiculo===veiculo);
     if(!item) return;
@@ -1429,7 +1545,7 @@
     document.getElementById('editRegion').value = item.region||'';
     document.getElementById('editModal').classList.add('show');
   }
-  function closeEditModal() { document.getElementById('editModal').classList.remove('show'); }
+  function closeEditModal(){ document.getElementById('editModal').classList.remove('show'); }
   document.getElementById('editCancelBtn').addEventListener('click', closeEditModal);
   document.getElementById('editModal').addEventListener('click', function(e){ if(e.target===this) closeEditModal(); });
   document.getElementById('editSaveBtn').addEventListener('click', function(){
@@ -1444,13 +1560,18 @@
     item.condutor = document.getElementById('editCondutor').value;
     item.responsavel = document.getElementById('editResponsavel').value;
     item.region = document.getElementById('editRegion').value;
+    // Recalcula dias vencido e limpa responsável
+    item.diasVencido = calcularDiasVencido(item);
+    item.responsavelClean = cleanResponsavel(item.responsavel);
     localStorage.setItem('checklistEdits', JSON.stringify(window.checklistData));
     closeEditModal();
-    renderChecklists();
-    renderGlobalStats();
+    renderChecklist();
     showToast('✅ Checklist atualizado!');
   });
 
+  // ============================================================
+  // EXPORTAÇÃO E RESTAURAÇÃO
+  // ============================================================
   document.getElementById('exportJsonBtn').addEventListener('click', function(){
     const blob = new Blob([JSON.stringify(window.checklistData,null,2)], {type:'application/json'});
     const a = document.createElement('a');
@@ -1475,7 +1596,7 @@
   });
 
   // ============================================================
-  // 6. SWITCH ENTRE ABAS
+  // SWITCH ENTRE ABAS
   // ============================================================
   async function switchBase(base) {
     try {
@@ -1493,8 +1614,7 @@
         if (!window.checklistData) {
           await loadChecklists();
         } else {
-          renderChecklists();
-          renderGlobalStats();
+          renderChecklist();
         }
         return;
       }
@@ -1522,7 +1642,7 @@
   }
 
   // ============================================================
-  // 7. EVENTOS
+  // EVENTOS
   // ============================================================
   document.querySelectorAll('.base-tab').forEach(tab=>{
     tab.addEventListener('click', async ()=>{
@@ -1550,24 +1670,23 @@
   document.getElementById('basesUFFilter').addEventListener('change', renderBases);
   document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
 
-  document.getElementById('checklistSearch').addEventListener('input', renderChecklists);
-  document.getElementById('checklistStatusFilter').addEventListener('change', renderChecklists);
-  document.getElementById('checklistTipoFilter').addEventListener('change', renderChecklists);
-  document.getElementById('checklistCategoriaFilter').addEventListener('change', renderChecklists);
+  // Filtros da checklist
+  document.getElementById('checklistSearch').addEventListener('input', renderChecklist);
+  document.getElementById('checklistStatusFilter').addEventListener('change', renderChecklist);
+  document.getElementById('checklistTipoFilter').addEventListener('change', renderChecklist);
+  document.getElementById('checklistCategoriaFilter').addEventListener('change', renderChecklist);
   document.getElementById('checklistClearFilters').addEventListener('click', function(){
     document.getElementById('checklistSearch').value='';
     document.getElementById('checklistStatusFilter').value='';
     document.getElementById('checklistTipoFilter').value='';
     document.getElementById('checklistCategoriaFilter').value='';
-    renderChecklists();
+    renderChecklist();
   });
 
-  const checklistPriorityToggle = document.getElementById('checklistPriorityToggle');
-  checklistPriorityToggle.checked = checklistPriorityMode;
-  checklistPriorityToggle.addEventListener('change', function(){
-    checklistPriorityMode = this.checked;
-    localStorage.setItem('checklistPriority', checklistPriorityMode);
-    renderChecklists();
+  // Toggle "Prioridade" – exibir apenas vencidos+urgentes
+  document.getElementById('showAllCheckbox').addEventListener('change', function(){
+    showAllItems = this.checked;
+    renderChecklist();
   });
 
   const compactToggle = document.getElementById('compactModeToggle');
@@ -1575,7 +1694,7 @@
   compactToggle.addEventListener('change', e=>{ document.body.classList.toggle('compact', e.target.checked); localStorage.setItem('rondologCompact', e.target.checked); });
 
   // ============================================================
-  // 8. TEMA
+  // TEMA
   // ============================================================
   const themeToggle = document.getElementById('themeToggle');
   const themeLabel = document.getElementById('themeLabel');
@@ -1593,7 +1712,7 @@
   });
 
   // ============================================================
-  // 9. INICIALIZAÇÃO
+  // INICIALIZAÇÃO
   // ============================================================
   switchBase('rondolog');
 })();
