@@ -1226,6 +1226,72 @@
       color: var(--green);
     }
 
+    /* ===== MODAL ROTAS ===== */
+    .modal-rotas {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+    .modal-rotas.show {
+      display: flex;
+    }
+    .modal-rotas-content {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 24px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-hover);
+      border: 1px solid var(--border);
+    }
+    .modal-rotas-content h3 {
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .modal-rotas-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .modal-rotas-content ul li {
+      padding: 10px 14px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-rotas-content ul li:hover {
+      background: var(--surface2);
+    }
+    .modal-rotas-content .close-modal-btn {
+      margin-top: 16px;
+      padding: 8px 20px;
+      border-radius: 40px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text-dim);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .modal-rotas-content .close-modal-btn:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+
     /* ===== RESPONSIVO ===== */
     @media (max-width: 600px) {
       .search-order-wrap { flex-direction: column; }
@@ -1248,6 +1314,7 @@
       .points-search-row { flex-direction: column; }
       #pointsUFFilter, #pointsOrderSelect { width: 100%; }
       .points-grid { padding: 16px; }
+      .modal-rotas-content { padding: 16px; }
     }
   </style>
 </head>
@@ -1401,7 +1468,6 @@
       </div>
       <select id="pointsUFFilter">
         <option value="">Todos os estados</option>
-        <!-- UFs serão preenchidas dinamicamente -->
       </select>
       <select id="pointsOrderSelect">
         <option value="freq">Mais usados</option>
@@ -1474,7 +1540,16 @@
   </div>
 </div>
 
-<!-- Modal de edição -->
+<!-- ===== MODAL ROTAS ===== -->
+<div class="modal-rotas" id="modalRotas">
+  <div class="modal-rotas-content">
+    <h3>📋 Rotas que usam <span id="modalPontoNome" style="color:var(--red);"></span></h3>
+    <ul id="modalRotasList"></ul>
+    <button class="close-modal-btn" onclick="document.getElementById('modalRotas').classList.remove('show')">Fechar</button>
+  </div>
+</div>
+
+<!-- ===== MODAL EDIÇÃO ===== -->
 <div class="edit-modal" id="editModal">
   <div class="edit-modal-content">
     <h3>✏️ Editar Checklist</h3>
@@ -2199,6 +2274,44 @@
     setTimeout(() => t.classList.remove('show'), 2200);
   }
 
+  /* ============================================================
+     FUNÇÕES DE NAVEGAÇÃO PARA ROTAS (USADO NO MODAL PONTOS)
+     ============================================================ */
+  window.goToRoute = function(nomeRota) {
+    const targetBase = 'rondolog';
+    switchBase(targetBase).then(() => {
+      setTimeout(() => {
+        const searchEl = document.getElementById('search');
+        if (searchEl) {
+          searchEl.value = nomeRota;
+          const event = new Event('input', { bubbles: true });
+          searchEl.dispatchEvent(event);
+        }
+        // Fecha o modal
+        document.getElementById('modalRotas').classList.remove('show');
+      }, 350);
+    });
+  };
+
+  window.__showRotas = function(pontoNome, rotas) {
+    document.getElementById('modalPontoNome').textContent = pontoNome;
+    const list = document.getElementById('modalRotasList');
+    list.innerHTML = '';
+    if (!rotas || rotas.length === 0) {
+      list.innerHTML = '<li style="padding:10px;color:var(--text-muted);text-align:center;border:none;cursor:default;">Nenhuma rota associada.</li>';
+    } else {
+      rotas.forEach(r => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span style="color:var(--text);">${r}</span> <span style="margin-left:auto;font-size:12px;color:var(--text-muted);">🔗</span>`;
+        li.addEventListener('click', () => {
+          goToRoute(r);
+        });
+        list.appendChild(li);
+      });
+    }
+    document.getElementById('modalRotas').classList.add('show');
+  };
+
   /* ===================== SWITCH BASE ===================== */
   async function switchBase(base) {
     if (base === 'bases') {
@@ -2334,7 +2447,6 @@
       const res = await fetch('data/pontos.json');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       pointsData = await res.json();
-      // Preenche dinamicamente o filtro de UF
       const ufs = [...new Set(pointsData.map(p => p.uf).filter(Boolean))].sort();
       const ufSelect = document.getElementById('pointsUFFilter');
       ufSelect.innerHTML = '<option value="">Todos os estados</option>' +
@@ -2373,13 +2485,11 @@
       return matchSearch && matchUf;
     });
 
-    // Ordenação
     if (order === 'nome') {
       filtered.sort((a, b) => (a.nome || '').localeCompare(b.nome || ''));
     } else if (order === 'uf') {
       filtered.sort((a, b) => (a.uf || '').localeCompare(b.uf || '') || (a.nome || '').localeCompare(b.nome || ''));
     } else {
-      // padrão: mais frequentes primeiro
       filtered.sort((a, b) => (b.count || 0) - (a.count || 0));
     }
 
@@ -2412,6 +2522,9 @@
       const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoCompleto)}`;
       const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(p.nome + ' ' + p.cidade + ' ' + p.uf)}&navigate=yes`;
 
+      const rotasList = p.rotas || [];
+      const rotasCount = rotasList.length;
+
       return `
 <div class="point-card">
   <div class="pci">
@@ -2432,6 +2545,7 @@
           <a class="pci-btn pci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener">🗺 Maps</a>
           <a class="pci-btn pci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener">🔵 Waze</a>
           <button class="pci-btn" onclick="__copyPoint('${p.endereco ? p.endereco.replace(/"/g, '&quot;') : ''}', '${p.cidade ? p.cidade.replace(/"/g, '&quot;') : ''}', '${p.uf || ''}', '${p.cep || ''}')">📋 Copiar</button>
+          ${rotasCount > 0 ? `<button class="pci-btn" style="border-color:var(--red);color:var(--red);" onclick="event.stopPropagation();__showRotas('${p.nome.replace(/'/g, "\\'").replace(/"/g, '&quot;')}', ${JSON.stringify(rotasList).replace(/"/g, '&quot;')})">📋 Rotas</button>` : ''}
         </div>
       </div>
     </div>
@@ -2439,7 +2553,6 @@
 </div>`;
     }).join('');
 
-    // Função global para copiar endereço do ponto
     window.__copyPoint = function(endereco, cidade, uf, cep) {
       let txt = endereco;
       if (cidade) txt += ', ' + cidade;
@@ -2801,7 +2914,6 @@
   });
 
   /* ===================== INIT ===================== */
-  // Inicia com a aba RONDOLOG ativa
   switchBase('rondolog');
 })();
 </script>
