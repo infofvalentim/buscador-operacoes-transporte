@@ -1074,6 +1074,158 @@
       color: var(--text-muted);
     }
 
+    /* =============================================
+       ABA PONTOS (Clientes/Destinos)
+       ============================================= */
+    #pointsPanel { display: none; }
+    #pointsPanel.active { display: block; }
+
+    .points-header {
+      background: var(--surface);
+      padding: 20px 24px 18px;
+      position: sticky; top: 0; z-index: 99;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .points-header-top {
+      display: flex; align-items: baseline; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; margin-bottom: 16px;
+    }
+    .points-search-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .points-search-wrap { position: relative; flex: 1; min-width: 200px; }
+    .points-search-icon {
+      position: absolute; left: 16px; top: 50%;
+      transform: translateY(-50%); color: var(--text-muted);
+      pointer-events: none; font-size: 16px;
+    }
+    #pointsSearch {
+      width: 100%; background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 13px 16px 13px 48px;
+      font-size: 15px; color: var(--text); outline: none;
+      transition: var(--transition); font-family: 'Inter', sans-serif;
+    }
+    #pointsSearch:focus { border-color: var(--red); box-shadow: 0 0 0 4px rgba(220,38,38,0.08); }
+    #pointsUFFilter, #pointsOrderSelect {
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 12px 16px; font-size: 13px;
+      color: var(--text); font-family: 'Inter', sans-serif; cursor: pointer;
+      font-weight: 500; transition: var(--transition);
+      min-width: 130px;
+    }
+    #pointsUFFilter:focus, #pointsOrderSelect:focus {
+      border-color: var(--red); outline: none;
+    }
+
+    .points-stats {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      padding: 16px 24px 0; max-width: 1280px; margin: 0 auto;
+    }
+    .points-grid {
+      display: grid; grid-template-columns: 1fr; gap: 16px;
+      padding: 24px; max-width: 1280px; margin: 0 auto;
+    }
+    @media (min-width: 640px) {
+      .points-grid { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+    }
+
+    .point-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .point-card:hover {
+      border-color: var(--red);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .point-card .pci {
+      display: flex; align-items: stretch;
+    }
+    .point-card .pci-accent {
+      width: 5px; flex-shrink: 0;
+      border-radius: 3px 0 0 3px;
+      transition: var(--transition);
+    }
+    .point-card:hover .pci-accent { width: 6px; }
+    .point-card .pci-body {
+      padding: 16px 20px;
+      flex: 1;
+      min-width: 0;
+    }
+    .point-card .pci-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 10px;
+      margin-bottom: 4px;
+    }
+    .point-card .pci-nome {
+      font-size: 16px; font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      word-break: break-word;
+    }
+    .point-card .pci-freq {
+      font-family: var(--mono); font-size: 11px;
+      background: var(--surface2); padding: 3px 14px;
+      border-radius: 40px; border: 1px solid var(--border);
+      white-space: nowrap;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .point-card .pci-endereco {
+      font-size: 12px; color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .point-card .pci-foot {
+      display: flex; align-items: center;
+      gap: 8px; flex-wrap: wrap;
+    }
+    .point-card .pci-uf {
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 3px 10px; letter-spacing: 1px;
+      color: var(--text-dim);
+    }
+    .point-card .pci-cep {
+      font-family: var(--mono); font-size: 10px;
+      color: var(--text-muted);
+    }
+    .point-card .pci-btns {
+      display: flex; gap: 6px; margin-left: auto;
+    }
+    .point-card .pci-btn {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 10px; font-weight: 600; padding: 5px 12px;
+      border-radius: 40px; border: 1.5px solid var(--border);
+      background: var(--surface2); color: var(--text-dim);
+      cursor: pointer; transition: var(--transition);
+      text-decoration: none; white-space: nowrap; line-height: 1;
+    }
+    .point-card .pci-btn:hover {
+      border-color: var(--red); color: var(--red);
+      background: var(--red-bg);
+    }
+    .point-card .pci-btn-maps {
+      border-color: rgba(59,130,246,0.3); color: var(--blue);
+    }
+    .point-card .pci-btn-maps:hover {
+      border-color: var(--blue);
+      background: rgba(59,130,246,0.08);
+      color: var(--blue);
+    }
+    .point-card .pci-btn-waze {
+      border-color: rgba(34,197,94,0.3); color: var(--green);
+    }
+    .point-card .pci-btn-waze:hover {
+      border-color: var(--green);
+      background: rgba(34,197,94,0.08);
+      color: var(--green);
+    }
+
     /* ===== RESPONSIVO ===== */
     @media (max-width: 600px) {
       .search-order-wrap { flex-direction: column; }
@@ -1093,6 +1245,9 @@
       .checklist-global-stats { gap: 8px; }
       .global-stat-card { min-width: 70px; padding: 10px 14px; }
       .global-stat-card .gs-num { font-size: 18px; }
+      .points-search-row { flex-direction: column; }
+      #pointsUFFilter, #pointsOrderSelect { width: 100%; }
+      .points-grid { padding: 16px; }
     }
   </style>
 </head>
@@ -1113,6 +1268,7 @@
   <button class="base-tab active" data-base="rondolog">🚛 RONDOLOG</button>
   <button class="base-tab" data-base="saster">📦 SASTER</button>
   <button class="base-tab" data-base="bases">🏭 BASES</button>
+  <button class="base-tab" data-base="points">📍 PONTOS</button>
   <button class="base-tab" data-base="checklist">📋 CHECKLIST</button>
 </div>
 
@@ -1228,6 +1384,41 @@
   </div>
 </div>
 
+<!-- ===== PAINEL PONTOS ===== -->
+<div id="pointsPanel" class="panel">
+  <div class="points-header">
+    <div class="points-header-top">
+      <div>
+        <div class="brand-eyebrow">📍 Pontos de coleta, entrega e paradas</div>
+        <div class="brand-title">PONTOS <span style="color:var(--red)">LOGÍSTICOS</span></div>
+      </div>
+      <div class="count-badge" id="pointsCountBadge">— pontos</div>
+    </div>
+    <div class="points-search-row">
+      <div class="points-search-wrap">
+        <span class="points-search-icon">🔍</span>
+        <input type="text" id="pointsSearch" placeholder="Buscar nome, endereço ou CEP..." autocomplete="off">
+      </div>
+      <select id="pointsUFFilter">
+        <option value="">Todos os estados</option>
+        <!-- UFs serão preenchidas dinamicamente -->
+      </select>
+      <select id="pointsOrderSelect">
+        <option value="freq">Mais usados</option>
+        <option value="nome">Nome (A-Z)</option>
+        <option value="uf">UF</option>
+      </select>
+    </div>
+  </div>
+  <div class="points-stats">
+    <div class="stat-chip"><span class="stat-num red" id="pointsTotal">0</span><span class="stat-label">Pontos únicos</span></div>
+    <div class="stat-chip"><span class="stat-num blue" id="pointsRotas">0</span><span class="stat-label">Rotas associadas</span></div>
+    <div class="stat-chip"><span class="stat-num purple" id="pointsUFs">0</span><span class="stat-label">UFs</span></div>
+    <div class="stat-chip"><span class="stat-num green" id="pointsTop">—</span><span class="stat-label">Mais frequente</span></div>
+  </div>
+  <div class="points-grid" id="pointsGrid"></div>
+</div>
+
 <!-- ===== PAINEL CHECKLIST ===== -->
 <div id="checklistPanel" class="panel">
   <div class="checklist-header">
@@ -1245,10 +1436,8 @@
     </div>
   </div>
 
-  <!-- KPIs GLOBAIS (sempre sobre o dataset inteiro) -->
   <div class="checklist-global-stats" id="globalStats"></div>
 
-  <!-- Filtros -->
   <div class="checklist-filters">
     <input type="text" id="checklistSearch" placeholder="🔍 Buscar veículo, condutor, cidade..." autocomplete="off">
     <select id="checklistStatusFilter">
@@ -1279,7 +1468,6 @@
     <button class="filtro-clear" id="checklistClearFilters">Limpar filtros</button>
   </div>
 
-  <!-- Accordion -->
   <div class="checklist-table-wrap">
     <div id="checklistLoading" class="loading-checklist">📂 Carregando checklists...</div>
     <div id="checklistAccordion" style="display:none;"></div>
@@ -2020,6 +2208,17 @@
       setTimeout(() => { initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
       return;
     }
+    if (base === 'points') {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('pointsPanel').classList.add('active');
+      loadingOverlay.style.display = 'none';
+      if (window.pointsData === undefined) {
+        await loadPoints();
+      } else {
+        renderPoints();
+      }
+      return;
+    }
     if (base === 'checklist') {
       document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
       document.getElementById('checklistPanel').classList.add('active');
@@ -2125,14 +2324,146 @@
   document.getElementById('basesUFFilter').addEventListener('change', renderBases);
   document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
 
-  /* ===================== CHECKLIST ===================== */
+  /* ============================================================
+     ABA PONTOS – LÓGICA DE CARREGAMENTO DO JSON
+     ============================================================ */
+  let pointsData = [];
+
+  async function loadPoints() {
+    try {
+      const res = await fetch('data/pontos.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      pointsData = await res.json();
+      // Preenche dinamicamente o filtro de UF
+      const ufs = [...new Set(pointsData.map(p => p.uf).filter(Boolean))].sort();
+      const ufSelect = document.getElementById('pointsUFFilter');
+      ufSelect.innerHTML = '<option value="">Todos os estados</option>' +
+        ufs.map(uf => `<option value="${uf}">${uf}</option>`).join('');
+      renderPoints();
+    } catch (err) {
+      console.error('Erro ao carregar pontos.json:', err);
+      document.getElementById('pointsGrid').innerHTML = `
+        <div class="no-result">❌ Erro ao carregar pontos. Verifique se o arquivo data/pontos.json existe.</div>
+      `;
+    }
+  }
+
+  function renderPoints() {
+    if (!pointsData || pointsData.length === 0) {
+      document.getElementById('pointsGrid').innerHTML = '<div class="no-result">📭 Nenhum ponto cadastrado.</div>';
+      document.getElementById('pointsCountBadge').textContent = '0 pontos';
+      document.getElementById('pointsTotal').textContent = '0';
+      document.getElementById('pointsRotas').textContent = '0';
+      document.getElementById('pointsUFs').textContent = '0';
+      document.getElementById('pointsTop').textContent = '—';
+      return;
+    }
+
+    const searchTerm = document.getElementById('pointsSearch').value.toLowerCase().trim();
+    const ufFilter = document.getElementById('pointsUFFilter').value;
+    const order = document.getElementById('pointsOrderSelect').value;
+
+    let filtered = pointsData.filter(p => {
+      const matchSearch = !searchTerm ||
+        (p.nome || '').toLowerCase().includes(searchTerm) ||
+        (p.endereco || '').toLowerCase().includes(searchTerm) ||
+        (p.cidade || '').toLowerCase().includes(searchTerm) ||
+        (p.cep || '').includes(searchTerm);
+      const matchUf = !ufFilter || p.uf === ufFilter;
+      return matchSearch && matchUf;
+    });
+
+    // Ordenação
+    if (order === 'nome') {
+      filtered.sort((a, b) => (a.nome || '').localeCompare(b.nome || ''));
+    } else if (order === 'uf') {
+      filtered.sort((a, b) => (a.uf || '').localeCompare(b.uf || '') || (a.nome || '').localeCompare(b.nome || ''));
+    } else {
+      // padrão: mais frequentes primeiro
+      filtered.sort((a, b) => (b.count || 0) - (a.count || 0));
+    }
+
+    document.getElementById('pointsCountBadge').textContent = filtered.length + ' ponto' + (filtered.length!==1?'s':'');
+    document.getElementById('pointsTotal').textContent = pointsData.length;
+    const totalRotas = pointsData.reduce((acc, p) => acc + (p.count || 0), 0);
+    document.getElementById('pointsRotas').textContent = totalRotas;
+    const ufs = new Set(pointsData.map(p => p.uf).filter(Boolean));
+    document.getElementById('pointsUFs').textContent = ufs.size;
+    const top = pointsData.length > 0 ? pointsData[0].nome : '—';
+    document.getElementById('pointsTop').textContent = top.length > 20 ? top.slice(0,20)+'…' : top;
+
+    const grid = document.getElementById('pointsGrid');
+
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="no-result">🔍 Nenhum ponto encontrado com esses filtros.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(p => {
+      const freq = p.count || 0;
+      const maxFreq = pointsData.length > 0 ? pointsData[0].count || 0 : 1;
+      const intensity = maxFreq > 0 ? Math.min(1, freq / maxFreq) : 0;
+      const r = Math.round(220 - 100 * intensity);
+      const g = Math.round(220 - 180 * intensity);
+      const b = Math.round(220 - 100 * intensity);
+      const barColor = `rgb(${r}, ${g}, ${b})`;
+
+      const enderecoCompleto = `${p.endereco || ''}, ${p.cidade || ''}/${p.uf || ''}${p.cep ? ' — CEP ' + p.cep : ''}`;
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoCompleto)}`;
+      const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(p.nome + ' ' + p.cidade + ' ' + p.uf)}&navigate=yes`;
+
+      return `
+<div class="point-card">
+  <div class="pci">
+    <div class="pci-accent" style="background:${barColor};"></div>
+    <div class="pci-body">
+      <div class="pci-top">
+        <span class="pci-nome">${p.nome || '—'}</span>
+        <span class="pci-freq">${freq} rota${freq>1?'s':''}</span>
+      </div>
+      <div class="pci-endereco">
+        📍 ${p.endereco || ''}<br>
+        ${p.cidade || ''} / ${p.uf || ''} ${p.cep ? '— CEP ' + p.cep : ''}
+      </div>
+      <div class="pci-foot">
+        <span class="pci-uf">${p.uf || '??'}</span>
+        ${p.cep ? `<span class="pci-cep">${p.cep}</span>` : ''}
+        <div class="pci-btns">
+          <a class="pci-btn pci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener">🗺 Maps</a>
+          <a class="pci-btn pci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener">🔵 Waze</a>
+          <button class="pci-btn" onclick="__copyPoint('${p.endereco ? p.endereco.replace(/"/g, '&quot;') : ''}', '${p.cidade ? p.cidade.replace(/"/g, '&quot;') : ''}', '${p.uf || ''}', '${p.cep || ''}')">📋 Copiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+    }).join('');
+
+    // Função global para copiar endereço do ponto
+    window.__copyPoint = function(endereco, cidade, uf, cep) {
+      let txt = endereco;
+      if (cidade) txt += ', ' + cidade;
+      if (uf) txt += '/' + uf;
+      if (cep) txt += ', CEP ' + cep;
+      navigator.clipboard.writeText(txt).then(() => showToast('ENDEREÇO COPIADO'));
+    };
+  }
+
+  // Filtros da aba PONTOS
+  document.getElementById('pointsSearch').addEventListener('input', renderPoints);
+  document.getElementById('pointsUFFilter').addEventListener('change', renderPoints);
+  document.getElementById('pointsOrderSelect').addEventListener('change', renderPoints);
+
+  /* ============================================================
+     CHECKLIST
+     ============================================================ */
   const REGION_ORDER = ['Frota Pesada', 'Embarque', 'Rio de Janeiro', 'São Paulo', 'Betim', 'Brasília', 'Outras'];
   const REGION_COLORS = {
     'Frota Pesada':'#dc2626', 'Embarque':'#f97316', 'Rio de Janeiro':'#3b82f6',
     'São Paulo':'#22c55e', 'Betim':'#8b5cf6', 'Brasília':'#eab308', 'Outras':'#6b7280'
   };
   const RESPONSAVEL_LIXO = ['00','0','-','=','condutor','','n/a','na','nan','.','--','x','n/i','sem','---','****','**','*'];
-  let checklistPriorityMode = localStorage.getItem('checklistPriority') === 'true'; // default: false (prioridade ativa)
+  let checklistPriorityMode = localStorage.getItem('checklistPriority') === 'true';
   let regionOpenState = {};
 
   function respLimpo(r){
@@ -2234,7 +2565,6 @@
         (item.region||'').toLowerCase().includes(searchTerm);
       const matchStatus = !statusFilter || item.status===statusFilter;
       const matchTipo = !tipoFilter || (item.tipoFrota||'').toLowerCase()===tipoFilter.toLowerCase();
-      // Categoria: suporte para CAVALO, CARRETA, FIORINO, LEVE, VAN
       const matchCategoria = !categoriaFilter || (item.categoria||'').toUpperCase()===categoriaFilter.toUpperCase();
       const matchPriority = !checklistPriorityMode || statusFilter || item.status==='vencido' || item.status==='urgente';
       return matchSearch && matchStatus && matchTipo && matchCategoria && matchPriority;
@@ -2360,7 +2690,6 @@
     }
     accordionEl.innerHTML = html;
 
-    // Evento de clique no cabeçalho para abrir/fechar
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', function(e){
         const accordion = this.closest('.region-accordion');
@@ -2381,7 +2710,6 @@
     });
   }
 
-  /* ===== EDIÇÃO ===== */
   function openEditModal(veiculo) {
     const item = window.checklistData.find(d=>d.veiculo===veiculo);
     if(!item) return;
@@ -2442,7 +2770,6 @@
     loadChecklists();
   });
 
-  // Toggle de prioridade
   const priorityToggle = document.getElementById('checklistPriorityToggle');
   const priorityLabel = document.getElementById('priorityToggleLabelText');
   priorityToggle.checked = !checklistPriorityMode;
@@ -2461,7 +2788,6 @@
     renderChecklists();
   });
 
-  // Filtros da checklist
   document.getElementById('checklistSearch').addEventListener('input', renderChecklists);
   document.getElementById('checklistStatusFilter').addEventListener('change', renderChecklists);
   document.getElementById('checklistTipoFilter').addEventListener('change', renderChecklists);
@@ -2475,6 +2801,7 @@
   });
 
   /* ===================== INIT ===================== */
+  // Inicia com a aba RONDOLOG ativa
   switchBase('rondolog');
 })();
 </script>
