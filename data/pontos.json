@@ -1,67 +1,167 @@
 [
   {
-    "nome": "RJ FARTEX",
+    "nome": "Rua Joana Nascimento 201 Bonsucesso 21042-180 Rio de Janeiro/RJ",
     "endereco": "Rua Joana Nascimento 201 Bonsucesso  Rio de Janeiro",
     "cidade": "Rua Joana Nascimento 201 Bonsucesso  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21042-180",
-    "count": 18
+    "count": 18,
+    "rotas": [
+      "RJ FARTEX X DONA CATHARINA",
+      "FARTEX X TAU TRANSPORTES (SP)",
+      "RJ FARTEX X EDI ECOMMERCE LTDA",
+      "FARTEX X XNDSTORE",
+      "FARTEX X RM COMERCIO",
+      "RJ FARTEX X ENEIAS SILLAS",
+      "RJ FARTEX X VARZEA PAULISTA (3R CONDOMINIO)",
+      "RJ FARTEX X MARIA HELENA TRANSPORTES",
+      "RJ FARTEX X LOJAS MARI EIRELI",
+      "POSTO CIAPETRO X FARTEX RJ",
+      "RJ FARTEX X D SANCHEZ COMERCIAL",
+      "RJ FARTEX X PLANETA COMERCIO (LAPA)",
+      "RJ FARTEX X BILL GUARULHOS",
+      "RJ FARTEX X CD GUARULHOS",
+      "RJ FARTEX X CENTERLAR JUNDIAI",
+      "RJ FARTEX X HOFFLOG TRANSPORTES E LOGISTA",
+      "RIO DE JANEIRO-RJ X PASSO FUNDO-RS - RONDOCARGAS",
+      "TRANSFERÊNCIA - RIO DE JANEIRO X JUNDIAI - MUILTART"
+    ]
   },
   {
-    "nome": "SARA PLAST IND",
+    "nome": "Avenida Domingos José Delgado 260 Eco Park Empresarial 13295-633 Itupeva/SP",
     "endereco": "Avenida Domingos José Delgado 260 Eco Park Empresarial  Itupeva",
     "cidade": "Avenida Domingos José Delgado 260 Eco Park Empresarial  Itupeva",
     "uf": "SP",
     "cep": "13295-633",
-    "count": 12
+    "count": 12,
+    "rotas": [
+      "COLETA -AS X SARAPLAST - ITUPEVA-SP",
+      "COLETA - RIO CLARENSE JAGUARIUNA-SP X ITUPEVA -SP",
+      "COLETA - PANAMBY - DROGA RAIA - 4BIO X ITUPEVA-SP",
+      "COLETA - FUTURA TATUI-SP X ITUPEVA-SP",
+      "COLETA - COMMED VILA MARIANA-SP X ITUPEVA-SP",
+      "COLETA - RENNOVA GUARULHOS-SP X ITUPEVA -SP",
+      "COLETA - NACIONAL SANTANA X ITUPEVA -SP",
+      "COLETA - GAM SJP X ITUPEVA -SP",
+      "COLETA - DUPATRI SUMARE X ITUPEVA -SP",
+      "COLETA - 4BIO BARUERI X ITUPEVA -SP",
+      "COLETA - VIA ESTETICA CAMPINAS X ITUPEVA -SP",
+      "COLETA - U.QUIMICA - TABOAO DA SERRA-SP X ITUPEVA -SP"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Via de Acesso Sul Km 30 0 Empresarial Mirante de Cajamar 07790-330 Cajamar/SP",
     "endereco": "Via de Acesso Sul Km 30 0 Empresarial Mirante de Cajamar  Cajamar",
     "cidade": "Via de Acesso Sul Km 30 0 Empresarial Mirante de Cajamar  Cajamar",
     "uf": "SP",
     "cep": "07790-330",
-    "count": 12
+    "count": 12,
+    "rotas": [
+      "Cajamar X Valinhos e Região",
+      "Cajamar X Sumare e Região",
+      "Cajamar X Sorocaba",
+      "Cajamar X Mogi das Cruzes e Região",
+      "Cajamar X Jundiai e Região",
+      "Cajamar X Itu e Região",
+      "Cajamar X Itatiba",
+      "Cajamar X Indaiatuba e Região",
+      "Cajamar X Campinas 1933",
+      "Cajamar X Campinas",
+      "Cajamar X Atibaia e Região",
+      "Cajamar X ABC"
+    ]
   },
   {
-    "nome": "AEROPORTO CGO",
+    "nome": "Avenida Washington Luís 0 Santo Amaro 04626-911 São Paulo/SP",
     "endereco": "Avenida Washington Luís 0 Santo Amaro  São Paulo",
     "cidade": "Avenida Washington Luís 0 Santo Amaro  São Paulo",
     "uf": "SP",
     "cep": "04626-911",
-    "count": 11
+    "count": 11,
+    "rotas": [
+      "CONGONHAS X FLEURY",
+      "CONGONHAS X SIRIO LIBANES",
+      "AEROPORTO CONGONHAS X LIBERDADE",
+      "CONGONHAS X OFICINA DE SPACE GLASS",
+      "SANTANA DE PARNAIBA  X CONGONHAS",
+      "CONGONHAS X AV PORTUGAL",
+      "RJ AREOPORTO DE CONGONHAS X AVENIDA PORTUGAL",
+      "AEROPORTO CONGONHAS X COMMED X AS",
+      "AEROPORTO CONGONHAS x SANTANA DE PARNAIBA",
+      "JUNDIAI - (AVULSA)"
+    ]
   },
   {
-    "nome": "GAM SJP",
+    "nome": "Rua Joroslau Sochaki 1327 Ipê 83055-400 São José dos Pinhais/PR",
     "endereco": "Rua Joroslau Sochaki 1327 Ipê  São José dos Pinhais",
     "cidade": "Rua Joroslau Sochaki 1327 Ipê  São José dos Pinhais",
     "uf": "PR",
     "cep": "83055-400",
-    "count": 9
+    "count": 9,
+    "rotas": [
+      "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X GAM SJP",
+      "COLOMBO X SJP-PR",
+      "SANTANA DE PARNAIBA X SÃO JOSE DOS PINHAIS",
+      "COLETA - MERCO SJP X GAM SJP",
+      "COLETA - GAM SJP X ITUPEVA -SP",
+      "COLETA - GAM SJP X BASE CRAVINHOS",
+      "SANTANA DE PARNAIBA X GAM",
+      "Rota Registro",
+      "COLETA - GAM SJP X BASE SANTANA DE PARNAIBA"
+    ]
   },
   {
-    "nome": "SINGULAR MOOCA",
+    "nome": "Rua Fernando Falcão 1111 Vila Cláudia 03180-003 São Paulo/SP",
     "endereco": "Rua Fernando Falcão 1111 Vila Cláudia  São Paulo",
     "cidade": "Rua Fernando Falcão 1111 Vila Cláudia  São Paulo",
     "uf": "SP",
     "cep": "03180-003",
-    "count": 8
+    "count": 8,
+    "rotas": [
+      "COLETA MOOCA X SANTANA DE PARNAIBA",
+      "COLETA - AS x SINGULAR (MOOCA)",
+      "COLETA - 4BIO ITAIM X SINGULAR.",
+      "COLETA COMMED X SINGULAR",
+      "COLETA SINGULAR X BASE SANTANA",
+      "COLETA SINGULAR - 4BIO ITAIM",
+      "COLETA - SINGULAR X AS X SANTANA DE PARNAIBA",
+      "COLETA - SINGULAR X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "GOLLOG CONGONHAS",
+    "nome": "Praça Comandante Linneu Gomes 0 Santo Amaro 04626-900 São Paulo/SP",
     "endereco": "Praça Comandante Linneu Gomes 0 Santo Amaro  São Paulo",
     "cidade": "Praça Comandante Linneu Gomes 0 Santo Amaro  São Paulo",
     "uf": "SP",
     "cep": "04626-900",
-    "count": 8
+    "count": 8,
+    "rotas": [
+      "GOLLOG CONGONHAS x SANTANA DE PARNAIBA",
+      "ITAIM",
+      "CONGONHAS X COMEED",
+      "PANAMBY X CONGONHAS",
+      "AEROPORTO CONGONHAS X PANAMBY X SANTANA DE PARNAIBA",
+      "GOLLOG x SANTANA DE PARNAIBA",
+      "COLETA - AEROPORTO CONGONHAS-SP X HOSPITAL ALRBET EINSTEN-SP",
+      "COLETA - GOLLOG - DROGA RAIA - 4BIO X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "VILA CLEMENTINO",
+    "nome": "Rua Leonardo Nunes 197 Vila Clementino 04039-010 São Paulo/SP",
     "endereco": "Rua Leonardo Nunes 197 Vila Clementino  São Paulo",
     "cidade": "Rua Leonardo Nunes 197 Vila Clementino  São Paulo",
     "uf": "SP",
     "cep": "04039-010",
-    "count": 7
+    "count": 7,
+    "rotas": [
+      "AS VIO CLEMENTINO X COLETA 4 BIO ITAIM",
+      "COLETA 4 BIO ITAIM X AS VILA CLEMENTINO",
+      "COLETA VILA CLEMENTINA X COTIA X SJP",
+      "AEROPORTO CONGONHAS X COMMED X AS",
+      "COLETA - AS x SINGULAR (MOOCA)",
+      "COLETA HOSPITAL DO CANCER X AS",
+      "COLETA AS X SANTANA"
+    ]
   },
   {
     "nome": "Rua Borges Lagoa 1170 Vila Clementino 04038-003 São Paulo/SP",
@@ -69,135 +169,215 @@
     "cidade": "Rua Borges Lagoa 1170 Vila Clementino  São Paulo",
     "uf": "SP",
     "cep": "04038-003",
-    "count": 6
+    "count": 6,
+    "rotas": [
+      "COMMED X 4BIO ITAIM",
+      "HOSPITAL ALBERT EINSTEIN X COMMED",
+      "TRANFERENCIA MOOCA X COMMED",
+      "COLETA COMMED X SINGULAR",
+      "COLETA - PANAMBY X COMMED",
+      "CONGONHAS X COMEED"
+    ]
   },
   {
-    "nome": "FUNDANTONIO PRUDENTE",
+    "nome": "Rua Professor Antônio Prudente 211 Liberdade 01509-010 São Paulo/SP",
     "endereco": "Rua Professor Antônio Prudente 211 Liberdade  São Paulo",
     "cidade": "Rua Professor Antônio Prudente 211 Liberdade  São Paulo",
     "uf": "SP",
     "cep": "01509-010",
-    "count": 6
+    "count": 6,
+    "rotas": [
+      "AEROPORTO CONGONHAS X LIBERDADE",
+      "COLETA HOSPITAL DO CANCER X AS",
+      "SP Avulsa Cotia",
+      "SANTANA X FUNDANTONIO PRUDENTE",
+      "BASE SANTANA DE PARNAIBA-SP X SAO PAULO-SP (CANCER CENTER)",
+      "PREVENT SENIOR X  FUNDANTONIO PRUDENTE"
+    ]
   },
   {
-    "nome": "4BIO ITAIM",
+    "nome": "Rua Pedroso Alvarenga 58 Itaim Bibi 04531-000 São Paulo/SP",
     "endereco": "Rua Pedroso Alvarenga 58 Itaim Bibi  São Paulo",
     "cidade": "Rua Pedroso Alvarenga 58 Itaim Bibi  São Paulo",
     "uf": "SP",
     "cep": "04531-000",
-    "count": 6
+    "count": 6,
+    "rotas": [
+      "AS VIO CLEMENTINO X COLETA 4 BIO ITAIM",
+      "COLETA 4 BIO ITAIM X AS VILA CLEMENTINO",
+      "ITAIM",
+      "COLETA - 4BIO ITAIM X SINGULAR.",
+      "COLETA SINGULAR - 4BIO ITAIM",
+      "COLETA - 4BIO ITAIM X BASE SANTANA DE PARNAÍBA"
+    ]
   },
   {
-    "nome": "LOG SUMARE",
+    "nome": "Avenida Pedro Pascoal dos Santos 410 Residencial Real Parque Sumaré 13178-561 Sumaré/SP",
     "endereco": "Avenida Pedro Pascoal dos Santos 410 Residencial Real Parque Sumaré  Sumaré",
     "cidade": "Avenida Pedro Pascoal dos Santos 410 Residencial Real Parque Sumaré  Sumaré",
     "uf": "SP",
     "cep": "13178-561",
-    "count": 5
+    "count": 5,
+    "rotas": [
+      "ELFA SUMARÉ - SP X BASE SANTANA",
+      "LOG SUMARE X SANTANA DE PARNAIBA",
+      "COLETA DUPRATRI",
+      "SANTANA X DUPATRI HOSPITALAR",
+      "COLETA - DUPATRI SUMARE X ITUPEVA -SP"
+    ]
   },
   {
-    "nome": "PROFARMA -ITAPEVI",
+    "nome": "Rodovia Coronel-Polícia Militar Nelson Tranchesi 0 Itaqui 06696-110 Itapevi/SP",
     "endereco": "Rodovia Coronel-Polícia Militar Nelson Tranchesi 0 Itaqui  Itapevi",
     "cidade": "Rodovia Coronel-Polícia Militar Nelson Tranchesi 0 Itaqui  Itapevi",
     "uf": "SP",
     "cep": "06696-110",
-    "count": 5
+    "count": 5,
+    "rotas": [
+      "PROFARMA X BEEP SAUDE (BARRA FUNDA)",
+      "PROFARMA-ITAPEVI X BETIM MG",
+      "ITAPEVI X BASE SANTANA DA PARNAIBA"
+    ]
   },
   {
-    "nome": "RIO DE OURO",
-    "endereco": "Estrada Velha do Pilar 1013 Chácaras Rio-Petrópolis  Duque de Caxias",
-    "cidade": "Estrada Velha do Pilar 1013 Chácaras Rio-Petrópolis  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25243-260",
-    "count": 5
-  },
-  {
-    "nome": "PANAMBY MORUMBI",
+    "nome": "Rua Doutor Fonseca Brasil 228 Vila Andrade 05716-060 São Paulo/SP",
     "endereco": "Rua Doutor Fonseca Brasil 228 Vila Andrade  São Paulo",
     "cidade": "Rua Doutor Fonseca Brasil 228 Vila Andrade  São Paulo",
     "uf": "SP",
     "cep": "05716-060",
-    "count": 5
+    "count": 5,
+    "rotas": [
+      "PANAMBY MORUMBI X BASE SANTANA",
+      "COLETA - PANAMBY X COMMED",
+      "PANAMBY X CONGONHAS",
+      "COLETA - PANAMBY - DROGA RAIA - 4BIO X ITUPEVA-SP",
+      "COLETA - PANAMBY - DROGA RAIA - 4BIO X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "AEROPORTO VITORIA",
+    "nome": "Avenida Adalberto Simão Nader 3800 Mata da Praia 29066-370 Vitória/ES",
     "endereco": "Avenida Adalberto Simão Nader 3800 Mata da Praia  Vitória",
     "cidade": "Avenida Adalberto Simão Nader 3800 Mata da Praia  Vitória",
     "uf": "ES",
     "cep": "29066-370",
-    "count": 5
+    "count": 5,
+    "rotas": [
+      "AEROPORTO VITORIA X GAM",
+      "GAM X AEROPORTO VITORIA",
+      "GOLLOG - AEROPORTO X SERRA-SP BASE",
+      "GOLLOG - SERRA-ES X GAM - SERRA-ES",
+      "GAM - SERRA-ES X GOLLOG - SERRA-ES"
+    ]
   },
   {
-    "nome": "G&G Cotia",
+    "nome": "Rua dos Engenheiros 3480 Chácara Ondas Verdes 06715-600 Cotia/SP",
     "endereco": "Rua dos Engenheiros 3480 Chácara Ondas Verdes  Cotia",
     "cidade": "Rua dos Engenheiros 3480 Chácara Ondas Verdes  Cotia",
     "uf": "SP",
     "cep": "06715-600",
-    "count": 5
+    "count": 5,
+    "rotas": [
+      "TRANSFERENCIA - COTIA-SP X TRES CORAÇOES-MG",
+      "TRANSFERENCIA - COTIA-SP X TAUBATE-SP",
+      "TRANSFERENCIA - COTIA-SP X BETIM-MG",
+      "TRANSFERENCIA - COTIA-SP X RIO DE JANEIRO-RJ",
+      "TRANSFERENCIA - COTIA-SP X CRAVINHOS-SP"
+    ]
   },
   {
-    "nome": "4 BIO",
+    "nome": "Rua Pedroso Alvarenga 0 Itaim Bibi 04531-000 São Paulo/SP",
     "endereco": "Rua Pedroso Alvarenga 0 Itaim Bibi  São Paulo",
     "cidade": "Rua Pedroso Alvarenga 0 Itaim Bibi  São Paulo",
     "uf": "SP",
     "cep": "04531-000",
-    "count": 4
+    "count": 4,
+    "rotas": [
+      "COMMED X 4BIO ITAIM",
+      "COLETA 4 BIO BARUERI X 4 BIO ITAIM",
+      "MILWAUKEE X 4 BIO ITAIM",
+      "PANAMBY X 4BIO ITAIM"
+    ]
   },
   {
-    "nome": "DM BRASIL",
-    "endereco": "Rodovia Washington Luiz 0 Santa Cruz da Serra  Duque de Caxias",
-    "cidade": "Rodovia Washington Luiz 0 Santa Cruz da Serra  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25265-008",
-    "count": 4
-  },
-  {
-    "nome": "AEROPORTO GALEÃO",
+    "nome": "Avenida Vinte de Janeiro 0 Galeão 21941-570 Rio de Janeiro/RJ",
     "endereco": "Avenida Vinte de Janeiro 0 Galeão  Rio de Janeiro",
     "cidade": "Avenida Vinte de Janeiro 0 Galeão  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21941-570",
-    "count": 4
+    "count": 4,
+    "rotas": [
+      "GALEAO X PREVENT SENIOR (TIJUCA)",
+      "DUQUE DE CAXIAS X AEROPORTO GALEAO (RJ)",
+      "RJ GIG x Macaé",
+      "RJ Duque de Caxias X Aeroporto do Galeão"
+    ]
   },
   {
-    "nome": "ALBERT EISNTEN",
+    "nome": "Avenida Albert Einstein 627 Jardim Leonor 05652-900 São Paulo/SP",
     "endereco": "Avenida Albert Einstein 627 Jardim Leonor  São Paulo",
     "cidade": "Avenida Albert Einstein 627 Jardim Leonor  São Paulo",
     "uf": "SP",
     "cep": "05652-900",
-    "count": 4
+    "count": 4,
+    "rotas": [
+      "HOSPITAL ALBERT EINSTEIN X COMMED",
+      "SANTANA X ALBERT EISNTEN",
+      "HOSPITAL ALBERT EINSTEN-SP X SANTANA DE PARNAIBA-SP",
+      "COLETA - AEROPORTO CONGONHAS-SP X HOSPITAL ALRBET EINSTEN-SP"
+    ]
   },
   {
-    "nome": "AEROPORTO DE CGH",
+    "nome": "Av W Luis 0 Aeroporto São Paulo/SP",
     "endereco": "Av W Luis 0 Aeroporto São Paulo",
     "cidade": "Av W Luis 0 Aeroporto São Paulo",
     "uf": "SP",
     "cep": "",
-    "count": 4
+    "count": 4,
+    "rotas": [
+      "Congonhas X Rio Claro",
+      "Congonhas X Araraquara",
+      "Congonhas X  Sevenlog Jundiai",
+      "Congonhas X  Jacarei"
+    ]
   },
   {
-    "nome": "4BIO BARUERI",
+    "nome": "Avenida Marginal Projetada 1810 Fazenda Tamboré 06460-200 Barueri/SP",
     "endereco": "Avenida Marginal Projetada 1810 Fazenda Tamboré  Barueri",
     "cidade": "Avenida Marginal Projetada 1810 Fazenda Tamboré  Barueri",
     "uf": "SP",
     "cep": "06460-200",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "PANAMBY X 4BIO BARUERI",
+      "COLETA 4 BIO BARUERI X 4 BIO ITAIM",
+      "COLETA - 4BIO BARUERI X ITUPEVA -SP"
+    ]
   },
   {
-    "nome": "GAM SJP",
+    "nome": "Rua Joroslau Sochaki 0 Ipê 83055-400 São José dos Pinhais/PR",
     "endereco": "Rua Joroslau Sochaki 0 Ipê  São José dos Pinhais",
     "cidade": "Rua Joroslau Sochaki 0 Ipê  São José dos Pinhais",
     "uf": "PR",
     "cep": "83055-400",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "COLETA GAM SJP X AGUDOS",
+      "TRANSFERENCIA SAO JOSE DOS PINHAIS X SANTANA",
+      "Osasco x Gam SJP"
+    ]
   },
   {
-    "nome": "PROFARMA ITAPEVI",
+    "nome": "Rodovia Coronel-Polícia Militar Nelson Tranchesi 740 Itaqui 06696-110 Itapevi/SP",
     "endereco": "Rodovia Coronel-Polícia Militar Nelson Tranchesi 740 Itaqui  Itapevi",
     "cidade": "Rodovia Coronel-Polícia Militar Nelson Tranchesi 740 Itaqui  Itapevi",
     "uf": "SP",
     "cep": "06696-110",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "SANTANA X PROFARMA ITAPEVI",
+      "PROFARMA ITAPEVI X 4BIO BARUERI",
+      "COLETA - PROFARMA - ITAPEVI-SP X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
     "nome": "Rua das Arapongas 61 Santa Rosa 13289-136 Vinhedo/SP",
@@ -205,39 +385,64 @@
     "cidade": "Rua das Arapongas 61 Santa Rosa  Vinhedo",
     "uf": "SP",
     "cep": "13289-136",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "VINHEDO XJUNDIAI X BASE SANTANA",
+      "VINHEDO X BASE SANTANA",
+      "MIIZMED JUNDIA x MILWAUKEE X SANTANA"
+    ]
   },
   {
-    "nome": "Barra da Tijuca",
+    "nome": "Avenida Ayrton Senna 2500 Barra da Tijuca 22775-003 Rio de Janeiro/RJ",
     "endereco": "Avenida Ayrton Senna 2500 Barra da Tijuca  Rio de Janeiro",
     "cidade": "Avenida Ayrton Senna 2500 Barra da Tijuca  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22775-003",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "RJ - (AVULSA Coleta Barra x Prolog)",
+      "RJ - (AVULSA coleta barra)",
+      "RJ Barra da Tijuca X Duque de Caxias"
+    ]
   },
   {
-    "nome": "DENTAL SPEED - SAO JOSE-SC",
+    "nome": "Rua Senador Carlos Gomes de Oliveira 800 Distrito Industrial 88104-785 São José/SC",
     "endereco": "Rua Senador Carlos Gomes de Oliveira 800 Distrito Industrial  São José",
     "cidade": "Rua Senador Carlos Gomes de Oliveira 800 Distrito Industrial  São José",
     "uf": "SC",
     "cep": "88104-785",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X SANTANA-SP",
+      "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X GUARULHOS - SP",
+      "TRANSFERENCIA - DENTAL SPEED SAO JOSE-SC X GAM SJP"
+    ]
   },
   {
-    "nome": "PREVENT SENIOR",
+    "nome": "Rua Vergueiro 1695 Vila Mariana 04101-000 São Paulo/SP",
     "endereco": "Rua Vergueiro 1695 Vila Mariana  São Paulo",
     "cidade": "Rua Vergueiro 1695 Vila Mariana  São Paulo",
     "uf": "SP",
     "cep": "04101-000",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "BASE - SANTANA DE PARNAIBA X VILA MARIANA (PREVENT SENIOR)",
+      "PREVENT SENIOR X  FUNDANTONIO PRUDENTE",
+      "SANTANA X PREVENT SENIOR"
+    ]
   },
   {
-    "nome": "FUTURA - TATUI-SP",
+    "nome": "Rua Doutor Gualter Nunes 100 Chácara Junqueira 18271-210 Tatuí/SP",
     "endereco": "Rua Doutor Gualter Nunes 100 Chácara Junqueira  Tatuí",
     "cidade": "Rua Doutor Gualter Nunes 100 Chácara Junqueira  Tatuí",
     "uf": "SP",
     "cep": "18271-210",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "COLETA - FUTURA TATUI-SP X ITUPEVA-SP",
+      "COLETA - FUTURA TATUI-SP X SANTANA DE PARNAIBA-SP",
+      "Tatui X Jundiai"
+    ]
   },
   {
     "nome": "Rua Altiva de Faria Chaves 383 Parque Anhang Era 14095-490 Ribeirão Preto/SP",
@@ -245,7 +450,12 @@
     "cidade": "Rua Altiva de Faria Chaves 383 Parque Anhang Era  Ribeirão Preto",
     "uf": "SP",
     "cep": "14095-490",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "TRANSFERÊNCIA SANTANA X RIBEIRÃO PRETO",
+      "RIBEIRÃO PRETO X AGUDOS",
+      "RIBEIRÃO PRETO X  GAM DF"
+    ]
   },
   {
     "nome": "Rua Altiva de Faria Chaves 383 EMPRESA Parque Anhang era 14095-490 Ribeirão Preto/SP",
@@ -253,7 +463,12 @@
     "cidade": "Rua Altiva de Faria Chaves 383 EMPRESA Parque Anhang era  Ribeirão Preto",
     "uf": "SP",
     "cep": "14095-490",
-    "count": 3
+    "count": 3,
+    "rotas": [
+      "RIBEIRÃO PRETO X UBERLANDIA",
+      "RIBEIRÃO PRETO X CORDEIROPOLIS",
+      "RIBEIRÃO PRETO X BRASILIA"
+    ]
   },
   {
     "nome": "Rua Doutor Fonseca Brasil 0 Vila Andrade 05716-060 São Paulo/SP",
@@ -261,15 +476,23 @@
     "cidade": "Rua Doutor Fonseca Brasil 0 Vila Andrade  São Paulo",
     "uf": "SP",
     "cep": "05716-060",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "PANAMBY X 4BIO BARUERI",
+      "PANAMBY X 4BIO ITAIM"
+    ]
   },
   {
-    "nome": "Casa de Saúde São José",
+    "nome": "Rua Macedo Sobrinho 21 Humaitá 22271-080 Rio de Janeiro/RJ",
     "endereco": "Rua Macedo Sobrinho 21 Humaitá  Rio de Janeiro",
     "cidade": "Rua Macedo Sobrinho 21 Humaitá  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22271-080",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RONDOLOG (RJ) X HOSPITAL SAO JOSE",
+      "RJ Zona sul - Botafogo (rua macedo sobrinho)"
+    ]
   },
   {
     "nome": "Avenida Albert Einstein 527 Jardim Leonor 05652-900 São Paulo/SP",
@@ -277,47 +500,47 @@
     "cidade": "Avenida Albert Einstein 527 Jardim Leonor  São Paulo",
     "uf": "SP",
     "cep": "05652-900",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "HOSPITAL ALBERT EINSTEIN X SANATANA DE PARNAIBA",
+      "BASE SANTANA X HOSP. ALBERT EINSTEIN"
+    ]
   },
   {
-    "nome": "rua cardial",
+    "nome": "Rua Cardeal Arcoverde 745 Pinheiros 05407-001 São Paulo/SP",
     "endereco": "Rua Cardeal Arcoverde 745 Pinheiros  São Paulo",
     "cidade": "Rua Cardeal Arcoverde 745 Pinheiros  São Paulo",
     "uf": "SP",
     "cep": "05407-001",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "CONGONHAS X FLEURY",
+      "distribuição aeroporto"
+    ]
   },
   {
-    "nome": "SIRIO LIBANES",
+    "nome": "Rua Dona Adma Jafet 91 Bela Vista 01308-050 São Paulo/SP",
     "endereco": "Rua Dona Adma Jafet 91 Bela Vista  São Paulo",
     "cidade": "Rua Dona Adma Jafet 91 Bela Vista  São Paulo",
     "uf": "SP",
     "cep": "01308-050",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "CONGONHAS X SIRIO LIBANES",
+      "SIRIO LIBANES X SANTANA"
+    ]
   },
   {
-    "nome": "Aeroporto Congonhas",
-    "endereco": "Rua Miguel Latorre 610 Aeroporto  Jundiaí",
-    "cidade": "Rua Miguel Latorre 610 Aeroporto  Jundiaí",
-    "uf": "SP",
-    "cep": "13212-009",
-    "count": 2
-  },
-  {
-    "nome": "NOVA KAIROS",
-    "endereco": "Rua Prefeito Ribeiro 853 Parque Lafaiete  Duque de Caxias",
-    "cidade": "Rua Prefeito Ribeiro 853 Parque Lafaiete  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25015-326",
-    "count": 2
-  },
-  {
-    "nome": "UNIÃO QUIMICA ITATIAIA",
+    "nome": "AV DO ACESSO OESTE 31 ITATIAIA 27580-000 Itatiaia/RJ",
     "endereco": "Av. do Acesso Oeste 31 Itatiaia  Itatiaia",
     "cidade": "Av. do Acesso Oeste 31 Itatiaia  Itatiaia",
     "uf": "RJ",
     "cep": "27580-000",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ FEF distribuidora - Itatiaia",
+      "RJ- ITATIAIA X SANTANA DO PARNAIBA"
+    ]
   },
   {
     "nome": "Via Anhangüera 0 Jardim Jaraguá 05275-000 São Paulo/SP",
@@ -325,7 +548,11 @@
     "cidade": "Via Anhangüera 0 Jardim Jaraguá  São Paulo",
     "uf": "SP",
     "cep": "05275-000",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ DUQUE DE CAXIAS (RIO DE OURO) X SAO PAULO (MARIA HELENA TR)",
+      "RJ FARTEX X MARIA HELENA TRANSPORTES"
+    ]
   },
   {
     "nome": "Rua Martins Barbosa 695 Benfica 36090-300 Juiz de Fora/MG",
@@ -333,7 +560,11 @@
     "cidade": "Rua Martins Barbosa 695 Benfica  Juiz de Fora",
     "uf": "MG",
     "cep": "36090-300",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "Base Juiz de Fora x Betim",
+      "Betim X Juiz de Fora"
+    ]
   },
   {
     "nome": "RODOVIA ANHAGUERA 312 Jardim do Trevo 14092-370 Ribeirão Preto/SP",
@@ -341,47 +572,58 @@
     "cidade": "RODOVIA ANHAGUERA 312 Jardim do Trevo  Ribeirão Preto",
     "uf": "SP",
     "cep": "14092-370",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "POSTO GAVIAO X MINAS GERAIS"
+    ]
   },
   {
-    "nome": "MINAS GERAIS",
-    "endereco": "Avenida Victor Alves Pereira 528 Novo Mundo  Uberlândia",
-    "cidade": "Avenida Victor Alves Pereira 528 Novo Mundo  Uberlândia",
-    "uf": "MG",
-    "cep": "38409-085",
-    "count": 2
-  },
-  {
-    "nome": "INTO - Instituto Nacional de Traumatologia e Ortopedia",
+    "nome": "Avenida Brasil 500 São Cristóvão 20940-070 Rio de Janeiro/RJ",
     "endereco": "Avenida Brasil 500 São Cristóvão  Rio de Janeiro",
     "cidade": "Avenida Brasil 500 São Cristóvão  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20940-070",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "COLETA INTO X BASE DUQUE DE CAXIAS",
+      "RJ INTO"
+    ]
   },
   {
-    "nome": "3R CONDOMINIO",
+    "nome": "Rodovia Adail Eduardo Gut 1110 Sítio do Mursa 13226-400 Várzea Paulista/SP",
     "endereco": "Rodovia Adail Eduardo Gut 1110 Sítio do Mursa  Várzea Paulista",
     "cidade": "Rodovia Adail Eduardo Gut 1110 Sítio do Mursa  Várzea Paulista",
     "uf": "SP",
     "cep": "13226-400",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "POSTO APARECIDA X VARZEA PAULISTA",
+      "RJ FARTEX X VARZEA PAULISTA (3R CONDOMINIO)"
+    ]
   },
   {
-    "nome": "CENTRO LOGISTICO ANHANGUERA",
+    "nome": "Via Anhanguera 3137 Santa Fé 06278-000 Osasco/SP",
     "endereco": "Via Anhanguera 3137 Santa Fé  Osasco",
     "cidade": "Via Anhanguera 3137 Santa Fé  Osasco",
     "uf": "SP",
     "cep": "06278-000",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RIO DE OURO X CENTRO LOGISTICO ANHANGUERA",
+      "RJ FARTEX X HOFFLOG TRANSPORTES E LOGISTA"
+    ]
   },
   {
-    "nome": "LOJAS MARI EIRELI",
+    "nome": "Rua Simão Vieira de Moraes 921 Liberdade 18173-096 Piedade/SP",
     "endereco": "Rua Simão Vieira de Moraes 921 Liberdade  Piedade",
     "cidade": "Rua Simão Vieira de Moraes 921 Liberdade  Piedade",
     "uf": "SP",
     "cep": "18173-096",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ FARTEX X LOJAS MARI EIRELI",
+      "RIO DE OURO X PIEDADE"
+    ]
   },
   {
     "nome": "Rua Pataxós 1000 Pataxós 06833-073 Embu das Artes/SP",
@@ -389,71 +631,104 @@
     "cidade": "Rua Pataxós 1000 Pataxós  Embu das Artes",
     "uf": "SP",
     "cep": "06833-073",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "TRAFERENCIA LIOTECNICA X RONDOCARGAS",
+      "LIOTÉCNICA X RONDOCARGAS"
+    ]
   },
   {
-    "nome": "rua nebraska",
+    "nome": "Rua Nebraska 103 Brooklin Novo 04560-010 São Paulo/SP",
     "endereco": "Rua Nebraska 103 Brooklin Novo  São Paulo",
     "cidade": "Rua Nebraska 103 Brooklin Novo  São Paulo",
     "uf": "SP",
     "cep": "04560-010",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "distribuição aeroporto",
+      "RUA NEBRASKA X AV JAPAO"
+    ]
   },
   {
-    "nome": "PERSONAL SYSTEM",
+    "nome": "Avenida Portugal 307 Brooklin Paulista 04559-000 São Paulo/SP",
     "endereco": "Avenida Portugal 307 Brooklin Paulista  São Paulo",
     "cidade": "Avenida Portugal 307 Brooklin Paulista  São Paulo",
     "uf": "SP",
     "cep": "04559-000",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ AREOPORTO DE CONGONHAS X AVENIDA PORTUGAL",
+      "PERSONAL SYSTEM X BASE SANTANA"
+    ]
   },
   {
-    "nome": "MATER DEI",
+    "nome": "Avenida do Contorno 9090 Santo Agostinho 30110-062 Belo Horizonte/MG",
     "endereco": "Avenida do Contorno 9090 Santo Agostinho  Belo Horizonte",
     "cidade": "Avenida do Contorno 9090 Santo Agostinho  Belo Horizonte",
     "uf": "MG",
     "cep": "30110-062",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "MATER DEI"
+    ]
   },
   {
-    "nome": "ARMARINHOS FERNANDO",
+    "nome": "Rua dos Trilhos 902 Mooca 03168-005 São Paulo/SP",
     "endereco": "Rua dos Trilhos 902 Mooca  São Paulo",
     "cidade": "Rua dos Trilhos 902 Mooca  São Paulo",
     "uf": "SP",
     "cep": "03168-005",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RIO DE OURO X MOOCA (SP)",
+      "TRANSFERENCIA DUQUE DE CAXIAS X MOOCA"
+    ]
   },
   {
-    "nome": "TEREZA CRISTINA",
+    "nome": "Rua Bom Sucesso 0 Carlos Prates 30710-440 Belo Horizonte/MG",
     "endereco": "Rua Bom Sucesso 0 Carlos Prates  Belo Horizonte",
     "cidade": "Rua Bom Sucesso 0 Carlos Prates  Belo Horizonte",
     "uf": "MG",
     "cep": "30710-440",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "TEREZA CRISTINA"
+    ]
   },
   {
-    "nome": "BELEZA CPMPLETA",
+    "nome": "Avenida Augusto de Lima 19 Centro 30190-912 Belo Horizonte/MG",
     "endereco": "Avenida Augusto de Lima 19 Centro  Belo Horizonte",
     "cidade": "Avenida Augusto de Lima 19 Centro  Belo Horizonte",
     "uf": "MG",
     "cep": "30190-912",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "BELEZA COMPLETA"
+    ]
   },
   {
-    "nome": "A Nossa drograria - São João de meriti",
+    "nome": "Avenida Arthur Antônio Sendas 0 Parque Juriti 25585-085 São João de Meriti/RJ",
     "endereco": "Avenida Arthur Antônio Sendas 0 Parque Juriti  São João de Meriti",
     "cidade": "Avenida Arthur Antônio Sendas 0 Parque Juriti  São João de Meriti",
     "uf": "RJ",
     "cep": "25585-085",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ - A nossa drograria SJM",
+      "RJ - NOSSA DROGARIA"
+    ]
   },
   {
-    "nome": "FARMA CONDE",
+    "nome": "Avenida João Batista de Souza Soares 5300 Cidade Morumbi 12236-662 São José dos Campos/SP",
     "endereco": "Avenida João Batista de Souza Soares 5300 Cidade Morumbi  São José dos Campos",
     "cidade": "Avenida João Batista de Souza Soares 5300 Cidade Morumbi  São José dos Campos",
     "uf": "SP",
     "cep": "12236-662",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "TRANSFERENCIA - SANTANA DE PARNAIBA X SÃO JOSE DOS CAMPOS",
+      "SANTANA X FARMA CONDE"
+    ]
   },
   {
     "nome": "Avenida Raja Gabaglia 4500 São Bento 30350-563 Belo Horizonte/MG",
@@ -461,23 +736,22 @@
     "cidade": "Avenida Raja Gabaglia 4500 São Bento  Belo Horizonte",
     "uf": "MG",
     "cep": "30350-563",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "ONCLINICAS RAJA GABAGLIA"
+    ]
   },
   {
-    "nome": "COMANDO DA MARINHA RJ",
+    "nome": "Avenida Brasil 10500 Penha 21012-350 Rio de Janeiro/RJ",
     "endereco": "Avenida Brasil 10500 Penha  Rio de Janeiro",
     "cidade": "Avenida Brasil 10500 Penha  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21012-350",
-    "count": 2
-  },
-  {
-    "nome": "COMERCIAL FARTEX IMPORTACAO",
-    "endereco": "Estrada Velha do Pilar 1453 Capivari  Duque de Caxias",
-    "cidade": "Estrada Velha do Pilar 1453 Capivari  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25231-000",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ - COMANDO DA MARINHA RJ",
+      "RJ PREFEITURA MUNICIPAL - (AVULSA)"
+    ]
   },
   {
     "nome": "Rua dos Aimorés 300 Barro Preto 30140-073 Belo Horizonte/MG",
@@ -485,7 +759,10 @@
     "cidade": "Rua dos Aimorés 300 Barro Preto  Belo Horizonte",
     "uf": "MG",
     "cep": "30140-073",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "hapvida"
+    ]
   },
   {
     "nome": "Avenida Barbacena 653 Barro Preto 30190-134 Belo Horizonte/MG",
@@ -493,15 +770,21 @@
     "cidade": "Avenida Barbacena 653 Barro Preto  Belo Horizonte",
     "uf": "MG",
     "cep": "30190-134",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "HAP VIDA"
+    ]
   },
   {
-    "nome": "AEROPORTO DE CONGONHAS",
+    "nome": "Avenida Washington Luís 655 Santo Amaro 04626-911 São Paulo/SP",
     "endereco": "Avenida Washington Luís 655 Santo Amaro  São Paulo",
     "cidade": "Avenida Washington Luís 655 Santo Amaro  São Paulo",
     "uf": "SP",
     "cep": "04626-911",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "AEROPORTO DE CONGONHAS (AVULSO)"
+    ]
   },
   {
     "nome": "Rua Gonçalves Dias 3443 Barro Preto 30140-093 Belo Horizonte/MG",
@@ -509,71 +792,69 @@
     "cidade": "Rua Gonçalves Dias 3443 Barro Preto  Belo Horizonte",
     "uf": "MG",
     "cep": "30140-093",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "ONCLINICAS X MATER DEI"
+    ]
   },
   {
-    "nome": "Biohosp Produtos Hospitalares",
+    "nome": "Avenida Sócrates Mariani Bittencourt 1080 Cinco 32010-010 Contagem/MG",
     "endereco": "Avenida Sócrates Mariani Bittencourt 1080 Cinco  Contagem",
     "cidade": "Avenida Sócrates Mariani Bittencourt 1080 Cinco  Contagem",
     "uf": "MG",
     "cep": "32010-010",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "Biohosp Produtos Hospitalares x Secretaria Estado Saude de Minas",
+      "MG- BETIM X BIOHOSP"
+    ]
   },
   {
-    "nome": "SECRETARIA DE SAUDE DE MINAS GERAIS",
+    "nome": "Rua Simão Antônio 149 Cincão 32371-610 Contagem/MG",
     "endereco": "Rua Simão Antônio 149 Cincão  Contagem",
     "cidade": "Rua Simão Antônio 149 Cincão  Contagem",
     "uf": "MG",
     "cep": "32371-610",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "Biohosp Produtos Hospitalares x Secretaria Estado Saude de Minas",
+      "BASE BETIM-SP X SECRETARIA DE SAUDE DE MINAS GERAIS"
+    ]
   },
   {
-    "nome": "MINISTERIO DA SAUDE",
-    "endereco": "Rua Jamil João Zarif 684 Jardim Santa Vicência  Guarulhos",
-    "cidade": "Rua Jamil João Zarif 684 Jardim Santa Vicência  Guarulhos",
-    "uf": "SP",
-    "cep": "07143-000",
-    "count": 2
-  },
-  {
-    "nome": "Profarma - Campo Grande",
+    "nome": "Avenida Brasil 41432 Campo Grande 23078-001 Rio de Janeiro/RJ",
     "endereco": "Avenida Brasil 41432 Campo Grande  Rio de Janeiro",
     "cidade": "Avenida Brasil 41432 Campo Grande  Rio de Janeiro",
     "uf": "RJ",
     "cep": "23078-001",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ Profarma X Copacabana",
+      "RJ Coleta Profarma"
+    ]
   },
   {
-    "nome": "PARA DE MINAS",
+    "nome": "RUA JOSE FURTADO DE ALMEIDA FILHO 71 JARDINS 35600-000 Pará de Minas/MG",
     "endereco": "RUA JOSE FURTADO DE ALMEIDA FILHO 71 JARDINS  Pará de Minas",
     "cidade": "RUA JOSE FURTADO DE ALMEIDA FILHO 71 JARDINS  Pará de Minas",
     "uf": "MG",
     "cep": "35600-000",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "PARA DE MINAS"
+    ]
   },
   {
-    "nome": "NACIONAL BARUERI",
-    "endereco": "Alameda África 337 Tamboré  Santana de Parnaíba",
-    "cidade": "Alameda África 337 Tamboré  Santana de Parnaíba",
-    "uf": "SP",
-    "cep": "06543-306",
-    "count": 2
-  },
-  {
-    "nome": "GAM - DF",
-    "endereco": "Rodovia BR-060 0 Recanto das Emas  Brasília",
-    "cidade": "Rodovia BR-060 0 Recanto das Emas  Brasília",
-    "uf": "DF",
-    "cep": "72668-000",
-    "count": 2
-  },
-  {
-    "nome": "DUPATRI RIBEIRAO",
+    "nome": "Rua Doutor Jorge Lobato 1410 Vila Tibério 14050-110 Ribeirão Preto/SP",
     "endereco": "Rua Doutor Jorge Lobato 1410 Vila Tibério  Ribeirão Preto",
     "cidade": "Rua Doutor Jorge Lobato 1410 Vila Tibério  Ribeirão Preto",
     "uf": "SP",
     "cep": "14050-110",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "COLETA - DUPATRI - RIBEIRAO PRETO-SP X ITUPEVA-SP",
+      "COLETA - DUPATRI - RIBEIRAO PRETO-SP X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
     "nome": "Rua Borges Lagoa 1220 Vila Clementino 04038-003 São Paulo/SP",
@@ -581,15 +862,23 @@
     "cidade": "Rua Borges Lagoa 1220 Vila Clementino  São Paulo",
     "uf": "SP",
     "cep": "04038-003",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "COLETA - COMMED VILA MARIANA-SP X ITUPEVA-SP",
+      "COLETA - COMMED VILA MARIANA-SP X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "VIA ESTÉTICA",
+    "nome": "Rua Doutor Fernão Pompeu de Camargo 1079 Jardim do Trevo 13040-010 Campinas/SP",
     "endereco": "Rua Doutor Fernão Pompeu de Camargo 1079 Jardim do Trevo  Campinas",
     "cidade": "Rua Doutor Fernão Pompeu de Camargo 1079 Jardim do Trevo  Campinas",
     "uf": "SP",
     "cep": "13040-010",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "COLETA - VIA ESTETICA CAMPINAS X ITUPEVA -SP",
+      "COLETA - VIA ESTETICA CAMPINAS X SANTANA DA PARNAIBA-SP"
+    ]
   },
   {
     "nome": "Rodovia Washington Luiz 2070 Parque Duque 25065-004 Rio de Janeiro/RJ",
@@ -597,7 +886,11 @@
     "cidade": "Rodovia Washington Luiz 2070 Parque Duque  Rio de Janeiro",
     "uf": "RJ",
     "cep": "25065-004",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ Duque de Caxias x Itaperuna",
+      "RJ Drogarias Pacheco"
+    ]
   },
   {
     "nome": "Estrada do Capuava 3480 Jardim dos Ipês 06715-600 Cotia/SP",
@@ -605,47 +898,59 @@
     "cidade": "Estrada do Capuava 3480 Jardim dos Ipês  Cotia",
     "uf": "SP",
     "cep": "06715-600",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ Duque de Caxias X Cotia",
+      "Transferência - Jundiai X Base G&G Cotia"
+    ]
   },
   {
-    "nome": "PE Campos dos Goytacazes",
+    "nome": "Rua Doutor Matos 65 Parque Caju 28051-175 Campos dos Goytacazes/RJ",
     "endereco": "Rua Doutor Matos 65 Parque Caju  Campos dos Goytacazes",
     "cidade": "Rua Doutor Matos 65 Parque Caju  Campos dos Goytacazes",
     "uf": "RJ",
     "cep": "28051-175",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "RJ Duque de Caxias x Macaé x Campos",
+      "RJ Duque de Caxias X Campos dos Goytacazes"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Rua Antônia Dias Petri 135 Parque Santa Isabel 18052-210 Sorocaba/SP",
     "endereco": "Rua Antônia Dias Petri 135 Parque Santa Isabel  Sorocaba",
     "cidade": "Rua Antônia Dias Petri 135 Parque Santa Isabel  Sorocaba",
     "uf": "SP",
     "cep": "18052-210",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "SANTANA DE PARNAIBA X SOROCABA",
+      "Cajamar X Sorocaba"
+    ]
   },
   {
-    "nome": "TECA/GIG RJO",
-    "endereco": "Rodovia Washington Luiz 2070 Parque Duque  Duque de Caxias",
-    "cidade": "Rodovia Washington Luiz 2070 Parque Duque  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25085-009",
-    "count": 2
-  },
-  {
-    "nome": "RIBEIRÃO PRETO",
+    "nome": "Avenida Nove de Julho 1705 Centro 14015-170 Ribeirão Preto/SP",
     "endereco": "Avenida Nove de Julho 1705 Centro  Ribeirão Preto",
     "cidade": "Avenida Nove de Julho 1705 Centro  Ribeirão Preto",
     "uf": "SP",
     "cep": "14015-170",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "Mafra",
+      "MAFRA"
+    ]
   },
   {
-    "nome": "RIBEIRÃO PRETO",
+    "nome": "Avenida Jacob Jorge Abi Rached 251 Distrito Industrial Virgíl 14806-610 Araraquara/SP",
     "endereco": "Avenida Jacob Jorge Abi Rached 251 Distrito Industrial Virgíl  Araraquara",
     "cidade": "Avenida Jacob Jorge Abi Rached 251 Distrito Industrial Virgíl  Araraquara",
     "uf": "SP",
     "cep": "14806-610",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "Mafra",
+      "MAFRA"
+    ]
   },
   {
     "nome": "RUA ANTENOR GENIZELLI FILHO 273 D INDUSTRIAL DISTRITO INDUSTRIAL 13490-000 Cordeirópolis/SP",
@@ -653,23 +958,33 @@
     "cidade": "RUA ANTENOR GENIZELLI FILHO 273 D INDUSTRIAL DISTRITO INDUSTRIAL  Cordeirópolis",
     "uf": "SP",
     "cep": "13490-000",
-    "count": 2
+    "count": 2,
+    "rotas": [
+      "CORDEIRÓPOLIS X PIRASSUNUNGA",
+      "CORDEIRÓPOLIS X AMERICANA"
+    ]
   },
   {
-    "nome": "SECRETARIA DA POLICIA MILITAR",
+    "nome": "Rua Estácio de Sá 20 Estácio 20211-270 Rio de Janeiro/RJ",
     "endereco": "Rua Estácio de Sá 20 Estácio  Rio de Janeiro",
     "cidade": "Rua Estácio de Sá 20 Estácio  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20211-270",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ X SECRETARIA DA POLICIA MILITAR"
+    ]
   },
   {
-    "nome": "Fund. Osvaldo Cruz",
+    "nome": "Rua Eurico de Sousa Leão 120 Manguinhos 21041-200 Rio de Janeiro/RJ",
     "endereco": "Rua Eurico de Sousa Leão 120 Manguinhos  Rio de Janeiro",
     "cidade": "Rua Eurico de Sousa Leão 120 Manguinhos  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21041-200",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Rj Fundação Osvaldo Cruz"
+    ]
   },
   {
     "nome": "Estrada do Rocha 2579 Rocha 24422-120 São Gonçalo/RJ",
@@ -677,7 +992,10 @@
     "cidade": "Estrada do Rocha 2579 Rocha  São Gonçalo",
     "uf": "RJ",
     "cep": "24422-120",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ telemedic São gonçalo"
+    ]
   },
   {
     "nome": "RUA DOZE DE SETEMBRO 1061 VILA GUILERME 02052-001 São Paulo/SP",
@@ -685,23 +1003,32 @@
     "cidade": "RUA DOZE DE SETEMBRO 1061 VILA GUILERME  São Paulo",
     "uf": "SP",
     "cep": "02052-001",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "FARTEX X TAU TRANSPORTES (SP)"
+    ]
   },
   {
-    "nome": "CENTRO LOGISTICO BRR",
+    "nome": "Avenida Isaltino Victor de Moraes 437 Vila Bonfim 06806-400 Embu das Artes/SP",
     "endereco": "Avenida Isaltino Victor de Moraes 437 Vila Bonfim  Embu das Artes",
     "cidade": "Avenida Isaltino Victor de Moraes 437 Vila Bonfim  Embu das Artes",
     "uf": "SP",
     "cep": "06806-400",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "YINS BRASIL X CENTRO LOGISTICO BRR"
+    ]
   },
   {
-    "nome": "VILA OLIMPIA",
+    "nome": "Rua Comendador Miguel Calfat 217 Vila Nova Conceição 04537-080 São Paulo/SP",
     "endereco": "Rua Comendador Miguel Calfat 217 Vila Nova Conceição  São Paulo",
     "cidade": "Rua Comendador Miguel Calfat 217 Vila Nova Conceição  São Paulo",
     "uf": "SP",
     "cep": "04537-080",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA DE PARNAIBA X VILA OLIMPIA"
+    ]
   },
   {
     "nome": "Avenida Presidente Castelo Branco 222 Jardim Petrópolis 37062-770 Varginha/MG",
@@ -709,7 +1036,10 @@
     "cidade": "Avenida Presidente Castelo Branco 222 Jardim Petrópolis  Varginha",
     "uf": "MG",
     "cep": "37062-770",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "BETIM X ONCOMINAS"
+    ]
   },
   {
     "nome": "Avenida Manoel de Camargo Sampaio 860 Vila Helena 18071-195 Sorocaba/SP",
@@ -717,7 +1047,10 @@
     "cidade": "Avenida Manoel de Camargo Sampaio 860 Vila Helena  Sorocaba",
     "uf": "SP",
     "cep": "18071-195",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "FARTEX X RM COMERCIO"
+    ]
   },
   {
     "nome": "Avenida Toronto 490 Jardim Canadá 34007-658 Nova Lima/MG",
@@ -725,31 +1058,43 @@
     "cidade": "Avenida Toronto 490 Jardim Canadá  Nova Lima",
     "uf": "MG",
     "cep": "34007-658",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "POSTO CHEFAO X RONDOLOG RJ"
+    ]
   },
   {
-    "nome": "PREVENT SENIOR",
+    "nome": "Avenida das Américas 4666 Barra da Tijuca 22640-102 Rio de Janeiro/RJ",
     "endereco": "Avenida das Américas 4666 Barra da Tijuca  Rio de Janeiro",
     "cidade": "Avenida das Américas 4666 Barra da Tijuca  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22640-102",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "GALEAO X PREVENT SENIOR (TIJUCA)"
+    ]
   },
   {
-    "nome": "BEEP SAUDE",
+    "nome": "Rua Engenheiro Stevenson 30 Água Branca 05003-110 São Paulo/SP",
     "endereco": "Rua Engenheiro Stevenson 30 Água Branca  São Paulo",
     "cidade": "Rua Engenheiro Stevenson 30 Água Branca  São Paulo",
     "uf": "SP",
     "cep": "05003-110",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "PROFARMA X BEEP SAUDE (BARRA FUNDA)"
+    ]
   },
   {
-    "nome": "ENEIAS SILLAS PEREIRA ME - SP",
+    "nome": "Rua Bentópolis 3 Parque Novo Mundo 02181-080 São Paulo/SP",
     "endereco": "Rua Bentópolis 3 Parque Novo Mundo  São Paulo",
     "cidade": "Rua Bentópolis 3 Parque Novo Mundo  São Paulo",
     "uf": "SP",
     "cep": "02181-080",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ FARTEX X ENEIAS SILLAS"
+    ]
   },
   {
     "nome": "Rua Francisco Manuel 0 Benfica 20911-270 Rio de Janeiro/RJ",
@@ -757,15 +1102,21 @@
     "cidade": "Rua Francisco Manuel 0 Benfica  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20911-270",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - HOSPITAL DO EXERCITO"
+    ]
   },
   {
-    "nome": "OFICINA DE SPACE GLASS",
+    "nome": "Rua Antônio de Barros 2450 Vila Carrão 03401-001 São Paulo/SP",
     "endereco": "Rua Antônio de Barros 2450 Vila Carrão  São Paulo",
     "cidade": "Rua Antônio de Barros 2450 Vila Carrão  São Paulo",
     "uf": "SP",
     "cep": "03401-001",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "CONGONHAS X OFICINA DE SPACE GLASS"
+    ]
   },
   {
     "nome": "Rua São João 119 Centro 24020-042 Niterói/RJ",
@@ -773,7 +1124,10 @@
     "cidade": "Rua São João 119 Centro  Niterói",
     "uf": "RJ",
     "cep": "24020-042",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Niteroi Integralmed"
+    ]
   },
   {
     "nome": "Rua Martins Barbosa 699 Benfica 36090-300 Juiz de Fora/MG",
@@ -781,15 +1135,21 @@
     "cidade": "Rua Martins Barbosa 699 Benfica  Juiz de Fora",
     "uf": "MG",
     "cep": "36090-300",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Juiz de Fora x Vassouras RJ"
+    ]
   },
   {
-    "nome": "Vassouras RJ",
+    "nome": "AVENIDA EXPEDICIONARIO OSWALDO DE ALMEIDA 280 MUNICÍPIO: VASSOURAS 27700-000 Vassouras/RJ",
     "endereco": "AVENIDA EXPEDICIONARIO OSWALDO DE ALMEIDA 280 MUNICÍPIO: VASSOURAS  Vassouras",
     "cidade": "AVENIDA EXPEDICIONARIO OSWALDO DE ALMEIDA 280 MUNICÍPIO: VASSOURAS  Vassouras",
     "uf": "RJ",
     "cep": "27700-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Juiz de Fora x Vassouras RJ"
+    ]
   },
   {
     "nome": "Rua General Pantaleão Teles 1000 Parque Jabaquara 04355-040 São Paulo/SP",
@@ -797,15 +1157,10 @@
     "cidade": "Rua General Pantaleão Teles 1000 Parque Jabaquara  São Paulo",
     "uf": "SP",
     "cep": "04355-040",
-    "count": 1
-  },
-  {
-    "nome": "RIO PETROPOLIS",
-    "endereco": "Rua Altos 2258 Jardim Fátima  Guarulhos",
-    "cidade": "Rua Altos 2258 Jardim Fátima  Guarulhos",
-    "uf": "SP",
-    "cep": "07177-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "AZUL LOGISTICA X BASE SANTANA"
+    ]
   },
   {
     "nome": "Rodovia Presidente Dutra 7204 Moreira César 12440-245 Pindamonhangaba/SP",
@@ -813,55 +1168,54 @@
     "cidade": "Rodovia Presidente Dutra 7204 Moreira César  Pindamonhangaba",
     "uf": "SP",
     "cep": "12440-245",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "POSTO APARECIDA X VARZEA PAULISTA"
+    ]
   },
   {
-    "nome": "HELLO KIDS BRINQUEDOS",
+    "nome": "Rua Governador Pedro de Toledo 2085 Ponte 18500-670 Laranjal Paulista/SP",
     "endereco": "Rua Governador Pedro de Toledo 2085 Ponte  Laranjal Paulista",
     "cidade": "Rua Governador Pedro de Toledo 2085 Ponte  Laranjal Paulista",
     "uf": "SP",
     "cep": "18500-670",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "DM BRASIL X  HELLO KIDS BRINQUEDOS"
+    ]
   },
   {
-    "nome": "EXPRESSO BRASIL",
+    "nome": "Rodovia Fernão Dias 46 Penha 12929-598 Bragança Paulista/SP",
     "endereco": "Rodovia Fernão Dias 46 Penha  Bragança Paulista",
     "cidade": "Rodovia Fernão Dias 46 Penha  Bragança Paulista",
     "uf": "SP",
     "cep": "12929-598",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "EXPRESSO BRASIL X BASE SANTANA"
+    ]
   },
   {
-    "nome": "SANTA BARBARA",
+    "nome": "Rua Alfredo Cogo 346 CINTEC 13459-622 Santa Bárbara dOeste/SP",
     "endereco": "Rua Alfredo Cogo 346 CINTEC  Santa Bárbara dOeste",
     "cidade": "Rua Alfredo Cogo 346 CINTEC  Santa Bárbara dOeste",
     "uf": "SP",
     "cep": "13459-622",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERENCIA - AGUDOS X SANTA BARBARA"
+    ]
   },
   {
-    "nome": "RJ NITEROI",
+    "nome": "Rua La Sale 12 Centro 24020-096 Niterói/RJ",
     "endereco": "Rua La Sale 12 Centro  Niterói",
     "cidade": "Rua La Sale 12 Centro  Niterói",
     "uf": "RJ",
     "cep": "24020-096",
-    "count": 1
-  },
-  {
-    "nome": "Núcleo Rural Ponte Alta Norte, INTRESECAO COM 475 GALPA 2 MODULO",
-    "endereco": "Núcleo Rural Ponte Alta Norte 0 Ponte Alta Norte  Brasília",
-    "cidade": "Núcleo Rural Ponte Alta Norte 0 Ponte Alta Norte  Brasília",
-    "uf": "DF",
-    "cep": "72427-010",
-    "count": 1
-  },
-  {
-    "nome": "NOVA LIMA",
-    "endereco": "Rua do Campo 130 Vila da Serra  Nova Lima",
-    "cidade": "Rua do Campo 130 Vila da Serra  Nova Lima",
-    "uf": "MG",
-    "cep": "34006-062",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ NITEROI X DUQUE DE CAXIAS"
+    ]
   },
   {
     "nome": "Rua Roma 561 Santa Lúcia 30360-680 Belo Horizonte/MG",
@@ -869,39 +1223,54 @@
     "cidade": "Rua Roma 561 Santa Lúcia  Belo Horizonte",
     "uf": "MG",
     "cep": "30360-680",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "BASE BETIM-SP X ONCO CLINICAS"
+    ]
   },
   {
-    "nome": "R. 22, Quadra 36, Lote 9, s/n - Vila Leonor, Itaberaí - GO",
+    "nome": "Rua 22 Esquina Com Rua 25 SN 0 Quadra 36 76630-000 Itaberaí/GO",
     "endereco": "Rua 22 Esquina Com Rua 25 SN 0 Quadra 36  Itaberaí",
     "cidade": "Rua 22 Esquina Com Rua 25 SN 0 Quadra 36  Itaberaí",
     "uf": "GO",
     "cep": "76630-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "AEROPORTO GO X ITABERAI GO (vila leonor)"
+    ]
   },
   {
-    "nome": "AV JAPAO",
+    "nome": "Avenida Japão 832 Vila Ipiranga 08743-540 Mogi das Cruzes/SP",
     "endereco": "Avenida Japão 832 Vila Ipiranga  Mogi das Cruzes",
     "cidade": "Avenida Japão 832 Vila Ipiranga  Mogi das Cruzes",
     "uf": "SP",
     "cep": "08743-540",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RUA NEBRASKA X AV JAPAO"
+    ]
   },
   {
-    "nome": "AV PORTUGAL",
+    "nome": "Avenida Portugal 307 Vila Bastos 09040-010 Santo André/SP",
     "endereco": "Avenida Portugal 307 Vila Bastos  Santo André",
     "cidade": "Avenida Portugal 307 Vila Bastos  Santo André",
     "uf": "SP",
     "cep": "09040-010",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "CONGONHAS X AV PORTUGAL"
+    ]
   },
   {
-    "nome": "COLOMBO - MAUA",
+    "nome": "Rodovia da Uva 0 Roça Grande 83402-000 Colombo/PR",
     "endereco": "Rodovia da Uva 0 Roça Grande  Colombo",
     "cidade": "Rodovia da Uva 0 Roça Grande  Colombo",
     "uf": "PR",
     "cep": "83402-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERENCIA  - COLOMBO X SANTANA DE PARNAIBA"
+    ]
   },
   {
     "nome": "Rua Nebraska 0 Brooklin Novo 04560-010 São Paulo/SP",
@@ -909,7 +1278,10 @@
     "cidade": "Rua Nebraska 0 Brooklin Novo  São Paulo",
     "uf": "SP",
     "cep": "04560-010",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "NEBRASKA -SP X BASE SANTANA PARNAIBA"
+    ]
   },
   {
     "nome": "RUA HILDEFONSO VIANNA 0 13240-000 Jarinu/SP",
@@ -917,23 +1289,32 @@
     "cidade": "RUA HILDEFONSO VIANNA 0  Jarinu",
     "uf": "SP",
     "cep": "13240-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANFERENCIA  -  JARINU X SANTANA DE PARNAIBA"
+    ]
   },
   {
-    "nome": "VOLTA REDONDA",
+    "nome": "Avenida Um 2490 Casa de Pedra 27259-000 Volta Redonda/RJ",
     "endereco": "Avenida Um 2490 Casa de Pedra  Volta Redonda",
     "cidade": "Avenida Um 2490 Casa de Pedra  Volta Redonda",
     "uf": "RJ",
     "cep": "27259-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ DUQUE DE CAXIAS X VOLTA REDONDA"
+    ]
   },
   {
-    "nome": "D SANCHEZ COMERCIAL",
+    "nome": "Avenida Tiradentes 350 Alto da Vila Nova 13309-320 Itu/SP",
     "endereco": "Avenida Tiradentes 350 Alto da Vila Nova  Itu",
     "cidade": "Avenida Tiradentes 350 Alto da Vila Nova  Itu",
     "uf": "SP",
     "cep": "13309-320",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ FARTEX X D SANCHEZ COMERCIAL"
+    ]
   },
   {
     "nome": "Rua Marina Ciufuli Zanfelice 260 Lapa 05040-000 São Paulo/SP",
@@ -941,23 +1322,32 @@
     "cidade": "Rua Marina Ciufuli Zanfelice 260 Lapa  São Paulo",
     "uf": "SP",
     "cep": "05040-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ FARTEX X PLANETA COMERCIO (LAPA)"
+    ]
   },
   {
-    "nome": "Connection Scientific Journal",
+    "nome": "Rodovia Presidente Dutra 2014 Jardim América 21240-002 Rio de Janeiro/RJ",
     "endereco": "Rodovia Presidente Dutra 2014 Jardim América  Rio de Janeiro",
     "cidade": "Rodovia Presidente Dutra 2014 Jardim América  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21240-002",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Avulsa - Dutra"
+    ]
   },
   {
-    "nome": "MERCO LEOPOLDINO",
+    "nome": "Rua Schilling 594 Vila Leopoldina 05302-001 São Paulo/SP",
     "endereco": "Rua Schilling 594 Vila Leopoldina  São Paulo",
     "cidade": "Rua Schilling 594 Vila Leopoldina  São Paulo",
     "uf": "SP",
     "cep": "05302-001",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA DE PARNAIBA X MERCO LEOPOLDINO"
+    ]
   },
   {
     "nome": "Rua Américo Ventura 123 Alto da Mooca 03128-020 São Paulo/SP",
@@ -965,7 +1355,10 @@
     "cidade": "Rua Américo Ventura 123 Alto da Mooca  São Paulo",
     "uf": "SP",
     "cep": "03128-020",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANFERENCIA MOOCA X COMMED"
+    ]
   },
   {
     "nome": "Rodovia VRD 001 dos Metalúrgicos 2490 Casa de Pedra 27258-000 Volta Redonda/RJ",
@@ -973,15 +1366,21 @@
     "cidade": "Rodovia VRD 001 dos Metalúrgicos 2490 Casa de Pedra  Volta Redonda",
     "uf": "RJ",
     "cep": "27258-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - COLETA UNIMED VOLTA REDONDA X BASE RONDOLOG"
+    ]
   },
   {
-    "nome": "Secreteraria de Saúde Defesa Civil",
+    "nome": "Rua Doutor Luiz Palmier 762 Barreto 24110-310 Niterói/RJ",
     "endereco": "Rua Doutor Luiz Palmier 762 Barreto  Niterói",
     "cidade": "Rua Doutor Luiz Palmier 762 Barreto  Niterói",
     "uf": "RJ",
     "cep": "24110-310",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Rj Duque de Caxias x secret est saude Barreto"
+    ]
   },
   {
     "nome": "Rodovia Presidente Dutra 25551 Vila São João 26377-180 Queimados/RJ",
@@ -989,31 +1388,21 @@
     "cidade": "Rodovia Presidente Dutra 25551 Vila São João  Queimados",
     "uf": "RJ",
     "cep": "26377-180",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ MVX COMERCIO ELETRONICO X EMPREENDIMENTO GOLGI CAJAMAR"
+    ]
   },
   {
-    "nome": "EMPREENDIMENTO GOLGI CAJAMAR",
-    "endereco": "Estrada para Parnaíba 0 Chácaras Rutina Strauss  Franco da Rocha",
-    "cidade": "Estrada para Parnaíba 0 Chácaras Rutina Strauss  Franco da Rocha",
-    "uf": "SP",
-    "cep": "07811-180",
-    "count": 1
-  },
-  {
-    "nome": "DM BRASIL",
-    "endereco": "Rodovia Washington Luiz 15 Santa Cruz da Serra  Duque de Caxias",
-    "cidade": "Rodovia Washington Luiz 15 Santa Cruz da Serra  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25265-008",
-    "count": 1
-  },
-  {
-    "nome": "CMS ATACADISTA",
+    "nome": "Rua Doutor Júlio de Mesquita Filho 816 Aviação 11702-350 Praia Grande/SP",
     "endereco": "Rua Doutor Júlio de Mesquita Filho 816 Aviação  Praia Grande",
     "cidade": "Rua Doutor Júlio de Mesquita Filho 816 Aviação  Praia Grande",
     "uf": "SP",
     "cep": "11702-350",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RIO DE OURO (SP) X CMS ATACADISTA (PRAIA GRANDE)"
+    ]
   },
   {
     "nome": "Rua General Correia e Castro 335 Jardim América 21240-030 Rio de Janeiro/RJ",
@@ -1021,31 +1410,32 @@
     "cidade": "Rua General Correia e Castro 335 Jardim América  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21240-030",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - COLETA OFICINA"
+    ]
   },
   {
-    "nome": "CASA E NOVIDADE",
+    "nome": "Avenida Brasil 51 Campo Grande 23065-480 Rio de Janeiro/RJ",
     "endereco": "Avenida Brasil 51 Campo Grande  Rio de Janeiro",
     "cidade": "Avenida Brasil 51 Campo Grande  Rio de Janeiro",
     "uf": "RJ",
     "cep": "23065-480",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "CASA E NOVIDADE - AV BRASIL X CD GUARULHOS"
+    ]
   },
   {
-    "nome": "4BIO LATAM - CONGONHAS-SP",
+    "nome": "Rua General Pantaleão Teles 38 Parque Jabaquara 04355-040 São Paulo/SP",
     "endereco": "Rua General Pantaleão Teles 38 Parque Jabaquara  São Paulo",
     "cidade": "Rua General Pantaleão Teles 38 Parque Jabaquara  São Paulo",
     "uf": "SP",
     "cep": "04355-040",
-    "count": 1
-  },
-  {
-    "nome": "RJ RIO DE OURO",
-    "endereco": "Estrada Rio Douro 1842 Mantiquira  Duque de Caxias",
-    "cidade": "Estrada Rio Douro 1842 Mantiquira  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25245-810",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA - 4BIO LATAM - CONGONHAS-SP X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
     "nome": "Avenida Jaime Poggi 99 Barra Olímpica 22775-130 Rio de Janeiro/RJ",
@@ -1053,7 +1443,10 @@
     "cidade": "Avenida Jaime Poggi 99 Barra Olímpica  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22775-130",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - RECREIO X ENTREGAS"
+    ]
   },
   {
     "nome": "Avenida das Américas 13331 Recreio dos Bandeirantes 22790-701 Rio de Janeiro/RJ",
@@ -1061,7 +1454,10 @@
     "cidade": "Avenida das Américas 13331 Recreio dos Bandeirantes  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22790-701",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - RECREIO X ENTREGAS"
+    ]
   },
   {
     "nome": "Rua da Cevada 116 Penha Circular 21011-080 Rio de Janeiro/RJ",
@@ -1069,7 +1465,10 @@
     "cidade": "Rua da Cevada 116 Penha Circular  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21011-080",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ COMERCIO ATACADISTA  X INTERLAGOS-SP"
+    ]
   },
   {
     "nome": "Rua Pedro SantaLúcia 48 Interlagos 04815-250 São Paulo/SP",
@@ -1077,7 +1476,10 @@
     "cidade": "Rua Pedro SantaLúcia 48 Interlagos  São Paulo",
     "uf": "SP",
     "cep": "04815-250",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ COMERCIO ATACADISTA  X INTERLAGOS-SP"
+    ]
   },
   {
     "nome": "Rua Donizete Victor Rodrigues 720 bela vista 38600-490 Paracatu/MG",
@@ -1085,15 +1487,21 @@
     "cidade": "Rua Donizete Victor Rodrigues 720 bela vista  Paracatu",
     "uf": "MG",
     "cep": "38600-490",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "BETIM X BASE PARACATU"
+    ]
   },
   {
-    "nome": "AEROPORTO SANTOS DRUMONT",
+    "nome": "Praça Senador Salgado Filho 1 Centro 20021-340 Rio de Janeiro/RJ",
     "endereco": "Praça Senador Salgado Filho 1 Centro  Rio de Janeiro",
     "cidade": "Praça Senador Salgado Filho 1 Centro  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20021-340",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SDU X HOSPITAL FLUMINENSE"
+    ]
   },
   {
     "nome": "Avenida Sete de Setembro 301 Icaraí 24230-251 Niterói/RJ",
@@ -1101,23 +1509,21 @@
     "cidade": "Avenida Sete de Setembro 301 Icaraí  Niterói",
     "uf": "RJ",
     "cep": "24230-251",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SDU X HOSPITAL FLUMINENSE"
+    ]
   },
   {
-    "nome": "PARQUE PAULISTANO",
-    "endereco": "Estrada Rio Douro 0 Mantiquira  Duque de Caxias",
-    "cidade": "Estrada Rio Douro 0 Mantiquira  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25245-810",
-    "count": 1
-  },
-  {
-    "nome": "PARQUE NOVO MUNDO",
+    "nome": "Rua Cabo Oscar Rossini 642 Parque Novo Mundo 02186-030 São Paulo/SP",
     "endereco": "Rua Cabo Oscar Rossini 642 Parque Novo Mundo  São Paulo",
     "cidade": "Rua Cabo Oscar Rossini 642 Parque Novo Mundo  São Paulo",
     "uf": "SP",
     "cep": "02186-030",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "PARQUE PAULISTANO X PARQUE NOVO MUNDO"
+    ]
   },
   {
     "nome": "Rua Denver 90 Santa Lúcia 30360-630 Belo Horizonte/MG",
@@ -1125,7 +1531,10 @@
     "cidade": "Rua Denver 90 Santa Lúcia  Belo Horizonte",
     "uf": "MG",
     "cep": "30360-630",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "versania"
+    ]
   },
   {
     "nome": "Rua Denver 190 Santa Lúcia 30360-630 Belo Horizonte/MG",
@@ -1133,31 +1542,32 @@
     "cidade": "Rua Denver 190 Santa Lúcia  Belo Horizonte",
     "uf": "MG",
     "cep": "30360-630",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "versania"
+    ]
   },
   {
-    "nome": "PREFEITURA MUNICIPAL DO RJ - TAQUARA",
+    "nome": "Estrada dos Bandeirantes 1700 Taquara 22775-109 Rio de Janeiro/RJ",
     "endereco": "Estrada dos Bandeirantes 1700 Taquara  Rio de Janeiro",
     "cidade": "Estrada dos Bandeirantes 1700 Taquara  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22775-109",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ PREFEITURA - ESTRADA DOS BANDEIRANTES"
+    ]
   },
   {
-    "nome": "SANTA BARBARA DO OESTE - SP",
-    "endereco": "Rua Alfredo Cogo 346 CINTEC - Centro SANTA Bárbara D'Oeste  Santa Bárbara dOeste",
-    "cidade": "Rua Alfredo Cogo 346 CINTEC - Centro SANTA Bárbara D'Oeste  Santa Bárbara dOeste",
-    "uf": "SP",
-    "cep": "13459-622",
-    "count": 1
-  },
-  {
-    "nome": "RJ Fundação do Estado do RJ",
+    "nome": "Rua Moncorvo Filho 90 Centro 20211-340 Rio de Janeiro/RJ",
     "endereco": "Rua Moncorvo Filho 90 Centro  Rio de Janeiro",
     "cidade": "Rua Moncorvo Filho 90 Centro  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20211-340",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Fundação do Estado do RJ"
+    ]
   },
   {
     "nome": "Avenida Fernando Ferrari 3800 Aeroporto 29075-630 Vitória/ES",
@@ -1165,31 +1575,43 @@
     "cidade": "Avenida Fernando Ferrari 3800 Aeroporto  Vitória",
     "uf": "ES",
     "cep": "29075-630",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "AREOPORTO X SERRA"
+    ]
   },
   {
-    "nome": "4 BIO BARUERI",
+    "nome": "Avenida Marginal Projetada 1821 Fazenda Tamboré 06460-200 Barueri/SP",
     "endereco": "Avenida Marginal Projetada 1821 Fazenda Tamboré  Barueri",
     "cidade": "Avenida Marginal Projetada 1821 Fazenda Tamboré  Barueri",
     "uf": "SP",
     "cep": "06460-200",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "PROFARMA ITAPEVI X 4BIO BARUERI"
+    ]
   },
   {
-    "nome": "DENTAL SPEED",
+    "nome": "Rua Roney Henrique Heiderscheidt 50 Brejarú 88133-515 Palhoça/SC",
     "endereco": "Rua Roney Henrique Heiderscheidt 50 Brejarú  Palhoça",
     "cidade": "Rua Roney Henrique Heiderscheidt 50 Brejarú  Palhoça",
     "uf": "SC",
     "cep": "88133-515",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERENCIA DENTAL SPEED X SANTANA DE PARNAIBA"
+    ]
   },
   {
-    "nome": "Secreteraria de Saúde",
+    "nome": "Rua Doutor Luiz Palmier 726 Barreto 24110-310 Niterói/RJ",
     "endereco": "Rua Doutor Luiz Palmier 726 Barreto  Niterói",
     "cidade": "Rua Doutor Luiz Palmier 726 Barreto  Niterói",
     "uf": "RJ",
     "cep": "24110-310",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - Secretaria de Saúde Niterói"
+    ]
   },
   {
     "nome": "Rua André Cavalcanti 37 Centro 20231-050 Rio de Janeiro/RJ",
@@ -1197,15 +1619,10 @@
     "cidade": "Rua André Cavalcanti 37 Centro  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20231-050",
-    "count": 1
-  },
-  {
-    "nome": "DROGARAIA RAIA",
-    "endereco": "Avenida Beira Mar 100 Parque Beira Mar  Duque de Caxias",
-    "cidade": "Avenida Beira Mar 100 Parque Beira Mar  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25085-220",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - INCA"
+    ]
   },
   {
     "nome": "Rua Leonardo Nunes 3480 Vila Clementino 04039-010 São Paulo/SP",
@@ -1213,23 +1630,32 @@
     "cidade": "Rua Leonardo Nunes 3480 Vila Clementino  São Paulo",
     "uf": "SP",
     "cep": "04039-010",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA -AS X SARAPLAST - ITUPEVA-SP"
+    ]
   },
   {
-    "nome": "LOJAS AREIA BRANCA",
+    "nome": "Rua Itaporã 318 Parque Paulistano 08080-230 São Paulo/SP",
     "endereco": "Rua Itaporã 318 Parque Paulistano  São Paulo",
     "cidade": "Rua Itaporã 318 Parque Paulistano  São Paulo",
     "uf": "SP",
     "cep": "08080-230",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Duque de Caxias RJ X  Parque Paulistano - SP"
+    ]
   },
   {
-    "nome": "PARQUE NOVO MUNDO-SP",
+    "nome": "Rua Lídice 22 Parque Novo Mundo 02174-010 São Paulo/SP",
     "endereco": "Rua Lídice 22 Parque Novo Mundo  São Paulo",
     "cidade": "Rua Lídice 22 Parque Novo Mundo  São Paulo",
     "uf": "SP",
     "cep": "02174-010",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERENCIA - DUQUE DE CAXIAS-RJ X PARQUE NOVO MUNDO-SP"
+    ]
   },
   {
     "nome": "Avenida Bernardo Monteiro 1355 Funcionários 30150-285 Belo Horizonte/MG",
@@ -1237,7 +1663,10 @@
     "cidade": "Avenida Bernardo Monteiro 1355 Funcionários  Belo Horizonte",
     "uf": "MG",
     "cep": "30150-285",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ONCOMED"
+    ]
   },
   {
     "nome": "Avenida José de Patrocínio Pontes 1355 Mangabeiras 30210-090 Belo Horizonte/MG",
@@ -1245,39 +1674,54 @@
     "cidade": "Avenida José de Patrocínio Pontes 1355 Mangabeiras  Belo Horizonte",
     "uf": "MG",
     "cep": "30210-090",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ONCOMED"
+    ]
   },
   {
-    "nome": "MEDKA PAVUNA",
+    "nome": "Rodovia Presidente Dutra 2611 Parque Colúmbia 21535-501 Rio de Janeiro/RJ",
     "endereco": "Rodovia Presidente Dutra 2611 Parque Colúmbia  Rio de Janeiro",
     "cidade": "Rodovia Presidente Dutra 2611 Parque Colúmbia  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21535-501",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - MEDKA PAVUNA"
+    ]
   },
   {
-    "nome": "D.P CIVIL ARUJA",
+    "nome": "Rua Tomi Saburo Yamamoto 7 Jardim das Cerejeiras 07432-575 Arujá/SP",
     "endereco": "Rua Tomi Saburo Yamamoto 7 Jardim das Cerejeiras  Arujá",
     "cidade": "Rua Tomi Saburo Yamamoto 7 Jardim das Cerejeiras  Arujá",
     "uf": "SP",
     "cep": "07432-575",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "POLICIA CIVIL - ARUJA-SP X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "UNIAO QUIMICA",
+    "nome": "AV DO ACESO OESTE 31 PENEDO 27580-000 Itatiaia/RJ",
     "endereco": "AV DO ACESO OESTE 31 PENEDO  Itatiaia",
     "cidade": "AV DO ACESO OESTE 31 PENEDO  Itatiaia",
     "uf": "RJ",
     "cep": "27580-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA X UNIAO QUIMICA"
+    ]
   },
   {
-    "nome": "Aeroporto Santos Dumont",
+    "nome": "Praça Senador Salgado Filho 0 Centro 20021-340 Rio de Janeiro/RJ",
     "endereco": "Praça Senador Salgado Filho 0 Centro  Rio de Janeiro",
     "cidade": "Praça Senador Salgado Filho 0 Centro  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20021-340",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ SDU x Macaé"
+    ]
   },
   {
     "nome": "Avenida Paulo Augusto Bortolucci 346 Distrido Industrial 13459-617 Santa Bárbara dOeste/SP",
@@ -1285,7 +1729,10 @@
     "cidade": "Avenida Paulo Augusto Bortolucci 346 Distrido Industrial  Santa Bárbara dOeste",
     "uf": "SP",
     "cep": "13459-617",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERENCIA - SANTANA DE PARNAIBA-SP X SANTA BARBARA-SP"
+    ]
   },
   {
     "nome": "Rua Brescia 184 Mauá 83413-575 Colombo/PR",
@@ -1293,15 +1740,21 @@
     "cidade": "Rua Brescia 184 Mauá  Colombo",
     "uf": "PR",
     "cep": "83413-575",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLOMBO X SJP-PR"
+    ]
   },
   {
-    "nome": "G&G Cotia",
+    "nome": "Estrada do Capuava 3480 Jardim Belizário 06715-685 Cotia/SP",
     "endereco": "Estrada do Capuava 3480 Jardim Belizário  Cotia",
     "cidade": "Estrada do Capuava 3480 Jardim Belizário  Cotia",
     "uf": "SP",
     "cep": "06715-685",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERENCIA - COTIA-SP X SANTANA"
+    ]
   },
   {
     "nome": "Avenida Nossa Senhora de Copacabana 1133 Copacabana 22070-011 Rio de Janeiro/RJ",
@@ -1309,71 +1762,54 @@
     "cidade": "Avenida Nossa Senhora de Copacabana 1133 Copacabana  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22070-011",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Profarma X Copacabana"
+    ]
   },
   {
-    "nome": "Aeroporto do Galeão",
+    "nome": "Avenida Vinte de Janeiro 20 Galeão 21941-570 Rio de Janeiro/RJ",
     "endereco": "Avenida Vinte de Janeiro 20 Galeão  Rio de Janeiro",
     "cidade": "Avenida Vinte de Janeiro 20 Galeão  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21941-570",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Aeroporto do Galeão X Duque de Caxias"
+    ]
   },
   {
-    "nome": "AEROPORTO -ES",
+    "nome": "Avenida Adalberto Simão Nader 10 Mata da Praia 29066-370 Vitória/ES",
     "endereco": "Avenida Adalberto Simão Nader 10 Mata da Praia  Vitória",
     "cidade": "Avenida Adalberto Simão Nader 10 Mata da Praia  Vitória",
     "uf": "ES",
     "cep": "29066-370",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "AEROPORTO - ES  X HOSPINOVA - ES"
+    ]
   },
   {
-    "nome": "HOSPINOVA - ES",
-    "endereco": "Rua Samuel Meira Brasil 394 Taquara II  Serra",
-    "cidade": "Rua Samuel Meira Brasil 394 Taquara II  Serra",
-    "uf": "ES",
-    "cep": "29167-650",
-    "count": 1
-  },
-  {
-    "nome": "RIO DE JANEIRO",
-    "endereco": "Estrada Velha do Pilar 0 Capivari  Duque de Caxias",
-    "cidade": "Estrada Velha do Pilar 0 Capivari  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25231-000",
-    "count": 1
-  },
-  {
-    "nome": "Rede Dor Pavuna",
+    "nome": "Rodovia Presidente Dutra 2251 Parque Colúmbia 21535-501 Rio de Janeiro/RJ",
     "endereco": "Rodovia Presidente Dutra 2251 Parque Colúmbia  Rio de Janeiro",
     "cidade": "Rodovia Presidente Dutra 2251 Parque Colúmbia  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21535-501",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Pavuna x Duque de Caxias"
+    ]
   },
   {
-    "nome": "AVENIDA JULIA GAIOLI",
-    "endereco": "Avenida Júlia Gaiolli 740 Água Chata  Guarulhos",
-    "cidade": "Avenida Júlia Gaiolli 740 Água Chata  Guarulhos",
-    "uf": "SP",
-    "cep": "07251-500",
-    "count": 1
-  },
-  {
-    "nome": "ESTRADA TENEENTE MARQUES",
-    "endereco": "Estrada Tenente Marques 6765 Vila Poupança  Santana de Parnaíba",
-    "cidade": "Estrada Tenente Marques 6765 Vila Poupança  Santana de Parnaíba",
-    "uf": "SP",
-    "cep": "06525-001",
-    "count": 1
-  },
-  {
-    "nome": "Governador Valadares",
+    "nome": "Rua Benjamin Rodrigues Coelho 75 Santa Rita 35040-080 Governador Valadares/MG",
     "endereco": "Rua Benjamin Rodrigues Coelho 75 Santa Rita  Governador Valadares",
     "cidade": "Rua Benjamin Rodrigues Coelho 75 Santa Rita  Governador Valadares",
     "uf": "MG",
     "cep": "35040-080",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "POSTO CASTELO BR381 X GV"
+    ]
   },
   {
     "nome": "Estrada Municipal Teodor Condiev 300 Jardim Marchissolo 13171-105 Sumaré/SP",
@@ -1381,7 +1817,10 @@
     "cidade": "Estrada Municipal Teodor Condiev 300 Jardim Marchissolo  Sumaré",
     "uf": "SP",
     "cep": "13171-105",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERENCIA DUQUE DE CAXIAS X SUMARÉ"
+    ]
   },
   {
     "nome": "Rua Jardim Botânico 660 Jardim Botânico 22461-000 Rio de Janeiro/RJ",
@@ -1389,7 +1828,10 @@
     "cidade": "Rua Jardim Botânico 660 Jardim Botânico  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22461-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Transbordo Jd Botânico"
+    ]
   },
   {
     "nome": "Rua Pacheco Leão 15 Jardim Botânico 22460-030 Rio de Janeiro/RJ",
@@ -1397,55 +1839,76 @@
     "cidade": "Rua Pacheco Leão 15 Jardim Botânico  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22460-030",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Transbordo Jd Botânico"
+    ]
   },
   {
-    "nome": "GAPLAN - UBERABA",
+    "nome": "Rodovia Chico Xavier 5 Jardim Santa Clara 38038-050 Uberaba/MG",
     "endereco": "Rodovia Chico Xavier 5 Jardim Santa Clara  Uberaba",
     "cidade": "Rodovia Chico Xavier 5 Jardim Santa Clara  Uberaba",
     "uf": "MG",
     "cep": "38038-050",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "VIAGEM - UBERABA-MG X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "UNIÃO QUIMICA",
+    "nome": "Rodovia Fernão Dias - BR 381 0 Distrito Industrial 37556-830 Pouso Alegre/MG",
     "endereco": "Rodovia Fernão Dias - BR 381 0 Distrito Industrial  Pouso Alegre",
     "cidade": "Rodovia Fernão Dias - BR 381 0 Distrito Industrial  Pouso Alegre",
     "uf": "MG",
     "cep": "37556-830",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA - U.QUIMICA - POUSO ALEGRE-MG X SANTANA DA PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "FUND OSWALDO RAMOS",
+    "nome": "Rua Borges Lagoa 960 Vila Clementino 04038-002 São Paulo/SP",
     "endereco": "Rua Borges Lagoa 960 Vila Clementino  São Paulo",
     "cidade": "Rua Borges Lagoa 960 Vila Clementino  São Paulo",
     "uf": "SP",
     "cep": "04038-002",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA X FUND OSWALDO RAMOS"
+    ]
   },
   {
-    "nome": "CAJAMAR ONCOPROD",
+    "nome": "Via de Acesso Sul km 30 100 Empresarial Mirante de Cajamar 07790-330 Cajamar/SP",
     "endereco": "Via de Acesso Sul km 30 100 Empresarial Mirante de Cajamar  Cajamar",
     "cidade": "Via de Acesso Sul km 30 100 Empresarial Mirante de Cajamar  Cajamar",
     "uf": "SP",
     "cep": "07790-330",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ONCOPROD CAJAMAR X SÃO PAULO"
+    ]
   },
   {
-    "nome": "SÃO PAULO",
+    "nome": "Rua Vergueiro 4210 Vila Mariana 04102-900 São Paulo/SP",
     "endereco": "Rua Vergueiro 4210 Vila Mariana  São Paulo",
     "cidade": "Rua Vergueiro 4210 Vila Mariana  São Paulo",
     "uf": "SP",
     "cep": "04102-900",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ONCOPROD CAJAMAR X SÃO PAULO"
+    ]
   },
   {
-    "nome": "MERCO SJP",
+    "nome": "Rua Brescia 187 Mauá 83413-575 Colombo/PR",
     "endereco": "Rua Brescia 187 Mauá  Colombo",
     "cidade": "Rua Brescia 187 Mauá  Colombo",
     "uf": "PR",
     "cep": "83413-575",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA - MERCO SJP X GAM SJP"
+    ]
   },
   {
     "nome": "Avenida Brasil 48862 Campo Grande 23078-001 Rio de Janeiro/RJ",
@@ -1453,7 +1916,10 @@
     "cidade": "Avenida Brasil 48862 Campo Grande  Rio de Janeiro",
     "uf": "RJ",
     "cep": "23078-001",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Centro e Região"
+    ]
   },
   {
     "nome": "Estrada Municipal 3480 Jardim Santa Izabel 06709-530 Cotia/SP",
@@ -1461,7 +1927,10 @@
     "cidade": "Estrada Municipal 3480 Jardim Santa Izabel  Cotia",
     "uf": "SP",
     "cep": "06709-530",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "PLANETA COMERCIO DE FERRAMENTAS  EQUIPAMENTOS LTDA"
+    ]
   },
   {
     "nome": "Rua Benedito Faustino da Rosa 500 Jardim Wanderley 18277-430 Tatuí/SP",
@@ -1469,39 +1938,43 @@
     "cidade": "Rua Benedito Faustino da Rosa 500 Jardim Wanderley  Tatuí",
     "uf": "SP",
     "cep": "18277-430",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "PLANETA COMERCIO DE FERRAMENTAS  EQUIPAMENTOS LTDA"
+    ]
   },
   {
-    "nome": "Rio Clarense",
+    "nome": "Praça Emílio Marconato 1000 Núcleo Residencial Doutor João Aldo Nassif 13916-074 Jaguariúna/SP",
     "endereco": "Praça Emílio Marconato 1000 Núcleo Residencial Doutor João Aldo Nassif  Jaguariúna",
     "cidade": "Praça Emílio Marconato 1000 Núcleo Residencial Doutor João Aldo Nassif  Jaguariúna",
     "uf": "SP",
     "cep": "13916-074",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA - RIO CLARENSE JAGUARIUNA-SP X ITUPEVA -SP"
+    ]
   },
   {
-    "nome": "G&G Cotia",
+    "nome": "Estrada do Capuava 3480 Jardim dos Ypés 06715-600 Cotia/SP",
     "endereco": "Estrada do Capuava 3480 Jardim dos Ypés  Cotia",
     "cidade": "Estrada do Capuava 3480 Jardim dos Ypés  Cotia",
     "uf": "SP",
     "cep": "06715-600",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SP Avulsa Cotia"
+    ]
   },
   {
-    "nome": "SARAPLAST - ITUPEVA - SP",
+    "nome": "Avenida Domingos José Delgado 633 Eco Park Empresarial 13295-633 Itupeva/SP",
     "endereco": "Avenida Domingos José Delgado 633 Eco Park Empresarial  Itupeva",
     "cidade": "Avenida Domingos José Delgado 633 Eco Park Empresarial  Itupeva",
     "uf": "SP",
     "cep": "13295-633",
-    "count": 1
-  },
-  {
-    "nome": "UNIÃO QUIMICA",
-    "endereco": "Rua Rafael de Marco 175 Parque Industrial das Oliveiras  Taboão da Serra",
-    "cidade": "Rua Rafael de Marco 175 Parque Industrial das Oliveiras  Taboão da Serra",
-    "uf": "SP",
-    "cep": "06765-350",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA - DUPATRI - RIBEIRAO PRETO-SP X ITUPEVA-SP"
+    ]
   },
   {
     "nome": "Rua dos Andradas 334 Cidade Nova 13334-020 Indaiatuba/SP",
@@ -1509,7 +1982,10 @@
     "cidade": "Rua dos Andradas 334 Cidade Nova  Indaiatuba",
     "uf": "SP",
     "cep": "13334-020",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TEMPUS X SANTANA"
+    ]
   },
   {
     "nome": "Rua Visconde de Pirajá 330 Ipanema 22410-000 Rio de Janeiro/RJ",
@@ -1517,7 +1993,10 @@
     "cidade": "Rua Visconde de Pirajá 330 Ipanema  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22410-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Sul Compartilhado"
+    ]
   },
   {
     "nome": "Avenida Brasil 616 Bonsucesso 21040-360 Rio de Janeiro/RJ",
@@ -1525,7 +2004,10 @@
     "cidade": "Avenida Brasil 616 Bonsucesso  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21040-360",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Norte Compartilhado"
+    ]
   },
   {
     "nome": "Avenida das Américas 3500 Barra da Tijuca 22640-102 Rio de Janeiro/RJ",
@@ -1533,7 +2015,10 @@
     "cidade": "Avenida das Américas 3500 Barra da Tijuca  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22640-102",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Barra Compartilhado"
+    ]
   },
   {
     "nome": "Avenida Penápolis 315 São Geraldo 39403-165 Montes Claros/MG",
@@ -1541,23 +2026,32 @@
     "cidade": "Avenida Penápolis 315 São Geraldo  Montes Claros",
     "uf": "MG",
     "cep": "39403-165",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "BETIM X MONTES CLAROS"
+    ]
   },
   {
-    "nome": "GOVERNADOR VALADARES",
+    "nome": "Rua Benjamim Rodrigues Coelho 75 Santa Rita 35040-080 Governador Valadares/MG",
     "endereco": "Rua Benjamim Rodrigues Coelho 75 Santa Rita  Governador Valadares",
     "cidade": "Rua Benjamim Rodrigues Coelho 75 Santa Rita  Governador Valadares",
     "uf": "MG",
     "cep": "35040-080",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "BETIM X GOVERNADOR VALADARES"
+    ]
   },
   {
-    "nome": "Barra da Tijuca",
+    "nome": "Avenida das Américas 6205 Barra da Tijuca 22793-082 Rio de Janeiro/RJ",
     "endereco": "Avenida das Américas 6205 Barra da Tijuca  Rio de Janeiro",
     "cidade": "Avenida das Américas 6205 Barra da Tijuca  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22793-082",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ ( Barra Transbordo)"
+    ]
   },
   {
     "nome": "Avenida Armando Lombardi 3255 Barra da Tijuca 22640-000 Rio de Janeiro/RJ",
@@ -1565,15 +2059,10 @@
     "cidade": "Avenida Armando Lombardi 3255 Barra da Tijuca  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22640-000",
-    "count": 1
-  },
-  {
-    "nome": "GAM - DF",
-    "endereco": "Rodovia BR-060 30 Recanto das Emas  Brasília",
-    "cidade": "Rodovia BR-060 30 Recanto das Emas  Brasília",
-    "uf": "DF",
-    "cep": "72668-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ ( Barra Transbordo)"
+    ]
   },
   {
     "nome": "Rua Marquês de São Vicente 124 Gávea 22451-040 Rio de Janeiro/RJ",
@@ -1581,31 +2070,32 @@
     "cidade": "Rua Marquês de São Vicente 124 Gávea  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22451-040",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Coleta Endocfarma"
+    ]
   },
   {
-    "nome": "UNIÃO QUIMICA",
-    "endereco": "Avenida Ibirama 370 Parque Industrial Daci  Taboão da Serra",
-    "cidade": "Avenida Ibirama 370 Parque Industrial Daci  Taboão da Serra",
-    "uf": "SP",
-    "cep": "06785-300",
-    "count": 1
-  },
-  {
-    "nome": "COPA STAR HOSPITAL",
+    "nome": "Rua Figueiredo Magalhães 875 Copacabana 22031-011 Rio de Janeiro/RJ",
     "endereco": "Rua Figueiredo Magalhães 875 Copacabana  Rio de Janeiro",
     "cidade": "Rua Figueiredo Magalhães 875 Copacabana  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22031-011",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ ZONA SUL - (AVULSA)"
+    ]
   },
   {
-    "nome": "CASCADURA DOR",
+    "nome": "Rua Carolina Machado 38 Madureira 21351-021 Rio de Janeiro/RJ",
     "endereco": "Rua Carolina Machado 38 Madureira  Rio de Janeiro",
     "cidade": "Rua Carolina Machado 38 Madureira  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21351-021",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ ZONA SUL - (AVULSA)"
+    ]
   },
   {
     "nome": "Praça da República 2070 Centro 20211-350 Rio de Janeiro/RJ",
@@ -1613,7 +2103,10 @@
     "cidade": "Praça da República 2070 Centro  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20211-350",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ENTREGA"
+    ]
   },
   {
     "nome": "Avenida Getúlio Vargas 663 Centro 26510-014 Nilópolis/RJ",
@@ -1621,31 +2114,32 @@
     "cidade": "Avenida Getúlio Vargas 663 Centro  Nilópolis",
     "uf": "RJ",
     "cep": "26510-014",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ENTREGA"
+    ]
   },
   {
-    "nome": "CAMPO GRANDE - MS",
-    "endereco": "Avenida Duque de Caxias 4355 Vila Eliane  Campo Grande",
-    "cidade": "Avenida Duque de Caxias 4355 Vila Eliane  Campo Grande",
-    "uf": "MS",
-    "cep": "79103-011",
-    "count": 1
-  },
-  {
-    "nome": "CAMPO GRANDE - MS -",
+    "nome": "Avenida Ministro João Arinos 2690 Tiradentes 79041-005 Campo Grande/MS",
     "endereco": "Avenida Ministro João Arinos 2690 Tiradentes  Campo Grande",
     "cidade": "Avenida Ministro João Arinos 2690 Tiradentes  Campo Grande",
     "uf": "MS",
     "cep": "79041-005",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "CAMPO GRANDE-MS (F. E. DE SAUDE) X CAMPO GRANDE-MS (PAMED)"
+    ]
   },
   {
-    "nome": "Conferencia São Jose do Avai",
+    "nome": "Rua Cel Luiz Ferraz 178 Centro 28300-000 Itaperuna/RJ",
     "endereco": "Rua Cel Luiz Ferraz 178 Centro  Itaperuna",
     "cidade": "Rua Cel Luiz Ferraz 178 Centro  Itaperuna",
     "uf": "RJ",
     "cep": "28300-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Duque de Caxias x Itaperuna"
+    ]
   },
   {
     "nome": "Rua Sérgio Buarque de Holanda 605 Barra Olímpica 22775-031 Rio de Janeiro/RJ",
@@ -1653,7 +2147,10 @@
     "cidade": "Rua Sérgio Buarque de Holanda 605 Barra Olímpica  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22775-031",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - (AVULSA)"
+    ]
   },
   {
     "nome": "Rua Luís Orlando Cardoso 326 Barra da Tijuca 22793-323 Rio de Janeiro/RJ",
@@ -1661,7 +2158,10 @@
     "cidade": "Rua Luís Orlando Cardoso 326 Barra da Tijuca  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22793-323",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ - (AVULSA)"
+    ]
   },
   {
     "nome": "Rua Dália 890 Jardim das Flores 06114-030 Osasco/SP",
@@ -1669,7 +2169,10 @@
     "cidade": "Rua Dália 890 Jardim das Flores  Osasco",
     "uf": "SP",
     "cep": "06114-030",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Osasco x Gam SJP"
+    ]
   },
   {
     "nome": "Rua Marins Alvarino 208 Itararé 29047-660 Vitória/ES",
@@ -1677,15 +2180,21 @@
     "cidade": "Rua Marins Alvarino 208 Itararé  Vitória",
     "uf": "ES",
     "cep": "29047-660",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ES - (AVULSA)"
+    ]
   },
   {
-    "nome": "VLT BAZAR LTDA ME",
+    "nome": "Avenida Mauá 0 Roselândia 99066-010 Passo Fundo/RS",
     "endereco": "Avenida Mauá 0 Roselândia  Passo Fundo",
     "cidade": "Avenida Mauá 0 Roselândia  Passo Fundo",
     "uf": "RS",
     "cep": "99066-010",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RIO DE JANEIRO-RJ X PASSO FUNDO-RS - RONDOCARGAS"
+    ]
   },
   {
     "nome": "Estrada Tenente Marques 383 Vila Poupança 06525-001 Ribeirão Preto/SP",
@@ -1693,7 +2202,10 @@
     "cidade": "Estrada Tenente Marques 383 Vila Poupança  Ribeirão Preto",
     "uf": "SP",
     "cep": "06525-001",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "UBERLANDIA X RIBEIRÃO PRETO"
+    ]
   },
   {
     "nome": "Rua Paraná 220 Vila Mathias 11075-320 Santos/SP",
@@ -1701,7 +2213,10 @@
     "cidade": "Rua Paraná 220 Vila Mathias  Santos",
     "uf": "SP",
     "cep": "11075-320",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERÊNCIA SANTANA X SANTOS"
+    ]
   },
   {
     "nome": "Rua Nossa Senhora de Praia Grande 830 Caiçara 11706-010 Praia Grande/SP",
@@ -1709,15 +2224,21 @@
     "cidade": "Rua Nossa Senhora de Praia Grande 830 Caiçara  Praia Grande",
     "uf": "SP",
     "cep": "11706-010",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "TRANSFERÊNCIA CAJAMAR X PRAIA GRANDE"
+    ]
   },
   {
-    "nome": "SevenLog OSASCO",
+    "nome": "Rua Padre Vieira 169 Piratininga Osasco/SP",
     "endereco": "Rua Padre Vieira 169 Piratininga Osasco",
     "cidade": "Rua Padre Vieira 169 Piratininga Osasco",
     "uf": "SP",
     "cep": "",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Sevenlog Osasco X Entregas Osasco"
+    ]
   },
   {
     "nome": "Rua Joaquim Távora 196 Marapé 11075-301 Santos/SP",
@@ -1725,7 +2246,10 @@
     "cidade": "Rua Joaquim Távora 196 Marapé  Santos",
     "uf": "SP",
     "cep": "11075-301",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Santox X Guarujá"
+    ]
   },
   {
     "nome": "Rua do Parque 280 Parque Villa Flores 13175-660 Sumaré/SP",
@@ -1733,7 +2257,10 @@
     "cidade": "Rua do Parque 280 Parque Villa Flores  Sumaré",
     "uf": "SP",
     "cep": "13175-660",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Santana X Hortolandia"
+    ]
   },
   {
     "nome": "Rua Capitão Francisco Teixeira Nogueira 154 Água Branca 05037-030 São Paulo/SP",
@@ -1741,7 +2268,10 @@
     "cidade": "Rua Capitão Francisco Teixeira Nogueira 154 Água Branca  São Paulo",
     "uf": "SP",
     "cep": "05037-030",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Santana X Centro"
+    ]
   },
   {
     "nome": "Rua Padre Albuquerque 0 Centro 18200-220 Itapetininga/SP",
@@ -1749,7 +2279,10 @@
     "cidade": "Rua Padre Albuquerque 0 Centro  Itapetininga",
     "uf": "SP",
     "cep": "18200-220",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA X ITAPETININGA"
+    ]
   },
   {
     "nome": "Rua das Primaveras 1050 Jardim Pompéia 13345-020 Indaiatuba/SP",
@@ -1757,7 +2290,10 @@
     "cidade": "Rua das Primaveras 1050 Jardim Pompéia  Indaiatuba",
     "uf": "SP",
     "cep": "13345-020",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA X INDAIATUBA"
+    ]
   },
   {
     "nome": "RUA DESEMBARGADOR ELISEU GUILHERME 123 Paraíso 04004-030 São Paulo/SP",
@@ -1765,7 +2301,10 @@
     "cidade": "RUA DESEMBARGADOR ELISEU GUILHERME 123 Paraíso  São Paulo",
     "uf": "SP",
     "cep": "04004-030",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA X CENTRO"
+    ]
   },
   {
     "nome": "Rua Antonio Rizardi 0 Polvilho Polvilho 07790-525 Cajamar/SP",
@@ -1773,7 +2312,10 @@
     "cidade": "Rua Antonio Rizardi 0 Polvilho Polvilho  Cajamar",
     "uf": "SP",
     "cep": "07790-525",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA X CAJAMAR e REGIÃO"
+    ]
   },
   {
     "nome": "Rua das Monções 420 Jardim 09090-521 Santo André/SP",
@@ -1781,7 +2323,10 @@
     "cidade": "Rua das Monções 420 Jardim  Santo André",
     "uf": "SP",
     "cep": "09090-521",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA X ABCD"
+    ]
   },
   {
     "nome": "Rua Zurich 124 Lauzane Paulista 02440-110 São Paulo/SP",
@@ -1789,7 +2334,10 @@
     "cidade": "Rua Zurich 124 Lauzane Paulista  São Paulo",
     "uf": "SP",
     "cep": "02440-110",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA DE PARNAIBA X ZONA NORTE"
+    ]
   },
   {
     "nome": "Rua José Semião Rodrigues Agostinho 1370 Água Espraiada 06833-370 São Paulo/SP",
@@ -1797,7 +2345,10 @@
     "cidade": "Rua José Semião Rodrigues Agostinho 1370 Água Espraiada  São Paulo",
     "uf": "SP",
     "cep": "06833-370",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA DE PARNAIBA X REDE DOR"
+    ]
   },
   {
     "nome": "Avenida Fausta Duarte de Araújo 0 Centro 08730-130 Mogi das Cruzes/SP",
@@ -1805,7 +2356,10 @@
     "cidade": "Avenida Fausta Duarte de Araújo 0 Centro  Mogi das Cruzes",
     "uf": "SP",
     "cep": "08730-130",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA DE PARNAIBA X MOGI DAS CRUZES e REGIAO"
+    ]
   },
   {
     "nome": "Estrada Tenente Marques 6567 Jardim do Luar Fazendinha 06529-001 São Paulo/SP",
@@ -1813,7 +2367,10 @@
     "cidade": "Estrada Tenente Marques 6567 Jardim do Luar Fazendinha  São Paulo",
     "uf": "SP",
     "cep": "06529-001",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA DE PARNAIBA X GUARULHOS"
+    ]
   },
   {
     "nome": "Rua Barão de Mauá 100 Centro 07012-040 São Paulo/SP",
@@ -1821,7 +2378,10 @@
     "cidade": "Rua Barão de Mauá 100 Centro  São Paulo",
     "uf": "SP",
     "cep": "07012-040",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA DE PARNAIBA X GUARULHOS"
+    ]
   },
   {
     "nome": "Rua José Semião Rodrigues Agostinho 1370 QUINHAU 06833-300 Embu das Artes/SP",
@@ -1829,7 +2389,10 @@
     "cidade": "Rua José Semião Rodrigues Agostinho 1370 QUINHAU  Embu das Artes",
     "uf": "SP",
     "cep": "06833-300",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "SANTANA DE PARNAIBA X EMBU DAS ARTES"
+    ]
   },
   {
     "nome": "Rua Getúlio Vargas 742 Centro 11950-000 Registro/SP",
@@ -1837,23 +2400,32 @@
     "cidade": "Rua Getúlio Vargas 742 Centro  Registro",
     "uf": "SP",
     "cep": "11950-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Rota Registro"
+    ]
   },
   {
-    "nome": "Aeroporto de Confins",
+    "nome": "Rodovia MG-10 Km 09 0 Aeroporto Confins 33500-900 Confins/MG",
     "endereco": "Rodovia MG-10 Km 09 0 Aeroporto Confins  Confins",
     "cidade": "Rodovia MG-10 Km 09 0 Aeroporto Confins  Confins",
     "uf": "MG",
     "cep": "33500-900",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Rota Para Ecolta"
+    ]
   },
   {
-    "nome": "Aeroporto de Confins",
+    "nome": "Rodovia Januário Carneiro 3340 do Jambreir 34004-842 Nova Lima/MG",
     "endereco": "Rodovia Januário Carneiro 3340 do Jambreir  Nova Lima",
     "cidade": "Rodovia Januário Carneiro 3340 do Jambreir  Nova Lima",
     "uf": "MG",
     "cep": "34004-842",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Rota Para Ecolta"
+    ]
   },
   {
     "nome": "Avenida Jacob Jorge Abi Rached 253 Distrito Industrial Virgíl 14806-610 Araraquara/SP",
@@ -1861,7 +2433,10 @@
     "cidade": "Avenida Jacob Jorge Abi Rached 253 Distrito Industrial Virgíl  Araraquara",
     "uf": "SP",
     "cep": "14806-610",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ROTA UBERLANDIA"
+    ]
   },
   {
     "nome": "Rua Paulo Afonso 92 Santo Antônio 30350-060 Belo Horizonte/MG",
@@ -1869,7 +2444,10 @@
     "cidade": "Rua Paulo Afonso 92 Santo Antônio  Belo Horizonte",
     "uf": "MG",
     "cep": "30350-060",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "ROTA BARRO PRETO BH"
+    ]
   },
   {
     "nome": "Rua Washington Luís 2070 Parque Duque 20230-026 Rio de Janeiro/RJ",
@@ -1877,7 +2455,10 @@
     "cidade": "Rua Washington Luís 2070 Parque Duque  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20230-026",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Sul 3 Ipanema"
+    ]
   },
   {
     "nome": "Rua João Borges 204 Gávea 22451-100 Rio de Janeiro/RJ",
@@ -1885,7 +2466,10 @@
     "cidade": "Rua João Borges 204 Gávea  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22451-100",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Sul 3 Ipanema"
+    ]
   },
   {
     "nome": "Avenida Atlântica 1000 Copacabana 22010-000 Rio de Janeiro/RJ",
@@ -1893,7 +2477,10 @@
     "cidade": "Avenida Atlântica 1000 Copacabana  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22010-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Sul 2 Copacabana"
+    ]
   },
   {
     "nome": "Rua Visconde de Caravelas 89 Humaita 25075-000 Rio de Janeiro/RJ",
@@ -1901,7 +2488,10 @@
     "cidade": "Rua Visconde de Caravelas 89 Humaita  Rio de Janeiro",
     "uf": "RJ",
     "cep": "25075-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Sul 1 Botafogo"
+    ]
   },
   {
     "nome": "RUA OLINDA ELIS 0 CAMPO GRANDE 25252-525 Rio de Janeiro/RJ",
@@ -1909,7 +2499,10 @@
     "cidade": "RUA OLINDA ELIS 0 CAMPO GRANDE  Rio de Janeiro",
     "uf": "RJ",
     "cep": "25252-525",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Oeste"
+    ]
   },
   {
     "nome": "Rua César Zama 185 Lins de Vasconcelos 20725-090 Rio de Janeiro/RJ",
@@ -1917,7 +2510,10 @@
     "cidade": "Rua César Zama 185 Lins de Vasconcelos  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20725-090",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Norte"
+    ]
   },
   {
     "nome": "Estrada do Galeão 4101 Jardim Guanabara 21931-383 Rio de Janeiro/RJ",
@@ -1925,7 +2521,10 @@
     "cidade": "Estrada do Galeão 4101 Jardim Guanabara  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21931-383",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Zona Leopoldina / Ilha do Goverrnador"
+    ]
   },
   {
     "nome": "Avenida dos Metalurgicos 2500 Tiradentes 27259-000 Volta Redonda/RJ",
@@ -1933,7 +2532,10 @@
     "cidade": "Avenida dos Metalurgicos 2500 Tiradentes  Volta Redonda",
     "uf": "RJ",
     "cep": "27259-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Volta Redonda / Barra Mansa / Resende"
+    ]
   },
   {
     "nome": "Rua Doutor Satamini 333 Tijuca 20270-233 Rio de Janeiro/RJ",
@@ -1941,7 +2543,10 @@
     "cidade": "Rua Doutor Satamini 333 Tijuca  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20270-233",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Tijuca"
+    ]
   },
   {
     "nome": "Rua Judith Maurício de Paula 40 Iucas 25964-220 Nova Friburgo/RJ",
@@ -1949,7 +2554,10 @@
     "cidade": "Rua Judith Maurício de Paula 40 Iucas  Nova Friburgo",
     "uf": "RJ",
     "cep": "25964-220",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Teresopolis"
+    ]
   },
   {
     "nome": "AVENIDA SANTA MARTA 107 Camarão 24436-760 São Gonçalo/RJ",
@@ -1957,7 +2565,10 @@
     "cidade": "AVENIDA SANTA MARTA 107 Camarão  São Gonçalo",
     "uf": "RJ",
     "cep": "24436-760",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ São Goncalo"
+    ]
   },
   {
     "nome": "Avenida Ayrton Senna 3079 Barra da Tijuca 22775-002 Rio de Janeiro/RJ",
@@ -1965,7 +2576,10 @@
     "cidade": "Avenida Ayrton Senna 3079 Barra da Tijuca  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22775-002",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Recreio dos Bandeirantes"
+    ]
   },
   {
     "nome": "Rua Maestro Clodomiro Guimaraes 0 Passagem 25750-000 Cabo Frio/RJ",
@@ -1973,7 +2587,10 @@
     "cidade": "Rua Maestro Clodomiro Guimaraes 0 Passagem  Cabo Frio",
     "uf": "RJ",
     "cep": "25750-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Região dos Lagos"
+    ]
   },
   {
     "nome": "Rodovia Presidente Dutra 2251 PAVUNA 25540-400 Rio de Janeiro/RJ",
@@ -1981,15 +2598,10 @@
     "cidade": "Rodovia Presidente Dutra 2251 PAVUNA  Rio de Janeiro",
     "uf": "RJ",
     "cep": "25540-400",
-    "count": 1
-  },
-  {
-    "nome": "ONCOPROD - RJ",
-    "endereco": "Avenida Beira Mar 2251 Parque Beira Mar  Duque de Caxias",
-    "cidade": "Avenida Beira Mar 2251 Parque Beira Mar  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25085-220",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Rede DOR - Pavuna"
+    ]
   },
   {
     "nome": "Rua Izelino Maduro 0 Chácara Paraíso 28605-300 Nova Friburgo/RJ",
@@ -1997,7 +2609,10 @@
     "cidade": "Rua Izelino Maduro 0 Chácara Paraíso  Nova Friburgo",
     "uf": "RJ",
     "cep": "28605-300",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Nova Friburgo"
+    ]
   },
   {
     "nome": "Rua José Rodrigues dos Santos 0 Vila Campanaro 25015-155 Rio de Janeiro/RJ",
@@ -2005,7 +2620,10 @@
     "cidade": "Rua José Rodrigues dos Santos 0 Vila Campanaro  Rio de Janeiro",
     "uf": "RJ",
     "cep": "25015-155",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Duque de Caxias e Leopoldina"
+    ]
   },
   {
     "nome": "Avenida Tenente Rebelo 0 Irajá 21230-075 Rio de Janeiro/RJ",
@@ -2013,15 +2631,21 @@
     "cidade": "Avenida Tenente Rebelo 0 Irajá  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21230-075",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Drogarias Pacheco"
+    ]
   },
   {
-    "nome": "SHOPPING PATIO MIX - COSTA VERDE",
+    "nome": "Rodovia Rio-Santos 2070 Vila Ibirapitanga 23812-101 Itaguaí/RJ",
     "endereco": "Rodovia Rio-Santos 2070 Vila Ibirapitanga  Itaguaí",
     "cidade": "Rodovia Rio-Santos 2070 Vila Ibirapitanga  Itaguaí",
     "uf": "RJ",
     "cep": "23812-101",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ COSTA VERDE FLUMINENSE"
+    ]
   },
   {
     "nome": "Avenida Pasteur 198 Botafogo 22290-240 Rio de Janeiro/RJ",
@@ -2029,7 +2653,10 @@
     "cidade": "Avenida Pasteur 198 Botafogo  Rio de Janeiro",
     "uf": "RJ",
     "cep": "22290-240",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ COLETA PAMED BOTAFOGO"
+    ]
   },
   {
     "nome": "Rua Coronel Bernardino de Melo 1465 Centro 26255-140 Nova Iguaçu/RJ",
@@ -2037,31 +2664,32 @@
     "cidade": "Rua Coronel Bernardino de Melo 1465 Centro  Nova Iguaçu",
     "uf": "RJ",
     "cep": "26255-140",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ Baixada Fluminense"
+    ]
   },
   {
-    "nome": "AEROPORTO SANTOS DUMONT SDU",
+    "nome": "AVENIDA ALMIRANTE SYLVIO DE NORONHA 379 Centro 20021-340 Rio de Janeiro/RJ",
     "endereco": "AVENIDA ALMIRANTE SYLVIO DE NORONHA 379 Centro  Rio de Janeiro",
     "cidade": "AVENIDA ALMIRANTE SYLVIO DE NORONHA 379 Centro  Rio de Janeiro",
     "uf": "RJ",
     "cep": "20021-340",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ AEROPORTO SANTOS DUMONT"
+    ]
   },
   {
-    "nome": "AEROPORTO SANTOS DUMONT SDU",
-    "endereco": "RUA MAHATMA GANDHI 2070 PARQUE BOA VISTA  Duque de Caxias",
-    "cidade": "RUA MAHATMA GANDHI 2070 PARQUE BOA VISTA  Duque de Caxias",
-    "uf": "RJ",
-    "cep": "25568-995",
-    "count": 1
-  },
-  {
-    "nome": "TECA/GIG RJO",
+    "nome": "Avenida Brigadeiro Trompowski 770 Galeão 21941-590 Rio de Janeiro/RJ",
     "endereco": "Avenida Brigadeiro Trompowski 770 Galeão  Rio de Janeiro",
     "cidade": "Avenida Brigadeiro Trompowski 770 Galeão  Rio de Janeiro",
     "uf": "RJ",
     "cep": "21941-590",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RJ AEROPORTO GIG X RONDOLOG - RJ"
+    ]
   },
   {
     "nome": "RUA ANTENOR GENIZELLI FILHO 273 EMPRESA DISTRITO INDUSTRIAL 13490-000 Cordeirópolis/SP",
@@ -2069,7 +2697,10 @@
     "cidade": "RUA ANTENOR GENIZELLI FILHO 273 EMPRESA DISTRITO INDUSTRIAL  Cordeirópolis",
     "uf": "SP",
     "cep": "13490-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RIBEIRÃO PRETO X CORDEIROPOLIS"
+    ]
   },
   {
     "nome": "Avenida Jacob Jorge Abi Rached 251 Distrito Industrial Virgíl 14806-610 Américo Brasiliense/SP",
@@ -2077,7 +2708,10 @@
     "cidade": "Avenida Jacob Jorge Abi Rached 251 Distrito Industrial Virgíl  Américo Brasiliense",
     "uf": "SP",
     "cep": "14806-610",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "RIBEIRAO PRETO X ARARAQUARA"
+    ]
   },
   {
     "nome": "Rua Joroslau Sochaki 0 S Ipê 83055-400 São José dos Pinhais/PR",
@@ -2085,7 +2719,10 @@
     "cidade": "Rua Joroslau Sochaki 0 S Ipê  São José dos Pinhais",
     "uf": "PR",
     "cep": "83055-400",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Jundiai X São Jose dos Pinhais"
+    ]
   },
   {
     "nome": "Avenida Andrade Neves 402 Centro 13013-160 Campinas/SP",
@@ -2093,7 +2730,10 @@
     "cidade": "Avenida Andrade Neves 402 Centro  Campinas",
     "uf": "SP",
     "cep": "13013-160",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "JUNDIAI X CAMPINAS"
+    ]
   },
   {
     "nome": "Avenida Doutor Celso Maeda 655 Jardim Liberdade 75513-175 Itumbiara/GO",
@@ -2101,7 +2741,10 @@
     "cidade": "Avenida Doutor Celso Maeda 655 Jardim Liberdade  Itumbiara",
     "uf": "GO",
     "cep": "75513-175",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Itumbiara X Jundiaí"
+    ]
   },
   {
     "nome": "Rua Altiva de Faria Chaves 0 Parque Anhang Era 14095-490 Ribeirão Preto/SP",
@@ -2109,7 +2752,10 @@
     "cidade": "Rua Altiva de Faria Chaves 0 Parque Anhang Era  Ribeirão Preto",
     "uf": "SP",
     "cep": "14095-490",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Goiania X Ribeirão Preto"
+    ]
   },
   {
     "nome": "Avenida Filinto Muller 16 78110-302 Várzea Grande/MT",
@@ -2117,7 +2763,10 @@
     "cidade": "Avenida Filinto Muller 16  Várzea Grande",
     "uf": "MT",
     "cep": "78110-302",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Goiania X Mato Grosso"
+    ]
   },
   {
     "nome": "Rua Formiga 522 São Cristóvão 31110-430 Belo Horizonte/MG",
@@ -2125,95 +2774,120 @@
     "cidade": "Rua Formiga 522 São Cristóvão  Belo Horizonte",
     "uf": "MG",
     "cep": "31110-430",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Entrega Belo Horizonte"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Rua João Alonso 1451 Jardim Santa Helena 13272-080 Valinhos/SP",
     "endereco": "Rua João Alonso 1451 Jardim Santa Helena  Valinhos",
     "cidade": "Rua João Alonso 1451 Jardim Santa Helena  Valinhos",
     "uf": "SP",
     "cep": "13272-080",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Valinhos e Região"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Rua Carlos Roberto de Melo 475 Parque Gabriel 13186-604 Hortolândia/SP",
     "endereco": "Rua Carlos Roberto de Melo 475 Parque Gabriel  Hortolândia",
     "cidade": "Rua Carlos Roberto de Melo 475 Parque Gabriel  Hortolândia",
     "uf": "SP",
     "cep": "13186-604",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Sumare e Região"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Avenida Japão 832 Alto Ipiranga 08730-330 Mogi das Cruzes/SP",
     "endereco": "Avenida Japão 832 Alto Ipiranga  Mogi das Cruzes",
     "cidade": "Avenida Japão 832 Alto Ipiranga  Mogi das Cruzes",
     "uf": "SP",
     "cep": "08730-330",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Mogi das Cruzes e Região"
+    ]
   },
   {
-    "nome": "SC Cajamar",
-    "endereco": "Rua São Bento 41 Centro  Jundiaí",
-    "cidade": "Rua São Bento 41 Centro  Jundiaí",
-    "uf": "SP",
-    "cep": "13201-033",
-    "count": 1
-  },
-  {
-    "nome": "SC Cajamar",
+    "nome": "Rodovia da José Nelson Schincariol 1 Chácaras Primavera 13301-914 Itu/SP",
     "endereco": "Rodovia da José Nelson Schincariol 1 Chácaras Primavera  Itu",
     "cidade": "Rodovia da José Nelson Schincariol 1 Chácaras Primavera  Itu",
     "uf": "SP",
     "cep": "13301-914",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Itu e Região"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Avenida Prudente de Moraes 223 Vila Prudente de Moraes 13251-370 Itatiba/SP",
     "endereco": "Avenida Prudente de Moraes 223 Vila Prudente de Moraes  Itatiba",
     "cidade": "Avenida Prudente de Moraes 223 Vila Prudente de Moraes  Itatiba",
     "uf": "SP",
     "cep": "13251-370",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Itatiba"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Rua das Primaveras 45 Jardim Pompéia 13345-020 Indaiatuba/SP",
     "endereco": "Rua das Primaveras 45 Jardim Pompéia  Indaiatuba",
     "cidade": "Rua das Primaveras 45 Jardim Pompéia  Indaiatuba",
     "uf": "SP",
     "cep": "13345-020",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Indaiatuba e Região"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Avenida Doutor Heitor Penteado 1780 Jardim Nossa Senhora Auxiliado 13075-460 Campinas/SP",
     "endereco": "Avenida Doutor Heitor Penteado 1780 Jardim Nossa Senhora Auxiliado  Campinas",
     "cidade": "Avenida Doutor Heitor Penteado 1780 Jardim Nossa Senhora Auxiliado  Campinas",
     "uf": "SP",
     "cep": "13075-460",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Campinas 1933"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Avenida Andrade Neves 655 Centro 13013-161 Campinas/SP",
     "endereco": "Avenida Andrade Neves 655 Centro  Campinas",
     "cidade": "Avenida Andrade Neves 655 Centro  Campinas",
     "uf": "SP",
     "cep": "13013-161",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Campinas"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Rua da Bahia 342 Recreio Estoril 12944-060 Atibaia/SP",
     "endereco": "Rua da Bahia 342 Recreio Estoril  Atibaia",
     "cidade": "Rua da Bahia 342 Recreio Estoril  Atibaia",
     "uf": "SP",
     "cep": "12944-060",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X Atibaia e Região"
+    ]
   },
   {
-    "nome": "SC Cajamar",
+    "nome": "Rua Cândido Mota 199 Centro Alto 09420-020 Ribeirão Pires/SP",
     "endereco": "Rua Cândido Mota 199 Centro Alto  Ribeirão Pires",
     "cidade": "Rua Cândido Mota 199 Centro Alto  Ribeirão Pires",
     "uf": "SP",
     "cep": "09420-020",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Cajamar X ABC"
+    ]
   },
   {
     "nome": "Rua Riachuelo 1250 Centro Centro 13630-060 Pirassununga/SP",
@@ -2221,7 +2895,10 @@
     "cidade": "Rua Riachuelo 1250 Centro Centro  Pirassununga",
     "uf": "SP",
     "cep": "13630-060",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "CORDEIRÓPOLIS X PIRASSUNUNGA"
+    ]
   },
   {
     "nome": "Rua Dom Pedro II 1220 1220 CENTRO Vila Galo 13466-900 Americana/SP",
@@ -2229,55 +2906,54 @@
     "cidade": "Rua Dom Pedro II 1220 1220 CENTRO Vila Galo  Americana",
     "uf": "SP",
     "cep": "13466-900",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "CORDEIRÓPOLIS X AMERICANA"
+    ]
   },
   {
-    "nome": "Rio Clarense",
+    "nome": "Praça Emílio Marconato 1000 Doutor João 13916-074 Jaguariúna/SP",
     "endereco": "Praça Emílio Marconato 1000 Doutor João  Jaguariúna",
     "cidade": "Praça Emílio Marconato 1000 Doutor João  Jaguariúna",
     "uf": "SP",
     "cep": "13916-074",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA - RIO CLARENSE JAGUARIUNA-SP X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "Dupatri Hospitalar",
+    "nome": "Avenida Pedro Pascoal dos Santos 410 Real Parque Sumaré 13178-561 Sumaré/SP",
     "endereco": "Avenida Pedro Pascoal dos Santos 410 Real Parque Sumaré  Sumaré",
     "cidade": "Avenida Pedro Pascoal dos Santos 410 Real Parque Sumaré  Sumaré",
     "uf": "SP",
     "cep": "13178-561",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA - DUPATRI SUMARE X SANTANA DE PARNAIBA-SP"
+    ]
   },
   {
-    "nome": "Aeroporto Congonhas",
+    "nome": "Avenida Washington Luís 0 Vila Congonhas 04626-911 São Paulo/SP",
     "endereco": "Avenida Washington Luís 0 Vila Congonhas  São Paulo",
     "cidade": "Avenida Washington Luís 0 Vila Congonhas  São Paulo",
     "uf": "SP",
     "cep": "04626-911",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA AEROPORTO CONGONHAS X BASE JUNDIAI"
+    ]
   },
   {
-    "nome": "4Bio Medicamentos",
+    "nome": "Avenida Marginal Projetada 1810 Fazenda Tamboré 06460-200 São Paulo/SP",
     "endereco": "Avenida Marginal Projetada 1810 Fazenda Tamboré  São Paulo",
     "cidade": "Avenida Marginal Projetada 1810 Fazenda Tamboré  São Paulo",
     "uf": "SP",
     "cep": "06460-200",
-    "count": 1
-  },
-  {
-    "nome": "Oncoprod DF",
-    "endereco": "Strc Trecho 3 Conjunto D 4 1000 Distrito Industrial Brasília",
-    "cidade": "Strc Trecho 3 Conjunto D 4 1000 Distrito Industrial Brasília",
-    "uf": "DF",
-    "cep": "",
-    "count": 1
-  },
-  {
-    "nome": "Oncoprod DF",
-    "endereco": "Rua Angelo Cunha 332 Laranjeiras Uberlândia",
-    "cidade": "Rua Angelo Cunha 332 Laranjeiras Uberlândia",
-    "uf": "MG",
-    "cep": "",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "COLETA - 4BIO BARUERI X BASE SANTANA DE PARNAIBA"
+    ]
   },
   {
     "nome": "Rodovia Washington Luiz 637 Distrito Industrial Doming 14808-080 Araraquara/SP",
@@ -2285,23 +2961,10 @@
     "cidade": "Rodovia Washington Luiz 637 Distrito Industrial Doming  Araraquara",
     "uf": "SP",
     "cep": "14808-080",
-    "count": 1
-  },
-  {
-    "nome": "SevenLog DF",
-    "endereco": "Avenida Central Blocos 1124/1226 0 Núcleo Bandeirante  Brasília",
-    "cidade": "Avenida Central Blocos 1124/1226 0 Núcleo Bandeirante  Brasília",
-    "uf": "DF",
-    "cep": "71720-560",
-    "count": 1
-  },
-  {
-    "nome": "SevenLog DF",
-    "endereco": "Rua Saldanha Marinho 1122 Jardim Paulista  Cravinhos",
-    "cidade": "Rua Saldanha Marinho 1122 Jardim Paulista  Cravinhos",
-    "uf": "SP",
-    "cep": "14140-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Brasilia X Araraquara"
+    ]
   },
   {
     "nome": "Rua dos Timbiras 1228 Boa Viagem 30140-064 Belo Horizonte/MG",
@@ -2309,7 +2972,10 @@
     "cidade": "Rua dos Timbiras 1228 Boa Viagem  Belo Horizonte",
     "uf": "MG",
     "cep": "30140-064",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "MG Betim X Santa Efigênia"
+    ]
   },
   {
     "nome": "Rua Bispo Pedro Valdemar Dias 777 Amazonas 32685-044 Belo Horizonte/MG",
@@ -2317,7 +2983,10 @@
     "cidade": "Rua Bispo Pedro Valdemar Dias 777 Amazonas  Belo Horizonte",
     "uf": "MG",
     "cep": "32685-044",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "MG Betim X Nova Lima"
+    ]
   },
   {
     "nome": "Rua Afonso Ribeiro 200 Palmeiras 30575-620 Belo Horizonte/MG",
@@ -2325,7 +2994,10 @@
     "cidade": "Rua Afonso Ribeiro 200 Palmeiras  Belo Horizonte",
     "uf": "MG",
     "cep": "30575-620",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "MG Betim X Nova Lima"
+    ]
   },
   {
     "nome": "Avenida Antônio Olímpio de Morais 607 Centro 35500-005 Divinópolis/MG",
@@ -2333,7 +3005,10 @@
     "cidade": "Avenida Antônio Olímpio de Morais 607 Centro  Divinópolis",
     "uf": "MG",
     "cep": "35500-005",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "MG Betim X Centro Oeste"
+    ]
   },
   {
     "nome": "Rua dos Operarios 16 Centro 35600-000 Bom Despacho/MG",
@@ -2341,7 +3016,10 @@
     "cidade": "Rua dos Operarios 16 Centro  Bom Despacho",
     "uf": "MG",
     "cep": "35600-000",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "MG Betim X Central de Minas"
+    ]
   },
   {
     "nome": "Avenida do Contorno 9090 Barro Preto 30110-064 Belo Horizonte/MG",
@@ -2349,7 +3027,10 @@
     "cidade": "Avenida do Contorno 9090 Barro Preto  Belo Horizonte",
     "uf": "MG",
     "cep": "30110-064",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "MG Betim X Barro Preto"
+    ]
   },
   {
     "nome": "Rua Joaquim Palmeira 0 Novo Jardim Pagani Bauru/SP",
@@ -2357,6 +3038,9 @@
     "cidade": "Rua Joaquim Palmeira 0 Novo Jardim Pagani Bauru",
     "uf": "SP",
     "cep": "",
-    "count": 1
+    "count": 1,
+    "rotas": [
+      "Bauru"
+    ]
   }
 ]
