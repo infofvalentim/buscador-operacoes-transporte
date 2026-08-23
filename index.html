@@ -823,6 +823,24 @@
     .global-stat-card.gs-ok { border-top-color: var(--green); }
     .global-stat-card.gs-ok .gs-num { color: var(--green); }
 
+    .global-stat-card.gs-clickable {
+      cursor: pointer;
+      user-select: none;
+      transition: var(--transition);
+    }
+    .global-stat-card.gs-clickable:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+    .global-stat-card.gs-clickable.gs-active {
+      box-shadow: 0 0 0 3px currentColor;
+      background: var(--surface2);
+    }
+    .global-stat-card.gs-clickable .gs-hint {
+      font-size: 9px; color: var(--text-muted); margin-top: 2px;
+      opacity: 0.7;
+    }
+
     .dias-vencido-badge {
       display: inline-block;
       background: var(--red-bg);
@@ -1109,6 +1127,10 @@
       white-space: nowrap;
     }
 
+    tr.row-real-vencido { background: rgba(220,38,38,0.05); }
+    body.dark-mode tr.row-real-vencido { background: rgba(239,68,68,0.08); }
+    tr.row-real-vencido td:first-child { box-shadow: inset 3px 0 0 var(--red); }
+
     .onco-upcoming-wrap {
       margin: 20px 24px 0;
       max-width: 1280px;
@@ -1200,6 +1222,36 @@
       white-space: nowrap;
       width: 1%;
     }
+
+    /* ===== BARRA DE ALERTA "SÓ VENCIDOS" ===== */
+    .onco-vencidos-bar {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      margin: 16px 24px 0; max-width: 1280px;
+    }
+    .onco-vfilter-chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 18px; border-radius: 40px;
+      border: 1.5px solid var(--border);
+      background: var(--surface2); color: var(--text-dim);
+      font-weight: 700; font-size: 12px; cursor: pointer;
+      transition: var(--transition); letter-spacing: 0.2px;
+    }
+    .onco-vfilter-chip:hover { border-color: var(--red); color: var(--text); }
+    .onco-vfilter-chip .vf-count {
+      font-family: var(--mono); font-size: 11px;
+      background: var(--surface); padding: 1px 8px; border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .onco-vfilter-chip.vf-red.active {
+      background: var(--red-bg); border-color: var(--red); color: var(--red);
+      box-shadow: 0 0 0 3px rgba(220,38,38,0.1);
+    }
+    .onco-vfilter-chip.vf-red.active .vf-count { border-color: var(--red); color: var(--red); }
+    .onco-vfilter-chip.vf-orange.active {
+      background: rgba(249,115,22,0.1); border-color: var(--orange); color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+    }
+    .onco-vfilter-chip.vf-orange.active .vf-count { border-color: var(--orange); color: var(--orange); }
 
     /* =============================================
        ABA PONTOS (Clientes/Destinos)
@@ -1687,6 +1739,13 @@
       <button class="onco-subtab" data-onco-view="condutores">🧑‍✈️ Condutores</button>
       <button class="onco-subtab" data-onco-view="funcionarios">👥 Funcionários</button>
     </div>
+  </div>
+
+  <div class="onco-vencidos-bar" id="oncoVencidosBar">
+    <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);">Atalho:</span>
+    <div class="onco-vfilter-chip vf-red" id="oncoVfRealVencidos">🔴 Só vencidos (data real) <span class="vf-count" id="oncoVfRealVencidosCount">0</span></div>
+    <div class="onco-vfilter-chip vf-orange" id="oncoVfProx30">🟠 Vencendo em 30 dias <span class="vf-count" id="oncoVfProx30Count">0</span></div>
+    <div class="onco-vfilter-chip" id="oncoVfClear" style="display:none;">✕ Limpar atalho</div>
   </div>
 
   <div id="oncoLoading" class="loading-checklist">📂 Carregando dados da planilha...</div>
@@ -2603,6 +2662,7 @@
         renderOncoGlobalStats();
         renderOncoCatCards();
         renderOncoUpcoming();
+        renderOncoVencidosBar();
         renderOncoCategory('Veículo', 'oncoVeiculos');
         renderOncoCategory('Condutor', 'oncoCondutores');
         renderOncoCategory('Funcionário', 'oncoFuncionarios');
@@ -2843,6 +2903,7 @@
   const RESPONSAVEL_LIXO = ['00','0','-','=','condutor','','n/a','na','nan','.','--','x','n/i','sem','---','****','**','*'];
   let checklistPriorityMode = localStorage.getItem('checklistPriority') === 'true';
   let regionOpenState = {};
+  let checklistStatCardFilter = null;
 
   function respLimpo(r){
     if(!r) return '—';
@@ -2880,14 +2941,30 @@
     const validos = data.filter(i=>i.status==='valido').length;
     const naoOk = data.filter(i=>i.status==='nao-ok').length;
     const vencidos30 = vencidos.filter(i=>{ const d=diasVencido(i); return d!==null && d>30; }).length;
+    const isVenc = checklistStatCardFilter==='vencido', isUrg = checklistStatCardFilter==='urgente';
     el.innerHTML = `
-      <div class="global-stat-card gs-critical"><div class="gs-num">${vencidos.length}</div><div class="gs-label">Vencidos</div></div>
+      <div class="global-stat-card gs-critical gs-clickable${isVenc?' gs-active':''}" data-stat-status="vencido" style="color:var(--red);" title="Clique para filtrar apenas vencidos">
+        <div class="gs-num">${vencidos.length}</div><div class="gs-label">Vencidos</div>
+        <div class="gs-hint">${isVenc ? '✓ filtrando' : 'clique p/ filtrar'}</div>
+      </div>
       <div class="global-stat-card gs-critical-deep"><div class="gs-num">${vencidos30}</div><div class="gs-label">Vencidos +30 dias</div></div>
-      <div class="global-stat-card gs-warn"><div class="gs-num">${urgentes}</div><div class="gs-label">Urgentes</div></div>
+      <div class="global-stat-card gs-warn gs-clickable${isUrg?' gs-active':''}" data-stat-status="urgente" style="color:var(--orange);" title="Clique para filtrar apenas urgentes">
+        <div class="gs-num">${urgentes}</div><div class="gs-label">Urgentes</div>
+        <div class="gs-hint">${isUrg ? '✓ filtrando' : 'clique p/ filtrar'}</div>
+      </div>
       <div class="global-stat-card gs-nao-ok"><div class="gs-num">${naoOk}</div><div class="gs-label">Não OK</div></div>
       <div class="global-stat-card gs-ok"><div class="gs-num">${validos}</div><div class="gs-label">Válidos</div></div>
       <div class="global-stat-card"><div class="gs-num">${data.length}</div><div class="gs-label">Total</div></div>
     `;
+    el.querySelectorAll('.gs-clickable').forEach(card => {
+      card.addEventListener('click', () => {
+        const st = card.dataset.statStatus;
+        checklistStatCardFilter = (checklistStatCardFilter === st) ? null : st;
+        document.getElementById('checklistStatusFilter').value = checklistStatCardFilter || '';
+        renderGlobalStats();
+        renderChecklists();
+      });
+    });
   }
 
   /* ===================== ONCO ===================== */
@@ -2897,12 +2974,25 @@
     { name: 'CONDUTORES',  tipo: 'Condutor' },
     { name: 'FUNCIONARIOS', tipo: 'Funcionário' }
   ];
+  let oncoShortcutFilter = null; // null | 'real-vencidos' | 'prox30'
 
   function diasAteVencer(dataStr){
     const date = parseDateBR(dataStr);
     if(!date) return null;
     const hoje = new Date(); hoje.setHours(0,0,0,0);
     return Math.round((date - hoje) / 86400000);
+  }
+
+  // Vencimento REAL: verdade objetiva vinda da data, independente do texto de status
+  // digitado na planilha. Um registro "TEM PERFIL" com data já passada continua
+  // sendo tratado aqui como vencido — é isso que este helper resolve.
+  function isRealVencido(item){
+    const d = diasAteVencer(item.vencimento);
+    return d !== null && d < 0;
+  }
+  function isProx30(item){
+    const d = diasAteVencer(item.vencimento);
+    return d !== null && d >= 0 && d <= 30;
   }
 
   function oncoStatusInfo(status){
@@ -3010,6 +3100,7 @@
     renderOncoGlobalStats();
     renderOncoCatCards();
     renderOncoUpcoming();
+    renderOncoVencidosBar();
     renderOncoCategory('Veículo', 'oncoVeiculos');
     renderOncoCategory('Condutor', 'oncoCondutores');
     renderOncoCategory('Funcionário', 'oncoFuncionarios');
@@ -3023,16 +3114,13 @@
     const naoTemPerfil = data.filter(i=>i.status.toUpperCase()==='NÃO TEM PERFIL').length;
     const aguardando = data.filter(i=>i.status.toUpperCase()==='AGUARDANDO RETORNO').length;
     const divergentes = data.filter(i=>['DADOS DIVERGENTES','DOCUMENTO VENCIDO'].includes(i.status.toUpperCase())).length;
-    const vencidosProximos = data.filter(i=>{
-      const d = diasAteVencer(i.vencimento);
-      return d!==null && d<=30;
-    }).length;
+    const realVencidos = data.filter(isRealVencido).length;
     el.innerHTML = `
       <div class="global-stat-card gs-ok"><div class="gs-num">${temPerfil}</div><div class="gs-label">Tem perfil</div></div>
       <div class="global-stat-card gs-critical"><div class="gs-num">${naoTemPerfil}</div><div class="gs-label">Não tem perfil</div></div>
       <div class="global-stat-card gs-warn"><div class="gs-num">${aguardando}</div><div class="gs-label">Aguardando retorno</div></div>
       <div class="global-stat-card gs-nao-ok"><div class="gs-num">${divergentes}</div><div class="gs-label">Divergentes/vencidos</div></div>
-      <div class="global-stat-card gs-warn"><div class="gs-num">${vencidosProximos}</div><div class="gs-label">Vencendo em 30 dias</div></div>
+      <div class="global-stat-card gs-critical-deep"><div class="gs-num">${realVencidos}</div><div class="gs-label">Vencidos (data real)</div></div>
       <div class="global-stat-card"><div class="gs-num">${data.length}</div><div class="gs-label">Total geral</div></div>
     `;
   }
@@ -3052,12 +3140,14 @@
       if(items.length===0) continue;
       const temPerfil = items.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
       const pct = items.length ? Math.round((temPerfil/items.length)*100) : 0;
+      const realVenc = items.filter(isRealVencido).length;
       const meta = ONCO_CAT_META[tipo];
       html += `<div class="onco-cat-card" data-onco-view="${meta.view}">
         <div class="oc-title">${meta.icon} ${meta.label}</div>
         <div class="oc-row"><span>Total</span><b>${items.length}</b></div>
         <div class="oc-row"><span>Com perfil</span><b>${temPerfil}</b></div>
         <div class="oc-row"><span>Pendências</span><b>${items.length-temPerfil}</b></div>
+        <div class="oc-row"><span style="color:var(--red);">Vencidos (data real)</span><b style="color:var(--red);">${realVenc}</b></div>
         <div class="oc-bar"><div class="oc-bar-fill" style="width:${pct}%;"></div></div>
       </div>`;
     }
@@ -3070,17 +3160,31 @@
   function renderOncoUpcoming(){
     const wrap = document.getElementById('oncoUpcomingWrap');
     const body = document.getElementById('oncoUpcomingBody');
-    const data = (window.oncoData || []).filter(i => i.status.toUpperCase()==='TEM PERFIL' && diasAteVencer(i.vencimento)!==null);
+    const data = (window.oncoData || []).filter(i => diasAteVencer(i.vencimento)!==null);
     data.sort((a,b) => diasAteVencer(a.vencimento) - diasAteVencer(b.vencimento));
     const upcoming = data.slice(0, 15);
     if(upcoming.length===0){ wrap.style.display='none'; return; }
     wrap.style.display='block';
-    body.innerHTML = upcoming.map(i => `<tr>
+    body.innerHTML = upcoming.map(i => {
+      const real = isRealVencido(i);
+      return `<tr class="${real?'row-real-vencido':''}">
         <td><span class="onco-tipo-tag">${i.tipo}</span></td>
         <td><span class="veiculo-tag">${i.identificador}</span></td>
         <td>${i.nome||'—'}</td>
         <td>${oncoVencCell(i.vencimento)}</td>
-      </tr>`).join('');
+      </tr>`;
+    }).join('');
+  }
+
+  function renderOncoVencidosBar(){
+    const data = window.oncoData || [];
+    const realCount = data.filter(isRealVencido).length;
+    const prox30Count = data.filter(isProx30).length;
+    document.getElementById('oncoVfRealVencidosCount').textContent = realCount;
+    document.getElementById('oncoVfProx30Count').textContent = prox30Count;
+    document.getElementById('oncoVfRealVencidos').classList.toggle('active', oncoShortcutFilter==='real-vencidos');
+    document.getElementById('oncoVfProx30').classList.toggle('active', oncoShortcutFilter==='prox30');
+    document.getElementById('oncoVfClear').style.display = oncoShortcutFilter ? 'inline-flex' : 'none';
   }
 
   function renderOncoCategory(tipo, idPrefix){
@@ -3112,7 +3216,10 @@
         item.nome.toLowerCase().includes(searchTerm) ||
         item.observacoes.toLowerCase().includes(searchTerm);
       const matchStatus = !statusFilter || item.status.toUpperCase()===statusFilter;
-      return matchSearch && matchStatus;
+      const matchShortcut = !oncoShortcutFilter ||
+        (oncoShortcutFilter==='real-vencidos' && isRealVencido(item)) ||
+        (oncoShortcutFilter==='prox30' && isProx30(item));
+      return matchSearch && matchStatus && matchShortcut;
     });
     filtered.sort((a,b) => {
       const da = diasAteVencer(a.vencimento), db = diasAteVencer(b.vencimento);
@@ -3129,7 +3236,8 @@
     }
     bodyEl.innerHTML = filtered.map(item => {
       const info = oncoStatusInfo(item.status);
-      return `<tr>
+      const real = isRealVencido(item);
+      return `<tr class="${real?'row-real-vencido':''}">
         <td><span class="veiculo-tag">${item.identificador}</span></td>
         ${showNome ? `<td>${item.nome||'—'}</td>` : ''}
         <td><span class="status-badge ${info.cls}">${info.label}</span></td>
@@ -3147,6 +3255,20 @@
     const map = {geral:'oncoViewGeral', veiculos:'oncoViewVeiculos', condutores:'oncoViewCondutores', funcionarios:'oncoViewFuncionarios'};
     document.getElementById(map[view]).classList.add('active');
   }
+
+  function applyOncoShortcut(filterName){
+    oncoShortcutFilter = (oncoShortcutFilter === filterName) ? null : filterName;
+    renderOncoVencidosBar();
+    renderOncoCategory('Veículo', 'oncoVeiculos');
+    renderOncoCategory('Condutor', 'oncoCondutores');
+    renderOncoCategory('Funcionário', 'oncoFuncionarios');
+    if(oncoShortcutFilter && oncoActiveView==='geral'){
+      switchOncoView('veiculos');
+    }
+  }
+  document.getElementById('oncoVfRealVencidos').addEventListener('click', () => applyOncoShortcut('real-vencidos'));
+  document.getElementById('oncoVfProx30').addEventListener('click', () => applyOncoShortcut('prox30'));
+  document.getElementById('oncoVfClear').addEventListener('click', () => applyOncoShortcut(oncoShortcutFilter));
 
   async function loadChecklists() {
     const loadingEl = document.getElementById('checklistLoading');
@@ -3425,7 +3547,11 @@
   });
 
   document.getElementById('checklistSearch').addEventListener('input', renderChecklists);
-  document.getElementById('checklistStatusFilter').addEventListener('change', renderChecklists);
+  document.getElementById('checklistStatusFilter').addEventListener('change', function(){
+    checklistStatCardFilter = this.value || null;
+    renderGlobalStats();
+    renderChecklists();
+  });
   document.getElementById('checklistTipoFilter').addEventListener('change', renderChecklists);
   document.getElementById('checklistCategoriaFilter').addEventListener('change', renderChecklists);
   document.getElementById('checklistClearFilters').addEventListener('click', function(){
@@ -3433,11 +3559,14 @@
     document.getElementById('checklistStatusFilter').value='';
     document.getElementById('checklistTipoFilter').value='';
     document.getElementById('checklistCategoriaFilter').value='';
+    checklistStatCardFilter = null;
+    renderGlobalStats();
     renderChecklists();
   });
 
   document.getElementById('oncoRefresh').addEventListener('click', function(){
     window.oncoData = null;
+    oncoShortcutFilter = null;
     loadOnco();
   });
 
