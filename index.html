@@ -1000,6 +1000,7 @@
       border-radius: 6px;
       font-size: 12px;
       border: 1px solid var(--border);
+      white-space: nowrap;
     }
     .cidade-tag { font-size: 12px; color: var(--text-dim); }
     .edit-btn {
@@ -1127,6 +1128,78 @@
     }
     .onco-upcoming-wrap .checklist-table { box-shadow: none; border: none; border-radius: 0; }
     .onco-upcoming-wrap .checklist-table-wrap { padding: 0; max-width: none; }
+
+    .onco-subtabs {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 16px;
+    }
+    .onco-subtab {
+      padding: 7px 16px;
+      border-radius: 40px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text-dim);
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .onco-subtab:hover { border-color: var(--red); color: var(--text); }
+    .onco-subtab.active { background: var(--red); color: #fff; border-color: var(--red); }
+
+    .onco-view { display: none; }
+    .onco-view.active { display: block; }
+
+    .onco-section-title {
+      margin: 20px 24px 8px;
+      max-width: 1280px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+    .onco-cat-cards {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin: 0 24px;
+      max-width: 1280px;
+    }
+    .onco-cat-card {
+      flex: 1 0 220px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .onco-cat-card:hover { border-color: var(--red); transform: translateY(-2px); }
+    .onco-cat-card .oc-title { font-weight: 700; font-size: 14px; margin-bottom: 8px; display:flex; align-items:center; gap:8px; }
+    .onco-cat-card .oc-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-dim); padding: 2px 0; }
+    .onco-cat-card .oc-row b { color: var(--text); font-family: var(--mono); }
+    .onco-cat-card .oc-bar { height: 6px; border-radius: 4px; background: var(--surface2); margin-top: 10px; overflow: hidden; }
+    .onco-cat-card .oc-bar-fill { height: 100%; background: var(--green); border-radius: 4px; }
+
+    .onco-cat-count {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--mono);
+      margin-left: auto;
+      padding: 8px 4px;
+    }
+
+    .onco-table-scroll {
+      max-height: 60vh;
+      overflow-y: auto;
+      border-radius: var(--radius);
+    }
+    .onco-table-scroll .checklist-table th:first-child,
+    .onco-table-scroll .checklist-table td:first-child {
+      white-space: nowrap;
+      width: 1%;
+    }
 
     /* =============================================
        ABA PONTOS (Clientes/Destinos)
@@ -1608,42 +1681,111 @@
         <button id="oncoRefresh" style="background:var(--surface2);padding:6px 16px;border-radius:40px;border:1px solid var(--border);color:var(--text-dim);font-family:var(--mono);font-size:11px;font-weight:600;cursor:pointer;transition:var(--transition);">🔄 Recarregar</button>
       </div>
     </div>
-  </div>
-
-  <div class="checklist-global-stats" id="oncoGlobalStats"></div>
-
-  <div class="onco-upcoming-wrap" id="oncoUpcomingWrap" style="display:none;">
-    <h4>📅 Próximos vencimentos</h4>
-    <div class="checklist-table-wrap" style="padding:0 20px 16px;">
-      <table class="checklist-table">
-        <thead><tr><th>Tipo</th><th>CPF / Placa</th><th>Nome</th><th>Vencimento</th></tr></thead>
-        <tbody id="oncoUpcomingBody"></tbody>
-      </table>
+    <div class="onco-subtabs">
+      <button class="onco-subtab active" data-onco-view="geral">📊 Visão Geral</button>
+      <button class="onco-subtab" data-onco-view="veiculos">🚗 Veículos</button>
+      <button class="onco-subtab" data-onco-view="condutores">🧑‍✈️ Condutores</button>
+      <button class="onco-subtab" data-onco-view="funcionarios">👥 Funcionários</button>
     </div>
   </div>
 
-  <div class="checklist-filters">
-    <input type="text" id="oncoSearch" placeholder="🔍 Buscar nome, CPF, placa..." autocomplete="off">
-    <select id="oncoTipoFilter">
-      <option value="">Todos os tipos</option>
-      <option value="Veículo">Veículos</option>
-      <option value="Condutor">Condutores</option>
-      <option value="Funcionário">Funcionários</option>
-    </select>
-    <select id="oncoStatusFilter">
-      <option value="">Todos os status</option>
-      <option value="TEM PERFIL">Tem perfil</option>
-      <option value="NÃO TEM PERFIL">Não tem perfil</option>
-      <option value="AGUARDANDO RETORNO">Aguardando retorno</option>
-      <option value="DADOS DIVERGENTES">Dados divergentes</option>
-      <option value="DOCUMENTO VENCIDO">Documento vencido</option>
-    </select>
-    <button class="filtro-clear" id="oncoClearFilters">Limpar filtros</button>
-  </div>
+  <div id="oncoLoading" class="loading-checklist">📂 Carregando dados da planilha...</div>
 
-  <div class="checklist-table-wrap">
-    <div id="oncoLoading" class="loading-checklist">📂 Carregando dados da planilha...</div>
-    <div id="oncoAccordion" style="display:none;"></div>
+  <div id="oncoContent" style="display:none;">
+
+    <!-- VISÃO GERAL -->
+    <div id="oncoViewGeral" class="onco-view active">
+      <div class="checklist-global-stats" id="oncoGlobalStats"></div>
+
+      <div class="onco-section-title">Resumo por categoria</div>
+      <div class="onco-cat-cards" id="oncoCatCards"></div>
+
+      <div class="onco-upcoming-wrap" id="oncoUpcomingWrap" style="display:none;">
+        <h4>📅 Próximos vencimentos</h4>
+        <div class="onco-table-scroll" style="max-height:420px;">
+          <table class="checklist-table">
+            <thead><tr><th>Tipo</th><th>CPF / Placa</th><th>Nome</th><th>Vencimento</th></tr></thead>
+            <tbody id="oncoUpcomingBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VEÍCULOS -->
+    <div id="oncoViewVeiculos" class="onco-view">
+      <div class="checklist-global-stats" id="oncoVeiculosStats"></div>
+      <div class="checklist-filters">
+        <input type="text" id="oncoVeiculosSearch" placeholder="🔍 Buscar placa..." autocomplete="off">
+        <select id="oncoVeiculosStatusFilter">
+          <option value="">Todos os status</option>
+          <option value="TEM PERFIL">Tem perfil</option>
+          <option value="NÃO TEM PERFIL">Não tem perfil</option>
+          <option value="AGUARDANDO RETORNO">Aguardando retorno</option>
+          <option value="DADOS DIVERGENTES">Dados divergentes</option>
+          <option value="DOCUMENTO VENCIDO">Documento vencido</option>
+        </select>
+        <span class="onco-cat-count" id="oncoVeiculosCount"></span>
+      </div>
+      <div class="checklist-table-wrap">
+        <div class="onco-table-scroll">
+          <table class="checklist-table">
+            <thead><tr><th>Placa</th><th>Status</th><th>Vencimento</th><th>Observações</th></tr></thead>
+            <tbody id="oncoVeiculosBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONDUTORES -->
+    <div id="oncoViewCondutores" class="onco-view">
+      <div class="checklist-global-stats" id="oncoCondutoresStats"></div>
+      <div class="checklist-filters">
+        <input type="text" id="oncoCondutoresSearch" placeholder="🔍 Buscar nome ou CPF..." autocomplete="off">
+        <select id="oncoCondutoresStatusFilter">
+          <option value="">Todos os status</option>
+          <option value="TEM PERFIL">Tem perfil</option>
+          <option value="NÃO TEM PERFIL">Não tem perfil</option>
+          <option value="AGUARDANDO RETORNO">Aguardando retorno</option>
+          <option value="DADOS DIVERGENTES">Dados divergentes</option>
+          <option value="DOCUMENTO VENCIDO">Documento vencido</option>
+        </select>
+        <span class="onco-cat-count" id="oncoCondutoresCount"></span>
+      </div>
+      <div class="checklist-table-wrap">
+        <div class="onco-table-scroll">
+          <table class="checklist-table">
+            <thead><tr><th>CPF</th><th>Nome</th><th>Status</th><th>Vencimento</th><th>Observações</th></tr></thead>
+            <tbody id="oncoCondutoresBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUNCIONÁRIOS -->
+    <div id="oncoViewFuncionarios" class="onco-view">
+      <div class="checklist-global-stats" id="oncoFuncionariosStats"></div>
+      <div class="checklist-filters">
+        <input type="text" id="oncoFuncionariosSearch" placeholder="🔍 Buscar nome ou CPF..." autocomplete="off">
+        <select id="oncoFuncionariosStatusFilter">
+          <option value="">Todos os status</option>
+          <option value="TEM PERFIL">Tem perfil</option>
+          <option value="NÃO TEM PERFIL">Não tem perfil</option>
+          <option value="AGUARDANDO RETORNO">Aguardando retorno</option>
+          <option value="DADOS DIVERGENTES">Dados divergentes</option>
+          <option value="DOCUMENTO VENCIDO">Documento vencido</option>
+        </select>
+        <span class="onco-cat-count" id="oncoFuncionariosCount"></span>
+      </div>
+      <div class="checklist-table-wrap">
+        <div class="onco-table-scroll">
+          <table class="checklist-table">
+            <thead><tr><th>CPF</th><th>Nome</th><th>Status</th><th>Vencimento</th><th>Observações</th></tr></thead>
+            <tbody id="oncoFuncionariosBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -2459,8 +2601,11 @@
         await loadOnco();
       } else {
         renderOncoGlobalStats();
+        renderOncoCatCards();
         renderOncoUpcoming();
-        renderOnco();
+        renderOncoCategory('Veículo', 'oncoVeiculos');
+        renderOncoCategory('Condutor', 'oncoCondutores');
+        renderOncoCategory('Funcionário', 'oncoFuncionarios');
       }
       return;
     }
@@ -2752,7 +2897,6 @@
     { name: 'CONDUTORES',  tipo: 'Condutor' },
     { name: 'FUNCIONARIOS', tipo: 'Funcionário' }
   ];
-  let oncoOpenState = {};
 
   function diasAteVencer(dataStr){
     const date = parseDateBR(dataStr);
@@ -2832,10 +2976,10 @@
 
   async function loadOnco(){
     const loadingEl = document.getElementById('oncoLoading');
-    const accordionEl = document.getElementById('oncoAccordion');
+    const contentEl = document.getElementById('oncoContent');
     loadingEl.textContent = '📂 Carregando dados da planilha...';
     loadingEl.style.display = 'block';
-    accordionEl.style.display = 'none';
+    contentEl.style.display = 'none';
     try{
       const resp = await fetch(ONCO_XLSX_PATH);
       if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
@@ -2851,12 +2995,24 @@
       window.oncoData = [];
       loadingEl.textContent = `❌ Erro ao carregar ${ONCO_XLSX_PATH}. Confira se o arquivo está na pasta "data/" do repositório.`;
       loadingEl.style.display = 'block';
-      accordionEl.style.display = 'none';
+      contentEl.style.display = 'none';
       return;
     }
+    if(window.oncoData.length===0){
+      loadingEl.textContent = '📭 Nenhum registro encontrado na planilha.';
+      loadingEl.style.display = 'block';
+      contentEl.style.display = 'none';
+      return;
+    }
+    loadingEl.style.display = 'none';
+    contentEl.style.display = 'block';
+    document.getElementById('oncoCount').textContent = window.oncoData.length + ' registros';
     renderOncoGlobalStats();
+    renderOncoCatCards();
     renderOncoUpcoming();
-    renderOnco();
+    renderOncoCategory('Veículo', 'oncoVeiculos');
+    renderOncoCategory('Condutor', 'oncoCondutores');
+    renderOncoCategory('Funcionário', 'oncoFuncionarios');
   }
 
   function renderOncoGlobalStats(){
@@ -2881,6 +3037,36 @@
     `;
   }
 
+  const ONCO_CAT_META = {
+    'Veículo':     {icon:'🚗', label:'Veículos',     view:'veiculos'},
+    'Condutor':    {icon:'🧑‍✈️', label:'Condutores',   view:'condutores'},
+    'Funcionário': {icon:'👥', label:'Funcionários', view:'funcionarios'}
+  };
+
+  function renderOncoCatCards(){
+    const el = document.getElementById('oncoCatCards');
+    const data = window.oncoData || [];
+    let html = '';
+    for(const tipo of ['Veículo','Condutor','Funcionário']){
+      const items = data.filter(i=>i.tipo===tipo);
+      if(items.length===0) continue;
+      const temPerfil = items.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
+      const pct = items.length ? Math.round((temPerfil/items.length)*100) : 0;
+      const meta = ONCO_CAT_META[tipo];
+      html += `<div class="onco-cat-card" data-onco-view="${meta.view}">
+        <div class="oc-title">${meta.icon} ${meta.label}</div>
+        <div class="oc-row"><span>Total</span><b>${items.length}</b></div>
+        <div class="oc-row"><span>Com perfil</span><b>${temPerfil}</b></div>
+        <div class="oc-row"><span>Pendências</span><b>${items.length-temPerfil}</b></div>
+        <div class="oc-bar"><div class="oc-bar-fill" style="width:${pct}%;"></div></div>
+      </div>`;
+    }
+    el.innerHTML = html;
+    el.querySelectorAll('.onco-cat-card').forEach(card => {
+      card.addEventListener('click', () => switchOncoView(card.dataset.oncoView));
+    });
+  }
+
   function renderOncoUpcoming(){
     const wrap = document.getElementById('oncoUpcomingWrap');
     const body = document.getElementById('oncoUpcomingBody');
@@ -2897,98 +3083,69 @@
       </tr>`).join('');
   }
 
-  function renderOnco(){
-    const accordionEl = document.getElementById('oncoAccordion');
-    const loadingEl = document.getElementById('oncoLoading');
-    if(!window.oncoData || window.oncoData.length===0){
-      loadingEl.textContent = '📭 Nenhum registro encontrado.';
-      loadingEl.style.display='block'; accordionEl.style.display='none';
-      return;
-    }
-    loadingEl.style.display='none'; accordionEl.style.display='block';
+  function renderOncoCategory(tipo, idPrefix){
+    const searchEl = document.getElementById(idPrefix+'Search');
+    const statusEl = document.getElementById(idPrefix+'StatusFilter');
+    const statsEl = document.getElementById(idPrefix+'Stats');
+    const countEl = document.getElementById(idPrefix+'Count');
+    const bodyEl = document.getElementById(idPrefix+'Body');
+    const showNome = tipo !== 'Veículo';
 
-    const searchTerm = document.getElementById('oncoSearch').value.toLowerCase();
-    const tipoFilter = document.getElementById('oncoTipoFilter').value;
-    const statusFilter = document.getElementById('oncoStatusFilter').value;
+    const all = (window.oncoData || []).filter(i=>i.tipo===tipo);
+    const temPerfil = all.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
+    const naoTemPerfil = all.filter(i=>i.status.toUpperCase()==='NÃO TEM PERFIL').length;
+    const aguardando = all.filter(i=>i.status.toUpperCase()==='AGUARDANDO RETORNO').length;
+    const divergentes = all.filter(i=>['DADOS DIVERGENTES','DOCUMENTO VENCIDO'].includes(i.status.toUpperCase())).length;
+    statsEl.innerHTML = `
+      <div class="global-stat-card gs-ok"><div class="gs-num">${temPerfil}</div><div class="gs-label">Tem perfil</div></div>
+      <div class="global-stat-card gs-critical"><div class="gs-num">${naoTemPerfil}</div><div class="gs-label">Não tem perfil</div></div>
+      <div class="global-stat-card gs-warn"><div class="gs-num">${aguardando}</div><div class="gs-label">Aguardando retorno</div></div>
+      <div class="global-stat-card gs-nao-ok"><div class="gs-num">${divergentes}</div><div class="gs-label">Divergentes/vencidos</div></div>
+      <div class="global-stat-card"><div class="gs-num">${all.length}</div><div class="gs-label">Total</div></div>
+    `;
 
-    let filtered = window.oncoData.filter(item => {
+    const searchTerm = (searchEl.value||'').toLowerCase();
+    const statusFilter = statusEl.value;
+    let filtered = all.filter(item => {
       const matchSearch = !searchTerm ||
         item.identificador.toLowerCase().includes(searchTerm) ||
         item.nome.toLowerCase().includes(searchTerm) ||
         item.observacoes.toLowerCase().includes(searchTerm);
-      const matchTipo = !tipoFilter || item.tipo===tipoFilter;
       const matchStatus = !statusFilter || item.status.toUpperCase()===statusFilter;
-      return matchSearch && matchTipo && matchStatus;
+      return matchSearch && matchStatus;
+    });
+    filtered.sort((a,b) => {
+      const da = diasAteVencer(a.vencimento), db = diasAteVencer(b.vencimento);
+      if(da===null && db===null) return 0;
+      if(da===null) return 1;
+      if(db===null) return -1;
+      return da-db;
     });
 
-    document.getElementById('oncoCount').textContent = filtered.length + ' registros';
+    countEl.textContent = filtered.length + ' de ' + all.length;
     if(filtered.length===0){
-      accordionEl.innerHTML = `<div class="no-result" style="border-radius:var(--radius);">🔍 Nenhum registro encontrado com esses filtros.</div>`;
+      bodyEl.innerHTML = `<tr><td colspan="${showNome?5:4}" style="text-align:center;color:var(--text-muted);padding:24px;">🔍 Nenhum registro encontrado com esses filtros.</td></tr>`;
       return;
     }
+    bodyEl.innerHTML = filtered.map(item => {
+      const info = oncoStatusInfo(item.status);
+      return `<tr>
+        <td><span class="veiculo-tag">${item.identificador}</span></td>
+        ${showNome ? `<td>${item.nome||'—'}</td>` : ''}
+        <td><span class="status-badge ${info.cls}">${info.label}</span></td>
+        <td>${oncoVencCell(item.vencimento)}</td>
+        <td>${item.observacoes||'—'}</td>
+      </tr>`;
+    }).join('');
+  }
 
-    const grouped = {};
-    filtered.forEach(item => {
-      if(!grouped[item.tipo]) grouped[item.tipo] = [];
-      grouped[item.tipo].push(item);
-    });
-    const tipoOrder = ['Veículo', 'Condutor', 'Funcionário'];
-    const tipoColors = {'Veículo':'var(--blue)', 'Condutor':'var(--red)', 'Funcionário':'var(--purple)'};
-    const sortedTipos = Object.keys(grouped).sort((a,b) => tipoOrder.indexOf(a)-tipoOrder.indexOf(b));
-
-    let html = '';
-    for(const tipo of sortedTipos){
-      const items = grouped[tipo];
-      items.sort((a,b) => {
-        const da = diasAteVencer(a.vencimento), db = diasAteVencer(b.vencimento);
-        if(da===null && db===null) return 0;
-        if(da===null) return 1;
-        if(db===null) return -1;
-        return da-db;
-      });
-      const naoOkCount = items.filter(i=>i.status.toUpperCase()!=='TEM PERFIL').length;
-      const isOpen = oncoOpenState.hasOwnProperty(tipo) ? oncoOpenState[tipo] : naoOkCount>0;
-      oncoOpenState[tipo] = isOpen;
-
-      let rows = '';
-      for(const item of items){
-        const info = oncoStatusInfo(item.status);
-        rows += `<tr>
-          <td><span class="veiculo-tag">${item.identificador}</span></td>
-          <td>${item.nome||'—'}</td>
-          <td><span class="status-badge ${info.cls}">${info.label}</span></td>
-          <td>${oncoVencCell(item.vencimento)}</td>
-          <td>${item.observacoes||'—'}</td>
-        </tr>`;
-      }
-
-      html += `<div class="region-accordion ${isOpen?'open':''}" style="border-left-color:${tipoColors[tipo]||'var(--border)'};">
-        <div class="accordion-header" data-onco-tipo="${tipo}">
-          <div class="region-title"><span class="color-dot" style="background:${tipoColors[tipo]||'var(--border)'};"></span>${tipo}s</div>
-          <div class="region-badge">${naoOkCount>0?`⚠️ ${naoOkCount} pendente(s)`:'✅ todos com perfil'}</div>
-          <div class="region-count">${items.length} registro(s)</div>
-          <div class="chevron">▼</div>
-        </div>
-        <div class="accordion-body">
-          <div class="region-table-wrap">
-            <table class="checklist-table">
-              <thead><tr><th>CPF / Placa</th><th>Nome</th><th>Status</th><th>Vencimento</th><th>Observações</th></tr></thead>
-              <tbody>${rows}</tbody>
-            </table>
-          </div>
-        </div>
-      </div>`;
-    }
-    accordionEl.innerHTML = html;
-
-    accordionEl.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', function(){
-        const acc = this.closest('.region-accordion');
-        const tipo = this.dataset.oncoTipo;
-        acc.classList.toggle('open');
-        oncoOpenState[tipo] = acc.classList.contains('open');
-      });
-    });
+  let oncoActiveView = 'geral';
+  function switchOncoView(view){
+    oncoActiveView = view;
+    document.querySelectorAll('.onco-subtab').forEach(t => t.classList.toggle('active', t.dataset.oncoView===view));
+    document.querySelectorAll('.onco-view').forEach(v => v.classList.remove('active'));
+    const map = {geral:'oncoViewGeral', veiculos:'oncoViewVeiculos', condutores:'oncoViewCondutores', funcionarios:'oncoViewFuncionarios'};
+    document.getElementById(map[view]).classList.add('active');
   }
 
   async function loadChecklists() {
@@ -3283,15 +3440,17 @@
     window.oncoData = null;
     loadOnco();
   });
-  document.getElementById('oncoSearch').addEventListener('input', renderOnco);
-  document.getElementById('oncoTipoFilter').addEventListener('change', renderOnco);
-  document.getElementById('oncoStatusFilter').addEventListener('change', renderOnco);
-  document.getElementById('oncoClearFilters').addEventListener('click', function(){
-    document.getElementById('oncoSearch').value='';
-    document.getElementById('oncoTipoFilter').value='';
-    document.getElementById('oncoStatusFilter').value='';
-    renderOnco();
+
+  document.querySelectorAll('.onco-subtab').forEach(tab => {
+    tab.addEventListener('click', () => switchOncoView(tab.dataset.oncoView));
   });
+
+  document.getElementById('oncoVeiculosSearch').addEventListener('input', () => renderOncoCategory('Veículo','oncoVeiculos'));
+  document.getElementById('oncoVeiculosStatusFilter').addEventListener('change', () => renderOncoCategory('Veículo','oncoVeiculos'));
+  document.getElementById('oncoCondutoresSearch').addEventListener('input', () => renderOncoCategory('Condutor','oncoCondutores'));
+  document.getElementById('oncoCondutoresStatusFilter').addEventListener('change', () => renderOncoCategory('Condutor','oncoCondutores'));
+  document.getElementById('oncoFuncionariosSearch').addEventListener('input', () => renderOncoCategory('Funcionário','oncoFuncionarios'));
+  document.getElementById('oncoFuncionariosStatusFilter').addEventListener('change', () => renderOncoCategory('Funcionário','oncoFuncionarios'));
 
   /* ===================== INIT ===================== */
   switchBase('rondolog');
