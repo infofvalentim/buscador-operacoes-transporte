@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
     /* ===== VARIÁVEIS (tema claro) ===== */
     :root {
@@ -1074,6 +1075,59 @@
       color: var(--text-muted);
     }
 
+    /* ===== ONCO ===== */
+    .status-tem-perfil     { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid var(--green); }
+    .status-nao-tem-perfil { background: var(--red-bg); color: var(--red); border: 1px solid var(--red); }
+    .status-aguardando     { background: rgba(249,115,22,0.15); color: var(--orange); border: 1px solid var(--orange); }
+    .status-divergente     { background: rgba(139,92,246,0.15); color: var(--purple); border: 1px solid var(--purple); }
+    .status-doc-vencido    { background: #2d1515; color: #ef4444; border: 1px solid #ef4444; }
+
+    .venc-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+      white-space: nowrap;
+    }
+    .venc-badge-vencido  { background: var(--red-bg); color: var(--red); }
+    .venc-badge-30       { background: rgba(249,115,22,0.15); color: var(--orange); }
+    .venc-badge-60       { background: rgba(234,179,8,0.18); color: #b45309; }
+    .venc-badge-ok       { background: rgba(34,197,94,0.15); color: var(--green); }
+
+    .onco-tipo-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-dim);
+      background: var(--surface2);
+      padding: 2px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .onco-upcoming-wrap {
+      margin: 20px 24px 0;
+      max-width: 1280px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .onco-upcoming-wrap h4 {
+      padding: 14px 20px;
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .onco-upcoming-wrap .checklist-table { box-shadow: none; border: none; border-radius: 0; }
+    .onco-upcoming-wrap .checklist-table-wrap { padding: 0; max-width: none; }
+
     /* =============================================
        ABA PONTOS (Clientes/Destinos)
        ============================================= */
@@ -1337,6 +1391,7 @@
   <button class="base-tab" data-base="bases">🏭 BASES</button>
   <button class="base-tab" data-base="points">📍 PONTOS</button>
   <button class="base-tab" data-base="checklist">📋 CHECKLIST</button>
+  <button class="base-tab" data-base="onco">🗂️ ONCO</button>
 </div>
 
 <!-- ===== PAINEL ROTAS ===== -->
@@ -1537,6 +1592,58 @@
   <div class="checklist-table-wrap">
     <div id="checklistLoading" class="loading-checklist">📂 Carregando checklists...</div>
     <div id="checklistAccordion" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- ===== ONCO ===== -->
+<div id="oncoPanel" class="panel">
+  <div class="checklist-header">
+    <div class="header-top">
+      <div>
+        <div class="brand-eyebrow">Cadastros · Rondolog × Oncoprod</div>
+        <div class="brand-title">🗂️ <span style="color:var(--red)">ONCO</span></div>
+      </div>
+      <div class="header-controls">
+        <div class="count-badge" id="oncoCount">— registros</div>
+        <button id="oncoRefresh" style="background:var(--surface2);padding:6px 16px;border-radius:40px;border:1px solid var(--border);color:var(--text-dim);font-family:var(--mono);font-size:11px;font-weight:600;cursor:pointer;transition:var(--transition);">🔄 Recarregar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="checklist-global-stats" id="oncoGlobalStats"></div>
+
+  <div class="onco-upcoming-wrap" id="oncoUpcomingWrap" style="display:none;">
+    <h4>📅 Próximos vencimentos</h4>
+    <div class="checklist-table-wrap" style="padding:0 20px 16px;">
+      <table class="checklist-table">
+        <thead><tr><th>Tipo</th><th>CPF / Placa</th><th>Nome</th><th>Vencimento</th></tr></thead>
+        <tbody id="oncoUpcomingBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="checklist-filters">
+    <input type="text" id="oncoSearch" placeholder="🔍 Buscar nome, CPF, placa..." autocomplete="off">
+    <select id="oncoTipoFilter">
+      <option value="">Todos os tipos</option>
+      <option value="Veículo">Veículos</option>
+      <option value="Condutor">Condutores</option>
+      <option value="Funcionário">Funcionários</option>
+    </select>
+    <select id="oncoStatusFilter">
+      <option value="">Todos os status</option>
+      <option value="TEM PERFIL">Tem perfil</option>
+      <option value="NÃO TEM PERFIL">Não tem perfil</option>
+      <option value="AGUARDANDO RETORNO">Aguardando retorno</option>
+      <option value="DADOS DIVERGENTES">Dados divergentes</option>
+      <option value="DOCUMENTO VENCIDO">Documento vencido</option>
+    </select>
+    <button class="filtro-clear" id="oncoClearFilters">Limpar filtros</button>
+  </div>
+
+  <div class="checklist-table-wrap">
+    <div id="oncoLoading" class="loading-checklist">📂 Carregando dados da planilha...</div>
+    <div id="oncoAccordion" style="display:none;"></div>
   </div>
 </div>
 
@@ -2344,6 +2451,19 @@
       }
       return;
     }
+    if (base === 'onco') {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('oncoPanel').classList.add('active');
+      loadingOverlay.style.display = 'none';
+      if (!window.oncoData) {
+        await loadOnco();
+      } else {
+        renderOncoGlobalStats();
+        renderOncoUpcoming();
+        renderOnco();
+      }
+      return;
+    }
     // Rotas
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     document.getElementById('routesPanel').classList.add('active');
@@ -2623,6 +2743,252 @@
       <div class="global-stat-card gs-ok"><div class="gs-num">${validos}</div><div class="gs-label">Válidos</div></div>
       <div class="global-stat-card"><div class="gs-num">${data.length}</div><div class="gs-label">Total</div></div>
     `;
+  }
+
+  /* ===================== ONCO ===================== */
+  const ONCO_XLSX_PATH = 'dados/RONDOLOG_ONCOPROD_Controle_visual.xlsx';
+  const ONCO_SHEETS = [
+    { name: 'VEICULOS',    tipo: 'Veículo' },
+    { name: 'CONDUTORES',  tipo: 'Condutor' },
+    { name: 'FUNCIONARIOS', tipo: 'Funcionário' }
+  ];
+  let oncoOpenState = {};
+
+  function diasAteVencer(dataStr){
+    const date = parseDateBR(dataStr);
+    if(!date) return null;
+    const hoje = new Date(); hoje.setHours(0,0,0,0);
+    return Math.round((date - hoje) / 86400000);
+  }
+
+  function oncoStatusInfo(status){
+    const s = (status||'').toUpperCase().trim();
+    if(s==='TEM PERFIL')          return {cls:'status-tem-perfil', label:'Tem perfil'};
+    if(s==='NÃO TEM PERFIL')      return {cls:'status-nao-tem-perfil', label:'Não tem perfil'};
+    if(s==='AGUARDANDO RETORNO')  return {cls:'status-aguardando', label:'Aguardando retorno'};
+    if(s==='DADOS DIVERGENTES')   return {cls:'status-divergente', label:'Dados divergentes'};
+    if(s==='DOCUMENTO VENCIDO')   return {cls:'status-doc-vencido', label:'Documento vencido'};
+    return {cls:'', label: status || '—'};
+  }
+
+  function oncoVencCell(dataStr){
+    if(!dataStr || dataStr==='—') return '—';
+    const dias = diasAteVencer(dataStr);
+    if(dias===null) return dataStr;
+    let cls, label;
+    if(dias<0)       { cls='venc-badge-vencido'; label=`${Math.abs(dias)}d vencido`; }
+    else if(dias<=30){ cls='venc-badge-30';      label=`${dias}d`; }
+    else if(dias<=60){ cls='venc-badge-60';      label=`${dias}d`; }
+    else             { cls='venc-badge-ok';      label=`${dias}d`; }
+    return `${dataStr} <span class="venc-badge ${cls}">${label}</span>`;
+  }
+
+  function oncoPad2(n){ return n<10 ? '0'+n : ''+n; }
+
+  function oncoNormalizeDate(v){
+    if(v===null || v===undefined || v==='') return '';
+    if(v instanceof Date && !isNaN(v)){
+      return `${oncoPad2(v.getDate())}/${oncoPad2(v.getMonth()+1)}/${v.getFullYear()}`;
+    }
+    const s = v.toString().trim();
+    if(/^\d{2}\/\d{2}\/\d{4}$/.test(s)) return s;
+    const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if(iso) return `${iso[3]}/${iso[2]}/${iso[1]}`;
+    return s;
+  }
+
+  function parseOncoSheet(ws, tipo){
+    if(!ws) return [];
+    const rows = XLSX.utils.sheet_to_json(ws, {header:1, raw:true, defval:null});
+    const headerIdx = rows.findIndex(r => Array.isArray(r) && r.some(c => (c||'').toString().trim().toUpperCase()==='STATUS'));
+    if(headerIdx===-1) return [];
+    const header = rows[headerIdx].map(c => (c||'').toString().trim().toUpperCase());
+    const idx = {
+      id: header.findIndex(h => h==='PLACA' || h==='CPF'),
+      nome: header.indexOf('NOME COMPLETO'),
+      status: header.indexOf('STATUS'),
+      venc: header.indexOf('VENCIMENTO'),
+      obs: header.indexOf('OBSERVAÇÕES')
+    };
+    if(idx.id===-1 || idx.status===-1) return [];
+    const out = [];
+    for(let i=headerIdx+1; i<rows.length; i++){
+      const r = rows[i];
+      if(!r) continue;
+      const idVal = (r[idx.id]||'').toString().trim();
+      const statusVal = (idx.status>=0 ? (r[idx.status]||'') : '').toString().trim();
+      if(!idVal || !statusVal) continue;
+      out.push({
+        tipo,
+        identificador: idVal,
+        nome: idx.nome>=0 ? (r[idx.nome]||'').toString().trim() : '',
+        status: statusVal,
+        vencimento: idx.venc>=0 ? oncoNormalizeDate(r[idx.venc]) : '',
+        observacoes: idx.obs>=0 ? (r[idx.obs]||'').toString().trim() : ''
+      });
+    }
+    return out;
+  }
+
+  async function loadOnco(){
+    const loadingEl = document.getElementById('oncoLoading');
+    const accordionEl = document.getElementById('oncoAccordion');
+    loadingEl.textContent = '📂 Carregando dados da planilha...';
+    loadingEl.style.display = 'block';
+    accordionEl.style.display = 'none';
+    try{
+      const resp = await fetch(ONCO_XLSX_PATH);
+      if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const buf = await resp.arrayBuffer();
+      const wb = XLSX.read(buf, {type:'array', cellDates:true});
+      let data = [];
+      ONCO_SHEETS.forEach(s => {
+        data = data.concat(parseOncoSheet(wb.Sheets[s.name], s.tipo));
+      });
+      window.oncoData = data;
+    }catch(err){
+      console.error('Erro ao carregar a planilha ONCO:', err);
+      window.oncoData = [];
+      loadingEl.textContent = `❌ Erro ao carregar ${ONCO_XLSX_PATH}. Confira se o arquivo está na pasta "dados/" do repositório.`;
+      loadingEl.style.display = 'block';
+      accordionEl.style.display = 'none';
+      return;
+    }
+    renderOncoGlobalStats();
+    renderOncoUpcoming();
+    renderOnco();
+  }
+
+  function renderOncoGlobalStats(){
+    const el = document.getElementById('oncoGlobalStats');
+    const data = window.oncoData || [];
+    if(data.length===0){ el.innerHTML=''; return; }
+    const temPerfil = data.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
+    const naoTemPerfil = data.filter(i=>i.status.toUpperCase()==='NÃO TEM PERFIL').length;
+    const aguardando = data.filter(i=>i.status.toUpperCase()==='AGUARDANDO RETORNO').length;
+    const divergentes = data.filter(i=>['DADOS DIVERGENTES','DOCUMENTO VENCIDO'].includes(i.status.toUpperCase())).length;
+    const vencidosProximos = data.filter(i=>{
+      const d = diasAteVencer(i.vencimento);
+      return d!==null && d<=30;
+    }).length;
+    el.innerHTML = `
+      <div class="global-stat-card gs-ok"><div class="gs-num">${temPerfil}</div><div class="gs-label">Tem perfil</div></div>
+      <div class="global-stat-card gs-critical"><div class="gs-num">${naoTemPerfil}</div><div class="gs-label">Não tem perfil</div></div>
+      <div class="global-stat-card gs-warn"><div class="gs-num">${aguardando}</div><div class="gs-label">Aguardando retorno</div></div>
+      <div class="global-stat-card gs-nao-ok"><div class="gs-num">${divergentes}</div><div class="gs-label">Divergentes/vencidos</div></div>
+      <div class="global-stat-card gs-warn"><div class="gs-num">${vencidosProximos}</div><div class="gs-label">Vencendo em 30 dias</div></div>
+      <div class="global-stat-card"><div class="gs-num">${data.length}</div><div class="gs-label">Total geral</div></div>
+    `;
+  }
+
+  function renderOncoUpcoming(){
+    const wrap = document.getElementById('oncoUpcomingWrap');
+    const body = document.getElementById('oncoUpcomingBody');
+    const data = (window.oncoData || []).filter(i => i.status.toUpperCase()==='TEM PERFIL' && diasAteVencer(i.vencimento)!==null);
+    data.sort((a,b) => diasAteVencer(a.vencimento) - diasAteVencer(b.vencimento));
+    const upcoming = data.slice(0, 15);
+    if(upcoming.length===0){ wrap.style.display='none'; return; }
+    wrap.style.display='block';
+    body.innerHTML = upcoming.map(i => `<tr>
+        <td><span class="onco-tipo-tag">${i.tipo}</span></td>
+        <td><span class="veiculo-tag">${i.identificador}</span></td>
+        <td>${i.nome||'—'}</td>
+        <td>${oncoVencCell(i.vencimento)}</td>
+      </tr>`).join('');
+  }
+
+  function renderOnco(){
+    const accordionEl = document.getElementById('oncoAccordion');
+    const loadingEl = document.getElementById('oncoLoading');
+    if(!window.oncoData || window.oncoData.length===0){
+      loadingEl.textContent = '📭 Nenhum registro encontrado.';
+      loadingEl.style.display='block'; accordionEl.style.display='none';
+      return;
+    }
+    loadingEl.style.display='none'; accordionEl.style.display='block';
+
+    const searchTerm = document.getElementById('oncoSearch').value.toLowerCase();
+    const tipoFilter = document.getElementById('oncoTipoFilter').value;
+    const statusFilter = document.getElementById('oncoStatusFilter').value;
+
+    let filtered = window.oncoData.filter(item => {
+      const matchSearch = !searchTerm ||
+        item.identificador.toLowerCase().includes(searchTerm) ||
+        item.nome.toLowerCase().includes(searchTerm) ||
+        item.observacoes.toLowerCase().includes(searchTerm);
+      const matchTipo = !tipoFilter || item.tipo===tipoFilter;
+      const matchStatus = !statusFilter || item.status.toUpperCase()===statusFilter;
+      return matchSearch && matchTipo && matchStatus;
+    });
+
+    document.getElementById('oncoCount').textContent = filtered.length + ' registros';
+    if(filtered.length===0){
+      accordionEl.innerHTML = `<div class="no-result" style="border-radius:var(--radius);">🔍 Nenhum registro encontrado com esses filtros.</div>`;
+      return;
+    }
+
+    const grouped = {};
+    filtered.forEach(item => {
+      if(!grouped[item.tipo]) grouped[item.tipo] = [];
+      grouped[item.tipo].push(item);
+    });
+    const tipoOrder = ['Veículo', 'Condutor', 'Funcionário'];
+    const tipoColors = {'Veículo':'var(--blue)', 'Condutor':'var(--red)', 'Funcionário':'var(--purple)'};
+    const sortedTipos = Object.keys(grouped).sort((a,b) => tipoOrder.indexOf(a)-tipoOrder.indexOf(b));
+
+    let html = '';
+    for(const tipo of sortedTipos){
+      const items = grouped[tipo];
+      items.sort((a,b) => {
+        const da = diasAteVencer(a.vencimento), db = diasAteVencer(b.vencimento);
+        if(da===null && db===null) return 0;
+        if(da===null) return 1;
+        if(db===null) return -1;
+        return da-db;
+      });
+      const naoOkCount = items.filter(i=>i.status.toUpperCase()!=='TEM PERFIL').length;
+      const isOpen = oncoOpenState.hasOwnProperty(tipo) ? oncoOpenState[tipo] : naoOkCount>0;
+      oncoOpenState[tipo] = isOpen;
+
+      let rows = '';
+      for(const item of items){
+        const info = oncoStatusInfo(item.status);
+        rows += `<tr>
+          <td><span class="veiculo-tag">${item.identificador}</span></td>
+          <td>${item.nome||'—'}</td>
+          <td><span class="status-badge ${info.cls}">${info.label}</span></td>
+          <td>${oncoVencCell(item.vencimento)}</td>
+          <td>${item.observacoes||'—'}</td>
+        </tr>`;
+      }
+
+      html += `<div class="region-accordion ${isOpen?'open':''}" style="border-left-color:${tipoColors[tipo]||'var(--border)'};">
+        <div class="accordion-header" data-onco-tipo="${tipo}">
+          <div class="region-title"><span class="color-dot" style="background:${tipoColors[tipo]||'var(--border)'};"></span>${tipo}s</div>
+          <div class="region-badge">${naoOkCount>0?`⚠️ ${naoOkCount} pendente(s)`:'✅ todos com perfil'}</div>
+          <div class="region-count">${items.length} registro(s)</div>
+          <div class="chevron">▼</div>
+        </div>
+        <div class="accordion-body">
+          <div class="region-table-wrap">
+            <table class="checklist-table">
+              <thead><tr><th>CPF / Placa</th><th>Nome</th><th>Status</th><th>Vencimento</th><th>Observações</th></tr></thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+        </div>
+      </div>`;
+    }
+    accordionEl.innerHTML = html;
+
+    accordionEl.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function(){
+        const acc = this.closest('.region-accordion');
+        const tipo = this.dataset.oncoTipo;
+        acc.classList.toggle('open');
+        oncoOpenState[tipo] = acc.classList.contains('open');
+      });
+    });
   }
 
   async function loadChecklists() {
@@ -2911,6 +3277,20 @@
     document.getElementById('checklistTipoFilter').value='';
     document.getElementById('checklistCategoriaFilter').value='';
     renderChecklists();
+  });
+
+  document.getElementById('oncoRefresh').addEventListener('click', function(){
+    window.oncoData = null;
+    loadOnco();
+  });
+  document.getElementById('oncoSearch').addEventListener('input', renderOnco);
+  document.getElementById('oncoTipoFilter').addEventListener('change', renderOnco);
+  document.getElementById('oncoStatusFilter').addEventListener('change', renderOnco);
+  document.getElementById('oncoClearFilters').addEventListener('click', function(){
+    document.getElementById('oncoSearch').value='';
+    document.getElementById('oncoTipoFilter').value='';
+    document.getElementById('oncoStatusFilter').value='';
+    renderOnco();
   });
 
   /* ===================== INIT ===================== */
