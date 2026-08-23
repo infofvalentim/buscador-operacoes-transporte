@@ -2746,7 +2746,7 @@
   }
 
   /* ===================== ONCO ===================== */
-  const ONCO_XLSX_PATH = 'dados/RONDOLOG_ONCOPROD_Controle_visual.xlsx';
+  const ONCO_XLSX_PATH = 'data/RONDOLOG_ONCOPROD_Controle_visual.xlsx';
   const ONCO_SHEETS = [
     { name: 'VEICULOS',    tipo: 'Veículo' },
     { name: 'CONDUTORES',  tipo: 'Condutor' },
@@ -2849,7 +2849,7 @@
     }catch(err){
       console.error('Erro ao carregar a planilha ONCO:', err);
       window.oncoData = [];
-      loadingEl.textContent = `❌ Erro ao carregar ${ONCO_XLSX_PATH}. Confira se o arquivo está na pasta "dados/" do repositório.`;
+      loadingEl.textContent = `❌ Erro ao carregar ${ONCO_XLSX_PATH}. Confira se o arquivo está na pasta "data/" do repositório.`;
       loadingEl.style.display = 'block';
       accordionEl.style.display = 'none';
       return;
