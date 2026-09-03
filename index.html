@@ -1490,1854 +1490,1855 @@
 </div>
 
 <script>
-(function(){
-  'use strict';
-
   // ============================================================
-  // BASES
+  // UTILITÁRIOS GLOBAIS (para ONCO e FROTA)
   // ============================================================
-  const BASES = [
-    {id:1,  nome:"Duque de Caxias",        sigla:"RJ",  cidade:"Duque de Caxias",      uf:"RJ", tipo:"hub",      endereco:"Rodovia Washington Luiz, 2070 – Parque Duque",               cep:"25085-009", lat:-22.7854, lng:-43.3115},
-    {id:2,  nome:"Santana de Parnaíba",    sigla:"SP",  cidade:"Santana de Parnaíba",  uf:"SP", tipo:"hub",      endereco:"Estrada Tenente Marques, 6765 – Vila Poupança",              cep:"06525-001", lat:-23.4527, lng:-46.9177},
-    {id:4,  nome:"Betim",                  sigla:"BTM", cidade:"Betim",                uf:"MG", tipo:"filial",   endereco:"Rua Bispo Pedro Valdemar Dias, 777 – Amazonas",              cep:"32685-044", lat:-19.9678, lng:-44.1983},
-    {id:5,  nome:"Três Corações",          sigla:"3C",  cidade:"Três Corações",        uf:"MG", tipo:"filial",   endereco:"Avenida Édson Penha, 627 – Santana",                         cep:"37410-650", lat:-21.6914, lng:-45.2562},
-    {id:7,  nome:"Cravinhos",              sigla:"CRV", cidade:"Cravinhos",            uf:"SP", tipo:"filial",   endereco:"Rua Manoel Gomes dos Santos, 2921 – Jd. Independência",      cep:"14140-000", lat:-21.3407, lng:-47.7297},
-    {id:9,  nome:"Mirassol",               sigla:"MRS", cidade:"Mirassol",             uf:"SP", tipo:"filial",   endereco:"Rua Bruno Rodrigues Gomes, 562 – Parque Mirassol",           cep:"15134-144", lat:-20.8196, lng:-49.5101},
-    {id:12, nome:"Goiânia",                sigla:"GYN", cidade:"Goiânia",              uf:"GO", tipo:"filial",   endereco:"Rua Anaca, 213 – Parque Amazônia",                           cep:"74840-690", lat:-16.6869, lng:-49.2648},
-    {id:14, nome:"Brasília",               sigla:"BSB", cidade:"Brasília",             uf:"DF", tipo:"filial",   endereco:"SIA Trecho 3, 32 – Zona Industrial Guará",                  cep:"71200-030", lat:-15.7942, lng:-47.8825},
-    {id:18, nome:"Agudos",                 sigla:"AGD", cidade:"Agudos",               uf:"SP", tipo:"filial",   endereco:"Avenida Rui Barbosa, 361 – Centro",                          cep:"17120-000", lat:-22.4756, lng:-48.9844},
-    {id:19, nome:"Uberlândia",             sigla:"UDI", cidade:"Uberlândia",           uf:"MG", tipo:"filial",   endereco:"Rua Ângelo Cunha, 365 – São Jorge",                          cep:"38410-206", lat:-18.9188, lng:-48.2766},
-    {id:20, nome:"Guarulhos – Rondocargas",sigla:"GRU", cidade:"Guarulhos",            uf:"SP", tipo:"terminal", endereco:"Av. Papa João Paulo I, 2258 – Jd. Presidente Dutra",         cep:"07174-000", lat:-23.4356, lng:-46.5338},
-    {id:21, nome:"Santa Bárbara d'Oeste",  sigla:"SBO", cidade:"Santa Bárbara d'Oeste",uf:"SP", tipo:"filial",   endereco:"Av. Paulo Augusto Bortolucci, 346 – Distrito Industrial",    cep:"13459-617", lat:-22.7548, lng:-47.4136},
-    {id:22, nome:"Taubaté",                sigla:"TAU", cidade:"Taubaté",              uf:"SP", tipo:"filial",   endereco:"Rua João Vanoni, 185 – Residencial Estoril",                 cep:"12092-703", lat:-23.0260, lng:-45.5557},
-    {id:23, nome:"Macaé",                  sigla:"MCE", cidade:"Macaé",                uf:"RJ", tipo:"filial",   endereco:"Rua de Santana, 169 – Centro",                               cep:"27910-090", lat:-22.3710, lng:-41.7869}
-  ];
-
-  function dotColor(tipo){ return tipo==='hub'?'#dc2626': tipo==='terminal'?'#8b5cf6':'#3b82f6'; }
-  function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
-
-  function renderBasesStats(){
-    const total = BASES.length;
-    const hubs = BASES.filter(b=>b.tipo==='hub').length;
-    const filiais = BASES.filter(b=>b.tipo==='filial').length;
-    const terminais = BASES.filter(b=>b.tipo==='terminal').length;
-    const estados = new Set(BASES.map(b=>b.uf)).size;
-    document.getElementById('statTotal').textContent = total;
-    document.getElementById('statHub').textContent = hubs;
-    document.getElementById('statFilial').textContent = filiais;
-    document.getElementById('statTerminal').textContent = terminais;
-    document.getElementById('statUF').textContent = estados;
-    document.getElementById('basesTotalEyebrow').textContent = total;
+  function parseDateBR(str) {
+    if (!str) return null;
+    const parts = String(str).trim().split('/');
+    if (parts.length !== 3) return null;
+    const [d, m, y] = parts.map(Number);
+    if (!d || !m || !y) return null;
+    const dt = new Date(y, m - 1, d);
+    return isNaN(dt) ? null : dt;
   }
 
-  let userPos = null;
-  let locateWatching = false;
-
-  function toRad(v){ return v * Math.PI / 180; }
-  function haversineKm(lat1, lng1, lat2, lng2){
-    const R = 6371;
-    const dLat = toRad(lat2 - lat1);
-    const dLng = toRad(lng2 - lng1);
-    const a = Math.sin(dLat/2)**2 +
-              Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-              Math.sin(dLng/2)**2;
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    return R * c;
+  function fmtDateBR(dt) {
+    if (!dt || isNaN(dt)) return '';
+    const p2 = n => (n < 10 ? '0' + n : '' + n);
+    return `${p2(dt.getDate())}/${p2(dt.getMonth() + 1)}/${dt.getFullYear()}`;
   }
 
-  function formatDist(km){
-    if(km < 1) return Math.round(km*1000) + ' m';
-    return km.toFixed(km < 10 ? 1 : 0) + ' km';
-  }
-
-  const locateBtn = document.getElementById('locateBtn');
-  const locateBtnIcon = document.getElementById('locateBtnIcon');
-  const locateBtnText = document.getElementById('locateBtnText');
-  const locateBanner = document.getElementById('locateBanner');
-  const locateBannerText = document.getElementById('locateBannerText');
-  const locateClearBtn = document.getElementById('locateClearBtn');
-
-  function handleLocateClick(){
-    if(!navigator.geolocation){
-      showToast('GEOLOCALIZAÇÃO NÃO SUPORTADA');
-      return;
+  function normalizeAnyDate(v) {
+    if (!v) return '';
+    if (v instanceof Date && !isNaN(v)) return fmtDateBR(v);
+    const s = String(v).trim();
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(s)) return s;
+    const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (iso) return `${iso[3]}/${iso[2]}/${iso[1]}`;
+    if (/^\d+$/.test(s)) {
+      const excelEpoch = new Date(Date.UTC(1899, 11, 30));
+      const dt = new Date(excelEpoch.getTime() + Number(s) * 86400000);
+      if (!isNaN(dt)) return fmtDateBR(dt);
     }
-    locateBtn.disabled = true;
-    locateBtnIcon.innerHTML = '<span class="locate-spinner"></span>';
-    locateBtnText.textContent = 'Localizando...';
-
-    navigator.geolocation.getCurrentPosition(
-      pos => {
-        userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        locateWatching = true;
-        locateBtn.disabled = false;
-        locateBtn.classList.add('active');
-        locateBtnIcon.textContent = '✅';
-        locateBtnText.textContent = 'Localização ativa';
-        locateBanner.classList.add('show');
-        const nearest = [...BASES].sort((a,b)=>
-          haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
-        )[0];
-        const distNearest = haversineKm(userPos.lat, userPos.lng, nearest.lat, nearest.lng);
-        locateBannerText.textContent = `📍 Base mais próxima: ${nearest.nome} (${formatDist(distNearest)})`;
-        renderBases();
-      },
-      err => {
-        locateBtn.disabled = false;
-        locateBtnIcon.textContent = '📍';
-        locateBtnText.textContent = 'Base mais próxima';
-        let msg = 'NÃO FOI POSSÍVEL OBTER SUA LOCALIZAÇÃO';
-        if(err.code === err.PERMISSION_DENIED) msg = 'PERMISSÃO DE LOCALIZAÇÃO NEGADA';
-        showToast(msg);
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
-    );
-  }
-
-  function clearLocate(){
-    userPos = null;
-    locateWatching = false;
-    locateBtn.classList.remove('active');
-    locateBtnIcon.textContent = '📍';
-    locateBtnText.textContent = 'Base mais próxima';
-    locateBanner.classList.remove('show');
-    renderBases();
-  }
-
-  locateBtn.addEventListener('click', handleLocateClick);
-  locateClearBtn.addEventListener('click', clearLocate);
-
-  /* ---- MAPA LEAFLET ---- */
-  let leafletMap = null;
-  let leafletMarkers = [];
-  let routeLine = null;
-  let selectedId = null;
-  let userMarker = null;
-
-  function initLeafletMap(){
-    if(leafletMap) return;
-    leafletMap = L.map('leafletMap', {
-      center: [-20.5, -45.5],
-      zoom: 6,
-      zoomControl: true,
-      attributionControl: false
-    });
-
-    updateMapTiles();
-
-    const coords = BASES.map(b => [b.lat, b.lng]);
-    routeLine = L.polyline(coords, {
-      color: 'var(--red)',
-      weight: 2.5,
-      opacity: 0.4,
-      dashArray: '8, 6',
-      smoothFactor: 1
-    }).addTo(leafletMap);
-
-    BASES.forEach(b => {
-      const c = dotColor(b.tipo);
-      const r = b.tipo === 'hub' ? 10 : 7;
-
-      let pulseCircle = null;
-      if(b.tipo === 'hub'){
-        pulseCircle = L.circleMarker([b.lat, b.lng], {
-          radius: r + 7,
-          color: c, weight: 1.5, opacity: 0.25, fill: false
-        }).addTo(leafletMap);
-      }
-
-      const marker = L.circleMarker([b.lat, b.lng], {
-        radius: r,
-        fillColor: c, fillOpacity: 1,
-        color: 'white', weight: 2.5
-      }).addTo(leafletMap);
-
-      const tipoClass = b.tipo === 'hub' ? 'bci-tipo-hub' : b.tipo === 'terminal' ? 'bci-tipo-terminal' : 'bci-tipo-filial';
-      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
-      marker.bindPopup(`
-        <strong>${b.nome}</strong>
-        <span class="pop-tipo ${tipoClass}">${tipoLabel(b.tipo)}</span>
-        <div class="pop-end">📍 ${b.endereco}<br>${b.cidade} / ${b.uf} — CEP ${b.cep}</div>
-        <a href="${mapsUrl}" target="_blank" rel="noopener"
-           style="color:#3b82f6;font-size:11px;text-decoration:none;font-weight:600;">🗺 Ver no Google Maps →</a>
-      `, { maxWidth: 260, className: 'base-popup' });
-
-      marker.on('click', () => selectBase(b.id));
-      marker.on('mouseover', () => {
-        marker.setStyle({ radius: r + 3, weight: 3.5, color: c });
-      });
-      marker.on('mouseout', () => {
-        if(selectedId !== b.id)
-          marker.setStyle({ radius: r, weight: 2.5, color: 'white' });
-      });
-
-      marker.bindTooltip(b.sigla, {
-        permanent: true, direction: 'right',
-        className: 'leaflet-sigla-tooltip',
-        offset: [r + 4, 0]
-      }).openTooltip();
-
-      leafletMarkers.push({ id: b.id, marker, pulseCircle, baseR: r, color: c });
-    });
-  }
-
-  function renderUserMarker(){
-    if(!leafletMap) return;
-    if(userMarker){ leafletMap.removeLayer(userMarker); userMarker = null; }
-    if(!userPos) return;
-    userMarker = L.circleMarker([userPos.lat, userPos.lng], {
-      radius: 8, fillColor: '#22c55e', fillOpacity: 1,
-      color: 'white', weight: 3
-    }).addTo(leafletMap);
-    userMarker.bindTooltip('Você está aqui', {
-      permanent: false, direction: 'top', className: 'leaflet-sigla-tooltip'
-    });
-  }
-
-  function updateMapTiles() {
-    if (!leafletMap) return;
-    leafletMap.eachLayer(layer => {
-      if (layer instanceof L.TileLayer) {
-        leafletMap.removeLayer(layer);
-      }
-    });
-    const isDark = document.body.classList.contains('dark-mode');
-    const tileUrl = isDark
-      ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-      : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-    L.tileLayer(tileUrl, {
-      maxZoom: 19,
-      subdomains: 'abcd',
-      attribution: ''
-    }).addTo(leafletMap);
-    if (routeLine) {
-      const color = isDark ? '#ef4444' : '#dc2626';
-      routeLine.setStyle({ color: color });
-    }
-  }
-
-  function renderMap(filtered){
-    if(!leafletMap) return;
-    const filteredIds = new Set(filtered.map(b => b.id));
-
-    leafletMarkers.forEach(({id, marker, pulseCircle, baseR, color}) => {
-      const faded = !filteredIds.has(id);
-      const isSelected = id === selectedId;
-
-      marker.setStyle({
-        fillOpacity: faded ? 0.15 : 1,
-        opacity: faded ? 0.15 : 1,
-        radius: isSelected ? baseR + 3 : baseR,
-        color: isSelected ? color : 'white',
-        weight: isSelected ? 3.5 : 2.5
-      });
-      if(pulseCircle){
-        pulseCircle.setStyle({ opacity: faded ? 0.05 : 0.25 });
-      }
-    });
-
-    if (routeLine) {
-      const coords = filtered.map(b => [b.lat, b.lng]);
-      routeLine.setLatLngs(coords);
-    }
-
-    renderUserMarker();
-  }
-
-  function renderBases(){
-    const q = normStr(document.getElementById('basesSearch').value);
-    const uf = document.getElementById('basesUFFilter').value;
-    const tipo = document.getElementById('basesTipoFilter').value;
-
-    let filtered = BASES.filter(b=>{
-      const mq = !q || [b.nome,b.cidade,b.endereco,b.cep,b.uf].some(v=>normStr(v).includes(q));
-      const mu = !uf || b.uf === uf;
-      const mt = !tipo || b.tipo === tipo;
-      return mq && mu && mt;
-    });
-
-    document.getElementById('basesCountBadge').textContent =
-      filtered.length + ' base' + (filtered.length!==1?'s':'');
-
-    const list = document.getElementById('basesList');
-
-    if(!filtered.length){
-      list.innerHTML = '<div style="text-align:center;padding:50px 20px;background:var(--surface);border-radius:var(--radius);color:var(--text-muted);border:1px solid var(--border);box-shadow:var(--shadow);">🔍 Nenhuma base encontrada.</div>';
-      renderMap([]);
-      return;
-    }
-
-    let sorted;
-    if(userPos){
-      sorted = [...filtered].sort((a,b)=>
-        haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
-      );
-    } else {
-      sorted = [...filtered].sort((a,b)=>{
-        const o={hub:0,terminal:1,filial:2};
-        return (o[a.tipo] ?? 9)-(o[b.tipo] ?? 9);
-      });
-    }
-
-    list.innerHTML = sorted.map((b, idx)=>{
-      const c = dotColor(b.tipo);
-      const sel = b.id === selectedId ? ' selected' : '';
-      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
-      const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(b.nome+' '+b.cidade+' '+b.uf)}&navigate=yes`;
-
-      let distBadge = '';
-      if(userPos){
-        const km = haversineKm(userPos.lat, userPos.lng, b.lat, b.lng);
-        const proximaLabel = idx === 0 ? '⭐ Mais próxima · ' : '';
-        distBadge = `<span class="bci-dist">${proximaLabel}${formatDist(km)}</span>`;
-      }
-
-      return `
-<div class="base-card${sel}" data-id="${b.id}" onclick="__selBase(${b.id})">
-  <div class="bci">
-    <div class="bci-accent" style="background:${c}"></div>
-    <div class="bci-body">
-      <div class="bci-top">
-        <span class="bci-nome">${b.nome}</span>
-        <span class="bci-tipo bci-tipo-${b.tipo}">${tipoLabel(b.tipo)}</span>
-      </div>
-      <div class="bci-endereco">
-        📍 ${b.endereco}<br>
-        ${b.cidade} / ${b.uf} — CEP ${b.cep}
-      </div>
-      <div class="bci-foot">
-        <span class="bci-uf">${b.uf}</span>
-        <span class="bci-cep">${b.cep}</span>
-        ${distBadge}
-        <div class="bci-btns">
-          <a class="bci-btn bci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🗺 Maps</a>
-          <a class="bci-btn bci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🔵 Waze</a>
-          <button class="bci-btn" onclick="event.stopPropagation();__copyEnd(${b.id})">📋 Copiar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`;
-    }).join('');
-
-    renderMap(filtered);
-  }
-
-  function selectBase(id){
-    selectedId = (selectedId===id) ? null : id;
-    renderBases();
-    if(selectedId && leafletMap){
-      const b = BASES.find(x=>x.id===selectedId);
-      const entry = leafletMarkers.find(x=>x.id===selectedId);
-      if(b && entry){
-        leafletMap.setView([b.lat, b.lng], Math.max(leafletMap.getZoom(), 9), {animate:true});
-        entry.marker.openPopup();
-      }
-    }
-    if(selectedId){
-      const el = document.querySelector(`.base-card[data-id="${selectedId}"]`);
-      if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
-    }
-  }
-  window.__selBase = selectBase;
-
-  window.__copyEnd = function(id){
-    const b = BASES.find(x=>x.id===id);
-    if(!b) return;
-    const txt = `${b.nome} — ${b.endereco}, ${b.cidade}/${b.uf}, CEP ${b.cep}`;
-    navigator.clipboard.writeText(txt).then(()=> showToast('ENDEREÇO COPIADO'));
-  };
-
-  function normStr(s){ return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
-
-  /* ===================== LÓGICA ROTAS ===================== */
-  const DATA_URLS = { rondolog:'./data/rondolog.json', saster:'./data/saster.json' };
-  const dataCache = { rondolog:null, saster:null };
-  let currentBase='rondolog', currentData=[], currentQuery='', currentType='all', currentOrder='padrao';
-  let currentView = 'list';
-  let showOnlyFavorites = false;
-
-  const loadingOverlay = document.getElementById('loadingOverlay');
-  const baseSubtitle   = document.getElementById('baseSubtitle');
-  const baseTitle      = document.getElementById('baseTitle');
-  const countBadge     = document.getElementById('countBadge');
-  const filterChipsDiv = document.getElementById('filterChips');
-  const searchInput    = document.getElementById('search');
-  const orderSelect    = document.getElementById('orderSelect');
-  const sectionLabel   = document.getElementById('sectionLabel');
-  const resultsContainer= document.getElementById('results');
-  const matrixContainer= document.getElementById('matrixContainer');
-
-  function norm(s){ return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
-  function hl(text,q){
-    if(!q) return text;
-    const nq=norm(q), nt=norm(text);
-    let out='',i=0;
-    while(i<text.length){
-      const idx=nt.indexOf(nq,i);
-      if(idx===-1){out+=text.slice(i);break;}
-      out+=text.slice(i,idx)+'<mark>'+text.slice(idx,idx+nq.length)+'</mark>';
-      i=idx+nq.length;
-    }
-    return out;
-  }
-  function getTipoColor(t){ return t==='coleta'?'var(--blue)':t==='transferencia'?'var(--green)':'var(--orange)'; }
-  function getTipoLabel(t){ return t==='transferencia'?'🚚 Transferência':t==='coleta'?'📦 Coleta':'🔄 Rota fixa'; }
-
-  /* ===================== FAVORITOS ===================== */
-  function loadFavorites(){
-    try{ return JSON.parse(localStorage.getItem('rondologFavorites')) || {rondolog:[], saster:[]}; }
-    catch(e){ return {rondolog:[], saster:[]}; }
-  }
-  function saveFavorites(data){
-    localStorage.setItem('rondologFavorites', JSON.stringify(data));
-  }
-  let favoritesData = loadFavorites();
-
-  function isFavorite(base, nome){
-    return (favoritesData[base] || []).includes(nome);
-  }
-  function toggleFavorite(base, nome){
-    if(!favoritesData[base]) favoritesData[base] = [];
-    const idx = favoritesData[base].indexOf(nome);
-    if(idx === -1){
-      favoritesData[base].push(nome);
-      showToast('⭐ ROTA FAVORITADA');
-    } else {
-      favoritesData[base].splice(idx, 1);
-      showToast('ROTA REMOVIDA DOS FAVORITOS');
-    }
-    saveFavorites(favoritesData);
-    updateFavChip();
-    render();
-  }
-  window.__toggleFav = toggleFavorite;
-
-  function updateFavChip(){
-    const count = (favoritesData[currentBase] || []).length;
-    const favCountEl = document.getElementById('favCount');
-    favCountEl.textContent = count ? `(${count})` : '';
-    document.getElementById('favChip').classList.toggle('active', showOnlyFavorites);
-  }
-
-  /* ===================== HISTÓRICO ===================== */
-  const HISTORY_MAX = 8;
-  function loadHistory(){
-    try{ return JSON.parse(localStorage.getItem('rondologHistory')) || {rondolog:[], saster:[]}; }
-    catch(e){ return {rondolog:[], saster:[]}; }
-  }
-  function saveHistory(data){
-    localStorage.setItem('rondologHistory', JSON.stringify(data));
-  }
-  let historyData = loadHistory();
-
-  function addToHistory(base, term){
-    term = term.trim();
-    if(!term) return;
-    if(!historyData[base]) historyData[base] = [];
-    historyData[base] = historyData[base].filter(t => t.toLowerCase() !== term.toLowerCase());
-    historyData[base].unshift(term);
-    historyData[base] = historyData[base].slice(0, HISTORY_MAX);
-    saveHistory(historyData);
-    renderHistoryChips();
-  }
-  function removeFromHistory(base, term){
-    if(!historyData[base]) return;
-    historyData[base] = historyData[base].filter(t => t !== term);
-    saveHistory(historyData);
-    renderHistoryChips();
-  }
-  function renderHistoryChips(){
-    const container = document.getElementById('historyChips');
-    const items = historyData[currentBase] || [];
-    if(!items.length){ container.innerHTML = ''; return; }
-    container.innerHTML = '<span class="history-label">Recentes:</span>' + items.map(term => `
-      <span class="history-chip" data-term="${term.replace(/"/g,'&quot;')}">
-        🕓 ${term}
-        <span class="hx-remove" data-remove="${term.replace(/"/g,'&quot;')}">✕</span>
-      </span>
-    `).join('');
-    container.querySelectorAll('.history-chip').forEach(chip => {
-      chip.addEventListener('click', (e) => {
-        if(e.target.classList.contains('hx-remove')) return;
-        const term = chip.dataset.term;
-        searchInput.value = term;
-        currentQuery = term;
-        render();
-      });
-    });
-    container.querySelectorAll('.hx-remove').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        removeFromHistory(currentBase, btn.dataset.remove);
-      });
-    });
-  }
-
-  /* ===================== CARREGAR DADOS ===================== */
-  async function loadData(base){
-    if(dataCache[base]) return dataCache[base];
-    try{
-      const res=await fetch(DATA_URLS[base]);
-      if(!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data=await res.json();
-      const processed=data.map(item=>({...item, nome:item.nome_da_rota||item.nome||'', condutor:item.condutores||item.condutor||[], placa:item.placas||item.placa||[]}));
-      dataCache[base]=processed; return processed;
-    }catch(err){
-      resultsContainer.innerHTML = `<div class="no-result">❌ Erro ao carregar dados: ${err.message}. Verifique o arquivo ${DATA_URLS[base]}.</div>`;
-      return [];
-    }
-  }
-
-  /* ===================== GET FILTERED DATA ===================== */
-  function getFilteredData() {
-    let filtered = currentData;
-    const q = currentQuery;
-    if(q){ const nq=norm(q); filtered=filtered.filter(r=>norm(r.nome).includes(nq)||`${r.origem} ${r.destino}`.toLowerCase().includes(nq)||(r.condutor&&r.condutor.some(c=>norm(c).includes(nq)))||(r.placa&&r.placa.some(p=>norm(p).includes(nq)))); }
-    if(currentBase==='rondolog'&&currentType!=='all') filtered=filtered.filter(r=>r.tipo===currentType);
-    if(showOnlyFavorites) filtered=filtered.filter(r=>isFavorite(currentBase, r.nome));
-    return filtered;
-  }
-
-  /* ===================== MATRIZ ORIGEM x DESTINO ===================== */
-  function renderMatrix(data) {
-    const wrap = document.getElementById('matrixTableWrap');
-    if (!data || data.length === 0) {
-      wrap.innerHTML = '<div class="matrix-empty">📊 Nenhuma rota para exibir na matriz.</div>';
-      return;
-    }
-
-    const origens = [...new Set(data.map(r => r.origem))];
-    const destinos = [...new Set(data.map(r => r.destino))];
-
-    const getTotalViagens = (cidade, type) => {
-      return data.filter(r => r[type] === cidade).reduce((acc, r) => acc + (r.viagens || 0), 0);
-    };
-    origens.sort((a,b) => getTotalViagens(b, 'origem') - getTotalViagens(a, 'origem'));
-    destinos.sort((a,b) => getTotalViagens(b, 'destino') - getTotalViagens(a, 'destino'));
-
-    if (origens.length > 30 || destinos.length > 30) {
-      wrap.innerHTML = `<div class="matrix-empty">⚠️ Muitas combinações (${origens.length} origens x ${destinos.length} destinos).<br>Refine a busca para visualizar a matriz.</div>`;
-      return;
-    }
-
-    const matrix = {};
-    data.forEach(r => {
-      if (!matrix[r.origem]) matrix[r.origem] = {};
-      matrix[r.origem][r.destino] = {
-        viagens: r.viagens || 0,
-        distancia: r.distancia_km || 0
-      };
-    });
-
-    const maxViagens = Math.max(1, ...data.map(r => r.viagens || 0));
-
-    let html = `<table><thead><tr><th>Origem \\ Destino</th>`;
-    destinos.forEach(d => {
-      const label = d.split('/')[0];
-      html += `<th title="${d}">${label}</th>`;
-    });
-    html += `<th class="total-cell">Total</th></tr></thead><tbody>`;
-
-    origens.forEach(orig => {
-      html += `<tr><td title="${orig}">${orig.split('/')[0]}</td>`;
-      let totalLinha = 0;
-      destinos.forEach(dest => {
-        const cell = matrix[orig]?.[dest] || { viagens: 0, distancia: 0 };
-        const v = cell.viagens;
-        totalLinha += v;
-        if (v === 0) {
-          html += `<td class="cell-zero">—</td>`;
-        } else {
-          const intensity = Math.min(1, v / maxViagens);
-          const r = Math.round(220 - 160 * intensity);
-          const g = Math.round(220 - 180 * intensity);
-          const b = Math.round(220 - 160 * intensity);
-          const bg = `rgb(${r}, ${g}, ${b})`;
-          const textColor = intensity > 0.6 ? 'white' : 'var(--text)';
-          const distLabel = cell.distancia ? `${cell.distancia} km` : '—';
-          html += `<td class="cell-clickable" 
-                        style="background:${bg}; color:${textColor};"
-                        data-orig="${orig.replace(/"/g,'&quot;')}" data-dest="${dest.replace(/"/g,'&quot;')}"
-                        title="${v} viagens · ${distLabel}">
-                    <strong>${v}</strong><br>
-                    <span style="font-size:9px;opacity:0.8;">${distLabel}</span>
-                   </td>`;
-        }
-      });
-      html += `<td class="total-cell">${totalLinha}</td>`;
-      html += `</tr>`;
-    });
-
-    html += `<tr><td style="font-weight:700;background:var(--surface2);">Total</td>`;
-    let grandTotal = 0;
-    destinos.forEach(dest => {
-      let totalCol = 0;
-      origens.forEach(orig => {
-        totalCol += matrix[orig]?.[dest]?.viagens || 0;
-      });
-      grandTotal += totalCol;
-      html += `<td class="total-cell">${totalCol}</td>`;
-    });
-    html += `<td class="total-cell total-cell-grand">${grandTotal}</td>`;
-    html += `</tr></tbody></table>`;
-
-    wrap.innerHTML = html;
-
-    wrap.querySelectorAll('.cell-clickable').forEach(td => {
-      td.addEventListener('click', function() {
-        const orig = this.dataset.orig;
-        const dest = this.dataset.dest;
-        searchInput.value = `${orig} → ${dest}`;
-        currentQuery = `${orig} → ${dest}`;
-        switchView('list');
-        render();
-      });
-    });
-  }
-
-  /* ===================== SWITCH VIEW ===================== */
-  function switchView(view) {
-    currentView = view;
-    const listContainer = document.getElementById('results');
-    const matrixContainerEl = document.getElementById('matrixContainer');
-    const toggleIcon = document.getElementById('viewToggleIcon');
-    const toggleText = document.getElementById('viewToggleText');
-
-    if (view === 'matrix') {
-      listContainer.style.display = 'none';
-      matrixContainerEl.style.display = 'block';
-      toggleIcon.textContent = '📋';
-      toggleText.textContent = 'Lista';
-      const filtered = getFilteredData();
-      renderMatrix(filtered);
-    } else {
-      listContainer.style.display = 'grid';
-      matrixContainerEl.style.display = 'none';
-      toggleIcon.textContent = '📊';
-      toggleText.textContent = 'Matriz';
-      render();
-    }
-  }
-
-  /* ===================== RENDER PRINCIPAL ===================== */
-  function sortRotas(arr,order){
-    const s=[...arr];
-    if(order==='origem') s.sort((a,b)=>a.origem.localeCompare(b.origem));
-    else if(order==='destino') s.sort((a,b)=>a.destino.localeCompare(b.destino));
-    else if(order==='tipo'&&currentBase==='rondolog'){ const to={coleta:1,transferencia:2,rota:3}; s.sort((a,b)=>(to[a.tipo]||99)-(to[b.tipo]||99)); }
     return s;
   }
 
-  function render() {
-    if (currentView === 'matrix') {
-      const filtered = getFilteredData();
-      renderMatrix(filtered);
-      return;
-    }
-
-    let filtered = getFilteredData();
-    filtered = sortRotas(filtered, currentOrder);
-    countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
-    sectionLabel.innerHTML = showOnlyFavorites ? '⭐ Rotas favoritas' : (currentQuery ? `Resultados para "${currentQuery}"` : 'Todas as rotas');
-
-    if (!filtered.length) {
-      resultsContainer.innerHTML = `<div class="no-result">🔍 ${showOnlyFavorites ? 'Nenhuma rota favoritada ainda.' : 'Nenhuma rota encontrada.'}</div>`;
-      return;
-    }
-
-    resultsContainer.innerHTML = filtered.map(r => {
-      const tipo = r.tipo || 'rota';
-      const tipoColor = (currentBase === 'rondolog') ? getTipoColor(tipo) : 'var(--blue)';
-      const condutores = r.condutor || [], placas = r.placa || [], viagens = r.viagens;
-      const totalCond = condutores.length, totalPlacas = placas.length;
-      const condHTML = condutores.length ? `<div class="condutor-list">${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, currentQuery)}</span>`).join('')}${totalCond > 2 ? `<span class="condutor-more" title="${condutores.slice(2).join(', ')}">+${totalCond - 2}</span>` : ''}</div>` : '';
-      const placHTML = placas.length ? `<span class="meta-placa">${hl(placas[0], currentQuery)}</span>${totalPlacas > 1 ? `<span class="placa-more" title="${placas.slice(1).join(', ')}">+${totalPlacas - 1}</span>` : ''}` : '';
-      const vHTML = viagens ? `<div class="meta-item">📊 <span class="viagem-badge">${viagens} viagens</span></div>` : '';
-      const metaHTML = (condHTML || placHTML || vHTML) ? `<div class="metadata">${vHTML}${condHTML ? `<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${totalCond}</span></div>` : ''}${placHTML ? `<div class="meta-item">🚛 ${placHTML} <span class="meta-count-badge">${totalPlacas}</span></div>` : ''}</div>` : '';
-      const tipoBadge = (currentBase === 'rondolog') ? `<span class="route-badge" style="background:${tipoColor}15;border-color:${tipoColor};color:${tipoColor}">${getTipoLabel(tipo)}</span>` : '';
-      const fav = isFavorite(currentBase, r.nome);
-      const starHTML = `<span class="fav-star${fav ? ' active' : ''}" data-fav-nome="${r.nome.replace(/"/g, '&quot;')}" title="${fav ? 'Remover dos favoritos' : 'Favoritar rota'}">${fav ? '★' : '☆'}</span>`;
-      return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido">${starHTML}<span>${hl(r.origem, currentQuery)}</span><span class="pedido-sep">→</span><span>${hl(r.destino, currentQuery)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome, currentQuery)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
-    }).join('');
-
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('.fav-star')) return;
-        navigator.clipboard.writeText(card.dataset.nome).then(() => showToast('NOME DA ROTA COPIADO'));
-      });
-    });
-    document.querySelectorAll('.fav-star').forEach(star => {
-      star.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleFavorite(currentBase, star.dataset.favNome);
-      });
-    });
-    updateFavChip();
-  }
-
-  function showToast(msg) {
-    document.getElementById('toastMsg').textContent = msg;
-    const t = document.getElementById('toast');
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2200);
-  }
-
-  /* ============================================================
-     FUNÇÕES DE NAVEGAÇÃO PARA ROTAS (USADO NO MODAL PONTOS)
-     ============================================================ */
-  window.goToRoute = function(nomeRota) {
-    const targetBase = 'rondolog';
-    switchBase(targetBase).then(() => {
-      setTimeout(() => {
-        const searchEl = document.getElementById('search');
-        if (searchEl) {
-          searchEl.value = nomeRota;
-          const event = new Event('input', { bubbles: true });
-          searchEl.dispatchEvent(event);
-        }
-        document.getElementById('modalRotas').classList.remove('show');
-      }, 350);
-    });
-  };
-
-  window.__showRotas = function(pontoNome, rotas) {
-    document.getElementById('modalPontoNome').textContent = pontoNome;
-    const list = document.getElementById('modalRotasList');
-    list.innerHTML = '';
-    if (!rotas || rotas.length === 0) {
-      list.innerHTML = '<li style="padding:10px;color:var(--text-muted);text-align:center;border:none;cursor:default;">Nenhuma rota associada.</li>';
-    } else {
-      rotas.forEach(r => {
-        const li = document.createElement('li');
-        li.innerHTML = `<span style="color:var(--text);">${r}</span> <span style="margin-left:auto;font-size:12px;color:var(--text-muted);">🔗</span>`;
-        li.addEventListener('click', () => {
-          goToRoute(r);
-        });
-        list.appendChild(li);
-      });
-    }
-    document.getElementById('modalRotas').classList.add('show');
-  };
-
-  /* ===================== SWITCH BASE ===================== */
-  async function switchBase(base) {
-    if (base === 'bases') {
-      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-      document.getElementById('basesPanel').classList.add('active');
-      loadingOverlay.style.display = 'none';
-      setTimeout(() => { initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
-      return;
-    }
-    if (base === 'points') {
-      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-      document.getElementById('pointsPanel').classList.add('active');
-      loadingOverlay.style.display = 'none';
-      if (window.pointsData === undefined) {
-        await loadPoints();
-      } else {
-        renderPoints();
-      }
-      return;
-    }
-    if (base === 'onco') {
-      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-      document.getElementById('oncoPanel').classList.add('active');
-      loadingOverlay.style.display = 'none';
-      if (!window.oncoData) {
-        await loadOnco();
-      } else {
-        renderOncoGlobalStats();
-        renderOncoCatCards();
-        renderOncoUpcoming();
-        renderOncoCategory('Veículo', 'oncoVeiculos');
-        renderOncoCategory('Condutor', 'oncoCondutores');
-        renderOncoCategory('Funcionário', 'oncoFuncionarios');
-      }
-      return;
-    }
-    // ===== FROTA =====
-    if (base === 'frota') {
-      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-      document.getElementById('frotaPanel').classList.add('active');
-      loadingOverlay.style.display = 'none';
-      await FrotaChecklist.open();
-      return;
-    }
-    // Rotas (rondolog / saster)
-    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('routesPanel').classList.add('active');
-    loadingOverlay.style.display = 'flex';
-    currentBase = base;
-    baseTitle.textContent = base === 'rondolog' ? 'RONDOLOG' : 'SASTER';
-    currentData = await loadData(base);
-    baseSubtitle.innerHTML = base === 'rondolog' ? `Rondolog · ${currentData.length} rotas` : `Saster · ${currentData.length} rotas`;
-    filterChipsDiv.style.display = base === 'rondolog' ? 'flex' : 'none';
-    currentQuery = '';
-    currentType = 'all';
-    currentOrder = 'padrao';
-    showOnlyFavorites = false;
-    searchInput.value = '';
-    orderSelect.value = 'padrao';
-    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-    document.querySelector('.chip[data-type="all"]')?.classList.add('active');
-    if (currentView === 'matrix') {
-      switchView('list');
-    }
-    loadingOverlay.style.display = 'none';
-    renderHistoryChips();
-    updateFavChip();
-    render();
-  }
-
-  /* ===================== THEME TOGGLE ===================== */
-  const themeToggle = document.getElementById('themeToggle');
-  const themeLabel = document.getElementById('themeLabel');
-
-  if (localStorage.getItem('rondologTheme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeToggle.checked = true;
-    themeLabel.textContent = '🌙 Escuro';
-  }
-
-  themeToggle.addEventListener('change', function() {
-    const isDark = this.checked;
-    document.body.classList.toggle('dark-mode', isDark);
-    localStorage.setItem('rondologTheme', isDark ? 'dark' : 'light');
-    themeLabel.textContent = isDark ? '🌙 Escuro' : '☀️ Claro';
-    updateMapTiles();
-  });
-
-  /* ===================== EVENT LISTENERS ===================== */
-  document.querySelectorAll('.base-tab').forEach(tab => {
-    tab.addEventListener('click', async () => {
-      document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      await switchBase(tab.dataset.base);
-    });
-  });
-
-  searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
-  searchInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
-  });
-  searchInput.addEventListener('blur', () => {
-    if (searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
-  });
-  orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
-
-  document.querySelectorAll('.chip[data-type]').forEach(chip => {
-    chip.addEventListener('click', () => {
-      document.querySelectorAll('.chip[data-type]').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      currentType = chip.dataset.type;
-      render();
-    });
-  });
-
-  document.getElementById('favChip').addEventListener('click', () => {
-    showOnlyFavorites = !showOnlyFavorites;
-    updateFavChip();
-    render();
-  });
-
-  document.getElementById('viewToggle').addEventListener('click', function() {
-    if (currentView === 'list') {
-      switchView('matrix');
-    } else {
-      switchView('list');
-    }
-  });
-
-  const compactToggle = document.getElementById('compactModeToggle');
-  if (localStorage.getItem('rondologCompact') === 'true') { document.body.classList.add('compact'); compactToggle.checked = true; }
-  compactToggle.addEventListener('change', e => { document.body.classList.toggle('compact', e.target.checked); localStorage.setItem('rondologCompact', e.target.checked); });
-
-  document.getElementById('basesSearch').addEventListener('input', renderBases);
-  document.getElementById('basesUFFilter').addEventListener('change', renderBases);
-  document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
-
-  /* ============================================================
-     ABA PONTOS – LÓGICA DE CARREGAMENTO DO JSON
-     ============================================================ */
-  let pointsData = [];
-
-  async function loadPoints() {
-    try {
-      const res = await fetch('data/pontos.json');
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      pointsData = await res.json();
-      const ufs = [...new Set(pointsData.map(p => p.uf).filter(Boolean))].sort();
-      const ufSelect = document.getElementById('pointsUFFilter');
-      ufSelect.innerHTML = '<option value="">Todos os estados</option>' +
-        ufs.map(uf => `<option value="${uf}">${uf}</option>`).join('');
-      renderPoints();
-    } catch (err) {
-      console.error('Erro ao carregar pontos.json:', err);
-      document.getElementById('pointsGrid').innerHTML = `
-        <div class="no-result">❌ Erro ao carregar pontos. Verifique se o arquivo data/pontos.json existe.</div>
-      `;
-    }
-  }
-
-  function renderPoints() {
-    if (!pointsData || pointsData.length === 0) {
-      document.getElementById('pointsGrid').innerHTML = '<div class="no-result">📭 Nenhum ponto cadastrado.</div>';
-      document.getElementById('pointsCountBadge').textContent = '0 pontos';
-      document.getElementById('pointsTotal').textContent = '0';
-      document.getElementById('pointsRotas').textContent = '0';
-      document.getElementById('pointsUFs').textContent = '0';
-      document.getElementById('pointsTop').textContent = '—';
-      return;
-    }
-
-    const searchTerm = document.getElementById('pointsSearch').value.toLowerCase().trim();
-    const ufFilter = document.getElementById('pointsUFFilter').value;
-    const order = document.getElementById('pointsOrderSelect').value;
-
-    let filtered = pointsData.filter(p => {
-      const matchSearch = !searchTerm ||
-        (p.nome || '').toLowerCase().includes(searchTerm) ||
-        (p.endereco || '').toLowerCase().includes(searchTerm) ||
-        (p.cidade || '').toLowerCase().includes(searchTerm) ||
-        (p.cep || '').includes(searchTerm);
-      const matchUf = !ufFilter || p.uf === ufFilter;
-      return matchSearch && matchUf;
-    });
-
-    if (order === 'nome') {
-      filtered.sort((a, b) => (a.nome || '').localeCompare(b.nome || ''));
-    } else if (order === 'uf') {
-      filtered.sort((a, b) => (a.uf || '').localeCompare(b.uf || '') || (a.nome || '').localeCompare(b.nome || ''));
-    } else {
-      filtered.sort((a, b) => (b.count || 0) - (a.count || 0));
-    }
-
-    document.getElementById('pointsCountBadge').textContent = filtered.length + ' ponto' + (filtered.length!==1?'s':'');
-    document.getElementById('pointsTotal').textContent = pointsData.length;
-    const totalRotas = pointsData.reduce((acc, p) => acc + (p.count || 0), 0);
-    document.getElementById('pointsRotas').textContent = totalRotas;
-    const ufs = new Set(pointsData.map(p => p.uf).filter(Boolean));
-    document.getElementById('pointsUFs').textContent = ufs.size;
-    const top = pointsData.length > 0 ? pointsData[0].nome : '—';
-    document.getElementById('pointsTop').textContent = top.length > 20 ? top.slice(0,20)+'…' : top;
-
-    const grid = document.getElementById('pointsGrid');
-
-    if (!filtered.length) {
-      grid.innerHTML = '<div class="no-result">🔍 Nenhum ponto encontrado com esses filtros.</div>';
-      return;
-    }
-
-    grid.innerHTML = filtered.map(p => {
-      const freq = p.count || 0;
-      const maxFreq = pointsData.length > 0 ? pointsData[0].count || 0 : 1;
-      const intensity = maxFreq > 0 ? Math.min(1, freq / maxFreq) : 0;
-      const r = Math.round(220 - 100 * intensity);
-      const g = Math.round(220 - 180 * intensity);
-      const b = Math.round(220 - 100 * intensity);
-      const barColor = `rgb(${r}, ${g}, ${b})`;
-
-      const enderecoCompleto = `${p.endereco || ''}, ${p.cidade || ''}/${p.uf || ''}${p.cep ? ' — CEP ' + p.cep : ''}`;
-      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoCompleto)}`;
-      const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(p.nome + ' ' + p.cidade + ' ' + p.uf)}&navigate=yes`;
-
-      const rotasList = p.rotas || [];
-      const rotasCount = rotasList.length;
-
-      return `
-<div class="point-card">
-  <div class="pci">
-    <div class="pci-accent" style="background:${barColor};"></div>
-    <div class="pci-body">
-      <div class="pci-top">
-        <span class="pci-nome">${p.nome || '—'}</span>
-        <span class="pci-freq">${freq} rota${freq>1?'s':''}</span>
-      </div>
-      <div class="pci-endereco">
-        📍 ${p.endereco || ''}<br>
-        ${p.cidade || ''} / ${p.uf || ''} ${p.cep ? '— CEP ' + p.cep : ''}
-      </div>
-      <div class="pci-foot">
-        <span class="pci-uf">${p.uf || '??'}</span>
-        ${p.cep ? `<span class="pci-cep">${p.cep}</span>` : ''}
-        <div class="pci-btns">
-          <a class="pci-btn pci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener">🗺 Maps</a>
-          <a class="pci-btn pci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener">🔵 Waze</a>
-          <button class="pci-btn" onclick="__copyPoint('${p.endereco ? p.endereco.replace(/"/g, '&quot;') : ''}', '${p.cidade ? p.cidade.replace(/"/g, '&quot;') : ''}', '${p.uf || ''}', '${p.cep || ''}')">📋 Copiar</button>
-          ${rotasCount > 0 ? `<button class="pci-btn" style="border-color:var(--red);color:var(--red);" onclick="event.stopPropagation();__showRotas('${p.nome.replace(/'/g, "\\'").replace(/"/g, '&quot;')}', ${JSON.stringify(rotasList).replace(/"/g, '&quot;')})">📋 Rotas</button>` : ''}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`;
-    }).join('');
-
-    window.__copyPoint = function(endereco, cidade, uf, cep) {
-      let txt = endereco;
-      if (cidade) txt += ', ' + cidade;
-      if (uf) txt += '/' + uf;
-      if (cep) txt += ', CEP ' + cep;
-      navigator.clipboard.writeText(txt).then(() => showToast('ENDEREÇO COPIADO'));
-    };
-  }
-
-  document.getElementById('pointsSearch').addEventListener('input', renderPoints);
-  document.getElementById('pointsUFFilter').addEventListener('change', renderPoints);
-  document.getElementById('pointsOrderSelect').addEventListener('change', renderPoints);
-
-  /* ============================================================
-     ONCO (PERFIL) – LÓGICA DE CARREGAMENTO DA PLANILHA
-     ============================================================ */
-  const ONCO_XLSX_PATH = 'data/RONDOLOG_ONCOPROD_Controle_visual.xlsx';
-  const ONCO_SHEETS = [
-    { name: 'VEICULOS',    tipo: 'Veículo' },
-    { name: 'CONDUTORES',  tipo: 'Condutor' },
-    { name: 'FUNCIONARIOS', tipo: 'Funcionário' }
-  ];
-
-  function diasAteVencer(dataStr){
+  function diasAteVencer(dataStr) {
     const date = parseDateBR(dataStr);
-    if(!date) return null;
-    const hoje = new Date(); hoje.setHours(0,0,0,0);
+    if (!date) return null;
+    const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
     return Math.round((date - hoje) / 86400000);
   }
 
-  function oncoStatusInfo(status){
-    const s = (status||'').toUpperCase().trim();
-    if(s==='TEM PERFIL')          return {cls:'status-tem-perfil', label:'Tem perfil'};
-    if(s==='NÃO TEM PERFIL')      return {cls:'status-nao-tem-perfil', label:'Não tem perfil'};
-    if(s==='AGUARDANDO RETORNO')  return {cls:'status-aguardando', label:'Aguardando retorno'};
-    if(s==='DADOS DIVERGENTES')   return {cls:'status-divergente', label:'Dados divergentes'};
-    if(s==='DOCUMENTO VENCIDO')   return {cls:'status-doc-vencido', label:'Documento vencido'};
-    return {cls:'', label: status || '—'};
-  }
-
-  function oncoVencCell(dataStr){
-    if(!dataStr || dataStr==='—') return '—';
-    const dias = diasAteVencer(dataStr);
-    if(dias===null) return dataStr;
-    let cls, label;
-    if(dias<0)       { cls='venc-badge-vencido'; label=`${Math.abs(dias)}d vencido`; }
-    else if(dias<=30){ cls='venc-badge-30';      label=`${dias}d`; }
-    else if(dias<=60){ cls='venc-badge-60';      label=`${dias}d`; }
-    else             { cls='venc-badge-ok';      label=`${dias}d`; }
-    return `${dataStr} <span class="venc-badge ${cls}">${label}</span>`;
-  }
-
-  function oncoPad2(n){ return n<10 ? '0'+n : ''+n; }
-
-  function oncoNormalizeDate(v){
-    if(v===null || v===undefined || v==='') return '';
-    if(v instanceof Date && !isNaN(v)){
-      return `${oncoPad2(v.getDate())}/${oncoPad2(v.getMonth()+1)}/${v.getFullYear()}`;
-    }
-    const s = v.toString().trim();
-    if(/^\d{2}\/\d{2}\/\d{4}$/.test(s)) return s;
-    const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
-    if(iso) return `${iso[3]}/${iso[2]}/${iso[1]}`;
-    return s;
-  }
-
-  function parseOncoSheet(ws, tipo){
-    if(!ws) return [];
-    const rows = XLSX.utils.sheet_to_json(ws, {header:1, raw:true, defval:null});
-    const headerIdx = rows.findIndex(r => Array.isArray(r) && r.some(c => (c||'').toString().trim().toUpperCase()==='STATUS'));
-    if(headerIdx===-1) return [];
-    const header = rows[headerIdx].map(c => (c||'').toString().trim().toUpperCase());
-    const idx = {
-      numero: header.indexOf('Nº'),
-      placa: header.indexOf('PLACA'),
-      nome: header.indexOf('NOME COMPLETO'),
-      status: header.indexOf('STATUS'),
-      venc: header.indexOf('VENCIMENTO'),
-      obs: header.indexOf('OBSERVAÇÕES')
-    };
-    if(idx.status===-1) return [];
-    const out = [];
-    for(let i=headerIdx+1; i<rows.length; i++){
-      const r = rows[i];
-      if(!r) continue;
-      const statusVal = (idx.status>=0 ? (r[idx.status]||'') : '').toString().trim();
-      const nomeVal = idx.nome>=0 ? (r[idx.nome]||'').toString().trim() : '';
-      const placaVal = idx.placa>=0 ? (r[idx.placa]||'').toString().trim() : '';
-      const numeroVal = idx.numero>=0 ? (r[idx.numero]||'').toString().trim() : '';
-      if((!placaVal && !nomeVal) || !statusVal) continue;
-      out.push({
-        tipo,
-        identificador: placaVal || (numeroVal ? ('Nº '+numeroVal) : '—'),
-        nome: nomeVal,
-        status: statusVal,
-        vencimento: idx.venc>=0 ? oncoNormalizeDate(r[idx.venc]) : '',
-        observacoes: idx.obs>=0 ? (r[idx.obs]||'').toString().trim() : ''
-      });
-    }
-    return out;
-  }
-
-  async function loadOnco(){
-    const loadingEl = document.getElementById('oncoLoading');
-    const contentEl = document.getElementById('oncoContent');
-    loadingEl.textContent = '📂 Carregando dados da planilha...';
-    loadingEl.style.display = 'block';
-    contentEl.style.display = 'none';
-    try{
-      const resp = await fetch(ONCO_XLSX_PATH);
-      if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
-      const buf = await resp.arrayBuffer();
-      const wb = XLSX.read(buf, {type:'array', cellDates:true});
-      let data = [];
-      ONCO_SHEETS.forEach(s => {
-        data = data.concat(parseOncoSheet(wb.Sheets[s.name], s.tipo));
-      });
-      window.oncoData = data;
-    }catch(err){
-      console.error('Erro ao carregar a planilha ONCO:', err);
-      window.oncoData = [];
-      loadingEl.textContent = `❌ Erro ao carregar ${ONCO_XLSX_PATH}. Confira se o arquivo está na pasta "data/" do repositório.`;
-      loadingEl.style.display = 'block';
-      contentEl.style.display = 'none';
-      return;
-    }
-    if(window.oncoData.length===0){
-      loadingEl.textContent = '📭 Nenhum registro encontrado na planilha.';
-      loadingEl.style.display = 'block';
-      contentEl.style.display = 'none';
-      return;
-    }
-    loadingEl.style.display = 'none';
-    contentEl.style.display = 'block';
-    document.getElementById('oncoCount').textContent = window.oncoData.length + ' registros';
-    renderOncoGlobalStats();
-    renderOncoCatCards();
-    renderOncoUpcoming();
-    renderOncoCategory('Veículo', 'oncoVeiculos');
-    renderOncoCategory('Condutor', 'oncoCondutores');
-    renderOncoCategory('Funcionário', 'oncoFuncionarios');
-  }
-
-  function renderOncoGlobalStats(){
-    const el = document.getElementById('oncoGlobalStats');
-    const data = window.oncoData || [];
-    if(data.length===0){ el.innerHTML=''; return; }
-    const temPerfil = data.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
-    const naoTemPerfil = data.filter(i=>i.status.toUpperCase()==='NÃO TEM PERFIL').length;
-    const aguardando = data.filter(i=>i.status.toUpperCase()==='AGUARDANDO RETORNO').length;
-    const divergentes = data.filter(i=>['DADOS DIVERGENTES','DOCUMENTO VENCIDO'].includes(i.status.toUpperCase())).length;
-    const vencidosProximos = data.filter(i=>{
-      const d = diasAteVencer(i.vencimento);
-      return d!==null && d<=30;
-    }).length;
-    el.innerHTML = `
-      <div class="global-stat-card gs-ok"><div class="gs-num">${temPerfil}</div><div class="gs-label">Tem perfil</div></div>
-      <div class="global-stat-card gs-critical"><div class="gs-num">${naoTemPerfil}</div><div class="gs-label">Não tem perfil</div></div>
-      <div class="global-stat-card gs-warn"><div class="gs-num">${aguardando}</div><div class="gs-label">Aguardando retorno</div></div>
-      <div class="global-stat-card gs-nao-ok"><div class="gs-num">${divergentes}</div><div class="gs-label">Divergentes/vencidos</div></div>
-      <div class="global-stat-card gs-warn"><div class="gs-num">${vencidosProximos}</div><div class="gs-label">Vencendo em 30 dias</div></div>
-      <div class="global-stat-card"><div class="gs-num">${data.length}</div><div class="gs-label">Total geral</div></div>
-    `;
-  }
-
-  const ONCO_CAT_META = {
-    'Veículo':     {icon:'🚗', label:'Veículos',     view:'veiculos'},
-    'Condutor':    {icon:'🧑‍✈️', label:'Condutores',   view:'condutores'},
-    'Funcionário': {icon:'👥', label:'Funcionários', view:'funcionarios'}
-  };
-
-  function renderOncoCatCards(){
-    const el = document.getElementById('oncoCatCards');
-    const data = window.oncoData || [];
-    let html = '';
-    for(const tipo of ['Veículo','Condutor','Funcionário']){
-      const items = data.filter(i=>i.tipo===tipo);
-      if(items.length===0) continue;
-      const temPerfil = items.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
-      const pct = items.length ? Math.round((temPerfil/items.length)*100) : 0;
-      const meta = ONCO_CAT_META[tipo];
-      html += `<div class="onco-cat-card" data-onco-view="${meta.view}">
-        <div class="oc-title">${meta.icon} ${meta.label}</div>
-        <div class="oc-row"><span>Total</span><b>${items.length}</b></div>
-        <div class="oc-row"><span>Com perfil</span><b>${temPerfil}</b></div>
-        <div class="oc-row"><span>Pendências</span><b>${items.length-temPerfil}</b></div>
-        <div class="oc-bar"><div class="oc-bar-fill" style="width:${pct}%;"></div></div>
-      </div>`;
-    }
-    el.innerHTML = html;
-    el.querySelectorAll('.onco-cat-card').forEach(card => {
-      card.addEventListener('click', () => switchOncoView(card.dataset.oncoView));
-    });
-  }
-
-  function renderOncoUpcoming(){
-    const wrap = document.getElementById('oncoUpcomingWrap');
-    const body = document.getElementById('oncoUpcomingBody');
-    const data = (window.oncoData || []).filter(i => i.status.toUpperCase()==='TEM PERFIL' && diasAteVencer(i.vencimento)!==null);
-    data.sort((a,b) => diasAteVencer(a.vencimento) - diasAteVencer(b.vencimento));
-    const upcoming = data.slice(0, 15);
-    if(upcoming.length===0){ wrap.style.display='none'; return; }
-    wrap.style.display='block';
-    body.innerHTML = upcoming.map(i => `<tr>
-        <td><span class="onco-tipo-tag">${i.tipo}</span></td>
-        <td><span class="veiculo-tag">${i.identificador}</span></td>
-        <td>${i.nome||'—'}</td>
-        <td>${oncoVencCell(i.vencimento)}</td>
-      </tr>`).join('');
-  }
-
-  function renderOncoCategory(tipo, idPrefix){
-    const searchEl = document.getElementById(idPrefix+'Search');
-    const statusEl = document.getElementById(idPrefix+'StatusFilter');
-    const statsEl = document.getElementById(idPrefix+'Stats');
-    const countEl = document.getElementById(idPrefix+'Count');
-    const bodyEl = document.getElementById(idPrefix+'Body');
-    const showNome = tipo !== 'Veículo';
-
-    const all = (window.oncoData || []).filter(i=>i.tipo===tipo);
-    const temPerfil = all.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
-    const naoTemPerfil = all.filter(i=>i.status.toUpperCase()==='NÃO TEM PERFIL').length;
-    const aguardando = all.filter(i=>i.status.toUpperCase()==='AGUARDANDO RETORNO').length;
-    const divergentes = all.filter(i=>['DADOS DIVERGENTES','DOCUMENTO VENCIDO'].includes(i.status.toUpperCase())).length;
-    statsEl.innerHTML = `
-      <div class="global-stat-card gs-ok"><div class="gs-num">${temPerfil}</div><div class="gs-label">Tem perfil</div></div>
-      <div class="global-stat-card gs-critical"><div class="gs-num">${naoTemPerfil}</div><div class="gs-label">Não tem perfil</div></div>
-      <div class="global-stat-card gs-warn"><div class="gs-num">${aguardando}</div><div class="gs-label">Aguardando retorno</div></div>
-      <div class="global-stat-card gs-nao-ok"><div class="gs-num">${divergentes}</div><div class="gs-label">Divergentes/vencidos</div></div>
-      <div class="global-stat-card"><div class="gs-num">${all.length}</div><div class="gs-label">Total</div></div>
-    `;
-
-    const searchTerm = (searchEl.value||'').toLowerCase();
-    const statusFilter = statusEl.value;
-    let filtered = all.filter(item => {
-      const matchSearch = !searchTerm ||
-        item.identificador.toLowerCase().includes(searchTerm) ||
-        item.nome.toLowerCase().includes(searchTerm) ||
-        item.observacoes.toLowerCase().includes(searchTerm);
-      const matchStatus = !statusFilter || item.status.toUpperCase()===statusFilter;
-      return matchSearch && matchStatus;
-    });
-    filtered.sort((a,b) => {
-      const da = diasAteVencer(a.vencimento), db = diasAteVencer(b.vencimento);
-      if(da===null && db===null) return 0;
-      if(da===null) return 1;
-      if(db===null) return -1;
-      return da-db;
-    });
-
-    countEl.textContent = filtered.length + ' de ' + all.length;
-    if(filtered.length===0){
-      bodyEl.innerHTML = `<tr><td colspan="${showNome?5:4}" style="text-align:center;color:var(--text-muted);padding:24px;">🔍 Nenhum registro encontrado com esses filtros.</td></tr>`;
-      return;
-    }
-    bodyEl.innerHTML = filtered.map(item => {
-      const info = oncoStatusInfo(item.status);
-      return `<tr>
-        <td><span class="veiculo-tag">${item.identificador}</span></td>
-        ${showNome ? `<td>${item.nome||'—'}</td>` : ''}
-        <td><span class="status-badge ${info.cls}">${info.label}</span></td>
-        <td>${oncoVencCell(item.vencimento)}</td>
-        <td>${item.observacoes||'—'}</td>
-      </tr>`;
-    }).join('');
-  }
-
-  let oncoActiveView = 'geral';
-  function switchOncoView(view){
-    oncoActiveView = view;
-    document.querySelectorAll('.onco-subtab').forEach(t => t.classList.toggle('active', t.dataset.oncoView===view));
-    document.querySelectorAll('.onco-view').forEach(v => v.classList.remove('active'));
-    const map = {geral:'oncoViewGeral', veiculos:'oncoViewVeiculos', condutores:'oncoViewCondutores', funcionarios:'oncoViewFuncionarios'};
-    document.getElementById(map[view]).classList.add('active');
-  }
-
-  document.getElementById('oncoRefresh').addEventListener('click', function(){
-    window.oncoData = null;
-    loadOnco();
-  });
-
-  document.querySelectorAll('.onco-subtab').forEach(tab => {
-    tab.addEventListener('click', () => switchOncoView(tab.dataset.oncoView));
-  });
-
-  document.getElementById('oncoVeiculosSearch').addEventListener('input', () => renderOncoCategory('Veículo','oncoVeiculos'));
-  document.getElementById('oncoVeiculosStatusFilter').addEventListener('change', () => renderOncoCategory('Veículo','oncoVeiculos'));
-  document.getElementById('oncoCondutoresSearch').addEventListener('input', () => renderOncoCategory('Condutor','oncoCondutores'));
-  document.getElementById('oncoCondutoresStatusFilter').addEventListener('change', () => renderOncoCategory('Condutor','oncoCondutores'));
-  document.getElementById('oncoFuncionariosSearch').addEventListener('input', () => renderOncoCategory('Funcionário','oncoFuncionarios'));
-  document.getElementById('oncoFuncionariosStatusFilter').addEventListener('change', () => renderOncoCategory('Funcionário','oncoFuncionarios'));
-
-  /* ============================================================
-     FROTA CHECKLIST – Módulo com Merge Inteligente
-     ============================================================ */
-  (function () {
+  // ============================================================
+  // SCRIPT PRINCIPAL
+  // ============================================================
+  (function(){
     'use strict';
 
-    const LS_KEY = 'frotaChecklistData_v1';
-    const LS_MIGRATED_KEY = 'frotaChecklistMigrated_v1';
-    const LEGACY_JSON_URL = 'data/checklists.json';
+    // ============================================================
+    // BASES
+    // ============================================================
+    const BASES = [
+      {id:1,  nome:"Duque de Caxias",        sigla:"RJ",  cidade:"Duque de Caxias",      uf:"RJ", tipo:"hub",      endereco:"Rodovia Washington Luiz, 2070 – Parque Duque",               cep:"25085-009", lat:-22.7854, lng:-43.3115},
+      {id:2,  nome:"Santana de Parnaíba",    sigla:"SP",  cidade:"Santana de Parnaíba",  uf:"SP", tipo:"hub",      endereco:"Estrada Tenente Marques, 6765 – Vila Poupança",              cep:"06525-001", lat:-23.4527, lng:-46.9177},
+      {id:4,  nome:"Betim",                  sigla:"BTM", cidade:"Betim",                uf:"MG", tipo:"filial",   endereco:"Rua Bispo Pedro Valdemar Dias, 777 – Amazonas",              cep:"32685-044", lat:-19.9678, lng:-44.1983},
+      {id:5,  nome:"Três Corações",          sigla:"3C",  cidade:"Três Corações",        uf:"MG", tipo:"filial",   endereco:"Avenida Édson Penha, 627 – Santana",                         cep:"37410-650", lat:-21.6914, lng:-45.2562},
+      {id:7,  nome:"Cravinhos",              sigla:"CRV", cidade:"Cravinhos",            uf:"SP", tipo:"filial",   endereco:"Rua Manoel Gomes dos Santos, 2921 – Jd. Independência",      cep:"14140-000", lat:-21.3407, lng:-47.7297},
+      {id:9,  nome:"Mirassol",               sigla:"MRS", cidade:"Mirassol",             uf:"SP", tipo:"filial",   endereco:"Rua Bruno Rodrigues Gomes, 562 – Parque Mirassol",           cep:"15134-144", lat:-20.8196, lng:-49.5101},
+      {id:12, nome:"Goiânia",                sigla:"GYN", cidade:"Goiânia",              uf:"GO", tipo:"filial",   endereco:"Rua Anaca, 213 – Parque Amazônia",                           cep:"74840-690", lat:-16.6869, lng:-49.2648},
+      {id:14, nome:"Brasília",               sigla:"BSB", cidade:"Brasília",             uf:"DF", tipo:"filial",   endereco:"SIA Trecho 3, 32 – Zona Industrial Guará",                  cep:"71200-030", lat:-15.7942, lng:-47.8825},
+      {id:18, nome:"Agudos",                 sigla:"AGD", cidade:"Agudos",               uf:"SP", tipo:"filial",   endereco:"Avenida Rui Barbosa, 361 – Centro",                          cep:"17120-000", lat:-22.4756, lng:-48.9844},
+      {id:19, nome:"Uberlândia",             sigla:"UDI", cidade:"Uberlândia",           uf:"MG", tipo:"filial",   endereco:"Rua Ângelo Cunha, 365 – São Jorge",                          cep:"38410-206", lat:-18.9188, lng:-48.2766},
+      {id:20, nome:"Guarulhos – Rondocargas",sigla:"GRU", cidade:"Guarulhos",            uf:"SP", tipo:"terminal", endereco:"Av. Papa João Paulo I, 2258 – Jd. Presidente Dutra",         cep:"07174-000", lat:-23.4356, lng:-46.5338},
+      {id:21, nome:"Santa Bárbara d'Oeste",  sigla:"SBO", cidade:"Santa Bárbara d'Oeste",uf:"SP", tipo:"filial",   endereco:"Av. Paulo Augusto Bortolucci, 346 – Distrito Industrial",    cep:"13459-617", lat:-22.7548, lng:-47.4136},
+      {id:22, nome:"Taubaté",                sigla:"TAU", cidade:"Taubaté",              uf:"SP", tipo:"filial",   endereco:"Rua João Vanoni, 185 – Residencial Estoril",                 cep:"12092-703", lat:-23.0260, lng:-45.5557},
+      {id:23, nome:"Macaé",                  sigla:"MCE", cidade:"Macaé",                uf:"RJ", tipo:"filial",   endereco:"Rua de Santana, 169 – Centro",                               cep:"27910-090", lat:-22.3710, lng:-41.7869}
+    ];
 
-    const TIPO_FROTA = ['Próprio', 'Agregado', 'Terceiro'];
-    const CATEGORIAS = ['CAVALO', 'CARRETA', 'FIORINO', 'LEVE', 'VAN'];
-    const REGION_ORDER = ['Frota Pesada', 'Embarque', 'Rio de Janeiro', 'São Paulo', 'Betim', 'Brasília', 'Outras'];
-    const REGION_COLORS = {
-      'Frota Pesada': '#dc2626', 'Embarque': '#f97316', 'Rio de Janeiro': '#3b82f6',
-      'São Paulo': '#22c55e', 'Betim': '#8b5cf6', 'Brasília': '#eab308', 'Outras': '#6b7280'
-    };
-    const TIPO_COLORS = { 'Próprio': '#3b82f6', 'Agregado': '#8b5cf6', 'Terceiro': '#f97316' };
-    const CAT_COLORS = {
-      CAVALO: '#dc2626', CARRETA: '#0ea5e9', FIORINO: '#22c55e', LEVE: '#eab308', VAN: '#8b5cf6'
-    };
+    function dotColor(tipo){ return tipo==='hub'?'#dc2626': tipo==='terminal'?'#8b5cf6':'#3b82f6'; }
+    function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
 
-    let data = [];
-    let editingId = null;
-    let filters = { search: '', status: '', tipoFrota: '', categoria: '', region: '' };
-    let regionOpenState = {};
-
-    /* ---------------- Utils ---------------- */
-    function uid() { return 'v' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
-
-    function parseDateBR(str) {
-      if (!str) return null;
-      const parts = String(str).trim().split('/');
-      if (parts.length !== 3) return null;
-      const [d, m, y] = parts.map(Number);
-      if (!d || !m || !y) return null;
-      const dt = new Date(y, m - 1, d);
-      return isNaN(dt) ? null : dt;
+    function renderBasesStats(){
+      const total = BASES.length;
+      const hubs = BASES.filter(b=>b.tipo==='hub').length;
+      const filiais = BASES.filter(b=>b.tipo==='filial').length;
+      const terminais = BASES.filter(b=>b.tipo==='terminal').length;
+      const estados = new Set(BASES.map(b=>b.uf)).size;
+      document.getElementById('statTotal').textContent = total;
+      document.getElementById('statHub').textContent = hubs;
+      document.getElementById('statFilial').textContent = filiais;
+      document.getElementById('statTerminal').textContent = terminais;
+      document.getElementById('statUF').textContent = estados;
+      document.getElementById('basesTotalEyebrow').textContent = total;
     }
 
-    function fmtDateBR(dt) {
-      const p2 = n => (n < 10 ? '0' + n : '' + n);
-      return `${p2(dt.getDate())}/${p2(dt.getMonth() + 1)}/${dt.getFullYear()}`;
+    let userPos = null;
+    let locateWatching = false;
+
+    function toRad(v){ return v * Math.PI / 180; }
+    function haversineKm(lat1, lng1, lat2, lng2){
+      const R = 6371;
+      const dLat = toRad(lat2 - lat1);
+      const dLng = toRad(lng2 - lng1);
+      const a = Math.sin(dLat/2)**2 +
+                Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+                Math.sin(dLng/2)**2;
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      return R * c;
     }
 
-    function normalizeAnyDate(v) {
-      if (!v) return '';
-      if (v instanceof Date && !isNaN(v)) return fmtDateBR(v);
-      const s = String(v).trim();
-      if (/^\d{2}\/\d{2}\/\d{4}$/.test(s)) return s;
-      const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
-      if (iso) return `${iso[3]}/${iso[2]}/${iso[1]}`;
-      if (/^\d+$/.test(s)) {
-        const excelEpoch = new Date(Date.UTC(1899, 11, 30));
-        const dt = new Date(excelEpoch.getTime() + Number(s) * 86400000);
-        if (!isNaN(dt)) return fmtDateBR(dt);
+    function formatDist(km){
+      if(km < 1) return Math.round(km*1000) + ' m';
+      return km.toFixed(km < 10 ? 1 : 0) + ' km';
+    }
+
+    const locateBtn = document.getElementById('locateBtn');
+    const locateBtnIcon = document.getElementById('locateBtnIcon');
+    const locateBtnText = document.getElementById('locateBtnText');
+    const locateBanner = document.getElementById('locateBanner');
+    const locateBannerText = document.getElementById('locateBannerText');
+    const locateClearBtn = document.getElementById('locateClearBtn');
+
+    function handleLocateClick(){
+      if(!navigator.geolocation){
+        showToast('GEOLOCALIZAÇÃO NÃO SUPORTADA');
+        return;
       }
+      locateBtn.disabled = true;
+      locateBtnIcon.innerHTML = '<span class="locate-spinner"></span>';
+      locateBtnText.textContent = 'Localizando...';
+
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+          locateWatching = true;
+          locateBtn.disabled = false;
+          locateBtn.classList.add('active');
+          locateBtnIcon.textContent = '✅';
+          locateBtnText.textContent = 'Localização ativa';
+          locateBanner.classList.add('show');
+          const nearest = [...BASES].sort((a,b)=>
+            haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
+          )[0];
+          const distNearest = haversineKm(userPos.lat, userPos.lng, nearest.lat, nearest.lng);
+          locateBannerText.textContent = `📍 Base mais próxima: ${nearest.nome} (${formatDist(distNearest)})`;
+          renderBases();
+        },
+        err => {
+          locateBtn.disabled = false;
+          locateBtnIcon.textContent = '📍';
+          locateBtnText.textContent = 'Base mais próxima';
+          let msg = 'NÃO FOI POSSÍVEL OBTER SUA LOCALIZAÇÃO';
+          if(err.code === err.PERMISSION_DENIED) msg = 'PERMISSÃO DE LOCALIZAÇÃO NEGADA';
+          showToast(msg);
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+      );
+    }
+
+    function clearLocate(){
+      userPos = null;
+      locateWatching = false;
+      locateBtn.classList.remove('active');
+      locateBtnIcon.textContent = '📍';
+      locateBtnText.textContent = 'Base mais próxima';
+      locateBanner.classList.remove('show');
+      renderBases();
+    }
+
+    locateBtn.addEventListener('click', handleLocateClick);
+    locateClearBtn.addEventListener('click', clearLocate);
+
+    /* ---- MAPA LEAFLET ---- */
+    let leafletMap = null;
+    let leafletMarkers = [];
+    let routeLine = null;
+    let selectedId = null;
+    let userMarker = null;
+
+    function initLeafletMap(){
+      if(leafletMap) return;
+      leafletMap = L.map('leafletMap', {
+        center: [-20.5, -45.5],
+        zoom: 6,
+        zoomControl: true,
+        attributionControl: false
+      });
+
+      updateMapTiles();
+
+      const coords = BASES.map(b => [b.lat, b.lng]);
+      routeLine = L.polyline(coords, {
+        color: 'var(--red)',
+        weight: 2.5,
+        opacity: 0.4,
+        dashArray: '8, 6',
+        smoothFactor: 1
+      }).addTo(leafletMap);
+
+      BASES.forEach(b => {
+        const c = dotColor(b.tipo);
+        const r = b.tipo === 'hub' ? 10 : 7;
+
+        let pulseCircle = null;
+        if(b.tipo === 'hub'){
+          pulseCircle = L.circleMarker([b.lat, b.lng], {
+            radius: r + 7,
+            color: c, weight: 1.5, opacity: 0.25, fill: false
+          }).addTo(leafletMap);
+        }
+
+        const marker = L.circleMarker([b.lat, b.lng], {
+          radius: r,
+          fillColor: c, fillOpacity: 1,
+          color: 'white', weight: 2.5
+        }).addTo(leafletMap);
+
+        const tipoClass = b.tipo === 'hub' ? 'bci-tipo-hub' : b.tipo === 'terminal' ? 'bci-tipo-terminal' : 'bci-tipo-filial';
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
+        marker.bindPopup(`
+          <strong>${b.nome}</strong>
+          <span class="pop-tipo ${tipoClass}">${tipoLabel(b.tipo)}</span>
+          <div class="pop-end">📍 ${b.endereco}<br>${b.cidade} / ${b.uf} — CEP ${b.cep}</div>
+          <a href="${mapsUrl}" target="_blank" rel="noopener"
+             style="color:#3b82f6;font-size:11px;text-decoration:none;font-weight:600;">🗺 Ver no Google Maps →</a>
+        `, { maxWidth: 260, className: 'base-popup' });
+
+        marker.on('click', () => selectBase(b.id));
+        marker.on('mouseover', () => {
+          marker.setStyle({ radius: r + 3, weight: 3.5, color: c });
+        });
+        marker.on('mouseout', () => {
+          if(selectedId !== b.id)
+            marker.setStyle({ radius: r, weight: 2.5, color: 'white' });
+        });
+
+        marker.bindTooltip(b.sigla, {
+          permanent: true, direction: 'right',
+          className: 'leaflet-sigla-tooltip',
+          offset: [r + 4, 0]
+        }).openTooltip();
+
+        leafletMarkers.push({ id: b.id, marker, pulseCircle, baseR: r, color: c });
+      });
+    }
+
+    function renderUserMarker(){
+      if(!leafletMap) return;
+      if(userMarker){ leafletMap.removeLayer(userMarker); userMarker = null; }
+      if(!userPos) return;
+      userMarker = L.circleMarker([userPos.lat, userPos.lng], {
+        radius: 8, fillColor: '#22c55e', fillOpacity: 1,
+        color: 'white', weight: 3
+      }).addTo(leafletMap);
+      userMarker.bindTooltip('Você está aqui', {
+        permanent: false, direction: 'top', className: 'leaflet-sigla-tooltip'
+      });
+    }
+
+    function updateMapTiles() {
+      if (!leafletMap) return;
+      leafletMap.eachLayer(layer => {
+        if (layer instanceof L.TileLayer) {
+          leafletMap.removeLayer(layer);
+        }
+      });
+      const isDark = document.body.classList.contains('dark-mode');
+      const tileUrl = isDark
+        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+        : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+      L.tileLayer(tileUrl, {
+        maxZoom: 19,
+        subdomains: 'abcd',
+        attribution: ''
+      }).addTo(leafletMap);
+      if (routeLine) {
+        const color = isDark ? '#ef4444' : '#dc2626';
+        routeLine.setStyle({ color: color });
+      }
+    }
+
+    function renderMap(filtered){
+      if(!leafletMap) return;
+      const filteredIds = new Set(filtered.map(b => b.id));
+
+      leafletMarkers.forEach(({id, marker, pulseCircle, baseR, color}) => {
+        const faded = !filteredIds.has(id);
+        const isSelected = id === selectedId;
+
+        marker.setStyle({
+          fillOpacity: faded ? 0.15 : 1,
+          opacity: faded ? 0.15 : 1,
+          radius: isSelected ? baseR + 3 : baseR,
+          color: isSelected ? color : 'white',
+          weight: isSelected ? 3.5 : 2.5
+        });
+        if(pulseCircle){
+          pulseCircle.setStyle({ opacity: faded ? 0.05 : 0.25 });
+        }
+      });
+
+      if (routeLine) {
+        const coords = filtered.map(b => [b.lat, b.lng]);
+        routeLine.setLatLngs(coords);
+      }
+
+      renderUserMarker();
+    }
+
+    function renderBases(){
+      const q = normStr(document.getElementById('basesSearch').value);
+      const uf = document.getElementById('basesUFFilter').value;
+      const tipo = document.getElementById('basesTipoFilter').value;
+
+      let filtered = BASES.filter(b=>{
+        const mq = !q || [b.nome,b.cidade,b.endereco,b.cep,b.uf].some(v=>normStr(v).includes(q));
+        const mu = !uf || b.uf === uf;
+        const mt = !tipo || b.tipo === tipo;
+        return mq && mu && mt;
+      });
+
+      document.getElementById('basesCountBadge').textContent =
+        filtered.length + ' base' + (filtered.length!==1?'s':'');
+
+      const list = document.getElementById('basesList');
+
+      if(!filtered.length){
+        list.innerHTML = '<div style="text-align:center;padding:50px 20px;background:var(--surface);border-radius:var(--radius);color:var(--text-muted);border:1px solid var(--border);box-shadow:var(--shadow);">🔍 Nenhuma base encontrada.</div>';
+        renderMap([]);
+        return;
+      }
+
+      let sorted;
+      if(userPos){
+        sorted = [...filtered].sort((a,b)=>
+          haversineKm(userPos.lat,userPos.lng,a.lat,a.lng) - haversineKm(userPos.lat,userPos.lng,b.lat,b.lng)
+        );
+      } else {
+        sorted = [...filtered].sort((a,b)=>{
+          const o={hub:0,terminal:1,filial:2};
+          return (o[a.tipo] ?? 9)-(o[b.tipo] ?? 9);
+        });
+      }
+
+      list.innerHTML = sorted.map((b, idx)=>{
+        const c = dotColor(b.tipo);
+        const sel = b.id === selectedId ? ' selected' : '';
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.endereco+', '+b.cidade+'/'+b.uf+' CEP '+b.cep)}`;
+        const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(b.nome+' '+b.cidade+' '+b.uf)}&navigate=yes`;
+
+        let distBadge = '';
+        if(userPos){
+          const km = haversineKm(userPos.lat, userPos.lng, b.lat, b.lng);
+          const proximaLabel = idx === 0 ? '⭐ Mais próxima · ' : '';
+          distBadge = `<span class="bci-dist">${proximaLabel}${formatDist(km)}</span>`;
+        }
+
+        return `
+  <div class="base-card${sel}" data-id="${b.id}" onclick="__selBase(${b.id})">
+    <div class="bci">
+      <div class="bci-accent" style="background:${c}"></div>
+      <div class="bci-body">
+        <div class="bci-top">
+          <span class="bci-nome">${b.nome}</span>
+          <span class="bci-tipo bci-tipo-${b.tipo}">${tipoLabel(b.tipo)}</span>
+        </div>
+        <div class="bci-endereco">
+          📍 ${b.endereco}<br>
+          ${b.cidade} / ${b.uf} — CEP ${b.cep}
+        </div>
+        <div class="bci-foot">
+          <span class="bci-uf">${b.uf}</span>
+          <span class="bci-cep">${b.cep}</span>
+          ${distBadge}
+          <div class="bci-btns">
+            <a class="bci-btn bci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🗺 Maps</a>
+            <a class="bci-btn bci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🔵 Waze</a>
+            <button class="bci-btn" onclick="event.stopPropagation();__copyEnd(${b.id})">📋 Copiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+      }).join('');
+
+      renderMap(filtered);
+    }
+
+    function selectBase(id){
+      selectedId = (selectedId===id) ? null : id;
+      renderBases();
+      if(selectedId && leafletMap){
+        const b = BASES.find(x=>x.id===selectedId);
+        const entry = leafletMarkers.find(x=>x.id===selectedId);
+        if(b && entry){
+          leafletMap.setView([b.lat, b.lng], Math.max(leafletMap.getZoom(), 9), {animate:true});
+          entry.marker.openPopup();
+        }
+      }
+      if(selectedId){
+        const el = document.querySelector(`.base-card[data-id="${selectedId}"]`);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
+      }
+    }
+    window.__selBase = selectBase;
+
+    window.__copyEnd = function(id){
+      const b = BASES.find(x=>x.id===id);
+      if(!b) return;
+      const txt = `${b.nome} — ${b.endereco}, ${b.cidade}/${b.uf}, CEP ${b.cep}`;
+      navigator.clipboard.writeText(txt).then(()=> showToast('ENDEREÇO COPIADO'));
+    };
+
+    function normStr(s){ return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
+
+    /* ===================== LÓGICA ROTAS ===================== */
+    const DATA_URLS = { rondolog:'./data/rondolog.json', saster:'./data/saster.json' };
+    const dataCache = { rondolog:null, saster:null };
+    let currentBase='rondolog', currentData=[], currentQuery='', currentType='all', currentOrder='padrao';
+    let currentView = 'list';
+    let showOnlyFavorites = false;
+
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const baseSubtitle   = document.getElementById('baseSubtitle');
+    const baseTitle      = document.getElementById('baseTitle');
+    const countBadge     = document.getElementById('countBadge');
+    const filterChipsDiv = document.getElementById('filterChips');
+    const searchInput    = document.getElementById('search');
+    const orderSelect    = document.getElementById('orderSelect');
+    const sectionLabel   = document.getElementById('sectionLabel');
+    const resultsContainer= document.getElementById('results');
+    const matrixContainer= document.getElementById('matrixContainer');
+
+    function norm(s){ return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
+    function hl(text,q){
+      if(!q) return text;
+      const nq=norm(q), nt=norm(text);
+      let out='',i=0;
+      while(i<text.length){
+        const idx=nt.indexOf(nq,i);
+        if(idx===-1){out+=text.slice(i);break;}
+        out+=text.slice(i,idx)+'<mark>'+text.slice(idx,idx+nq.length)+'</mark>';
+        i=idx+nq.length;
+      }
+      return out;
+    }
+    function getTipoColor(t){ return t==='coleta'?'var(--blue)':t==='transferencia'?'var(--green)':'var(--orange)'; }
+    function getTipoLabel(t){ return t==='transferencia'?'🚚 Transferência':t==='coleta'?'📦 Coleta':'🔄 Rota fixa'; }
+
+    /* ===================== FAVORITOS ===================== */
+    function loadFavorites(){
+      try{ return JSON.parse(localStorage.getItem('rondologFavorites')) || {rondolog:[], saster:[]}; }
+      catch(e){ return {rondolog:[], saster:[]}; }
+    }
+    function saveFavorites(data){
+      localStorage.setItem('rondologFavorites', JSON.stringify(data));
+    }
+    let favoritesData = loadFavorites();
+
+    function isFavorite(base, nome){
+      return (favoritesData[base] || []).includes(nome);
+    }
+    function toggleFavorite(base, nome){
+      if(!favoritesData[base]) favoritesData[base] = [];
+      const idx = favoritesData[base].indexOf(nome);
+      if(idx === -1){
+        favoritesData[base].push(nome);
+        showToast('⭐ ROTA FAVORITADA');
+      } else {
+        favoritesData[base].splice(idx, 1);
+        showToast('ROTA REMOVIDA DOS FAVORITOS');
+      }
+      saveFavorites(favoritesData);
+      updateFavChip();
+      render();
+    }
+    window.__toggleFav = toggleFavorite;
+
+    function updateFavChip(){
+      const count = (favoritesData[currentBase] || []).length;
+      const favCountEl = document.getElementById('favCount');
+      favCountEl.textContent = count ? `(${count})` : '';
+      document.getElementById('favChip').classList.toggle('active', showOnlyFavorites);
+    }
+
+    /* ===================== HISTÓRICO ===================== */
+    const HISTORY_MAX = 8;
+    function loadHistory(){
+      try{ return JSON.parse(localStorage.getItem('rondologHistory')) || {rondolog:[], saster:[]}; }
+      catch(e){ return {rondolog:[], saster:[]}; }
+    }
+    function saveHistory(data){
+      localStorage.setItem('rondologHistory', JSON.stringify(data));
+    }
+    let historyData = loadHistory();
+
+    function addToHistory(base, term){
+      term = term.trim();
+      if(!term) return;
+      if(!historyData[base]) historyData[base] = [];
+      historyData[base] = historyData[base].filter(t => t.toLowerCase() !== term.toLowerCase());
+      historyData[base].unshift(term);
+      historyData[base] = historyData[base].slice(0, HISTORY_MAX);
+      saveHistory(historyData);
+      renderHistoryChips();
+    }
+    function removeFromHistory(base, term){
+      if(!historyData[base]) return;
+      historyData[base] = historyData[base].filter(t => t !== term);
+      saveHistory(historyData);
+      renderHistoryChips();
+    }
+    function renderHistoryChips(){
+      const container = document.getElementById('historyChips');
+      const items = historyData[currentBase] || [];
+      if(!items.length){ container.innerHTML = ''; return; }
+      container.innerHTML = '<span class="history-label">Recentes:</span>' + items.map(term => `
+        <span class="history-chip" data-term="${term.replace(/"/g,'&quot;')}">
+          🕓 ${term}
+          <span class="hx-remove" data-remove="${term.replace(/"/g,'&quot;')}">✕</span>
+        </span>
+      `).join('');
+      container.querySelectorAll('.history-chip').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          if(e.target.classList.contains('hx-remove')) return;
+          const term = chip.dataset.term;
+          searchInput.value = term;
+          currentQuery = term;
+          render();
+        });
+      });
+      container.querySelectorAll('.hx-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          removeFromHistory(currentBase, btn.dataset.remove);
+        });
+      });
+    }
+
+    /* ===================== CARREGAR DADOS ===================== */
+    async function loadData(base){
+      if(dataCache[base]) return dataCache[base];
+      try{
+        const res=await fetch(DATA_URLS[base]);
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data=await res.json();
+        const processed=data.map(item=>({...item, nome:item.nome_da_rota||item.nome||'', condutor:item.condutores||item.condutor||[], placa:item.placas||item.placa||[]}));
+        dataCache[base]=processed; return processed;
+      }catch(err){
+        resultsContainer.innerHTML = `<div class="no-result">❌ Erro ao carregar dados: ${err.message}. Verifique o arquivo ${DATA_URLS[base]}.</div>`;
+        return [];
+      }
+    }
+
+    /* ===================== GET FILTERED DATA ===================== */
+    function getFilteredData() {
+      let filtered = currentData;
+      const q = currentQuery;
+      if(q){ const nq=norm(q); filtered=filtered.filter(r=>norm(r.nome).includes(nq)||`${r.origem} ${r.destino}`.toLowerCase().includes(nq)||(r.condutor&&r.condutor.some(c=>norm(c).includes(nq)))||(r.placa&&r.placa.some(p=>norm(p).includes(nq)))); }
+      if(currentBase==='rondolog'&&currentType!=='all') filtered=filtered.filter(r=>r.tipo===currentType);
+      if(showOnlyFavorites) filtered=filtered.filter(r=>isFavorite(currentBase, r.nome));
+      return filtered;
+    }
+
+    /* ===================== MATRIZ ORIGEM x DESTINO ===================== */
+    function renderMatrix(data) {
+      const wrap = document.getElementById('matrixTableWrap');
+      if (!data || data.length === 0) {
+        wrap.innerHTML = '<div class="matrix-empty">📊 Nenhuma rota para exibir na matriz.</div>';
+        return;
+      }
+
+      const origens = [...new Set(data.map(r => r.origem))];
+      const destinos = [...new Set(data.map(r => r.destino))];
+
+      const getTotalViagens = (cidade, type) => {
+        return data.filter(r => r[type] === cidade).reduce((acc, r) => acc + (r.viagens || 0), 0);
+      };
+      origens.sort((a,b) => getTotalViagens(b, 'origem') - getTotalViagens(a, 'origem'));
+      destinos.sort((a,b) => getTotalViagens(b, 'destino') - getTotalViagens(a, 'destino'));
+
+      if (origens.length > 30 || destinos.length > 30) {
+        wrap.innerHTML = `<div class="matrix-empty">⚠️ Muitas combinações (${origens.length} origens x ${destinos.length} destinos).<br>Refine a busca para visualizar a matriz.</div>`;
+        return;
+      }
+
+      const matrix = {};
+      data.forEach(r => {
+        if (!matrix[r.origem]) matrix[r.origem] = {};
+        matrix[r.origem][r.destino] = {
+          viagens: r.viagens || 0,
+          distancia: r.distancia_km || 0
+        };
+      });
+
+      const maxViagens = Math.max(1, ...data.map(r => r.viagens || 0));
+
+      let html = `<table><thead><tr><th>Origem \\ Destino</th>`;
+      destinos.forEach(d => {
+        const label = d.split('/')[0];
+        html += `<th title="${d}">${label}</th>`;
+      });
+      html += `<th class="total-cell">Total</th></tr></thead><tbody>`;
+
+      origens.forEach(orig => {
+        html += `<tr><td title="${orig}">${orig.split('/')[0]}</td>`;
+        let totalLinha = 0;
+        destinos.forEach(dest => {
+          const cell = matrix[orig]?.[dest] || { viagens: 0, distancia: 0 };
+          const v = cell.viagens;
+          totalLinha += v;
+          if (v === 0) {
+            html += `<td class="cell-zero">—</td>`;
+          } else {
+            const intensity = Math.min(1, v / maxViagens);
+            const r = Math.round(220 - 160 * intensity);
+            const g = Math.round(220 - 180 * intensity);
+            const b = Math.round(220 - 160 * intensity);
+            const bg = `rgb(${r}, ${g}, ${b})`;
+            const textColor = intensity > 0.6 ? 'white' : 'var(--text)';
+            const distLabel = cell.distancia ? `${cell.distancia} km` : '—';
+            html += `<td class="cell-clickable" 
+                          style="background:${bg}; color:${textColor};"
+                          data-orig="${orig.replace(/"/g,'&quot;')}" data-dest="${dest.replace(/"/g,'&quot;')}"
+                          title="${v} viagens · ${distLabel}">
+                      <strong>${v}</strong><br>
+                      <span style="font-size:9px;opacity:0.8;">${distLabel}</span>
+                     </td>`;
+          }
+        });
+        html += `<td class="total-cell">${totalLinha}</td>`;
+        html += `</tr>`;
+      });
+
+      html += `<tr><td style="font-weight:700;background:var(--surface2);">Total</td>`;
+      let grandTotal = 0;
+      destinos.forEach(dest => {
+        let totalCol = 0;
+        origens.forEach(orig => {
+          totalCol += matrix[orig]?.[dest]?.viagens || 0;
+        });
+        grandTotal += totalCol;
+        html += `<td class="total-cell">${totalCol}</td>`;
+      });
+      html += `<td class="total-cell total-cell-grand">${grandTotal}</td>`;
+      html += `</tr></tbody></table>`;
+
+      wrap.innerHTML = html;
+
+      wrap.querySelectorAll('.cell-clickable').forEach(td => {
+        td.addEventListener('click', function() {
+          const orig = this.dataset.orig;
+          const dest = this.dataset.dest;
+          searchInput.value = `${orig} → ${dest}`;
+          currentQuery = `${orig} → ${dest}`;
+          switchView('list');
+          render();
+        });
+      });
+    }
+
+    /* ===================== SWITCH VIEW ===================== */
+    function switchView(view) {
+      currentView = view;
+      const listContainer = document.getElementById('results');
+      const matrixContainerEl = document.getElementById('matrixContainer');
+      const toggleIcon = document.getElementById('viewToggleIcon');
+      const toggleText = document.getElementById('viewToggleText');
+
+      if (view === 'matrix') {
+        listContainer.style.display = 'none';
+        matrixContainerEl.style.display = 'block';
+        toggleIcon.textContent = '📋';
+        toggleText.textContent = 'Lista';
+        const filtered = getFilteredData();
+        renderMatrix(filtered);
+      } else {
+        listContainer.style.display = 'grid';
+        matrixContainerEl.style.display = 'none';
+        toggleIcon.textContent = '📊';
+        toggleText.textContent = 'Matriz';
+        render();
+      }
+    }
+
+    /* ===================== RENDER PRINCIPAL ===================== */
+    function sortRotas(arr,order){
+      const s=[...arr];
+      if(order==='origem') s.sort((a,b)=>a.origem.localeCompare(b.origem));
+      else if(order==='destino') s.sort((a,b)=>a.destino.localeCompare(b.destino));
+      else if(order==='tipo'&&currentBase==='rondolog'){ const to={coleta:1,transferencia:2,rota:3}; s.sort((a,b)=>(to[a.tipo]||99)-(to[b.tipo]||99)); }
       return s;
     }
 
-    function computeStatus(rec) {
-      if (rec.naoOkManual) return 'nao-ok';
-      const dt = parseDateBR(rec.vigenciaChecklist);
-      if (!dt) return 'nao-ok';
-      const today = new Date(); today.setHours(0, 0, 0, 0);
-      const diffDias = Math.floor((dt - today) / 86400000);
-      if (diffDias < 0) return 'vencido';
-      if (diffDias <= 3) return 'urgente';
-      return 'valido';
-    }
-
-    function diasVencido(rec) {
-      const dt = parseDateBR(rec.vigenciaChecklist);
-      if (!dt) return null;
-      const today = new Date(); today.setHours(0, 0, 0, 0);
-      const diff = Math.floor((today - dt) / 86400000);
-      return diff > 0 ? diff : 0;
-    }
-
-    function norm(s) { return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
-
-    /* ---------------- Persistência ---------------- */
-    function loadFromStorage() {
-      try {
-        const raw = localStorage.getItem(LS_KEY);
-        return raw ? JSON.parse(raw) : null;
-      } catch (e) { return null; }
-    }
-    function saveToStorage() {
-      localStorage.setItem(LS_KEY, JSON.stringify(data));
-    }
-
-    async function migrateFromLegacyJson() {
-      try {
-        const res = await fetch(LEGACY_JSON_URL);
-        if (!res.ok) throw new Error('sem checklists.json');
-        const legacy = await res.json();
-        data = legacy.map(item => ({
-          id: uid(),
-          placa: item.veiculo || '',
-          tipoFrota: normalizeTipoFrota(item.tipoFrota),
-          categoria: normalizeCategoria(item.categoria),
-          dataRealizacao: '',
-          vigenciaChecklist: item.validadeData || '',
-          naoOkManual: item.status === 'nao-ok',
-          dispositivosDefeito: '',
-          cidadeUF: item.cidadeUF || '',
-          condutor: item.condutor || '',
-          responsavel: item.responsavel || '',
-          region: item.region || 'Outras'
-        }));
-        saveToStorage();
-      } catch (e) {
-        data = [];
+    function render() {
+      if (currentView === 'matrix') {
+        const filtered = getFilteredData();
+        renderMatrix(filtered);
+        return;
       }
-      localStorage.setItem(LS_MIGRATED_KEY, 'true');
-    }
 
-    function normalizeTipoFrota(v) {
-      const s = norm(v);
-      if (s.includes('agreg')) return 'Agregado';
-      if (s.includes('terc')) return 'Terceiro';
-      if (s.includes('prop') || s.includes('próp')) return 'Próprio';
-      return TIPO_FROTA.includes(v) ? v : 'Próprio';
-    }
-    function normalizeCategoria(v) {
-      const s = norm(v).toUpperCase();
-      const found = CATEGORIAS.find(c => norm(c).toUpperCase() === s || s.includes(norm(c).toUpperCase()));
-      return found || 'LEVE';
-    }
+      let filtered = getFilteredData();
+      filtered = sortRotas(filtered, currentOrder);
+      countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
+      sectionLabel.innerHTML = showOnlyFavorites ? '⭐ Rotas favoritas' : (currentQuery ? `Resultados para "${currentQuery}"` : 'Todas as rotas');
 
-    async function init() {
-      const stored = loadFromStorage();
-      if (stored) {
-        data = stored;
-      } else if (!localStorage.getItem(LS_MIGRATED_KEY)) {
-        await migrateFromLegacyJson();
-      } else {
-        data = [];
+      if (!filtered.length) {
+        resultsContainer.innerHTML = `<div class="no-result">🔍 ${showOnlyFavorites ? 'Nenhuma rota favoritada ainda.' : 'Nenhuma rota encontrada.'}</div>`;
+        return;
       }
-    }
 
-    /* ---------------- Importação personalizada com merge --------- */
-    function parseRelatorioChecklist(rows) {
-      let results = [];
-      let i = 0;
-      while (i < rows.length) {
-        const row = rows[i];
-        if (!row || row.length === 0) { i++; continue; }
-        const cell0 = (row[0] || '').toString().trim();
-        if (cell0.startsWith('Veículo:') || cell0.startsWith('Carreta:')) {
-          let rec = {};
-          const placaMatch = cell0.match(/(?:Veículo|Carreta):\s*([A-Z0-9]+)/i);
-          if (placaMatch) rec.placa = placaMatch[1].toUpperCase();
+      resultsContainer.innerHTML = filtered.map(r => {
+        const tipo = r.tipo || 'rota';
+        const tipoColor = (currentBase === 'rondolog') ? getTipoColor(tipo) : 'var(--blue)';
+        const condutores = r.condutor || [], placas = r.placa || [], viagens = r.viagens;
+        const totalCond = condutores.length, totalPlacas = placas.length;
+        const condHTML = condutores.length ? `<div class="condutor-list">${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, currentQuery)}</span>`).join('')}${totalCond > 2 ? `<span class="condutor-more" title="${condutores.slice(2).join(', ')}">+${totalCond - 2}</span>` : ''}</div>` : '';
+        const placHTML = placas.length ? `<span class="meta-placa">${hl(placas[0], currentQuery)}</span>${totalPlacas > 1 ? `<span class="placa-more" title="${placas.slice(1).join(', ')}">+${totalPlacas - 1}</span>` : ''}` : '';
+        const vHTML = viagens ? `<div class="meta-item">📊 <span class="viagem-badge">${viagens} viagens</span></div>` : '';
+        const metaHTML = (condHTML || placHTML || vHTML) ? `<div class="metadata">${vHTML}${condHTML ? `<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${totalCond}</span></div>` : ''}${placHTML ? `<div class="meta-item">🚛 ${placHTML} <span class="meta-count-badge">${totalPlacas}</span></div>` : ''}</div>` : '';
+        const tipoBadge = (currentBase === 'rondolog') ? `<span class="route-badge" style="background:${tipoColor}15;border-color:${tipoColor};color:${tipoColor}">${getTipoLabel(tipo)}</span>` : '';
+        const fav = isFavorite(currentBase, r.nome);
+        const starHTML = `<span class="fav-star${fav ? ' active' : ''}" data-fav-nome="${r.nome.replace(/"/g, '&quot;')}" title="${fav ? 'Remover dos favoritos' : 'Favoritar rota'}">${fav ? '★' : '☆'}</span>`;
+        return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido">${starHTML}<span>${hl(r.origem, currentQuery)}</span><span class="pedido-sep">→</span><span>${hl(r.destino, currentQuery)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome, currentQuery)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
+      }).join('');
 
-          // Categoria: se Carreta -> CARRETA, senão CAVALO
-          rec.categoria = cell0.startsWith('Carreta:') ? 'CARRETA' : 'CAVALO';
-
-          let tipo = '';
-          if (cell0.includes('AGREGADO')) tipo = 'Agregado';
-          else if (cell0.includes('PROPRIO') || cell0.includes('PRÓPRIO')) tipo = 'Próprio';
-          else if (cell0.includes('TERCEIRO')) tipo = 'Terceiro';
-          if (!tipo && i+1 < rows.length) {
-            const nextRow = rows[i+1];
-            const nextCell = (nextRow && nextRow[0]) ? nextRow[0].toString().trim() : '';
-            if (nextCell.includes('AGREGADO')) tipo = 'Agregado';
-            else if (nextCell.includes('PROPRIO') || nextCell.includes('PRÓPRIO')) tipo = 'Próprio';
-            else if (nextCell.includes('TERCEIRO')) tipo = 'Terceiro';
-          }
-          rec.tipoFrota = tipo || 'Agregado';
-
-          i++;
-          let dataRealizacao = '', validade = '', responsavel = '', operador = '';
-          let dispositivos = [];
-          let temDefeito = false;
-
-          while (i < rows.length) {
-            const line = rows[i];
-            if (!line || line.length === 0) { i++; continue; }
-            const first = (line[0] || '').toString().trim();
-            const second = (line[1] || '').toString().trim();
-
-            if (first.startsWith('Veículo:') || first.startsWith('Carreta:')) break;
-
-            if (first.startsWith('Data da Realização:')) {
-              dataRealizacao = first.replace('Data da Realização:', '').trim().split(' ')[0];
-            } else if (first.startsWith('Validade:')) {
-              validade = first.replace('Validade:', '').trim();
-            } else if (first.startsWith('Responsavel:')) {
-              responsavel = first.replace('Responsavel:', '').trim();
-            } else if (first.startsWith('Operador:')) {
-              operador = first.replace('Operador:', '').trim();
-            } else if (first === 'Dispositivos Avaliados' || first === 'Situação') {
-              // header
-            } else if (first && second) {
-              const situacao = second.toLowerCase();
-              const defeito = situacao.includes('defeito') || situacao.includes('não ok') || situacao === 'não ok';
-              if (defeito) temDefeito = true;
-              dispositivos.push({ nome: first, situacao: second });
-            }
-            i++;
-          }
-
-          rec.dataRealizacao = normalizeAnyDate(dataRealizacao);
-          const isNaoOk = validade.toLowerCase().includes('não ok') || validade.toLowerCase().includes('nao ok');
-          if (isNaoOk) {
-            rec.naoOkManual = true;
-            rec.vigenciaChecklist = '';
-          } else {
-            const dateMatch = validade.match(/(\d{2}\/\d{2}\/\d{4})/);
-            rec.vigenciaChecklist = dateMatch ? dateMatch[1] : validade;
-            rec.naoOkManual = temDefeito;
-          }
-          if (temDefeito) rec.naoOkManual = true;
-
-          const defeitos = dispositivos.filter(d => d.situacao.toLowerCase().includes('defeito') || d.situacao.toLowerCase().includes('não ok') || d.situacao.toLowerCase().includes('nao ok'));
-          rec.dispositivosDefeito = defeitos.map(d => d.nome).join(', ');
-
-          rec.responsavel = responsavel;
-          rec.condutor = operador;
-          rec.cidadeUF = '';    // não existe no arquivo
-          rec.region = 'Outras'; // padrão
-
-          results.push(rec);
-        } else {
-          i++;
-        }
-      }
-      return results;
-    }
-
-    function handleImportFile(file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        try {
-          const wb = XLSX.read(e.target.result, { type: 'binary', cellDates: true });
-          const ws = wb.Sheets[wb.SheetNames[0]];
-          const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
-          const parsed = parseRelatorioChecklist(rows);
-          let added = 0, updated = 0;
-
-          parsed.forEach(rec => {
-            if (!rec.placa) return;
-            const existingIdx = data.findIndex(d => norm(d.placa) === norm(rec.placa));
-            if (existingIdx >= 0) {
-              // Merge: preserva cidadeUF, region e categoria do registro existente
-              // (categoria pode ter sido editada manualmente)
-              const existing = data[existingIdx];
-              data[existingIdx] = {
-                ...existing,
-                // atualiza apenas os campos que vêm do Excel
-                tipoFrota: rec.tipoFrota,
-                dataRealizacao: rec.dataRealizacao,
-                vigenciaChecklist: rec.vigenciaChecklist,
-                naoOkManual: rec.naoOkManual,
-                dispositivosDefeito: rec.dispositivosDefeito,
-                responsavel: rec.responsavel,
-                condutor: rec.condutor,
-                // mantém os campos que não estão no Excel:
-                // cidadeUF, region, categoria (a menos que o rec tenha esses campos, mas não tem)
-                cidadeUF: existing.cidadeUF || '',
-                region: existing.region || 'Outras',
-                categoria: existing.categoria || rec.categoria // usa a inferida se não tiver
-              };
-              updated++;
-            } else {
-              // novo registro: usa os campos do Excel e defaults
-              rec.cidadeUF = '';
-              rec.region = 'Outras';
-              data.push({ id: uid(), ...rec });
-              added++;
-            }
-          });
-
-          saveToStorage();
-          renderAll();
-          toast(`✅ Importação concluída: ${added} adicionados, ${updated} atualizados`);
-        } catch (err) {
-          toast('❌ Erro ao importar planilha: ' + err.message);
-        }
-      };
-      reader.readAsBinaryString(file);
-    }
-
-    /* ---------------- CRUD ---------------- */
-    function openModal(id) {
-      editingId = id || null;
-      const rec = id ? data.find(d => d.id === id) : null;
-      document.getElementById('fcModalTitle').textContent = rec ? 'Editar Veículo' : 'Novo Veículo';
-      document.getElementById('fcPlaca').value = rec ? rec.placa : '';
-      document.getElementById('fcTipoFrota').value = rec ? rec.tipoFrota : 'Próprio';
-      document.getElementById('fcCategoria').value = rec ? rec.categoria : 'CAVALO';
-      document.getElementById('fcDataRealizacao').value = rec ? brToInput(rec.dataRealizacao) : '';
-      document.getElementById('fcVigencia').value = rec ? brToInput(rec.vigenciaChecklist) : '';
-      document.getElementById('fcNaoOk').checked = rec ? !!rec.naoOkManual : false;
-      document.getElementById('fcDispositivos').value = rec ? rec.dispositivosDefeito || '' : '';
-      document.getElementById('fcCidade').value = rec ? rec.cidadeUF || '' : '';
-      document.getElementById('fcCondutor').value = rec ? rec.condutor || '' : '';
-      document.getElementById('fcResponsavel').value = rec ? rec.responsavel || '' : '';
-      document.getElementById('fcRegion').value = rec ? rec.region || 'Outras' : 'Outras';
-      document.getElementById('fcModal').classList.add('show');
-    }
-    function closeModal() { document.getElementById('fcModal').classList.remove('show'); editingId = null; }
-
-    function brToInput(br) {
-      const dt = parseDateBR(br);
-      if (!dt) return '';
-      const p2 = n => (n < 10 ? '0' + n : '' + n);
-      return `${dt.getFullYear()}-${p2(dt.getMonth() + 1)}-${p2(dt.getDate())}`;
-    }
-    function inputToBr(iso) {
-      if (!iso) return '';
-      const [y, m, d] = iso.split('-');
-      return `${d}/${m}/${y}`;
-    }
-
-    function saveModal() {
-      const placa = document.getElementById('fcPlaca').value.trim().toUpperCase();
-      if (!placa) { toast('⚠️ Placa é obrigatória'); return; }
-      const rec = {
-        placa,
-        tipoFrota: document.getElementById('fcTipoFrota').value,
-        categoria: document.getElementById('fcCategoria').value,
-        dataRealizacao: inputToBr(document.getElementById('fcDataRealizacao').value),
-        vigenciaChecklist: inputToBr(document.getElementById('fcVigencia').value),
-        naoOkManual: document.getElementById('fcNaoOk').checked,
-        dispositivosDefeito: document.getElementById('fcDispositivos').value.trim(),
-        cidadeUF: document.getElementById('fcCidade').value.trim(),
-        condutor: document.getElementById('fcCondutor').value.trim(),
-        responsavel: document.getElementById('fcResponsavel').value.trim(),
-        region: document.getElementById('fcRegion').value
-      };
-      if (editingId) {
-        const idx = data.findIndex(d => d.id === editingId);
-        if (idx >= 0) data[idx] = { ...data[idx], ...rec };
-      } else {
-        data.push({ id: uid(), ...rec });
-      }
-      saveToStorage();
-      closeModal();
-      renderAll();
-      toast('✅ Veículo salvo');
-    }
-
-    function deleteRecord(id) {
-      if (!confirm('Remover este veículo do checklist?')) return;
-      data = data.filter(d => d.id !== id);
-      saveToStorage();
-      renderAll();
-      toast('🗑️ Removido');
-    }
-
-    /* ---------------- Render ---------------- */
-    function toast(msg) {
-      if (window.showToastFrota) { window.showToastFrota(msg); return; }
-      let t = document.getElementById('fcToast');
-      if (!t) {
-        t = document.createElement('div');
-        t.id = 'fcToast';
-        t.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:12px 24px;border-radius:40px;font-size:12px;z-index:9999;opacity:0;transition:opacity .3s;';
-        document.body.appendChild(t);
-      }
-      t.textContent = msg;
-      t.style.opacity = '1';
-      setTimeout(() => (t.style.opacity = '0'), 2200);
-    }
-
-    function tipoBadge(tipo) {
-      const c = TIPO_COLORS[tipo] || '#6b7280';
-      return `<span class="fc-badge" style="background:${c}18;border:1px solid ${c};color:${c};">${tipo}</span>`;
-    }
-    function catBadge(cat) {
-      const c = CAT_COLORS[cat] || '#6b7280';
-      return `<span class="fc-badge" style="background:${c}18;border:1px solid ${c};color:${c};">${cat}</span>`;
-    }
-
-    function getFiltered() {
-      return data.filter(rec => {
-        const status = computeStatus(rec);
-        const matchSearch = !filters.search ||
-          [rec.placa, rec.condutor, rec.cidadeUF, rec.responsavel, rec.region].some(v => norm(v).includes(norm(filters.search)));
-        const matchStatus = !filters.status || status === filters.status;
-        const matchTipo = !filters.tipoFrota || rec.tipoFrota === filters.tipoFrota;
-        const matchCat = !filters.categoria || rec.categoria === filters.categoria;
-        return matchSearch && matchStatus && matchTipo && matchCat;
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.fav-star')) return;
+          navigator.clipboard.writeText(card.dataset.nome).then(() => showToast('NOME DA ROTA COPIADO'));
+        });
       });
+      document.querySelectorAll('.fav-star').forEach(star => {
+        star.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleFavorite(currentBase, star.dataset.favNome);
+        });
+      });
+      updateFavChip();
     }
 
-    function renderStats() {
-      const el = document.getElementById('fcGlobalStats');
-      if (!el) return;
-      const all = data.map(r => ({ ...r, _status: computeStatus(r) }));
-      const vencidos = all.filter(r => r._status === 'vencido').length;
-      const urgentes = all.filter(r => r._status === 'urgente').length;
-      const naoOk = all.filter(r => r._status === 'nao-ok').length;
-      const validos = all.filter(r => r._status === 'valido').length;
-      const proprio = all.filter(r => r.tipoFrota === 'Próprio').length;
-      const agregado = all.filter(r => r.tipoFrota === 'Agregado').length;
-      const terceiro = all.filter(r => r.tipoFrota === 'Terceiro').length;
+    function showToast(msg) {
+      document.getElementById('toastMsg').textContent = msg;
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    }
+
+    /* ============================================================
+       FUNÇÕES DE NAVEGAÇÃO PARA ROTAS (USADO NO MODAL PONTOS)
+       ============================================================ */
+    window.goToRoute = function(nomeRota) {
+      const targetBase = 'rondolog';
+      switchBase(targetBase).then(() => {
+        setTimeout(() => {
+          const searchEl = document.getElementById('search');
+          if (searchEl) {
+            searchEl.value = nomeRota;
+            const event = new Event('input', { bubbles: true });
+            searchEl.dispatchEvent(event);
+          }
+          document.getElementById('modalRotas').classList.remove('show');
+        }, 350);
+      });
+    };
+
+    window.__showRotas = function(pontoNome, rotas) {
+      document.getElementById('modalPontoNome').textContent = pontoNome;
+      const list = document.getElementById('modalRotasList');
+      list.innerHTML = '';
+      if (!rotas || rotas.length === 0) {
+        list.innerHTML = '<li style="padding:10px;color:var(--text-muted);text-align:center;border:none;cursor:default;">Nenhuma rota associada.</li>';
+      } else {
+        rotas.forEach(r => {
+          const li = document.createElement('li');
+          li.innerHTML = `<span style="color:var(--text);">${r}</span> <span style="margin-left:auto;font-size:12px;color:var(--text-muted);">🔗</span>`;
+          li.addEventListener('click', () => {
+            goToRoute(r);
+          });
+          list.appendChild(li);
+        });
+      }
+      document.getElementById('modalRotas').classList.add('show');
+    };
+
+    /* ===================== SWITCH BASE ===================== */
+    async function switchBase(base) {
+      if (base === 'bases') {
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('basesPanel').classList.add('active');
+        loadingOverlay.style.display = 'none';
+        setTimeout(() => { initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
+        return;
+      }
+      if (base === 'points') {
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('pointsPanel').classList.add('active');
+        loadingOverlay.style.display = 'none';
+        if (window.pointsData === undefined) {
+          await loadPoints();
+        } else {
+          renderPoints();
+        }
+        return;
+      }
+      if (base === 'onco') {
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('oncoPanel').classList.add('active');
+        loadingOverlay.style.display = 'none';
+        if (!window.oncoData) {
+          await loadOnco();
+        } else {
+          renderOncoGlobalStats();
+          renderOncoCatCards();
+          renderOncoUpcoming();
+          renderOncoCategory('Veículo', 'oncoVeiculos');
+          renderOncoCategory('Condutor', 'oncoCondutores');
+          renderOncoCategory('Funcionário', 'oncoFuncionarios');
+        }
+        return;
+      }
+      // ===== FROTA =====
+      if (base === 'frota') {
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('frotaPanel').classList.add('active');
+        loadingOverlay.style.display = 'none';
+        await FrotaChecklist.open();
+        return;
+      }
+      // Rotas (rondolog / saster)
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('routesPanel').classList.add('active');
+      loadingOverlay.style.display = 'flex';
+      currentBase = base;
+      baseTitle.textContent = base === 'rondolog' ? 'RONDOLOG' : 'SASTER';
+      currentData = await loadData(base);
+      baseSubtitle.innerHTML = base === 'rondolog' ? `Rondolog · ${currentData.length} rotas` : `Saster · ${currentData.length} rotas`;
+      filterChipsDiv.style.display = base === 'rondolog' ? 'flex' : 'none';
+      currentQuery = '';
+      currentType = 'all';
+      currentOrder = 'padrao';
+      showOnlyFavorites = false;
+      searchInput.value = '';
+      orderSelect.value = 'padrao';
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      document.querySelector('.chip[data-type="all"]')?.classList.add('active');
+      if (currentView === 'matrix') {
+        switchView('list');
+      }
+      loadingOverlay.style.display = 'none';
+      renderHistoryChips();
+      updateFavChip();
+      render();
+    }
+
+    /* ===================== THEME TOGGLE ===================== */
+    const themeToggle = document.getElementById('themeToggle');
+    const themeLabel = document.getElementById('themeLabel');
+
+    if (localStorage.getItem('rondologTheme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeToggle.checked = true;
+      themeLabel.textContent = '🌙 Escuro';
+    }
+
+    themeToggle.addEventListener('change', function() {
+      const isDark = this.checked;
+      document.body.classList.toggle('dark-mode', isDark);
+      localStorage.setItem('rondologTheme', isDark ? 'dark' : 'light');
+      themeLabel.textContent = isDark ? '🌙 Escuro' : '☀️ Claro';
+      updateMapTiles();
+    });
+
+    /* ===================== EVENT LISTENERS ===================== */
+    document.querySelectorAll('.base-tab').forEach(tab => {
+      tab.addEventListener('click', async () => {
+        document.querySelectorAll('.base-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        await switchBase(tab.dataset.base);
+      });
+    });
+
+    searchInput.addEventListener('input', e => { currentQuery = e.target.value; render(); });
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
+    });
+    searchInput.addEventListener('blur', () => {
+      if (searchInput.value.trim()) addToHistory(currentBase, searchInput.value);
+    });
+    orderSelect.addEventListener('change', e => { currentOrder = e.target.value; render(); });
+
+    document.querySelectorAll('.chip[data-type]').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.chip[data-type]').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        currentType = chip.dataset.type;
+        render();
+      });
+    });
+
+    document.getElementById('favChip').addEventListener('click', () => {
+      showOnlyFavorites = !showOnlyFavorites;
+      updateFavChip();
+      render();
+    });
+
+    document.getElementById('viewToggle').addEventListener('click', function() {
+      if (currentView === 'list') {
+        switchView('matrix');
+      } else {
+        switchView('list');
+      }
+    });
+
+    const compactToggle = document.getElementById('compactModeToggle');
+    if (localStorage.getItem('rondologCompact') === 'true') { document.body.classList.add('compact'); compactToggle.checked = true; }
+    compactToggle.addEventListener('change', e => { document.body.classList.toggle('compact', e.target.checked); localStorage.setItem('rondologCompact', e.target.checked); });
+
+    document.getElementById('basesSearch').addEventListener('input', renderBases);
+    document.getElementById('basesUFFilter').addEventListener('change', renderBases);
+    document.getElementById('basesTipoFilter').addEventListener('change', renderBases);
+
+    /* ============================================================
+       ABA PONTOS – LÓGICA DE CARREGAMENTO DO JSON
+       ============================================================ */
+    let pointsData = [];
+
+    async function loadPoints() {
+      try {
+        const res = await fetch('data/pontos.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        pointsData = await res.json();
+        const ufs = [...new Set(pointsData.map(p => p.uf).filter(Boolean))].sort();
+        const ufSelect = document.getElementById('pointsUFFilter');
+        ufSelect.innerHTML = '<option value="">Todos os estados</option>' +
+          ufs.map(uf => `<option value="${uf}">${uf}</option>`).join('');
+        renderPoints();
+      } catch (err) {
+        console.error('Erro ao carregar pontos.json:', err);
+        document.getElementById('pointsGrid').innerHTML = `
+          <div class="no-result">❌ Erro ao carregar pontos. Verifique se o arquivo data/pontos.json existe.</div>
+        `;
+      }
+    }
+
+    function renderPoints() {
+      if (!pointsData || pointsData.length === 0) {
+        document.getElementById('pointsGrid').innerHTML = '<div class="no-result">📭 Nenhum ponto cadastrado.</div>';
+        document.getElementById('pointsCountBadge').textContent = '0 pontos';
+        document.getElementById('pointsTotal').textContent = '0';
+        document.getElementById('pointsRotas').textContent = '0';
+        document.getElementById('pointsUFs').textContent = '0';
+        document.getElementById('pointsTop').textContent = '—';
+        return;
+      }
+
+      const searchTerm = document.getElementById('pointsSearch').value.toLowerCase().trim();
+      const ufFilter = document.getElementById('pointsUFFilter').value;
+      const order = document.getElementById('pointsOrderSelect').value;
+
+      let filtered = pointsData.filter(p => {
+        const matchSearch = !searchTerm ||
+          (p.nome || '').toLowerCase().includes(searchTerm) ||
+          (p.endereco || '').toLowerCase().includes(searchTerm) ||
+          (p.cidade || '').toLowerCase().includes(searchTerm) ||
+          (p.cep || '').includes(searchTerm);
+        const matchUf = !ufFilter || p.uf === ufFilter;
+        return matchSearch && matchUf;
+      });
+
+      if (order === 'nome') {
+        filtered.sort((a, b) => (a.nome || '').localeCompare(b.nome || ''));
+      } else if (order === 'uf') {
+        filtered.sort((a, b) => (a.uf || '').localeCompare(b.uf || '') || (a.nome || '').localeCompare(b.nome || ''));
+      } else {
+        filtered.sort((a, b) => (b.count || 0) - (a.count || 0));
+      }
+
+      document.getElementById('pointsCountBadge').textContent = filtered.length + ' ponto' + (filtered.length!==1?'s':'');
+      document.getElementById('pointsTotal').textContent = pointsData.length;
+      const totalRotas = pointsData.reduce((acc, p) => acc + (p.count || 0), 0);
+      document.getElementById('pointsRotas').textContent = totalRotas;
+      const ufs = new Set(pointsData.map(p => p.uf).filter(Boolean));
+      document.getElementById('pointsUFs').textContent = ufs.size;
+      const top = pointsData.length > 0 ? pointsData[0].nome : '—';
+      document.getElementById('pointsTop').textContent = top.length > 20 ? top.slice(0,20)+'…' : top;
+
+      const grid = document.getElementById('pointsGrid');
+
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="no-result">🔍 Nenhum ponto encontrado com esses filtros.</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const freq = p.count || 0;
+        const maxFreq = pointsData.length > 0 ? pointsData[0].count || 0 : 1;
+        const intensity = maxFreq > 0 ? Math.min(1, freq / maxFreq) : 0;
+        const r = Math.round(220 - 100 * intensity);
+        const g = Math.round(220 - 180 * intensity);
+        const b = Math.round(220 - 100 * intensity);
+        const barColor = `rgb(${r}, ${g}, ${b})`;
+
+        const enderecoCompleto = `${p.endereco || ''}, ${p.cidade || ''}/${p.uf || ''}${p.cep ? ' — CEP ' + p.cep : ''}`;
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoCompleto)}`;
+        const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(p.nome + ' ' + p.cidade + ' ' + p.uf)}&navigate=yes`;
+
+        const rotasList = p.rotas || [];
+        const rotasCount = rotasList.length;
+
+        return `
+  <div class="point-card">
+    <div class="pci">
+      <div class="pci-accent" style="background:${barColor};"></div>
+      <div class="pci-body">
+        <div class="pci-top">
+          <span class="pci-nome">${p.nome || '—'}</span>
+          <span class="pci-freq">${freq} rota${freq>1?'s':''}</span>
+        </div>
+        <div class="pci-endereco">
+          📍 ${p.endereco || ''}<br>
+          ${p.cidade || ''} / ${p.uf || ''} ${p.cep ? '— CEP ' + p.cep : ''}
+        </div>
+        <div class="pci-foot">
+          <span class="pci-uf">${p.uf || '??'}</span>
+          ${p.cep ? `<span class="pci-cep">${p.cep}</span>` : ''}
+          <div class="pci-btns">
+            <a class="pci-btn pci-btn-maps" href="${mapsUrl}" target="_blank" rel="noopener">🗺 Maps</a>
+            <a class="pci-btn pci-btn-waze" href="${wazeUrl}" target="_blank" rel="noopener">🔵 Waze</a>
+            <button class="pci-btn" onclick="__copyPoint('${p.endereco ? p.endereco.replace(/"/g, '&quot;') : ''}', '${p.cidade ? p.cidade.replace(/"/g, '&quot;') : ''}', '${p.uf || ''}', '${p.cep || ''}')">📋 Copiar</button>
+            ${rotasCount > 0 ? `<button class="pci-btn" style="border-color:var(--red);color:var(--red);" onclick="event.stopPropagation();__showRotas('${p.nome.replace(/'/g, "\\'").replace(/"/g, '&quot;')}', ${JSON.stringify(rotasList).replace(/"/g, '&quot;')})">📋 Rotas</button>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+      }).join('');
+
+      window.__copyPoint = function(endereco, cidade, uf, cep) {
+        let txt = endereco;
+        if (cidade) txt += ', ' + cidade;
+        if (uf) txt += '/' + uf;
+        if (cep) txt += ', CEP ' + cep;
+        navigator.clipboard.writeText(txt).then(() => showToast('ENDEREÇO COPIADO'));
+      };
+    }
+
+    document.getElementById('pointsSearch').addEventListener('input', renderPoints);
+    document.getElementById('pointsUFFilter').addEventListener('change', renderPoints);
+    document.getElementById('pointsOrderSelect').addEventListener('change', renderPoints);
+
+    /* ============================================================
+       ONCO (PERFIL) – LÓGICA DE CARREGAMENTO DA PLANILHA
+       ============================================================ */
+    const ONCO_XLSX_PATH = 'data/RONDOLOG_ONCOPROD_Controle_visual.xlsx';
+    const ONCO_SHEETS = [
+      { name: 'VEICULOS',    tipo: 'Veículo' },
+      { name: 'CONDUTORES',  tipo: 'Condutor' },
+      { name: 'FUNCIONARIOS', tipo: 'Funcionário' }
+    ];
+
+    function oncoStatusInfo(status){
+      const s = (status||'').toUpperCase().trim();
+      if(s==='TEM PERFIL')          return {cls:'status-tem-perfil', label:'Tem perfil'};
+      if(s==='NÃO TEM PERFIL')      return {cls:'status-nao-tem-perfil', label:'Não tem perfil'};
+      if(s==='AGUARDANDO RETORNO')  return {cls:'status-aguardando', label:'Aguardando retorno'};
+      if(s==='DADOS DIVERGENTES')   return {cls:'status-divergente', label:'Dados divergentes'};
+      if(s==='DOCUMENTO VENCIDO')   return {cls:'status-doc-vencido', label:'Documento vencido'};
+      return {cls:'', label: status || '—'};
+    }
+
+    function oncoVencCell(dataStr){
+      if(!dataStr || dataStr==='—') return '—';
+      const dias = diasAteVencer(dataStr);
+      if(dias===null) return dataStr;
+      let cls, label;
+      if(dias<0)       { cls='venc-badge-vencido'; label=`${Math.abs(dias)}d vencido`; }
+      else if(dias<=30){ cls='venc-badge-30';      label=`${dias}d`; }
+      else if(dias<=60){ cls='venc-badge-60';      label=`${dias}d`; }
+      else             { cls='venc-badge-ok';      label=`${dias}d`; }
+      return `${dataStr} <span class="venc-badge ${cls}">${label}</span>`;
+    }
+
+    function oncoPad2(n){ return n<10 ? '0'+n : ''+n; }
+
+    function oncoNormalizeDate(v){
+      if(v===null || v===undefined || v==='') return '';
+      if(v instanceof Date && !isNaN(v)){
+        return `${oncoPad2(v.getDate())}/${oncoPad2(v.getMonth()+1)}/${v.getFullYear()}`;
+      }
+      const s = v.toString().trim();
+      if(/^\d{2}\/\d{2}\/\d{4}$/.test(s)) return s;
+      const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+      if(iso) return `${iso[3]}/${iso[2]}/${iso[1]}`;
+      return s;
+    }
+
+    function parseOncoSheet(ws, tipo){
+      if(!ws) return [];
+      const rows = XLSX.utils.sheet_to_json(ws, {header:1, raw:true, defval:null});
+      const headerIdx = rows.findIndex(r => Array.isArray(r) && r.some(c => (c||'').toString().trim().toUpperCase()==='STATUS'));
+      if(headerIdx===-1) return [];
+      const header = rows[headerIdx].map(c => (c||'').toString().trim().toUpperCase());
+      const idx = {
+        numero: header.indexOf('Nº'),
+        placa: header.indexOf('PLACA'),
+        nome: header.indexOf('NOME COMPLETO'),
+        status: header.indexOf('STATUS'),
+        venc: header.indexOf('VENCIMENTO'),
+        obs: header.indexOf('OBSERVAÇÕES')
+      };
+      if(idx.status===-1) return [];
+      const out = [];
+      for(let i=headerIdx+1; i<rows.length; i++){
+        const r = rows[i];
+        if(!r) continue;
+        const statusVal = (idx.status>=0 ? (r[idx.status]||'') : '').toString().trim();
+        const nomeVal = idx.nome>=0 ? (r[idx.nome]||'').toString().trim() : '';
+        const placaVal = idx.placa>=0 ? (r[idx.placa]||'').toString().trim() : '';
+        const numeroVal = idx.numero>=0 ? (r[idx.numero]||'').toString().trim() : '';
+        if((!placaVal && !nomeVal) || !statusVal) continue;
+        out.push({
+          tipo,
+          identificador: placaVal || (numeroVal ? ('Nº '+numeroVal) : '—'),
+          nome: nomeVal,
+          status: statusVal,
+          vencimento: idx.venc>=0 ? oncoNormalizeDate(r[idx.venc]) : '',
+          observacoes: idx.obs>=0 ? (r[idx.obs]||'').toString().trim() : ''
+        });
+      }
+      return out;
+    }
+
+    async function loadOnco(){
+      const loadingEl = document.getElementById('oncoLoading');
+      const contentEl = document.getElementById('oncoContent');
+      loadingEl.textContent = '📂 Carregando dados da planilha...';
+      loadingEl.style.display = 'block';
+      contentEl.style.display = 'none';
+      try{
+        const resp = await fetch(ONCO_XLSX_PATH);
+        if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const buf = await resp.arrayBuffer();
+        const wb = XLSX.read(buf, {type:'array', cellDates:true});
+        let data = [];
+        ONCO_SHEETS.forEach(s => {
+          data = data.concat(parseOncoSheet(wb.Sheets[s.name], s.tipo));
+        });
+        window.oncoData = data;
+      }catch(err){
+        console.error('Erro ao carregar a planilha ONCO:', err);
+        window.oncoData = [];
+        loadingEl.textContent = `❌ Erro ao carregar ${ONCO_XLSX_PATH}. Confira se o arquivo está na pasta "data/" do repositório.`;
+        loadingEl.style.display = 'block';
+        contentEl.style.display = 'none';
+        return;
+      }
+      if(window.oncoData.length===0){
+        loadingEl.textContent = '📭 Nenhum registro encontrado na planilha.';
+        loadingEl.style.display = 'block';
+        contentEl.style.display = 'none';
+        return;
+      }
+      loadingEl.style.display = 'none';
+      contentEl.style.display = 'block';
+      document.getElementById('oncoCount').textContent = window.oncoData.length + ' registros';
+      renderOncoGlobalStats();
+      renderOncoCatCards();
+      renderOncoUpcoming();
+      renderOncoCategory('Veículo', 'oncoVeiculos');
+      renderOncoCategory('Condutor', 'oncoCondutores');
+      renderOncoCategory('Funcionário', 'oncoFuncionarios');
+    }
+
+    function renderOncoGlobalStats(){
+      const el = document.getElementById('oncoGlobalStats');
+      const data = window.oncoData || [];
+      if(data.length===0){ el.innerHTML=''; return; }
+      const temPerfil = data.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
+      const naoTemPerfil = data.filter(i=>i.status.toUpperCase()==='NÃO TEM PERFIL').length;
+      const aguardando = data.filter(i=>i.status.toUpperCase()==='AGUARDANDO RETORNO').length;
+      const divergentes = data.filter(i=>['DADOS DIVERGENTES','DOCUMENTO VENCIDO'].includes(i.status.toUpperCase())).length;
+      const vencidosProximos = data.filter(i=>{
+        const d = diasAteVencer(i.vencimento);
+        return d!==null && d<=30;
+      }).length;
       el.innerHTML = `
-        <div class="global-stat-card gs-critical"><div class="gs-num">${vencidos}</div><div class="gs-label">Vencidos</div></div>
-        <div class="global-stat-card gs-warn"><div class="gs-num">${urgentes}</div><div class="gs-label">Urgentes</div></div>
-        <div class="global-stat-card gs-nao-ok"><div class="gs-num">${naoOk}</div><div class="gs-label">Não OK</div></div>
-        <div class="global-stat-card gs-ok"><div class="gs-num">${validos}</div><div class="gs-label">Válidos</div></div>
-        <div class="global-stat-card" style="border-top-color:${TIPO_COLORS['Próprio']}"><div class="gs-num" style="color:${TIPO_COLORS['Próprio']}">${proprio}</div><div class="gs-label">Próprio</div></div>
-        <div class="global-stat-card" style="border-top-color:${TIPO_COLORS['Agregado']}"><div class="gs-num" style="color:${TIPO_COLORS['Agregado']}">${agregado}</div><div class="gs-label">Agregado</div></div>
-        <div class="global-stat-card" style="border-top-color:${TIPO_COLORS['Terceiro']}"><div class="gs-num" style="color:${TIPO_COLORS['Terceiro']}">${terceiro}</div><div class="gs-label">Terceiro</div></div>
-        <div class="global-stat-card"><div class="gs-num">${all.length}</div><div class="gs-label">Total</div></div>
+        <div class="global-stat-card gs-ok"><div class="gs-num">${temPerfil}</div><div class="gs-label">Tem perfil</div></div>
+        <div class="global-stat-card gs-critical"><div class="gs-num">${naoTemPerfil}</div><div class="gs-label">Não tem perfil</div></div>
+        <div class="global-stat-card gs-warn"><div class="gs-num">${aguardando}</div><div class="gs-label">Aguardando retorno</div></div>
+        <div class="global-stat-card gs-nao-ok"><div class="gs-num">${divergentes}</div><div class="gs-label">Divergentes/vencidos</div></div>
+        <div class="global-stat-card gs-warn"><div class="gs-num">${vencidosProximos}</div><div class="gs-label">Vencendo em 30 dias</div></div>
+        <div class="global-stat-card"><div class="gs-num">${data.length}</div><div class="gs-label">Total geral</div></div>
       `;
     }
 
-    function renderTable() {
-      const countEl = document.getElementById('fcCount');
-      const accordionEl = document.getElementById('fcAccordion');
-      const emptyEl = document.getElementById('fcEmpty');
-      let filtered = getFiltered();
-
-      countEl.textContent = filtered.length + ' itens';
-      if (!filtered.length) {
-        accordionEl.innerHTML = '';
-        emptyEl.style.display = 'block';
-        return;
-      }
-      emptyEl.style.display = 'none';
-
-      filtered.sort((a, b) => {
-        const ordem = { vencido: 0, urgente: 1, 'nao-ok': 2, valido: 3 };
-        const sa = computeStatus(a), sb = computeStatus(b);
-        const diff = (ordem[sa] ?? 9) - (ordem[sb] ?? 9);
-        if (diff !== 0) return diff;
-        return (parseDateBR(a.vigenciaChecklist) || 0) - (parseDateBR(b.vigenciaChecklist) || 0);
-      });
-
-      const grouped = {};
-      filtered.forEach(r => { const reg = r.region || 'Outras'; (grouped[reg] = grouped[reg] || []).push(r); });
-      const regions = Object.keys(grouped).sort((a, b) => {
-        const ia = REGION_ORDER.indexOf(a), ib = REGION_ORDER.indexOf(b);
-        if (ia === -1 && ib === -1) return a.localeCompare(b);
-        if (ia === -1) return 1; if (ib === -1) return -1;
-        return ia - ib;
-      });
-
-      let html = '';
-      regions.forEach(reg => {
-        const items = grouped[reg];
-        const color = REGION_COLORS[reg] || '#6b7280';
-        const vencidoCount = items.filter(i => computeStatus(i) === 'vencido').length;
-        const urgenteCount = items.filter(i => computeStatus(i) === 'urgente').length;
-        const isOpen = regionOpenState.hasOwnProperty(reg) ? regionOpenState[reg] : (vencidoCount + urgenteCount > 0);
-        regionOpenState[reg] = isOpen;
-
-        let rows = '';
-        items.forEach(item => {
-          const status = computeStatus(item);
-          const statusClass = `status-${status}`;
-          const statusLabel = status === 'vencido' ? 'Vencido' : status === 'valido' ? 'Válido' : status === 'urgente' ? 'Urgente' : 'Não OK';
-          let validadeCell = item.vigenciaChecklist || '—';
-          if (status === 'vencido') {
-            const dv = diasVencido(item);
-            validadeCell += dv !== null ? ` <span class="dias-vencido-badge">${dv}d</span>` : '';
-          }
-          rows += `<tr>
-            <td><span class="veiculo-tag">${item.placa}</span></td>
-            <td>${tipoBadge(item.tipoFrota)}</td>
-            <td>${catBadge(item.categoria)}</td>
-            <td><span class="status-badge ${statusClass}">${statusLabel}</span></td>
-            <td>${validadeCell}</td>
-            <td><span class="cidade-tag">${item.cidadeUF || '—'}</span></td>
-            <td>${item.condutor || '—'}</td>
-            <td>${item.responsavel || '—'}</td>
-            <td style="white-space:nowrap;">
-              <button class="edit-btn" data-fc-edit="${item.id}" title="Editar">✏️</button>
-              <button class="edit-btn" data-fc-del="${item.id}" title="Remover">🗑️</button>
-            </td>
-          </tr>`;
-        });
-
-        html += `
-          <div class="region-accordion ${isOpen ? 'open' : ''}" data-region="${reg}" style="border-left-color:${color};">
-            <div class="accordion-header" data-fc-toggle="${reg}">
-              <span class="region-title"><span class="color-dot" style="background:${color};"></span>${reg}</span>
-              <span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-                ${vencidoCount ? `<span class="region-badge vencido">${vencidoCount} vencido${vencidoCount !== 1 ? 's' : ''}</span>` : ''}
-                ${urgenteCount ? `<span class="region-badge urgente">${urgenteCount} urgente${urgenteCount !== 1 ? 's' : ''}</span>` : ''}
-                <span class="region-count">${items.length} total</span>
-                <span class="chevron">▼</span>
-              </span>
-            </div>
-            <div class="accordion-body">
-              <div class="region-table-wrap">
-                <table class="checklist-table">
-                  <thead><tr>
-                    <th>Placa</th><th>Tipo Frota</th><th>Categoria</th><th>Status</th><th>Validade</th>
-                    <th>Cidade/UF</th><th>Condutor</th><th>Responsável</th><th>Ações</th>
-                  </tr></thead>
-                  <tbody>${rows}</tbody>
-                </table>
-              </div>
-            </div>
-          </div>`;
-      });
-      accordionEl.innerHTML = html;
-
-      accordionEl.querySelectorAll('[data-fc-toggle]').forEach(h => {
-        h.addEventListener('click', () => {
-          const reg = h.dataset.fcToggle;
-          const acc = h.closest('.region-accordion');
-          const open = acc.classList.toggle('open');
-          regionOpenState[reg] = open;
-        });
-      });
-      accordionEl.querySelectorAll('[data-fc-edit]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); openModal(b.dataset.fcEdit); }));
-      accordionEl.querySelectorAll('[data-fc-del]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); deleteRecord(b.dataset.fcDel); }));
-    }
-
-    function renderAll() { renderStats(); renderTable(); }
-
-    /* ---------------- Bind UI ---------------- */
-    let bound = false;
-    function bindUI() {
-      if (bound) return;
-      bound = true;
-      document.getElementById('fcSearch').addEventListener('input', e => { filters.search = e.target.value; renderTable(); });
-      document.getElementById('fcStatusFilter').addEventListener('change', e => { filters.status = e.target.value; renderTable(); });
-      document.getElementById('fcTipoFilter').addEventListener('change', e => { filters.tipoFrota = e.target.value; renderTable(); });
-      document.getElementById('fcCategoriaFilter').addEventListener('change', e => { filters.categoria = e.target.value; renderTable(); });
-      document.getElementById('fcClearFilters').addEventListener('click', () => {
-        filters = { search: '', status: '', tipoFrota: '', categoria: '', region: '' };
-        document.getElementById('fcSearch').value = '';
-        document.getElementById('fcStatusFilter').value = '';
-        document.getElementById('fcTipoFilter').value = '';
-        document.getElementById('fcCategoriaFilter').value = '';
-        renderTable();
-      });
-      document.getElementById('fcNovoBtn').addEventListener('click', () => openModal(null));
-      document.getElementById('fcModalCancel').addEventListener('click', closeModal);
-      document.getElementById('fcModal').addEventListener('click', e => { if (e.target.id === 'fcModal') closeModal(); });
-      document.getElementById('fcModalSave').addEventListener('click', saveModal);
-      document.getElementById('fcImportInput').addEventListener('change', e => {
-        const file = e.target.files[0];
-        if (file) handleImportFile(file);
-        e.target.value = '';
-      });
-      document.getElementById('fcExportJson').addEventListener('click', () => {
-        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = 'frota_checklist_export.json';
-        a.click();
-        URL.revokeObjectURL(a.href);
-      });
-    }
-
-    window.FrotaChecklist = {
-      open: async function () {
-        bindUI();
-        if (!data.length && !loadFromStorage()) {
-          await init();
-        } else if (!loadFromStorage()) {
-          await init();
-        }
-        renderAll();
-      }
+    const ONCO_CAT_META = {
+      'Veículo':     {icon:'🚗', label:'Veículos',     view:'veiculos'},
+      'Condutor':    {icon:'🧑‍✈️', label:'Condutores',   view:'condutores'},
+      'Funcionário': {icon:'👥', label:'Funcionários', view:'funcionarios'}
     };
 
-    init();
+    function renderOncoCatCards(){
+      const el = document.getElementById('oncoCatCards');
+      const data = window.oncoData || [];
+      let html = '';
+      for(const tipo of ['Veículo','Condutor','Funcionário']){
+        const items = data.filter(i=>i.tipo===tipo);
+        if(items.length===0) continue;
+        const temPerfil = items.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
+        const pct = items.length ? Math.round((temPerfil/items.length)*100) : 0;
+        const meta = ONCO_CAT_META[tipo];
+        html += `<div class="onco-cat-card" data-onco-view="${meta.view}">
+          <div class="oc-title">${meta.icon} ${meta.label}</div>
+          <div class="oc-row"><span>Total</span><b>${items.length}</b></div>
+          <div class="oc-row"><span>Com perfil</span><b>${temPerfil}</b></div>
+          <div class="oc-row"><span>Pendências</span><b>${items.length-temPerfil}</b></div>
+          <div class="oc-bar"><div class="oc-bar-fill" style="width:${pct}%;"></div></div>
+        </div>`;
+      }
+      el.innerHTML = html;
+      el.querySelectorAll('.onco-cat-card').forEach(card => {
+        card.addEventListener('click', () => switchOncoView(card.dataset.oncoView));
+      });
+    }
+
+    function renderOncoUpcoming(){
+      const wrap = document.getElementById('oncoUpcomingWrap');
+      const body = document.getElementById('oncoUpcomingBody');
+      const data = (window.oncoData || []).filter(i => i.status.toUpperCase()==='TEM PERFIL' && diasAteVencer(i.vencimento)!==null);
+      data.sort((a,b) => diasAteVencer(a.vencimento) - diasAteVencer(b.vencimento));
+      const upcoming = data.slice(0, 15);
+      if(upcoming.length===0){ wrap.style.display='none'; return; }
+      wrap.style.display='block';
+      body.innerHTML = upcoming.map(i => `<tr>
+          <td><span class="onco-tipo-tag">${i.tipo}</span></td>
+          <td><span class="veiculo-tag">${i.identificador}</span></td>
+          <td>${i.nome||'—'}</td>
+          <td>${oncoVencCell(i.vencimento)}</td>
+        </tr>`).join('');
+    }
+
+    function renderOncoCategory(tipo, idPrefix){
+      const searchEl = document.getElementById(idPrefix+'Search');
+      const statusEl = document.getElementById(idPrefix+'StatusFilter');
+      const statsEl = document.getElementById(idPrefix+'Stats');
+      const countEl = document.getElementById(idPrefix+'Count');
+      const bodyEl = document.getElementById(idPrefix+'Body');
+      const showNome = tipo !== 'Veículo';
+
+      const all = (window.oncoData || []).filter(i=>i.tipo===tipo);
+      const temPerfil = all.filter(i=>i.status.toUpperCase()==='TEM PERFIL').length;
+      const naoTemPerfil = all.filter(i=>i.status.toUpperCase()==='NÃO TEM PERFIL').length;
+      const aguardando = all.filter(i=>i.status.toUpperCase()==='AGUARDANDO RETORNO').length;
+      const divergentes = all.filter(i=>['DADOS DIVERGENTES','DOCUMENTO VENCIDO'].includes(i.status.toUpperCase())).length;
+      statsEl.innerHTML = `
+        <div class="global-stat-card gs-ok"><div class="gs-num">${temPerfil}</div><div class="gs-label">Tem perfil</div></div>
+        <div class="global-stat-card gs-critical"><div class="gs-num">${naoTemPerfil}</div><div class="gs-label">Não tem perfil</div></div>
+        <div class="global-stat-card gs-warn"><div class="gs-num">${aguardando}</div><div class="gs-label">Aguardando retorno</div></div>
+        <div class="global-stat-card gs-nao-ok"><div class="gs-num">${divergentes}</div><div class="gs-label">Divergentes/vencidos</div></div>
+        <div class="global-stat-card"><div class="gs-num">${all.length}</div><div class="gs-label">Total</div></div>
+      `;
+
+      const searchTerm = (searchEl.value||'').toLowerCase();
+      const statusFilter = statusEl.value;
+      let filtered = all.filter(item => {
+        const matchSearch = !searchTerm ||
+          item.identificador.toLowerCase().includes(searchTerm) ||
+          item.nome.toLowerCase().includes(searchTerm) ||
+          item.observacoes.toLowerCase().includes(searchTerm);
+        const matchStatus = !statusFilter || item.status.toUpperCase()===statusFilter;
+        return matchSearch && matchStatus;
+      });
+      filtered.sort((a,b) => {
+        const da = diasAteVencer(a.vencimento), db = diasAteVencer(b.vencimento);
+        if(da===null && db===null) return 0;
+        if(da===null) return 1;
+        if(db===null) return -1;
+        return da-db;
+      });
+
+      countEl.textContent = filtered.length + ' de ' + all.length;
+      if(filtered.length===0){
+        bodyEl.innerHTML = `<tr><td colspan="${showNome?5:4}" style="text-align:center;color:var(--text-muted);padding:24px;">🔍 Nenhum registro encontrado com esses filtros.</td></tr>`;
+        return;
+      }
+      bodyEl.innerHTML = filtered.map(item => {
+        const info = oncoStatusInfo(item.status);
+        return `<tr>
+          <td><span class="veiculo-tag">${item.identificador}</span></td>
+          ${showNome ? `<td>${item.nome||'—'}</td>` : ''}
+          <td><span class="status-badge ${info.cls}">${info.label}</span></td>
+          <td>${oncoVencCell(item.vencimento)}</td>
+          <td>${item.observacoes||'—'}</td>
+        </tr>`;
+      }).join('');
+    }
+
+    let oncoActiveView = 'geral';
+    function switchOncoView(view){
+      oncoActiveView = view;
+      document.querySelectorAll('.onco-subtab').forEach(t => t.classList.toggle('active', t.dataset.oncoView===view));
+      document.querySelectorAll('.onco-view').forEach(v => v.classList.remove('active'));
+      const map = {geral:'oncoViewGeral', veiculos:'oncoViewVeiculos', condutores:'oncoViewCondutores', funcionarios:'oncoViewFuncionarios'};
+      document.getElementById(map[view]).classList.add('active');
+    }
+
+    document.getElementById('oncoRefresh').addEventListener('click', function(){
+      window.oncoData = null;
+      loadOnco();
+    });
+
+    document.querySelectorAll('.onco-subtab').forEach(tab => {
+      tab.addEventListener('click', () => switchOncoView(tab.dataset.oncoView));
+    });
+
+    document.getElementById('oncoVeiculosSearch').addEventListener('input', () => renderOncoCategory('Veículo','oncoVeiculos'));
+    document.getElementById('oncoVeiculosStatusFilter').addEventListener('change', () => renderOncoCategory('Veículo','oncoVeiculos'));
+    document.getElementById('oncoCondutoresSearch').addEventListener('input', () => renderOncoCategory('Condutor','oncoCondutores'));
+    document.getElementById('oncoCondutoresStatusFilter').addEventListener('change', () => renderOncoCategory('Condutor','oncoCondutores'));
+    document.getElementById('oncoFuncionariosSearch').addEventListener('input', () => renderOncoCategory('Funcionário','oncoFuncionarios'));
+    document.getElementById('oncoFuncionariosStatusFilter').addEventListener('change', () => renderOncoCategory('Funcionário','oncoFuncionarios'));
+
+    /* ============================================================
+       FROTA CHECKLIST – Módulo com Merge Inteligente
+       ============================================================ */
+    (function () {
+      'use strict';
+
+      const LS_KEY = 'frotaChecklistData_v1';
+      const LS_MIGRATED_KEY = 'frotaChecklistMigrated_v1';
+      const LEGACY_JSON_URL = 'data/checklists.json';
+
+      const TIPO_FROTA = ['Próprio', 'Agregado', 'Terceiro'];
+      const CATEGORIAS = ['CAVALO', 'CARRETA', 'FIORINO', 'LEVE', 'VAN'];
+      const REGION_ORDER = ['Frota Pesada', 'Embarque', 'Rio de Janeiro', 'São Paulo', 'Betim', 'Brasília', 'Outras'];
+      const REGION_COLORS = {
+        'Frota Pesada': '#dc2626', 'Embarque': '#f97316', 'Rio de Janeiro': '#3b82f6',
+        'São Paulo': '#22c55e', 'Betim': '#8b5cf6', 'Brasília': '#eab308', 'Outras': '#6b7280'
+      };
+      const TIPO_COLORS = { 'Próprio': '#3b82f6', 'Agregado': '#8b5cf6', 'Terceiro': '#f97316' };
+      const CAT_COLORS = {
+        CAVALO: '#dc2626', CARRETA: '#0ea5e9', FIORINO: '#22c55e', LEVE: '#eab308', VAN: '#8b5cf6'
+      };
+
+      let data = [];
+      let editingId = null;
+      let filters = { search: '', status: '', tipoFrota: '', categoria: '', region: '' };
+      let regionOpenState = {};
+
+      /* ---------------- Utils ---------------- */
+      function uid() { return 'v' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+
+      function norm(s) { return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+
+      function computeStatus(rec) {
+        if (rec.naoOkManual) return 'nao-ok';
+        const dt = parseDateBR(rec.vigenciaChecklist);
+        if (!dt) return 'nao-ok';
+        const today = new Date(); today.setHours(0, 0, 0, 0);
+        const diffDias = Math.floor((dt - today) / 86400000);
+        if (diffDias < 0) return 'vencido';
+        if (diffDias <= 3) return 'urgente';
+        return 'valido';
+      }
+
+      function diasVencido(rec) {
+        const dt = parseDateBR(rec.vigenciaChecklist);
+        if (!dt) return null;
+        const today = new Date(); today.setHours(0, 0, 0, 0);
+        const diff = Math.floor((today - dt) / 86400000);
+        return diff > 0 ? diff : 0;
+      }
+
+      /* ---------------- Persistência ---------------- */
+      function loadFromStorage() {
+        try {
+          const raw = localStorage.getItem(LS_KEY);
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) { return null; }
+      }
+      function saveToStorage() {
+        localStorage.setItem(LS_KEY, JSON.stringify(data));
+      }
+
+      async function migrateFromLegacyJson() {
+        try {
+          const res = await fetch(LEGACY_JSON_URL);
+          if (!res.ok) throw new Error('sem checklists.json');
+          const legacy = await res.json();
+          data = legacy.map(item => ({
+            id: uid(),
+            placa: item.veiculo || '',
+            tipoFrota: normalizeTipoFrota(item.tipoFrota),
+            categoria: normalizeCategoria(item.categoria),
+            dataRealizacao: '',
+            vigenciaChecklist: item.validadeData || '',
+            naoOkManual: item.status === 'nao-ok',
+            dispositivosDefeito: '',
+            cidadeUF: item.cidadeUF || '',
+            condutor: item.condutor || '',
+            responsavel: item.responsavel || '',
+            region: item.region || 'Outras'
+          }));
+          saveToStorage();
+        } catch (e) {
+          data = [];
+        }
+        localStorage.setItem(LS_MIGRATED_KEY, 'true');
+      }
+
+      function normalizeTipoFrota(v) {
+        const s = norm(v);
+        if (s.includes('agreg')) return 'Agregado';
+        if (s.includes('terc')) return 'Terceiro';
+        if (s.includes('prop') || s.includes('próp')) return 'Próprio';
+        return TIPO_FROTA.includes(v) ? v : 'Próprio';
+      }
+      function normalizeCategoria(v) {
+        const s = norm(v).toUpperCase();
+        const found = CATEGORIAS.find(c => norm(c).toUpperCase() === s || s.includes(norm(c).toUpperCase()));
+        return found || 'LEVE';
+      }
+
+      async function init() {
+        const stored = loadFromStorage();
+        if (stored) {
+          data = stored;
+        } else if (!localStorage.getItem(LS_MIGRATED_KEY)) {
+          await migrateFromLegacyJson();
+        } else {
+          data = [];
+        }
+      }
+
+      /* ---------------- Importação personalizada com merge --------- */
+      function parseRelatorioChecklist(rows) {
+        let results = [];
+        let i = 0;
+        while (i < rows.length) {
+          const row = rows[i];
+          if (!row || row.length === 0) { i++; continue; }
+          const cell0 = (row[0] || '').toString().trim();
+          if (cell0.startsWith('Veículo:') || cell0.startsWith('Carreta:')) {
+            let rec = {};
+            const placaMatch = cell0.match(/(?:Veículo|Carreta):\s*([A-Z0-9]+)/i);
+            if (placaMatch) rec.placa = placaMatch[1].toUpperCase();
+
+            // Categoria: se Carreta -> CARRETA, senão CAVALO
+            rec.categoria = cell0.startsWith('Carreta:') ? 'CARRETA' : 'CAVALO';
+
+            let tipo = '';
+            if (cell0.includes('AGREGADO')) tipo = 'Agregado';
+            else if (cell0.includes('PROPRIO') || cell0.includes('PRÓPRIO')) tipo = 'Próprio';
+            else if (cell0.includes('TERCEIRO')) tipo = 'Terceiro';
+            if (!tipo && i+1 < rows.length) {
+              const nextRow = rows[i+1];
+              const nextCell = (nextRow && nextRow[0]) ? nextRow[0].toString().trim() : '';
+              if (nextCell.includes('AGREGADO')) tipo = 'Agregado';
+              else if (nextCell.includes('PROPRIO') || nextCell.includes('PRÓPRIO')) tipo = 'Próprio';
+              else if (nextCell.includes('TERCEIRO')) tipo = 'Terceiro';
+            }
+            rec.tipoFrota = tipo || 'Agregado';
+
+            i++;
+            let dataRealizacao = '', validade = '', responsavel = '', operador = '';
+            let dispositivos = [];
+            let temDefeito = false;
+
+            while (i < rows.length) {
+              const line = rows[i];
+              if (!line || line.length === 0) { i++; continue; }
+              const first = (line[0] || '').toString().trim();
+              const second = (line[1] || '').toString().trim();
+
+              if (first.startsWith('Veículo:') || first.startsWith('Carreta:')) break;
+
+              if (first.startsWith('Data da Realização:')) {
+                dataRealizacao = first.replace('Data da Realização:', '').trim().split(' ')[0];
+              } else if (first.startsWith('Validade:')) {
+                validade = first.replace('Validade:', '').trim();
+              } else if (first.startsWith('Responsavel:')) {
+                responsavel = first.replace('Responsavel:', '').trim();
+              } else if (first.startsWith('Operador:')) {
+                operador = first.replace('Operador:', '').trim();
+              } else if (first === 'Dispositivos Avaliados' || first === 'Situação') {
+                // header
+              } else if (first && second) {
+                const situacao = second.toLowerCase();
+                const defeito = situacao.includes('defeito') || situacao.includes('não ok') || situacao === 'não ok';
+                if (defeito) temDefeito = true;
+                dispositivos.push({ nome: first, situacao: second });
+              }
+              i++;
+            }
+
+            rec.dataRealizacao = normalizeAnyDate(dataRealizacao);
+            const isNaoOk = validade.toLowerCase().includes('não ok') || validade.toLowerCase().includes('nao ok');
+            if (isNaoOk) {
+              rec.naoOkManual = true;
+              rec.vigenciaChecklist = '';
+            } else {
+              const dateMatch = validade.match(/(\d{2}\/\d{2}\/\d{4})/);
+              rec.vigenciaChecklist = dateMatch ? dateMatch[1] : validade;
+              rec.naoOkManual = temDefeito;
+            }
+            if (temDefeito) rec.naoOkManual = true;
+
+            const defeitos = dispositivos.filter(d => d.situacao.toLowerCase().includes('defeito') || d.situacao.toLowerCase().includes('não ok') || d.situacao.toLowerCase().includes('nao ok'));
+            rec.dispositivosDefeito = defeitos.map(d => d.nome).join(', ');
+
+            rec.responsavel = responsavel;
+            rec.condutor = operador;
+            rec.cidadeUF = '';    // não existe no arquivo
+            rec.region = 'Outras'; // padrão
+
+            results.push(rec);
+          } else {
+            i++;
+          }
+        }
+        return results;
+      }
+
+      function handleImportFile(file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          try {
+            const wb = XLSX.read(e.target.result, { type: 'binary', cellDates: true });
+            const ws = wb.Sheets[wb.SheetNames[0]];
+            const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
+            const parsed = parseRelatorioChecklist(rows);
+            let added = 0, updated = 0;
+
+            parsed.forEach(rec => {
+              if (!rec.placa) return;
+              const existingIdx = data.findIndex(d => norm(d.placa) === norm(rec.placa));
+              if (existingIdx >= 0) {
+                const existing = data[existingIdx];
+                data[existingIdx] = {
+                  ...existing,
+                  tipoFrota: rec.tipoFrota,
+                  dataRealizacao: rec.dataRealizacao,
+                  vigenciaChecklist: rec.vigenciaChecklist,
+                  naoOkManual: rec.naoOkManual,
+                  dispositivosDefeito: rec.dispositivosDefeito,
+                  responsavel: rec.responsavel,
+                  condutor: rec.condutor,
+                  categoria: existing.categoria || rec.categoria,
+                  cidadeUF: existing.cidadeUF || '',
+                  region: existing.region || 'Outras'
+                };
+                updated++;
+              } else {
+                rec.cidadeUF = '';
+                rec.region = 'Outras';
+                data.push({ id: uid(), ...rec });
+                added++;
+              }
+            });
+
+            saveToStorage();
+            renderAll();
+            toast(`✅ Importação concluída: ${added} adicionados, ${updated} atualizados`);
+          } catch (err) {
+            toast('❌ Erro ao importar planilha: ' + err.message);
+          }
+        };
+        reader.readAsBinaryString(file);
+      }
+
+      /* ---------------- CRUD ---------------- */
+      function openModal(id) {
+        editingId = id || null;
+        const rec = id ? data.find(d => d.id === id) : null;
+        document.getElementById('fcModalTitle').textContent = rec ? 'Editar Veículo' : 'Novo Veículo';
+        document.getElementById('fcPlaca').value = rec ? rec.placa : '';
+        document.getElementById('fcTipoFrota').value = rec ? rec.tipoFrota : 'Próprio';
+        document.getElementById('fcCategoria').value = rec ? rec.categoria : 'CAVALO';
+        document.getElementById('fcDataRealizacao').value = rec ? brToInput(rec.dataRealizacao) : '';
+        document.getElementById('fcVigencia').value = rec ? brToInput(rec.vigenciaChecklist) : '';
+        document.getElementById('fcNaoOk').checked = rec ? !!rec.naoOkManual : false;
+        document.getElementById('fcDispositivos').value = rec ? rec.dispositivosDefeito || '' : '';
+        document.getElementById('fcCidade').value = rec ? rec.cidadeUF || '' : '';
+        document.getElementById('fcCondutor').value = rec ? rec.condutor || '' : '';
+        document.getElementById('fcResponsavel').value = rec ? rec.responsavel || '' : '';
+        document.getElementById('fcRegion').value = rec ? rec.region || 'Outras' : 'Outras';
+        document.getElementById('fcModal').classList.add('show');
+      }
+      function closeModal() { document.getElementById('fcModal').classList.remove('show'); editingId = null; }
+
+      function brToInput(br) {
+        const dt = parseDateBR(br);
+        if (!dt) return '';
+        const p2 = n => (n < 10 ? '0' + n : '' + n);
+        return `${dt.getFullYear()}-${p2(dt.getMonth() + 1)}-${p2(dt.getDate())}`;
+      }
+      function inputToBr(iso) {
+        if (!iso) return '';
+        const [y, m, d] = iso.split('-');
+        return `${d}/${m}/${y}`;
+      }
+
+      function saveModal() {
+        const placa = document.getElementById('fcPlaca').value.trim().toUpperCase();
+        if (!placa) { toast('⚠️ Placa é obrigatória'); return; }
+        const rec = {
+          placa,
+          tipoFrota: document.getElementById('fcTipoFrota').value,
+          categoria: document.getElementById('fcCategoria').value,
+          dataRealizacao: inputToBr(document.getElementById('fcDataRealizacao').value),
+          vigenciaChecklist: inputToBr(document.getElementById('fcVigencia').value),
+          naoOkManual: document.getElementById('fcNaoOk').checked,
+          dispositivosDefeito: document.getElementById('fcDispositivos').value.trim(),
+          cidadeUF: document.getElementById('fcCidade').value.trim(),
+          condutor: document.getElementById('fcCondutor').value.trim(),
+          responsavel: document.getElementById('fcResponsavel').value.trim(),
+          region: document.getElementById('fcRegion').value
+        };
+        if (editingId) {
+          const idx = data.findIndex(d => d.id === editingId);
+          if (idx >= 0) data[idx] = { ...data[idx], ...rec };
+        } else {
+          data.push({ id: uid(), ...rec });
+        }
+        saveToStorage();
+        closeModal();
+        renderAll();
+        toast('✅ Veículo salvo');
+      }
+
+      function deleteRecord(id) {
+        if (!confirm('Remover este veículo do checklist?')) return;
+        data = data.filter(d => d.id !== id);
+        saveToStorage();
+        renderAll();
+        toast('🗑️ Removido');
+      }
+
+      /* ---------------- Render ---------------- */
+      function toast(msg) {
+        if (window.showToastFrota) { window.showToastFrota(msg); return; }
+        let t = document.getElementById('fcToast');
+        if (!t) {
+          t = document.createElement('div');
+          t.id = 'fcToast';
+          t.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:12px 24px;border-radius:40px;font-size:12px;z-index:9999;opacity:0;transition:opacity .3s;';
+          document.body.appendChild(t);
+        }
+        t.textContent = msg;
+        t.style.opacity = '1';
+        setTimeout(() => (t.style.opacity = '0'), 2200);
+      }
+
+      function tipoBadge(tipo) {
+        const c = TIPO_COLORS[tipo] || '#6b7280';
+        return `<span class="fc-badge" style="background:${c}18;border:1px solid ${c};color:${c};">${tipo}</span>`;
+      }
+      function catBadge(cat) {
+        const c = CAT_COLORS[cat] || '#6b7280';
+        return `<span class="fc-badge" style="background:${c}18;border:1px solid ${c};color:${c};">${cat}</span>`;
+      }
+
+      function getFiltered() {
+        return data.filter(rec => {
+          const status = computeStatus(rec);
+          const matchSearch = !filters.search ||
+            [rec.placa, rec.condutor, rec.cidadeUF, rec.responsavel, rec.region].some(v => norm(v).includes(norm(filters.search)));
+          const matchStatus = !filters.status || status === filters.status;
+          const matchTipo = !filters.tipoFrota || rec.tipoFrota === filters.tipoFrota;
+          const matchCat = !filters.categoria || rec.categoria === filters.categoria;
+          return matchSearch && matchStatus && matchTipo && matchCat;
+        });
+      }
+
+      function renderStats() {
+        const el = document.getElementById('fcGlobalStats');
+        if (!el) return;
+        const all = data.map(r => ({ ...r, _status: computeStatus(r) }));
+        const vencidos = all.filter(r => r._status === 'vencido').length;
+        const urgentes = all.filter(r => r._status === 'urgente').length;
+        const naoOk = all.filter(r => r._status === 'nao-ok').length;
+        const validos = all.filter(r => r._status === 'valido').length;
+        const proprio = all.filter(r => r.tipoFrota === 'Próprio').length;
+        const agregado = all.filter(r => r.tipoFrota === 'Agregado').length;
+        const terceiro = all.filter(r => r.tipoFrota === 'Terceiro').length;
+        el.innerHTML = `
+          <div class="global-stat-card gs-critical"><div class="gs-num">${vencidos}</div><div class="gs-label">Vencidos</div></div>
+          <div class="global-stat-card gs-warn"><div class="gs-num">${urgentes}</div><div class="gs-label">Urgentes</div></div>
+          <div class="global-stat-card gs-nao-ok"><div class="gs-num">${naoOk}</div><div class="gs-label">Não OK</div></div>
+          <div class="global-stat-card gs-ok"><div class="gs-num">${validos}</div><div class="gs-label">Válidos</div></div>
+          <div class="global-stat-card" style="border-top-color:${TIPO_COLORS['Próprio']}"><div class="gs-num" style="color:${TIPO_COLORS['Próprio']}">${proprio}</div><div class="gs-label">Próprio</div></div>
+          <div class="global-stat-card" style="border-top-color:${TIPO_COLORS['Agregado']}"><div class="gs-num" style="color:${TIPO_COLORS['Agregado']}">${agregado}</div><div class="gs-label">Agregado</div></div>
+          <div class="global-stat-card" style="border-top-color:${TIPO_COLORS['Terceiro']}"><div class="gs-num" style="color:${TIPO_COLORS['Terceiro']}">${terceiro}</div><div class="gs-label">Terceiro</div></div>
+          <div class="global-stat-card"><div class="gs-num">${all.length}</div><div class="gs-label">Total</div></div>
+        `;
+      }
+
+      function renderTable() {
+        const countEl = document.getElementById('fcCount');
+        const accordionEl = document.getElementById('fcAccordion');
+        const emptyEl = document.getElementById('fcEmpty');
+        let filtered = getFiltered();
+
+        countEl.textContent = filtered.length + ' itens';
+        if (!filtered.length) {
+          accordionEl.innerHTML = '';
+          emptyEl.style.display = 'block';
+          return;
+        }
+        emptyEl.style.display = 'none';
+
+        filtered.sort((a, b) => {
+          const ordem = { vencido: 0, urgente: 1, 'nao-ok': 2, valido: 3 };
+          const sa = computeStatus(a), sb = computeStatus(b);
+          const diff = (ordem[sa] ?? 9) - (ordem[sb] ?? 9);
+          if (diff !== 0) return diff;
+          return (parseDateBR(a.vigenciaChecklist) || 0) - (parseDateBR(b.vigenciaChecklist) || 0);
+        });
+
+        const grouped = {};
+        filtered.forEach(r => { const reg = r.region || 'Outras'; (grouped[reg] = grouped[reg] || []).push(r); });
+        const regions = Object.keys(grouped).sort((a, b) => {
+          const ia = REGION_ORDER.indexOf(a), ib = REGION_ORDER.indexOf(b);
+          if (ia === -1 && ib === -1) return a.localeCompare(b);
+          if (ia === -1) return 1; if (ib === -1) return -1;
+          return ia - ib;
+        });
+
+        let html = '';
+        regions.forEach(reg => {
+          const items = grouped[reg];
+          const color = REGION_COLORS[reg] || '#6b7280';
+          const vencidoCount = items.filter(i => computeStatus(i) === 'vencido').length;
+          const urgenteCount = items.filter(i => computeStatus(i) === 'urgente').length;
+          const isOpen = regionOpenState.hasOwnProperty(reg) ? regionOpenState[reg] : (vencidoCount + urgenteCount > 0);
+          regionOpenState[reg] = isOpen;
+
+          let rows = '';
+          items.forEach(item => {
+            const status = computeStatus(item);
+            const statusClass = `status-${status}`;
+            const statusLabel = status === 'vencido' ? 'Vencido' : status === 'valido' ? 'Válido' : status === 'urgente' ? 'Urgente' : 'Não OK';
+            let validadeCell = item.vigenciaChecklist || '—';
+            if (status === 'vencido') {
+              const dv = diasVencido(item);
+              validadeCell += dv !== null ? ` <span class="dias-vencido-badge">${dv}d</span>` : '';
+            }
+            rows += `<tr>
+              <td><span class="veiculo-tag">${item.placa}</span></td>
+              <td>${tipoBadge(item.tipoFrota)}</td>
+              <td>${catBadge(item.categoria)}</td>
+              <td><span class="status-badge ${statusClass}">${statusLabel}</span></td>
+              <td>${validadeCell}</td>
+              <td><span class="cidade-tag">${item.cidadeUF || '—'}</span></td>
+              <td>${item.condutor || '—'}</td>
+              <td>${item.responsavel || '—'}</td>
+              <td style="white-space:nowrap;">
+                <button class="edit-btn" data-fc-edit="${item.id}" title="Editar">✏️</button>
+                <button class="edit-btn" data-fc-del="${item.id}" title="Remover">🗑️</button>
+              </td>
+            </tr>`;
+          });
+
+          html += `
+            <div class="region-accordion ${isOpen ? 'open' : ''}" data-region="${reg}" style="border-left-color:${color};">
+              <div class="accordion-header" data-fc-toggle="${reg}">
+                <span class="region-title"><span class="color-dot" style="background:${color};"></span>${reg}</span>
+                <span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                  ${vencidoCount ? `<span class="region-badge vencido">${vencidoCount} vencido${vencidoCount !== 1 ? 's' : ''}</span>` : ''}
+                  ${urgenteCount ? `<span class="region-badge urgente">${urgenteCount} urgente${urgenteCount !== 1 ? 's' : ''}</span>` : ''}
+                  <span class="region-count">${items.length} total</span>
+                  <span class="chevron">▼</span>
+                </span>
+              </div>
+              <div class="accordion-body">
+                <div class="region-table-wrap">
+                  <table class="checklist-table">
+                    <thead><tr>
+                      <th>Placa</th><th>Tipo Frota</th><th>Categoria</th><th>Status</th><th>Validade</th>
+                      <th>Cidade/UF</th><th>Condutor</th><th>Responsável</th><th>Ações</th>
+                    </tr></thead>
+                    <tbody>${rows}</tbody>
+                  </table>
+                </div>
+              </div>
+            </div>`;
+        });
+        accordionEl.innerHTML = html;
+
+        accordionEl.querySelectorAll('[data-fc-toggle]').forEach(h => {
+          h.addEventListener('click', () => {
+            const reg = h.dataset.fcToggle;
+            const acc = h.closest('.region-accordion');
+            const open = acc.classList.toggle('open');
+            regionOpenState[reg] = open;
+          });
+        });
+        accordionEl.querySelectorAll('[data-fc-edit]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); openModal(b.dataset.fcEdit); }));
+        accordionEl.querySelectorAll('[data-fc-del]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); deleteRecord(b.dataset.fcDel); }));
+      }
+
+      function renderAll() { renderStats(); renderTable(); }
+
+      /* ---------------- Bind UI ---------------- */
+      let bound = false;
+      function bindUI() {
+        if (bound) return;
+        bound = true;
+        document.getElementById('fcSearch').addEventListener('input', e => { filters.search = e.target.value; renderTable(); });
+        document.getElementById('fcStatusFilter').addEventListener('change', e => { filters.status = e.target.value; renderTable(); });
+        document.getElementById('fcTipoFilter').addEventListener('change', e => { filters.tipoFrota = e.target.value; renderTable(); });
+        document.getElementById('fcCategoriaFilter').addEventListener('change', e => { filters.categoria = e.target.value; renderTable(); });
+        document.getElementById('fcClearFilters').addEventListener('click', () => {
+          filters = { search: '', status: '', tipoFrota: '', categoria: '', region: '' };
+          document.getElementById('fcSearch').value = '';
+          document.getElementById('fcStatusFilter').value = '';
+          document.getElementById('fcTipoFilter').value = '';
+          document.getElementById('fcCategoriaFilter').value = '';
+          renderTable();
+        });
+        document.getElementById('fcNovoBtn').addEventListener('click', () => openModal(null));
+        document.getElementById('fcModalCancel').addEventListener('click', closeModal);
+        document.getElementById('fcModal').addEventListener('click', e => { if (e.target.id === 'fcModal') closeModal(); });
+        document.getElementById('fcModalSave').addEventListener('click', saveModal);
+        document.getElementById('fcImportInput').addEventListener('change', e => {
+          const file = e.target.files[0];
+          if (file) handleImportFile(file);
+          e.target.value = '';
+        });
+        document.getElementById('fcExportJson').addEventListener('click', () => {
+          const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'frota_checklist_export.json';
+          a.click();
+          URL.revokeObjectURL(a.href);
+        });
+      }
+
+      window.FrotaChecklist = {
+        open: async function () {
+          bindUI();
+          if (!data.length && !loadFromStorage()) {
+            await init();
+          } else if (!loadFromStorage()) {
+            await init();
+          }
+          renderAll();
+        }
+      };
+
+      init();
+
+    })();
+
+    /* ===================== INIT ===================== */
+    switchBase('rondolog');
 
   })();
-
-  /* ===================== INIT ===================== */
-  switchBase('rondolog');
-
-})();
 </script>
 
 </body>
