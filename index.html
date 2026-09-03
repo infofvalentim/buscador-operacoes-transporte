@@ -1056,7 +1056,6 @@
   <button class="base-tab" data-base="saster">📦 SASTER</button>
   <button class="base-tab" data-base="bases">🏭 BASES</button>
   <button class="base-tab" data-base="points">📍 PONTOS</button>
-  <!-- ABA CHECKLIST REMOVIDA -->
   <button class="base-tab" data-base="onco">🗂️ Perfil</button>
   <button class="base-tab" data-base="frota">🚗 Frota</button>
 </div>
@@ -1395,7 +1394,6 @@
 </div>
 
 <!-- ===== MODAL EDIÇÃO (Checklist antigo – removido, mas mantido para compatibilidade) ===== -->
-<!-- Este modal não é mais usado, pois a aba Checklist foi removida. Mantido apenas para evitar erros de referência. -->
 <div class="edit-modal" id="editModal" style="display:none;">
   <div class="edit-modal-content">
     <h3>✏️ Editar Checklist</h3>
@@ -2242,7 +2240,6 @@
       }
       return;
     }
-    // Aba PERFIL (antiga ONCO)
     if (base === 'onco') {
       document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
       document.getElementById('oncoPanel').classList.add('active');
@@ -2769,7 +2766,7 @@
   document.getElementById('oncoFuncionariosStatusFilter').addEventListener('change', () => renderOncoCategory('Funcionário','oncoFuncionarios'));
 
   /* ============================================================
-     FROTA CHECKLIST – Módulo Independente com Importação Personalizada
+     FROTA CHECKLIST – Módulo com Merge Inteligente
      ============================================================ */
   (function () {
     'use strict';
@@ -2910,7 +2907,7 @@
       }
     }
 
-    /* ---------------- Importação personalizada para RelatorioChecklist ---------------- */
+    /* ---------------- Importação personalizada com merge --------- */
     function parseRelatorioChecklist(rows) {
       let results = [];
       let i = 0;
@@ -2918,18 +2915,18 @@
         const row = rows[i];
         if (!row || row.length === 0) { i++; continue; }
         const cell0 = (row[0] || '').toString().trim();
-        // Detectar início de um checklist: linha contém "Veículo:" ou "Carreta:"
         if (cell0.startsWith('Veículo:') || cell0.startsWith('Carreta:')) {
           let rec = {};
-          // Extrair placa
           const placaMatch = cell0.match(/(?:Veículo|Carreta):\s*([A-Z0-9]+)/i);
           if (placaMatch) rec.placa = placaMatch[1].toUpperCase();
-          // O tipo pode estar na mesma linha ou na próxima
+
+          // Categoria: se Carreta -> CARRETA, senão CAVALO
+          rec.categoria = cell0.startsWith('Carreta:') ? 'CARRETA' : 'CAVALO';
+
           let tipo = '';
           if (cell0.includes('AGREGADO')) tipo = 'Agregado';
           else if (cell0.includes('PROPRIO') || cell0.includes('PRÓPRIO')) tipo = 'Próprio';
           else if (cell0.includes('TERCEIRO')) tipo = 'Terceiro';
-          // Se não estiver na mesma linha, olhar a próxima
           if (!tipo && i+1 < rows.length) {
             const nextRow = rows[i+1];
             const nextCell = (nextRow && nextRow[0]) ? nextRow[0].toString().trim() : '';
@@ -2937,30 +2934,23 @@
             else if (nextCell.includes('PROPRIO') || nextCell.includes('PRÓPRIO')) tipo = 'Próprio';
             else if (nextCell.includes('TERCEIRO')) tipo = 'Terceiro';
           }
-          rec.tipoFrota = tipo || 'Agregado'; // fallback
+          rec.tipoFrota = tipo || 'Agregado';
 
-          // Avançar para encontrar as próximas linhas de dados
           i++;
           let dataRealizacao = '', validade = '', responsavel = '', operador = '';
           let dispositivos = [];
           let temDefeito = false;
 
-          // Percorrer as linhas seguintes até encontrar um novo veículo ou fim
           while (i < rows.length) {
             const line = rows[i];
             if (!line || line.length === 0) { i++; continue; }
             const first = (line[0] || '').toString().trim();
             const second = (line[1] || '').toString().trim();
 
-            // Se encontrarmos "Veículo:" ou "Carreta:" novamente, paramos (próximo checklist)
-            if (first.startsWith('Veículo:') || first.startsWith('Carreta:')) {
-              break;
-            }
+            if (first.startsWith('Veículo:') || first.startsWith('Carreta:')) break;
 
             if (first.startsWith('Data da Realização:')) {
-              dataRealizacao = first.replace('Data da Realização:', '').trim();
-              // Pode ter hora, remove
-              dataRealizacao = dataRealizacao.split(' ')[0];
+              dataRealizacao = first.replace('Data da Realização:', '').trim().split(' ')[0];
             } else if (first.startsWith('Validade:')) {
               validade = first.replace('Validade:', '').trim();
             } else if (first.startsWith('Responsavel:')) {
@@ -2968,53 +2958,35 @@
             } else if (first.startsWith('Operador:')) {
               operador = first.replace('Operador:', '').trim();
             } else if (first === 'Dispositivos Avaliados' || first === 'Situação') {
-              // cabeçalho da tabela de dispositivos, ignorar
+              // header
             } else if (first && second) {
-              // Linha com dispositivo e situação
               const situacao = second.toLowerCase();
               const defeito = situacao.includes('defeito') || situacao.includes('não ok') || situacao === 'não ok';
-              if (defeito) {
-                temDefeito = true;
-              }
+              if (defeito) temDefeito = true;
               dispositivos.push({ nome: first, situacao: second });
             }
             i++;
           }
 
-          // Agora montar o registro
           rec.dataRealizacao = normalizeAnyDate(dataRealizacao);
-          // Verificar se validade é "Checklist Não OK" ou contém "Não OK"
           const isNaoOk = validade.toLowerCase().includes('não ok') || validade.toLowerCase().includes('nao ok');
           if (isNaoOk) {
             rec.naoOkManual = true;
-            rec.vigenciaChecklist = ''; // sem data
+            rec.vigenciaChecklist = '';
           } else {
-            // Tentar extrair data
             const dateMatch = validade.match(/(\d{2}\/\d{2}\/\d{4})/);
-            if (dateMatch) {
-              rec.vigenciaChecklist = dateMatch[1];
-            } else {
-              rec.vigenciaChecklist = validade; // fallback
-            }
-            rec.naoOkManual = temDefeito; // se houver defeito, marcar como não OK
+            rec.vigenciaChecklist = dateMatch ? dateMatch[1] : validade;
+            rec.naoOkManual = temDefeito;
           }
-
-          // Se houver defeito, marcar naoOkManual = true (já feito acima)
           if (temDefeito) rec.naoOkManual = true;
 
-          // Dispositivos com defeito
           const defeitos = dispositivos.filter(d => d.situacao.toLowerCase().includes('defeito') || d.situacao.toLowerCase().includes('não ok') || d.situacao.toLowerCase().includes('nao ok'));
           rec.dispositivosDefeito = defeitos.map(d => d.nome).join(', ');
 
           rec.responsavel = responsavel;
-          rec.condutor = operador; // usar operador como condutor
-          // cidadeUF e region não temos, deixar vazio
-          rec.cidadeUF = '';
+          rec.condutor = operador;
+          rec.cidadeUF = '';    // não existe no arquivo
           rec.region = 'Outras'; // padrão
-
-          // Categoria - não temos, tentar inferir pelo tipo de veículo (se for Carreta, etc.)
-          // Podemos usar a primeira palavra do nome do veículo? Melhor deixar padrão "LEVE"
-          rec.categoria = 'LEVE'; // padrão, o usuário pode editar depois
 
           results.push(rec);
         } else {
@@ -3030,22 +3002,43 @@
         try {
           const wb = XLSX.read(e.target.result, { type: 'binary', cellDates: true });
           const ws = wb.Sheets[wb.SheetNames[0]];
-          // Obter todas as linhas como arrays
           const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
-          // Usar o parser personalizado
           const parsed = parseRelatorioChecklist(rows);
           let added = 0, updated = 0;
+
           parsed.forEach(rec => {
             if (!rec.placa) return;
             const existingIdx = data.findIndex(d => norm(d.placa) === norm(rec.placa));
             if (existingIdx >= 0) {
-              data[existingIdx] = { ...data[existingIdx], ...rec, id: data[existingIdx].id };
+              // Merge: preserva cidadeUF, region e categoria do registro existente
+              // (categoria pode ter sido editada manualmente)
+              const existing = data[existingIdx];
+              data[existingIdx] = {
+                ...existing,
+                // atualiza apenas os campos que vêm do Excel
+                tipoFrota: rec.tipoFrota,
+                dataRealizacao: rec.dataRealizacao,
+                vigenciaChecklist: rec.vigenciaChecklist,
+                naoOkManual: rec.naoOkManual,
+                dispositivosDefeito: rec.dispositivosDefeito,
+                responsavel: rec.responsavel,
+                condutor: rec.condutor,
+                // mantém os campos que não estão no Excel:
+                // cidadeUF, region, categoria (a menos que o rec tenha esses campos, mas não tem)
+                cidadeUF: existing.cidadeUF || '',
+                region: existing.region || 'Outras',
+                categoria: existing.categoria || rec.categoria // usa a inferida se não tiver
+              };
               updated++;
             } else {
+              // novo registro: usa os campos do Excel e defaults
+              rec.cidadeUF = '';
+              rec.region = 'Outras';
               data.push({ id: uid(), ...rec });
               added++;
             }
           });
+
           saveToStorage();
           renderAll();
           toast(`✅ Importação concluída: ${added} adicionados, ${updated} atualizados`);
@@ -3289,7 +3282,7 @@
 
     function renderAll() { renderStats(); renderTable(); }
 
-    /* ---------------- Bind UI (chamado uma vez) ---------------- */
+    /* ---------------- Bind UI ---------------- */
     let bound = false;
     function bindUI() {
       if (bound) return;
@@ -3325,7 +3318,6 @@
       });
     }
 
-    /* ---------------- API pública ---------------- */
     window.FrotaChecklist = {
       open: async function () {
         bindUI();
