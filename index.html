@@ -2006,6 +2006,9 @@
     {id:26, nome:"Serra",                  sigla:"SER", cidade:"Serra",                uf:"ES", tipo:"filial",   endereco:"Rua Tancredo Neves, 85 – São Diogo I",                       cep:"29163-267", lat:-20.1286, lng:-40.3078}
   ];
 
+  // Expondo globalmente para depuração
+  window.BASES = BASES;
+
   function dotColor(tipo){ return tipo==='hub'?'#dc2626': tipo==='terminal'?'#8b5cf6':'#3b82f6'; }
   function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
 
@@ -2107,11 +2110,19 @@
   let selectedId = null;
   let userMarker = null;
 
+  // Expondo globalmente para depuração
+  window.leafletMap = leafletMap;
+  window.leafletMarkers = leafletMarkers;
+
   function initLeafletMap(){
-    if(leafletMap) return;
+    if(leafletMap) {
+      leafletMap.invalidateSize();
+      return;
+    }
+    // Centro e zoom ajustados para o Brasil
     leafletMap = L.map('leafletMap', {
-      center: [-20.5, -45.5],
-      zoom: 6,
+      center: [-15.5, -47.0],
+      zoom: 5,
       zoomControl: true,
       attributionControl: false
     });
@@ -2172,6 +2183,14 @@
 
       leafletMarkers.push({ id: b.id, marker, pulseCircle, baseR: r, color: c });
     });
+
+    // Ajusta o zoom para mostrar todas as bases
+    const bounds = BASES.map(b => [b.lat, b.lng]);
+    leafletMap.fitBounds(bounds, { padding: [30, 30] });
+
+    // Atualiza referência global
+    window.leafletMap = leafletMap;
+    window.leafletMarkers = leafletMarkers;
   }
 
   function renderUserMarker(){
@@ -2232,6 +2251,8 @@
     }
 
     renderUserMarker();
+    // Redimensiona para garantir posicionamento correto
+    setTimeout(() => leafletMap.invalidateSize(), 100);
   }
 
   function renderBases(){
@@ -2311,6 +2332,10 @@
     }).join('');
 
     renderMap(filtered);
+    // Redimensiona o mapa após renderizar os cards
+    if (leafletMap) {
+      setTimeout(() => leafletMap.invalidateSize(), 150);
+    }
   }
 
   function selectBase(id){
@@ -2717,7 +2742,22 @@
       document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
       document.getElementById('basesPanel').classList.add('active');
       loadingOverlay.style.display = 'none';
-      setTimeout(() => { initLeafletMap(); renderBasesStats(); renderBases(); }, 50);
+      // Aguarda a renderização da aba para inicializar o mapa corretamente
+      setTimeout(() => {
+        initLeafletMap();
+        if (leafletMap) {
+          leafletMap.invalidateSize();
+          // Ajusta o zoom para mostrar todas as bases
+          const bounds = BASES.map(b => [b.lat, b.lng]);
+          leafletMap.fitBounds(bounds, { padding: [30, 30] });
+        }
+        renderBasesStats();
+        renderBases();
+        // Redimensiona novamente após a renderização dos cards
+        setTimeout(() => {
+          if (leafletMap) leafletMap.invalidateSize();
+        }, 200);
+      }, 300); // Aumentado para garantir que o contêiner esteja visível
       return;
     }
     if (base === 'points') {
