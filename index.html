@@ -1986,21 +1986,25 @@
   // BASES
   // ============================================================
   const BASES = [
-    {id:1,  nome:"Duque de Caxias",        sigla:"RJ",  cidade:"Duque de Caxias",      uf:"RJ", tipo:"hub",      endereco:"Rodovia Washington Luiz, 2070 – Parque Duque",               cep:"25085-009", lat:-22.7854, lng:-43.3115},
-    {id:2,  nome:"Santana de Parnaíba",    sigla:"SP",  cidade:"Santana de Parnaíba",  uf:"SP", tipo:"hub",      endereco:"Estrada Tenente Marques, 6765 – Vila Poupança",              cep:"06525-001", lat:-23.4527, lng:-46.9177},
-    {id:4,  nome:"Betim",                  sigla:"BTM", cidade:"Betim",                uf:"MG", tipo:"filial",   endereco:"Rua Bispo Pedro Valdemar Dias, 777 – Amazonas",              cep:"32685-044", lat:-19.9678, lng:-44.1983},
-    {id:5,  nome:"Três Corações",          sigla:"3C",  cidade:"Três Corações",        uf:"MG", tipo:"filial",   endereco:"Avenida Édson Penha, 627 – Santana",                         cep:"37410-650", lat:-21.6914, lng:-45.2562},
-    {id:7,  nome:"Cravinhos",              sigla:"CRV", cidade:"Cravinhos",            uf:"SP", tipo:"filial",   endereco:"Rua Manoel Gomes dos Santos, 2921 – Jd. Independência",      cep:"14140-000", lat:-21.3407, lng:-47.7297},
-    {id:9,  nome:"Mirassol",               sigla:"MRS", cidade:"Mirassol",             uf:"SP", tipo:"filial",   endereco:"Rua Bruno Rodrigues Gomes, 562 – Parque Mirassol",           cep:"15134-144", lat:-20.8196, lng:-49.5101},
-    {id:12, nome:"Goiânia",                sigla:"GYN", cidade:"Goiânia",              uf:"GO", tipo:"filial",   endereco:"Rua Anaca, 213 – Parque Amazônia",                           cep:"74840-690", lat:-16.6869, lng:-49.2648},
-    {id:14, nome:"Brasília",               sigla:"BSB", cidade:"Brasília",             uf:"DF", tipo:"filial",   endereco:"SIA Trecho 3, 32 – Zona Industrial Guará",                  cep:"71200-030", lat:-15.7942, lng:-47.8825},
-    {id:18, nome:"Agudos",                 sigla:"AGD", cidade:"Agudos",               uf:"SP", tipo:"filial",   endereco:"Avenida Rui Barbosa, 361 – Centro",                          cep:"17120-000", lat:-22.4756, lng:-48.9844},
-    {id:19, nome:"Uberlândia",             sigla:"UDI", cidade:"Uberlândia",           uf:"MG", tipo:"filial",   endereco:"Rua Ângelo Cunha, 365 – São Jorge",                          cep:"38410-206", lat:-18.9188, lng:-48.2766},
-    {id:20, nome:"Guarulhos – Rondocargas",sigla:"GRU", cidade:"Guarulhos",            uf:"SP", tipo:"terminal", endereco:"Av. Papa João Paulo I, 2258 – Jd. Presidente Dutra",         cep:"07174-000", lat:-23.4356, lng:-46.5338},
-    {id:21, nome:"Santa Bárbara d'Oeste",  sigla:"SBO", cidade:"Santa Bárbara d'Oeste",uf:"SP", tipo:"filial",   endereco:"Av. Paulo Augusto Bortolucci, 346 – Distrito Industrial",    cep:"13459-617", lat:-22.7548, lng:-47.4136},
-    {id:22, nome:"Taubaté",                sigla:"TAU", cidade:"Taubaté",              uf:"SP", tipo:"filial",   endereco:"Rua João Vanoni, 185 – Residencial Estoril",                 cep:"12092-703", lat:-23.0260, lng:-45.5557},
-    {id:23, nome:"Macaé",                  sigla:"MCE", cidade:"Macaé",                uf:"RJ", tipo:"filial",   endereco:"Rua de Santana, 169 – Centro",                               cep:"27910-090", lat:-22.3710, lng:-41.7869}
-  ];
+  {id:1,  nome:"Duque de Caxias",        sigla:"RJ",  cidade:"Duque de Caxias",      uf:"RJ", tipo:"hub",      endereco:"Rodovia Washington Luiz, 2070 – Parque Duque",               cep:"25085-009", lat:-22.7854, lng:-43.3115},
+  {id:2,  nome:"Santana de Parnaíba",    sigla:"SP",  cidade:"Santana de Parnaíba",  uf:"SP", tipo:"hub",      endereco:"Estrada Tenente Marques, 6765 – Vila Poupança",              cep:"06525-001", lat:-23.4527, lng:-46.9177},
+  {id:4,  nome:"Betim",                  sigla:"BTM", cidade:"Betim",                uf:"MG", tipo:"filial",   endereco:"Rua Bispo Pedro Valdemar Dias, 777 – Amazonas",              cep:"32685-044", lat:-19.9678, lng:-44.1983},
+  {id:5,  nome:"Três Corações",          sigla:"3C",  cidade:"Três Corações",        uf:"MG", tipo:"filial",   endereco:"Avenida Édson Penha, 627 – Santana",                         cep:"37410-650", lat:-21.6914, lng:-45.2562},
+  {id:7,  nome:"Cravinhos",              sigla:"CRV", cidade:"Cravinhos",            uf:"SP", tipo:"filial",   endereco:"Rua Manoel Gomes dos Santos, 2921 – Jd. Independência",      cep:"14140-000", lat:-21.3407, lng:-47.7297},
+  {id:9,  nome:"Mirassol",               sigla:"MRS", cidade:"Mirassol",             uf:"SP", tipo:"filial",   endereco:"Rua Bruno Rodrigues Gomes, 562 – Parque Mirassol",           cep:"15134-144", lat:-20.8196, lng:-49.5101},
+  {id:12, nome:"Goiânia",                sigla:"GYN", cidade:"Goiânia",              uf:"GO", tipo:"filial",   endereco:"Rua Anaca, 213 – Parque Amazônia",                           cep:"74840-690", lat:-16.6869, lng:-49.2648},
+  {id:14, nome:"Brasília",               sigla:"BSB", cidade:"Brasília",             uf:"DF", tipo:"filial",   endereco:"SIA Trecho 3, 32 – Zona Industrial Guará",                  cep:"71200-030", lat:-15.7942, lng:-47.8825},
+  {id:18, nome:"Agudos",                 sigla:"AGD", cidade:"Agudos",               uf:"SP", tipo:"filial",   endereco:"Avenida Rui Barbosa, 361 – Centro",                          cep:"17120-000", lat:-22.4756, lng:-48.9844},
+  {id:19, nome:"Uberlândia",             sigla:"UDI", cidade:"Uberlândia",           uf:"MG", tipo:"filial",   endereco:"Rua Ângelo Cunha, 365 – São Jorge",                          cep:"38410-206", lat:-18.9188, lng:-48.2766},
+  {id:20, nome:"Guarulhos – Rondocargas",sigla:"GRU", cidade:"Guarulhos",            uf:"SP", tipo:"terminal", endereco:"Av. Papa João Paulo I, 2258 – Jd. Presidente Dutra",         cep:"07174-000", lat:-23.4356, lng:-46.5338},
+  {id:21, nome:"Santa Bárbara d'Oeste",  sigla:"SBO", cidade:"Santa Bárbara d'Oeste",uf:"SP", tipo:"filial",   endereco:"Av. Paulo Augusto Bortolucci, 346 – Distrito Industrial",    cep:"13459-617", lat:-22.7548, lng:-47.4136},
+  {id:22, nome:"Taubaté",                sigla:"TAU", cidade:"Taubaté",              uf:"SP", tipo:"filial",   endereco:"Rua João Vanoni, 185 – Residencial Estoril",                 cep:"12092-703", lat:-23.0260, lng:-45.5557},
+  {id:23, nome:"Macaé",                  sigla:"MCE", cidade:"Macaé",                uf:"RJ", tipo:"filial",   endereco:"Rua de Santana, 169 – Centro",                               cep:"27910-090", lat:-22.3710, lng:-41.7869},
+  // NOVAS BASES ADICIONADAS
+  {id:24, nome:"Ribeirão Preto",         sigla:"RP",  cidade:"Ribeirão Preto",       uf:"SP", tipo:"filial",   endereco:"Rua Altiva de Faria Chaves, 383 – Parque Anhangüera",         cep:"14095-490", lat:-21.1775, lng:-47.8102},
+  {id:25, nome:"Paracatu",               sigla:"PCT", cidade:"Paracatu",             uf:"MG", tipo:"filial",   endereco:"Rua Donizete Victor Rodrigues, 720 – Bela Vista",            cep:"38600-490", lat:-17.2153, lng:-46.8745},
+  {id:26, nome:"Serra",                  sigla:"SER", cidade:"Serra",                uf:"ES", tipo:"filial",   endereco:"Rua Tancredo Neves, 85 – São Diogo I",                       cep:"29163-267", lat:-20.1286, lng:-40.3078}
+];
 
   function dotColor(tipo){ return tipo==='hub'?'#dc2626': tipo==='terminal'?'#8b5cf6':'#3b82f6'; }
   function tipoLabel(tipo){ return tipo==='hub'?'🔴 Hub': tipo==='terminal'?'🟣 Terminal':'🔵 Filial'; }
