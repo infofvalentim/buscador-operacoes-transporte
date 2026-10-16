@@ -1,0 +1,8 @@
+{
+  "name": "buscador-operacoes-transporte",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
