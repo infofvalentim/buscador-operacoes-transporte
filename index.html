@@ -1917,7 +1917,7 @@
 
 <script type="module">
 import { getRouteData, getPointsData } from './src/services/dataService.js';
-import { normalizeText } from './src/utils/normalize.js';
+import { normalizeText, parseTermos, criarCacheBusca } from './src/utils/normalize.js';
 import { MapView, formatDistance } from './src/components/mapView.js';
 
 (function(){
@@ -2024,20 +2024,25 @@ import { MapView, formatDistance } from './src/components/mapView.js';
   locateBtn.addEventListener('click', handleLocateClick);
   locateClearBtn.addEventListener('click', clearLocate);
 
+  const matchBaseSearch = criarCacheBusca(b => [b.nome, b.cidade, b.endereco, b.cep, b.uf, b.empresa]);
+  let baseMatchScores = new WeakMap();
   function renderBases(){
-    const q = normStr(document.getElementById('basesSearch').value);
+    const terms = parseTermos(document.getElementById('basesSearch').value);
     const uf = document.getElementById('basesUFFilter').value;
     const tipo = document.getElementById('basesTipoFilter').value;
     const empresaEl = document.getElementById('basesEmpresaFilter');
     const empresa = empresaEl ? empresaEl.value : '';
 
+    baseMatchScores = new WeakMap();
     let filtered = BASES.filter(b=>{
-      const mq = !q || [b.nome,b.cidade,b.endereco,b.cep,b.uf,b.empresa].some(v=>normStr(v).includes(q));
+      const result = terms.length ? matchBaseSearch(b, terms) : { casou: true, pontos: 0 };
+      baseMatchScores.set(b, result.pontos);
       const mu = !uf || b.uf === uf;
       const mt = !tipo || b.tipo === tipo;
       const me = !empresa || b.empresa === empresa;
-      return mq && mu && mt && me;
+      return result.casou && mu && mt && me;
     });
+    filtered.sort((a,b) => baseMatchScores.get(b) - baseMatchScores.get(a));
 
     document.getElementById('basesCountBadge').textContent =
       filtered.length + ' base' + (filtered.length!==1?'s':'');
@@ -2133,8 +2138,6 @@ import { MapView, formatDistance } from './src/components/mapView.js';
       if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
     }
   }
-  const normStr = normalizeText;
-
   /* ===================== LÓGICA ROTAS ===================== */
   let currentBase='rondolog', currentData=[], currentQuery='', currentType='all', currentOrder='padrao';
   let currentView = 'list';
@@ -2152,17 +2155,51 @@ import { MapView, formatDistance } from './src/components/mapView.js';
   const matrixContainer= document.getElementById('matrixContainer');
 
   const norm = normalizeText;
-  function hl(text,q){
-    if(!q) return text;
-    const nq=norm(q), nt=norm(text);
-    let out='',i=0;
-    while(i<text.length){
-      const idx=nt.indexOf(nq,i);
-      if(idx===-1){out+=text.slice(i);break;}
-      out+=text.slice(i,idx)+'<mark>'+text.slice(idx,idx+nq.length)+'</mark>';
-      i=idx+nq.length;
+  function hl(text, terms){
+    if(!terms.length) return text;
+    let normalized = '', offsets = [];
+    for(let i = 0; i < text.length;){
+      const character = String.fromCodePoint(text.codePointAt(i));
+      const end = i + character.length;
+      const part = norm(character);
+      for(const normalizedCharacter of part){
+        if(/\s/.test(normalizedCharacter)){
+          if(normalized.endsWith(' ')){
+            offsets[offsets.length - 1].end = end;
+            continue;
+          }
+          normalized += ' ';
+        } else {
+          normalized += normalizedCharacter;
+        }
+        offsets.push({ start: i, end });
+      }
+      i = end;
     }
-    return out;
+    const ranges = [];
+    terms.forEach(term => {
+      const normalizedTerm = norm(term).replace(/\s+/g, ' ').trim();
+      if(!normalizedTerm) return;
+      let index = normalized.indexOf(normalizedTerm);
+      while(index !== -1){
+        const first = offsets[index], last = offsets[index + normalizedTerm.length - 1];
+        if(first && last) ranges.push({ start: first.start, end: last.end });
+        index = normalized.indexOf(normalizedTerm, index + normalizedTerm.length);
+      }
+    });
+    ranges.sort((a,b) => a.start - b.start || a.end - b.end);
+    const merged = [];
+    ranges.forEach(range => {
+      const previous = merged[merged.length - 1];
+      if(previous && range.start <= previous.end) previous.end = Math.max(previous.end, range.end);
+      else merged.push({ ...range });
+    });
+    let out = '', cursor = 0;
+    merged.forEach(range => {
+      out += text.slice(cursor, range.start) + '<mark>' + text.slice(range.start, range.end) + '</mark>';
+      cursor = range.end;
+    });
+    return out + text.slice(cursor);
   }
   function getTipoColor(t){ return t==='coleta'?'var(--blue)':t==='transferencia'?'var(--green)':'var(--orange)'; }
   function getTipoLabel(t){ return t==='transferencia'?'🚚 Transferência':t==='coleta'?'📦 Coleta':'🔄 Rota fixa'; }
@@ -2213,8 +2250,7 @@ import { MapView, formatDistance } from './src/components/mapView.js';
   let historyData = loadHistory();
 
   function addToHistory(base, term){
-    term = term.trim();
-    if(!term) return;
+    if(!term.trim()) return;
     if(!historyData[base]) historyData[base] = [];
     historyData[base] = historyData[base].filter(t => t.toLowerCase() !== term.toLowerCase());
     historyData[base].unshift(term);
@@ -2231,13 +2267,24 @@ import { MapView, formatDistance } from './src/components/mapView.js';
   function renderHistoryChips(){
     const container = document.getElementById('historyChips');
     const items = historyData[currentBase] || [];
-    if(!items.length){ container.innerHTML = ''; return; }
-    container.innerHTML = '<span class="history-label">Recentes:</span>' + items.map(term => `
-      <span class="history-chip" data-term="${term.replace(/"/g,'&quot;')}">
-        🕓 ${term}
-        <span class="hx-remove" data-remove="${term.replace(/"/g,'&quot;')}">✕</span>
-      </span>
-    `).join('');
+    container.replaceChildren();
+    if(!items.length) return;
+    const label = document.createElement('span');
+    label.className = 'history-label';
+    label.textContent = 'Recentes:';
+    container.appendChild(label);
+    items.forEach(term => {
+      const chip = document.createElement('span');
+      chip.className = 'history-chip';
+      chip.dataset.term = term;
+      chip.appendChild(document.createTextNode(`🕓 ${term} `));
+      const remove = document.createElement('span');
+      remove.className = 'hx-remove';
+      remove.dataset.remove = term;
+      remove.textContent = '✕';
+      chip.appendChild(remove);
+      container.appendChild(chip);
+    });
     container.querySelectorAll('.history-chip').forEach(chip => {
       chip.addEventListener('click', (e) => {
         if(e.target.classList.contains('hx-remove')) return;
@@ -2268,10 +2315,21 @@ import { MapView, formatDistance } from './src/components/mapView.js';
   }
 
   /* ===================== GET FILTERED DATA ===================== */
+  const matchRouteSearch = criarCacheBusca(r => [
+    r.nome, r.origem, r.destino, ...(r.condutor || []), ...(r.placa || [])
+  ]);
+  let routeMatchScores = new WeakMap();
   function getFilteredData() {
     let filtered = currentData;
-    const q = currentQuery;
-    if(q){ const nq=norm(q); filtered=filtered.filter(r=>norm(r.nome).includes(nq)||norm(`${r.origem} ${r.destino}`).includes(nq)||(r.condutor&&r.condutor.some(c=>norm(c).includes(nq)))||(r.placa&&r.placa.some(p=>norm(p).includes(nq)))); }
+    const terms = parseTermos(currentQuery);
+    routeMatchScores = new WeakMap();
+    if(terms.length){
+      filtered = filtered.filter(r => {
+        const result = matchRouteSearch(r, terms);
+        routeMatchScores.set(r, result.pontos);
+        return result.casou;
+      });
+    }
     if(currentBase==='rondolog'&&currentType!=='all') filtered=filtered.filter(r=>r.tipo===currentType);
     if(showOnlyFavorites) filtered=filtered.filter(r=>isFavorite(currentBase, r.nome));
     return filtered;
@@ -2366,8 +2424,8 @@ import { MapView, formatDistance } from './src/components/mapView.js';
       td.addEventListener('click', function() {
         const orig = this.dataset.orig;
         const dest = this.dataset.dest;
-        searchInput.value = `${orig} → ${dest}`;
-        currentQuery = `${orig} → ${dest}`;
+        searchInput.value = `"${orig} ${dest}"`;
+        currentQuery = searchInput.value;
         switchView('list');
         render();
       });
@@ -2401,23 +2459,34 @@ import { MapView, formatDistance } from './src/components/mapView.js';
   /* ===================== RENDER PRINCIPAL ===================== */
   function sortRotas(arr,order){
     const s=[...arr];
-    if(order==='origem') s.sort((a,b)=>a.origem.localeCompare(b.origem));
-    else if(order==='destino') s.sort((a,b)=>a.destino.localeCompare(b.destino));
-    else if(order==='tipo'&&currentBase==='rondolog'){ const to={coleta:1,transferencia:2,rota:3}; s.sort((a,b)=>(to[a.tipo]||99)-(to[b.tipo]||99)); }
+    s.sort((a,b) => {
+      const scoreDiff = (routeMatchScores.get(b) || 0) - (routeMatchScores.get(a) || 0);
+      if(scoreDiff) return scoreDiff;
+      if(order==='origem') return a.origem.localeCompare(b.origem);
+      if(order==='destino') return a.destino.localeCompare(b.destino);
+      if(order==='tipo'&&currentBase==='rondolog'){
+        const to={coleta:1,transferencia:2,rota:3};
+        return (to[a.tipo]||99)-(to[b.tipo]||99);
+      }
+      return 0;
+    });
     return s;
   }
 
   function render() {
+    let filtered = getFilteredData();
+    const terms = parseTermos(currentQuery);
+    countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
+    const resultLabel = terms.length > 1
+      ? `Resultados para "${terms.map(term => term.toLocaleUpperCase('pt-BR')).join(' + ')}"`
+      : (currentQuery ? `Resultados para "${currentQuery}"` : 'Todas as rotas');
+    sectionLabel.textContent = showOnlyFavorites ? '⭐ Rotas favoritas' : resultLabel;
     if (currentView === 'matrix') {
-      const filtered = getFilteredData();
       renderMatrix(filtered);
       return;
     }
 
-    let filtered = getFilteredData();
     filtered = sortRotas(filtered, currentOrder);
-    countBadge.textContent = filtered.length + ' rota' + (filtered.length !== 1 ? 's' : '');
-    sectionLabel.innerHTML = showOnlyFavorites ? '⭐ Rotas favoritas' : (currentQuery ? `Resultados para "${currentQuery}"` : 'Todas as rotas');
 
     if (!filtered.length) {
       resultsContainer.innerHTML = `<div class="no-result">🔍 ${showOnlyFavorites ? 'Nenhuma rota favoritada ainda.' : 'Nenhuma rota encontrada.'}</div>`;
@@ -2429,14 +2498,14 @@ import { MapView, formatDistance } from './src/components/mapView.js';
       const tipoColor = (currentBase === 'rondolog') ? getTipoColor(tipo) : 'var(--blue)';
       const condutores = r.condutor || [], placas = r.placa || [], viagens = r.viagens;
       const totalCond = condutores.length, totalPlacas = placas.length;
-      const condHTML = condutores.length ? `<div class="condutor-list">${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, currentQuery)}</span>`).join('')}${totalCond > 2 ? `<span class="condutor-more" title="${condutores.slice(2).join(', ')}">+${totalCond - 2}</span>` : ''}</div>` : '';
-      const placHTML = placas.length ? `<span class="meta-placa">${hl(placas[0], currentQuery)}</span>${totalPlacas > 1 ? `<span class="placa-more" title="${placas.slice(1).join(', ')}">+${totalPlacas - 1}</span>` : ''}` : '';
+      const condHTML = condutores.length ? `<div class="condutor-list">${condutores.slice(0,2).map(c => `<span class="condutor-name">${hl(c, terms)}</span>`).join('')}${totalCond > 2 ? `<span class="condutor-more" title="${condutores.slice(2).join(', ')}">+${totalCond - 2}</span>` : ''}</div>` : '';
+      const placHTML = placas.length ? `<span class="meta-placa">${hl(placas[0], terms)}</span>${totalPlacas > 1 ? `<span class="placa-more" title="${placas.slice(1).join(', ')}">+${totalPlacas - 1}</span>` : ''}` : '';
       const vHTML = viagens ? `<div class="meta-item">📊 <span class="viagem-badge">${viagens} viagens</span></div>` : '';
       const metaHTML = (condHTML || placHTML || vHTML) ? `<div class="metadata">${vHTML}${condHTML ? `<div class="meta-item">👤 ${condHTML} <span class="meta-count-badge">${totalCond}</span></div>` : ''}${placHTML ? `<div class="meta-item">🚛 ${placHTML} <span class="meta-count-badge">${totalPlacas}</span></div>` : ''}</div>` : '';
       const tipoBadge = (currentBase === 'rondolog') ? `<span class="route-badge" style="background:${tipoColor}15;border-color:${tipoColor};color:${tipoColor}">${getTipoLabel(tipo)}</span>` : '';
       const fav = isFavorite(currentBase, r.nome);
       const starHTML = `<span class="fav-star${fav ? ' active' : ''}" data-fav-nome="${r.nome.replace(/"/g, '&quot;')}" title="${fav ? 'Remover dos favoritos' : 'Favoritar rota'}">${fav ? '★' : '☆'}</span>`;
-      return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido">${starHTML}<span>${hl(r.origem, currentQuery)}</span><span class="pedido-sep">→</span><span>${hl(r.destino, currentQuery)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome, currentQuery)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
+      return `<div class="card" data-nome="${r.nome}"><div class="card-inner"><div class="card-bar" style="background:${tipoColor}"></div><div class="card-body"><div class="pedido">${starHTML}<span>${hl(r.origem, terms)}</span><span class="pedido-sep">→</span><span>${hl(r.destino, terms)}</span>${tipoBadge}</div><div class="nome-rota"><span class="rota-nome-principal">${hl(r.nome, terms)}</span></div>${metaHTML}</div><div class="card-action" title="Copiar nome da rota">📋</div></div></div>`;
     }).join('');
 
     document.querySelectorAll('.card').forEach(card => {
@@ -2639,6 +2708,8 @@ import { MapView, formatDistance } from './src/components/mapView.js';
      ABA PONTOS – LÓGICA DE CARREGAMENTO DO JSON
      ============================================================ */
   let pointsData = null;
+  const matchPointSearch = criarCacheBusca(p => [p.nome, p.endereco, p.cidade, p.cep]);
+  let pointMatchScores = new WeakMap();
 
   async function loadPoints() {
     try {
@@ -2667,27 +2738,25 @@ import { MapView, formatDistance } from './src/components/mapView.js';
       return;
     }
 
-    const searchTerm = norm(document.getElementById('pointsSearch').value).trim();
+    const terms = parseTermos(document.getElementById('pointsSearch').value);
     const ufFilter = document.getElementById('pointsUFFilter').value;
     const order = document.getElementById('pointsOrderSelect').value;
 
+    pointMatchScores = new WeakMap();
     let filtered = pointsData.filter(p => {
-      const matchSearch = !searchTerm ||
-        norm(p.nome).includes(searchTerm) ||
-        norm(p.endereco).includes(searchTerm) ||
-        norm(p.cidade).includes(searchTerm) ||
-        norm(p.cep).includes(searchTerm);
+      const result = terms.length ? matchPointSearch(p, terms) : { casou: true, pontos: 0 };
+      pointMatchScores.set(p, result.pontos);
       const matchUf = !ufFilter || p.uf === ufFilter;
-      return matchSearch && matchUf;
+      return result.casou && matchUf;
     });
 
-    if (order === 'nome') {
-      filtered.sort((a, b) => (a.nome || '').localeCompare(b.nome || ''));
-    } else if (order === 'uf') {
-      filtered.sort((a, b) => (a.uf || '').localeCompare(b.uf || '') || (a.nome || '').localeCompare(b.nome || ''));
-    } else {
-      filtered.sort((a, b) => (b.count || 0) - (a.count || 0));
-    }
+    filtered.sort((a, b) => {
+      const scoreDiff = pointMatchScores.get(b) - pointMatchScores.get(a);
+      if (scoreDiff) return scoreDiff;
+      if (order === 'nome') return (a.nome || '').localeCompare(b.nome || '');
+      if (order === 'uf') return (a.uf || '').localeCompare(b.uf || '') || (a.nome || '').localeCompare(b.nome || '');
+      return (b.count || 0) - (a.count || 0);
+    });
 
     document.getElementById('pointsCountBadge').textContent = filtered.length + ' ponto' + (filtered.length!==1?'s':'');
     document.getElementById('pointsTotal').textContent = pointsData.length;
@@ -2776,7 +2845,7 @@ import { MapView, formatDistance } from './src/components/mapView.js';
      ============================================================ -->
 <script type="module">
 import { getLegacyChecklistData } from './src/services/dataService.js';
-import { normalizeText as norm } from './src/utils/normalize.js';
+import { normalizeText as norm, parseTermos, criarCacheBusca } from './src/utils/normalize.js';
 import {
   normalizeChecklistCategory,
   normalizeFleetType,
@@ -2801,6 +2870,8 @@ import {
   let editingId = null;
   let filters = { search: '', status: '', tipoFrota: '', categoria: '' };
   let catOpenState = {};
+  const matchFleetSearch = criarCacheBusca(rec => [rec.placa, rec.condutor, rec.cidadeUF, rec.responsavel]);
+  let fleetMatchScores = new WeakMap();
 
   /* ---------------- Utils ---------------- */
   function uid() { return 'v' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
@@ -3023,18 +3094,16 @@ import {
 
   /* ---------------- Render principal (agrupado por CATEGORIA) ---------------- */
   function getFiltered() {
-    const q = norm(filters.search);
+    const terms = parseTermos(filters.search);
+    fleetMatchScores = new WeakMap();
     return data.filter(rec => {
       const status = computeStatus(rec);
-      const matchSearch = !q ||
-        norm(rec.placa).includes(q) ||
-        norm(rec.condutor).includes(q) ||
-        norm(rec.cidadeUF).includes(q) ||
-        norm(rec.responsavel).includes(q);
+      const result = terms.length ? matchFleetSearch(rec, terms) : { casou: true, pontos: 0 };
+      fleetMatchScores.set(rec, result.pontos);
       const matchStatus = !filters.status || status === filters.status;
       const matchTipo = !filters.tipoFrota || rec.tipoFrota === filters.tipoFrota;
       const matchCategoria = !filters.categoria || rec.categoria === filters.categoria;
-      return matchSearch && matchStatus && matchTipo && matchCategoria;
+      return result.casou && matchStatus && matchTipo && matchCategoria;
     });
   }
 
@@ -3057,6 +3126,8 @@ import {
     if (emptyEl) emptyEl.style.display = 'none';
 
     filtered.sort((a, b) => {
+      const scoreDiff = fleetMatchScores.get(b) - fleetMatchScores.get(a);
+      if (scoreDiff) return scoreDiff;
       const ordem = { vencido: 0, urgente: 1, 'nao-ok': 2, valido: 3 };
       const sa = computeStatus(a), sb = computeStatus(b);
       const diff = (ordem[sa] ?? 9) - (ordem[sb] ?? 9);
@@ -3320,7 +3391,7 @@ import {
      Integrado via switchBase('perfil') → PerfilCadastral.open()
      ============================================================ -->
 <script type="module">
-import { normalizeText as norm } from './src/utils/normalize.js';
+import { normalizeText as norm, parseTermos, criarCacheBusca } from './src/utils/normalize.js';
 import { parseProfileSheets } from './src/utils/profileParser.js';
 
 (function () {
@@ -3330,6 +3401,8 @@ import { parseProfileSheets } from './src/utils/profileParser.js';
   const LS_KEY = 'perfilCadastralData_v1';
 
   let data = [];
+  const matchProfileSearch = criarCacheBusca(item => [item.item, item.descricao]);
+  let profileMatchScores = new WeakMap();
 
   function uid() { return 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
 
@@ -3499,16 +3572,20 @@ import { parseProfileSheets } from './src/utils/profileParser.js';
       <div class="global-stat-card"><div class="gs-num">${all.length}</div><div class="gs-label">Total</div></div>
     `;
 
-    const q = norm(searchEl.value);
+    const terms = parseTermos(searchEl.value);
     const statusFilter = statusEl.value;
     const tipoFilter = tipoEl ? tipoEl.value : '';
+    profileMatchScores = new WeakMap();
     let filtered = all.filter(item => {
-      const matchSearch = !q || norm(item.item).includes(q) || norm(item.descricao).includes(q);
+      const result = terms.length ? matchProfileSearch(item, terms) : { casou: true, pontos: 0 };
+      profileMatchScores.set(item, result.pontos);
       const matchStatus = !statusFilter || statusInfo(item.status).label.toLowerCase() === statusInfo(statusFilter).label.toLowerCase() || item.status === statusFilter;
       const matchTipo = !tipoFilter || item.tipoOriginal === tipoFilter;
-      return matchSearch && matchStatus && matchTipo;
+      return result.casou && matchStatus && matchTipo;
     });
     filtered.sort((a, b) => {
+      const scoreDiff = profileMatchScores.get(b) - profileMatchScores.get(a);
+      if (scoreDiff) return scoreDiff;
       const da = diasAte(a.vigencia), db = diasAte(b.vigencia);
       if (da === null && db === null) return 0;
       if (da === null) return 1;
