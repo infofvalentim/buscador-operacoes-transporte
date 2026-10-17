@@ -57,6 +57,17 @@ function cellText(value) {
 }
 
 /**
+ * @param {unknown} value
+ * @returns {string}
+ */
+export function maskCpf(value) {
+  return String(value ?? '').replace(
+    /(^|[^\d])(\d{3})[.\s]?(\d{3})[.\s]?(\d{3})[.\s-]?(\d{2})(?!\d)/g,
+    (_match, prefix, first, second, third) => `${prefix}***.${second}.${third}-**`
+  );
+}
+
+/**
  * @param {unknown} type
  * @param {unknown} operation
  * @param {unknown} description
@@ -120,7 +131,7 @@ export function parseProfileSheets(sheets) {
       const tipoOriginal = cellText(indexes.type >= 0 ? row[indexes.type] : '');
       const operacao = cellText(indexes.operation >= 0 ? row[indexes.operation] : '');
 
-      recordsByItem.set(item, {
+      const record = {
         item,
         descricao,
         tipoOriginal,
@@ -128,7 +139,11 @@ export function parseProfileSheets(sheets) {
         categoria: classifyProfileCategory(tipoOriginal, operacao, descricao),
         vigencia: normalizeDate(indexes.validity >= 0 ? row[indexes.validity] : ''),
         status
+      };
+      Object.keys(record).forEach(key => {
+        if (typeof record[key] === 'string') record[key] = maskCpf(record[key]);
       });
+      recordsByItem.set(item, record);
     }
   });
 

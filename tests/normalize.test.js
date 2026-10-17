@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   casaTermos,
   criarCacheBusca,
+  escapeHtml,
   matchesNormalizedText,
   normalizeText,
   parseTermos
@@ -12,6 +13,10 @@ test('normalizes accents, case, and non-string values', () => {
   assert.equal(normalizeText('São Paulo'), 'sao paulo');
   assert.equal(normalizeText(null), '');
   assert.equal(normalizeText(123), '123');
+});
+
+test('escapes all HTML-sensitive characters', () => {
+  assert.equal(escapeHtml(`& < > " '`), '&amp; &lt; &gt; &quot; &#39;');
 });
 
 test('matches accented search terms consistently', () => {

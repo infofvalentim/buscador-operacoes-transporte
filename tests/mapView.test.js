@@ -25,3 +25,39 @@ test('orders bases by distance from the current user position', () => {
   mapView.clearUserPosition();
   assert.equal(mapView.hasUserPosition, false);
 });
+
+test('escapes imported base content in popup and tooltip HTML', () => {
+  let popupContent = '';
+  let tooltipContent = '';
+  const marker = {
+    addTo() { return this; },
+    bindPopup(content) { popupContent = content; return this; },
+    bindTooltip(content) { tooltipContent = content; return this; },
+    openTooltip() { return this; },
+    on() { return this; }
+  };
+  const mapView = new MapView({
+    bases: [],
+    leaflet: { circleMarker: () => marker }
+  });
+  mapView.map = {};
+  mapView.addBaseMarker({
+    id: 1,
+    lat: 0,
+    lng: 0,
+    tipo: 'filial',
+    nome: '<img src=x onerror=alert(1)>',
+    empresa: 'R&D "Transport"',
+    endereco: "Rua O'Brien & Filhos",
+    cidade: '<Campinas>',
+    uf: 'SP',
+    cep: '13000-000',
+    sigla: '"SP&"'
+  });
+
+  assert.match(popupContent, /&lt;img src=x onerror=alert\(1\)&gt;/);
+  assert.match(popupContent, /R&amp;D &quot;Transport&quot;/);
+  assert.match(popupContent, /O&#39;Brien &amp; Filhos/);
+  assert.doesNotMatch(popupContent, /<img src=x/);
+  assert.equal(tooltipContent, '&quot;SP&amp;&quot;');
+});

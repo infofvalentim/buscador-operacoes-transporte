@@ -42,14 +42,14 @@ O painel é dividido em abas.
 - Importação de planilha de **pesquisa cadastral** (`.xlsx`, `.xls` ou `.csv`) com colunas como _Item Pesquisado_, _Descrição_, _Tipo_, _Operação_, _Vigência_ e _Status_.
 - Classificação automática em Cavalo/Caminhão, Leve/Utilitário, Carreta, Condutor e Ajudante.
 - Visão geral com status (em acordo, análise vencida, pendente de documentação), resumo por categoria e próximos vencimentos.
-- Telas separadas para veículos, carretas e condutores, com busca e filtros, e exportação em JSON.
+- Telas separadas para veículos, carretas e condutores, com busca e filtros.
 
 ### 🚗 Frota
 
 - Controle de checklist de veículos próprios, agregados e de terceiros, agrupado por categoria (cavalo, carreta, fiorino, leve e van), para que cavalo e carreta nunca se misturem nas contagens.
 - Status calculado pela vigência: **vencido**, **urgente** (até 3 dias), **não OK** e **válido**, com dias de atraso nos vencidos.
 - Importação do _Relatório Checklist_ em `.xlsx` (blocos "Veículo:" e "Carreta:" com dispositivos avaliados) ou de planilha tabular genérica. Em caso de placa duplicada, prevalece a checagem mais recente.
-- Cadastro, edição e exclusão de veículos, filtros por status, tipo de frota e categoria, e exportação em JSON.
+- Cadastro, edição e exclusão de veículos, filtros por status, tipo de frota e categoria.
 
 ### Geral
 
@@ -61,12 +61,24 @@ O painel é dividido em abas.
 ## Tecnologias
 
 - HTML5, CSS3 (variáveis CSS e temas) e JavaScript ES6+ com ES Modules, sem framework.
-- [Leaflet 1.9.4](https://leafletjs.com/) para mapas, com tiles do OpenStreetMap.
-- [SheetJS (xlsx 0.18.5)](https://sheetjs.com/) para leitura de planilhas no navegador.
-- Fontes Inter e Share Tech Mono (Google Fonts).
+- [Leaflet 1.9.4](https://leafletjs.com/) local para mapas, com tiles do OpenStreetMap.
+- [SheetJS 0.20.3](https://docs.sheetjs.com/docs/getting-started/installation/standalone/) local para leitura de planilhas no navegador.
+- SHA-256 do arquivo `vendor/sheetjs/xlsx.full.min.js`: `CC015130AA8521E7F088F88898EBA949CCDCBFB38DF0BD129B44B7273C3A6F41`.
+- Fontes Inter e Share Tech Mono locais.
 - `localStorage` para favoritos, histórico, tema e dados importados.
 
-Leaflet e SheetJS são carregados por CDN (cdnjs), então o painel precisa de internet para o mapa e para importar planilhas.
+Os arquivos de Leaflet, SheetJS e fontes ficam em `vendor/`, sem carregamento de bibliotecas por CDN. O mapa ainda carrega tiles do OpenStreetMap pela internet.
+
+## Privacidade e dados pessoais
+
+- **Não use dados reais neste repositório público.** Os arquivos em `data/*.json`, exemplos, fixtures e capturas versionadas devem conter somente dados fictícios.
+- Antes de publicar alterações em `data/*.json`, execute `npm run check:pii`. O comando falha ao encontrar valores com formato de CPF e não imprime os valores encontrados.
+- Planilhas importadas ficam somente no `localStorage` do navegador. CPFs do PERFIL são mascarados antes de serem armazenados; a aplicação não oferece exportação ou download dos dados.
+- Dados importados são removidos automaticamente após **1 dia**. A aplicação avisa quando remove dados expirados. O prazo está definido em `DATA_RETENTION_DAYS` em `src/utils/retention.js`.
+- O mapa consulta tiles do OpenStreetMap. Links para serviços externos de mapas só são abertos quando acionados pelo usuário.
+- Uma política CSP restringe scripts, estilos, fontes e imagens aos recursos locais e aos tiles do OpenStreetMap; a política de referência é `no-referrer`.
+- A política não usa `'unsafe-inline'` para scripts: os três módulos inline são autorizados por hash. `'unsafe-inline'` continua necessário somente para CSS inline, presente no bloco `<style>`, em atributos `style` e em estilos montados dinamicamente nos cards.
+- Se o conteúdo de um dos módulos inline em `index.html` mudar, recalcule e atualize os hashes `sha256-...` na meta CSP.
 
 ---
 
@@ -84,7 +96,11 @@ buscador-operacoes-transporte/
 │   └── utils/
 │       ├── checklistParser.js # parser puro dos formatos de checklist
 │       ├── normalize.js       # normalização para busca sem acentos
-│       └── profileParser.js   # parser puro das planilhas cadastrais
+│       ├── profileParser.js   # parser puro das planilhas cadastrais
+│       └── retention.js      # prazo de retenção dos dados importados
+├── vendor/                    # Leaflet, SheetJS e fontes locais
+├── scripts/
+│   └── check-pii.js           # verificação de CPFs em data/*.json
 ├── tests/                    # testes unitários dos módulos sem dependências externas
 └── data/
     ├── rondolog.json     # rotas da Rondolog
@@ -164,6 +180,7 @@ Para executar os testes unitários dos módulos:
 
 ```bash
 npm test
+npm run check:pii
 ```
 
 ## Publicação
@@ -174,7 +191,7 @@ O projeto está pronto para o **GitHub Pages**: em _Settings → Pages_, selecio
 
 ## Armazenamento no navegador
 
-Os dados cadastrados ou importados nas abas Perfil e Frota, assim como favoritos, histórico, tema e modo compacto, ficam apenas no `localStorage` do navegador de quem usa. Nada é enviado a servidor, e cada usuário e cada dispositivo tem a sua cópia.
+Os dados cadastrados ou importados nas abas Perfil e Frota, assim como favoritos, histórico, tema e modo compacto, ficam apenas no `localStorage` do navegador de quem usa; planilhas não são enviadas a um backend. O mapa carrega tiles do OpenStreetMap, e os links externos só são abertos por ação do usuário. Cada usuário e dispositivo tem sua própria cópia local.
 
 | Chave                              | Conteúdo                           |
 | ---------------------------------- | ---------------------------------- |
@@ -182,16 +199,16 @@ Os dados cadastrados ou importados nas abas Perfil e Frota, assim como favoritos
 | `rondologHistory`                  | Histórico de buscas por base       |
 | `rondologTheme`, `rondologCompact` | Tema e modo compacto               |
 | `frotaChecklistData_v1`            | Veículos da aba Frota              |
+| `frotaSmUsage_v1`                  | Saídas de S.M. importadas           |
 | `perfilCadastralData_v1`           | Registros importados na aba Perfil |
 
-Use os botões **Exportar JSON** para fazer cópia de segurança antes de limpar os dados do navegador.
+As importações recebem `importadoEm` e são removidas automaticamente após um dia. O CPF do PERFIL é mascarado antes de ser persistido.
 
 ## Dados e privacidade
 
-Se o repositório for público, tudo o que estiver em `data/` fica acessível a qualquer pessoa. Nomes de condutores, placas e endereços de clientes podem ser dados sensíveis. Antes de publicar:
+Este repositório é público: tudo o que estiver versionado fica acessível a qualquer pessoa. **Só são aceitos dados fictícios** em `data/`, exemplos, fixtures e capturas; não publique dados reais ou anonimizados da operação.
 
-- use dados fictícios ou anonimizados nos arquivos de exemplo;
-- ou mantenha o repositório privado quando usar dados reais da operação.
+`npm run check:pii` procura valores com formato de CPF em `data/*.json` e retorna erro se encontrar algum. A checagem é uma proteção adicional, não substitui a revisão manual de dados pessoais.
 
 ---
 

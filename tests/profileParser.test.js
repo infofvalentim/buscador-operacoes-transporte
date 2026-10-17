@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { classifyProfileCategory, parseProfileSheets } from '../src/utils/profileParser.js';
+import { classifyProfileCategory, maskCpf, parseProfileSheets } from '../src/utils/profileParser.js';
 
 test('parses recognized workbook sheets and keeps the last row per item', () => {
   const sheets = [
@@ -46,4 +46,16 @@ test('classifies vehicle and personnel categories from normalized text', () => {
   assert.equal(classifyProfileCategory('Veículo', '', 'Cavalo mecânico'), 'Cavalo/Caminhão');
   assert.equal(classifyProfileCategory('Funcionário', 'Ajudante de carga', ''), 'Ajudante');
   assert.equal(classifyProfileCategory('Motorista', '', ''), 'Condutor');
+});
+
+test('masks CPF values in imported profile text', () => {
+  const records = parseProfileSheets([[
+    ['Item Pesquisado', 'Descrição', 'Tipo', 'Operação', 'Vigência', 'Status'],
+    ['123.456.789-00', 'CPF 12345678900', 'Funcionário', 'Condutor', '', 'Em acordo']
+  ]]);
+
+  assert.equal(records[0].item, '***.456.789-**');
+  assert.equal(records[0].descricao, 'CPF ***.456.789-**');
+  assert.equal(maskCpf('ID 123 456 789 00'), 'ID ***.456.789-**');
+  assert.equal(maskCpf('ABC1234567890X'), 'ABC1234567890X');
 });

@@ -12,6 +12,22 @@ export function normalizeText(value) {
 }
 
 /**
+ * Escapes text for safe insertion into HTML text nodes or quoted attributes.
+ *
+ * @param {unknown} value
+ * @returns {string}
+ */
+export function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, character => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+}
+
+/**
  * Checks whether a value contains a normalized search term.
  *
  * @param {unknown} value
@@ -43,28 +59,53 @@ function casaTermosNormalizados(textoLinha, termos) {
 export function parseTermos(texto) {
   const input = String(texto ?? '');
   const commaSeparated = input.includes(',');
-  const separator = commaSeparated ? ',' : null;
   const terms = [];
   let term = '';
   let quoted = false;
+  let termQuoted = false;
 
-  for (const character of input) {
+  const pushTerm = () => {
+    const cleaned = term.trim().replace(/\s+/g, ' ');
+    if (cleaned) terms.push({ value: cleaned, quoted: termQuoted });
+    term = '';
+    termQuoted = false;
+  };
+
+  for (let i = 0; i < input.length; i++) {
+    const character = input[i];
     if (character === '"') {
       quoted = !quoted;
-    } else if (!quoted && (character === separator || (!commaSeparated && /\s/.test(character)))) {
-      const cleaned = term.trim().replace(/\s+/g, ' ');
-      if (cleaned) terms.push(cleaned);
-      term = '';
+      termQuoted = true;
+    } else if (
+      character === '\\' &&
+      quoted &&
+      (input[i + 1] === '"' || input[i + 1] === '\\')
+    ) {
+      term += input[i + 1];
+      i++;
+    } else if (!quoted && (commaSeparated ? character === ',' : /\s/.test(character))) {
+      pushTerm();
     } else {
       term += character;
     }
   }
 
-  const cleaned = term.trim().replace(/\s+/g, ' ');
-  if (cleaned) terms.push(cleaned);
+  pushTerm();
 
-  if (terms.length <= 1) return terms;
-  return terms.filter(value => Array.from(normalizeSearchLine(value)).length > 1);
+  if (commaSeparated) {
+    if (terms.length <= 1) return terms.map(({ value }) => value);
+    return terms
+      .filter(({ value, quoted: forcedPhrase }) =>
+        forcedPhrase || Array.from(normalizeSearchLine(value)).length > 1)
+      .map(({ value }) => value);
+  }
+  if (terms.length <= 1) return terms.map(({ value }) => value);
+  const stopwords = new Set(['de', 'da', 'do', 'das', 'dos', 'e']);
+  const usefulTerms = terms.filter(({ value, quoted: forcedPhrase }) => {
+    const normalized = normalizeSearchLine(value);
+    return forcedPhrase || (Array.from(normalized).length >= 3 && !stopwords.has(normalized));
+  });
+  return (usefulTerms.length ? usefulTerms : terms).map(({ value }) => value);
 }
 
 /**

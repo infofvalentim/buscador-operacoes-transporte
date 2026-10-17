@@ -1,3 +1,5 @@
+import { escapeHtml } from '../utils/normalize.js';
+
 /**
  * @typedef {object} MapBase
  * @property {number} id
@@ -130,10 +132,10 @@ export class MapView {
       : base.tipo === 'terminal' ? 'bci-tipo-terminal' : 'bci-tipo-filial';
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${base.endereco}, ${base.cidade}/${base.uf} CEP ${base.cep}`)}`;
     marker.bindPopup(`
-      <strong>${base.nome} <span style="font-weight:500;font-size:11px;color:var(--text-muted);">· ${base.empresa}</span></strong>
+      <strong>${escapeHtml(base.nome)} <span style="font-weight:500;font-size:11px;color:var(--text-muted);">· ${escapeHtml(base.empresa)}</span></strong>
       <span class="pop-tipo ${typeClass}">${this.typeLabel(base.tipo)}</span>
-      <div class="pop-end">📍 ${base.endereco}<br>${base.cidade} / ${base.uf} — CEP ${base.cep}</div>
-      <a href="${mapsUrl}" target="_blank" rel="noopener"
+      <div class="pop-end">📍 ${escapeHtml(base.endereco)}<br>${escapeHtml(base.cidade)} / ${escapeHtml(base.uf)} — CEP ${escapeHtml(base.cep)}</div>
+      <a href="${escapeHtml(mapsUrl)}" target="_blank" rel="noopener"
          style="color:#3b82f6;font-size:11px;text-decoration:none;font-weight:600;">🗺 Ver no Google Maps →</a>
     `, { maxWidth: 260, className: 'base-popup' });
 
@@ -144,7 +146,7 @@ export class MapView {
         marker.setStyle({ radius, weight: 2.5, color: 'white' });
       }
     });
-    marker.bindTooltip(base.sigla, {
+    marker.bindTooltip(escapeHtml(base.sigla), {
       permanent: true,
       direction: 'right',
       className: 'leaflet-sigla-tooltip',
